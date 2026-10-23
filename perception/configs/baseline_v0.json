@@ -1,5 +1,6 @@
 {
   "version": "known-layout-v0",
+  "feature_model": "whole_patch_radial_v0",
   "pixels_per_stud": 24,
   "stud_pitch_m": 0.008,
   "brick_height_m": 0.0096,

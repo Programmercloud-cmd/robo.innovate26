@@ -23,6 +23,9 @@ class Evidence:
     def __init__(self, gray, config):
         self.gray = gray.astype(np.float32)
         self.config = config
+        self.feature_model = config.get("feature_model", "whole_patch_radial_v0")
+        if self.feature_model not in ("whole_patch_radial_v0", "ring_coherence_v1"):
+            raise ValueError(f"Unsupported explicit feature model: {self.feature_model}")
         self.pitch = config["pixels_per_stud"]
         smooth = cv2.GaussianBlur(self.gray, (0, 0), 0.7)
         self.gx = cv2.Sobel(smooth, cv2.CV_32F, 1, 0, ksize=3) / 8.0
@@ -46,7 +49,10 @@ class Evidence:
         patch = self.gray[yi-margin:yi+margin+1, xi-margin:xi+margin+1]
         contrast = float(np.percentile(patch, 90)-np.percentile(patch, 10))
         observable = float(np.clip(contrast/self.config["contrast_range_for_observability"], 0, 1))
-        noise = float(self.mag[yi-margin:yi+margin+1, xi-margin:xi+margin+1].mean())
+        # The mean of this patch is dominated by adjacent brick seams/shadows.
+        # A median estimates quiet local gradient noise without that bias.
+        gradients = self.mag[yi-margin:yi+margin+1, xi-margin:xi+margin+1]
+        noise = float(gradients.mean() if self.feature_model == "whole_patch_radial_v0" else np.median(gradients))
         radius = round(self.pitch*self.config["stud_search_fraction"]) if search else 0
         shifts = np.asarray([(dx,dy) for dy in range(-radius,radius+1) for dx in range(-radius,radius+1)], np.float32)
         centers = shifts + np.array([x,y],np.float32)
@@ -57,8 +63,17 @@ class Evidence:
             gx = cv2.remap(self.gx,mx,my,cv2.INTER_LINEAR,borderMode=cv2.BORDER_CONSTANT)
             gy = cv2.remap(self.gy,mx,my,cv2.INTER_LINEAR,borderMode=cv2.BORDER_CONSTANT)
             radial = np.abs(gx*self.rays[None,:,0] + gy*self.rays[None,:,1])
-            concentration = np.clip((radial.mean(axis=1)/(noise+2.0)-1.0)/1.2,0,1)
-            coverage = (radial > max(noise*.5,2.)).mean(axis=1)
+            if self.feature_model == "whole_patch_radial_v0":
+                concentration = np.clip((radial.mean(axis=1)/(noise+2.0)-1.0)/1.2,0,1)
+                coverage = (radial > max(noise*.5,2.)).mean(axis=1)
+            else:
+                magnitude = np.hypot(gx,gy)
+                coherence = radial.sum(axis=1)/(magnitude.sum(axis=1)+1e-6)
+                # Isotropic directions have E[abs(cos(theta))] = 2/pi.
+                isotropic_null = 2/np.pi
+                concentration = np.clip((coherence-isotropic_null)/(1-isotropic_null),0,1)
+                # A fixed half-gray-level floor excludes very weak gradients.
+                coverage = (radial > max(noise,.5)).mean(axis=1)
             scores = concentration * coverage * math.sqrt(observable)
             index = int(np.argmax(scores))
             if float(scores[index]) > best[0]:
@@ -226,6 +241,7 @@ def analyze(image, registration, config):
     initial_center=project(corners.mean(axis=0)[None],canonical_to_image)[0]
     refined_center=project((corners.mean(axis=0)+correction)[None],canonical_to_image)[0]
     return dict(schema="known-layout-evidence-v0",file=registration.get("file"),
+        feature_model=config.get("feature_model", "whole_patch_radial_v0"),
         registration=dict(initial_quad_xy=quad.tolist(),refined_quad_xy=refined_quad.tolist(),
             correction_px=(refined_center-initial_center).tolist(),correction_rectified_px=correction.tolist(),
             consensus_studs=inliers,registration_score=inliers/max(len(top_grid),1),manual_assisted=True,

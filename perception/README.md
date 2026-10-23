@@ -43,12 +43,47 @@ a lower layer. No separate per-strip registration is used to force alignment.
    support. Blank/low-contrast regions become uncertain, never present merely
    because a grid cell exists.
 
-All thresholds are global in `configs/baseline_v0.json`, frozen before the
-first batch evaluation. They are initial design choices, not demonstrated
-calibrated operating limits. Radial responses are normalized by local gradient
-noise; observability is a clipped local 90th–10th intensity-percentile range.
-The initial 35-level contrast scale and decision thresholds will be judged
-against fixed development evaluation, rather than tuned for individual images.
+All thresholds are global, frozen before batch evaluation. They are initial
+design choices, not demonstrated calibrated operating limits. Observability
+is a clipped local 90th–10th intensity-percentile range. The initial 35-level
+contrast scale and decision thresholds are judged against fixed development
+evaluation, rather than tuned for individual images.
+
+## V1: radial-coherence feature correction
+
+The v0 development evaluation confirmed zero present instances among 112
+reference faces. Diagnostic Pueue job 1668 then evaluated the unchanged v0
+feature at 32 independent development stud centers: all fixed-center scores
+were zero despite median observability 0.786. The radial mean divided by the
+whole-patch gradient mean plus 2 was always below 1 (maximum 0.669), so the
+subsequent subtraction and clamp erased the evidence. The patch mean included
+strong seams and shadows away from the sampled ring.
+
+V1 changes only the circular-gradient evidence model:
+
+```
+coherence = sum(abs(gradient dot radial_direction)) / sum(gradient_magnitude)
+circle_alignment = clip((coherence - 2/pi) / (1 - 2/pi), 0, 1)
+support = fraction(radial_gradient > max(median_local_gradient, 0.5))
+stud_score = circle_alignment * support * sqrt(observability)
+```
+
+The normalization compares directions on the same annulus. `2/pi` is the
+expected absolute radial alignment of isotropic gradient directions. Angular
+support limits the response to a straight seam intersecting only a few ring
+angles. The local median avoids the demonstrated seam-contaminated mean;
+0.5 intensity level is a fixed weak-gradient/noise floor, an initial global
+design choice rather than a required Sobel quantization limit. These are
+global feature definitions, not fitted per-image thresholds.
+
+`configs/baseline_v1.json` retains **all** v0 radius, search, registration and
+decision settings unchanged. Its explicit `feature_model=ring_coherence_v1`
+selects the correction; `baseline_v0.json` selects `whole_patch_radial_v0`
+and retains the exact old formula. Old unversioned configurations also default
+to the v0 model, rather than silently changing a historical result. V1 is a proposed
+correction until independent evaluation establishes useful coverage without
+false-present or blank-image regressions. Nonzero feature scores alone do
+not establish success.
 
 `decision=present` establishes only supported **visual face presence** under
 the supplied window. `layer_hypothesis` expresses top/lower compatibility;
