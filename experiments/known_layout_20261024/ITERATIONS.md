@@ -43,3 +43,28 @@
 - Static validation: seven small tests passed, including the rule that a blank
   image with a supplied layout cannot confirm present or missing. This is not
   a substitute for the independent image batch.
+
+## v0 feature diagnostic and proposed v1
+
+- Diagnostic: Pueue **1668**, source `94cd781`, immutable run
+  `runs/20261023T234904.706461Z-geometry-v0-stud-diagnostic/`.
+- Evaluation-only probes at all 32 development reference stud centers: every
+  fixed-center v0 score was zero; even the existing local search reached only
+  0.113 maximum, below the frozen 0.35 feature confirmation threshold.
+- Observability median was 0.786. Radial-gradient mean was below the
+  whole-patch mean plus two at every measured true center; the original
+  concentration formula therefore clipped the true-center response to zero.
+  Merely expanding registration search is not supported as the first change.
+- Hypothesis: normalize radial alignment against gradient magnitude on the
+  same annulus instead of comparing to the seam/shadow-contaminated whole-patch
+  mean. Use the isotropic-gradient null (2/pi), angular support relative to the
+  robust local median, and the existing observability gate.
+- Proposed single code change: replace the stud response calculation only.
+  Radii, search bounds, global registration and decision thresholds remain
+  unchanged. A 0.5 gradient-unit quantization floor is explicitly documented.
+- Independent reviewer endorsed this bounded test. Acceptance still requires
+  useful decision coverage with controlled errors on the identical development
+  protocol; nonzero feature scores alone do not establish improvement.
+- Diagnostic evidence: `results/v0_stud_diagnostic/`. Implementation and
+  post-change measurements are pending this checkpoint; held-out D remains
+  unopened for tuning.
