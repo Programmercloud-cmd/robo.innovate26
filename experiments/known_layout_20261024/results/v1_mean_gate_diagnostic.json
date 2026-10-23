@@ -1,0 +1,302 @@
+{
+  "scope": "Predeclared diagnostic at frozen nominal v1 development predictions only. Removes no code or thresholds; does not use held-out D.",
+  "predicate": "uncertain decision passes observed contrast, >=6 individually confirmed studs, both end rows, edge gate, and top-vs-lower gate, but fails only mean_stud>=0.45",
+  "positive_candidates": [
+    {
+      "file": "img_1.jpg",
+      "candidate": "c1r0",
+      "reference": "c1r0",
+      "scores": {
+        "top_stud": 0.4320219711379187,
+        "confirmed_studs": 6,
+        "edge": 0.5276326928793498,
+        "edge_components": [
+          1.0,
+          0.3673133864249012,
+          0.011831667144653446,
+          0.6988104289873099
+        ],
+        "lower": 0.25532793383819236,
+        "lower_per_depth": [
+          0.23185882310315817,
+          0.25532793383819236
+        ],
+        "observability": 0.75,
+        "combined": 0.4511441154862049
+      }
+    },
+    {
+      "file": "img_1.jpg",
+      "candidate": "c1r3",
+      "reference": "c1r3",
+      "scores": {
+        "top_stud": 0.40538008670079795,
+        "confirmed_studs": 6,
+        "edge": 0.9110780377061198,
+        "edge_components": [
+          0.9732711058631814,
+          1.0,
+          0.13750927119801645,
+          1.0
+        ],
+        "lower": 0.33527202974909454,
+        "lower_per_depth": [
+          0.33527202974909454,
+          0.24636156677223944
+        ],
+        "observability": 0.7392857142857143,
+        "combined": 0.5065196769018624
+      }
+    },
+    {
+      "file": "img_1.jpg",
+      "candidate": "c3r0",
+      "reference": "c3r0",
+      "scores": {
+        "top_stud": 0.418545332402796,
+        "confirmed_studs": 6,
+        "edge": 0.37785946292839695,
+        "edge_components": [
+          1.0,
+          0.3241225491094218,
+          0.17217495967789623,
+          0.3274823682920965
+        ],
+        "lower": 0.3278757098685227,
+        "lower_per_depth": [
+          0.3278757098685227,
+          0.22446295246703607
+        ],
+        "observability": 0.6464285714285714,
+        "combined": 0.41040815850791623
+      }
+    },
+    {
+      "file": "img_3.jpg",
+      "candidate": "c2r1",
+      "reference": "c2r1",
+      "scores": {
+        "top_stud": 0.4319425918895388,
+        "confirmed_studs": 6,
+        "edge": 0.7699535582252968,
+        "edge_components": [
+          0.1991317877161991,
+          0.8253576815193532,
+          0.19897306845935545,
+          1.0
+        ],
+        "lower": 0.25663673405765824,
+        "lower_per_depth": [
+          0.25663673405765824,
+          0.17478079828997917
+        ],
+        "observability": 0.7464285714285714,
+        "combined": 0.49954478515669043
+      }
+    },
+    {
+      "file": "img_3.jpg",
+      "candidate": "c2r2",
+      "reference": "c2r2",
+      "scores": {
+        "top_stud": 0.42877612724473013,
+        "confirmed_studs": 7,
+        "edge": 0.4921147653186876,
+        "edge_components": [
+          0.26305846804284966,
+          0.33476057257794123,
+          0.783612817508431,
+          0.6338585193309575
+        ],
+        "lower": 0.3029294276595338,
+        "lower_per_depth": [
+          0.3029294276595338,
+          0.22394390379138135
+        ],
+        "observability": 0.5821428571428572,
+        "combined": 0.44144385485952164
+      }
+    },
+    {
+      "file": "img_3.jpg",
+      "candidate": "c2r3",
+      "reference": "c2r3",
+      "scores": {
+        "top_stud": 0.4401764354255774,
+        "confirmed_studs": 6,
+        "edge": 0.7844114180313184,
+        "edge_components": [
+          0.6568847038647146,
+          0.597221039744777,
+          0.7983453174693614,
+          1.0
+        ],
+        "lower": 0.343571952151987,
+        "lower_per_depth": [
+          0.343571952151987,
+          0.21612416067535928
+        ],
+        "observability": 0.75,
+        "combined": 0.5090234319467256
+      }
+    },
+    {
+      "file": "img_3.jpg",
+      "candidate": "c4r4",
+      "reference": "c4r4",
+      "scores": {
+        "top_stud": 0.4361577630866539,
+        "confirmed_studs": 8,
+        "edge": 0.8368907130244154,
+        "edge_components": [
+          0.0,
+          1.0,
+          0.3689071302441535,
+          1.0
+        ],
+        "lower": 0.3448954775311487,
+        "lower_per_depth": [
+          0.3448954775311487,
+          0.2557566450031295
+        ],
+        "observability": 0.7607142857142857,
+        "combined": 0.5163043530742062
+      }
+    },
+    {
+      "file": "img_3.jpg",
+      "candidate": "c5r0",
+      "reference": "c5r0",
+      "scores": {
+        "top_stud": 0.3855062628645447,
+        "confirmed_studs": 6,
+        "edge": 0.7848959174740673,
+        "edge_components": [
+          0.8176992871902109,
+          1.0,
+          0.35834827452069673,
+          0.6682279032574411
+        ],
+        "lower": 0.18200482577932398,
+        "lower_per_depth": [
+          0.1677849668583044,
+          0.18200482577932398
+        ],
+        "observability": 0.7928571428571428,
+        "combined": 0.46538419378644924
+      }
+    },
+    {
+      "file": "img_7.jpg",
+      "candidate": "c0r4",
+      "reference": "c0r4",
+      "scores": {
+        "top_stud": 0.42455484447970243,
+        "confirmed_studs": 7,
+        "edge": 0.6520269936299068,
+        "edge_components": [
+          0.15295585604228665,
+          0.3418285200641951,
+          1.0,
+          1.0
+        ],
+        "lower": 0.26420457432220146,
+        "lower_per_depth": [
+          0.17137119274469872,
+          0.26420457432220146
+        ],
+        "observability": 0.9,
+        "combined": 0.4700492743097433
+      }
+    },
+    {
+      "file": "img_7.jpg",
+      "candidate": "c4r3",
+      "reference": "c4r3",
+      "scores": {
+        "top_stud": 0.4413450363104404,
+        "confirmed_studs": 8,
+        "edge": 0.48000830550582424,
+        "edge_components": [
+          0.4057069293503264,
+          0.45481368701671654,
+          0.46808548332279704,
+          0.5267589735795631
+        ],
+        "lower": 0.35407989731313433,
+        "lower_per_depth": [
+          0.35407989731313433,
+          0.34631761202180167
+        ],
+        "observability": 0.5964285714285714,
+        "combined": 0.4490776901495172
+      }
+    },
+    {
+      "file": "img_10.jpg",
+      "candidate": "c5r3",
+      "reference": "c5r3",
+      "scores": {
+        "top_stud": 0.43876752570059874,
+        "confirmed_studs": 7,
+        "edge": 0.4078040928574099,
+        "edge_components": [
+          0.0780409285740989,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "lower": null,
+        "lower_per_depth": [],
+        "observability": 0.6714285714285714,
+        "combined": 0.43257483913196104
+      }
+    }
+  ],
+  "supplemental_missing_candidates": [],
+  "images": [
+    {
+      "file": "img_1.jpg",
+      "positive_mean_only": [
+        "c1r0",
+        "c1r3",
+        "c3r0"
+      ],
+      "missing_mean_only": []
+    },
+    {
+      "file": "img_3.jpg",
+      "positive_mean_only": [
+        "c2r1",
+        "c2r2",
+        "c2r3",
+        "c4r4",
+        "c5r0"
+      ],
+      "missing_mean_only": []
+    },
+    {
+      "file": "img_7.jpg",
+      "positive_mean_only": [
+        "c0r4",
+        "c4r3"
+      ],
+      "missing_mean_only": []
+    },
+    {
+      "file": "img_10.jpg",
+      "positive_mean_only": [
+        "c5r3"
+      ],
+      "missing_mean_only": []
+    }
+  ],
+  "summary": {
+    "additional_correct_present_if_only_mean_gate_removed": 11,
+    "additional_wrong_present_on_supplemental_missing": 0,
+    "current_correct_present": 37,
+    "positive_references": 112,
+    "potential_coverage_nominal_only": 0.42857142857142855,
+    "actual_execution_validation_still_required": true
+  }
+}

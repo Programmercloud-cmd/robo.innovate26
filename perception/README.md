@@ -53,11 +53,18 @@ evaluation, rather than tuned for individual images.
 
 The v0 development evaluation confirmed zero present instances among 112
 reference faces. Diagnostic Pueue job 1668 then evaluated the unchanged v0
-feature at 32 independent development stud centers: all fixed-center scores
+feature at 32 historical development stud marks: all fixed-mark scores
 were zero despite median observability 0.786. The radial mean divided by the
 whole-patch gradient mean plus 2 was always below 1 (maximum 0.669), so the
-subsequent subtraction and clamp erased the evidence. The patch mean included
+subsequent subtraction and clamp erased the evidence at those locations. The patch mean included
 strong seams and shadows away from the sampled ring.
+
+Subsequent independent visual audit found that some historical stud marks lie
+on cap rims/highlights rather than validated centers. They remain frozen for
+consistent comparison, but distances to them are not a calibrated stud-center
+accuracy measurement. The diagnostic must not be described as probing true
+centers. V1's measured visual-face coverage gain is separate evidence and
+does not depend on relabeling these marks.
 
 V1 changes only the circular-gradient evidence model:
 

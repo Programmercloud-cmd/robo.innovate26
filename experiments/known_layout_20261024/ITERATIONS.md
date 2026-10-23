@@ -53,7 +53,8 @@
   0.113 maximum, below the frozen 0.35 feature confirmation threshold.
 - Observability median was 0.786. Radial-gradient mean was below the
   whole-patch mean plus two at every measured true center; the original
-  concentration formula therefore clipped the true-center response to zero.
+  concentration formula therefore clipped the response at those marked
+  locations to zero. A later audit limits their interpretation as centers.
   Merely expanding registration search is not supported as the first change.
 - Hypothesis: normalize radial alignment against gradient magnitude on the
   same annulus instead of comparing to the seam/shadow-contaminated whole-patch
@@ -68,3 +69,63 @@
 - Diagnostic evidence: `results/v0_stud_diagnostic/`. Implementation and
   post-change measurements are pending this checkpoint; held-out D remains
   unopened for tuning.
+
+## v1 radial-coherence result — retained working baseline
+
+- Pre-change evaluated checkpoint: `817dbdc`; implementation: `4106bdc`.
+  Pueue **1669**, snapshot
+  `runs/20261023T235320.974842Z-known-layout-v1-development/`.
+- Change: the single radial-feature correction described above, selected by an
+  explicit configuration field. V0's formula remains reproducible. All radius,
+  search, registration and decision thresholds were unchanged; frozen
+  references/protocol hashes were verified unchanged.
+- Nominal development: **37/112 correct present (33.0%)**, up from 0/112;
+  69 uncertain and six unmatched. Zero wrong present/missing decisions.
+  Conditional present precision is 100% on 37 confirmations, not a guarantee.
+  All six supplementary missing cells remain uncertain. Blank confirmations: 0.
+- Correct-present sensitivity counts out of 112: dark 17, bright 47, rotations
+  -5/+5 degrees 29/30, x initialization -4/+4 px 42/27, y -4/+4 px 33/25.
+  No wrong confirmations were measured in these cases. Coverage is inadequate
+  and lighting/alignment sensitivity remains material.
+- Registration residual median 6.31 px (32 references), compared with 5.97 px in
+  v0: no localization improvement is claimed. Image-derived stud peaks matched
+  14/32 selected references within 8 px, median 6.25 px for those matches only.
+- Decision: **retain** the small feature revision as a better working baseline
+  because it produces useful correct confirmations without measured false
+  confirmations. It does **not** meet the 80% coverage or missing-decision
+  demonstration targets. The complexity is justified by the measured gain,
+  not by the feature's mathematical plausibility alone.
+- Dominant remaining failure: incomplete stud support/low mean evidence under
+  the coarse geometric registration. Image 10 is particularly weak. Strong
+  registration consensus sometimes results in zero correction; assess its
+  capture/fit bounds before proposing one bounded registration revision.
+- Evidence: `results/v1_development/`; held-out D remains reserved.
+
+## Reference audit and proposed v2 confidence simplification
+
+- Independent evaluator and reviewer found that some historical stud marks
+  lie on cap rims/highlights, not validated centers. All labels, hashes and
+  scoring rules remain unchanged. Stud distances must be reported as distances
+  to historical marked points, not true center accuracy. This also limits the
+  true-center interpretation of the v0 diagnostic. Face polygons/decision
+  comparisons remain usable at their documented annotation uncertainty.
+- Reconstructing v1's saved feature offsets disproved the suspected translation
+  norm-limit failure: image 1's 117-inlier proposal and image 7's 82-inlier
+  proposal were both zero. No registration-bound change is justified by that
+  mechanism, and none was implemented. Audit evidence is in
+  `results/reference_audit/`.
+- One predeclared confidence diagnostic on the frozen v1 nominal outputs found
+  11 additional positive faces passing every present-condition except the
+  whole-face mean-stud threshold, with none of the six supplementary missing
+  faces passing those other conditions. This is a diagnostic upper bound,
+  not an evaluated post-change result or a held-out claim.
+- Hypothesis: six supported studs including both end rows, edge support,
+  observability and top/lower counter-evidence already provide the intended
+  partial-pattern criterion. Requiring the mean of all eight scores to exceed
+  a higher threshold redundantly rejects some such patterns.
+- Proposed v2: remove only the mean-score decision predicate, keeping that score
+  visible diagnostically. Preserve all other feature, registration and decision
+  conditions and the exact evaluation protocol. The independent reviewer
+  endorsed the test. Expected nominal gain is only about 48/112, still below
+  demonstration acceptance. Accept only after the full sensitivity/blank batch
+  confirms useful gain without false-confirmation regressions.

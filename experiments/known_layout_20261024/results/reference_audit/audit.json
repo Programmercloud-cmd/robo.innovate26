@@ -1,0 +1,19 @@
+{
+  "scope": "Independent evaluator and reviewer visual audit after v1, without changing frozen references or protocol.",
+  "image": "img_1.jpg",
+  "crop_source_xyxy": [
+    376,
+    135,
+    426,
+    183
+  ],
+  "display_scale": 10,
+  "magenta": "Historical manual stud marks at (394,151) and (414,151).",
+  "cyan": "Supplied coarse geometric projection at approximately (389.17,147.23) and (411.58,147.19).",
+  "finding": "At least some historical manual marks appear on a cap rim/highlight rather than its optical/geometric center. The earlier approximately 2 px center-uncertainty claim is not adequately supported for precise center-error measurement.",
+  "consequence": "Distances to the original marked points remain reproducible diagnostics, but must not be called true stud-center localization or registration accuracy. Do not infer a need to shift the global grid solely from those distances.",
+  "unchanged": "All 48 historical marks, polygons, ambiguity labels, supplemental missing references, matching rules and thresholds remain frozen. No label was moved to favor an implementation.",
+  "valid_remaining_evidence": "Visual face-presence and decision-coverage results remain useful at the polygon annotation uncertainty; current physical layer height, metric pose and accessibility remain unverified.",
+  "historical_experiment_note": "The old 4/48 stud matches and their pixel distances are also conditional on these historical marks, not validated center ground truth.",
+  "global_registration_bound_check": "From saved v1 outputs, img1 and img7 median consensus offsets are exactly (0,0); their zero correction is not caused by the maximum-shift bound. Image10 has only six inliers, below the fixed16-stud consensus minimum."
+}
