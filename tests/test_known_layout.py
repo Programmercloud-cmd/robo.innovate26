@@ -15,7 +15,7 @@ class KnownLayoutTests(unittest.TestCase):
         # Tiny one-cell window is sufficient to exercise observability logic.
         registration={"file":"blank","canonical_quad_xy":[[20,20],[180,20],[180,180],[20,180]],
             "supplied_layout":{"strips":1,"groups_along_strip":1,"strip_pitch_studs":4}}
-        for version in ("v0","v1"):
+        for version in ("v0","v1","v2"):
             with self.subTest(version=version):
                 config=json.loads((root/f"perception/configs/baseline_{version}.json").read_text())
                 result=analyze(np.full((200,200,3),128,np.uint8),registration,config)
