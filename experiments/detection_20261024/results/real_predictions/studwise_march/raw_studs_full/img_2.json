@@ -1,0 +1,24 @@
+{
+  "image": "img_2.jpg",
+  "domain": "real",
+  "width": 1280,
+  "height": 720,
+  "detections": [
+    {
+      "box_image_xyxy": [
+        1121.9517822265625,
+        346.60223388671875,
+        1279.5753173828125,
+        504.28790283203125
+      ],
+      "center_image_xy": [
+        1200.7635498046875,
+        425.445068359375
+      ],
+      "confidence": 0.39849671721458435,
+      "class_id": 0,
+      "class_name": "item"
+    }
+  ],
+  "max_det_cap_reached": false
+}
