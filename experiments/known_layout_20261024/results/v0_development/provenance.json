@@ -1,0 +1,8 @@
+{
+  "pueue_job_id": 1667,
+  "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261023T234525.001300Z-known-layout-v0-development",
+  "source_commit": "2ccb3acba82a6cd9fb6c4763836ade63b2eee88a",
+  "algorithm_checkpoint": "7d6ae08",
+  "scope": "development only; held-out group D not evaluated",
+  "source_evaluation_sha256": "837a4a8ea108f0a12e8708c2ebef439a954a4d51e134b46d1605527fb724a0ca"
+}
