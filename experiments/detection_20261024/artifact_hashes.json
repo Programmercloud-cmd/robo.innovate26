@@ -1,5 +1,5 @@
 {
-  "REPORT.md": "b9bc2974d81158daa7f4f309bfa6f2ce38506474e6b6b207049d0a08705faea3",
+  "REPORT.md": "d2dd4cd3fbed0d83f2251ad5d17048372bcb68e5d54175ecc9983b594c80533b",
   "models/Brick_Model_best20250123_192838t.pt": "1853d5efbbacec4b6058761c5368483971a0fd01dd25205521c5620c111cdbee",
   "models/Stud_Model_best20250124_170824.pt": "2f37a4bc5c5be3677683c036d1b9b2e914225840b453fdf260ff673b8696477d",
   "models/bricks_model_kaggle50epoch_10032025.pt": "a1cb24df060c08886cbce3bdca8d18e4da0fead3f722cf7e088bc21bcadbcd63",
@@ -328,5 +328,7 @@
   "upstream/xuanyi_Tiny_YOLO_v3.ipynb": "ea43b51f822512a791bcbdfcc40e9802a33735649fbb7f5592305db9fe241f65",
   "upstream/xuanyi_YOLO_v3.ipynb": "ef4fdf11a5901de1d51fd511f00000f0a8b0db0a2c33f28ec208fa6f4de1cbda",
   "upstream/xuanyi_drive_availability.json": "a121db3ff6593174ec0a6a2ea843a308634d3a089cc3fafe51eaa6dbe2cb6965",
-  "upstream/xuanyi_tree.json": "5f3b0886b2d24a091a483d2a44a2ebbdf2cc88ba75b745d11787b1243c6e14f3"
+  "upstream/xuanyi_tree.json": "5f3b0886b2d24a091a483d2a44a2ebbdf2cc88ba75b745d11787b1243c6e14f3",
+  "ARCHIVE.md": "a9560d478d08bbc7cc2921d8fb538cf917bd6a17a30b33bda4bde31ed7345ede",
+  ".gitignore": "a40326ce4e871678c4752523d08ffdfc50f5d81a406bb847c80043b53f65d903"
 }

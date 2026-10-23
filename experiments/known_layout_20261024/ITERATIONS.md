@@ -13,8 +13,12 @@
 ## Geometric baseline v0
 
 - Status: implementation and independent protocol preparation authorized.
+- Protocol checkpoint: `1dfeae8`; initial algorithm checkpoint: `7d6ae08`.
 - Scope: manual coarse global registration, supplied observed grid/plane,
   projected stud/brick geometry, bounded refinement, grayscale stud and edge
   evidence, local lower-pattern counter-evidence, three-way decisions.
 - Evaluation, source commit, Pueue ID and outcomes will be recorded after the
   first frozen run. This entry is not a claim of measured performance.
+- Static validation: seven small tests passed, including the rule that a blank
+  image with a supplied layout cannot confirm present or missing. This is not
+  a substitute for the independent image batch.
