@@ -1,0 +1,755 @@
+{
+  "experiment": "sam3_fixed_text_only_20261024",
+  "docker_image": "sha256:ae4ae0cfc9d41eadf32bf9ac689252fccd3a1f804bb69d088b65e47d91cad317",
+  "python": "3.12.11",
+  "versions": {
+    "sam3": "0.1.0",
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0+cu128",
+    "numpy": "1.26.4",
+    "opencv-python": null,
+    "opencv-python-headless": "4.11.0.86",
+    "Pillow": "11.3.0",
+    "triton": "3.6.0"
+  },
+  "opencv_runtime": "4.11.0",
+  "network": "disabled by Docker launcher",
+  "config": {
+    "experiment": "sam3_fixed_text_only_20261024",
+    "prompts": [
+      {
+        "id": "stack",
+        "text": "stack of LEGO bricks"
+      },
+      {
+        "id": "brick",
+        "text": "LEGO brick"
+      },
+      {
+        "id": "brick_2x4",
+        "text": "2x4 LEGO brick"
+      },
+      {
+        "id": "top_surface",
+        "text": "top surface of a LEGO brick"
+      }
+    ],
+    "docker_image": "sha256:ae4ae0cfc9d41eadf32bf9ac689252fccd3a1f804bb69d088b65e47d91cad317",
+    "confidence_threshold": 0.5,
+    "resolution": 1008,
+    "precision": "CUDA BF16 autocast",
+    "deduplication": false,
+    "postprocessing": "none; raw model outputs above unchanged processor threshold",
+    "expected_images": 18
+  },
+  "config_sha256": "46cf43eb40271697e2f43a4c54a496ae5f346027a6d93b8c7903181be69a5da2",
+  "adapter_sha256": "9b86cc6c223ab934a6c37cf8b7a5dc626370a3d61464a2749caec080045c25a1",
+  "source_adapter_provenance": {
+    "repository": "/home/faps/dev/github/AimAssist",
+    "repository_commit": "e0ab240e549c4780980dd868cf135f045e45ae5d",
+    "copied_adapter": "track_2a/src/sam3_candidates.py",
+    "sha256": {
+      "checkpoint.json": "1350ed056a4d5124248ca4b869e6d3295ab878551e8c3baba0d928fe7adad0ae",
+      "sam3_candidates.py": "9b86cc6c223ab934a6c37cf8b7a5dc626370a3d61464a2749caec080045c25a1",
+      "requirements-a1.txt": "1c66ad9ad9480fad7406f8263b585412ce50a87697e7ed893c832ebe525521fd"
+    },
+    "aimassist_initial_git_status": "?? track_2a/docs/m1-harness-development/\n",
+    "container_image": "sha256:ae4ae0cfc9d41eadf32bf9ac689252fccd3a1f804bb69d088b65e47d91cad317",
+    "changes_to_AimAssist": false
+  },
+  "checkpoint_metadata": {
+    "acquired_at": "2026-10-02T22:55:02.777205+00:00",
+    "repository": "facebook/sam3",
+    "model_revision": "3c879f39826c281e95690f02c7821c4de09afae7",
+    "filename": "sam3.pt",
+    "sha256": "9999e2341ceef5e136daa386eecb55cb414446a00ac2b55eb2dfd2f7c3cf8c9e",
+    "expected_lfs_sha256": "9999e2341ceef5e136daa386eecb55cb414446a00ac2b55eb2dfd2f7c3cf8c9e",
+    "bytes": 3450062241,
+    "local_path": "/home/faps/.cache/aimassist/huggingface/models--facebook--sam3/snapshots/3c879f39826c281e95690f02c7821c4de09afae7/sam3.pt",
+    "source_revision": "660a5e9e1b8b4c02c0ad97229b88a09a6e4ff5b7",
+    "access": "authorized HF_TOKEN from untracked .env.local; SHA-256 verified against Hugging Face LFS metadata"
+  },
+  "checkpoint_sha256_verified": "9999e2341ceef5e136daa386eecb55cb414446a00ac2b55eb2dfd2f7c3cf8c9e",
+  "input_sha256": {
+    "img_1.jpg": "3eea0741cf5423d7dbecdd73e7a29e2da2aae1a9e9f047b75e848d8ff059c5f4",
+    "img_10.jpg": "9a6b67b34cbf91de7a843c6e879e5fb53b21aeca6961d5ee926385afa19afa0b",
+    "img_11.jpg": "bc1bcd68b3a675a5feb035b5c66cb1a9314183277076047c9274773235f47e61",
+    "img_12.jpg": "36970d2545e467c5f2c9c185d66a6a92bd5c50ed07d35213e4b77009d896ab03",
+    "img_13.jpg": "f525303f710226a88efe02fdec71f3002b3a13010b6a057b1e7d440f7181165a",
+    "img_14.jpg": "bd38cb66e21af10f14134d8148307f367e67cdaa53a0e85af1dd56765b458772",
+    "img_15.jpg": "98f9f5d25f197e934e2f3db351e960d1e765196dbc2ee0204e9f75fc150ee634",
+    "img_16.jpg": "1da3d711f77275754cb60e5c45ee43bbc8157e461d64db9be5af970a18c76ddf",
+    "img_17.jpg": "94d8b0156a30cdd5ad35999ed8abaefd37e3fccce3720e5cbffb5aa2cebd5b4f",
+    "img_18.jpg": "2809f044a7433b82cfa237aff78b234d03ed1d86ccc3c28d41cb9a110ef36936",
+    "img_2.jpg": "4fa4da3aa00d4a75f1b9f19925f38290ee937eb5c86351f16916683e4550a702",
+    "img_3.jpg": "7119555e59c9f3ca9a95f69700521c0f39aba06ccfca62188dd829f61f88ba3b",
+    "img_4.jpg": "47678ea3c10715eef60f8c77fbb65cf58f5a8745c75a3b83f74728c6466c4c1d",
+    "img_5.jpg": "df5d68d0cad2ad4779fceb379a1904d5591cb2ef45ff41afb3eb5df7197bc1c4",
+    "img_6.jpg": "783ac67686190394fc1f9f69f51c68e8040d5b9d69d3d5143f010db84751bc3d",
+    "img_7.jpg": "283c6229a58df69c9540eb2604a6c68aa8724208f92ce4c6188ecea0ce87d9c3",
+    "img_8.jpg": "f7a8ec98f756b2a4964dae59e2dfa13d4a703f12bbe322bcefeec1f3a21b839d",
+    "img_9.jpg": "8da9d78f56b66cf0486551e983b99906f909a26b2c0d2dba4dce4f35a175ff2f"
+  },
+  "model": {
+    "source_revision": "660a5e9e1b8b4c02c0ad97229b88a09a6e4ff5b7",
+    "model_repository": "facebook/sam3",
+    "model_revision": "3c879f39826c281e95690f02c7821c4de09afae7",
+    "checkpoint_sha256": "9999e2341ceef5e136daa386eecb55cb414446a00ac2b55eb2dfd2f7c3cf8c9e",
+    "checkpoint_name": "sam3.pt",
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "gpu_total_bytes": 12335316992,
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "precision": "CUDA BF16 autocast",
+    "resolution": 1008,
+    "confidence_threshold": 0.5,
+    "dedup_iou": 0.8,
+    "compile": false,
+    "interactive": false,
+    "model_load_seconds": 10.130335998001101,
+    "peak_allocated_bytes": 3575266304,
+    "peak_reserved_bytes": 3682598912
+  },
+  "images": [
+    {
+      "image": "img_1.jpg",
+      "width": 1280,
+      "height": 720,
+      "counts": {
+        "stack": 1,
+        "brick": 61,
+        "brick_2x4": 0,
+        "top_surface": 0
+      },
+      "timing": {
+        "segmentation_seconds": 1.6746696310001425,
+        "encoder_seconds": 0.8952045670012012,
+        "queries": [
+          {
+            "concept": "stack of LEGO bricks",
+            "seconds": 0.6060113900020951
+          },
+          {
+            "concept": "LEGO brick",
+            "seconds": 0.048889022997173015
+          },
+          {
+            "concept": "2x4 LEGO brick",
+            "seconds": 0.02983044400025392
+          },
+          {
+            "concept": "top surface of a LEGO brick",
+            "seconds": 0.029440181999234483
+          }
+        ],
+        "peak_allocated_bytes": 5464896000,
+        "peak_reserved_bytes": 6043992064
+      }
+    },
+    {
+      "image": "img_10.jpg",
+      "width": 1280,
+      "height": 720,
+      "counts": {
+        "stack": 1,
+        "brick": 54,
+        "brick_2x4": 2,
+        "top_surface": 1
+      },
+      "timing": {
+        "segmentation_seconds": 0.331441852998978,
+        "encoder_seconds": 0.12830138499703025,
+        "queries": [
+          {
+            "concept": "stack of LEGO bricks",
+            "seconds": 0.03343037699960405
+          },
+          {
+            "concept": "LEGO brick",
+            "seconds": 0.048847502999706194
+          },
+          {
+            "concept": "2x4 LEGO brick",
+            "seconds": 0.029803864999848884
+          },
+          {
+            "concept": "top surface of a LEGO brick",
+            "seconds": 0.03102861200022744
+          }
+        ],
+        "peak_allocated_bytes": 5410562560,
+        "peak_reserved_bytes": 6043992064
+      }
+    },
+    {
+      "image": "img_11.jpg",
+      "width": 1280,
+      "height": 720,
+      "counts": {
+        "stack": 1,
+        "brick": 55,
+        "brick_2x4": 2,
+        "top_surface": 1
+      },
+      "timing": {
+        "segmentation_seconds": 0.33328284500021255,
+        "encoder_seconds": 0.12759792999713682,
+        "queries": [
+          {
+            "concept": "stack of LEGO bricks",
+            "seconds": 0.03321751600014977
+          },
+          {
+            "concept": "LEGO brick",
+            "seconds": 0.0485336109995842
+          },
+          {
+            "concept": "2x4 LEGO brick",
+            "seconds": 0.03309741599514382
+          },
+          {
+            "concept": "top surface of a LEGO brick",
+            "seconds": 0.0295195330036222
+          }
+        ],
+        "peak_allocated_bytes": 5418101248,
+        "peak_reserved_bytes": 6043992064
+      }
+    },
+    {
+      "image": "img_12.jpg",
+      "width": 1280,
+      "height": 720,
+      "counts": {
+        "stack": 1,
+        "brick": 57,
+        "brick_2x4": 0,
+        "top_surface": 0
+      },
+      "timing": {
+        "segmentation_seconds": 0.32694203699793434,
+        "encoder_seconds": 0.12919665099616395,
+        "queries": [
+          {
+            "concept": "stack of LEGO bricks",
+            "seconds": 0.0334765870065894
+          },
+          {
+            "concept": "LEGO brick",
+            "seconds": 0.04654526899685152
+          },
+          {
+            "concept": "2x4 LEGO brick",
+            "seconds": 0.028408496000338346
+          },
+          {
+            "concept": "top surface of a LEGO brick",
+            "seconds": 0.029784723999910057
+          }
+        ],
+        "peak_allocated_bytes": 5434061312,
+        "peak_reserved_bytes": 6043992064
+      }
+    },
+    {
+      "image": "img_13.jpg",
+      "width": 1280,
+      "height": 720,
+      "counts": {
+        "stack": 1,
+        "brick": 62,
+        "brick_2x4": 0,
+        "top_surface": 0
+      },
+      "timing": {
+        "segmentation_seconds": 0.3436610019998625,
+        "encoder_seconds": 0.12928391200694023,
+        "queries": [
+          {
+            "concept": "stack of LEGO bricks",
+            "seconds": 0.033844999998109415
+          },
+          {
+            "concept": "LEGO brick",
+            "seconds": 0.052730067996890284
+          },
+          {
+            "concept": "2x4 LEGO brick",
+            "seconds": 0.031171403999906033
+          },
+          {
+            "concept": "top surface of a LEGO brick",
+            "seconds": 0.0299098760006018
+          }
+        ],
+        "peak_allocated_bytes": 5470990848,
+        "peak_reserved_bytes": 6501171200
+      }
+    },
+    {
+      "image": "img_14.jpg",
+      "width": 1280,
+      "height": 720,
+      "counts": {
+        "stack": 1,
+        "brick": 47,
+        "brick_2x4": 0,
+        "top_surface": 0
+      },
+      "timing": {
+        "segmentation_seconds": 0.3200079759990331,
+        "encoder_seconds": 0.12825430600059917,
+        "queries": [
+          {
+            "concept": "stack of LEGO bricks",
+            "seconds": 0.033744369000487495
+          },
+          {
+            "concept": "LEGO brick",
+            "seconds": 0.04553820200089831
+          },
+          {
+            "concept": "2x4 LEGO brick",
+            "seconds": 0.03165228699799627
+          },
+          {
+            "concept": "top surface of a LEGO brick",
+            "seconds": 0.02981069499946898
+          }
+        ],
+        "peak_allocated_bytes": 5357791744,
+        "peak_reserved_bytes": 6501171200
+      }
+    },
+    {
+      "image": "img_15.jpg",
+      "width": 1280,
+      "height": 720,
+      "counts": {
+        "stack": 1,
+        "brick": 50,
+        "brick_2x4": 0,
+        "top_surface": 0
+      },
+      "timing": {
+        "segmentation_seconds": 0.3238992229962605,
+        "encoder_seconds": 0.12890526100090938,
+        "queries": [
+          {
+            "concept": "stack of LEGO bricks",
+            "seconds": 0.0338281599979382
+          },
+          {
+            "concept": "LEGO brick",
+            "seconds": 0.047954408000805415
+          },
+          {
+            "concept": "2x4 LEGO brick",
+            "seconds": 0.02849539699673187
+          },
+          {
+            "concept": "top surface of a LEGO brick",
+            "seconds": 0.030809320996922906
+          }
+        ],
+        "peak_allocated_bytes": 5380407808,
+        "peak_reserved_bytes": 6501171200
+      }
+    },
+    {
+      "image": "img_16.jpg",
+      "width": 1280,
+      "height": 720,
+      "counts": {
+        "stack": 1,
+        "brick": 47,
+        "brick_2x4": 0,
+        "top_surface": 0
+      },
+      "timing": {
+        "segmentation_seconds": 0.32369875199947273,
+        "encoder_seconds": 0.12888503100111848,
+        "queries": [
+          {
+            "concept": "stack of LEGO bricks",
+            "seconds": 0.033960862005187664
+          },
+          {
+            "concept": "LEGO brick",
+            "seconds": 0.04550850300438469
+          },
+          {
+            "concept": "2x4 LEGO brick",
+            "seconds": 0.030356288996699732
+          },
+          {
+            "concept": "top surface of a LEGO brick",
+            "seconds": 0.03177034800319234
+          }
+        ],
+        "peak_allocated_bytes": 5357791744,
+        "peak_reserved_bytes": 6501171200
+      }
+    },
+    {
+      "image": "img_17.jpg",
+      "width": 1280,
+      "height": 720,
+      "counts": {
+        "stack": 1,
+        "brick": 67,
+        "brick_2x4": 0,
+        "top_surface": 0
+      },
+      "timing": {
+        "segmentation_seconds": 0.35223924100137083,
+        "encoder_seconds": 0.12885128099878784,
+        "queries": [
+          {
+            "concept": "stack of LEGO bricks",
+            "seconds": 0.03382039099960821
+          },
+          {
+            "concept": "LEGO brick",
+            "seconds": 0.05255430699617136
+          },
+          {
+            "concept": "2x4 LEGO brick",
+            "seconds": 0.03329217699501896
+          },
+          {
+            "concept": "top surface of a LEGO brick",
+            "seconds": 0.03168316699884599
+          }
+        ],
+        "peak_allocated_bytes": 5509516800,
+        "peak_reserved_bytes": 6996099072
+      }
+    },
+    {
+      "image": "img_18.jpg",
+      "width": 1280,
+      "height": 720,
+      "counts": {
+        "stack": 1,
+        "brick": 52,
+        "brick_2x4": 0,
+        "top_surface": 0
+      },
+      "timing": {
+        "segmentation_seconds": 0.3269458949944237,
+        "encoder_seconds": 0.12858100999437738,
+        "queries": [
+          {
+            "concept": "stack of LEGO bricks",
+            "seconds": 0.034331103997828905
+          },
+          {
+            "concept": "LEGO brick",
+            "seconds": 0.04869184300332563
+          },
+          {
+            "concept": "2x4 LEGO brick",
+            "seconds": 0.029531323998526204
+          },
+          {
+            "concept": "top surface of a LEGO brick",
+            "seconds": 0.029091830998368096
+          }
+        ],
+        "peak_allocated_bytes": 5395485184,
+        "peak_reserved_bytes": 6996099072
+      }
+    },
+    {
+      "image": "img_2.jpg",
+      "width": 1280,
+      "height": 720,
+      "counts": {
+        "stack": 1,
+        "brick": 65,
+        "brick_2x4": 0,
+        "top_surface": 0
+      },
+      "timing": {
+        "segmentation_seconds": 0.3460335850031697,
+        "encoder_seconds": 0.1282080590026453,
+        "queries": [
+          {
+            "concept": "stack of LEGO bricks",
+            "seconds": 0.03406375199847389
+          },
+          {
+            "concept": "LEGO brick",
+            "seconds": 0.052312555999378674
+          },
+          {
+            "concept": "2x4 LEGO brick",
+            "seconds": 0.03136056500079576
+          },
+          {
+            "concept": "top surface of a LEGO brick",
+            "seconds": 0.03115971400256967
+          }
+        ],
+        "peak_allocated_bytes": 5493489152,
+        "peak_reserved_bytes": 6996099072
+      }
+    },
+    {
+      "image": "img_3.jpg",
+      "width": 1280,
+      "height": 720,
+      "counts": {
+        "stack": 0,
+        "brick": 65,
+        "brick_2x4": 1,
+        "top_surface": 0
+      },
+      "timing": {
+        "segmentation_seconds": 0.34241262399882544,
+        "encoder_seconds": 0.1282024289976107,
+        "queries": [
+          {
+            "concept": "stack of LEGO bricks",
+            "seconds": 0.03312476699647959
+          },
+          {
+            "concept": "LEGO brick",
+            "seconds": 0.05275043899746379
+          },
+          {
+            "concept": "2x4 LEGO brick",
+            "seconds": 0.03227578099904349
+          },
+          {
+            "concept": "top surface of a LEGO brick",
+            "seconds": 0.029538003997004125
+          }
+        ],
+        "peak_allocated_bytes": 5493489152,
+        "peak_reserved_bytes": 6996099072
+      }
+    },
+    {
+      "image": "img_4.jpg",
+      "width": 1280,
+      "height": 720,
+      "counts": {
+        "stack": 1,
+        "brick": 64,
+        "brick_2x4": 6,
+        "top_surface": 0
+      },
+      "timing": {
+        "segmentation_seconds": 0.3508554789950722,
+        "encoder_seconds": 0.12899070499406662,
+        "queries": [
+          {
+            "concept": "stack of LEGO bricks",
+            "seconds": 0.0353452900017146
+          },
+          {
+            "concept": "LEGO brick",
+            "seconds": 0.05113719899964053
+          },
+          {
+            "concept": "2x4 LEGO brick",
+            "seconds": 0.032193220999033656
+          },
+          {
+            "concept": "top surface of a LEGO brick",
+            "seconds": 0.030860412000038195
+          }
+        ],
+        "peak_allocated_bytes": 5485949440,
+        "peak_reserved_bytes": 6996099072
+      }
+    },
+    {
+      "image": "img_5.jpg",
+      "width": 1280,
+      "height": 720,
+      "counts": {
+        "stack": 0,
+        "brick": 61,
+        "brick_2x4": 0,
+        "top_surface": 0
+      },
+      "timing": {
+        "segmentation_seconds": 0.3430427210041671,
+        "encoder_seconds": 0.12807420900207944,
+        "queries": [
+          {
+            "concept": "stack of LEGO bricks",
+            "seconds": 0.033542830002261326
+          },
+          {
+            "concept": "LEGO brick",
+            "seconds": 0.05223687599936966
+          },
+          {
+            "concept": "2x4 LEGO brick",
+            "seconds": 0.03042843000002904
+          },
+          {
+            "concept": "top surface of a LEGO brick",
+            "seconds": 0.029529594001360238
+          }
+        ],
+        "peak_allocated_bytes": 5463552512,
+        "peak_reserved_bytes": 6996099072
+      }
+    },
+    {
+      "image": "img_6.jpg",
+      "width": 1280,
+      "height": 720,
+      "counts": {
+        "stack": 1,
+        "brick": 64,
+        "brick_2x4": 0,
+        "top_surface": 0
+      },
+      "timing": {
+        "segmentation_seconds": 0.344325400001253,
+        "encoder_seconds": 0.13050988499890082,
+        "queries": [
+          {
+            "concept": "stack of LEGO bricks",
+            "seconds": 0.03370784100115998
+          },
+          {
+            "concept": "LEGO brick",
+            "seconds": 0.04929005799931474
+          },
+          {
+            "concept": "2x4 LEGO brick",
+            "seconds": 0.03191603999584913
+          },
+          {
+            "concept": "top surface of a LEGO brick",
+            "seconds": 0.030433010004344396
+          }
+        ],
+        "peak_allocated_bytes": 5485949440,
+        "peak_reserved_bytes": 6996099072
+      }
+    },
+    {
+      "image": "img_7.jpg",
+      "width": 1280,
+      "height": 720,
+      "counts": {
+        "stack": 1,
+        "brick": 64,
+        "brick_2x4": 0,
+        "top_surface": 1
+      },
+      "timing": {
+        "segmentation_seconds": 0.3405230880016461,
+        "encoder_seconds": 0.12886887499917066,
+        "queries": [
+          {
+            "concept": "stack of LEGO bricks",
+            "seconds": 0.03375949099427089
+          },
+          {
+            "concept": "LEGO brick",
+            "seconds": 0.05114036899612984
+          },
+          {
+            "concept": "2x4 LEGO brick",
+            "seconds": 0.029490095002984162
+          },
+          {
+            "concept": "top surface of a LEGO brick",
+            "seconds": 0.02913139200245496
+          }
+        ],
+        "peak_allocated_bytes": 5485949440,
+        "peak_reserved_bytes": 6996099072
+      }
+    },
+    {
+      "image": "img_8.jpg",
+      "width": 1280,
+      "height": 720,
+      "counts": {
+        "stack": 0,
+        "brick": 64,
+        "brick_2x4": 0,
+        "top_surface": 0
+      },
+      "timing": {
+        "segmentation_seconds": 0.33846705600444693,
+        "encoder_seconds": 0.12824867100425763,
+        "queries": [
+          {
+            "concept": "stack of LEGO bricks",
+            "seconds": 0.03455349599971669
+          },
+          {
+            "concept": "LEGO brick",
+            "seconds": 0.04806210000242572
+          },
+          {
+            "concept": "2x4 LEGO brick",
+            "seconds": 0.03131174600275699
+          },
+          {
+            "concept": "top surface of a LEGO brick",
+            "seconds": 0.029789046006044373
+          }
+        ],
+        "peak_allocated_bytes": 5485949440,
+        "peak_reserved_bytes": 6996099072
+      }
+    },
+    {
+      "image": "img_9.jpg",
+      "width": 1280,
+      "height": 720,
+      "counts": {
+        "stack": 0,
+        "brick": 63,
+        "brick_2x4": 0,
+        "top_surface": 0
+      },
+      "timing": {
+        "segmentation_seconds": 0.3349566260003485,
+        "encoder_seconds": 0.1278034899951308,
+        "queries": [
+          {
+            "concept": "stack of LEGO bricks",
+            "seconds": 0.033349878001899924
+          },
+          {
+            "concept": "LEGO brick",
+            "seconds": 0.050604586002009455
+          },
+          {
+            "concept": "2x4 LEGO brick",
+            "seconds": 0.029761605997919105
+          },
+          {
+            "concept": "top surface of a LEGO brick",
+            "seconds": 0.0285893389955163
+          }
+        ],
+        "peak_allocated_bytes": 5478576640,
+        "peak_reserved_bytes": 6996099072
+      }
+    }
+  ],
+  "notes": [
+    "One image encoding per image; unchanged adapter resets prompts for each independent query.",
+    "All returned raw masks/boxes/scores retained, including empty masks; no candidates_from_raw call.",
+    "Processor confidence threshold 0.5 is unchanged; no additional filtering or suppression.",
+    "Masks are original-resolution adapter PNGs copied byte-for-byte, not repaired or refined.",
+    "Inference receives only RGB, fixed text prompts, checkpoint and pinned software metadata."
+  ],
+  "seconds": 37.649947368998255,
+  "maximum_peak_allocated_bytes": 5509516800,
+  "maximum_peak_reserved_bytes": 6996099072
+}

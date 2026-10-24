@@ -9,6 +9,10 @@ The required **360-brick** simulation comparison remains incomplete because
 the full stack's repeating translations are unresolved. The legacy 48-brick
 scene below is not that benchmark.
 
+The separate [fixed-prompt SAM 3 experiment](experiments/sam3_20261024/REPORT.md)
+is complete. It records raw masks and measured failure modes without changing
+the active known-layout baseline.
+
 Isaac Sim 5.1 / Isaac Lab workcell for the **Franka Research 3**, using native
 [BrickSim](https://github.com/intelligent-control-lab/BrickSim) interlocking-brick
 physics. The robot type follows the team's confirmed hardware. The supplied

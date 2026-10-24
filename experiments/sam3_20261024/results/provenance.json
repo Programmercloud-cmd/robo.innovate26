@@ -1,0 +1,12 @@
+{
+  "pueue_job_id": 1673,
+  "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T082019.190658Z-sam3-fixed-prompts",
+  "source_commit": "99e8fdb9671209291fd19cbab4050a76d78600e2",
+  "evaluation_sha256": "35e8e50289d56fc6fd6044d52c619e512e64ce83d0289ebf19ef89ea78bbbbcd",
+  "protocol_sha256": "6edc1fc7ce912db819db4e02453655aa72a8b4297fc83ea6ee76fe57ce5dfd78",
+  "reference_sha256": "1a36cf4531bca88678a989fb01421df1304dcfe3a980318ac4b06a936e936e3f",
+  "artifact_hash_manifest": "/home/faps/dev/github/robo.innovate26/runs/20261024T082019.190658Z-sam3-fixed-prompts/output/predictions/artifact_hashes.json",
+  "artifact_hash_manifest_sha256": "2a353c461b91095592cd87a9c9720526de14dddb1a4c4e83d7451d2caf21c904",
+  "raw_predictions_root": "/home/faps/dev/github/robo.innovate26/runs/20261024T082019.190658Z-sam3-fixed-prompts/output/predictions",
+  "large_masks_and_overlays": "Retained unchanged in ignored immutable run, not duplicated into durable results."
+}

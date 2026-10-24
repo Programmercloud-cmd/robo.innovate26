@@ -1,5 +1,8 @@
 # Fixed SAM 3 text-only experiment
 
+**Completed:** [compact measured results and artifacts](REPORT.md), Pueue job
+1673. No prompt tuning or follow-on development is included.
+
 Bounded comparison of four independently reset text prompts on all 18 uploaded
 wrist-camera JPEGs. This experiment does not change the active known-layout
 baseline, AimAssist, shared dependencies or model weights. No manual prompts,

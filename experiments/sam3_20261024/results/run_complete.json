@@ -1,0 +1,8 @@
+{
+  "complete": true,
+  "images": 18,
+  "prompts": 4,
+  "image_prompt_outputs": 72,
+  "runtime_manifest_sha256": "40cd4337e593a48493ec2ae9375669932b15498ae2baf189dd4599c83be9acbc",
+  "artifact_hashes_sha256": "2a353c461b91095592cd87a9c9720526de14dddb1a4c4e83d7451d2caf21c904"
+}
