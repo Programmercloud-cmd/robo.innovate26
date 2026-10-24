@@ -80,7 +80,11 @@ def main():
         target = a.output/(camera['id']+'_annotated.png')
         cv2.imwrite(str(target), image)
         outputs.append(str(target))
-    reference_crop = photo[:245, 500:850]
+    # Redraw only the feature marks inside the crop; don't crop full-photo text.
+    reference_crop = cv2.imread(str(a.photo))[:245, 500:850].copy()
+    cv2.rectangle(reference_crop, (42, 21), (112, 116), (0, 110, 230), 2)
+    cv2.rectangle(reference_crop, (90, 133), (280, 207), (0, 140, 40), 2)
+    cv2.arrowedLine(reference_crop, (172, 145), (82, 71), (0, 110, 230), 3, tipLength=.15)
     model = cv2.imread(str(a.output/'base_top_annotated.png'))
     model_crop = model[150:750, 350:950]
     cells = []
