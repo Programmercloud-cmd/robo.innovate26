@@ -52,7 +52,7 @@
   fixed-center v0 score was zero; even the existing local search reached only
   0.113 maximum, below the frozen 0.35 feature confirmation threshold.
 - Observability median was 0.786. Radial-gradient mean was below the
-  whole-patch mean plus two at every measured true center; the original
+  whole-patch mean plus two at every historical marked location; the original
   concentration formula therefore clipped the response at those marked
   locations to zero. A later audit limits their interpretation as centers.
   Merely expanding registration search is not supported as the first change.
@@ -62,7 +62,7 @@
   robust local median, and the existing observability gate.
 - Proposed single code change: replace the stud response calculation only.
   Radii, search bounds, global registration and decision thresholds remain
-  unchanged. A 0.5 gradient-unit quantization floor is explicitly documented.
+  unchanged. A fixed 0.5 gradient-unit weak-gradient/noise floor is documented.
 - Independent reviewer endorsed this bounded test. Acceptance still requires
   useful decision coverage with controlled errors on the identical development
   protocol; nonzero feature scores alone do not establish improvement.
@@ -216,3 +216,29 @@
   independent evaluator and reviewer recommend pausing algorithm changes after
   auditing the already selected v1 on held-out group D.
 - Evidence: `results/v3_development/`; held-out D has not yet been used.
+
+## Final restoration, held-out audit and pause
+
+- Exact v3 rollback checkpoint: `12dd890`. Algorithm, implementation README
+  and tiny sanity test were verified byte-for-byte against the pre-v3 selected
+  v1 state; v3's active configuration was removed. Historical results remain.
+  Seven small geometry/sanity tests and five scorer tests passed; frozen
+  reference/protocol hashes were unchanged. Subsequent edits are reporting only.
+- V1 was selected before opening group D. Final Pueue **1672**, source
+  `12dd890`, snapshot `runs/20261024T001228.831310Z-known-layout-v1-heldout/`,
+  completed two views × ten fixed cases. No tuning followed these results.
+- Nominal held-out: **21/54 correct present (38.9%)**, 33 uncertain, zero
+  unmatched positives and zero measured incorrect confirmations on scored
+  regions. Two additional present decisions lie in excluded ambiguous regions.
+  Per-view coverage: img_13 14/28, img_16 7/26. No held-out missing-face labels
+  exist, so missing accuracy cannot be evaluated there.
+- Correct-present sensitivity /54: dark/bright 18/22, rotations 21/21,
+  x initialization 24/11, y initialization 12/21. Flat confirmations zero.
+  One rotated AABB lower-fragment overlap proxy also matches a positive face;
+  this is not proof of a physical layer error. No further model selection.
+- Decision: retain v1 as the best working baseline, **not demonstration
+  accepted**. Nominal development remains 37/112 present and 0/6 missing.
+  The planner, independent evaluator and reviewer explicitly agree to pause
+  for verified current-layer/reference geometry, valid center references and
+  calibration. The hidden 360-brick translations remain a simulation blocker.
+- Final evidence and reproducibility: `results/v1_heldout/` and `REPORT.md`.

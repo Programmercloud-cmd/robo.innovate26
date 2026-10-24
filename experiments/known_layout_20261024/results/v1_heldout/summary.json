@@ -1,0 +1,357 @@
+{
+  "source_commit": "12dd890f100203323fbe0e3337578f22f7ed1641",
+  "selected_before_test": "baseline_v1",
+  "pueue_job_id": 1672,
+  "snapshot": "runs/20261024T001228.831310Z-known-layout-v1-heldout",
+  "independent_correlation_groups": 1,
+  "nominal": {
+    "positive_reference_count": 54,
+    "original_ambiguous_excluded": 6,
+    "missing_reference_count": 0,
+    "lower_fragment_reference_count": 8,
+    "candidate_count": 60,
+    "correct_present": 21,
+    "missed_individual_faces": 33,
+    "scored_confirmed_present": 21,
+    "incorrect_confirmed_present": 0,
+    "merged_candidates": 0,
+    "merged_confirmed_present": 0,
+    "duplicate_candidates": 0,
+    "duplicate_confirmed_present": 0,
+    "labeled_lower_fragment_top_selections": 0,
+    "ambiguous_present_ignored": 2,
+    "manual_stud_reference_count": 16,
+    "positive_decisions": {
+      "present": 21,
+      "missing": 0,
+      "uncertain": 33,
+      "no_match": 0
+    },
+    "missing_decisions": {
+      "present": 0,
+      "missing": 0,
+      "uncertain": 0,
+      "no_match": 0
+    },
+    "image_observations": 2,
+    "present_instance_precision": 1.0,
+    "positive_decisive_coverage": 0.3888888888888889,
+    "positive_correct_present_coverage": 0.3888888888888889,
+    "missing_decisive_coverage": null,
+    "missing_correct_coverage": null,
+    "orientation_deg": {
+      "count": 54,
+      "median": 0.1911347178481435,
+      "p90": 0.9540166586793817,
+      "max": 1.4595342053339238
+    },
+    "projected_stud_error_px": {
+      "count": 16,
+      "median": 4.9864486029148605,
+      "p90": 6.054190563217553,
+      "max": 6.1059617997150495
+    },
+    "observed_stud_peak_error_px": {
+      "count": 6,
+      "median": 3.420748966226875,
+      "p90": 4.2190732353061025,
+      "max": 4.264560412644602
+    },
+    "actual_physical_current_top_accuracy": null
+  },
+  "cases": {
+    "brightness_070": {
+      "correct_present": 18,
+      "incorrect_confirmed_present": 0,
+      "positive_correct_present_coverage": 0.3333333333333333,
+      "present_instance_precision": 1.0,
+      "positive_decisions": {
+        "present": 18,
+        "missing": 0,
+        "uncertain": 36,
+        "no_match": 0
+      },
+      "labeled_lower_fragment_top_selections": 0
+    },
+    "brightness_130": {
+      "correct_present": 22,
+      "incorrect_confirmed_present": 0,
+      "positive_correct_present_coverage": 0.4074074074074074,
+      "present_instance_precision": 1.0,
+      "positive_decisions": {
+        "present": 22,
+        "missing": 0,
+        "uncertain": 32,
+        "no_match": 0
+      },
+      "labeled_lower_fragment_top_selections": 0
+    },
+    "initial_x_m04": {
+      "correct_present": 24,
+      "incorrect_confirmed_present": 0,
+      "positive_correct_present_coverage": 0.4444444444444444,
+      "present_instance_precision": 1.0,
+      "positive_decisions": {
+        "present": 24,
+        "missing": 0,
+        "uncertain": 30,
+        "no_match": 0
+      },
+      "labeled_lower_fragment_top_selections": 0
+    },
+    "initial_x_p04": {
+      "correct_present": 11,
+      "incorrect_confirmed_present": 0,
+      "positive_correct_present_coverage": 0.2037037037037037,
+      "present_instance_precision": 1.0,
+      "positive_decisions": {
+        "present": 11,
+        "missing": 0,
+        "uncertain": 40,
+        "no_match": 3
+      },
+      "labeled_lower_fragment_top_selections": 0
+    },
+    "initial_y_m04": {
+      "correct_present": 12,
+      "incorrect_confirmed_present": 0,
+      "positive_correct_present_coverage": 0.2222222222222222,
+      "present_instance_precision": 1.0,
+      "positive_decisions": {
+        "present": 12,
+        "missing": 0,
+        "uncertain": 42,
+        "no_match": 0
+      },
+      "labeled_lower_fragment_top_selections": 0
+    },
+    "initial_y_p04": {
+      "correct_present": 21,
+      "incorrect_confirmed_present": 0,
+      "positive_correct_present_coverage": 0.3888888888888889,
+      "present_instance_precision": 1.0,
+      "positive_decisions": {
+        "present": 21,
+        "missing": 0,
+        "uncertain": 33,
+        "no_match": 0
+      },
+      "labeled_lower_fragment_top_selections": 0
+    },
+    "nominal": {
+      "correct_present": 21,
+      "incorrect_confirmed_present": 0,
+      "positive_correct_present_coverage": 0.3888888888888889,
+      "present_instance_precision": 1.0,
+      "positive_decisions": {
+        "present": 21,
+        "missing": 0,
+        "uncertain": 33,
+        "no_match": 0
+      },
+      "labeled_lower_fragment_top_selections": 0
+    },
+    "rotation_m05": {
+      "correct_present": 21,
+      "incorrect_confirmed_present": 0,
+      "positive_correct_present_coverage": 0.3888888888888889,
+      "present_instance_precision": 1.0,
+      "positive_decisions": {
+        "present": 21,
+        "missing": 0,
+        "uncertain": 33,
+        "no_match": 0
+      },
+      "labeled_lower_fragment_top_selections": 1
+    },
+    "rotation_p05": {
+      "correct_present": 21,
+      "incorrect_confirmed_present": 0,
+      "positive_correct_present_coverage": 0.3888888888888889,
+      "present_instance_precision": 1.0,
+      "positive_decisions": {
+        "present": 21,
+        "missing": 0,
+        "uncertain": 33,
+        "no_match": 0
+      },
+      "labeled_lower_fragment_top_selections": 0
+    }
+  },
+  "nominal_per_view": [
+    {
+      "file": "img_13.jpg",
+      "positive_reference_count": 28,
+      "correct_present": 14,
+      "positive_decisions": {
+        "present": 14,
+        "missing": 0,
+        "uncertain": 14,
+        "no_match": 0
+      },
+      "registration": {
+        "initial_quad_xy": [
+          [
+            434.0,
+            83.0
+          ],
+          [
+            945.0,
+            77.0
+          ],
+          [
+            942.0,
+            554.0
+          ],
+          [
+            435.0,
+            550.0
+          ]
+        ],
+        "refined_quad_xy": [
+          [
+            432.58526611328125,
+            85.95777893066406
+          ],
+          [
+            943.4983520507812,
+            80.02197265625
+          ],
+          [
+            940.510498046875,
+            556.9458618164062
+          ],
+          [
+            433.5960693359375,
+            552.8848266601562
+          ]
+        ],
+        "correction_px": [
+          -1.45166015625,
+          2.9520263671875
+        ],
+        "correction_rectified_px": [
+          -1.5,
+          3.0
+        ],
+        "consensus_studs": 38,
+        "registration_score": 0.15833333333333333,
+        "manual_assisted": true,
+        "reference": "supplied observed-window plane, not a measured baseplate frame",
+        "calibration_status": "nominal_not_measured",
+        "lower_projection": {
+          "status": "nominal_plane_fit_unreliable",
+          "reprojection_error_px": 12.194342699509118
+        }
+      }
+    },
+    {
+      "file": "img_16.jpg",
+      "positive_reference_count": 26,
+      "correct_present": 7,
+      "positive_decisions": {
+        "present": 7,
+        "missing": 0,
+        "uncertain": 19,
+        "no_match": 0
+      },
+      "registration": {
+        "initial_quad_xy": [
+          [
+            553.0,
+            146.0
+          ],
+          [
+            1014.0,
+            219.0
+          ],
+          [
+            957.0,
+            638.0
+          ],
+          [
+            502.0,
+            587.0
+          ]
+        ],
+        "refined_quad_xy": [
+          [
+            553.1083374023438,
+            145.06332397460938
+          ],
+          [
+            1014.1209716796875,
+            218.11087036132812
+          ],
+          [
+            957.1165771484375,
+            637.1429443359375
+          ],
+          [
+            502.1042175292969,
+            586.0987548828125
+          ]
+        ],
+        "correction_px": [
+          0.11285400390625,
+          -0.89520263671875
+        ],
+        "correction_rectified_px": [
+          0.0,
+          -1.0
+        ],
+        "consensus_studs": 19,
+        "registration_score": 0.07916666666666666,
+        "manual_assisted": true,
+        "reference": "supplied observed-window plane, not a measured baseplate frame",
+        "calibration_status": "nominal_not_measured",
+        "lower_projection": {
+          "status": "nominal_not_calibrated",
+          "reprojection_error_px": 5.143641021586877,
+          "relative_lower_depths_m": [
+            0.0096,
+            0.0192
+          ]
+        }
+      }
+    }
+  ],
+  "flat_image_sanity": {
+    "observations": [
+      {
+        "file": "img_13.jpg",
+        "split": "heldout",
+        "confident_present": 0
+      },
+      {
+        "file": "img_16.jpg",
+        "split": "heldout",
+        "confident_present": 0
+      }
+    ],
+    "confident_present_total": 0
+  },
+  "result": "Insufficient for demo acceptance: 21/54 visual faces confirmed present, no measured false confirmation; no missing-face accuracy reference in held-out. Selected v1 is retained without tuning.",
+  "visual_audit": [
+    "Inspected both nominal overlays: confirmations concentrate on the brighter right-hand strips; large portions of left-hand dark/shadowed faces remain uncertain.",
+    "img16 also shows perspective and image scale variation; no physical height/current-top claim can be inferred from the supplied projection."
+  ],
+  "lower_proxy_flag": {
+    "file": "img_16.jpg",
+    "case": "rotation_m05",
+    "candidate": "c4r3",
+    "reference": "lower_3",
+    "envelope_overlap_fraction": 0.552786286071626,
+    "center_inside_lower": false,
+    "interpretation": "Envelope-overlap flag while candidate also matches a positive face. Rotation affects axis-aligned envelopes. This is not proof of physical lower-layer targeting."
+  },
+  "unmeasured": [
+    "True stud-center or fine registration accuracy: historical marked points are often rim/highlight locations.",
+    "Current physical top-layer accuracy and gripper accessibility.",
+    "Missing-face correctness on held-out group D; no such reference exists.",
+    "Robot/baseplate frame metric poses, D435i calibration, physical insertion or grasp success.",
+    "Full 360-brick comparable simulated lattice and simulation-to-real perception equivalence: hidden layer offsets/geometry unresolved.",
+    "Generalization to independent new stacks or workcells; two held-out views remain correlated within one arrangement group."
+  ],
+  "next_action": "Pause and request specific geometry/calibration/reference inputs; no further tuning, simulation or manipulation authorized by these results."
+}

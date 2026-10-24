@@ -87,10 +87,14 @@ global feature definitions, not fitted per-image thresholds.
 decision settings unchanged. Its explicit `feature_model=ring_coherence_v1`
 selects the correction; `baseline_v0.json` selects `whole_patch_radial_v0`
 and retains the exact old formula. Old unversioned configurations also default
-to the v0 model, rather than silently changing a historical result. V1 is a proposed
-correction until independent evaluation establishes useful coverage without
-false-present or blank-image regressions. Nonzero feature scores alone do
-not establish success.
+to the v0 model, rather than silently changing a historical result. V1 is the
+selected working baseline after independent development evaluation: 37/112
+visual faces confirmed, zero measured incorrect confirmations, and 0/6 missing
+faces confirmed on nominal inputs. It does not meet demonstration acceptance.
+Later v2/v3 changes were rejected and reverted after sensitivity regressions.
+See the [experiment report](../experiments/known_layout_20261024/REPORT.md)
+for the final held-out audit, limitations and stopping decision. Nonzero feature
+scores alone do not establish success.
 
 `decision=present` establishes only supported **visual face presence** under
 the supplied window. `layer_hypothesis` expresses top/lower compatibility;

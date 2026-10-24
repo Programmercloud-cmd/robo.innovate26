@@ -6,6 +6,13 @@ translations were unresolved. This directory preserves the original evidence
 and standalone reproduction commands. Its pretrained detector scripts are not
 part of the new known-layout perception system's execution path.
 
+**Subsequent reference audit:** the 48 historical stud marks below are not
+validated geometric centers. Independent crop inspection found many on cap
+rims/highlights. All reported 4/48 matches and pixel distances are conditional
+on those unchanged marks; the original center interpretation and 2 px stud
+uncertainty are unsupported. Face-polygon measurements remain a separate track.
+See the [audit evidence](../known_layout_20261024/results/reference_audit/audit.json).
+
 **Recommendation: require further work.** Neither tested Studwise weight pair
 reliably separates individual bricks in these dense-lattice photographs. A
 small stud-count/PCA filter does not recover the missed instances. This result

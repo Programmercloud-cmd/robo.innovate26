@@ -1,0 +1,5503 @@
+{
+  "schema": "known-layout-fixed-evaluation-v1",
+  "reference_bundle_sha256": "6bc1d6420c40e7ad089aee00b52684e8dd5f169d0a45641f11f3b36405fde168",
+  "protocol_sha256": "eb759f74987de4b08c1c381113d1033ea5302cba5e4c05b63b0e464a86e97bb1",
+  "interpretation": "Frozen image-plane visual-face evidence with manual global registration, nominal intrinsics and unknown physical top height; no physical occupancy/robot pose claim.",
+  "cases": {
+    "brightness_070": {
+      "positive_reference_count": 54,
+      "original_ambiguous_excluded": 6,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 8,
+      "candidate_count": 60,
+      "correct_present": 18,
+      "missed_individual_faces": 36,
+      "scored_confirmed_present": 18,
+      "incorrect_confirmed_present": 0,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 1,
+      "manual_stud_reference_count": 16,
+      "positive_decisions": {
+        "present": 18,
+        "missing": 0,
+        "uncertain": 36,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "image_observations": 2,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.3333333333333333,
+      "positive_correct_present_coverage": 0.3333333333333333,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "orientation_deg": {
+        "count": 54,
+        "median": 0.19157936572129586,
+        "p90": 0.9544633469094975,
+        "max": 1.4595377708557606
+      },
+      "projected_stud_error_px": {
+        "count": 16,
+        "median": 4.3055126943175495,
+        "p90": 5.415988584853388,
+        "max": 5.757875386539895
+      },
+      "observed_stud_peak_error_px": {
+        "count": 3,
+        "median": 4.015696395641029,
+        "p90": 4.436230570917749,
+        "max": 4.541364114736928
+      },
+      "actual_physical_current_top_accuracy": null
+    },
+    "brightness_130": {
+      "positive_reference_count": 54,
+      "original_ambiguous_excluded": 6,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 8,
+      "candidate_count": 60,
+      "correct_present": 22,
+      "missed_individual_faces": 32,
+      "scored_confirmed_present": 22,
+      "incorrect_confirmed_present": 0,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 2,
+      "manual_stud_reference_count": 16,
+      "positive_decisions": {
+        "present": 22,
+        "missing": 0,
+        "uncertain": 32,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "image_observations": 2,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.4074074074074074,
+      "positive_correct_present_coverage": 0.4074074074074074,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "orientation_deg": {
+        "count": 54,
+        "median": 0.19157936572129586,
+        "p90": 0.9544633469094975,
+        "max": 1.4617404869159998
+      },
+      "projected_stud_error_px": {
+        "count": 16,
+        "median": 5.0742672290712925,
+        "p90": 6.585159267467955,
+        "max": 6.90852067535772
+      },
+      "observed_stud_peak_error_px": {
+        "count": 6,
+        "median": 3.637827690581772,
+        "p90": 4.022441990500878,
+        "max": 4.029187585360726
+      },
+      "actual_physical_current_top_accuracy": null
+    },
+    "initial_x_m04": {
+      "positive_reference_count": 54,
+      "original_ambiguous_excluded": 6,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 8,
+      "candidate_count": 60,
+      "correct_present": 24,
+      "missed_individual_faces": 30,
+      "scored_confirmed_present": 24,
+      "incorrect_confirmed_present": 0,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 1,
+      "manual_stud_reference_count": 16,
+      "positive_decisions": {
+        "present": 24,
+        "missing": 0,
+        "uncertain": 30,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "image_observations": 2,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.4444444444444444,
+      "positive_correct_present_coverage": 0.4444444444444444,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "orientation_deg": {
+        "count": 54,
+        "median": 0.19342231195294346,
+        "p90": 0.956288353352005,
+        "max": 1.4595342053339238
+      },
+      "projected_stud_error_px": {
+        "count": 16,
+        "median": 6.544534784616117,
+        "p90": 8.66970839089159,
+        "max": 9.690375378091884
+      },
+      "observed_stud_peak_error_px": {
+        "count": 5,
+        "median": 4.412728121890742,
+        "p90": 4.821881199416434,
+        "max": 4.947966774574486
+      },
+      "actual_physical_current_top_accuracy": null
+    },
+    "initial_x_p04": {
+      "positive_reference_count": 54,
+      "original_ambiguous_excluded": 6,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 8,
+      "candidate_count": 60,
+      "correct_present": 11,
+      "missed_individual_faces": 43,
+      "scored_confirmed_present": 11,
+      "incorrect_confirmed_present": 0,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 2,
+      "manual_stud_reference_count": 16,
+      "positive_decisions": {
+        "present": 11,
+        "missing": 0,
+        "uncertain": 40,
+        "no_match": 3
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "image_observations": 2,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.2037037037037037,
+      "positive_correct_present_coverage": 0.2037037037037037,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "orientation_deg": {
+        "count": 51,
+        "median": 0.19249750737046156,
+        "p90": 0.9553766039017546,
+        "max": 1.4661258057499822
+      },
+      "projected_stud_error_px": {
+        "count": 16,
+        "median": 5.571968550929614,
+        "p90": 6.340564336771189,
+        "max": 6.549275224607992
+      },
+      "observed_stud_peak_error_px": {
+        "count": 4,
+        "median": 5.470630977249784,
+        "p90": 7.321881611120035,
+        "max": 7.841256364455826
+      },
+      "actual_physical_current_top_accuracy": null
+    },
+    "initial_y_m04": {
+      "positive_reference_count": 54,
+      "original_ambiguous_excluded": 6,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 8,
+      "candidate_count": 60,
+      "correct_present": 12,
+      "missed_individual_faces": 42,
+      "scored_confirmed_present": 12,
+      "incorrect_confirmed_present": 0,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 4,
+      "manual_stud_reference_count": 16,
+      "positive_decisions": {
+        "present": 12,
+        "missing": 0,
+        "uncertain": 42,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "image_observations": 2,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.2222222222222222,
+      "positive_correct_present_coverage": 0.2222222222222222,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "orientation_deg": {
+        "count": 54,
+        "median": 0.1924990061498022,
+        "p90": 0.9553752720704907,
+        "max": 1.4617404869159998
+      },
+      "projected_stud_error_px": {
+        "count": 16,
+        "median": 9.00396541053343,
+        "p90": 9.632875684030505,
+        "max": 10.224379974688812
+      },
+      "observed_stud_peak_error_px": {
+        "count": 4,
+        "median": 5.737913149696852,
+        "p90": 7.498151842054987,
+        "max": 7.88197037625076
+      },
+      "actual_physical_current_top_accuracy": null
+    },
+    "initial_y_p04": {
+      "positive_reference_count": 54,
+      "original_ambiguous_excluded": 6,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 8,
+      "candidate_count": 60,
+      "correct_present": 21,
+      "missed_individual_faces": 33,
+      "scored_confirmed_present": 21,
+      "incorrect_confirmed_present": 0,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 0,
+      "manual_stud_reference_count": 16,
+      "positive_decisions": {
+        "present": 21,
+        "missing": 0,
+        "uncertain": 33,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "image_observations": 2,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.3888888888888889,
+      "positive_correct_present_coverage": 0.3888888888888889,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "orientation_deg": {
+        "count": 54,
+        "median": 0.190685047708385,
+        "p90": 0.9535724519990921,
+        "max": 1.461770869107653
+      },
+      "projected_stud_error_px": {
+        "count": 16,
+        "median": 3.768249799582399,
+        "p90": 5.72765042643686,
+        "max": 5.862776750227772
+      },
+      "observed_stud_peak_error_px": {
+        "count": 4,
+        "median": 3.3279420058656415,
+        "p90": 4.180264387588285,
+        "max": 4.540343244261974
+      },
+      "actual_physical_current_top_accuracy": null
+    },
+    "nominal": {
+      "positive_reference_count": 54,
+      "original_ambiguous_excluded": 6,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 8,
+      "candidate_count": 60,
+      "correct_present": 21,
+      "missed_individual_faces": 33,
+      "scored_confirmed_present": 21,
+      "incorrect_confirmed_present": 0,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 2,
+      "manual_stud_reference_count": 16,
+      "positive_decisions": {
+        "present": 21,
+        "missing": 0,
+        "uncertain": 33,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "image_observations": 2,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.3888888888888889,
+      "positive_correct_present_coverage": 0.3888888888888889,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "orientation_deg": {
+        "count": 54,
+        "median": 0.1911347178481435,
+        "p90": 0.9540166586793817,
+        "max": 1.4595342053339238
+      },
+      "projected_stud_error_px": {
+        "count": 16,
+        "median": 4.9864486029148605,
+        "p90": 6.054190563217553,
+        "max": 6.1059617997150495
+      },
+      "observed_stud_peak_error_px": {
+        "count": 6,
+        "median": 3.420748966226875,
+        "p90": 4.2190732353061025,
+        "max": 4.264560412644602
+      },
+      "actual_physical_current_top_accuracy": null
+    },
+    "rotation_m05": {
+      "positive_reference_count": 54,
+      "original_ambiguous_excluded": 6,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 8,
+      "candidate_count": 60,
+      "correct_present": 21,
+      "missed_individual_faces": 33,
+      "scored_confirmed_present": 21,
+      "incorrect_confirmed_present": 0,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 1,
+      "ambiguous_present_ignored": 1,
+      "manual_stud_reference_count": 16,
+      "positive_decisions": {
+        "present": 21,
+        "missing": 0,
+        "uncertain": 33,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "image_observations": 2,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.3888888888888889,
+      "positive_correct_present_coverage": 0.3888888888888889,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "orientation_deg": {
+        "count": 54,
+        "median": 0.19161178170335802,
+        "p90": 0.9544640809334382,
+        "max": 1.4595211021593428
+      },
+      "projected_stud_error_px": {
+        "count": 16,
+        "median": 4.305503797570392,
+        "p90": 5.4160020779712035,
+        "max": 5.757849278475698
+      },
+      "observed_stud_peak_error_px": {
+        "count": 5,
+        "median": 3.314560632552877,
+        "p90": 4.023790174357203,
+        "max": 4.029188178497881
+      },
+      "actual_physical_current_top_accuracy": null
+    },
+    "rotation_p05": {
+      "positive_reference_count": 54,
+      "original_ambiguous_excluded": 6,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 8,
+      "candidate_count": 60,
+      "correct_present": 21,
+      "missed_individual_faces": 33,
+      "scored_confirmed_present": 21,
+      "incorrect_confirmed_present": 0,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 1,
+      "manual_stud_reference_count": 16,
+      "positive_decisions": {
+        "present": 21,
+        "missing": 0,
+        "uncertain": 33,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "image_observations": 2,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.3888888888888889,
+      "positive_correct_present_coverage": 0.3888888888888889,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "orientation_deg": {
+        "count": 54,
+        "median": 0.19161386822438686,
+        "p90": 0.9544667379300549,
+        "max": 1.4595462842919602
+      },
+      "projected_stud_error_px": {
+        "count": 16,
+        "median": 4.305515328420927,
+        "p90": 5.416033154118043,
+        "max": 5.757877789300119
+      },
+      "observed_stud_peak_error_px": {
+        "count": 5,
+        "median": 3.314551377041405,
+        "p90": 4.0237933816438,
+        "max": 4.029194699504778
+      },
+      "actual_physical_current_top_accuracy": null
+    }
+  },
+  "flat_image_sanity": {
+    "observations": [
+      {
+        "file": "img_13.jpg",
+        "split": "heldout",
+        "confident_present": 0
+      },
+      {
+        "file": "img_16.jpg",
+        "split": "heldout",
+        "confident_present": 0
+      }
+    ],
+    "confident_present_total": 0
+  },
+  "observations": [
+    {
+      "file": "img_13.jpg",
+      "case": "nominal",
+      "split": "heldout",
+      "correlation_group": "D",
+      "positive_reference_count": 28,
+      "original_ambiguous_excluded": 2,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 4,
+      "candidate_count": 30,
+      "positive_decisions": {
+        "present": 14,
+        "missing": 0,
+        "uncertain": 14,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "correct_present": 14,
+      "missed_individual_faces": 14,
+      "scored_confirmed_present": 14,
+      "incorrect_confirmed_present": 0,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.5,
+      "positive_correct_present_coverage": 0.5,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 0,
+      "orientation_errors_deg": [
+        0.07752754861476774,
+        0.07752900036363997,
+        0.07753187494972735,
+        0.9539624017824053,
+        0.9539866571080751,
+        0.9539740429523107,
+        0.9539989501275699,
+        0.9540242480587295,
+        0.19109782814280152,
+        0.19113551179947308,
+        0.19109810045650022,
+        0.19113392389681394,
+        0.19113159187773476,
+        0.03891918929890892,
+        0.038939622868056745,
+        0.03892096965128644,
+        0.0389368294144532,
+        0.03891335306093424,
+        0.23258983732428362,
+        0.23261668183326378,
+        0.2325737523445497,
+        0.2325711794998142,
+        0.23260934563030844,
+        0.0834453990649564,
+        0.08336658740066127,
+        0.08343897123347688,
+        0.08340645488422638,
+        0.08341565242118065
+      ],
+      "projected_stud_errors_px": [
+        0.5502552372932042,
+        0.5504066998481787,
+        1.3204482833541336,
+        1.155755891531407,
+        5.336332892004667,
+        4.7932677087333895,
+        5.269868750559275,
+        4.6495301181242334
+      ],
+      "observed_stud_peak_errors_px": [
+        3.079190143302902,
+        3.6159530203806476,
+        3.225544912073102,
+        3.113956050459322,
+        4.264560412644602,
+        4.1735860579676025
+      ],
+      "manual_stud_reference_count": 8,
+      "registration": {
+        "initial_quad_xy": [
+          [
+            434.0,
+            83.0
+          ],
+          [
+            945.0,
+            77.0
+          ],
+          [
+            942.0,
+            554.0
+          ],
+          [
+            435.0,
+            550.0
+          ]
+        ],
+        "refined_quad_xy": [
+          [
+            432.58526611328125,
+            85.95777893066406
+          ],
+          [
+            943.4983520507812,
+            80.02197265625
+          ],
+          [
+            940.510498046875,
+            556.9458618164062
+          ],
+          [
+            433.5960693359375,
+            552.8848266601562
+          ]
+        ],
+        "correction_px": [
+          -1.45166015625,
+          2.9520263671875
+        ],
+        "correction_rectified_px": [
+          -1.5,
+          3.0
+        ],
+        "consensus_studs": 38,
+        "registration_score": 0.15833333333333333,
+        "manual_assisted": true,
+        "reference": "supplied observed-window plane, not a measured baseplate frame",
+        "calibration_status": "nominal_not_measured",
+        "lower_projection": {
+          "status": "nominal_plane_fit_unreliable",
+          "reprojection_error_px": 12.194342699509118
+        }
+      },
+      "matches": [
+        {
+          "candidate": "c0r2",
+          "reference": "c0r2",
+          "iou": 0.8484991557930426
+        },
+        {
+          "candidate": "c0r3",
+          "reference": "c0r3",
+          "iou": 0.8435313713953968
+        },
+        {
+          "candidate": "c0r4",
+          "reference": "c0r4",
+          "iou": 0.8450996338509227
+        },
+        {
+          "candidate": "c1r0",
+          "reference": "c1r0",
+          "iou": 0.562715938135524
+        },
+        {
+          "candidate": "c1r1",
+          "reference": "c1r1",
+          "iou": 0.6087748613599551
+        },
+        {
+          "candidate": "c1r2",
+          "reference": "c1r2",
+          "iou": 0.6570132409550947
+        },
+        {
+          "candidate": "c1r3",
+          "reference": "c1r3",
+          "iou": 0.7015466542280918
+        },
+        {
+          "candidate": "c1r4",
+          "reference": "c1r4",
+          "iou": 0.7392302066170925
+        },
+        {
+          "candidate": "c2r0",
+          "reference": "c2r0",
+          "iou": 0.6380138582004159
+        },
+        {
+          "candidate": "c2r1",
+          "reference": "c2r1",
+          "iou": 0.6600388042572974
+        },
+        {
+          "candidate": "c2r2",
+          "reference": "c2r2",
+          "iou": 0.6699927923996316
+        },
+        {
+          "candidate": "c2r3",
+          "reference": "c2r3",
+          "iou": 0.6727762325992689
+        },
+        {
+          "candidate": "c2r4",
+          "reference": "c2r4",
+          "iou": 0.6571837006432727
+        },
+        {
+          "candidate": "c3r0",
+          "reference": "c3r0",
+          "iou": 0.791234901173168
+        },
+        {
+          "candidate": "c3r1",
+          "reference": "c3r1",
+          "iou": 0.8084236465500044
+        },
+        {
+          "candidate": "c3r2",
+          "reference": "c3r2",
+          "iou": 0.8155897723639891
+        },
+        {
+          "candidate": "c3r3",
+          "reference": "c3r3",
+          "iou": 0.8153161887128746
+        },
+        {
+          "candidate": "c3r4",
+          "reference": "c3r4",
+          "iou": 0.788555441318934
+        },
+        {
+          "candidate": "c4r0",
+          "reference": "c4r0",
+          "iou": 0.9148584299147356
+        },
+        {
+          "candidate": "c4r1",
+          "reference": "c4r1",
+          "iou": 0.937589560079345
+        },
+        {
+          "candidate": "c4r2",
+          "reference": "c4r2",
+          "iou": 0.9561839709919965
+        },
+        {
+          "candidate": "c4r3",
+          "reference": "c4r3",
+          "iou": 0.9635398052157788
+        },
+        {
+          "candidate": "c4r4",
+          "reference": "c4r4",
+          "iou": 0.9467447987504686
+        },
+        {
+          "candidate": "c5r0",
+          "reference": "c5r0",
+          "iou": 0.845621132506077
+        },
+        {
+          "candidate": "c5r1",
+          "reference": "c5r1",
+          "iou": 0.8431536094055184
+        },
+        {
+          "candidate": "c5r2",
+          "reference": "c5r2",
+          "iou": 0.8456474501445719
+        },
+        {
+          "candidate": "c5r3",
+          "reference": "c5r3",
+          "iou": 0.8518930750340309
+        },
+        {
+          "candidate": "c5r4",
+          "reference": "c5r4",
+          "iou": 0.8649468237486665
+        }
+      ],
+      "missing_matches": [],
+      "actual_physical_current_top_accuracy": null
+    },
+    {
+      "file": "img_13.jpg",
+      "case": "brightness_070",
+      "split": "heldout",
+      "correlation_group": "D",
+      "positive_reference_count": 28,
+      "original_ambiguous_excluded": 2,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 4,
+      "candidate_count": 30,
+      "positive_decisions": {
+        "present": 12,
+        "missing": 0,
+        "uncertain": 16,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "correct_present": 12,
+      "missed_individual_faces": 16,
+      "scored_confirmed_present": 12,
+      "incorrect_confirmed_present": 0,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.42857142857142855,
+      "positive_correct_present_coverage": 0.42857142857142855,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 0,
+      "orientation_errors_deg": [
+        0.07797852778364245,
+        0.07796257980960775,
+        0.07798565136575064,
+        0.9544442105640769,
+        0.9544699703336619,
+        0.9544215829432972,
+        0.9544478922531141,
+        0.9544370832324063,
+        0.19157603589908945,
+        0.1915782122959655,
+        0.19157931238969184,
+        0.19157941905289988,
+        0.19157840626661482,
+        0.03939374001528506,
+        0.03937888765319997,
+        0.03939852029843394,
+        0.03937877750799146,
+        0.039393952177263714,
+        0.2320823138691992,
+        0.23214426001395339,
+        0.2320999220447817,
+        0.23213265424607243,
+        0.23209529740033474,
+        0.08294181708717474,
+        0.08293438500072625,
+        0.08296859496017817,
+        0.08293480976983858,
+        0.08294230209368436
+      ],
+      "projected_stud_errors_px": [
+        0.8399610659255887,
+        1.0036246651865643,
+        1.4419493508179737,
+        1.4011832193123641,
+        4.869313239884567,
+        4.343464202299438,
+        4.78136551087231,
+        4.1658374641157945
+      ],
+      "observed_stud_peak_errors_px": [
+        2.744156045219174,
+        4.541364114736928,
+        4.015696395641029
+      ],
+      "manual_stud_reference_count": 8,
+      "registration": {
+        "initial_quad_xy": [
+          [
+            434.0,
+            83.0
+          ],
+          [
+            945.0,
+            77.0
+          ],
+          [
+            942.0,
+            554.0
+          ],
+          [
+            435.0,
+            550.0
+          ]
+        ],
+        "refined_quad_xy": [
+          [
+            433.0589294433594,
+            85.95227813720703
+          ],
+          [
+            943.9926147460938,
+            80.0162353515625
+          ],
+          [
+            941.0007934570312,
+            556.9497680664062
+          ],
+          [
+            434.06610107421875,
+            552.8886108398438
+          ]
+        ],
+        "correction_px": [
+          -0.96978759765625,
+          2.951171875
+        ],
+        "correction_rectified_px": [
+          -1.0,
+          3.0
+        ],
+        "consensus_studs": 33,
+        "registration_score": 0.1375,
+        "manual_assisted": true,
+        "reference": "supplied observed-window plane, not a measured baseplate frame",
+        "calibration_status": "nominal_not_measured",
+        "lower_projection": {
+          "status": "nominal_plane_fit_unreliable",
+          "reprojection_error_px": 12.161813453166392
+        }
+      },
+      "matches": [
+        {
+          "candidate": "c0r2",
+          "reference": "c0r2",
+          "iou": 0.8654670491645378
+        },
+        {
+          "candidate": "c0r3",
+          "reference": "c0r3",
+          "iou": 0.8603210539333255
+        },
+        {
+          "candidate": "c0r4",
+          "reference": "c0r4",
+          "iou": 0.8619032205164033
+        },
+        {
+          "candidate": "c1r0",
+          "reference": "c1r0",
+          "iou": 0.5507475805682316
+        },
+        {
+          "candidate": "c1r1",
+          "reference": "c1r1",
+          "iou": 0.5960160278507738
+        },
+        {
+          "candidate": "c1r2",
+          "reference": "c1r2",
+          "iou": 0.6434124473325655
+        },
+        {
+          "candidate": "c1r3",
+          "reference": "c1r3",
+          "iou": 0.687243188714796
+        },
+        {
+          "candidate": "c1r4",
+          "reference": "c1r4",
+          "iou": 0.7244540710719876
+        },
+        {
+          "candidate": "c2r0",
+          "reference": "c2r0",
+          "iou": 0.6247315749950787
+        },
+        {
+          "candidate": "c2r1",
+          "reference": "c2r1",
+          "iou": 0.6462208344878015
+        },
+        {
+          "candidate": "c2r2",
+          "reference": "c2r2",
+          "iou": 0.6559883328168021
+        },
+        {
+          "candidate": "c2r3",
+          "reference": "c2r3",
+          "iou": 0.6588152059226237
+        },
+        {
+          "candidate": "c2r4",
+          "reference": "c2r4",
+          "iou": 0.6438115686586081
+        },
+        {
+          "candidate": "c3r0",
+          "reference": "c3r0",
+          "iou": 0.775329464358863
+        },
+        {
+          "candidate": "c3r1",
+          "reference": "c3r1",
+          "iou": 0.7920251546728493
+        },
+        {
+          "candidate": "c3r2",
+          "reference": "c3r2",
+          "iou": 0.7989914686295589
+        },
+        {
+          "candidate": "c3r3",
+          "reference": "c3r3",
+          "iou": 0.7987609595458228
+        },
+        {
+          "candidate": "c3r4",
+          "reference": "c3r4",
+          "iou": 0.7728387994086863
+        },
+        {
+          "candidate": "c4r0",
+          "reference": "c4r0",
+          "iou": 0.9334415015985205
+        },
+        {
+          "candidate": "c4r1",
+          "reference": "c4r1",
+          "iou": 0.9436694669101069
+        },
+        {
+          "candidate": "c4r2",
+          "reference": "c4r2",
+          "iou": 0.9495648722289544
+        },
+        {
+          "candidate": "c4r3",
+          "reference": "c4r3",
+          "iou": 0.9442013463532698
+        },
+        {
+          "candidate": "c4r4",
+          "reference": "c4r4",
+          "iou": 0.9277619934188632
+        },
+        {
+          "candidate": "c5r0",
+          "reference": "c5r0",
+          "iou": 0.8632354834506971
+        },
+        {
+          "candidate": "c5r1",
+          "reference": "c5r1",
+          "iou": 0.8605514855482862
+        },
+        {
+          "candidate": "c5r2",
+          "reference": "c5r2",
+          "iou": 0.862981840540667
+        },
+        {
+          "candidate": "c5r3",
+          "reference": "c5r3",
+          "iou": 0.8692725302520804
+        },
+        {
+          "candidate": "c5r4",
+          "reference": "c5r4",
+          "iou": 0.8825763460027809
+        }
+      ],
+      "missing_matches": [],
+      "actual_physical_current_top_accuracy": null
+    },
+    {
+      "file": "img_13.jpg",
+      "case": "brightness_130",
+      "split": "heldout",
+      "correlation_group": "D",
+      "positive_reference_count": 28,
+      "original_ambiguous_excluded": 2,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 4,
+      "candidate_count": 30,
+      "positive_decisions": {
+        "present": 14,
+        "missing": 0,
+        "uncertain": 14,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "correct_present": 14,
+      "missed_individual_faces": 14,
+      "scored_confirmed_present": 14,
+      "incorrect_confirmed_present": 0,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.5,
+      "positive_correct_present_coverage": 0.5,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 0,
+      "orientation_errors_deg": [
+        0.07797852778364245,
+        0.07796257980960775,
+        0.07798565136575064,
+        0.9544442105640769,
+        0.9544699703336619,
+        0.9544215829432972,
+        0.9544478922531141,
+        0.9544370832324063,
+        0.19157603589908945,
+        0.1915782122959655,
+        0.19157931238969184,
+        0.19157941905289988,
+        0.19157840626661482,
+        0.03939374001528506,
+        0.03937888765319997,
+        0.03939852029843394,
+        0.03937877750799146,
+        0.039393952177263714,
+        0.2320823138691992,
+        0.23214426001395339,
+        0.2320999220447817,
+        0.23213265424607243,
+        0.23209529740033474,
+        0.08294181708717474,
+        0.08293438500072625,
+        0.08296859496017817,
+        0.08293480976983858,
+        0.08294230209368436
+      ],
+      "projected_stud_errors_px": [
+        0.8399610659255887,
+        1.0036246651865643,
+        1.4419493508179737,
+        1.4011832193123641,
+        4.869313239884567,
+        4.343464202299438,
+        4.78136551087231,
+        4.1658374641157945
+      ],
+      "observed_stud_peak_errors_px": [
+        3.3145647597834413,
+        2.3309393617702736,
+        2.744156045219174,
+        3.961090621380103,
+        4.029187585360726,
+        4.015696395641029
+      ],
+      "manual_stud_reference_count": 8,
+      "registration": {
+        "initial_quad_xy": [
+          [
+            434.0,
+            83.0
+          ],
+          [
+            945.0,
+            77.0
+          ],
+          [
+            942.0,
+            554.0
+          ],
+          [
+            435.0,
+            550.0
+          ]
+        ],
+        "refined_quad_xy": [
+          [
+            433.0589294433594,
+            85.95227813720703
+          ],
+          [
+            943.9926147460938,
+            80.0162353515625
+          ],
+          [
+            941.0007934570312,
+            556.9497680664062
+          ],
+          [
+            434.06610107421875,
+            552.8886108398438
+          ]
+        ],
+        "correction_px": [
+          -0.96978759765625,
+          2.951171875
+        ],
+        "correction_rectified_px": [
+          -1.0,
+          3.0
+        ],
+        "consensus_studs": 40,
+        "registration_score": 0.16666666666666666,
+        "manual_assisted": true,
+        "reference": "supplied observed-window plane, not a measured baseplate frame",
+        "calibration_status": "nominal_not_measured",
+        "lower_projection": {
+          "status": "nominal_plane_fit_unreliable",
+          "reprojection_error_px": 12.161813453166392
+        }
+      },
+      "matches": [
+        {
+          "candidate": "c0r2",
+          "reference": "c0r2",
+          "iou": 0.8654670491645378
+        },
+        {
+          "candidate": "c0r3",
+          "reference": "c0r3",
+          "iou": 0.8603210539333255
+        },
+        {
+          "candidate": "c0r4",
+          "reference": "c0r4",
+          "iou": 0.8619032205164033
+        },
+        {
+          "candidate": "c1r0",
+          "reference": "c1r0",
+          "iou": 0.5507475805682316
+        },
+        {
+          "candidate": "c1r1",
+          "reference": "c1r1",
+          "iou": 0.5960160278507738
+        },
+        {
+          "candidate": "c1r2",
+          "reference": "c1r2",
+          "iou": 0.6434124473325655
+        },
+        {
+          "candidate": "c1r3",
+          "reference": "c1r3",
+          "iou": 0.687243188714796
+        },
+        {
+          "candidate": "c1r4",
+          "reference": "c1r4",
+          "iou": 0.7244540710719876
+        },
+        {
+          "candidate": "c2r0",
+          "reference": "c2r0",
+          "iou": 0.6247315749950787
+        },
+        {
+          "candidate": "c2r1",
+          "reference": "c2r1",
+          "iou": 0.6462208344878015
+        },
+        {
+          "candidate": "c2r2",
+          "reference": "c2r2",
+          "iou": 0.6559883328168021
+        },
+        {
+          "candidate": "c2r3",
+          "reference": "c2r3",
+          "iou": 0.6588152059226237
+        },
+        {
+          "candidate": "c2r4",
+          "reference": "c2r4",
+          "iou": 0.6438115686586081
+        },
+        {
+          "candidate": "c3r0",
+          "reference": "c3r0",
+          "iou": 0.775329464358863
+        },
+        {
+          "candidate": "c3r1",
+          "reference": "c3r1",
+          "iou": 0.7920251546728493
+        },
+        {
+          "candidate": "c3r2",
+          "reference": "c3r2",
+          "iou": 0.7989914686295589
+        },
+        {
+          "candidate": "c3r3",
+          "reference": "c3r3",
+          "iou": 0.7987609595458228
+        },
+        {
+          "candidate": "c3r4",
+          "reference": "c3r4",
+          "iou": 0.7728387994086863
+        },
+        {
+          "candidate": "c4r0",
+          "reference": "c4r0",
+          "iou": 0.9334415015985205
+        },
+        {
+          "candidate": "c4r1",
+          "reference": "c4r1",
+          "iou": 0.9436694669101069
+        },
+        {
+          "candidate": "c4r2",
+          "reference": "c4r2",
+          "iou": 0.9495648722289544
+        },
+        {
+          "candidate": "c4r3",
+          "reference": "c4r3",
+          "iou": 0.9442013463532698
+        },
+        {
+          "candidate": "c4r4",
+          "reference": "c4r4",
+          "iou": 0.9277619934188632
+        },
+        {
+          "candidate": "c5r0",
+          "reference": "c5r0",
+          "iou": 0.8632354834506971
+        },
+        {
+          "candidate": "c5r1",
+          "reference": "c5r1",
+          "iou": 0.8605514855482862
+        },
+        {
+          "candidate": "c5r2",
+          "reference": "c5r2",
+          "iou": 0.862981840540667
+        },
+        {
+          "candidate": "c5r3",
+          "reference": "c5r3",
+          "iou": 0.8692725302520804
+        },
+        {
+          "candidate": "c5r4",
+          "reference": "c5r4",
+          "iou": 0.8825763460027809
+        }
+      ],
+      "missing_matches": [],
+      "actual_physical_current_top_accuracy": null
+    },
+    {
+      "file": "img_13.jpg",
+      "case": "rotation_m05",
+      "split": "heldout",
+      "correlation_group": "D",
+      "positive_reference_count": 28,
+      "original_ambiguous_excluded": 2,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 4,
+      "candidate_count": 30,
+      "positive_decisions": {
+        "present": 14,
+        "missing": 0,
+        "uncertain": 14,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "correct_present": 14,
+      "missed_individual_faces": 14,
+      "scored_confirmed_present": 14,
+      "incorrect_confirmed_present": 0,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.5,
+      "positive_correct_present_coverage": 0.5,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 0,
+      "orientation_errors_deg": [
+        0.07797793386704654,
+        0.07797821877285571,
+        0.07798280803272917,
+        0.954434296576494,
+        0.9544399196680047,
+        0.9544453571409264,
+        0.9544571034107605,
+        0.9544670713003001,
+        0.1915465516036221,
+        0.1915737272718303,
+        0.19159708847207924,
+        0.1916264749346368,
+        0.1915395728976108,
+        0.03942078823412487,
+        0.039401655740604724,
+        0.039346900175203814,
+        0.039394808798576264,
+        0.03940812938913041,
+        0.23214323710628548,
+        0.23212501774990812,
+        0.23211165441844628,
+        0.23210065861300677,
+        0.23213405661002184,
+        0.08290833121691321,
+        0.08298976384899959,
+        0.0829356837634947,
+        0.08295830535821835,
+        0.08291643172324825
+      ],
+      "projected_stud_errors_px": [
+        0.8399533328170473,
+        1.0036190054614627,
+        1.4419345837433868,
+        1.4011737834781097,
+        4.869351880915702,
+        4.343450550978119,
+        4.781338221559632,
+        4.165878221453051
+      ],
+      "observed_stud_peak_errors_px": [
+        3.314560632552877,
+        2.8205948864885384,
+        2.744138657961171,
+        4.029188178497881,
+        4.015693168146187
+      ],
+      "manual_stud_reference_count": 8,
+      "registration": {
+        "initial_quad_xy": [
+          [
+            458.9260559082031,
+            66.09998321533203
+          ],
+          [
+            968.5044555664062,
+            104.6594009399414
+          ],
+          [
+            923.942626953125,
+            579.582763671875
+          ],
+          [
+            419.2204895019531,
+            531.4100341796875
+          ]
+        ],
+        "refined_quad_xy": [
+          [
+            457.73126220703125,
+            68.9590072631836
+          ],
+          [
+            967.238037109375,
+            107.57635498046875
+          ],
+          [
+            922.6901245117188,
+            582.4342651367188
+          ],
+          [
+            418.03839111328125,
+            534.2062377929688
+          ]
+        ],
+        "correction_px": [
+          -1.22332763671875,
+          2.855438232421875
+        ],
+        "correction_rectified_px": [
+          -1.0,
+          3.0
+        ],
+        "consensus_studs": 38,
+        "registration_score": 0.15833333333333333,
+        "manual_assisted": true,
+        "reference": "supplied observed-window plane, not a measured baseplate frame",
+        "calibration_status": "nominal_not_measured",
+        "lower_projection": {
+          "status": "nominal_plane_fit_unreliable",
+          "reprojection_error_px": 12.191445828427184
+        }
+      },
+      "matches": [
+        {
+          "candidate": "c0r2",
+          "reference": "c0r2",
+          "iou": 0.8712924748809753
+        },
+        {
+          "candidate": "c0r3",
+          "reference": "c0r3",
+          "iou": 0.868710839871793
+        },
+        {
+          "candidate": "c0r4",
+          "reference": "c0r4",
+          "iou": 0.8718816312622322
+        },
+        {
+          "candidate": "c1r0",
+          "reference": "c1r0",
+          "iou": 0.5838570845250316
+        },
+        {
+          "candidate": "c1r1",
+          "reference": "c1r1",
+          "iou": 0.6257751393056783
+        },
+        {
+          "candidate": "c1r2",
+          "reference": "c1r2",
+          "iou": 0.6733637983530437
+        },
+        {
+          "candidate": "c1r3",
+          "reference": "c1r3",
+          "iou": 0.7277774727898567
+        },
+        {
+          "candidate": "c1r4",
+          "reference": "c1r4",
+          "iou": 0.7541053804382414
+        },
+        {
+          "candidate": "c2r0",
+          "reference": "c2r0",
+          "iou": 0.6613290279799872
+        },
+        {
+          "candidate": "c2r1",
+          "reference": "c2r1",
+          "iou": 0.6803441268412944
+        },
+        {
+          "candidate": "c2r2",
+          "reference": "c2r2",
+          "iou": 0.7028842396671373
+        },
+        {
+          "candidate": "c2r3",
+          "reference": "c2r3",
+          "iou": 0.7039837412419683
+        },
+        {
+          "candidate": "c2r4",
+          "reference": "c2r4",
+          "iou": 0.6820255219323882
+        },
+        {
+          "candidate": "c3r0",
+          "reference": "c3r0",
+          "iou": 0.7993066813689503
+        },
+        {
+          "candidate": "c3r1",
+          "reference": "c3r1",
+          "iou": 0.8136373905334674
+        },
+        {
+          "candidate": "c3r2",
+          "reference": "c3r2",
+          "iou": 0.8320049217145401
+        },
+        {
+          "candidate": "c3r3",
+          "reference": "c3r3",
+          "iou": 0.8269897045037434
+        },
+        {
+          "candidate": "c3r4",
+          "reference": "c3r4",
+          "iou": 0.7951469472802571
+        },
+        {
+          "candidate": "c4r0",
+          "reference": "c4r0",
+          "iou": 0.9278256777310409
+        },
+        {
+          "candidate": "c4r1",
+          "reference": "c4r1",
+          "iou": 0.9427875838150938
+        },
+        {
+          "candidate": "c4r2",
+          "reference": "c4r2",
+          "iou": 0.9540047648751719
+        },
+        {
+          "candidate": "c4r3",
+          "reference": "c4r3",
+          "iou": 0.9582335150439663
+        },
+        {
+          "candidate": "c4r4",
+          "reference": "c4r4",
+          "iou": 0.9426239017775577
+        },
+        {
+          "candidate": "c5r0",
+          "reference": "c5r0",
+          "iou": 0.8674878398552609
+        },
+        {
+          "candidate": "c5r1",
+          "reference": "c5r1",
+          "iou": 0.8627372887217206
+        },
+        {
+          "candidate": "c5r2",
+          "reference": "c5r2",
+          "iou": 0.8639145826758446
+        },
+        {
+          "candidate": "c5r3",
+          "reference": "c5r3",
+          "iou": 0.8710655748296136
+        },
+        {
+          "candidate": "c5r4",
+          "reference": "c5r4",
+          "iou": 0.8843722816991183
+        }
+      ],
+      "missing_matches": [],
+      "actual_physical_current_top_accuracy": null
+    },
+    {
+      "file": "img_13.jpg",
+      "case": "rotation_p05",
+      "split": "heldout",
+      "correlation_group": "D",
+      "positive_reference_count": 28,
+      "original_ambiguous_excluded": 2,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 4,
+      "candidate_count": 30,
+      "positive_decisions": {
+        "present": 14,
+        "missing": 0,
+        "uncertain": 14,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "correct_present": 14,
+      "missed_individual_faces": 14,
+      "scored_confirmed_present": 14,
+      "incorrect_confirmed_present": 0,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.5,
+      "positive_correct_present_coverage": 0.5,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 0,
+      "orientation_errors_deg": [
+        0.0779877935842137,
+        0.07795989998254527,
+        0.07796631313999569,
+        0.9544110634772807,
+        0.9544558517637682,
+        0.9544293916087838,
+        0.954471403429892,
+        0.954439653931999,
+        0.19159795874986685,
+        0.19157356678819326,
+        0.19154920122925034,
+        0.19162977769890688,
+        0.19156295925156996,
+        0.039367803513655986,
+        0.03942571715070642,
+        0.039371516112154836,
+        0.039385847735502466,
+        0.039403043542506566,
+        0.2321108909444689,
+        0.23214996961105783,
+        0.23211680857828298,
+        0.23212657001805326,
+        0.23209962731186806,
+        0.08296201642276912,
+        0.08294520297712893,
+        0.0829320735797836,
+        0.08295935544661859,
+        0.08291776027881781
+      ],
+      "projected_stud_errors_px": [
+        0.8399963686923126,
+        1.0036921555817446,
+        1.4419693315444375,
+        1.4011857317576513,
+        4.869374197406685,
+        4.3434684961779055,
+        4.7813700527901855,
+        4.1658549519509
+      ],
+      "observed_stud_peak_errors_px": [
+        3.314551377041405,
+        2.820575535012262,
+        2.7441459316748764,
+        4.029194699504778,
+        4.015691404852332
+      ],
+      "manual_stud_reference_count": 8,
+      "registration": {
+        "initial_quad_xy": [
+          [
+            410.6417541503906,
+            102.00814819335938
+          ],
+          [
+            919.17431640625,
+            51.49440002441406
+          ],
+          [
+            957.759033203125,
+            526.9407348632812
+          ],
+          [
+            452.3396911621094,
+            567.1439208984375
+          ]
+        ],
+        "refined_quad_xy": [
+          [
+            409.9615783691406,
+            105.03121185302734
+          ],
+          [
+            918.4336547851562,
+            54.58695602416992
+          ],
+          [
+            957.0206909179688,
+            529.9663696289062
+          ],
+          [
+            451.6611022949219,
+            570.1029052734375
+          ]
+        ],
+        "correction_px": [
+          -0.7088623046875,
+          3.02447509765625
+        ],
+        "correction_rectified_px": [
+          -1.0,
+          3.0
+        ],
+        "consensus_studs": 35,
+        "registration_score": 0.14583333333333334,
+        "manual_assisted": true,
+        "reference": "supplied observed-window plane, not a measured baseplate frame",
+        "calibration_status": "nominal_not_measured",
+        "lower_projection": {
+          "status": "nominal_plane_fit_unreliable",
+          "reprojection_error_px": 12.149546572498767
+        }
+      },
+      "matches": [
+        {
+          "candidate": "c0r2",
+          "reference": "c0r2",
+          "iou": 0.8850168544973376
+        },
+        {
+          "candidate": "c0r3",
+          "reference": "c0r3",
+          "iou": 0.8814841393020303
+        },
+        {
+          "candidate": "c0r4",
+          "reference": "c0r4",
+          "iou": 0.8822500846764498
+        },
+        {
+          "candidate": "c1r0",
+          "reference": "c1r0",
+          "iou": 0.6085411946796104
+        },
+        {
+          "candidate": "c1r1",
+          "reference": "c1r1",
+          "iou": 0.6472846886998853
+        },
+        {
+          "candidate": "c1r2",
+          "reference": "c1r2",
+          "iou": 0.6851825421518299
+        },
+        {
+          "candidate": "c1r3",
+          "reference": "c1r3",
+          "iou": 0.7237082157187001
+        },
+        {
+          "candidate": "c1r4",
+          "reference": "c1r4",
+          "iou": 0.7520133861735023
+        },
+        {
+          "candidate": "c2r0",
+          "reference": "c2r0",
+          "iou": 0.6721783009091382
+        },
+        {
+          "candidate": "c2r1",
+          "reference": "c2r1",
+          "iou": 0.6894473911707634
+        },
+        {
+          "candidate": "c2r2",
+          "reference": "c2r2",
+          "iou": 0.6978197196373271
+        },
+        {
+          "candidate": "c2r3",
+          "reference": "c2r3",
+          "iou": 0.6931565477931765
+        },
+        {
+          "candidate": "c2r4",
+          "reference": "c2r4",
+          "iou": 0.6807884198251367
+        },
+        {
+          "candidate": "c3r0",
+          "reference": "c3r0",
+          "iou": 0.8005422479074947
+        },
+        {
+          "candidate": "c3r1",
+          "reference": "c3r1",
+          "iou": 0.8195164084855096
+        },
+        {
+          "candidate": "c3r2",
+          "reference": "c3r2",
+          "iou": 0.8229158039525084
+        },
+        {
+          "candidate": "c3r3",
+          "reference": "c3r3",
+          "iou": 0.8198858414161502
+        },
+        {
+          "candidate": "c3r4",
+          "reference": "c3r4",
+          "iou": 0.7978427600026123
+        },
+        {
+          "candidate": "c4r0",
+          "reference": "c4r0",
+          "iou": 0.9411234107657024
+        },
+        {
+          "candidate": "c4r1",
+          "reference": "c4r1",
+          "iou": 0.9474265251233108
+        },
+        {
+          "candidate": "c4r2",
+          "reference": "c4r2",
+          "iou": 0.9505447424828302
+        },
+        {
+          "candidate": "c4r3",
+          "reference": "c4r3",
+          "iou": 0.946559459452482
+        },
+        {
+          "candidate": "c4r4",
+          "reference": "c4r4",
+          "iou": 0.9325852063054052
+        },
+        {
+          "candidate": "c5r0",
+          "reference": "c5r0",
+          "iou": 0.8764211860924064
+        },
+        {
+          "candidate": "c5r1",
+          "reference": "c5r1",
+          "iou": 0.8747117113887057
+        },
+        {
+          "candidate": "c5r2",
+          "reference": "c5r2",
+          "iou": 0.877275803667625
+        },
+        {
+          "candidate": "c5r3",
+          "reference": "c5r3",
+          "iou": 0.8842034020880676
+        },
+        {
+          "candidate": "c5r4",
+          "reference": "c5r4",
+          "iou": 0.8956213709581703
+        }
+      ],
+      "missing_matches": [],
+      "actual_physical_current_top_accuracy": null
+    },
+    {
+      "file": "img_13.jpg",
+      "case": "initial_x_m04",
+      "split": "heldout",
+      "correlation_group": "D",
+      "positive_reference_count": 28,
+      "original_ambiguous_excluded": 2,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 4,
+      "candidate_count": 30,
+      "positive_decisions": {
+        "present": 14,
+        "missing": 0,
+        "uncertain": 14,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "correct_present": 14,
+      "missed_individual_faces": 14,
+      "scored_confirmed_present": 14,
+      "incorrect_confirmed_present": 0,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.5,
+      "positive_correct_present_coverage": 0.5,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 0,
+      "orientation_errors_deg": [
+        0.07976356069302426,
+        0.07977180921220395,
+        0.07976273717800098,
+        0.9562601561567874,
+        0.9562915739413853,
+        0.9562115951782317,
+        0.9562808386434511,
+        0.9562382212468918,
+        0.1934148559666511,
+        0.19338580880750555,
+        0.19342976793923583,
+        0.19339841441946248,
+        0.1933658121223374,
+        0.04125504003557978,
+        0.04117235215912274,
+        0.041234724160204905,
+        0.041257990998417426,
+        0.04124178266016543,
+        0.23027216005570494,
+        0.2302915652249311,
+        0.23024115147454438,
+        0.23026803068076163,
+        0.23029879538599118,
+        0.08110971295491254,
+        0.08105965361254164,
+        0.08108803677968979,
+        0.08108458018003262,
+        0.08108645315941487
+      ],
+      "projected_stud_errors_px": [
+        1.4806729166652774,
+        1.110200205663584,
+        1.947487991792794,
+        1.5653051673849463,
+        6.82628497035488,
+        6.244307215806912,
+        6.802021475882658,
+        6.167145947751362
+      ],
+      "observed_stud_peak_errors_px": [
+        4.947966774574486,
+        4.066629734165476,
+        4.412728121890742,
+        3.2254341441679366,
+        4.632752836679356
+      ],
+      "manual_stud_reference_count": 8,
+      "registration": {
+        "initial_quad_xy": [
+          [
+            430.0,
+            83.0
+          ],
+          [
+            941.0,
+            77.0
+          ],
+          [
+            938.0,
+            554.0
+          ],
+          [
+            431.0,
+            550.0
+          ]
+        ],
+        "refined_quad_xy": [
+          [
+            430.9537353515625,
+            85.93026733398438
+          ],
+          [
+            941.9696655273438,
+            79.9932632446289
+          ],
+          [
+            938.9620971679688,
+            556.9655151367188
+          ],
+          [
+            431.9463806152344,
+            552.9036254882812
+          ]
+        ],
+        "correction_px": [
+          0.9578857421875,
+          2.94775390625
+        ],
+        "correction_rectified_px": [
+          1.0,
+          3.0
+        ],
+        "consensus_studs": 44,
+        "registration_score": 0.18333333333333332,
+        "manual_assisted": true,
+        "reference": "supplied observed-window plane, not a measured baseplate frame",
+        "calibration_status": "nominal_not_measured",
+        "lower_projection": {
+          "status": "nominal_plane_fit_unreliable",
+          "reprojection_error_px": 12.256815639190467
+        }
+      },
+      "matches": [
+        {
+          "candidate": "c0r2",
+          "reference": "c0r2",
+          "iou": 0.7922112113476242
+        },
+        {
+          "candidate": "c0r3",
+          "reference": "c0r3",
+          "iou": 0.7873637296414643
+        },
+        {
+          "candidate": "c0r4",
+          "reference": "c0r4",
+          "iou": 0.7884341480988372
+        },
+        {
+          "candidate": "c1r0",
+          "reference": "c1r0",
+          "iou": 0.6048141842827438
+        },
+        {
+          "candidate": "c1r1",
+          "reference": "c1r1",
+          "iou": 0.6537196503908073
+        },
+        {
+          "candidate": "c1r2",
+          "reference": "c1r2",
+          "iou": 0.7049898425017765
+        },
+        {
+          "candidate": "c1r3",
+          "reference": "c1r3",
+          "iou": 0.752250823020382
+        },
+        {
+          "candidate": "c1r4",
+          "reference": "c1r4",
+          "iou": 0.79207878596692
+        },
+        {
+          "candidate": "c2r0",
+          "reference": "c2r0",
+          "iou": 0.6840483679875727
+        },
+        {
+          "candidate": "c2r1",
+          "reference": "c2r1",
+          "iou": 0.7079708952080117
+        },
+        {
+          "candidate": "c2r2",
+          "reference": "c2r2",
+          "iou": 0.7185884366570864
+        },
+        {
+          "candidate": "c2r3",
+          "reference": "c2r3",
+          "iou": 0.721415471243211
+        },
+        {
+          "candidate": "c2r4",
+          "reference": "c2r4",
+          "iou": 0.7041044259964839
+        },
+        {
+          "candidate": "c3r0",
+          "reference": "c3r0",
+          "iou": 0.8454928183489809
+        },
+        {
+          "candidate": "c3r1",
+          "reference": "c3r1",
+          "iou": 0.8643662236144304
+        },
+        {
+          "candidate": "c3r2",
+          "reference": "c3r2",
+          "iou": 0.8722170002190734
+        },
+        {
+          "candidate": "c3r3",
+          "reference": "c3r3",
+          "iou": 0.8720210558081506
+        },
+        {
+          "candidate": "c3r4",
+          "reference": "c3r4",
+          "iou": 0.8428066539355793
+        },
+        {
+          "candidate": "c4r0",
+          "reference": "c4r0",
+          "iou": 0.8587765280396774
+        },
+        {
+          "candidate": "c4r1",
+          "reference": "c4r1",
+          "iou": 0.8795816854015386
+        },
+        {
+          "candidate": "c4r2",
+          "reference": "c4r2",
+          "iou": 0.9064816826372596
+        },
+        {
+          "candidate": "c4r3",
+          "reference": "c4r3",
+          "iou": 0.9308000806862624
+        },
+        {
+          "candidate": "c4r4",
+          "reference": "c4r4",
+          "iou": 0.9448199977525806
+        },
+        {
+          "candidate": "c5r0",
+          "reference": "c5r0",
+          "iou": 0.793447544897943
+        },
+        {
+          "candidate": "c5r1",
+          "reference": "c5r1",
+          "iou": 0.7911478433005019
+        },
+        {
+          "candidate": "c5r2",
+          "reference": "c5r2",
+          "iou": 0.7933727750656194
+        },
+        {
+          "candidate": "c5r3",
+          "reference": "c5r3",
+          "iou": 0.7990164249756604
+        },
+        {
+          "candidate": "c5r4",
+          "reference": "c5r4",
+          "iou": 0.810859662677723
+        }
+      ],
+      "missing_matches": [],
+      "actual_physical_current_top_accuracy": null
+    },
+    {
+      "file": "img_13.jpg",
+      "case": "initial_x_p04",
+      "split": "heldout",
+      "correlation_group": "D",
+      "positive_reference_count": 28,
+      "original_ambiguous_excluded": 2,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 4,
+      "candidate_count": 30,
+      "positive_decisions": {
+        "present": 5,
+        "missing": 0,
+        "uncertain": 20,
+        "no_match": 3
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "correct_present": 5,
+      "missed_individual_faces": 23,
+      "scored_confirmed_present": 5,
+      "incorrect_confirmed_present": 0,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.17857142857142858,
+      "positive_correct_present_coverage": 0.17857142857142858,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 0,
+      "orientation_errors_deg": [
+        0.07889016986325714,
+        0.0788582545991261,
+        0.07888399436126292,
+        0.9553180477681877,
+        0.9553471321935376,
+        0.9553766039017546,
+        0.19248839410305152,
+        0.19249345152117314,
+        0.19249750737046156,
+        0.19250050492914283,
+        0.04029031570985353,
+        0.040278374989526355,
+        0.04033793615396064,
+        0.040321296061037515,
+        0.04030226091626332,
+        0.23120173005617062,
+        0.2311873097968089,
+        0.23121331249625143,
+        0.23116934792761867,
+        0.2312027820567124,
+        0.08204090102408657,
+        0.0819938501944506,
+        0.08202497102547568,
+        0.08198766754203746,
+        0.08202920357376797
+      ],
+      "projected_stud_errors_px": [
+        6.159105959127857,
+        6.549275224607992,
+        5.8248907686110165,
+        6.183297656221468,
+        4.600112105295401,
+        4.965981429739288,
+        3.607529875579722,
+        3.9504868255119647
+      ],
+      "observed_stud_peak_errors_px": [
+        6.110007186669855,
+        7.841256364455826,
+        3.9668467122771935,
+        4.831254767829713
+      ],
+      "manual_stud_reference_count": 8,
+      "registration": {
+        "initial_quad_xy": [
+          [
+            438.0,
+            83.0
+          ],
+          [
+            949.0,
+            77.0
+          ],
+          [
+            946.0,
+            554.0
+          ],
+          [
+            439.0,
+            550.0
+          ]
+        ],
+        "refined_quad_xy": [
+          [
+            438.0,
+            83.0
+          ],
+          [
+            949.0,
+            77.0
+          ],
+          [
+            946.0,
+            554.0
+          ],
+          [
+            439.0,
+            550.0
+          ]
+        ],
+        "correction_px": [
+          0.0,
+          0.0
+        ],
+        "correction_rectified_px": [
+          0.0,
+          0.0
+        ],
+        "consensus_studs": 35,
+        "registration_score": 0.14583333333333334,
+        "manual_assisted": true,
+        "reference": "supplied observed-window plane, not a measured baseplate frame",
+        "calibration_status": "nominal_not_measured",
+        "lower_projection": {
+          "status": "nominal_plane_fit_unreliable",
+          "reprojection_error_px": 11.882483941614305
+        }
+      },
+      "matches": [
+        {
+          "candidate": "c0r2",
+          "reference": "c0r2",
+          "iou": 0.8503003743542107
+        },
+        {
+          "candidate": "c0r3",
+          "reference": "c0r3",
+          "iou": 0.8548699339326543
+        },
+        {
+          "candidate": "c0r4",
+          "reference": "c0r4",
+          "iou": 0.866008109021307
+        },
+        {
+          "candidate": "c1r2",
+          "reference": "c1r2",
+          "iou": 0.5022206825228088
+        },
+        {
+          "candidate": "c1r3",
+          "reference": "c1r3",
+          "iou": 0.5304951188989094
+        },
+        {
+          "candidate": "c1r4",
+          "reference": "c1r4",
+          "iou": 0.5554318357317853
+        },
+        {
+          "candidate": "c2r0",
+          "reference": "c2r0",
+          "iou": 0.5127609897457283
+        },
+        {
+          "candidate": "c2r1",
+          "reference": "c2r1",
+          "iou": 0.5132327439750808
+        },
+        {
+          "candidate": "c2r2",
+          "reference": "c2r2",
+          "iou": 0.5085598517351629
+        },
+        {
+          "candidate": "c2r3",
+          "reference": "c2r3",
+          "iou": 0.5019487674955745
+        },
+        {
+          "candidate": "c3r0",
+          "reference": "c3r0",
+          "iou": 0.6464363887472224
+        },
+        {
+          "candidate": "c3r1",
+          "reference": "c3r1",
+          "iou": 0.6394655357804808
+        },
+        {
+          "candidate": "c3r2",
+          "reference": "c3r2",
+          "iou": 0.6268844515734872
+        },
+        {
+          "candidate": "c3r3",
+          "reference": "c3r3",
+          "iou": 0.6121508519269814
+        },
+        {
+          "candidate": "c3r4",
+          "reference": "c3r4",
+          "iou": 0.5935555577964019
+        },
+        {
+          "candidate": "c4r0",
+          "reference": "c4r0",
+          "iou": 0.8146888975416047
+        },
+        {
+          "candidate": "c4r1",
+          "reference": "c4r1",
+          "iou": 0.7967548899652653
+        },
+        {
+          "candidate": "c4r2",
+          "reference": "c4r2",
+          "iou": 0.7732199246609414
+        },
+        {
+          "candidate": "c4r3",
+          "reference": "c4r3",
+          "iou": 0.7474549856729998
+        },
+        {
+          "candidate": "c4r4",
+          "reference": "c4r4",
+          "iou": 0.7174175000043279
+        },
+        {
+          "candidate": "c5r0",
+          "reference": "c5r0",
+          "iou": 0.881050224872072
+        },
+        {
+          "candidate": "c5r1",
+          "reference": "c5r1",
+          "iou": 0.868875365672698
+        },
+        {
+          "candidate": "c5r2",
+          "reference": "c5r2",
+          "iou": 0.8597534940731397
+        },
+        {
+          "candidate": "c5r3",
+          "reference": "c5r3",
+          "iou": 0.8507489237351071
+        },
+        {
+          "candidate": "c5r4",
+          "reference": "c5r4",
+          "iou": 0.8432705490499913
+        }
+      ],
+      "missing_matches": [],
+      "actual_physical_current_top_accuracy": null
+    },
+    {
+      "file": "img_13.jpg",
+      "case": "initial_y_m04",
+      "split": "heldout",
+      "correlation_group": "D",
+      "positive_reference_count": 28,
+      "original_ambiguous_excluded": 2,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 4,
+      "candidate_count": 30,
+      "positive_decisions": {
+        "present": 1,
+        "missing": 0,
+        "uncertain": 27,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "correct_present": 1,
+      "missed_individual_faces": 27,
+      "scored_confirmed_present": 1,
+      "incorrect_confirmed_present": 0,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.03571428571428571,
+      "positive_correct_present_coverage": 0.03571428571428571,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 0,
+      "orientation_errors_deg": [
+        0.07889016986325714,
+        0.0788582545991261,
+        0.07888399436126292,
+        0.9553721644642081,
+        0.9553636587019696,
+        0.9553180477681877,
+        0.9553471321935376,
+        0.9553766039017546,
+        0.19248839410305152,
+        0.19249345152117314,
+        0.19249750737046156,
+        0.19250050492914283,
+        0.19246510464253674,
+        0.04029031570985353,
+        0.040278374989526355,
+        0.04033793615396064,
+        0.040321296061037515,
+        0.04030226091626332,
+        0.23120173005617062,
+        0.2311873097968089,
+        0.23121331249625143,
+        0.23116934792761867,
+        0.2312027820567124,
+        0.08204090102408657,
+        0.0819938501944506,
+        0.08202497102547568,
+        0.08198766754203746,
+        0.08202920357376797
+      ],
+      "projected_stud_errors_px": [
+        6.676430403629943,
+        7.01074270615338,
+        5.888762298782516,
+        6.20381989835417,
+        9.30979058920656,
+        9.322068536268679,
+        8.469996121793695,
+        8.423180758373354
+      ],
+      "observed_stud_peak_errors_px": [
+        3.0609843921913114,
+        7.88197037625076,
+        6.602575262264848,
+        4.873251037128856
+      ],
+      "manual_stud_reference_count": 8,
+      "registration": {
+        "initial_quad_xy": [
+          [
+            434.0,
+            79.0
+          ],
+          [
+            945.0,
+            73.0
+          ],
+          [
+            942.0,
+            550.0
+          ],
+          [
+            435.0,
+            546.0
+          ]
+        ],
+        "refined_quad_xy": [
+          [
+            434.0,
+            79.0
+          ],
+          [
+            945.0,
+            73.0
+          ],
+          [
+            942.0,
+            550.0
+          ],
+          [
+            435.0,
+            546.0
+          ]
+        ],
+        "correction_px": [
+          0.0,
+          0.0
+        ],
+        "correction_rectified_px": [
+          0.0,
+          0.0
+        ],
+        "consensus_studs": 7,
+        "registration_score": 0.029166666666666667,
+        "manual_assisted": true,
+        "reference": "supplied observed-window plane, not a measured baseplate frame",
+        "calibration_status": "nominal_not_measured",
+        "lower_projection": {
+          "status": "nominal_plane_fit_unreliable",
+          "reprojection_error_px": 12.072076132291997
+        }
+      },
+      "matches": [
+        {
+          "candidate": "c0r2",
+          "reference": "c0r2",
+          "iou": 0.9094100893082296
+        },
+        {
+          "candidate": "c0r3",
+          "reference": "c0r3",
+          "iou": 0.9047639994381909
+        },
+        {
+          "candidate": "c0r4",
+          "reference": "c0r4",
+          "iou": 0.893126050091618
+        },
+        {
+          "candidate": "c1r0",
+          "reference": "c1r0",
+          "iou": 0.5003608817508273
+        },
+        {
+          "candidate": "c1r1",
+          "reference": "c1r1",
+          "iou": 0.5316583617908324
+        },
+        {
+          "candidate": "c1r2",
+          "reference": "c1r2",
+          "iou": 0.5609779965290802
+        },
+        {
+          "candidate": "c1r3",
+          "reference": "c1r3",
+          "iou": 0.588618988581775
+        },
+        {
+          "candidate": "c1r4",
+          "reference": "c1r4",
+          "iou": 0.612097619155531
+        },
+        {
+          "candidate": "c2r0",
+          "reference": "c2r0",
+          "iou": 0.5787005713241017
+        },
+        {
+          "candidate": "c2r1",
+          "reference": "c2r1",
+          "iou": 0.5748767228349193
+        },
+        {
+          "candidate": "c2r2",
+          "reference": "c2r2",
+          "iou": 0.5678552456133414
+        },
+        {
+          "candidate": "c2r3",
+          "reference": "c2r3",
+          "iou": 0.5585820504957354
+        },
+        {
+          "candidate": "c2r4",
+          "reference": "c2r4",
+          "iou": 0.5453860589971516
+        },
+        {
+          "candidate": "c3r0",
+          "reference": "c3r0",
+          "iou": 0.717090328217289
+        },
+        {
+          "candidate": "c3r1",
+          "reference": "c3r1",
+          "iou": 0.7055912652585369
+        },
+        {
+          "candidate": "c3r2",
+          "reference": "c3r2",
+          "iou": 0.690234949674742
+        },
+        {
+          "candidate": "c3r3",
+          "reference": "c3r3",
+          "iou": 0.6724124838798469
+        },
+        {
+          "candidate": "c3r4",
+          "reference": "c3r4",
+          "iou": 0.6501138021580712
+        },
+        {
+          "candidate": "c4r0",
+          "reference": "c4r0",
+          "iou": 0.8900262640161161
+        },
+        {
+          "candidate": "c4r1",
+          "reference": "c4r1",
+          "iou": 0.8686744211004447
+        },
+        {
+          "candidate": "c4r2",
+          "reference": "c4r2",
+          "iou": 0.8426843502004978
+        },
+        {
+          "candidate": "c4r3",
+          "reference": "c4r3",
+          "iou": 0.8141070423919442
+        },
+        {
+          "candidate": "c4r4",
+          "reference": "c4r4",
+          "iou": 0.780534472002387
+        },
+        {
+          "candidate": "c5r0",
+          "reference": "c5r0",
+          "iou": 0.8814790429311293
+        },
+        {
+          "candidate": "c5r1",
+          "reference": "c5r1",
+          "iou": 0.8947951687492824
+        },
+        {
+          "candidate": "c5r2",
+          "reference": "c5r2",
+          "iou": 0.9028111588927359
+        },
+        {
+          "candidate": "c5r3",
+          "reference": "c5r3",
+          "iou": 0.9069997698452505
+        },
+        {
+          "candidate": "c5r4",
+          "reference": "c5r4",
+          "iou": 0.903955033614052
+        }
+      ],
+      "missing_matches": [],
+      "actual_physical_current_top_accuracy": null
+    },
+    {
+      "file": "img_13.jpg",
+      "case": "initial_y_p04",
+      "split": "heldout",
+      "correlation_group": "D",
+      "positive_reference_count": 28,
+      "original_ambiguous_excluded": 2,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 4,
+      "candidate_count": 30,
+      "positive_decisions": {
+        "present": 13,
+        "missing": 0,
+        "uncertain": 15,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "correct_present": 13,
+      "missed_individual_faces": 15,
+      "scored_confirmed_present": 13,
+      "incorrect_confirmed_present": 0,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.4642857142857143,
+      "positive_correct_present_coverage": 0.4642857142857143,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 0,
+      "orientation_errors_deg": [
+        0.07706782607969842,
+        0.07706778583677476,
+        0.0770880537789651,
+        0.9535562517438194,
+        0.9535049369619486,
+        0.9535653380977465,
+        0.9535142116632471,
+        0.9535755008139546,
+        0.19064959354365385,
+        0.19068588723885682,
+        0.1906842081779132,
+        0.1906443253227792,
+        0.1906777999152922,
+        0.03850255715563833,
+        0.03844799946429589,
+        0.038501817292470264,
+        0.03847931631476342,
+        0.03845446111675699,
+        0.233011854670238,
+        0.23303996999744925,
+        0.23303521594604604,
+        0.23307089008939386,
+        0.23303648322007575,
+        0.0839094651439325,
+        0.0838684408740562,
+        0.08386901764811228,
+        0.0839113756631491,
+        0.08384809502790347
+      ],
+      "projected_stud_errors_px": [
+        1.5789028736196196,
+        1.2882208540433253,
+        2.374393632038319,
+        2.1088565268699218,
+        5.604747320112174,
+        4.974479604570576,
+        5.7281425844343845,
+        5.053896309872466
+      ],
+      "observed_stud_peak_errors_px": [
+        3.3400803886830106,
+        3.3158036230482724,
+        3.0851825195357754,
+        4.540343244261974
+      ],
+      "manual_stud_reference_count": 8,
+      "registration": {
+        "initial_quad_xy": [
+          [
+            434.0,
+            87.0
+          ],
+          [
+            945.0,
+            81.0
+          ],
+          [
+            942.0,
+            558.0
+          ],
+          [
+            435.0,
+            554.0
+          ]
+        ],
+        "refined_quad_xy": [
+          [
+            432.1052551269531,
+            87.02224731445312
+          ],
+          [
+            943.02294921875,
+            81.0232162475586
+          ],
+          [
+            940.0387573242188,
+            557.9844970703125
+          ],
+          [
+            433.1197814941406,
+            553.9851684570312
+          ]
+        ],
+        "correction_px": [
+          -1.92767333984375,
+          0.003631591796875
+        ],
+        "correction_rectified_px": [
+          -2.0,
+          0.0
+        ],
+        "consensus_studs": 39,
+        "registration_score": 0.1625,
+        "manual_assisted": true,
+        "reference": "supplied observed-window plane, not a measured baseplate frame",
+        "calibration_status": "nominal_not_measured",
+        "lower_projection": {
+          "status": "nominal_plane_fit_unreliable",
+          "reprojection_error_px": 12.261055226134285
+        }
+      },
+      "matches": [
+        {
+          "candidate": "c0r2",
+          "reference": "c0r2",
+          "iou": 0.8135811668527865
+        },
+        {
+          "candidate": "c0r3",
+          "reference": "c0r3",
+          "iou": 0.8087096866484806
+        },
+        {
+          "candidate": "c0r4",
+          "reference": "c0r4",
+          "iou": 0.8101279999023852
+        },
+        {
+          "candidate": "c1r0",
+          "reference": "c1r0",
+          "iou": 0.5647981076251911
+        },
+        {
+          "candidate": "c1r1",
+          "reference": "c1r1",
+          "iou": 0.6104636672838668
+        },
+        {
+          "candidate": "c1r2",
+          "reference": "c1r2",
+          "iou": 0.6628955260386177
+        },
+        {
+          "candidate": "c1r3",
+          "reference": "c1r3",
+          "iou": 0.7161518405789066
+        },
+        {
+          "candidate": "c1r4",
+          "reference": "c1r4",
+          "iou": 0.7651282957630035
+        },
+        {
+          "candidate": "c2r0",
+          "reference": "c2r0",
+          "iou": 0.6395649344631047
+        },
+        {
+          "candidate": "c2r1",
+          "reference": "c2r1",
+          "iou": 0.6615746406358847
+        },
+        {
+          "candidate": "c2r2",
+          "reference": "c2r2",
+          "iou": 0.6841921666116322
+        },
+        {
+          "candidate": "c2r3",
+          "reference": "c2r3",
+          "iou": 0.6916639518050363
+        },
+        {
+          "candidate": "c2r4",
+          "reference": "c2r4",
+          "iou": 0.683941925913999
+        },
+        {
+          "candidate": "c3r0",
+          "reference": "c3r0",
+          "iou": 0.791331901941915
+        },
+        {
+          "candidate": "c3r1",
+          "reference": "c3r1",
+          "iou": 0.8085010167123617
+        },
+        {
+          "candidate": "c3r2",
+          "reference": "c3r2",
+          "iou": 0.8308438882060615
+        },
+        {
+          "candidate": "c3r3",
+          "reference": "c3r3",
+          "iou": 0.8319249297723815
+        },
+        {
+          "candidate": "c3r4",
+          "reference": "c3r4",
+          "iou": 0.8211352079923414
+        },
+        {
+          "candidate": "c4r0",
+          "reference": "c4r0",
+          "iou": 0.8788507417728855
+        },
+        {
+          "candidate": "c4r1",
+          "reference": "c4r1",
+          "iou": 0.9003223890879513
+        },
+        {
+          "candidate": "c4r2",
+          "reference": "c4r2",
+          "iou": 0.928229419608202
+        },
+        {
+          "candidate": "c4r3",
+          "reference": "c4r3",
+          "iou": 0.9525808555611156
+        },
+        {
+          "candidate": "c4r4",
+          "reference": "c4r4",
+          "iou": 0.9621927108263293
+        },
+        {
+          "candidate": "c5r0",
+          "reference": "c5r0",
+          "iou": 0.812807660852054
+        },
+        {
+          "candidate": "c5r1",
+          "reference": "c5r1",
+          "iou": 0.8103523710388458
+        },
+        {
+          "candidate": "c5r2",
+          "reference": "c5r2",
+          "iou": 0.8126766367565545
+        },
+        {
+          "candidate": "c5r3",
+          "reference": "c5r3",
+          "iou": 0.8185018047766104
+        },
+        {
+          "candidate": "c5r4",
+          "reference": "c5r4",
+          "iou": 0.8308816306670429
+        }
+      ],
+      "missing_matches": [],
+      "actual_physical_current_top_accuracy": null
+    },
+    {
+      "file": "img_16.jpg",
+      "case": "nominal",
+      "split": "heldout",
+      "correlation_group": "D",
+      "positive_reference_count": 26,
+      "original_ambiguous_excluded": 4,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 4,
+      "candidate_count": 30,
+      "positive_decisions": {
+        "present": 7,
+        "missing": 0,
+        "uncertain": 19,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "correct_present": 7,
+      "missed_individual_faces": 19,
+      "scored_confirmed_present": 7,
+      "incorrect_confirmed_present": 0,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.2692307692307692,
+      "positive_correct_present_coverage": 0.2692307692307692,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 2,
+      "orientation_errors_deg": [
+        0.08874510256431734,
+        0.08877459713110625,
+        0.08877158677802299,
+        0.08880281874481,
+        0.08874499028657112,
+        0.02777487918585564,
+        0.027751895499719126,
+        0.027762347012995292,
+        0.02777315506860134,
+        0.027749007150077887,
+        1.459498783739349,
+        1.4595342053339238,
+        1.4595014808615332,
+        1.4595121278320136,
+        1.4595191015620088,
+        0.26050519445145426,
+        0.2604966816846854,
+        0.2605021177203497,
+        0.2605062681180783,
+        0.26051171382164284,
+        0.9148598023819972,
+        0.9148593180772338,
+        0.9148849534376211,
+        0.21674807864320655,
+        0.216758651759406,
+        0.21671786797978143
+      ],
+      "projected_stud_errors_px": [
+        4.621354144347561,
+        6.1059617997150495,
+        4.670940015461443,
+        6.092624144311704,
+        5.179629497096331,
+        6.015756982123402,
+        5.514329796366058,
+        5.353601878075719
+      ],
+      "observed_stud_peak_errors_px": [],
+      "manual_stud_reference_count": 8,
+      "registration": {
+        "initial_quad_xy": [
+          [
+            553.0,
+            146.0
+          ],
+          [
+            1014.0,
+            219.0
+          ],
+          [
+            957.0,
+            638.0
+          ],
+          [
+            502.0,
+            587.0
+          ]
+        ],
+        "refined_quad_xy": [
+          [
+            553.1083374023438,
+            145.06332397460938
+          ],
+          [
+            1014.1209716796875,
+            218.11087036132812
+          ],
+          [
+            957.1165771484375,
+            637.1429443359375
+          ],
+          [
+            502.1042175292969,
+            586.0987548828125
+          ]
+        ],
+        "correction_px": [
+          0.11285400390625,
+          -0.89520263671875
+        ],
+        "correction_rectified_px": [
+          0.0,
+          -1.0
+        ],
+        "consensus_studs": 19,
+        "registration_score": 0.07916666666666666,
+        "manual_assisted": true,
+        "reference": "supplied observed-window plane, not a measured baseplate frame",
+        "calibration_status": "nominal_not_measured",
+        "lower_projection": {
+          "status": "nominal_not_calibrated",
+          "reprojection_error_px": 5.143641021586877,
+          "relative_lower_depths_m": [
+            0.0096,
+            0.0192
+          ]
+        }
+      },
+      "matches": [
+        {
+          "candidate": "c0r0",
+          "reference": "c0r0",
+          "iou": 0.889971944686472
+        },
+        {
+          "candidate": "c0r1",
+          "reference": "c0r1",
+          "iou": 0.9000714826113518
+        },
+        {
+          "candidate": "c0r2",
+          "reference": "c0r2",
+          "iou": 0.8960906522752258
+        },
+        {
+          "candidate": "c0r3",
+          "reference": "c0r3",
+          "iou": 0.8946826800510228
+        },
+        {
+          "candidate": "c0r4",
+          "reference": "c0r4",
+          "iou": 0.8925165517558482
+        },
+        {
+          "candidate": "c1r0",
+          "reference": "c1r0",
+          "iou": 0.7643479537179524
+        },
+        {
+          "candidate": "c1r1",
+          "reference": "c1r1",
+          "iou": 0.7563039103516417
+        },
+        {
+          "candidate": "c1r2",
+          "reference": "c1r2",
+          "iou": 0.7556637932959324
+        },
+        {
+          "candidate": "c1r3",
+          "reference": "c1r3",
+          "iou": 0.7518667127569533
+        },
+        {
+          "candidate": "c1r4",
+          "reference": "c1r4",
+          "iou": 0.7407642511749443
+        },
+        {
+          "candidate": "c2r0",
+          "reference": "c2r0",
+          "iou": 0.8349053528901943
+        },
+        {
+          "candidate": "c2r1",
+          "reference": "c2r1",
+          "iou": 0.8050186750185667
+        },
+        {
+          "candidate": "c2r2",
+          "reference": "c2r2",
+          "iou": 0.7433983092970671
+        },
+        {
+          "candidate": "c2r3",
+          "reference": "c2r3",
+          "iou": 0.675011088743324
+        },
+        {
+          "candidate": "c2r4",
+          "reference": "c2r4",
+          "iou": 0.6030198457608857
+        },
+        {
+          "candidate": "c3r0",
+          "reference": "c3r0",
+          "iou": 0.855251735186401
+        },
+        {
+          "candidate": "c3r1",
+          "reference": "c3r1",
+          "iou": 0.8606608836964104
+        },
+        {
+          "candidate": "c3r2",
+          "reference": "c3r2",
+          "iou": 0.8547013686346446
+        },
+        {
+          "candidate": "c3r3",
+          "reference": "c3r3",
+          "iou": 0.837529153152864
+        },
+        {
+          "candidate": "c3r4",
+          "reference": "c3r4",
+          "iou": 0.8096948155374504
+        },
+        {
+          "candidate": "c4r0",
+          "reference": "c4r0",
+          "iou": 0.8350667197754047
+        },
+        {
+          "candidate": "c4r3",
+          "reference": "c4r3",
+          "iou": 0.7675139342877058
+        },
+        {
+          "candidate": "c4r4",
+          "reference": "c4r4",
+          "iou": 0.7061118722351297
+        },
+        {
+          "candidate": "c5r0",
+          "reference": "c5r0",
+          "iou": 0.8482112296183427
+        },
+        {
+          "candidate": "c5r3",
+          "reference": "c5r3",
+          "iou": 0.8709026255246888
+        },
+        {
+          "candidate": "c5r4",
+          "reference": "c5r4",
+          "iou": 0.877077192370024
+        }
+      ],
+      "missing_matches": [],
+      "actual_physical_current_top_accuracy": null
+    },
+    {
+      "file": "img_16.jpg",
+      "case": "brightness_070",
+      "split": "heldout",
+      "correlation_group": "D",
+      "positive_reference_count": 26,
+      "original_ambiguous_excluded": 4,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 4,
+      "candidate_count": 30,
+      "positive_decisions": {
+        "present": 6,
+        "missing": 0,
+        "uncertain": 20,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "correct_present": 6,
+      "missed_individual_faces": 20,
+      "scored_confirmed_present": 6,
+      "incorrect_confirmed_present": 0,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.23076923076923078,
+      "positive_correct_present_coverage": 0.23076923076923078,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 1,
+      "orientation_errors_deg": [
+        0.0887929804282237,
+        0.08878733988423448,
+        0.08875321632635291,
+        0.08874940094729311,
+        0.08878240539181093,
+        0.02777259037398494,
+        0.027746041630408058,
+        0.027788855301068338,
+        0.027712958603601123,
+        0.027803985945766385,
+        1.4594912755567293,
+        1.4595352477951735,
+        1.4594675946521534,
+        1.45952566468452,
+        1.4595377708557606,
+        0.26053187479728024,
+        0.26053122346129953,
+        0.26049926855219496,
+        0.26051894982353474,
+        0.26048366147844604,
+        0.9148760238238793,
+        0.9148597785830361,
+        0.9148718804499367,
+        0.21669286634397622,
+        0.21672530533207635,
+        0.21675605098093342
+      ],
+      "projected_stud_errors_px": [
+        4.026374182907835,
+        5.757875386539895,
+        4.027960809126967,
+        5.696634437310725,
+        4.267561186335662,
+        5.135342732396052,
+        4.604431856231419,
+        4.468742813362165
+      ],
+      "observed_stud_peak_errors_px": [],
+      "manual_stud_reference_count": 8,
+      "registration": {
+        "initial_quad_xy": [
+          [
+            553.0,
+            146.0
+          ],
+          [
+            1014.0,
+            219.0
+          ],
+          [
+            957.0,
+            638.0
+          ],
+          [
+            502.0,
+            587.0
+          ]
+        ],
+        "refined_quad_xy": [
+          [
+            553.0,
+            146.0
+          ],
+          [
+            1014.0,
+            219.0
+          ],
+          [
+            957.0,
+            638.0
+          ],
+          [
+            502.0,
+            587.0
+          ]
+        ],
+        "correction_px": [
+          0.0,
+          0.0
+        ],
+        "correction_rectified_px": [
+          0.0,
+          0.0
+        ],
+        "consensus_studs": 15,
+        "registration_score": 0.0625,
+        "manual_assisted": true,
+        "reference": "supplied observed-window plane, not a measured baseplate frame",
+        "calibration_status": "nominal_not_measured",
+        "lower_projection": {
+          "status": "nominal_not_calibrated",
+          "reprojection_error_px": 5.143970278791204,
+          "relative_lower_depths_m": [
+            0.0096,
+            0.0192
+          ]
+        }
+      },
+      "matches": [
+        {
+          "candidate": "c0r0",
+          "reference": "c0r0",
+          "iou": 0.9031049189399103
+        },
+        {
+          "candidate": "c0r1",
+          "reference": "c0r1",
+          "iou": 0.8965461571065579
+        },
+        {
+          "candidate": "c0r2",
+          "reference": "c0r2",
+          "iou": 0.892601345707802
+        },
+        {
+          "candidate": "c0r3",
+          "reference": "c0r3",
+          "iou": 0.8912198178585091
+        },
+        {
+          "candidate": "c0r4",
+          "reference": "c0r4",
+          "iou": 0.8923732254401283
+        },
+        {
+          "candidate": "c1r0",
+          "reference": "c1r0",
+          "iou": 0.7542524197533024
+        },
+        {
+          "candidate": "c1r1",
+          "reference": "c1r1",
+          "iou": 0.7462712370853185
+        },
+        {
+          "candidate": "c1r2",
+          "reference": "c1r2",
+          "iou": 0.7456534058189225
+        },
+        {
+          "candidate": "c1r3",
+          "reference": "c1r3",
+          "iou": 0.7524339314806061
+        },
+        {
+          "candidate": "c1r4",
+          "reference": "c1r4",
+          "iou": 0.7435961346262392
+        },
+        {
+          "candidate": "c2r0",
+          "reference": "c2r0",
+          "iou": 0.8502644007402076
+        },
+        {
+          "candidate": "c2r1",
+          "reference": "c2r1",
+          "iou": 0.8227403424303831
+        },
+        {
+          "candidate": "c2r2",
+          "reference": "c2r2",
+          "iou": 0.755771598466392
+        },
+        {
+          "candidate": "c2r3",
+          "reference": "c2r3",
+          "iou": 0.6867002071575745
+        },
+        {
+          "candidate": "c2r4",
+          "reference": "c2r4",
+          "iou": 0.615245221520915
+        },
+        {
+          "candidate": "c3r0",
+          "reference": "c3r0",
+          "iou": 0.8711196602999046
+        },
+        {
+          "candidate": "c3r1",
+          "reference": "c3r1",
+          "iou": 0.8765912541686889
+        },
+        {
+          "candidate": "c3r2",
+          "reference": "c3r2",
+          "iou": 0.8705009102069948
+        },
+        {
+          "candidate": "c3r3",
+          "reference": "c3r3",
+          "iou": 0.8530058849733633
+        },
+        {
+          "candidate": "c3r4",
+          "reference": "c3r4",
+          "iou": 0.8246774485937391
+        },
+        {
+          "candidate": "c4r0",
+          "reference": "c4r0",
+          "iou": 0.850382318986095
+        },
+        {
+          "candidate": "c4r3",
+          "reference": "c4r3",
+          "iou": 0.7781101705421637
+        },
+        {
+          "candidate": "c4r4",
+          "reference": "c4r4",
+          "iou": 0.7157032459546183
+        },
+        {
+          "candidate": "c5r0",
+          "reference": "c5r0",
+          "iou": 0.8519603342253328
+        },
+        {
+          "candidate": "c5r3",
+          "reference": "c5r3",
+          "iou": 0.854923209348463
+        },
+        {
+          "candidate": "c5r4",
+          "reference": "c5r4",
+          "iou": 0.8769433061654677
+        }
+      ],
+      "missing_matches": [],
+      "actual_physical_current_top_accuracy": null
+    },
+    {
+      "file": "img_16.jpg",
+      "case": "brightness_130",
+      "split": "heldout",
+      "correlation_group": "D",
+      "positive_reference_count": 26,
+      "original_ambiguous_excluded": 4,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 4,
+      "candidate_count": 30,
+      "positive_decisions": {
+        "present": 8,
+        "missing": 0,
+        "uncertain": 18,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "correct_present": 8,
+      "missed_individual_faces": 18,
+      "scored_confirmed_present": 8,
+      "incorrect_confirmed_present": 0,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.3076923076923077,
+      "positive_correct_present_coverage": 0.3076923076923077,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 2,
+      "orientation_errors_deg": [
+        0.09103057299104478,
+        0.09102984371727985,
+        0.09106978257783283,
+        0.09103510476478505,
+        0.09102263468945182,
+        0.02553816544623544,
+        0.025550202270466116,
+        0.02551136354115613,
+        0.025512168750481123,
+        0.02552546843797643,
+        1.4617223630459648,
+        1.4616845276008803,
+        1.4617404869159998,
+        1.4617154293481747,
+        1.4617314818780045,
+        0.26267543177796426,
+        0.26267312344127447,
+        0.26264702419976516,
+        0.26265432092370133,
+        0.26266538758643776,
+        0.9127413943574112,
+        0.9127634992030949,
+        0.9127513847009965,
+        0.2146085057342475,
+        0.2146457801908923,
+        0.21464217356766824
+      ],
+      "projected_stud_errors_px": [
+        5.293873654059823,
+        6.90852067535772,
+        5.30443333136618,
+        6.87408473014196,
+        5.279221218258018,
+        6.296233804793951,
+        5.5767232759225465,
+        5.61592997156766
+      ],
+      "observed_stud_peak_errors_px": [],
+      "manual_stud_reference_count": 8,
+      "registration": {
+        "initial_quad_xy": [
+          [
+            553.0,
+            146.0
+          ],
+          [
+            1014.0,
+            219.0
+          ],
+          [
+            957.0,
+            638.0
+          ],
+          [
+            502.0,
+            587.0
+          ]
+        ],
+        "refined_quad_xy": [
+          [
+            552.1913452148438,
+            144.91802978515625
+          ],
+          [
+            1013.2894287109375,
+            217.97911071777344
+          ],
+          [
+            956.295166015625,
+            637.05078125
+          ],
+          [
+            501.1999816894531,
+            585.997314453125
+          ]
+        ],
+        "correction_px": [
+          -0.754150390625,
+          -1.012298583984375
+        ],
+        "correction_rectified_px": [
+          -1.0,
+          -1.0
+        ],
+        "consensus_studs": 17,
+        "registration_score": 0.07083333333333333,
+        "manual_assisted": true,
+        "reference": "supplied observed-window plane, not a measured baseplate frame",
+        "calibration_status": "nominal_not_measured",
+        "lower_projection": {
+          "status": "nominal_not_calibrated",
+          "reprojection_error_px": 5.1624145418846865,
+          "relative_lower_depths_m": [
+            0.0096,
+            0.0192
+          ]
+        }
+      },
+      "matches": [
+        {
+          "candidate": "c0r0",
+          "reference": "c0r0",
+          "iou": 0.8597085975276066
+        },
+        {
+          "candidate": "c0r1",
+          "reference": "c0r1",
+          "iou": 0.871725143697337
+        },
+        {
+          "candidate": "c0r2",
+          "reference": "c0r2",
+          "iou": 0.8679004899845587
+        },
+        {
+          "candidate": "c0r3",
+          "reference": "c0r3",
+          "iou": 0.8665714075604833
+        },
+        {
+          "candidate": "c0r4",
+          "reference": "c0r4",
+          "iou": 0.8677110008515319
+        },
+        {
+          "candidate": "c1r0",
+          "reference": "c1r0",
+          "iou": 0.7912702505423428
+        },
+        {
+          "candidate": "c1r1",
+          "reference": "c1r1",
+          "iou": 0.7827902423492483
+        },
+        {
+          "candidate": "c1r2",
+          "reference": "c1r2",
+          "iou": 0.7821175998146198
+        },
+        {
+          "candidate": "c1r3",
+          "reference": "c1r3",
+          "iou": 0.7765646474948602
+        },
+        {
+          "candidate": "c1r4",
+          "reference": "c1r4",
+          "iou": 0.7651375051120509
+        },
+        {
+          "candidate": "c2r0",
+          "reference": "c2r0",
+          "iou": 0.8327386954427972
+        },
+        {
+          "candidate": "c2r1",
+          "reference": "c2r1",
+          "iou": 0.8280863688740372
+        },
+        {
+          "candidate": "c2r2",
+          "reference": "c2r2",
+          "iou": 0.7651815913898752
+        },
+        {
+          "candidate": "c2r3",
+          "reference": "c2r3",
+          "iou": 0.6951975499218332
+        },
+        {
+          "candidate": "c2r4",
+          "reference": "c2r4",
+          "iou": 0.6214275318710465
+        },
+        {
+          "candidate": "c3r0",
+          "reference": "c3r0",
+          "iou": 0.8530316646519894
+        },
+        {
+          "candidate": "c3r1",
+          "reference": "c3r1",
+          "iou": 0.8585617417613944
+        },
+        {
+          "candidate": "c3r2",
+          "reference": "c3r2",
+          "iou": 0.8527508113582817
+        },
+        {
+          "candidate": "c3r3",
+          "reference": "c3r3",
+          "iou": 0.8357442343386501
+        },
+        {
+          "candidate": "c3r4",
+          "reference": "c3r4",
+          "iou": 0.8080900111029834
+        },
+        {
+          "candidate": "c4r0",
+          "reference": "c4r0",
+          "iou": 0.832941448105251
+        },
+        {
+          "candidate": "c4r3",
+          "reference": "c4r3",
+          "iou": 0.7430775980890856
+        },
+        {
+          "candidate": "c4r4",
+          "reference": "c4r4",
+          "iou": 0.6837870460152565
+        },
+        {
+          "candidate": "c5r0",
+          "reference": "c5r0",
+          "iou": 0.8519140003116465
+        },
+        {
+          "candidate": "c5r3",
+          "reference": "c5r3",
+          "iou": 0.8729253675483475
+        },
+        {
+          "candidate": "c5r4",
+          "reference": "c5r4",
+          "iou": 0.8772503715541622
+        }
+      ],
+      "missing_matches": [],
+      "actual_physical_current_top_accuracy": null
+    },
+    {
+      "file": "img_16.jpg",
+      "case": "rotation_m05",
+      "split": "heldout",
+      "correlation_group": "D",
+      "positive_reference_count": 26,
+      "original_ambiguous_excluded": 4,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 4,
+      "candidate_count": 30,
+      "positive_decisions": {
+        "present": 7,
+        "missing": 0,
+        "uncertain": 19,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "correct_present": 7,
+      "missed_individual_faces": 19,
+      "scored_confirmed_present": 7,
+      "incorrect_confirmed_present": 0,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.2692307692307692,
+      "positive_correct_present_coverage": 0.2692307692307692,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 1,
+      "ambiguous_present_ignored": 1,
+      "orientation_errors_deg": [
+        0.0887593233839965,
+        0.08872748572034084,
+        0.08879569282949262,
+        0.08874734256757222,
+        0.08877948773427136,
+        0.02775930179782904,
+        0.027751102065948885,
+        0.02777540379665311,
+        0.027762641540277855,
+        0.027780659216375625,
+        1.4594961747187227,
+        1.459513682383303,
+        1.4595211021593428,
+        1.4595160813191228,
+        1.4595126180766158,
+        0.26049507173318887,
+        0.2605149479913109,
+        0.26051482407379467,
+        0.2604855481626771,
+        0.2605156652043803,
+        0.9148631360384343,
+        0.9148165608670382,
+        0.914911344168587,
+        0.21671525355264976,
+        0.21670987859864965,
+        0.21672672341044574
+      ],
+      "projected_stud_errors_px": [
+        4.026352803975768,
+        5.757849278475698,
+        4.027979371439313,
+        5.696657643736718,
+        4.267557044162666,
+        5.13534651220569,
+        4.604469940944906,
+        4.468768538777537
+      ],
+      "observed_stud_peak_errors_px": [],
+      "manual_stud_reference_count": 8,
+      "registration": {
+        "initial_quad_xy": [
+          [
+            571.982421875,
+            139.23178100585938
+          ],
+          [
+            1024.86572265625,
+            252.1328125
+          ],
+          [
+            931.564453125,
+            664.5704345703125
+          ],
+          [
+            482.74078369140625,
+            574.1087036132812
+          ]
+        ],
+        "refined_quad_xy": [
+          [
+            571.982421875,
+            139.23178100585938
+          ],
+          [
+            1024.86572265625,
+            252.1328125
+          ],
+          [
+            931.564453125,
+            664.5704345703125
+          ],
+          [
+            482.74078369140625,
+            574.1087036132812
+          ]
+        ],
+        "correction_px": [
+          0.0,
+          0.0
+        ],
+        "correction_rectified_px": [
+          0.0,
+          0.0
+        ],
+        "consensus_studs": 13,
+        "registration_score": 0.05416666666666667,
+        "manual_assisted": true,
+        "reference": "supplied observed-window plane, not a measured baseplate frame",
+        "calibration_status": "nominal_not_measured",
+        "lower_projection": {
+          "status": "nominal_not_calibrated",
+          "reprojection_error_px": 5.107179055565128,
+          "relative_lower_depths_m": [
+            0.0096,
+            0.0192
+          ]
+        }
+      },
+      "matches": [
+        {
+          "candidate": "c0r0",
+          "reference": "c0r0",
+          "iou": 0.909684919996355
+        },
+        {
+          "candidate": "c0r1",
+          "reference": "c0r1",
+          "iou": 0.9010991999679261
+        },
+        {
+          "candidate": "c0r2",
+          "reference": "c0r2",
+          "iou": 0.896550573950422
+        },
+        {
+          "candidate": "c0r3",
+          "reference": "c0r3",
+          "iou": 0.8959470730926712
+        },
+        {
+          "candidate": "c0r4",
+          "reference": "c0r4",
+          "iou": 0.8992506739258731
+        },
+        {
+          "candidate": "c1r0",
+          "reference": "c1r0",
+          "iou": 0.7708272567033522
+        },
+        {
+          "candidate": "c1r1",
+          "reference": "c1r1",
+          "iou": 0.7642806995643446
+        },
+        {
+          "candidate": "c1r2",
+          "reference": "c1r2",
+          "iou": 0.763854612435063
+        },
+        {
+          "candidate": "c1r3",
+          "reference": "c1r3",
+          "iou": 0.7695956499084846
+        },
+        {
+          "candidate": "c1r4",
+          "reference": "c1r4",
+          "iou": 0.7652079754082515
+        },
+        {
+          "candidate": "c2r0",
+          "reference": "c2r0",
+          "iou": 0.8699212475152551
+        },
+        {
+          "candidate": "c2r1",
+          "reference": "c2r1",
+          "iou": 0.8422698912175147
+        },
+        {
+          "candidate": "c2r2",
+          "reference": "c2r2",
+          "iou": 0.7760784615358021
+        },
+        {
+          "candidate": "c2r3",
+          "reference": "c2r3",
+          "iou": 0.7114434573604094
+        },
+        {
+          "candidate": "c2r4",
+          "reference": "c2r4",
+          "iou": 0.6485732487767785
+        },
+        {
+          "candidate": "c3r0",
+          "reference": "c3r0",
+          "iou": 0.882278027096149
+        },
+        {
+          "candidate": "c3r1",
+          "reference": "c3r1",
+          "iou": 0.8877425046089812
+        },
+        {
+          "candidate": "c3r2",
+          "reference": "c3r2",
+          "iou": 0.8819024905333166
+        },
+        {
+          "candidate": "c3r3",
+          "reference": "c3r3",
+          "iou": 0.8649165998695053
+        },
+        {
+          "candidate": "c3r4",
+          "reference": "c3r4",
+          "iou": 0.8373346139198847
+        },
+        {
+          "candidate": "c4r0",
+          "reference": "c4r0",
+          "iou": 0.8637430905098952
+        },
+        {
+          "candidate": "c4r3",
+          "reference": "c4r3",
+          "iou": 0.7968410277081589
+        },
+        {
+          "candidate": "c4r4",
+          "reference": "c4r4",
+          "iou": 0.7400161847091129
+        },
+        {
+          "candidate": "c5r0",
+          "reference": "c5r0",
+          "iou": 0.8663795928203761
+        },
+        {
+          "candidate": "c5r3",
+          "reference": "c5r3",
+          "iou": 0.8623960801500453
+        },
+        {
+          "candidate": "c5r4",
+          "reference": "c5r4",
+          "iou": 0.8834374782177918
+        }
+      ],
+      "missing_matches": [],
+      "actual_physical_current_top_accuracy": null
+    },
+    {
+      "file": "img_16.jpg",
+      "case": "rotation_p05",
+      "split": "heldout",
+      "correlation_group": "D",
+      "positive_reference_count": 26,
+      "original_ambiguous_excluded": 4,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 4,
+      "candidate_count": 30,
+      "positive_decisions": {
+        "present": 7,
+        "missing": 0,
+        "uncertain": 19,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "correct_present": 7,
+      "missed_individual_faces": 19,
+      "scored_confirmed_present": 7,
+      "incorrect_confirmed_present": 0,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.2692307692307692,
+      "positive_correct_present_coverage": 0.2692307692307692,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 1,
+      "orientation_errors_deg": [
+        0.0887780270967653,
+        0.08880074749680489,
+        0.0887746779833094,
+        0.08877821886042625,
+        0.08872642650956664,
+        0.027750656135054896,
+        0.027778267198328876,
+        0.027719088676036563,
+        0.027817081335726357,
+        0.02771399254615403,
+        1.4595351896133053,
+        1.459501203673156,
+        1.4595249474719765,
+        1.4594892634815153,
+        1.4595462842919602,
+        0.26052593144603975,
+        0.26048143710075067,
+        0.2605099211379809,
+        0.26048893460476563,
+        0.2604971521613635,
+        0.9149046721502998,
+        0.9148679454681314,
+        0.9148821001163583,
+        0.21668338252877106,
+        0.21672876122333662,
+        0.2167393498391732
+      ],
+      "projected_stud_errors_px": [
+        4.026404171094234,
+        5.757877789300119,
+        4.028001257081117,
+        5.696691366096014,
+        4.267562160663948,
+        5.135374942140072,
+        4.604443686003309,
+        4.4687573163599525
+      ],
+      "observed_stud_peak_errors_px": [],
+      "manual_stud_reference_count": 8,
+      "registration": {
+        "initial_quad_xy": [
+          [
+            534.6797485351562,
+            154.39688110351562
+          ],
+          [
+            1000.287841796875,
+            186.94029235839844
+          ],
+          [
+            980.0230102539062,
+            609.3137817382812
+          ],
+          [
+            522.3095092773438,
+            598.1636962890625
+          ]
+        ],
+        "refined_quad_xy": [
+          [
+            534.6797485351562,
+            154.39688110351562
+          ],
+          [
+            1000.287841796875,
+            186.94029235839844
+          ],
+          [
+            980.0230102539062,
+            609.3137817382812
+          ],
+          [
+            522.3095092773438,
+            598.1636962890625
+          ]
+        ],
+        "correction_px": [
+          0.0,
+          0.0
+        ],
+        "correction_rectified_px": [
+          0.0,
+          0.0
+        ],
+        "consensus_studs": 15,
+        "registration_score": 0.0625,
+        "manual_assisted": true,
+        "reference": "supplied observed-window plane, not a measured baseplate frame",
+        "calibration_status": "nominal_not_measured",
+        "lower_projection": {
+          "status": "nominal_not_calibrated",
+          "reprojection_error_px": 5.187367768427032,
+          "relative_lower_depths_m": [
+            0.0096,
+            0.0192
+          ]
+        }
+      },
+      "matches": [
+        {
+          "candidate": "c0r0",
+          "reference": "c0r0",
+          "iou": 0.8939000288192752
+        },
+        {
+          "candidate": "c0r1",
+          "reference": "c0r1",
+          "iou": 0.8836131247496166
+        },
+        {
+          "candidate": "c0r2",
+          "reference": "c0r2",
+          "iou": 0.8814188774247307
+        },
+        {
+          "candidate": "c0r3",
+          "reference": "c0r3",
+          "iou": 0.8846340339992848
+        },
+        {
+          "candidate": "c0r4",
+          "reference": "c0r4",
+          "iou": 0.8831295233216999
+        },
+        {
+          "candidate": "c1r0",
+          "reference": "c1r0",
+          "iou": 0.7313103252561309
+        },
+        {
+          "candidate": "c1r1",
+          "reference": "c1r1",
+          "iou": 0.721606416856682
+        },
+        {
+          "candidate": "c1r2",
+          "reference": "c1r2",
+          "iou": 0.7206881536832225
+        },
+        {
+          "candidate": "c1r3",
+          "reference": "c1r3",
+          "iou": 0.7246038278877738
+        },
+        {
+          "candidate": "c1r4",
+          "reference": "c1r4",
+          "iou": 0.7160202211737434
+        },
+        {
+          "candidate": "c2r0",
+          "reference": "c2r0",
+          "iou": 0.8269087934694852
+        },
+        {
+          "candidate": "c2r1",
+          "reference": "c2r1",
+          "iou": 0.7952961755579813
+        },
+        {
+          "candidate": "c2r2",
+          "reference": "c2r2",
+          "iou": 0.7224797003181582
+        },
+        {
+          "candidate": "c2r3",
+          "reference": "c2r3",
+          "iou": 0.6461537253310212
+        },
+        {
+          "candidate": "c2r4",
+          "reference": "c2r4",
+          "iou": 0.5692411366486892
+        },
+        {
+          "candidate": "c3r0",
+          "reference": "c3r0",
+          "iou": 0.8566182679849031
+        },
+        {
+          "candidate": "c3r1",
+          "reference": "c3r1",
+          "iou": 0.8621381499138078
+        },
+        {
+          "candidate": "c3r2",
+          "reference": "c3r2",
+          "iou": 0.8558920649391272
+        },
+        {
+          "candidate": "c3r3",
+          "reference": "c3r3",
+          "iou": 0.838032509262054
+        },
+        {
+          "candidate": "c3r4",
+          "reference": "c3r4",
+          "iou": 0.8091375531312438
+        },
+        {
+          "candidate": "c4r0",
+          "reference": "c4r0",
+          "iou": 0.8335905444020547
+        },
+        {
+          "candidate": "c4r3",
+          "reference": "c4r3",
+          "iou": 0.7534178795630179
+        },
+        {
+          "candidate": "c4r4",
+          "reference": "c4r4",
+          "iou": 0.6840026643258054
+        },
+        {
+          "candidate": "c5r0",
+          "reference": "c5r0",
+          "iou": 0.8262146740796211
+        },
+        {
+          "candidate": "c5r3",
+          "reference": "c5r3",
+          "iou": 0.8444687939147142
+        },
+        {
+          "candidate": "c5r4",
+          "reference": "c5r4",
+          "iou": 0.8676506182633736
+        }
+      ],
+      "missing_matches": [],
+      "actual_physical_current_top_accuracy": null
+    },
+    {
+      "file": "img_16.jpg",
+      "case": "initial_x_m04",
+      "split": "heldout",
+      "correlation_group": "D",
+      "positive_reference_count": 26,
+      "original_ambiguous_excluded": 4,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 4,
+      "candidate_count": 30,
+      "positive_decisions": {
+        "present": 10,
+        "missing": 0,
+        "uncertain": 16,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "correct_present": 10,
+      "missed_individual_faces": 16,
+      "scored_confirmed_present": 10,
+      "incorrect_confirmed_present": 0,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.38461538461538464,
+      "positive_correct_present_coverage": 0.38461538461538464,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 1,
+      "orientation_errors_deg": [
+        0.08874510256431734,
+        0.08877459713110625,
+        0.08877158677802299,
+        0.08880281874481,
+        0.08874499028657112,
+        0.02777487918585564,
+        0.027751895499719126,
+        0.027762347012995292,
+        0.02777315506860134,
+        0.027749007150077887,
+        1.459498783739349,
+        1.4595342053339238,
+        1.4595014808615332,
+        1.4595121278320136,
+        1.4595191015620088,
+        0.26050519445145426,
+        0.2604966816846854,
+        0.2605021177203497,
+        0.2605062681180783,
+        0.26051171382164284,
+        0.9148598023819972,
+        0.9148593180772338,
+        0.9148849534376211,
+        0.21674807864320655,
+        0.216758651759406,
+        0.21671786797978143
+      ],
+      "projected_stud_errors_px": [
+        7.744956780623658,
+        9.690375378091884,
+        7.658373746464647,
+        9.594460001159518,
+        6.15025463210186,
+        7.57590985908402,
+        6.287048093349575,
+        6.93506561614134
+      ],
+      "observed_stud_peak_errors_px": [],
+      "manual_stud_reference_count": 8,
+      "registration": {
+        "initial_quad_xy": [
+          [
+            549.0,
+            146.0
+          ],
+          [
+            1010.0,
+            219.0
+          ],
+          [
+            953.0,
+            638.0
+          ],
+          [
+            498.0,
+            587.0
+          ]
+        ],
+        "refined_quad_xy": [
+          [
+            549.1083374023438,
+            145.06332397460938
+          ],
+          [
+            1010.1209716796875,
+            218.11087036132812
+          ],
+          [
+            953.1165771484375,
+            637.1429443359375
+          ],
+          [
+            498.1042175292969,
+            586.0987548828125
+          ]
+        ],
+        "correction_px": [
+          0.11285400390625,
+          -0.89520263671875
+        ],
+        "correction_rectified_px": [
+          0.0,
+          -1.0
+        ],
+        "consensus_studs": 20,
+        "registration_score": 0.08333333333333333,
+        "manual_assisted": true,
+        "reference": "supplied observed-window plane, not a measured baseplate frame",
+        "calibration_status": "nominal_not_measured",
+        "lower_projection": {
+          "status": "nominal_not_calibrated",
+          "reprojection_error_px": 5.241292369066693,
+          "relative_lower_depths_m": [
+            0.0096,
+            0.0192
+          ]
+        }
+      },
+      "matches": [
+        {
+          "candidate": "c0r0",
+          "reference": "c0r0",
+          "iou": 0.773326976704168
+        },
+        {
+          "candidate": "c0r1",
+          "reference": "c0r1",
+          "iou": 0.780974831092916
+        },
+        {
+          "candidate": "c0r2",
+          "reference": "c0r2",
+          "iou": 0.7773209891735817
+        },
+        {
+          "candidate": "c0r3",
+          "reference": "c0r3",
+          "iou": 0.7759246590761469
+        },
+        {
+          "candidate": "c0r4",
+          "reference": "c0r4",
+          "iou": 0.7767615580102065
+        },
+        {
+          "candidate": "c1r0",
+          "reference": "c1r0",
+          "iou": 0.8810888053801343
+        },
+        {
+          "candidate": "c1r1",
+          "reference": "c1r1",
+          "iou": 0.8719096589748353
+        },
+        {
+          "candidate": "c1r2",
+          "reference": "c1r2",
+          "iou": 0.8720354147060968
+        },
+        {
+          "candidate": "c1r3",
+          "reference": "c1r3",
+          "iou": 0.8684886788622659
+        },
+        {
+          "candidate": "c1r4",
+          "reference": "c1r4",
+          "iou": 0.8561456690610245
+        },
+        {
+          "candidate": "c2r0",
+          "reference": "c2r0",
+          "iou": 0.8349053528901943
+        },
+        {
+          "candidate": "c2r1",
+          "reference": "c2r1",
+          "iou": 0.8489810246359231
+        },
+        {
+          "candidate": "c2r2",
+          "reference": "c2r2",
+          "iou": 0.8520536260838834
+        },
+        {
+          "candidate": "c2r3",
+          "reference": "c2r3",
+          "iou": 0.7788841115276656
+        },
+        {
+          "candidate": "c2r4",
+          "reference": "c2r4",
+          "iou": 0.6970127050502238
+        },
+        {
+          "candidate": "c3r0",
+          "reference": "c3r0",
+          "iou": 0.7825546762508019
+        },
+        {
+          "candidate": "c3r1",
+          "reference": "c3r1",
+          "iou": 0.7992125750662913
+        },
+        {
+          "candidate": "c3r2",
+          "reference": "c3r2",
+          "iou": 0.8082676166093817
+        },
+        {
+          "candidate": "c3r3",
+          "reference": "c3r3",
+          "iou": 0.8090871325901755
+        },
+        {
+          "candidate": "c3r4",
+          "reference": "c3r4",
+          "iou": 0.8011416538039938
+        },
+        {
+          "candidate": "c4r0",
+          "reference": "c4r0",
+          "iou": 0.8045636394476211
+        },
+        {
+          "candidate": "c4r3",
+          "reference": "c4r3",
+          "iou": 0.6639873027481201
+        },
+        {
+          "candidate": "c4r4",
+          "reference": "c4r4",
+          "iou": 0.6105947029933776
+        },
+        {
+          "candidate": "c5r0",
+          "reference": "c5r0",
+          "iou": 0.8519057950016657
+        },
+        {
+          "candidate": "c5r3",
+          "reference": "c5r3",
+          "iou": 0.8709026255246888
+        },
+        {
+          "candidate": "c5r4",
+          "reference": "c5r4",
+          "iou": 0.877077192370024
+        }
+      ],
+      "missing_matches": [],
+      "actual_physical_current_top_accuracy": null
+    },
+    {
+      "file": "img_16.jpg",
+      "case": "initial_x_p04",
+      "split": "heldout",
+      "correlation_group": "D",
+      "positive_reference_count": 26,
+      "original_ambiguous_excluded": 4,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 4,
+      "candidate_count": 30,
+      "positive_decisions": {
+        "present": 6,
+        "missing": 0,
+        "uncertain": 20,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "correct_present": 6,
+      "missed_individual_faces": 20,
+      "scored_confirmed_present": 6,
+      "incorrect_confirmed_present": 0,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.23076923076923078,
+      "positive_correct_present_coverage": 0.23076923076923078,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 2,
+      "orientation_errors_deg": [
+        0.09560019646619367,
+        0.09557341176162026,
+        0.0955933252426604,
+        0.09561001802499902,
+        0.0956164550860592,
+        0.02102707701952511,
+        0.02106486261611451,
+        0.02108973734445385,
+        0.021040889538824104,
+        0.021037059601582087,
+        1.4660909395647366,
+        1.466107602942074,
+        1.4660951551679489,
+        1.4661258057499822,
+        1.4661045031948987,
+        0.2669776186169486,
+        0.2669899944585836,
+        0.26701093728051717,
+        0.2669544340627965,
+        0.26693597225150256,
+        0.908511002254599,
+        0.9085402070892741,
+        0.9085157136628936,
+        0.2105292026356551,
+        0.21045678137177504,
+        0.21047507537693377
+      ],
+      "projected_stud_errors_px": [
+        4.307504525140439,
+        5.279256837837159,
+        4.445977540694599,
+        5.335066023959839,
+        5.8976925381254235,
+        6.4204784128290395,
+        6.260650260713339,
+        5.808871077899389
+      ],
+      "observed_stud_peak_errors_px": [],
+      "manual_stud_reference_count": 8,
+      "registration": {
+        "initial_quad_xy": [
+          [
+            557.0,
+            146.0
+          ],
+          [
+            1018.0,
+            219.0
+          ],
+          [
+            961.0,
+            638.0
+          ],
+          [
+            506.0,
+            587.0
+          ]
+        ],
+        "refined_quad_xy": [
+          [
+            554.3568115234375,
+            144.62734985351562
+          ],
+          [
+            1015.6259765625,
+            217.7155303955078
+          ],
+          [
+            958.65185546875,
+            636.866455078125
+          ],
+          [
+            503.3910217285156,
+            585.7943725585938
+          ]
+        ],
+        "correction_px": [
+          -2.48858642578125,
+          -1.246490478515625
+        ],
+        "correction_rectified_px": [
+          -3.0,
+          -1.0
+        ],
+        "consensus_studs": 34,
+        "registration_score": 0.14166666666666666,
+        "manual_assisted": true,
+        "reference": "supplied observed-window plane, not a measured baseplate frame",
+        "calibration_status": "nominal_not_measured",
+        "lower_projection": {
+          "status": "nominal_not_calibrated",
+          "reprojection_error_px": 5.104778703857249,
+          "relative_lower_depths_m": [
+            0.0096,
+            0.0192
+          ]
+        }
+      },
+      "matches": [
+        {
+          "candidate": "c0r0",
+          "reference": "c0r0",
+          "iou": 0.8844191018271933
+        },
+        {
+          "candidate": "c0r1",
+          "reference": "c0r1",
+          "iou": 0.9047757144300501
+        },
+        {
+          "candidate": "c0r2",
+          "reference": "c0r2",
+          "iou": 0.9007741425882233
+        },
+        {
+          "candidate": "c0r3",
+          "reference": "c0r3",
+          "iou": 0.8968723765787374
+        },
+        {
+          "candidate": "c0r4",
+          "reference": "c0r4",
+          "iou": 0.8930706283487577
+        },
+        {
+          "candidate": "c1r0",
+          "reference": "c1r0",
+          "iou": 0.7346728066620373
+        },
+        {
+          "candidate": "c1r1",
+          "reference": "c1r1",
+          "iou": 0.7264071736435534
+        },
+        {
+          "candidate": "c1r2",
+          "reference": "c1r2",
+          "iou": 0.7250399147136102
+        },
+        {
+          "candidate": "c1r3",
+          "reference": "c1r3",
+          "iou": 0.7163362707207981
+        },
+        {
+          "candidate": "c1r4",
+          "reference": "c1r4",
+          "iou": 0.7054094789983238
+        },
+        {
+          "candidate": "c2r0",
+          "reference": "c2r0",
+          "iou": 0.8105580792861767
+        },
+        {
+          "candidate": "c2r1",
+          "reference": "c2r1",
+          "iou": 0.7615822409336733
+        },
+        {
+          "candidate": "c2r2",
+          "reference": "c2r2",
+          "iou": 0.7030269154474089
+        },
+        {
+          "candidate": "c2r3",
+          "reference": "c2r3",
+          "iou": 0.6380930449089705
+        },
+        {
+          "candidate": "c2r4",
+          "reference": "c2r4",
+          "iou": 0.5697249469533252
+        },
+        {
+          "candidate": "c3r0",
+          "reference": "c3r0",
+          "iou": 0.8486048746874052
+        },
+        {
+          "candidate": "c3r1",
+          "reference": "c3r1",
+          "iou": 0.8543778670932985
+        },
+        {
+          "candidate": "c3r2",
+          "reference": "c3r2",
+          "iou": 0.8488580830932237
+        },
+        {
+          "candidate": "c3r3",
+          "reference": "c3r3",
+          "iou": 0.8321849372527031
+        },
+        {
+          "candidate": "c3r4",
+          "reference": "c3r4",
+          "iou": 0.8048883349352559
+        },
+        {
+          "candidate": "c4r0",
+          "reference": "c4r0",
+          "iou": 0.8287059830518053
+        },
+        {
+          "candidate": "c4r3",
+          "reference": "c4r3",
+          "iou": 0.803611680800543
+        },
+        {
+          "candidate": "c4r4",
+          "reference": "c4r4",
+          "iou": 0.7398606644712604
+        },
+        {
+          "candidate": "c5r0",
+          "reference": "c5r0",
+          "iou": 0.8032436783053267
+        },
+        {
+          "candidate": "c5r3",
+          "reference": "c5r3",
+          "iou": 0.8331683627337585
+        },
+        {
+          "candidate": "c5r4",
+          "reference": "c5r4",
+          "iou": 0.8308239868311059
+        }
+      ],
+      "missing_matches": [],
+      "actual_physical_current_top_accuracy": null
+    },
+    {
+      "file": "img_16.jpg",
+      "case": "initial_y_m04",
+      "split": "heldout",
+      "correlation_group": "D",
+      "positive_reference_count": 26,
+      "original_ambiguous_excluded": 4,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 4,
+      "candidate_count": 30,
+      "positive_decisions": {
+        "present": 11,
+        "missing": 0,
+        "uncertain": 15,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "correct_present": 11,
+      "missed_individual_faces": 15,
+      "scored_confirmed_present": 11,
+      "incorrect_confirmed_present": 0,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.4230769230769231,
+      "positive_correct_present_coverage": 0.4230769230769231,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 4,
+      "orientation_errors_deg": [
+        0.09103057299104478,
+        0.09102984371727985,
+        0.09106978257783283,
+        0.09103510476478505,
+        0.09102263468945182,
+        0.02553816544623544,
+        0.025550202270466116,
+        0.02551136354115613,
+        0.025512168750481123,
+        0.02552546843797643,
+        1.4617223630459648,
+        1.4616845276008803,
+        1.4617404869159998,
+        1.4617154293481747,
+        1.4617314818780045,
+        0.26267543177796426,
+        0.26267312344127447,
+        0.26264702419976516,
+        0.26265432092370133,
+        0.26266538758643776,
+        0.9127413943574112,
+        0.9127634992030949,
+        0.9127513847009965,
+        0.2146085057342475,
+        0.2146457801908923,
+        0.21464217356766824
+      ],
+      "projected_stud_errors_px": [
+        8.62281735423659,
+        9.588722558540194,
+        8.731064963037642,
+        9.677028809520817,
+        9.276865858029218,
+        10.224379974688812,
+        9.576722405262998,
+        9.5532199410684
+      ],
+      "observed_stud_peak_errors_px": [],
+      "manual_stud_reference_count": 8,
+      "registration": {
+        "initial_quad_xy": [
+          [
+            553.0,
+            142.0
+          ],
+          [
+            1014.0,
+            215.0
+          ],
+          [
+            957.0,
+            634.0
+          ],
+          [
+            502.0,
+            583.0
+          ]
+        ],
+        "refined_quad_xy": [
+          [
+            552.1913452148438,
+            140.91802978515625
+          ],
+          [
+            1013.2894287109375,
+            213.97911071777344
+          ],
+          [
+            956.295166015625,
+            633.05078125
+          ],
+          [
+            501.1999816894531,
+            581.997314453125
+          ]
+        ],
+        "correction_px": [
+          -0.754150390625,
+          -1.012298583984375
+        ],
+        "correction_rectified_px": [
+          -1.0,
+          -1.0
+        ],
+        "consensus_studs": 20,
+        "registration_score": 0.08333333333333333,
+        "manual_assisted": true,
+        "reference": "supplied observed-window plane, not a measured baseplate frame",
+        "calibration_status": "nominal_not_measured",
+        "lower_projection": {
+          "status": "nominal_not_calibrated",
+          "reprojection_error_px": 5.083486780766691,
+          "relative_lower_depths_m": [
+            0.0096,
+            0.0192
+          ]
+        }
+      },
+      "matches": [
+        {
+          "candidate": "c0r0",
+          "reference": "c0r0",
+          "iou": 0.7947514175143302
+        },
+        {
+          "candidate": "c0r1",
+          "reference": "c0r1",
+          "iou": 0.810292888537855
+        },
+        {
+          "candidate": "c0r2",
+          "reference": "c0r2",
+          "iou": 0.8174080534236283
+        },
+        {
+          "candidate": "c0r3",
+          "reference": "c0r3",
+          "iou": 0.8157464092221453
+        },
+        {
+          "candidate": "c0r4",
+          "reference": "c0r4",
+          "iou": 0.8051078500968758
+        },
+        {
+          "candidate": "c1r0",
+          "reference": "c1r0",
+          "iou": 0.7503629295521234
+        },
+        {
+          "candidate": "c1r1",
+          "reference": "c1r1",
+          "iou": 0.7614835212830283
+        },
+        {
+          "candidate": "c1r2",
+          "reference": "c1r2",
+          "iou": 0.7608155243852155
+        },
+        {
+          "candidate": "c1r3",
+          "reference": "c1r3",
+          "iou": 0.7482916330497559
+        },
+        {
+          "candidate": "c1r4",
+          "reference": "c1r4",
+          "iou": 0.7244096750575942
+        },
+        {
+          "candidate": "c2r0",
+          "reference": "c2r0",
+          "iou": 0.7683513098632451
+        },
+        {
+          "candidate": "c2r1",
+          "reference": "c2r1",
+          "iou": 0.7643468804320892
+        },
+        {
+          "candidate": "c2r2",
+          "reference": "c2r2",
+          "iou": 0.7078887646057903
+        },
+        {
+          "candidate": "c2r3",
+          "reference": "c2r3",
+          "iou": 0.6444692905008046
+        },
+        {
+          "candidate": "c2r4",
+          "reference": "c2r4",
+          "iou": 0.5770878079360767
+        },
+        {
+          "candidate": "c3r0",
+          "reference": "c3r0",
+          "iou": 0.7859764106072319
+        },
+        {
+          "candidate": "c3r1",
+          "reference": "c3r1",
+          "iou": 0.7907409085729034
+        },
+        {
+          "candidate": "c3r2",
+          "reference": "c3r2",
+          "iou": 0.7849751413322796
+        },
+        {
+          "candidate": "c3r3",
+          "reference": "c3r3",
+          "iou": 0.7688199563296982
+        },
+        {
+          "candidate": "c3r4",
+          "reference": "c3r4",
+          "iou": 0.7427761039388494
+        },
+        {
+          "candidate": "c4r0",
+          "reference": "c4r0",
+          "iou": 0.7675519148760015
+        },
+        {
+          "candidate": "c4r3",
+          "reference": "c4r3",
+          "iou": 0.6851021859330892
+        },
+        {
+          "candidate": "c4r4",
+          "reference": "c4r4",
+          "iou": 0.6306452335789363
+        },
+        {
+          "candidate": "c5r0",
+          "reference": "c5r0",
+          "iou": 0.7880004521066307
+        },
+        {
+          "candidate": "c5r3",
+          "reference": "c5r3",
+          "iou": 0.8354312113499566
+        },
+        {
+          "candidate": "c5r4",
+          "reference": "c5r4",
+          "iou": 0.8303631097475564
+        }
+      ],
+      "missing_matches": [],
+      "actual_physical_current_top_accuracy": null
+    },
+    {
+      "file": "img_16.jpg",
+      "case": "initial_y_p04",
+      "split": "heldout",
+      "correlation_group": "D",
+      "positive_reference_count": 26,
+      "original_ambiguous_excluded": 4,
+      "missing_reference_count": 0,
+      "lower_fragment_reference_count": 4,
+      "candidate_count": 30,
+      "positive_decisions": {
+        "present": 8,
+        "missing": 0,
+        "uncertain": 18,
+        "no_match": 0
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "correct_present": 8,
+      "missed_individual_faces": 18,
+      "scored_confirmed_present": 8,
+      "incorrect_confirmed_present": 0,
+      "present_instance_precision": 1.0,
+      "positive_decisive_coverage": 0.3076923076923077,
+      "positive_correct_present_coverage": 0.3076923076923077,
+      "missing_decisive_coverage": null,
+      "missing_correct_coverage": null,
+      "merged_candidates": 0,
+      "merged_confirmed_present": 0,
+      "duplicate_candidates": 0,
+      "duplicate_confirmed_present": 0,
+      "labeled_lower_fragment_top_selections": 0,
+      "ambiguous_present_ignored": 0,
+      "orientation_errors_deg": [
+        0.09101505523825892,
+        0.09107840139202494,
+        0.09102774135853053,
+        0.09105793668975082,
+        0.09103636345409427,
+        0.02553841030470494,
+        0.025525382326208046,
+        0.025537799722556542,
+        0.025510958231521386,
+        0.02557647462379009,
+        1.461733363213753,
+        1.4617241358383808,
+        1.461688257530966,
+        1.461770869107653,
+        1.4616938092746068,
+        0.2626600914450705,
+        0.2626886465894245,
+        0.2626420997567891,
+        0.2626898716503092,
+        0.26263950806648495,
+        0.9127439830194817,
+        0.9127736472003392,
+        0.9127561975037111,
+        0.21464138821690426,
+        0.21463319615145338,
+        0.21464350987268688
+      ],
+      "projected_stud_errors_px": [
+        3.8185395556814394,
+        5.862776750227772,
+        3.7179600434833584,
+        5.727158268439334,
+        3.0837091576562146,
+        4.121602939978165,
+        3.3907704307036277,
+        3.4353041193069207
+      ],
+      "observed_stud_peak_errors_px": [],
+      "manual_stud_reference_count": 8,
+      "registration": {
+        "initial_quad_xy": [
+          [
+            553.0,
+            150.0
+          ],
+          [
+            1014.0,
+            223.0
+          ],
+          [
+            957.0,
+            642.0
+          ],
+          [
+            502.0,
+            591.0
+          ]
+        ],
+        "refined_quad_xy": [
+          [
+            552.407958984375,
+            147.0442657470703
+          ],
+          [
+            1013.5313110351562,
+            220.20046997070312
+          ],
+          [
+            956.5283203125,
+            639.3363037109375
+          ],
+          [
+            501.4084167480469,
+            588.1944580078125
+          ]
+        ],
+        "correction_px": [
+          -0.5284423828125,
+          -2.803070068359375
+        ],
+        "correction_rectified_px": [
+          -1.0,
+          -3.0
+        ],
+        "consensus_studs": 21,
+        "registration_score": 0.0875,
+        "manual_assisted": true,
+        "reference": "supplied observed-window plane, not a measured baseplate frame",
+        "calibration_status": "nominal_not_measured",
+        "lower_projection": {
+          "status": "nominal_not_calibrated",
+          "reprojection_error_px": 5.240307913305466,
+          "relative_lower_depths_m": [
+            0.0096,
+            0.0192
+          ]
+        }
+      },
+      "matches": [
+        {
+          "candidate": "c0r0",
+          "reference": "c0r0",
+          "iou": 0.8787685044355307
+        },
+        {
+          "candidate": "c0r1",
+          "reference": "c0r1",
+          "iou": 0.8606206099700385
+        },
+        {
+          "candidate": "c0r2",
+          "reference": "c0r2",
+          "iou": 0.8565813466844813
+        },
+        {
+          "candidate": "c0r3",
+          "reference": "c0r3",
+          "iou": 0.866640623941682
+        },
+        {
+          "candidate": "c0r4",
+          "reference": "c0r4",
+          "iou": 0.8744358282720021
+        },
+        {
+          "candidate": "c1r0",
+          "reference": "c1r0",
+          "iou": 0.7536847114686956
+        },
+        {
+          "candidate": "c1r1",
+          "reference": "c1r1",
+          "iou": 0.7451551727788
+        },
+        {
+          "candidate": "c1r2",
+          "reference": "c1r2",
+          "iou": 0.7441150296427725
+        },
+        {
+          "candidate": "c1r3",
+          "reference": "c1r3",
+          "iou": 0.750597586484421
+        },
+        {
+          "candidate": "c1r4",
+          "reference": "c1r4",
+          "iou": 0.7593448492528599
+        },
+        {
+          "candidate": "c2r0",
+          "reference": "c2r0",
+          "iou": 0.8686483210246376
+        },
+        {
+          "candidate": "c2r1",
+          "reference": "c2r1",
+          "iou": 0.8401551560668924
+        },
+        {
+          "candidate": "c2r2",
+          "reference": "c2r2",
+          "iou": 0.7708756653420575
+        },
+        {
+          "candidate": "c2r3",
+          "reference": "c2r3",
+          "iou": 0.700616681528252
+        },
+        {
+          "candidate": "c2r4",
+          "reference": "c2r4",
+          "iou": 0.6339743863482781
+        },
+        {
+          "candidate": "c3r0",
+          "reference": "c3r0",
+          "iou": 0.8920082887060811
+        },
+        {
+          "candidate": "c3r1",
+          "reference": "c3r1",
+          "iou": 0.8854619753723493
+        },
+        {
+          "candidate": "c3r2",
+          "reference": "c3r2",
+          "iou": 0.8760229113896796
+        },
+        {
+          "candidate": "c3r3",
+          "reference": "c3r3",
+          "iou": 0.8667248439625799
+        },
+        {
+          "candidate": "c3r4",
+          "reference": "c3r4",
+          "iou": 0.8469972398661361
+        },
+        {
+          "candidate": "c4r0",
+          "reference": "c4r0",
+          "iou": 0.8712185975906201
+        },
+        {
+          "candidate": "c4r3",
+          "reference": "c4r3",
+          "iou": 0.7840388868317428
+        },
+        {
+          "candidate": "c4r4",
+          "reference": "c4r4",
+          "iou": 0.7214123161243656
+        },
+        {
+          "candidate": "c5r0",
+          "reference": "c5r0",
+          "iou": 0.8371677933318402
+        },
+        {
+          "candidate": "c5r3",
+          "reference": "c5r3",
+          "iou": 0.8319442513588003
+        },
+        {
+          "candidate": "c5r4",
+          "reference": "c5r4",
+          "iou": 0.8526683239299067
+        }
+      ],
+      "missing_matches": [],
+      "actual_physical_current_top_accuracy": null
+    }
+  ]
+}

@@ -1,11 +1,13 @@
 # Marmon Challenge 2: FR3 LEGO sorting
 
-Perception work is transitioning to a separate known-layout geometric baseline
-under `perception/`. The [pretrained-detector comparison](experiments/detection_20261024/REPORT.md)
-is a closed historical experiment; its reproduction scripts and large local
-artifacts remain separate from the new system's execution path. Its real-image
-results do not establish reliable detection, and its simulation comparison
-remains incomplete because the full stack's repeating offsets are unresolved.
+The current perception baseline is the manually assisted, known-layout **v1**
+under `perception/`; see the [measured results and stopping decision](experiments/known_layout_20261024/REPORT.md).
+It is a working image-evidence baseline, not an accepted sorting demonstration.
+The [pretrained-detector comparison](experiments/detection_20261024/REPORT.md)
+is a closed historical experiment with separate execution and artifacts.
+The required **360-brick** simulation comparison remains incomplete because
+the full stack's repeating translations are unresolved. The legacy 48-brick
+scene below is not that benchmark.
 
 Isaac Sim 5.1 / Isaac Lab workcell for the **Franka Research 3**, using native
 [BrickSim](https://github.com/intelligent-control-lab/BrickSim) interlocking-brick
@@ -30,7 +32,7 @@ pinned prebuilt BrickSim wheel in `.deps/`.
 bash scripts/setup_dependencies.sh
 
 # Lightweight, simulator-independent task and coordinate checks.
-python3 -m unittest discover -s tests -v
+/home/faps/miniforge3/envs/unitree_sim_env/bin/python -m unittest discover -s tests -v
 
 # All commands below submit to the DEFAULT Pueue queue and print a job ID.
 python3 scripts/submit.py --mode smoke --steps 180
