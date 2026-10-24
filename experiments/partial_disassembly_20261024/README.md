@@ -60,9 +60,10 @@ or choose parameters after release.
 Each immutable `runs/*-partial-*` snapshot contains `manifest.json`, exact
 source/configuration/input hashes, `submission.txt`, and a foreground
 `launch.sh`. Perception outputs retain `detections.json`, overlays and
-world-XY masks for each opaque observation ID. Private observation-to-case
-mapping and truth are confined to `scoring_only`; quantitative results and
-evaluation-only references are in `output/evaluation`.
+world-XY masks for each opaque observation ID. Case mapping is retained by
+sensor preparation and scoring, and truth is retained for scoring; neither is
+passed to perception. Quantitative results and evaluation-only references are
+in `output/evaluation`.
 
 The reporting helper `evaluation/summarize.py` aggregates saved associations
 without rescoring. `package_report.py` makes before/after panels from saved
@@ -140,7 +141,7 @@ the endpoint checks do not support a selected chain phase.
 The three isolated remnants fail direction support in both views for every
 version, despite selecting their correct height: six physical target
 occurrences have no candidate, and six reference ridges are uncovered. The
-single-component fallback intentionally does not accept three competing
+single-component fallback intentionally does not accept three separate
 compact components. The other 21 positive targets are matched uncertain
 hypotheses. Raw geometry matches 48/54; it is not 48 confirmed detections.
 
