@@ -81,13 +81,16 @@ Challenge 1 still owns color/quality labels. A future mixed output can use a
 simple repeating color sequence; the exact output lattice and usable stud
 clearances await confirmation.
 
-Only the existing physical wrist D435i is retained in the specification. Its
+The existing physical wrist D435i is retained in the specification. Its
 mount has not moved according to the user, but the repository did not contain
 a calibrated wrist-camera transform. The earlier 6.3 cm and 2 cm measurements
 describe housing offsets with unresolved axes, not an optical-frame transform.
 Intrinsics and hand-to-optical transform therefore remain unset. Diagnostic
 virtual inspection views are explicitly separate from physical cameras; the
-two added physical cameras are omitted.
+two unspecified external cameras remain omitted. A second wrist housing, a
+Logitech C920, is now represented by an approximate visual-only model on the
+opposite gripper side; see [C920 mounting](c920_mount/README.md). No C920 optical
+transform or image sensor is activated.
 
 ## Reproduction and scope
 
@@ -134,12 +137,12 @@ Identifying the phone lenses and ChArUco design does not supply those transforms
 
 ## Completed preview
 
-Latest capture: **Pueue 1710**, frozen scene source `526fc7e`; corrected wrist mount side.
+Latest capture: **Pueue 1716**, frozen scene source `aec7f2c`; approximate C920 added opposite the preserved D435i.
 
-- [Overhead render](../../runs/20261024T225412.612710Z-final-workcell-preview/output/images/diagnostic_table_top.png)
-- [Oblique render](../../runs/20261024T225412.612710Z-final-workcell-preview/output/images/diagnostic_oblique.png)
-- [USD visual scene](../../runs/20261024T225412.612710Z-final-workcell-preview/output/final_workcell.usda)
-- [Native graph, scene and camera manifest](../../runs/20261024T225412.612710Z-final-workcell-preview/output/manifest.json)
+- [Overhead render](../../runs/20261024T231138.248707Z-final-workcell-preview/output/images/diagnostic_table_top.png)
+- [Oblique render](../../runs/20261024T231138.248707Z-final-workcell-preview/output/images/diagnostic_oblique.png)
+- [USD visual scene](../../runs/20261024T231138.248707Z-final-workcell-preview/output/final_workcell.usda)
+- [Native graph, scene and camera manifest](../../runs/20261024T231138.248707Z-final-workcell-preview/output/manifest.json)
 - [Jobs, snapshots, artifact hashes and validation](completion.json)
 - [Editable layout and destination recipes](scene_config.json)
 
