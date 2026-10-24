@@ -2,7 +2,7 @@
   "maximum_improvement_rounds": 3,
   "improvement_rounds_started": 3,
   "baseline_complete": true,
-  "reserved_released": false,
+  "reserved_released": true,
   "final_method_frozen": true,
   "rounds": [
     {
@@ -113,11 +113,12 @@
     "R2",
     "R3"
   ],
-  "current_phase": "final_method_frozen_before_reserved",
+  "current_phase": "reserved_final_evaluation_no_further_tuning",
   "baseline_job_id": 1687,
   "baseline_snapshot": "runs/20261024T152313.472731Z-partial-B0-development",
   "baseline_evaluation_sha256": "4b0077d168771710ee6a4198976b21f47f041a0454441396d296a3fbe6ea3a9b",
   "references_sha256": "7e8725373c2d086cff689bba79110595949d656eb9cdb6721ec6d702a1e30b13",
   "final_selected_version": "R3",
-  "final_selection_basis": "Development evidence only; three rounds spent; independent planner/evaluator/reviewer workflow. Reserved feedback cannot change implementation or version selection."
+  "final_selection_basis": "Development evidence only; three rounds spent; independent planner/evaluator/reviewer workflow. Reserved feedback cannot change implementation or version selection.",
+  "final_selection_commit": "d7c5b47"
 }
