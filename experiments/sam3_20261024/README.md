@@ -3,6 +3,9 @@
 **Completed:** [compact measured results and artifacts](REPORT.md), Pueue job
 1673. No prompt tuning or follow-on development is included.
 
+A subsequently authorized [dimension-filter/seam-split experiment](../sam3_sizefilter_20261024/REPORT.md)
+uses these saved raw masks without rerunning SAM or changing this experiment.
+
 Bounded comparison of four independently reset text prompts on all 18 uploaded
 wrist-camera JPEGs. This experiment does not change the active known-layout
 baseline, AimAssist, shared dependencies or model weights. No manual prompts,

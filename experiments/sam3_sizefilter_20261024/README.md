@@ -1,5 +1,8 @@
 # SAM mask size filter and seam splitting
 
+**Applied and evaluated:** [results, limitations and overlays](REPORT.md),
+Pueue job 1674. The raw masks remain unchanged.
+
 One bounded postprocessing experiment on the saved “LEGO brick” outputs from
 Pueue job 1673. No new SAM inference or changes to raw predictions, AimAssist,
 the existing known-layout baseline, shared packages or historical annotations.

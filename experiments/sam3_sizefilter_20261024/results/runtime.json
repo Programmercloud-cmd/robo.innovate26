@@ -1,0 +1,9 @@
+{
+  "python": "3.11.15",
+  "python_executable": "/home/faps/miniforge3/envs/unitree_sim_env/bin/python",
+  "opencv": "4.10.0",
+  "numpy": "1.26.0",
+  "scipy": "1.15.3",
+  "dependency_changes": false,
+  "note": "Existing host runtime used by queued job; no model inference in this experiment."
+}
