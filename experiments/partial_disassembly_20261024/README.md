@@ -117,3 +117,48 @@ complete autonomous partial-disassembly perception solution. Rendered depth
 is ideal, camera calibration is nominal, native graphs are static, and
 conditional metric errors do not establish physical grasp or insertion
 accuracy. Combined-view and temporal results are not measured.
+
+## Reserved results (opened after final selection)
+
+Final selection was committed at `d7c5b47` before reserved release (`7dbc98a`).
+No algorithm, threshold or version-selection change followed that release.
+The reserved set contains two geometry groups, four views, 54 positive face
+occurrences and eight observable bracketed gaps.
+
+| Version | Confirmed faces | Missed faces | Precision / recall | Correct gaps | Wrong / unverified missing |
+|---|---:|---:|---:|---:|---:|
+| B0 | 27/54 | 27 | 100% / 50% | 0/8 | 0 / 0 |
+| R1 | 27/54 | 27 | 100% / 50% | 0/8 | 0 / 0 |
+| R2 | 27/54 | 27 | 100% / 50% | 0/8 | 0 / 0 |
+| R3 | 27/54 | 27 | 100% / 50% | 6/8 | 0 / 0 |
+
+All methods confirm the same 27 positive face occurrences: 17/24 overhead and 10/24
+obliquely in scattered removals. R3 finds all four observable gaps overhead
+and two of four obliquely. Two side-view gaps remain phase-uncertain because
+the endpoint checks do not support a selected chain phase.
+
+The three isolated remnants fail direction support in both views for every
+version, despite selecting their correct height: six physical target
+occurrences have no candidate, and six reference ridges are uncovered. The
+single-component fallback intentionally does not accept three competing
+compact components. The other 21 positive targets are matched uncertain
+hypotheses. Raw geometry matches 48/54; it is not 48 confirmed detections.
+
+There are no confident merges, duplicates, lower-layer, height-inconsistent or
+unresolved extra detections on the reserved set. No confirmed faces are
+recovered or lost globally versus B0 or between rounds. There are no reference
+ridge splits or mixed-ridge parent chains; conditional phase errors and all
+unresolved decisions remain in the saved tables. These measures do not test
+unknown original extent or hidden physical surfaces. Sensor-supported boundary
+labels mean measured depth/edge evidence, not independently verified seam truth.
+
+Rendering used job **1686**; development B0/R1/R2/R3 used **1687–1690**;
+reserved B0/R1/R2/R3 used **1691–1694**. Exact snapshots, commits and score
+hashes are listed in `executions.json`. Source snapshots preserve every
+previous result and all raw outputs. All jobs used the default Pueue queue.
+
+Recommendation: retain R3 for conservative simulation hypotheses and observed
+interior-gap decisions. It improves false-layer rejection and absence handling,
+but does not improve confirmed-face recall and does not detect sparse multiple
+remnants. This bounded experiment is complete; no broader perception method,
+simulation expansion, training or robot work follows automatically.

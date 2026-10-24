@@ -113,12 +113,27 @@
     "R2",
     "R3"
   ],
-  "current_phase": "reserved_final_evaluation_no_further_tuning",
+  "current_phase": "reporting_only_no_further_implementation",
   "baseline_job_id": 1687,
   "baseline_snapshot": "runs/20261024T152313.472731Z-partial-B0-development",
   "baseline_evaluation_sha256": "4b0077d168771710ee6a4198976b21f47f041a0454441396d296a3fbe6ea3a9b",
   "references_sha256": "7e8725373c2d086cff689bba79110595949d656eb9cdb6721ec6d702a1e30b13",
   "final_selected_version": "R3",
   "final_selection_basis": "Development evidence only; three rounds spent; independent planner/evaluator/reviewer workflow. Reserved feedback cannot change implementation or version selection.",
-  "final_selection_commit": "d7c5b47"
+  "final_selection_commit": "d7c5b47",
+  "reserved_evaluations_complete": true,
+  "reserved_summary": {
+    "positive_face_occurrences": 54,
+    "all_versions_correct_present": 27,
+    "all_versions_wrong_present": 0,
+    "all_versions_confirmed_recovered": 0,
+    "all_versions_confirmed_lost": 0,
+    "R3_correct_missing": 6,
+    "observable_missing_occurrences": 8,
+    "R3_wrong_or_unverified_missing": 0,
+    "P_mix_unmatched_physical_faces": 6,
+    "supported_correct_bands": 2,
+    "unsupported_bands": 2,
+    "notes": "Three separated compact components do not satisfy the singleton fallback or normal elongated-ridge gate; no reserved-driven change. Two S_repeat side gaps remain phase-uncertain."
+  }
 }
