@@ -346,6 +346,36 @@ def render(app, args, spec, bricks, config, views):
     robot = scene["robot"]
     robot.write_joint_state_to_sim(robot.data.default_joint_pos, robot.data.default_joint_vel)
     robot.set_joint_position_target(robot.data.default_joint_pos)
+    # With Fabric disabled, writing DOFs alone does not refresh USD link poses.
+    # Initialize the nominal articulation once BEFORE restoring/native-linking bricks.
+    scene.write_data_to_sim()
+    sim.step(render=False)
+    scene.update(sim.get_physics_dt())
+    actual_q = robot.root_physx_view.get_dof_positions()[0].cpu().numpy()
+    requested_q = robot.data.default_joint_pos[0].cpu().numpy()
+    hand_pose = robot.data.body_link_pose_w[0, robot.body_names.index("fr3_hand")].cpu().numpy()
+    hand_usd = UsdGeom.Xformable(stage.GetPrimAtPath("/World/envs/env_0/Robot/fr3_hand")).ComputeLocalToWorldTransform(0)
+    hand_usd_q = hand_usd.ExtractRotationQuat()
+    hand_usd_pose = np.r_[np.asarray(hand_usd.ExtractTranslation()),
+                         hand_usd_q.GetReal(), np.asarray(hand_usd_q.GetImaginary())]
+    robot_initialization = {"preassembly_physics_steps": 1,
+        "joint_names": robot.joint_names,
+        "joint_units": ["m" if "finger" in name else "rad" for name in robot.joint_names],
+        "requested_joint_positions_native_units": requested_q.tolist(),
+        "actual_joint_positions_native_units": actual_q.tolist(),
+        "max_joint_position_error_native_units": float(np.max(np.abs(actual_q-requested_q))),
+        "hand_physics_pose_wxyz": hand_pose.tolist(), "hand_usd_pose_wxyz": hand_usd_pose.tolist(),
+        "hand_position_disagreement_m": float(np.linalg.norm(hand_pose[:3]-hand_usd_pose[:3])),
+        "hand_orientation_disagreement_rad": quaternion_error(hand_pose[3:], hand_usd_pose[3:]),
+        "joint_tolerance_native_units": 1e-3, "position_tolerance_m": 1e-4, "orientation_tolerance_rad": 1e-3,
+        "purpose": "Nominal visual articulation initialization only; no task motion or pose fitting"}
+    (output/"robot_initialization.json").write_text(json.dumps(robot_initialization, indent=2))
+    if (not np.isfinite(np.r_[actual_q, requested_q, hand_pose, hand_usd_pose]).all()
+        or robot_initialization["max_joint_position_error_native_units"] > 1e-3
+        or robot_initialization["hand_position_disagreement_m"] > 1e-4
+        or robot_initialization["hand_orientation_disagreement_rad"] > 1e-3):
+        raise RuntimeError(f"Nominal robot articulation did not initialize consistently: {robot_initialization}")
+    print("ROBOT_INITIALIZATION_VERIFIED", json.dumps(robot_initialization), flush=True)
     # reset() internally steps unconnected bodies. Restore authored lattice in
     # BOTH PhysX/caches and USD before native graph authoring, without a step.
     placement_checks = []
@@ -599,6 +629,7 @@ def render(app, args, spec, bricks, config, views):
         "benchmark_case": args.case_metadata,
         "highest_remaining_layer": highest_layer,
         "preassembly": preassembly,
+        "robot_initialization": robot_initialization,
         "placement_checks": placement_checks,
         "brick_count": len(bricks), "native_connected_parts": len(parts_after), "native_connections": len(connections_after),
         "pruned_unspawned_square_factory_source_configs": sorted(pruned_source_names),

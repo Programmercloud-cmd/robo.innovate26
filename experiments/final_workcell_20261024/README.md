@@ -99,6 +99,23 @@ Native connections are checked at a static snapshot; connection dynamics are
 not validated. Recreating native runtime links uses the scene launcher, rather
 than assuming an exported USD restores all extension state by itself.
 
+The private renderer explicitly initializes the configured nominal robot joints
+with one simulation step **before** restoring the source bricks and creating
+the native graph. It checks joint readback and PhysX/USD hand-pose agreement.
+There are no physics steps after native preassembly. This fixes static visual
+initialization; the robot joint pose is still nominal, not reconstructed from
+the physical photographs.
+
+For a new preview after committing configuration edits, run:
+
+```bash
+python3 experiments/final_workcell_20261024/submit_preview.py
+```
+
+This helper creates a fresh immutable snapshot, uses the existing environment,
+submits its foreground launcher through default Pueue and prints the job ID.
+It does not overwrite earlier captures.
+
 The most useful additional information is verified plate stud counts, the
 marker-board PDF or square size, and robot-base position/yaw relative to two
 table edges or known plate corners. D435i intrinsics and a measured optical
