@@ -38,6 +38,10 @@ single-plane homography, then checks the separate ruler and reported gray size.
 This is a layout estimate, not phone calibration, hand-eye calibration or
 robot-frame registration.
 
+The latest rendering preset improves directional lighting and surface finish
+while preserving this layout. See [appearance comparison and commands](appearance/README.md)
+for matched before/after images, unchanged-state checks and remaining limits.
+
 The corrected audit distinguishes the visible white rectangle (25×21.8 cm)
 from the hidden outer edges: two rows at 8 mm pitch imply an approximate
 16 mm covered strip at each Y edge. Gray covered strips are likewise added
@@ -130,12 +134,12 @@ Identifying the phone lenses and ChArUco design does not supply those transforms
 
 ## Completed preview
 
-Latest yaw-adjusted capture: **Pueue 1704**, frozen scene source `0565e3a`.
+Latest appearance capture: **Pueue 1708**, frozen scene source `810bcde`.
 
-- [Overhead render](../../runs/20261024T214640.110593Z-final-workcell-preview/output/images/diagnostic_table_top.png)
-- [Oblique render](../../runs/20261024T214640.110593Z-final-workcell-preview/output/images/diagnostic_oblique.png)
-- [USD visual scene](../../runs/20261024T214640.110593Z-final-workcell-preview/output/final_workcell.usda)
-- [Native graph, scene and camera manifest](../../runs/20261024T214640.110593Z-final-workcell-preview/output/manifest.json)
+- [Overhead render](../../runs/20261024T223031.192426Z-final-workcell-preview/output/images/diagnostic_table_top.png)
+- [Oblique render](../../runs/20261024T223031.192426Z-final-workcell-preview/output/images/diagnostic_oblique.png)
+- [USD visual scene](../../runs/20261024T223031.192426Z-final-workcell-preview/output/final_workcell.usda)
+- [Native graph, scene and camera manifest](../../runs/20261024T223031.192426Z-final-workcell-preview/output/manifest.json)
 - [Jobs, snapshots, artifact hashes and validation](completion.json)
 - [Editable layout and destination recipes](scene_config.json)
 

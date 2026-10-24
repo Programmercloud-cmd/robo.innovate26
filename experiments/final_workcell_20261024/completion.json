@@ -89,23 +89,50 @@
       "source_commit": "ebd2ef0c6fae02aa4b87331349ff8c16c1691f27",
       "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T214949.269584Z-base-orientation-evidence/launch.sh",
       "queue": "default"
+    },
+    {
+      "job_id": 1707,
+      "role": "first_appearance_pass_weak_key_not_promoted",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T222727.585199Z-final-workcell-preview",
+      "source_commit": "f54d701ffc9293c5f4b55e9c203a316edce4438f",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T222727.585199Z-final-workcell-preview/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1708,
+      "role": "corrected_visual_appearance_preset",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T223031.192426Z-final-workcell-preview",
+      "source_commit": "810bcdef3a1bb550103cbcc7c7c3545cec05b137",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T223031.192426Z-final-workcell-preview/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1709,
+      "role": "matched_view_appearance_invariance_and_exposure_diagnostics",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T223147.006998Z-appearance-comparison",
+      "source_commit": "810bcdef3a1bb550103cbcc7c7c3545cec05b137",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T223147.006998Z-appearance-comparison/launch.sh",
+      "queue": "default"
     }
   ],
-  "final_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T214640.110593Z-final-workcell-preview",
+  "final_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T223031.192426Z-final-workcell-preview",
   "final_scene_config": "/home/faps/dev/github/robo.innovate26/experiments/final_workcell_20261024/scene_config.json",
   "artifacts": {
-    "usd_visual_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T214640.110593Z-final-workcell-preview/output/final_workcell.usda",
-    "overhead": "/home/faps/dev/github/robo.innovate26/runs/20261024T214640.110593Z-final-workcell-preview/output/images/diagnostic_table_top.png",
-    "oblique": "/home/faps/dev/github/robo.innovate26/runs/20261024T214640.110593Z-final-workcell-preview/output/images/diagnostic_oblique.png",
-    "panel": "/home/faps/dev/github/robo.innovate26/runs/20261024T214640.110593Z-final-workcell-preview/output/panel.png",
-    "manifest": "/home/faps/dev/github/robo.innovate26/runs/20261024T214640.110593Z-final-workcell-preview/output/manifest.json",
+    "usd_visual_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T223031.192426Z-final-workcell-preview/output/final_workcell.usda",
+    "overhead": "/home/faps/dev/github/robo.innovate26/runs/20261024T223031.192426Z-final-workcell-preview/output/images/diagnostic_table_top.png",
+    "oblique": "/home/faps/dev/github/robo.innovate26/runs/20261024T223031.192426Z-final-workcell-preview/output/images/diagnostic_oblique.png",
+    "panel": "/home/faps/dev/github/robo.innovate26/runs/20261024T223031.192426Z-final-workcell-preview/output/panel.png",
+    "manifest": "/home/faps/dev/github/robo.innovate26/runs/20261024T223031.192426Z-final-workcell-preview/output/manifest.json",
     "layout_estimate": "/home/faps/dev/github/robo.innovate26/experiments/final_workcell_20261024/layout_estimate.json",
-    "charuco_uv_check": "/home/faps/dev/github/robo.innovate26/runs/20261024T214640.110593Z-final-workcell-preview/output/charuco_uv_check.json",
+    "charuco_uv_check": "/home/faps/dev/github/robo.innovate26/runs/20261024T223031.192426Z-final-workcell-preview/output/charuco_uv_check.json",
     "photo_charuco_overlay": "/home/faps/dev/github/robo.innovate26/runs/20261024T211152.477912Z-charuco-asset-audit/output/photo09_charuco_detection.png",
     "annotated_orientation_photo": "/home/faps/dev/github/robo.innovate26/runs/20261024T214949.269584Z-base-orientation-evidence/output/photo1_annotated.png",
     "annotated_base_top": "/home/faps/dev/github/robo.innovate26/runs/20261024T214949.269584Z-base-orientation-evidence/output/base_top_annotated.png",
     "annotated_connector_render": "/home/faps/dev/github/robo.innovate26/runs/20261024T214949.269584Z-base-orientation-evidence/output/base_connector_face_annotated.png",
-    "orientation_comparison": "/home/faps/dev/github/robo.innovate26/runs/20261024T214949.269584Z-base-orientation-evidence/output/comparison.jpg"
+    "orientation_comparison": "/home/faps/dev/github/robo.innovate26/runs/20261024T214949.269584Z-base-orientation-evidence/output/comparison.jpg",
+    "appearance_top_comparison": "/home/faps/dev/github/robo.innovate26/runs/20261024T223147.006998Z-appearance-comparison/output/corrected/diagnostic_table_top_before_after.png",
+    "appearance_oblique_comparison": "/home/faps/dev/github/robo.innovate26/runs/20261024T223147.006998Z-appearance-comparison/output/corrected/diagnostic_oblique_before_after.png",
+    "appearance_diagnostics": "/home/faps/dev/github/robo.innovate26/runs/20261024T223147.006998Z-appearance-comparison/output/corrected/comparison.json"
   },
   "validation": {
     "bricks": 300,
@@ -189,14 +216,12 @@
       "capture_validated": true,
       "child_returncode": 0,
       "cleanup_result": "cleanup_stall_after_validated_capture",
-      "seconds": 21.37516289699124,
+      "seconds": 20.524982853006804,
       "native_source_parts": 301,
       "native_source_connections": 930,
       "diagnostic_views": [
         "diagnostic_table_top",
-        "diagnostic_oblique",
-        "base_top",
-        "base_connector_face"
+        "diagnostic_oblique"
       ],
       "physical_camera_calibration": "unavailable"
     },
@@ -219,101 +244,276 @@
       "views": [
         {
           "view": "diagnostic_table_top",
-          "image_sha256": "fb14973220e255656d540c09a63d115c2c02e26f36a110ded704901b8eb05f18",
+          "image_sha256": "e5664da58ba7cd5ecd53c07b39ca721bfb298b4cc59f96d22c3eb6e85382f83a",
           "detected_ids": [
-            14,
+            13,
+            1,
+            6,
             15,
             16,
+            14,
             3,
+            4,
             10,
-            11,
-            13
+            11
           ],
-          "matched_markers": 7,
+          "matched_markers": 10,
           "ordered_corner_checks": [
             {
-              "id": 14,
+              "id": 13,
               "observed_ordered_corners_xy": [
                 [
-                  529.0,
-                  224.0
+                  436.0,
+                  243.0
                 ],
                 [
-                  516.0,
-                  224.0
+                  424.0,
+                  242.0
                 ],
                 [
-                  516.0,
-                  212.0
+                  424.0,
+                  230.0
                 ],
                 [
-                  529.0,
-                  212.0
+                  437.0,
+                  230.0
                 ]
               ],
               "hypotheses": {
                 "normal": {
                   "expected_ordered_corners_xy": [
                     [
-                      529.7797860428803,
-                      225.07738440974072
+                      437.4165251147846,
+                      243.55004187774944
                     ],
                     [
-                      516.2331733017078,
-                      225.0773848385
+                      423.86991225521933,
+                      243.550042318348
                     ],
                     [
-                      516.2331727095666,
-                      211.53077216796854
+                      423.8699116630781,
+                      230.00342958862015
                     ],
                     [
-                      529.779785450739,
-                      211.5307717478914
+                      437.41652452264333,
+                      230.0034291567037
                     ]
                   ],
-                  "rms_px": 1.0107838654335377
+                  "rms_px": 1.1089502527915225
                 },
                 "Y_mirrored": {
                   "expected_ordered_corners_xy": [
                     [
-                      529.7797886806003,
-                      285.4213840983231
+                      437.41652613757384,
+                      266.94873274072427
                     ],
                     [
-                      516.2331759394278,
-                      285.4213845657573
+                      423.86991327800865,
+                      266.9487331963192
                     ],
                     [
-                      516.233176531569,
-                      298.96799723628874
+                      423.86991387014984,
+                      280.49534592604704
                     ],
                     [
-                      529.7797892727415,
-                      298.9679967601724
+                      437.4165267297151,
+                      280.49534546176994
                     ]
                   ],
-                  "rms_px": 75.28838355667285
+                  "rms_px": 39.679197469372475
                 },
                 "rotated_180": {
                   "expected_ordered_corners_xy": [
                     [
-                      442.34255789590406,
-                      285.4213871153987
+                      534.7058187809481,
+                      266.94872946872454
                     ],
                     [
-                      455.88917073179084,
-                      285.4213866479645
+                      548.252431498442,
+                      266.9487290131296
                     ],
                     [
-                      455.8891713239321,
-                      298.9679993571709
+                      548.2524320905833,
+                      280.49534166313975
                     ],
                     [
-                      442.3425584880453,
-                      298.9679998332873
+                      534.7058193730893,
+                      280.4953421274168
                     ]
                   ],
-                  "rms_px": 105.96896644889475
+                  "rms_px": 118.8088162164986
+                }
+              }
+            },
+            {
+              "id": 1,
+              "observed_ordered_corners_xy": [
+                [
+                  492.0,
+                  298.0
+                ],
+                [
+                  479.0,
+                  298.0
+                ],
+                [
+                  479.0,
+                  286.0
+                ],
+                [
+                  492.0,
+                  286.0
+                ]
+              ],
+              "hypotheses": {
+                "normal": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      492.8344823815174,
+                      298.96799954968486
+                    ],
+                    [
+                      479.2878695929877,
+                      298.96800002580125
+                    ],
+                    [
+                      479.2878690008465,
+                      285.4213867581246
+                    ],
+                    [
+                      492.83448178937607,
+                      285.42138629069035
+                    ]
+                  ],
+                  "rms_px": 1.0126811507693863
+                },
+                "Y_mirrored": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      492.8344785595147,
+                      211.53077140254302
+                    ],
+                    [
+                      479.2878657709851,
+                      211.53077182262018
+                    ],
+                    [
+                      479.28786636312634,
+                      225.07738509029684
+                    ],
+                    [
+                      492.834479151656,
+                      225.07738466153754
+                    ]
+                  ],
+                  "rms_px": 74.79729845825192
+                },
+                "rotated_180": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      479.28786173377983,
+                      211.5307718226203
+                    ],
+                    [
+                      492.83447452230945,
+                      211.53077140254317
+                    ],
+                    [
+                      492.83447511445075,
+                      225.0773846615377
+                    ],
+                    [
+                      479.28786232592114,
+                      225.07738509029699
+                    ]
+                  ],
+                  "rms_px": 75.96539882323108
+                }
+              }
+            },
+            {
+              "id": 6,
+              "observed_ordered_corners_xy": [
+                [
+                  437.0,
+                  279.0
+                ],
+                [
+                  424.0,
+                  279.0
+                ],
+                [
+                  424.0,
+                  267.0
+                ],
+                [
+                  437.0,
+                  267.0
+                ]
+              ],
+              "hypotheses": {
+                "normal": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      437.41652672971526,
+                      280.49534867318323
+                    ],
+                    [
+                      423.86991387015,
+                      280.4953491374603
+                    ],
+                    [
+                      423.8699132780087,
+                      266.9487364077325
+                    ],
+                    [
+                      437.416526137574,
+                      266.9487359521375
+                    ]
+                  ],
+                  "rms_px": 1.1020692074521674
+                },
+                "Y_mirrored": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      437.41652452264316,
+                      230.00342594529047
+                    ],
+                    [
+                      423.86991166307797,
+                      230.00342637720686
+                    ],
+                    [
+                      423.8699122552192,
+                      243.55003910693472
+                    ],
+                    [
+                      437.4165251147844,
+                      243.55003866633618
+                    ]
+                  ],
+                  "rms_px": 38.410645269101494
+                },
+                "rotated_180": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      534.7058171660174,
+                      230.00342284334582
+                    ],
+                    [
+                      548.2524298835114,
+                      230.00342241142937
+                    ],
+                    [
+                      548.2524304756525,
+                      243.55003506143947
+                    ],
+                    [
+                      534.7058177581587,
+                      243.55003550203804
+                    ]
+                  ],
+                  "rms_px": 118.18557147762337
                 }
               }
             },
@@ -490,6 +690,92 @@
               }
             },
             {
+              "id": 14,
+              "observed_ordered_corners_xy": [
+                [
+                  529.0,
+                  224.0
+                ],
+                [
+                  516.0,
+                  224.0
+                ],
+                [
+                  516.0,
+                  212.0
+                ],
+                [
+                  529.0,
+                  212.0
+                ]
+              ],
+              "hypotheses": {
+                "normal": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      529.7797860428803,
+                      225.07738440974072
+                    ],
+                    [
+                      516.2331733017078,
+                      225.0773848385
+                    ],
+                    [
+                      516.2331727095666,
+                      211.53077216796854
+                    ],
+                    [
+                      529.779785450739,
+                      211.5307717478914
+                    ]
+                  ],
+                  "rms_px": 1.0107838654335377
+                },
+                "Y_mirrored": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      529.7797886806003,
+                      285.4213840983231
+                    ],
+                    [
+                      516.2331759394278,
+                      285.4213845657573
+                    ],
+                    [
+                      516.233176531569,
+                      298.96799723628874
+                    ],
+                    [
+                      529.7797892727415,
+                      298.9679967601724
+                    ]
+                  ],
+                  "rms_px": 75.28838355667285
+                },
+                "rotated_180": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      442.34255789590406,
+                      285.4213871153987
+                    ],
+                    [
+                      455.88917073179084,
+                      285.4213866479645
+                    ],
+                    [
+                      455.8891713239321,
+                      298.9679993571709
+                    ],
+                    [
+                      442.3425584880453,
+                      298.9679998332873
+                    ]
+                  ],
+                  "rms_px": 105.96896644889475
+                }
+              }
+            },
+            {
               "id": 3,
               "observed_ordered_corners_xy": [
                 [
@@ -572,6 +858,92 @@
                     ]
                   ],
                   "rms_px": 117.54599542745594
+                }
+              }
+            },
+            {
+              "id": 4,
+              "observed_ordered_corners_xy": [
+                [
+                  510.0,
+                  279.0
+                ],
+                [
+                  498.0,
+                  279.0
+                ],
+                [
+                  498.0,
+                  267.0
+                ],
+                [
+                  510.0,
+                  267.0
+                ]
+              ],
+              "hypotheses": {
+                "normal": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      511.30713618274194,
+                      280.4953461407628
+                    ],
+                    [
+                      497.76052341789097,
+                      280.49534660503997
+                    ],
+                    [
+                      497.76052282574966,
+                      266.9487339226692
+                    ],
+                    [
+                      511.3071355906007,
+                      266.9487334670742
+                    ]
+                  ],
+                  "rms_px": 1.4150339943615928
+                },
+                "Y_mirrored": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      511.3071339756699,
+                      230.00342358938286
+                    ],
+                    [
+                      497.76052121081887,
+                      230.0034240212993
+                    ],
+                    [
+                      497.76052180296017,
+                      243.5500367036701
+                    ],
+                    [
+                      511.3071345678111,
+                      243.5500362630715
+                    ]
+                  ],
+                  "rms_px": 38.42090067712676
+                },
+                "rotated_180": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      460.81520787658775,
+                      230.00342519925337
+                    ],
+                    [
+                      474.36182068879594,
+                      230.00342476733695
+                    ],
+                    [
+                      474.3618212809372,
+                      243.55003746470413
+                    ],
+                    [
+                      460.81520846872905,
+                      243.55003790530267
+                    ]
+                  ],
+                  "rms_px": 54.44479933929764
                 }
               }
             },
@@ -746,133 +1118,19 @@
                   "rms_px": 55.006571918897954
                 }
               }
-            },
-            {
-              "id": 13,
-              "observed_ordered_corners_xy": [
-                [
-                  436.0,
-                  242.0
-                ],
-                [
-                  424.0,
-                  242.0
-                ],
-                [
-                  424.0,
-                  230.0
-                ],
-                [
-                  436.0,
-                  230.0
-                ]
-              ],
-              "hypotheses": {
-                "normal": {
-                  "expected_ordered_corners_xy": [
-                    [
-                      437.4165251147846,
-                      243.55004187774944
-                    ],
-                    [
-                      423.86991225521933,
-                      243.550042318348
-                    ],
-                    [
-                      423.8699116630781,
-                      230.00342958862015
-                    ],
-                    [
-                      437.41652452264333,
-                      230.0034291567037
-                    ]
-                  ],
-                  "rms_px": 1.487633645546767
-                },
-                "Y_mirrored": {
-                  "expected_ordered_corners_xy": [
-                    [
-                      437.41652613757384,
-                      266.94873274072427
-                    ],
-                    [
-                      423.86991327800865,
-                      266.9487331963192
-                    ],
-                    [
-                      423.86991387014984,
-                      280.49534592604704
-                    ],
-                    [
-                      437.4165267297151,
-                      280.49534546176994
-                    ]
-                  ],
-                  "rms_px": 39.83869151401279
-                },
-                "rotated_180": {
-                  "expected_ordered_corners_xy": [
-                    [
-                      534.7058187809481,
-                      266.94872946872454
-                    ],
-                    [
-                      548.252431498442,
-                      266.9487290131296
-                    ],
-                    [
-                      548.2524320905833,
-                      280.49534166313975
-                    ],
-                    [
-                      534.7058193730893,
-                      280.4953421274168
-                    ]
-                  ],
-                  "rms_px": 119.06662876384233
-                }
-              }
             }
           ],
           "rms_px": {
-            "normal": 1.3454275385137249,
-            "Y_mirrored": 57.59249784781184,
-            "rotated_180": 102.41154055220106
+            "normal": 1.2621546848892216,
+            "Y_mirrored": 56.34870643075976,
+            "rotated_180": 98.00935949819605
           },
           "minimum_error_hypothesis": "normal",
           "status": "conditional_correspondence_check_available"
         },
         {
           "view": "diagnostic_oblique",
-          "image_sha256": "c9856e793d1822b1ce24923b80ef02bc27052c1fe6f3d7d3073614d58c327000",
-          "detected_ids": [],
-          "matched_markers": 0,
-          "ordered_corner_checks": [],
-          "rms_px": {
-            "normal": null,
-            "Y_mirrored": null,
-            "rotated_180": null
-          },
-          "minimum_error_hypothesis": null,
-          "status": "unverified_insufficient_decoded_ids"
-        },
-        {
-          "view": "base_top",
-          "image_sha256": "3160d0b7b99885dbc36fee9b125bd398a0d6ff778ae3be7eddc3d27772c624af",
-          "detected_ids": [],
-          "matched_markers": 0,
-          "ordered_corner_checks": [],
-          "rms_px": {
-            "normal": null,
-            "Y_mirrored": null,
-            "rotated_180": null
-          },
-          "minimum_error_hypothesis": null,
-          "status": "unverified_insufficient_decoded_ids"
-        },
-        {
-          "view": "base_connector_face",
-          "image_sha256": "44eff65c9269c608de2207ac56e356a4c30d0572978dbe2a3f93a6d45beaa0eb",
+          "image_sha256": "62d49261b4da503b50f9b19b7ce932c3c189efd2040cad6014adc367e4015288",
           "detected_ids": [],
           "matched_markers": 0,
           "ordered_corner_checks": [],
@@ -888,7 +1146,7 @@
       "asset_png_sha256": "ef436eadc3801abd61f4eaffcca6d66f044babeafddb05f5117630b13800476d",
       "source_sha256": "07a66ddf647680a2642f334cf2e63d00e2f84194258a082b4911b87ee73673d4",
       "asset_audit_sha256": "da6e3e69a76f3a1589e35c087d9d789d50e001c7e77a52736072162118bc4e5c",
-      "cameras_sha256": "bbe76fd46a9297f5d093503a7a9fe33f7575102af8794d877af4efae67edcad4",
+      "cameras_sha256": "316a2474c68a582242da2e2b56ad921b4e76788eb932bfffe6e5c89cc9d43561",
       "interpretation": "Conditional decoded-ID ordered-corner check of saved render against configured asset geometry. No detector tuning, layout fitting, scale change or physical camera calibration; low-resolution non-decoding remains unverified."
     }
   },
@@ -909,13 +1167,12 @@
     "ChArUco oblique render has no decoded markers; top-view UV evidence is conditional and does not calibrate physical cameras or robot."
   ],
   "artifact_sha256": {
-    "final_workcell.usda": "6ec24e1f186d8c478ee742d565a0aa6fa21f6b3aa57ecf099c4994d2ecd95bed",
-    "manifest.json": "ba555f1761c1cdd19d4de156dfe7e1fbf0b14722e184f590d6826fc9ea74f262",
+    "final_workcell.usda": "275a6925bf6f655f5ade1601eccbdfbd101062e8f3157617f4379e4b4e5ac456",
+    "manifest.json": "f91e1ed7393b6ddb27bbef3455aaa5df74f7709e2750195f9e96369c8ad40457",
     "robot_initialization.json": "8b1d550049f0b78fc52da04ab84da95b4f811d90f1b875783b6a9a4fe6740063",
-    "comparison.jpg": "5889139cbf840be5bf64bd3d7930f679fc97be9db66a21417100a5493e18c5ad",
-    "photo1_annotated.png": "b2b013b76a50ac27f2c6a4bacda7cf93d6650c1e6885fa33d1ba7d460fb45902"
+    "comparison.json": "58f7bcdde3b4927df36e712b86feeb17706b648ed54e3e7703e129cebae2b452"
   },
-  "previous_final_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T211537.337776Z-final-workcell-preview",
+  "previous_final_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T214640.110593Z-final-workcell-preview",
   "base_orientation_update": {
     "previous_yaw_table_deg": 90,
     "estimated_yaw_table_deg": 45,
@@ -928,5 +1185,31 @@
     "nominal_joints_unchanged": true,
     "all_source_states_max_difference": 0.0,
     "annotation_provenance": "/home/faps/dev/github/robo.innovate26/runs/20261024T214949.269584Z-base-orientation-evidence/output/annotation_provenance.json"
+  },
+  "appearance_update": {
+    "kind": "heuristic lighting/material-finish preset; not calibrated photometry or transfer validation",
+    "preset": "appearance_config.json",
+    "lighting": "cameras_realism.json",
+    "key": "RectLight on negative table X, .26x.18m, authoredintensity20000normalizeFalse, dome120",
+    "brick_palette_and_abs_materials_unchanged": true,
+    "all_invariance_guards": {
+      "scene_config_equal": true,
+      "required_counts_and_static_capture": true,
+      "exposure_and_tonemapping_unchanged": true,
+      "native_graph_counts": true,
+      "native_part_set_unchanged": true,
+      "requested_default_q_equal": true,
+      "actual_q_equal": true,
+      "preassembly_steps_unchanged": true,
+      "source_position_within_2um": true,
+      "source_orientation_within_1e_minus4_rad": true,
+      "source_velocities_equal": true,
+      "cameras_unchanged_1e_minus6": true
+    },
+    "comparison_report": "/home/faps/dev/github/robo.innovate26/runs/20261024T223147.006998Z-appearance-comparison/output/corrected/comparison.json",
+    "observed_tradeoff": "Clearer contact shadows/form highlights, darker gray plate/background; no >=254 gray/channel clipping in the two checked views",
+    "domain_gap_reduction_measured": false,
+    "detector_training_or_hardware_control": false,
+    "default_legacy_preview_preserved": "Use explicit --cameras cameras_realism.json --appearance appearance_config.json to enable new preset"
   }
 }

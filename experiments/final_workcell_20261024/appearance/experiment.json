@@ -41,7 +41,13 @@
       "key_intensity": 20000,
       "single_change": "RectLight intensity only, fixed materials/fill/exposure/cameras",
       "reason": "Recorded Rect orientation correct; first direct-light contribution too weak",
-      "status": "frozen_before_corrected_render"
+      "status": "retained_after_independent_review",
+      "job_id": 1708,
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T223031.192426Z-final-workcell-preview",
+      "outcome": "Clearer contact shadows/directional highlights; darker background/grayplate; no white clipping in two checked views. No measured sim-to-real claim."
     }
-  ]
+  ],
+  "comparison_job_id": 1709,
+  "comparison_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T223147.006998Z-appearance-comparison",
+  "scope_complete": true
 }
