@@ -268,7 +268,21 @@
         "toward_fingers": 0.063,
         "additional_on_top": 0.02
       },
-      "status": "calibration_required; housing measurements do not define optical axes/center; no optical prim activated"
+      "status": "calibration_required; housing measurements do not define optical axes/center; no optical prim activated",
+      "mount_side_correction": {
+        "rotation_about_hand_z_deg": 180,
+        "status": "Opposite side requested by user; approximate visual correction of inherited camera and bracket together, not optical calibration",
+        "original_camera_center_hand_m": [
+          -0.0375,
+          0,
+          0.0526
+        ],
+        "corrected_camera_center_hand_m": [
+          0.0375,
+          0,
+          0.0526
+        ]
+      }
     },
     "physical_external_cameras": [],
     "recipes_declarative_only": [

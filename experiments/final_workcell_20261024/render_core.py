@@ -283,7 +283,7 @@ def render(app, args, spec, bricks, config, views):
     from bricksim.core import (create_connection, compute_connected_component, get_disassembled_connections,
         get_assembled_connections, get_assembly_thresholds, set_assembly_thresholds,
         get_breakage_thresholds, compute_connection_transform, compute_graph_transform)
-    from experiments.final_workcell_20261024.scene import make_env_cfg, decorate_stage
+    from experiments.final_workcell_20261024.scene import make_env_cfg, decorate_stage, correct_wrist_mount_side
     from bricksim.mdp.brick_part import set_brick_part_xform
 
     output = args.output
@@ -335,6 +335,7 @@ def render(app, args, spec, bricks, config, views):
                             if prim.GetName().startswith("brick_")}
     if actual_source_names != desired_names or spawned_source_names != desired_names:
         raise RuntimeError("Actual scene contains missing or extra source brick assets")
+    wrist_mount_report = correct_wrist_mount_side(stage, cfg)
     sim.reset()
     scene.reset()
     # Installed omni.rtx.settings.core exposes this process-local auto-exposure
@@ -379,6 +380,20 @@ def render(app, args, spec, bricks, config, views):
         or robot_initialization["hand_orientation_disagreement_rad"] > 1e-3):
         raise RuntimeError(f"Nominal robot articulation did not initialize consistently: {robot_initialization}")
     print("ROBOT_INITIALIZATION_VERIFIED", json.dumps(robot_initialization), flush=True)
+    if wrist_mount_report is not None:
+        for component in wrist_mount_report["components"]:
+            body_world = UsdGeom.Xformable(stage.GetPrimAtPath(component["body"])).ComputeLocalToWorldTransform(0)
+            relative = body_world * hand_usd.GetInverse()
+            actual_pos = np.asarray(relative.ExtractTranslation())
+            expected_pos = np.asarray(component["new_position_hand_m"])
+            actual_q_mount = relative.ExtractRotationQuat()
+            actual_q_mount = np.r_[actual_q_mount.GetReal(), np.asarray(actual_q_mount.GetImaginary())]
+            component["actual_position_hand_m"] = actual_pos.tolist()
+            component["position_error_m"] = float(np.linalg.norm(actual_pos-expected_pos))
+            component["orientation_error_rad"] = quaternion_error(actual_q_mount, component["new_rotation_hand_wxyz"])
+            if component["position_error_m"] > 1e-4 or component["orientation_error_rad"] > 1e-3:
+                raise RuntimeError(f"Wrist mounting frame mismatch: {component}")
+        (output/"wrist_mount_side.json").write_text(json.dumps(wrist_mount_report, indent=2))
     # reset() internally steps unconnected bodies. Restore authored lattice in
     # BOTH PhysX/caches and USD before native graph authoring, without a step.
     placement_checks = []
@@ -671,6 +686,7 @@ def render(app, args, spec, bricks, config, views):
         "highest_remaining_layer": highest_layer,
         "preassembly": preassembly,
         "robot_initialization": robot_initialization,
+        "wrist_mount_side_correction": wrist_mount_report,
         "placement_checks": placement_checks,
         "brick_count": len(bricks), "native_connected_parts": len(parts_after), "native_connections": len(connections_after),
         "pruned_unspawned_square_factory_source_configs": sorted(pruned_source_names),

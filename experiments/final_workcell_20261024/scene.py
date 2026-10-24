@@ -194,3 +194,46 @@ def decorate_stage(stage, cfg, output):
         "native_tower_visual_material_paths_not_edited": sorted(untouched_brick_material_paths),
         "external_physical_cameras_modeled": 0, "diagnostic_cameras_are_virtual": True,
         "layout_estimates": layout}
+
+
+def correct_wrist_mount_side(stage, cfg):
+    """Rotate inherited camera AND bracket; author fixed joints before PhysX init."""
+    from pxr import UsdGeom, UsdPhysics, Gf
+
+    correction = cfg["final_layout"]["wrist_camera"].get("mount_side_correction")
+    if correction is None:
+        return None
+    root = "/World/envs/env_0/Robot"
+    hand = stage.GetPrimAtPath(root+"/fr3_hand")
+    hand_world = UsdGeom.Xformable(hand).ComputeLocalToWorldTransform(0)
+    rotation = Gf.Rotation(Gf.Vec3d(0, 0, 1), correction["rotation_about_hand_z_deg"])
+    turn = Gf.Matrix4d(1).SetRotate(rotation)
+    parent_world = UsdGeom.Xformable(stage.GetPrimAtPath(root)).ComputeLocalToWorldTransform(0)
+    records = []
+    for name, joint_name in (("D435", "fr3_hand_D435_joint"),
+                             ("D435_mount", "fr3_hand_D435_mount_joint")):
+        body = stage.GetPrimAtPath(root+"/"+name)
+        joint = UsdPhysics.FixedJoint(stage.GetPrimAtPath(root+"/fr3_hand/"+joint_name))
+        if not body or not joint or list(joint.GetBody1Rel().GetTargets()) != [body.GetPath()]:
+            raise RuntimeError("Unexpected wrist mount asset/joint")
+        pos = joint.GetLocalPos0Attr().Get()
+        quat = joint.GetLocalRot0Attr().Get()
+        new_pos = rotation.TransformDir(Gf.Vec3d(pos))
+        new_quat = Gf.Quatf(rotation.GetQuat()) * quat
+        joint.GetLocalPos0Attr().Set(Gf.Vec3f(new_pos))
+        joint.GetLocalRot0Attr().Set(new_quat)
+        # Rotate initial body poses by the same rigid hand-relative transform.
+        # Gf uses row vectors: body * inv(hand) * turn * hand * inv(parent).
+        world = UsdGeom.Xformable(body).ComputeLocalToWorldTransform(0)
+        local = world * hand_world.GetInverse() * turn * hand_world * parent_world.GetInverse()
+        xform = UsdGeom.Xformable(body)
+        ops = {op.GetOpName(): op for op in xform.GetOrderedXformOps()}
+        ops["xformOp:translate"].Set(local.ExtractTranslation())
+        q = local.ExtractRotationQuat()
+        orient = ops["xformOp:orient"]
+        orient.Set(Gf.Quatd(q) if orient.GetPrecision() == UsdGeom.XformOp.PrecisionDouble else Gf.Quatf(q))
+        records.append({"body": str(body.GetPath()), "joint": str(joint.GetPath()),
+            "old_position_hand_m": list(pos), "new_position_hand_m": list(new_pos),
+            "new_rotation_hand_wxyz": [new_quat.GetReal(), *new_quat.GetImaginary()]})
+    return {"rotation_about_hand_z_deg": correction["rotation_about_hand_z_deg"],
+        "status": correction["status"], "components": records}
