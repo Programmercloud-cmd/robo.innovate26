@@ -1,0 +1,43 @@
+{
+  "schema": "manual-planar-photo-anchors-v1",
+  "image": "resources/setup_images/final_workcell_20261024/photo_09.jpg",
+  "image_size_wh": [1280, 960],
+  "frame": "table: origin white plate center; +X toward gray plate; +Y toward bowl; +Z up; right-handed",
+  "assumptions": {
+    "white_studs_per_side": 32,
+    "stud_pitch_m": 0.008,
+    "gray_nominal_studs_per_side_for_comparison_only": 48,
+    "ruler_tick_distance_m": 0.2,
+    "corner_order": ["image_top_left", "image_top_right", "image_bottom_right", "image_bottom_left"],
+    "white_outer_footprint_not_stud_center_span": true
+  },
+  "white_outer_corners_xy": [[526, 432], [721, 429], [727, 605], [528, 607]],
+  "gray_outer_corners_xy": [[142, 340], [450, 336], [458, 615], [139, 621]],
+  "ruler_tick_centers_xy": {"zero_cm": [714, 378], "twenty_cm": [569, 380]},
+  "points_xy": {
+    "source_footprint_center_approx": [625, 520],
+    "robot_base_foot_center_approx": [690, 205],
+    "bowl_rim_center_projected_approx": [625, 743],
+    "yellow_tape_junction": [305, 473],
+    "yellow_tape_top_endpoint": [305, 335],
+    "yellow_tape_left_endpoint": [126, 474],
+    "yellow_tape_right_endpoint": [463, 470],
+    "marker_board_print_center": [320, 202]
+  },
+  "pixel_pick_uncertainty": {
+    "plate_corners_and_ruler_ticks_px": 3,
+    "source_footprint_center_px": 8,
+    "base_foot_center_px": 20,
+    "bowl_center_px": 8,
+    "tape_and_board_centers_px": 3,
+    "scenarios": "Two fixed sensitivities: white quad expanded/contracted 3px on each axis about its center. Other pixel anchors remain fixed; not a statistical or worst-case uncertainty bound."
+  },
+  "limitations": [
+    "Plate stud counts are visual hypotheses; white size sets scale and gray48 is only an independent nominal comparison.",
+    "Black tape conceals exact plate edges. Ruler0/20 marks are manually estimated and independent of the homography fit.",
+    "One plane approximates tabletop and raised plates; no lens distortion or phone intrinsics are inferred.",
+    "Base foot is occluded; its approximate image center is not a calibrated FR3 frame or yaw. Bowl rim is above the table and not its measured contact footprint.",
+    "Homography reprojection error cannot establish physical accuracy. Two perturbations omit independent point-pick, height/parallax, lens and dimension errors.",
+    "Marker board visually7x5 squares; dictionary, printed dimensions and scaling unknown. It does not establish an extrinsic calibration."
+  ]
+}
