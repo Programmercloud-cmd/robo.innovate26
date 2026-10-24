@@ -18,6 +18,7 @@ def main():
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--python', required=True)
     p.add_argument('--cameras', type=Path)
+    p.add_argument('--appearance', type=Path)
     a = p.parse_args()
     if os.environ.get('ROBO_PUEUE_JOB') != '1':
         raise RuntimeError('Rendering requires default Pueue')
@@ -26,6 +27,8 @@ def main():
     command = [a.python, str(directory/'render_final.py'), '--geometry', str(directory/'geometry.json'),
                '--cameras', str(a.cameras or directory/'cameras.json'), '--output', str(a.output),
                '--views', 'all', '--headless', '--enable_cameras', '--device', 'cpu']
+    if a.appearance is not None:
+        command += ['--appearance', str(a.appearance)]
     with (a.output/'process.log').open('w') as log:
         process = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
         def cancelled(signum, _frame):

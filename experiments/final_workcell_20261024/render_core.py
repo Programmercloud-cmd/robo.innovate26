@@ -214,6 +214,7 @@ def main(case_adapter=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--geometry", type=Path)
     parser.add_argument("--cameras", type=Path)
+    parser.add_argument("--appearance", type=Path, help="Optional visual-only material configuration")
     parser.add_argument("--views", default="all")
     parser.add_argument("--output", type=Path)
     parser.add_argument("--self-test", action="store_true")
@@ -288,6 +289,8 @@ def render(app, args, spec, bricks, config, views):
     output = args.output
     width, height = config["image_size"]
     cfg = json.loads(Path(__file__).with_name("scene_config.json").read_text())
+    if args.appearance is not None:
+        cfg["_appearance"] = json.loads(args.appearance.read_text())
     cfg.update(source_cells=6, source_layers=10, baseplate_studs=spec["baseplate_studs"], source_xy=spec["source_xy_m"])
     env_cfg = make_env_cfg(cfg, capture=True)
     # Reuse the square scene factory, but remove the sixty unwanted source
@@ -500,10 +503,25 @@ def render(app, args, spec, bricks, config, views):
     lighting = config["lighting"]
     dome = UsdLux.DomeLight.Get(stage, "/World/Light")
     dome.GetIntensityAttr().Set(lighting["dome_intensity"])
-    key = UsdLux.SphereLight.Define(stage, "/World/ExperimentKey")
-    key.CreateRadiusAttr(lighting["key_radius_m"])
+    if lighting.get("key_type") == "rect":
+        key = UsdLux.RectLight.Define(stage, "/World/ExperimentKey")
+        key.CreateWidthAttr(lighting["key_width_m"])
+        key.CreateHeightAttr(lighting["key_height_m"])
+        key.CreateNormalizeAttr(lighting["key_normalize"])
+        key.CreateColorAttr(Gf.Vec3f(*lighting["key_color_linear"]))
+        light_pose = camera_pose((0, 0, 0), {"eye_offset_m": lighting["key_position_table_m"],
+            "target_offset_m": lighting["key_target_table_m"], "up_world": (0, 0, 1)})
+        key_xform = UsdGeom.Xformable(key.GetPrim())
+        key_xform.AddTranslateOp().Set(Gf.Vec3d(*light_pose["eye_world_m"]))
+        q = light_pose["quaternion_wxyz_opengl"]
+        key_xform.AddOrientOp().Set(Gf.Quatf(q[0], Gf.Vec3f(*q[1:])))
+    else:
+        key = UsdLux.SphereLight.Define(stage, "/World/ExperimentKey")
+        key.CreateRadiusAttr(lighting["key_radius_m"])
+        UsdGeom.Xformable(key.GetPrim()).AddTranslateOp().Set(Gf.Vec3d(*(center+np.asarray(lighting["key_offset_m"]))))
     key.GetIntensityAttr().Set(lighting["key_intensity"])
-    UsdGeom.Xformable(key.GetPrim()).AddTranslateOp().Set(Gf.Vec3d(*(center+np.asarray(lighting["key_offset_m"]))))
+    applied_lighting = {str(attr.GetPath()): str(attr.Get()) for light in (dome, key)
+        for attr in light.GetPrim().GetAttributes() if attr.HasAuthoredValueOpinion()}
     camera = scene["overview"]
 
     def physics_state():
@@ -646,6 +664,7 @@ def render(app, args, spec, bricks, config, views):
     manifest = {"geometry": spec, "selected_views": [v["id"] for v in views], "camera_config": config,
         "geometry_contact_audit": geometry_audit(bricks),
         "final_layout": final_layout_report,
+        "applied_lighting_attributes": applied_lighting,
         "coordinate_frame": "Estimated table frame; robot base SE2 is provisional, not calibrated",
         "native_graph_reload": "Clutch graph is procedurally restored by this script; exported USD is a visual snapshot, graph persistence on reload is unvalidated",
         "benchmark_case": args.case_metadata,

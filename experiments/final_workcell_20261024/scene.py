@@ -16,6 +16,9 @@ def make_env_cfg(cfg, capture=False):
     table, robot = layout["table"], layout["robot"]
     env.scene.table.spawn.size = tuple(table["size_m"])
     env.scene.table.spawn.visual_material = PreviewSurfaceCfg(diffuse_color=(.86, .86, .83))
+    if "_appearance" in cfg:
+        env.scene.table.spawn.visual_material.roughness = cfg["_appearance"]["roughness"]["table"]
+        env.scene.table.spawn.visual_material.metallic = 0.
     env.scene.table.init_state.pos = tuple(table["center_table_m"])
     env.scene.robot.init_state.pos = tuple(robot["base_table_m"])
     angle = math.radians(robot["yaw_table_deg"])
@@ -35,12 +38,48 @@ def decorate_stage(stage, cfg, output):
     from pxr import UsdGeom, UsdShade, UsdPhysics, Sdf, Gf
 
     layout = cfg["final_layout"]
+    appearance = cfg.get("_appearance")
+    applied_materials = []
+    untouched_brick_material_paths = set()
+    if appearance is not None:
+        # Native bindings can resolve to dimension/color-specific prototypes.
+        # Prove plate materials are disjoint from all300 tower materials first.
+        for prim in stage.GetPrimAtPath("/World/envs/env_0").GetChildren():
+            if prim.GetName().startswith("brick_"):
+                mat, _ = UsdShade.MaterialBindingAPI(stage.GetPrimAtPath(prim.GetPath().AppendChild("Body"))).ComputeBoundMaterial()
+                if not mat:
+                    raise RuntimeError(f"Missing tower visual material beneath {prim.GetPath()}")
+                untouched_brick_material_paths.add(str(mat.GetPath()))
+        for name, studs in (("plate_source", 32), ("plate_mixed", 48)):
+            plate_path = Sdf.Path(f"/World/envs/env_0/{name}")
+            mat, _ = UsdShade.MaterialBindingAPI(stage.GetPrimAtPath(plate_path.AppendChild("Body"))).ComputeBoundMaterial()
+            prototype = mat.GetPath().GetParentPath() if mat else Sdf.Path.emptyPath
+            expected_prototype = (prototype.GetParentPath() == Sdf.Path("/_Prototypes")
+                and prototype.name.startswith(f"Brick_{studs}x{studs}x1_")
+                and mat.GetPath().name == "LegoMaterial") if mat else False
+            if (not mat or str(mat.GetPath()) in untouched_brick_material_paths
+                or not (mat.GetPath().HasPrefix(plate_path) or expected_prototype)):
+                raise RuntimeError(f"Plate material is shared with bricks or outside its expected prototype: {plate_path}")
+            shader = UsdShade.Shader.Get(stage, mat.GetPath().AppendChild("PreviewSurface"))
+            if not shader or shader.GetIdAttr().Get() != "UsdPreviewSurface":
+                raise RuntimeError(f"Unexpected plate shader at {mat.GetPath()}")
+            before = shader.GetInput("roughness").Get()
+            shader.CreateInput("roughness", Sdf.ValueTypeNames.Float).Set(appearance["roughness"]["plates"])
+            shader.CreateInput("metallic", Sdf.ValueTypeNames.Float).Set(0.)
+            applied_materials.append({"shader": str(shader.GetPath()), "roughness_before": before,
+                "roughness_after": shader.GetInput("roughness").Get(), "metallic": 0.,
+                "diffuse_linear_unchanged": list(shader.GetInput("diffuseColor").Get())})
     def material(name, color):
         value = UsdShade.Material.Define(stage, f"/World/FinalMaterials/{name}")
         shader = UsdShade.Shader.Define(stage, f"{value.GetPath()}/PreviewSurface")
         shader.CreateIdAttr("UsdPreviewSurface")
         shader.CreateInput("diffuseColor", Sdf.ValueTypeNames.Color3f).Set(Gf.Vec3f(*color))
-        shader.CreateInput("roughness", Sdf.ValueTypeNames.Float).Set(.65)
+        roughness = appearance["roughness"][name] if appearance else .65
+        shader.CreateInput("roughness", Sdf.ValueTypeNames.Float).Set(roughness)
+        if appearance:
+            shader.CreateInput("metallic", Sdf.ValueTypeNames.Float).Set(0.)
+            applied_materials.append({"shader": str(shader.GetPath()), "roughness_after": roughness,
+                "metallic": 0., "diffuse_linear_unchanged": list(color)})
         value.CreateSurfaceOutput().ConnectToSource(shader.ConnectableAPI(), "surface")
         return value
     black, yellow, paper, bowl_mat = [material(name, color) for name, color in (
@@ -151,5 +190,7 @@ def decorate_stage(stage, cfg, output):
         "reject_bowl_open_top": True, "bowl_collision_validation": "unvalidated static approximation",
         "wrist_camera_config_count": 1, "wrist_optical_transform_available": False,
         "marker_board_pattern": pattern_report,
+        "appearance_config": appearance, "applied_visual_materials": applied_materials,
+        "native_tower_visual_material_paths_not_edited": sorted(untouched_brick_material_paths),
         "external_physical_cameras_modeled": 0, "diagnostic_cameras_are_virtual": True,
         "layout_estimates": layout}

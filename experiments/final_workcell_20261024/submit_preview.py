@@ -16,6 +16,7 @@ PYTHON = '/home/faps/miniforge3/envs/unitree_sim_env/bin/python'
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--cameras', type=Path, default=EXP/'cameras.json')
+    parser.add_argument('--appearance', type=Path, help='Optional visual-only material preset')
     args = parser.parse_args()
     camera_relative = args.cameras.resolve().relative_to(EXP)
     if subprocess.check_output(['git', 'status', '--porcelain', '--', str(EXP.relative_to(ROOT))], cwd=ROOT):
@@ -37,6 +38,9 @@ def main():
     command = [PYTHON, str(snapshot/'experiments'/EXP.name/'capture_supervisor.py'),
                '--python', PYTHON, '--output', str(snapshot/'output'),
                '--cameras', str(snapshot/'experiments'/EXP.name/camera_relative)]
+    if args.appearance is not None:
+        appearance_relative = args.appearance.resolve().relative_to(EXP)
+        command += ['--appearance', str(snapshot/'experiments'/EXP.name/appearance_relative)]
     board = json.loads((snapshot/'experiments'/EXP.name/'scene_config.json').read_text())['final_layout']['marker_board']
     center = list(board['center_table_m'])
     center[2] += .00025
