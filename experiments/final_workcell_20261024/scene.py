@@ -1,6 +1,10 @@
 """Small final-layout adapter around the existing FR3/BrickSim scene factory."""
 
 import math
+import hashlib
+import json
+import shutil
+from pathlib import Path
 
 
 def make_env_cfg(cfg, capture=False):
@@ -27,7 +31,7 @@ def make_env_cfg(cfg, capture=False):
     return env
 
 
-def decorate_stage(stage, cfg):
+def decorate_stage(stage, cfg, output):
     from pxr import UsdGeom, UsdShade, UsdPhysics, Sdf, Gf
 
     layout = cfg["final_layout"]
@@ -70,7 +74,48 @@ def decorate_stage(stage, cfg):
     box("target_T_stem_toward_robot", (x+local_x, y-studs*.008/2+stem_length/2, .0052),
         (tape, stem_length, .0003), yellow)
     board = layout["marker_board"]
-    box("marker_paper_placeholder", board["center_table_m"], (*board["size_m"], .0002), paper)
+    box("marker_paper_backing", board["center_table_m"], (*board["size_m"], .0002), paper)
+    asset_dir = Path(output).resolve()/"assets"
+    asset_dir.mkdir(parents=True, exist_ok=True)
+    board_source = Path(__file__).with_name(board["texture_file"])
+    board_provenance = Path(__file__).with_name(board["provenance_file"])
+    texture_path = asset_dir/board_source.name
+    shutil.copy2(board_source, texture_path)
+    shutil.copy2(board_provenance, asset_dir/board_provenance.name)
+    pattern_metadata = json.loads(board_provenance.read_text())
+    board_mat = material("charuco_pattern", (1., 1., 1.))
+    board_shader = UsdShade.Shader.Get(stage, str(board_mat.GetPath())+"/PreviewSurface")
+    texture = UsdShade.Shader.Define(stage, str(board_mat.GetPath())+"/Texture")
+    texture.CreateIdAttr("UsdUVTexture")
+    texture.CreateInput("file", Sdf.ValueTypeNames.Asset).Set(Sdf.AssetPath(str(texture_path)))
+    texture.CreateInput("sourceColorSpace", Sdf.ValueTypeNames.Token).Set("sRGB")
+    uv_reader = UsdShade.Shader.Define(stage, str(board_mat.GetPath())+"/UVReader")
+    uv_reader.CreateIdAttr("UsdPrimvarReader_float2")
+    uv_reader.CreateInput("varname", Sdf.ValueTypeNames.Token).Set("st")
+    texture.CreateInput("st", Sdf.ValueTypeNames.Float2).ConnectToSource(uv_reader.ConnectableAPI(), "result")
+    board_shader.GetInput("diffuseColor").ConnectToSource(texture.ConnectableAPI(), "rgb")
+    graphic = UsdGeom.Mesh.Define(stage, "/World/FinalLayout/CharucoPattern")
+    half_x, half_y = (value/2 for value in board["pattern_size_m"])
+    graphic.CreatePointsAttr([(-half_x, -half_y, 0.), (half_x, -half_y, 0.),
+                              (half_x, half_y, 0.), (-half_x, half_y, 0.)])
+    graphic.CreateFaceVertexCountsAttr([4])
+    graphic.CreateFaceVertexIndicesAttr([0, 1, 2, 3])
+    graphic.CreateSubdivisionSchemeAttr("none")
+    # +u follows local+X; PNG row0 is at local+Y (v=1), without mirroring.
+    UsdGeom.PrimvarsAPI(graphic).CreatePrimvar("st", Sdf.ValueTypeNames.TexCoord2fArray,
+        UsdGeom.Tokens.vertex).Set([(0., 0.), (1., 0.), (1., 1.), (0., 1.)])
+    transform = UsdGeom.Xformable(graphic)
+    transform.AddTranslateOp().Set(Gf.Vec3d(*board["center_table_m"][:2], board["center_table_m"][2]+.00025))
+    transform.AddRotateZOp().Set(board["pattern_rotation_table_deg"])
+    UsdShade.MaterialBindingAPI.Apply(graphic.GetPrim()).Bind(board_mat)
+    pattern_report = {"pattern_source": str(board_source), "texture_in_export_assets": str(texture_path),
+        "texture_sha256": hashlib.sha256(texture_path.read_bytes()).hexdigest(),
+        "provenance": pattern_metadata, "pattern_size_m": board["pattern_size_m"],
+        "pattern_rotation_table_deg": board["pattern_rotation_table_deg"],
+        "uv_convention": "+u local+X; PNG row0 local+Y before configured rotation; no mirror",
+        "rotation_status": board["pattern_rotation_status"],
+        "physical_print_scale": "unverified; nominal user-specified square dimensions",
+        "texture_binding": "Absolute frozen output/assets path; keep this directory for USD reload"}
 
     # Analytic open cup: inner/outer side walls, bottom and rim; NO top disk.
     bowl = layout["reject_bowl"]
@@ -105,5 +150,6 @@ def decorate_stage(stage, cfg):
         "target_zones": target["zones"], "routing_implemented": False, "target_empty": True,
         "reject_bowl_open_top": True, "bowl_collision_validation": "unvalidated static approximation",
         "wrist_camera_config_count": 1, "wrist_optical_transform_available": False,
+        "marker_board_pattern": pattern_report,
         "external_physical_cameras_modeled": 0, "diagnostic_cameras_are_virtual": True,
         "layout_estimates": layout}

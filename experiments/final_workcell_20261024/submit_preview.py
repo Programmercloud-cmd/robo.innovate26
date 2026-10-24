@@ -31,6 +31,15 @@ def main():
                      evidence/f'photo_{number:02d}.jpg')
     command = [PYTHON, str(snapshot/'experiments'/EXP.name/'capture_supervisor.py'),
                '--python', PYTHON, '--output', str(snapshot/'output')]
+    board = json.loads((snapshot/'experiments'/EXP.name/'scene_config.json').read_text())['final_layout']['marker_board']
+    center = list(board['center_table_m'])
+    center[2] += .00025
+    uv_check = [PYTHON, str(snapshot/'experiments'/EXP.name/'verify_charuco_render.py'),
+                '--asset-audit', str(snapshot/'experiments'/EXP.name/board['provenance_file']),
+                '--cameras', str(snapshot/'output/evaluation_truth/cameras.json'),
+                '--images', str(snapshot/'output/images'), '--center', *map(str, center),
+                '--yaw-deg', str(board['pattern_rotation_table_deg']),
+                '--output', str(snapshot/'output/charuco_uv_check.json')]
     lines = ['#!/usr/bin/env bash', 'set -eo pipefail',
              'source /home/faps/miniforge3/etc/profile.d/conda.sh',
              'conda activate /home/faps/miniforge3/envs/unitree_sim_env', 'set -u',
@@ -38,7 +47,7 @@ def main():
              'export PYTHONPATH='+shlex.quote(str(snapshot/'.deps')+':'+str(snapshot)),
              'export ROBO_PUEUE_JOB=1', 'export PYTHONDONTWRITEBYTECODE=1',
              'export OMP_NUM_THREADS=2', 'export OPENBLAS_NUM_THREADS=2',
-             shlex.join(command), 'test -f output/supervisor.json', '']
+             shlex.join(command), 'test -f output/supervisor.json', shlex.join(uv_check), '']
     (snapshot/'launch.sh').write_text('\n'.join(lines))
     manifest = {'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
                 'scope': 'static approximate final workcell; no control', 'runtime_python': PYTHON,

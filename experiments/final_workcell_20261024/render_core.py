@@ -326,7 +326,7 @@ def render(app, args, spec, bricks, config, views):
     sim.get_physics_context().set_physx_update_transformations_settings(update_to_usd=True)
     scene = InteractiveScene(env_cfg.scene)
     stage = get_current_stage()
-    final_layout_report = decorate_stage(stage, cfg)
+    final_layout_report = decorate_stage(stage, cfg, output)
     actual_source_names = {name for name in scene.rigid_objects if name.startswith("brick_")}
     spawned_source_names = {prim.GetName() for prim in stage.GetPrimAtPath("/World/envs/env_0").GetChildren()
                             if prim.GetName().startswith("brick_")}

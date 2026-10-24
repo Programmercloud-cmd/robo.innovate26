@@ -222,7 +222,30 @@
         0.297,
         0.21
       ],
-      "status": "Paper placeholder at approximate photo-audit position; A4 size assumed, PDF/square size/pattern unknown; not a calibration target"
+      "status": "Specified ChArUco pattern with ordered-ID-verified nominal orientation on assumed A4 backing; actual print scale unverified, no camera calibration",
+      "board_spec_file": "board_spec.json",
+      "texture_file": "charuco_board.png",
+      "provenance_file": "charuco_board.json",
+      "pattern_size_m": [
+        0.21,
+        0.15
+      ],
+      "squares_xy": [
+        7,
+        5
+      ],
+      "square_length_m": 0.03,
+      "marker_length_m": 0.022,
+      "dictionary": "DICT_4X4_50",
+      "expected_default_marker_count": 17,
+      "expected_inner_corner_count": 24,
+      "pattern_rotation_table_deg": 0.0,
+      "pattern_rotation_status": "Verified nominal quarter-turn0 from ordered decoded IDs in photo9 with approximate tabletop homography (job1701); not calibrated camera geometry",
+      "physical_print_scale_status": "Nominal specification dimensions only; photo fit similarity1.05666 is not proof of physical print scale and does not rescale the board",
+      "photo_ordered_id_fit_yaw_deg": 0.0603086,
+      "photo_ordered_id_fit_nearest_quarter_turn_deg": 0.0,
+      "photo_ordered_id_fit_max_marker_disagreement_deg": 2.1417,
+      "photo_ordered_id_fit_similarity_scale": 1.05666
     },
     "wrist_camera": {
       "id": "wrist_d435i",
