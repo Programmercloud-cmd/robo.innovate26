@@ -1,12 +1,12 @@
 {
   "status": "confirmed_explicit_geometry",
-  "confirmation": "User confirmed studs (dots) in contact, and supplied close-up showing a one-stud stagger/crossing. Latest photo supersedes earlier approximate shared-center interpretation.",
-  "required_bricks": 360,
+  "confirmation": "User corrected each of ten layers to six parallel ridges with five bricks per ridge: thirty bricks per layer, three hundred total. The close-up establishes the one-stud crossing phase.",
+  "required_bricks": 300,
   "layers": 10,
-  "bricks_per_layer": [
-    6,
-    6
-  ],
+  "bricks_per_layer": 30,
+  "ridges_per_layer": 6,
+  "bricks_per_ridge": 5,
+  "world_axis_counts_by_yaw_quarter_turn": {"0": [5, 6], "1": [6, 5]},
   "brick_dimensions_studs": [
     4,
     2,
@@ -17,7 +17,7 @@
     4
   ],
   "baseplate_studs": 32,
-  "border_studs": 4,
+  "border_studs": 5,
   "source_xy_m": [
     0.45,
     -0.16
@@ -80,32 +80,28 @@
   "native_connections_required": true,
   "confirmed_facts": {
     "layers": 10,
-    "bricks_per_layer": [
-      6,
-      6
-    ],
+    "bricks_per_layer": 30,
+    "parallel_ridges_per_layer": 6,
+    "bricks_per_ridge": 5,
     "two_stud_gap_between_parallel_rows": true,
     "alternating_90_degrees": true,
     "user_previously_confirmed_shared_layer_center": true,
-    "exact_shared_layer_center": false,
-    "center_update": "Direct photo-supported stagger replaces the earlier rough shared-center answer."
+    "exact_shared_layer_center": true,
+    "center_update": "Corrected five-by-six rectangular layers swap world-axis counts after rotation; both photo-phase footprints share a center. The earlier six-by-six model is superseded."
   },
   "reported_contact_pattern": {
-    "corner_studs": 1,
-    "edge_studs": 2,
-    "interior_studs": 4,
-    "unit": "total engaged studs described locally by user; actual model histogram recorded above"
+    "studs_per_corner_crossing_patch": 1,
+    "unit": "Studs in an individual crossing patch; whole-brick totals are derived separately, not universal one-stud corner totals."
   },
-  "expected_native_connections": 1125,
+  "expected_native_connections": 930,
   "contact_geometry": {
-    "adjacent_layer_patch_count": 121,
+    "adjacent_layer_patch_count": 100,
     "studs_per_patch": 1,
     "total_contact_studs_per_brick_histogram": {
-      "1": 1,
       "2": 10,
-      "4": 25
+      "4": 20
     },
-    "note": "Histogram per adjacent-layer pair; no universal all-four-corners claim. Each stud crossing creates one native connection."
+    "note": "Histogram per adjacent-layer pair. Each crossing patch has one stud; a complete corner brick has two contact studs in this symmetric rectangular model. Each patch creates one genuine native connection."
   },
   "evidence": {
     "image": "resources/setup_images/contact_corner_20261024.jpg",

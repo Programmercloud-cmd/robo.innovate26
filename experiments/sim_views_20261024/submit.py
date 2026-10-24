@@ -1,4 +1,4 @@
-"""Queue independently selectable full360 views using the existing Isaac runtime."""
+"""Queue independently selectable full-stack views using the existing Isaac runtime."""
 import argparse
 from datetime import datetime, timezone
 import hashlib

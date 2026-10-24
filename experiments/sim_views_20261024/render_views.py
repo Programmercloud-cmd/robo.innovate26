@@ -1,4 +1,4 @@
-"""Named camera views of one frozen, natively connected full360 FR3 workcell.
+"""Named camera views of one frozen, natively connected full300 FR3 workcell.
 
 Run through the default Pueue queue. Physics advances only during the explicit
 idle settling interval; every selected RGB view then shares the same state/time.
@@ -26,21 +26,25 @@ def load_geometry(path):
     if spec["status"] != "confirmed_explicit_geometry":
         raise ValueError("Confirmed explicit full geometry is required; no provisional fallback")
     origins = spec["layer_origins_studs_xy"]
-    if (spec["required_bricks"] != 360 or spec["layers"] != 10
-            or spec["bricks_per_layer"] != [6, 6]
+    if (spec["required_bricks"] != 300 or spec["layers"] != 10
+            or spec["bricks_per_layer"] != 30 or spec["ridges_per_layer"] != 6
+            or spec["bricks_per_ridge"] != 5
+            or spec["world_axis_counts_by_yaw_quarter_turn"] != {"0": [5, 6], "1": [6, 5]}
             or spec["brick_dimensions_studs"] != [4, 2, 3]
             or spec["pitch_studs_xy"] != [4, 4]
             or len(origins) != 10 or any(not isinstance(o, list) or len(o) != 2 for o in origins)
             or any(not isinstance(v, int) for o in origins for v in o)
             or spec["layer_yaws_quarter_turn"] != [k % 2 for k in range(10)]
             or origins != [[1, 0] if k % 2 == 0 else [0, 1] for k in range(10)]):
-        raise ValueError("Full360 explicit alternating lattice specification is invalid")
+        raise ValueError("Full300 explicit alternating rectangular lattice specification is invalid")
     rng = random.Random(26)
     palette = ["dark_red", "brown", "tan", "reject_4211201", "reject_6135191"]
     border = spec["border_studs"]
     bricks = [Brick(f"brick_{k}_{i}_{j}", border+origins[k][0]+i*4,
                     border+origins[k][1]+j*4, k, k % 2, rng.choice(palette))
-              for k in range(10) for i in range(6) for j in range(6)]
+              for k in range(10)
+              for i in range(spec["world_axis_counts_by_yaw_quarter_turn"][str(k % 2)][0])
+              for j in range(spec["world_axis_counts_by_yaw_quarter_turn"][str(k % 2)][1])]
     for layer in range(10):
         group = [b for b in bricks if b.layer == layer]
         left, bottom = min(b.x for b in group), min(b.y for b in group)
@@ -52,10 +56,12 @@ def load_geometry(path):
         if brick.layer and not any(a.layer == brick.layer-1 and overlaps(a, brick) for a in bricks):
             raise ValueError(f"Unsupported source brick {brick.name}")
     audit = geometry_audit(bricks)
-    if (audit["expected_native_connection_count"] != 1125
+    if (len(bricks) != spec["required_bricks"] or audit["expected_native_connection_count"] != 930
             or spec["expected_native_connections"] != audit["expected_native_connection_count"]) or any(
-            interface["overlap_patch_studs_histogram"] != {1: 121} for interface in audit["adjacent_layer_interfaces"]):
-        raise ValueError("Photo-supported phase must yield121 one-stud patches per adjacent layer")
+            interface["overlap_patch_studs_histogram"] != {1: 100} for interface in audit["adjacent_layer_interfaces"]):
+        raise ValueError("Corrected rectangular photo-phase must yield100 one-stud patches per adjacent layer")
+    if any(layer["footprint_center_studs_xy"] != [spec["baseplate_studs"]/2]*2 for layer in audit["layers"]):
+        raise ValueError("Corrected symmetric layer centers must coincide with the baseplate center")
     return spec, bricks
 
 
@@ -86,10 +92,11 @@ def geometry_audit(bricks):
             "footprint_center_studs_xy": [(bounds[0]+bounds[2])/2, (bounds[1]+bounds[3])/2],
             "per_brick_studs_touching_lower_histogram": dict(Counter(below[b.name] for b in group)),
             "per_brick_studs_touching_upper_histogram": dict(Counter(above[b.name] for b in group))})
+    base_count = sum(b.layer == 0 for b in bricks)
     return {"layers": layers, "adjacent_layer_interfaces": interfaces,
-        "baseplate_connection_count": 36,
-        "expected_native_connection_count": 36+sum(i["native_connection_count"] for i in interfaces),
-        "note": "One native edge per overlapping brick pair; stud counts are geometric overlap area, not distinct neighboring-brick counts. Layer centers intentionally differ under the photo-supported phase."}
+        "baseplate_connection_count": base_count,
+        "expected_native_connection_count": base_count+sum(i["native_connection_count"] for i in interfaces),
+        "note": "One native edge per overlapping brick pair; stud counts are geometric overlap area. Five bricks per ridge and six ridges swap world-axis counts after rotation, yielding coincident layer centers."}
 
 
 def normalize(vector):
@@ -265,6 +272,16 @@ def render(app, args, spec, bricks, config, views):
     cfg = json.loads((ROOT/"configs/workcell.json").read_text())
     cfg.update(source_cells=6, source_layers=10, baseplate_studs=spec["baseplate_studs"], source_xy=spec["source_xy_m"])
     env_cfg = make_env_cfg(cfg, capture=True)
+    # Reuse the square scene factory, but remove the sixty unwanted source
+    # configs BEFORE asset spawning; no extra disconnected bricks may render.
+    desired_names = {brick.name for brick in bricks}
+    pruned_source_names = []
+    for name in list(vars(env_cfg.scene)):
+        if name.startswith("brick_") and name not in desired_names:
+            delattr(env_cfg.scene, name)
+            pruned_source_names.append(name)
+    if {name for name in vars(env_cfg.scene) if name.startswith("brick_")} != desired_names:
+        raise RuntimeError("Scene config does not contain exactly the corrected300 source bricks")
     # make_env_cfg enables automatic clutch detection. For this explicit static
     # preassembly, prevent reset from authoring links that the manual loop would
     # duplicate. Keep all forces/other thresholds and breakage checks unchanged.
@@ -291,6 +308,11 @@ def render(app, args, spec, bricks, config, views):
     sim.get_physics_context().set_physx_update_transformations_settings(update_to_usd=True)
     scene = InteractiveScene(env_cfg.scene)
     stage = get_current_stage()
+    actual_source_names = {name for name in scene.rigid_objects if name.startswith("brick_")}
+    spawned_source_names = {prim.GetName() for prim in stage.GetPrimAtPath("/World/envs/env_0").GetChildren()
+                            if prim.GetName().startswith("brick_")}
+    if actual_source_names != desired_names or spawned_source_names != desired_names:
+        raise RuntimeError("Actual scene contains missing or extra source brick assets")
     sim.reset()
     scene.reset()
     # Installed omni.rtx.settings.core exposes this process-local auto-exposure
@@ -389,7 +411,7 @@ def render(app, args, spec, bricks, config, views):
                 print("NATIVE_CONNECTION_FAILURE", json.dumps(diagnostic), file=sys.stderr, flush=True)
                 raise
             expected_connections += 1
-            if expected_connections % 36 == 0:
+            if expected_connections % spec["bricks_per_layer"] == 0:
                 progress = {"completed_native_links": expected_connections,
                     "expected_native_links": spec["expected_native_connections"], "layer": brick.layer}
                 (output/"connection_progress.json").write_text(json.dumps(progress, indent=2))
@@ -398,8 +420,8 @@ def render(app, args, spec, bricks, config, views):
     if expected_connections != spec["expected_native_connections"]:
         raise RuntimeError("Authored native-link count differs from the explicit geometry specification")
     parts_initial, connections_initial = compute_connected_component(source_path)
-    if len(parts_initial) != 361 or len(connections_initial) != expected_connections:
-        raise RuntimeError("Full360 source graph is incomplete before settling")
+    if len(parts_initial) != len(bricks)+1 or len(connections_initial) != expected_connections:
+        raise RuntimeError("Full300 source graph is incomplete before settling")
     verify_placement("after_native_links_before_capture")
     for _ in range(config["settle_steps"]):
         scene.write_data_to_sim()
@@ -508,14 +530,14 @@ def render(app, args, spec, bricks, config, views):
         camera_records.append(camera_record)
         truth_images.append({"file": f"{view['id']}.png", "width": width, "height": height,
             "instances": instances, "intrinsics": intrinsics.tolist(), "physics_time_s": frozen_time,
-            "correlation_group": "one_full360_frozen_sim_scene"})
+            "correlation_group": "one_full300_frozen_sim_scene"})
         print("RENDER_SAVED", view["id"], "physics_time", frozen_time, flush=True)
 
     if get_disassembled_connections(clear=True):
         raise RuntimeError("Native connections broke during camera capture")
     parts_after, connections_after = compute_connected_component(source_path)
     if set(parts_after) != set(parts) or set(connections_after) != set(connections):
-        raise RuntimeError("Full360 graph changed during camera capture")
+        raise RuntimeError("Full300 graph changed during camera capture")
     if float(sim.current_time) != frozen_time or not torch.equal(physics_state(), frozen):
         raise RuntimeError("Final physics state/time differs from the shared capture snapshot")
     verify_placement("final_capture")
@@ -524,13 +546,15 @@ def render(app, args, spec, bricks, config, views):
         "visibility_method": "Eight depth-tested stud samples, not pixel-exact instance masks or gripper accessibility"}, indent=2))
     (truth/"cameras.json").write_text(json.dumps(camera_records, indent=2))
     (truth/"native_graph.json").write_text(json.dumps({"parts": parts_after, "connections": connections_after}, indent=2))
-    stage.GetRootLayer().Export(str(truth/"full360_workcell.usda"))
+    stage.GetRootLayer().Export(str(truth/"full300_workcell.usda"))
     make_panel(output, views, config)
     manifest = {"geometry": spec, "selected_views": [v["id"] for v in views], "camera_config": config,
         "geometry_contact_audit": geometry_audit(bricks),
         "preassembly": preassembly,
         "placement_checks": placement_checks,
-        "brick_count": 360, "native_connected_parts": len(parts_after), "native_connections": len(connections_after),
+        "brick_count": len(bricks), "native_connected_parts": len(parts_after), "native_connections": len(connections_after),
+        "pruned_unspawned_square_factory_source_configs": sorted(pruned_source_names),
+        "actual_source_asset_count": len(actual_source_names), "spawned_source_prim_count": len(spawned_source_names),
         "settling": settle_audit, "physics_time_s": frozen_time, "all_capture_states_exactly_equal": True,
         "resolved_render_settings": resolved_settings,
         "capture_semantics": "Sequential camera relocation/render-only at one physics snapshot; no detector fusion",
@@ -545,7 +569,7 @@ def render(app, args, spec, bricks, config, views):
     # This sentinel certifies validated capture, independently of Kit cleanup.
     # Explicit timeline.stop() previously blocked before a success marker.
     (output/"run_complete.json").write_text(json.dumps({"completed": True, "capture_validated": True,
-        "views": len(views), "bricks": 360, "shutdown_status_file": "shutdown.json"}))
+        "views": len(views), "bricks": len(bricks), "shutdown_status_file": "shutdown.json"}))
     print("CAPTURE_COMPLETE_VALIDATED", flush=True)
 
 

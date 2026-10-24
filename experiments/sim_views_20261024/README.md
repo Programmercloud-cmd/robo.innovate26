@@ -1,72 +1,50 @@
 # Individually selectable simulation views
 
-Completed captures: [five individual views and comparison panel](REPORT.md).
-Job 1680 passed capture validation; stalled Isaac cleanup was stopped separately.
+The corrected stack has **300 bricks**: ten layers, each consisting of **six
+parallel ridges of five 2×4 bricks**, with a two-stud gap between ridges.
+Successive layers rotate by 90°. Their 20×22 / 22×20-stud footprints share a
+center; a five-stud border places this center on the 32-stud source plate center.
 
-**Geometry clarified by the user's close-up.** Dots mean engaged studs, rather
-than neighboring bricks. The visible one-stud stagger supersedes the earlier
-rough common-center interpretation. `geometry.json` defines **360 bricks**,
-six by six in each of ten alternating 90° layers, with two empty stud columns
-between parallel rows. Relative origins alternate horizontal `(1,0)` / vertical
-`(0,1)`, with four-stud padding on the 32-stud anchored source plate.
+The photo-supported phase remains horizontal origin `(1,0)` / vertical `(0,1)`
+before the border. Each adjacent layer pair has 100 single-stud crossing patches,
+for 930 native links total (900 interlayer + 30 baseplate), and 301 connected
+parts including the plate. Whole-brick engaged-stud totals per interface are
+2 for ten outer-ridge bricks and 4 for twenty other bricks. An individual
+one-stud crossing and the total contact of a whole brick are distinct quantities.
 
-Adjacent layers have 121 single-stud overlap patches. Each layer's total-contact
-distribution is one brick with one engaged stud, ten with two and 25 with four;
-the photo's local description is not imposed as a universal all-four-corners
-rule. The layer centers differ by two studs in each axis. The 25×25-stud union
-fits the plate on its legal stud grid without a half-stud recentering. All native
-connections are retained: 1089 interlayer plus 36 plate links, 361 connected
-parts including the plate. Source-photo path and hash are in the geometry file.
+The [current report](REPORT.md) will link the corrected images. The prior
+[360-brick report](REPORT_360_SUPERSEDED.md), geometry and `results/` files are
+preserved unchanged as superseded artifacts. New captures use `results_300/`.
 
-Job 1677 was stopped before completed renders while the dots/contact distinction
-was being resolved. Its snapshot and [attempt record](attempts/1677.json) remain.
-It also emitted native solver convergence warnings during initialization; that
-attempt is not a successful physics validation. The current view comparison uses
-`settle_steps=0`: the complete native graph is initialized, then captured with
-render-only calls. **Static initialized renders do not validate dynamics or
-load-bearing clutch stability.** Earlier experiments remain unchanged.
+The existing FR3 workcell, pinned BrickSim and Isaac runtime remain in use.
+Only render geometry changes; the legacy task configuration is untouched.
+Unused square-factory brick assets are removed before scene creation, ensuring
+that exactly 300 bricks are instantiated. Actual PhysX and USD poses, native
+graph, physics state and time are checked throughout capture. These are static
+initialized renders, with zero post-connection physics steps; dynamics and
+load-bearing stability remain unvalidated. Virtual cameras are approximate,
+not calibrated D435i/wrist poses. The image panel is display-only.
 
-The existing FR3/BrickSim scene, pinned native dependency and Isaac runtime are
-reused. Five virtual cameras provide overhead, slightly oblique and side views.
-They share resolution, nominal lens settings, fixed lighting and one initialized
-physics state. These are approximate virtual views, not calibrated D435i poses.
-No robot trajectory or hardware motion is generated.
-
-From the repository root, after committing the source/configuration:
+After committing source/configuration, from the repository root:
 
 ```bash
-# All views, each as its own RGB image, plus a comparison panel.
-python3 experiments/sim_views_20261024/submit.py
-
-# One view on its own.
+python3 experiments/sim_views_20261024/submit.py --views all
 python3 experiments/sim_views_20261024/submit.py --views top
-
-# An explicitly selected pair.
 python3 experiments/sim_views_20261024/submit.py --views top,oblique_front
 ```
 
-Available names: `top`, `near_top_x`, `near_top_y`, `oblique_front`,
-`oblique_side`. Camera offsets, up vectors, lens settings and lighting are
-editable in `cameras.json`; every submission freezes a new snapshot and reports
-its default Pueue job ID. No global queue or shared dependency settings change.
+Names: `top`, `near_top_x`, `near_top_y`, `oblique_front`, `oblique_side`.
+[Camera settings](cameras.json) specify resolution, nominal lens, offsets and
+lighting. Each submission freezes a source/configuration/dependency snapshot,
+uses `pueue add` in the default queue and reports its job ID. No global queue or
+shared environment changes. RGB is separate from simulator evaluation truth.
 
-All views are captured with render-only calls after initialization; graph,
-pose and physics-time checks verify the same state. All 360 bricks and their
-native inter-brick/baseplate connections are required; no smaller fallback is
-used. RGB images and their panel are separate from depth, poses, identities and
-other evaluation truth. The panel is for visual comparison, not fused perception.
-No detection, training, ROS integration or manipulation is started by this task.
+Previous attempts exposed reset-induced pose drift and a cleanup stall. The
+renderer restores exact geometry after reset, verifies both PhysX and USD,
+and writes validated-capture and shutdown markers separately. If cleanup stalls
+after `CAPTURE_COMPLETE_VALIDATED`, inspect that run's `output/run_complete.json`
+and `output/shutdown.json`, then stop only its job with `pueue kill <job-id>`.
+A killed job without validated outputs is not successful capture.
 
-Attempt 1678 stopped during native graph initialization before producing validated
-images. The retry disables automatic assembly only inside the render process,
-before explicitly creating all 1,125 native links. Every other threshold and
-breakage check remains unchanged. Progress and failure diagnostics are saved
-before application shutdown. This is a static preassembly initialization fix;
-it does not establish physical stability.
-
-Attempt 1679 produced diagnostic frames and the complete native graph, but was
-rejected because reset had displaced bricks by up to 16.6 mm / 28.2 degrees.
-Its [attempt record](attempts/1679.json) and run directory are preserved. Capture
-now restores the configured lattice after reset and checks actual PhysX and USD
-poses before/after native graph authoring and throughout capture. Oblique views
-look 4 cm below the top surface to include the full stack height.
+No detection, training, fusion, ROS integration, manipulation or hardware work
+is performed by this view comparison.

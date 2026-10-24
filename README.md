@@ -5,11 +5,12 @@ under `perception/`; see the [measured results and stopping decision](experiment
 It is a working image-evidence baseline, not an accepted sorting demonstration.
 The [pretrained-detector comparison](experiments/detection_20261024/REPORT.md)
 is a closed historical experiment with separate execution and artifacts.
-The [360-brick simulation view comparison](experiments/sim_views_20261024/REPORT.md)
-provides five individually selectable RGB views and a combined image panel of
-the clarified lattice, with all native links checked. These static initialized
-renders do not validate load-bearing dynamics. The legacy 48-brick scene below
-is separate from this full-stack comparison.
+The corrected simulation input has **300 bricks**: ten layers, each with six
+parallel ridges of five bricks, alternating by 90°. Updated
+[simulation views](experiments/sim_views_20261024/REPORT.md) are being generated;
+the [earlier 360-brick views](experiments/sim_views_20261024/REPORT_360_SUPERSEDED.md)
+are preserved as superseded geometry. These static renders do not validate
+load-bearing dynamics. The legacy 48-brick scene below is separate.
 
 The separate [fixed-prompt SAM 3 experiment](experiments/sam3_20261024/REPORT.md)
 is complete. It records raw masks and measured failure modes without changing
