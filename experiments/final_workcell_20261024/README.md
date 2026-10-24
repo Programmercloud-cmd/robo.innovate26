@@ -10,8 +10,9 @@ The ten original images are archived unchanged under
 records their SHA256 hashes. All photos were inspected. Photo 9 provides the
 clearest whole-layout reference; photos 8 and 3 corroborate the layout and stud
 lattice, and the other views show the stack, ruler, bowl and robot mounting.
-The user confirms an **iPhone 12**, with two overhead images at **0.5×** and
-the remainder at **1×**; the two image identities await confirmation.
+The user confirms an **iPhone 12**, with original photos **6 and 7 at 0.5×**
+and the remainder at **1×**. The new reference attachments match photos 7 and
+6 byte-for-byte; the primary layout reference, photo 9, is therefore 1×.
 The supplied JPEGs contain no embedded focal-length or camera-model metadata;
 some have been resized. Device/zoom provenance is recorded separately from
 calibrated photo intrinsics and from the wrist D435i.
@@ -116,10 +117,16 @@ This helper creates a fresh immutable snapshot, uses the existing environment,
 submits its foreground launcher through default Pueue and prints the job ID.
 It does not overwrite earlier captures.
 
-The most useful additional information is verified plate stud counts, the
-marker-board PDF or square size, and robot-base position/yaw relative to two
-table edges or known plate corners. D435i intrinsics and a measured optical
-mount transform are needed for calibrated wrist-view equivalence.
+The marker-board design is now known from the supplied specification:
+**7×5 squares, DICT_4X4_50, 30 mm squares and 22 mm markers**. The nominal
+pattern spans 210×150 mm, with 17 default markers and 24 inner corners. The
+specified 100% print setting is an instruction, not a verified measurement
+of the physical print. The A4 backing and estimated scene location remain.
+
+Robot-base position/yaw relative to two table edges or known plate corners is
+still useful. D435i intrinsics and a measured optical mount transform remain
+necessary for calibrated wrist-view equivalence. Identifying the phone lenses
+and ChArUco design does not supply those transforms.
 
 ## Completed preview
 
