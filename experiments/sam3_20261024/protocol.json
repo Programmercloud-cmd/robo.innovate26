@@ -1,0 +1,63 @@
+{
+  "schema": "sam3-fixed-independent-evaluation-v1",
+  "status": "endorsed_by_orchestrator_before_outputs",
+  "reference_path": "experiments/detection_20261024/reference/annotations.json",
+  "reference_sha256": "1a36cf4531bca88678a989fb01421df1304dcfe3a980318ac4b06a936e936e3f",
+  "prompts": {
+    "stack": "stack of LEGO bricks",
+    "brick": "LEGO brick",
+    "brick_2x4": "2x4 LEGO brick",
+    "top_surface": "top surface of a LEGO brick"
+  },
+  "input": "All18original1280x720JPEGs; each prompt independently; unchanged AimAssist Sam3Candidates processor-accepted outputs at its existing confidence threshold (.5 strict); before additional filtering/deduplication. Not unfiltered logits.",
+  "annotated_views": [
+    "img_1.jpg",
+    "img_3.jpg",
+    "img_7.jpg",
+    "img_10.jpg",
+    "img_13.jpg",
+    "img_16.jpg"
+  ],
+  "reference_counts": {
+    "positive_visual_faces": 166,
+    "ambiguous_excluded": 14,
+    "sparse_lower_fragments": 23
+  },
+  "correlation_groups": {
+    "A": "img1-6",
+    "B": "img7-9",
+    "C": "img10-12",
+    "D": "img13-18"
+  },
+  "primary_matching": {
+    "roi": "Evaluate detections whose model-box center lies inside historical approximate stack ROI; outside separately reported.",
+    "one_to_one": "Historical maximum-cardinality box-envelope IoU>=.50 then maximize IoU; scipy linear_sum_assignment(-1000*(IoU>=.5)-IoU).",
+    "merge": "Detection covers>=.50 each of at least2positive face envelopes and contains their centers; ineligible individual match.",
+    "duplicate": "Unmatched nonmerge model box IoU>=.50 with an already matched positive.",
+    "lower_fragment": "Otherwise unmatched nonmerge boxcenter inside known lowerfragment polygon. Sparse conservative check only.",
+    "ambiguous": "Otherwise unmatched nonmerge boxcenter in an ambiguous polygon ignored.",
+    "other": "Remaining unmatched insideROI = other_spurious_or_unresolved, not all background hallucinations.",
+    "recall": "Matches/166positivefaces; missed includes merged/unmatched faces.",
+    "precision": "Matches/(raw detections - outsideROI - ambiguousignored); merges/duplicates/unresolved are not individual true positives."
+  },
+  "whole_stack_coarse": {
+    "six_refs_only": true,
+    "measurements": "Best model-box ROI-envelopeIoU, highest-score box ROI-envelopeIoU and ROIcoverage; anyboxIoU>=.50 coarse localization count.",
+    "interpretation": "Approximate ROI includes lattice gaps/table; no true whole-stack segmentation reference. Individual and whole-stack scores separate."
+  },
+  "supplementary_masks": {
+    "rasterization": "Round frozen polygon vertices to nearest pixel, OpenCV fillPoly at original full image resolution.",
+    "matched_pairs": "Mask/positive-facepolygon pixelIoU, referencecoverage, predictioncoverage on primary-box-matched pairs.",
+    "multiface": "Every raw mask covering>=.50pixelarea of>=2positivefacepolygons, independently of box merge.",
+    "lower": "Every raw mask covering>=.50pixelarea of a sparse lowerfragment: diagnostic flag not physical layer classification.",
+    "roi": "Per-mask overlap/coverage with approximate ROI; not exact full-stack segmentation quality.",
+    "no_mask_rematching": true,
+    "no_mask_box_substitution": true
+  },
+  "excluded_claims": [
+    "No gripper accessibility, physical current-top height, calibrated metric pose, shade/quality classification, stud localization or automatic orientation claims.",
+    "No prompt pooling, prompt selection, manual prompts, mask repair, geometric refinement, retraining or simulation.",
+    "No independent-stack generalization from correlated18views."
+  ],
+  "execution": "All inference and batch pixel scoring through default Pueue, immutable code/config/reference snapshot; host existing unitree_sim_env evaluator runtime after container inference."
+}

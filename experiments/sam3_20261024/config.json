@@ -1,0 +1,28 @@
+{
+  "experiment": "sam3_fixed_text_only_20261024",
+  "prompts": [
+    {
+      "id": "stack",
+      "text": "stack of LEGO bricks"
+    },
+    {
+      "id": "brick",
+      "text": "LEGO brick"
+    },
+    {
+      "id": "brick_2x4",
+      "text": "2x4 LEGO brick"
+    },
+    {
+      "id": "top_surface",
+      "text": "top surface of a LEGO brick"
+    }
+  ],
+  "docker_image": "sha256:ae4ae0cfc9d41eadf32bf9ac689252fccd3a1f804bb69d088b65e47d91cad317",
+  "confidence_threshold": 0.5,
+  "resolution": 1008,
+  "precision": "CUDA BF16 autocast",
+  "deduplication": false,
+  "postprocessing": "none; raw model outputs above unchanged processor threshold",
+  "expected_images": 18
+}
