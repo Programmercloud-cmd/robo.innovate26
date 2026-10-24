@@ -1,5 +1,8 @@
 # Individually selectable simulation views
 
+Completed captures: [five individual views and comparison panel](REPORT.md).
+Job 1680 passed capture validation; stalled Isaac cleanup was stopped separately.
+
 **Geometry clarified by the user's close-up.** Dots mean engaged studs, rather
 than neighboring bricks. The visible one-stud stagger supersedes the earlier
 rough common-center interpretation. `geometry.json` defines **360 bricks**,

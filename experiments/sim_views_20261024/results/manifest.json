@@ -1,0 +1,729 @@
+{
+  "geometry": {
+    "status": "confirmed_explicit_geometry",
+    "confirmation": "User confirmed studs (dots) in contact, and supplied close-up showing a one-stud stagger/crossing. Latest photo supersedes earlier approximate shared-center interpretation.",
+    "required_bricks": 360,
+    "layers": 10,
+    "bricks_per_layer": [
+      6,
+      6
+    ],
+    "brick_dimensions_studs": [
+      4,
+      2,
+      3
+    ],
+    "pitch_studs_xy": [
+      4,
+      4
+    ],
+    "baseplate_studs": 32,
+    "border_studs": 4,
+    "source_xy_m": [
+      0.45,
+      -0.16
+    ],
+    "layer_origins_studs_xy": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "layer_yaws_quarter_turn": [
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1
+    ],
+    "camera_matching": "approximate; no measured D435i intrinsics or mounting transform",
+    "native_connections_required": true,
+    "confirmed_facts": {
+      "layers": 10,
+      "bricks_per_layer": [
+        6,
+        6
+      ],
+      "two_stud_gap_between_parallel_rows": true,
+      "alternating_90_degrees": true,
+      "user_previously_confirmed_shared_layer_center": true,
+      "exact_shared_layer_center": false,
+      "center_update": "Direct photo-supported stagger replaces the earlier rough shared-center answer."
+    },
+    "reported_contact_pattern": {
+      "corner_studs": 1,
+      "edge_studs": 2,
+      "interior_studs": 4,
+      "unit": "total engaged studs described locally by user; actual model histogram recorded above"
+    },
+    "expected_native_connections": 1125,
+    "contact_geometry": {
+      "adjacent_layer_patch_count": 121,
+      "studs_per_patch": 1,
+      "total_contact_studs_per_brick_histogram": {
+        "1": 1,
+        "2": 10,
+        "4": 25
+      },
+      "note": "Histogram per adjacent-layer pair; no universal all-four-corners claim. Each stud crossing creates one native connection."
+    },
+    "evidence": {
+      "image": "resources/setup_images/contact_corner_20261024.jpg",
+      "sha256": "15bd0bfd8fc9793d2e1fd825181982e30f6898ffef43a710d3b259ed1f38ca4f",
+      "visible_phase": "Horizontal upper starts one stud to the right of the perpendicular lower strip; seams bisect lower stud columns.",
+      "limit": "Close-up supports local repeating phase; colors, dimensions of table, camera calibration and full hidden-layer inventory are not measured by this photograph."
+    }
+  },
+  "selected_views": [
+    "top",
+    "near_top_x",
+    "near_top_y",
+    "oblique_front",
+    "oblique_side"
+  ],
+  "camera_config": {
+    "image_size": [
+      1280,
+      720
+    ],
+    "focal_length_mm": 24.0,
+    "horizontal_aperture_mm": 33.25,
+    "clipping_range_m": [
+      0.01,
+      10.0
+    ],
+    "calibration_status": "nominal approximate virtual cameras; not calibrated wrist poses",
+    "settle_steps": 0,
+    "render_warmup_frames": 12,
+    "lighting": {
+      "dome_intensity": 300.0,
+      "key_intensity": 700.0,
+      "key_radius_m": 0.04,
+      "key_offset_m": [
+        0.35,
+        0.15,
+        0.45
+      ]
+    },
+    "panel": {
+      "columns": 3,
+      "thumbnail_size": [
+        640,
+        360
+      ]
+    },
+    "views": [
+      {
+        "id": "top",
+        "eye_offset_m": [
+          0,
+          0,
+          0.36
+        ],
+        "target_offset_m": [
+          0,
+          0,
+          0
+        ],
+        "up_world": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "id": "near_top_x",
+        "eye_offset_m": [
+          0.08,
+          0,
+          0.36
+        ],
+        "target_offset_m": [
+          0,
+          0,
+          0
+        ],
+        "up_world": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "id": "near_top_y",
+        "eye_offset_m": [
+          0,
+          -0.08,
+          0.36
+        ],
+        "target_offset_m": [
+          0,
+          0,
+          0
+        ],
+        "up_world": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "id": "oblique_front",
+        "eye_offset_m": [
+          0,
+          -0.23,
+          0.28
+        ],
+        "target_offset_m": [
+          0,
+          0,
+          -0.04
+        ],
+        "up_world": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "id": "oblique_side",
+        "eye_offset_m": [
+          0.23,
+          0,
+          0.28
+        ],
+        "target_offset_m": [
+          0,
+          0,
+          -0.04
+        ],
+        "up_world": [
+          0,
+          0,
+          1
+        ]
+      }
+    ],
+    "capture_mode": "static_initialized_not_physics_settled",
+    "dynamics_validation": "None; full native graph is present but no load-bearing stability is claimed."
+  },
+  "geometry_contact_audit": {
+    "layers": [
+      {
+        "layer": 0,
+        "bounds_studs_xyxy": [
+          5,
+          4,
+          29,
+          26
+        ],
+        "footprint_center_studs_xy": [
+          17.0,
+          15.0
+        ],
+        "per_brick_studs_touching_lower_histogram": {
+          "8": 36
+        },
+        "per_brick_studs_touching_upper_histogram": {
+          "2": 10,
+          "4": 25,
+          "1": 1
+        }
+      },
+      {
+        "layer": 1,
+        "bounds_studs_xyxy": [
+          4,
+          5,
+          26,
+          29
+        ],
+        "footprint_center_studs_xy": [
+          15.0,
+          17.0
+        ],
+        "per_brick_studs_touching_lower_histogram": {
+          "2": 10,
+          "1": 1,
+          "4": 25
+        },
+        "per_brick_studs_touching_upper_histogram": {
+          "2": 10,
+          "1": 1,
+          "4": 25
+        }
+      },
+      {
+        "layer": 2,
+        "bounds_studs_xyxy": [
+          5,
+          4,
+          29,
+          26
+        ],
+        "footprint_center_studs_xy": [
+          17.0,
+          15.0
+        ],
+        "per_brick_studs_touching_lower_histogram": {
+          "2": 10,
+          "4": 25,
+          "1": 1
+        },
+        "per_brick_studs_touching_upper_histogram": {
+          "2": 10,
+          "4": 25,
+          "1": 1
+        }
+      },
+      {
+        "layer": 3,
+        "bounds_studs_xyxy": [
+          4,
+          5,
+          26,
+          29
+        ],
+        "footprint_center_studs_xy": [
+          15.0,
+          17.0
+        ],
+        "per_brick_studs_touching_lower_histogram": {
+          "2": 10,
+          "1": 1,
+          "4": 25
+        },
+        "per_brick_studs_touching_upper_histogram": {
+          "2": 10,
+          "1": 1,
+          "4": 25
+        }
+      },
+      {
+        "layer": 4,
+        "bounds_studs_xyxy": [
+          5,
+          4,
+          29,
+          26
+        ],
+        "footprint_center_studs_xy": [
+          17.0,
+          15.0
+        ],
+        "per_brick_studs_touching_lower_histogram": {
+          "2": 10,
+          "4": 25,
+          "1": 1
+        },
+        "per_brick_studs_touching_upper_histogram": {
+          "2": 10,
+          "4": 25,
+          "1": 1
+        }
+      },
+      {
+        "layer": 5,
+        "bounds_studs_xyxy": [
+          4,
+          5,
+          26,
+          29
+        ],
+        "footprint_center_studs_xy": [
+          15.0,
+          17.0
+        ],
+        "per_brick_studs_touching_lower_histogram": {
+          "2": 10,
+          "1": 1,
+          "4": 25
+        },
+        "per_brick_studs_touching_upper_histogram": {
+          "2": 10,
+          "1": 1,
+          "4": 25
+        }
+      },
+      {
+        "layer": 6,
+        "bounds_studs_xyxy": [
+          5,
+          4,
+          29,
+          26
+        ],
+        "footprint_center_studs_xy": [
+          17.0,
+          15.0
+        ],
+        "per_brick_studs_touching_lower_histogram": {
+          "2": 10,
+          "4": 25,
+          "1": 1
+        },
+        "per_brick_studs_touching_upper_histogram": {
+          "2": 10,
+          "4": 25,
+          "1": 1
+        }
+      },
+      {
+        "layer": 7,
+        "bounds_studs_xyxy": [
+          4,
+          5,
+          26,
+          29
+        ],
+        "footprint_center_studs_xy": [
+          15.0,
+          17.0
+        ],
+        "per_brick_studs_touching_lower_histogram": {
+          "2": 10,
+          "1": 1,
+          "4": 25
+        },
+        "per_brick_studs_touching_upper_histogram": {
+          "2": 10,
+          "1": 1,
+          "4": 25
+        }
+      },
+      {
+        "layer": 8,
+        "bounds_studs_xyxy": [
+          5,
+          4,
+          29,
+          26
+        ],
+        "footprint_center_studs_xy": [
+          17.0,
+          15.0
+        ],
+        "per_brick_studs_touching_lower_histogram": {
+          "2": 10,
+          "4": 25,
+          "1": 1
+        },
+        "per_brick_studs_touching_upper_histogram": {
+          "2": 10,
+          "4": 25,
+          "1": 1
+        }
+      },
+      {
+        "layer": 9,
+        "bounds_studs_xyxy": [
+          4,
+          5,
+          26,
+          29
+        ],
+        "footprint_center_studs_xy": [
+          15.0,
+          17.0
+        ],
+        "per_brick_studs_touching_lower_histogram": {
+          "2": 10,
+          "1": 1,
+          "4": 25
+        },
+        "per_brick_studs_touching_upper_histogram": {
+          "0": 36
+        }
+      }
+    ],
+    "adjacent_layer_interfaces": [
+      {
+        "lower_layer": 0,
+        "upper_layer": 1,
+        "native_connection_count": 121,
+        "overlap_patch_studs_histogram": {
+          "1": 121
+        }
+      },
+      {
+        "lower_layer": 1,
+        "upper_layer": 2,
+        "native_connection_count": 121,
+        "overlap_patch_studs_histogram": {
+          "1": 121
+        }
+      },
+      {
+        "lower_layer": 2,
+        "upper_layer": 3,
+        "native_connection_count": 121,
+        "overlap_patch_studs_histogram": {
+          "1": 121
+        }
+      },
+      {
+        "lower_layer": 3,
+        "upper_layer": 4,
+        "native_connection_count": 121,
+        "overlap_patch_studs_histogram": {
+          "1": 121
+        }
+      },
+      {
+        "lower_layer": 4,
+        "upper_layer": 5,
+        "native_connection_count": 121,
+        "overlap_patch_studs_histogram": {
+          "1": 121
+        }
+      },
+      {
+        "lower_layer": 5,
+        "upper_layer": 6,
+        "native_connection_count": 121,
+        "overlap_patch_studs_histogram": {
+          "1": 121
+        }
+      },
+      {
+        "lower_layer": 6,
+        "upper_layer": 7,
+        "native_connection_count": 121,
+        "overlap_patch_studs_histogram": {
+          "1": 121
+        }
+      },
+      {
+        "lower_layer": 7,
+        "upper_layer": 8,
+        "native_connection_count": 121,
+        "overlap_patch_studs_histogram": {
+          "1": 121
+        }
+      },
+      {
+        "lower_layer": 8,
+        "upper_layer": 9,
+        "native_connection_count": 121,
+        "overlap_patch_studs_histogram": {
+          "1": 121
+        }
+      }
+    ],
+    "baseplate_connection_count": 36,
+    "expected_native_connection_count": 1125,
+    "note": "One native edge per overlapping brick pair; stud counts are geometric overlap area, not distinct neighboring-brick counts. Layer centers intentionally differ under the photo-supported phase."
+  },
+  "preassembly": {
+    "automatic_assembly_enabled": false,
+    "breakage_detection_enabled": true,
+    "source_component_parts_before_manual": 1,
+    "source_component_connections_before_manual": 0,
+    "assembled_events_before_manual": [],
+    "mode": "Explicit native preassembly; automatic detector disabled only in this process"
+  },
+  "placement_checks": [
+    {
+      "stage": "restored_after_reset_before_native_links",
+      "max_physics_position_error_m": 1.8597413322286332e-08,
+      "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+      "max_usd_position_error_m": 0.0,
+      "max_usd_orientation_error_rad": 0.0,
+      "max_absolute_velocity": 0.0,
+      "position_tolerance_m": 2e-06,
+      "orientation_tolerance_rad": 0.0001
+    },
+    {
+      "stage": "after_native_links_before_capture",
+      "max_physics_position_error_m": 1.8597413322286332e-08,
+      "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+      "max_usd_position_error_m": 1.3947004136484323e-16,
+      "max_usd_orientation_error_rad": 0.0,
+      "max_absolute_velocity": 0.0,
+      "position_tolerance_m": 2e-06,
+      "orientation_tolerance_rad": 0.0001
+    },
+    {
+      "stage": "before_view_top",
+      "max_physics_position_error_m": 1.8597413322286332e-08,
+      "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+      "max_usd_position_error_m": 1.3947004136484323e-16,
+      "max_usd_orientation_error_rad": 0.0,
+      "max_absolute_velocity": 0.0,
+      "position_tolerance_m": 2e-06,
+      "orientation_tolerance_rad": 0.0001
+    },
+    {
+      "stage": "after_render_top",
+      "max_physics_position_error_m": 1.8597413322286332e-08,
+      "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+      "max_usd_position_error_m": 1.3947004136484323e-16,
+      "max_usd_orientation_error_rad": 0.0,
+      "max_absolute_velocity": 0.0,
+      "position_tolerance_m": 2e-06,
+      "orientation_tolerance_rad": 0.0001
+    },
+    {
+      "stage": "before_view_near_top_x",
+      "max_physics_position_error_m": 1.8597413322286332e-08,
+      "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+      "max_usd_position_error_m": 1.3947004136484323e-16,
+      "max_usd_orientation_error_rad": 0.0,
+      "max_absolute_velocity": 0.0,
+      "position_tolerance_m": 2e-06,
+      "orientation_tolerance_rad": 0.0001
+    },
+    {
+      "stage": "after_render_near_top_x",
+      "max_physics_position_error_m": 1.8597413322286332e-08,
+      "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+      "max_usd_position_error_m": 1.3947004136484323e-16,
+      "max_usd_orientation_error_rad": 0.0,
+      "max_absolute_velocity": 0.0,
+      "position_tolerance_m": 2e-06,
+      "orientation_tolerance_rad": 0.0001
+    },
+    {
+      "stage": "before_view_near_top_y",
+      "max_physics_position_error_m": 1.8597413322286332e-08,
+      "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+      "max_usd_position_error_m": 1.3947004136484323e-16,
+      "max_usd_orientation_error_rad": 0.0,
+      "max_absolute_velocity": 0.0,
+      "position_tolerance_m": 2e-06,
+      "orientation_tolerance_rad": 0.0001
+    },
+    {
+      "stage": "after_render_near_top_y",
+      "max_physics_position_error_m": 1.8597413322286332e-08,
+      "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+      "max_usd_position_error_m": 1.3947004136484323e-16,
+      "max_usd_orientation_error_rad": 0.0,
+      "max_absolute_velocity": 0.0,
+      "position_tolerance_m": 2e-06,
+      "orientation_tolerance_rad": 0.0001
+    },
+    {
+      "stage": "before_view_oblique_front",
+      "max_physics_position_error_m": 1.8597413322286332e-08,
+      "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+      "max_usd_position_error_m": 1.3947004136484323e-16,
+      "max_usd_orientation_error_rad": 0.0,
+      "max_absolute_velocity": 0.0,
+      "position_tolerance_m": 2e-06,
+      "orientation_tolerance_rad": 0.0001
+    },
+    {
+      "stage": "after_render_oblique_front",
+      "max_physics_position_error_m": 1.8597413322286332e-08,
+      "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+      "max_usd_position_error_m": 1.3947004136484323e-16,
+      "max_usd_orientation_error_rad": 0.0,
+      "max_absolute_velocity": 0.0,
+      "position_tolerance_m": 2e-06,
+      "orientation_tolerance_rad": 0.0001
+    },
+    {
+      "stage": "before_view_oblique_side",
+      "max_physics_position_error_m": 1.8597413322286332e-08,
+      "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+      "max_usd_position_error_m": 1.3947004136484323e-16,
+      "max_usd_orientation_error_rad": 0.0,
+      "max_absolute_velocity": 0.0,
+      "position_tolerance_m": 2e-06,
+      "orientation_tolerance_rad": 0.0001
+    },
+    {
+      "stage": "after_render_oblique_side",
+      "max_physics_position_error_m": 1.8597413322286332e-08,
+      "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+      "max_usd_position_error_m": 1.3947004136484323e-16,
+      "max_usd_orientation_error_rad": 0.0,
+      "max_absolute_velocity": 0.0,
+      "position_tolerance_m": 2e-06,
+      "orientation_tolerance_rad": 0.0001
+    },
+    {
+      "stage": "final_capture",
+      "max_physics_position_error_m": 1.8597413322286332e-08,
+      "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+      "max_usd_position_error_m": 1.3947004136484323e-16,
+      "max_usd_orientation_error_rad": 0.0,
+      "max_absolute_velocity": 0.0,
+      "position_tolerance_m": 2e-06,
+      "orientation_tolerance_rad": 0.0001
+    }
+  ],
+  "brick_count": 360,
+  "native_connected_parts": 361,
+  "native_connections": 1125,
+  "settling": {
+    "steps": 0,
+    "max_position_drift_m": 1.8597413322286332e-08,
+    "max_orientation_drift_rad": 2.9802322387695312e-08,
+    "max_linear_speed_m_s": 0.0,
+    "max_angular_speed_rad_s": 0.0,
+    "note": "Static initialized state; no post-connection physics step, equilibrium/dynamics/clutch stability unvalidated"
+  },
+  "physics_time_s": 0.01666666753590107,
+  "all_capture_states_exactly_equal": true,
+  "resolved_render_settings": {
+    "/rtx/post/histogram/enabled": false,
+    "/rtx/post/tonemap/op": 6,
+    "/rtx/post/tonemap/filmIso": 100.0,
+    "/rtx/post/tonemap/exposureTime": 0.019999999552965164,
+    "/rtx/post/tonemap/fNumber": 5.0,
+    "/rtx/post/tonemap/cm2Factor": 1.0
+  },
+  "capture_semantics": "Sequential camera relocation/render-only at one physics snapshot; no detector fusion",
+  "capture_mode": "static_initialized_not_physics_settled",
+  "post_connection_physics_steps": 0,
+  "dynamic_connection_stability_validated": false,
+  "rgb_directory": "images",
+  "truth_directory": "evaluation_truth",
+  "panel_display_only": true,
+  "frozen_state_sha256": "9c311e6f9b190bede68a9f040e98f6f578b96b81fb10292374998519f4640eec",
+  "gpu": "NVIDIA GeForce RTX 5070",
+  "camera_matching": "Approximate nominal pinhole; not calibrated D435i equivalence"
+}

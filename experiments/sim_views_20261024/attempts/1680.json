@@ -1,0 +1,10 @@
+{
+  "job_id": 1680,
+  "group": "default",
+  "source_commit": "f7b9fd49ed048f45e7ffcaa1bbd95523a5a18e46",
+  "snapshot": "runs/20261024T103123.341921Z-sim-views",
+  "capture_validated": true,
+  "pueue_result": "Killed",
+  "shutdown_returned": false,
+  "outcome": "All5requested RGB views and panel passed graph/placement/state checks. Orchestrator stopped stalled application cleanup after artifacts were complete. No dynamics validation claimed."
+}
