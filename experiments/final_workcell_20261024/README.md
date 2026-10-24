@@ -123,10 +123,10 @@ pattern spans 210×150 mm, with 17 default markers and 24 inner corners. The
 specified 100% print setting is an instruction, not a verified measurement
 of the physical print. The A4 backing and estimated scene location remain.
 
-Robot-base position/yaw relative to two table edges or known plate corners is
-still useful. D435i intrinsics and a measured optical mount transform remain
-necessary for calibrated wrist-view equivalence. Identifying the phone lenses
-and ChArUco design does not supply those transforms.
+Robot-base position remains estimated; yaw is now estimated from the fixed
+housing features documented below. D435i intrinsics and a measured optical
+mount transform remain necessary for calibrated wrist-view equivalence.
+Identifying the phone lenses and ChArUco design does not supply those transforms.
 
 ## Completed preview
 
@@ -153,7 +153,7 @@ Ordered per-ID corners support a nominal 0° scene rotation (raw fitted angle
 scale factor 1.05666 mixes approximate layout, lens, picking and possible print
 errors; it does not verify physical print scale.
 
-The rendered top view decodes seven markers and agrees with the intended
+The earlier job 1702 rendered top view decodes seven markers and agrees with the intended
 ordered-corner mapping at 1.26 px RMS, versus 62.34 px for a mirrored mapping
 and 107.94 px for a 180° mapping. No markers decode in the distant oblique
 render, so that view remains unverified. These are asset/orientation checks,
@@ -161,7 +161,7 @@ not physical calibration or complete board-detection performance claims.
 
 - [Printed-board detection in photo 9](../../runs/20261024T211152.477912Z-charuco-asset-audit/output/photo09_charuco_detection.png)
 - [Generated board and real-photo audit](charuco_board.json)
-- [Rendered UV correspondence check](../../runs/20261024T214640.110593Z-final-workcell-preview/output/charuco_uv_check.json)
+- [Earlier job 1702 UV correspondence check](../../runs/20261024T211537.337776Z-final-workcell-preview/output/charuco_uv_check.json)
 
 Jobs 1696–1706 all ran through default Pueue; earlier audits and previews are
 preserved. Kit cleanup stalled after validated capture and was bounded by the
