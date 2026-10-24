@@ -18,14 +18,22 @@ def mapped(points, homography):
 
 
 def measure(anchors, homography):
-    gray = mapped(anchors["gray_outer_corners_xy"], homography)
+    gray = mapped(anchors["gray_uncovered_corners_xy"], homography)
+    inset = anchors["assumptions"]["tape_covered_stud_rows_each_opposite_y_edge"]*anchors["assumptions"]["stud_pitch_m"]
+    outer = gray.copy()
+    for top, bottom in ((0, 3), (1, 2)):
+        direction = (gray[bottom]-gray[top])/np.linalg.norm(gray[bottom]-gray[top])
+        outer[top] -= inset*direction
+        outer[bottom] += inset*direction
     ruler = mapped(list(anchors["ruler_tick_centers_xy"].values()), homography)
     names = list(anchors["points_xy"])
     points = dict(zip(names, mapped(list(anchors["points_xy"].values()), homography).tolist()))
-    points["gray_plate_center"] = mapped([np.mean(anchors["gray_outer_corners_xy"], axis=0)], homography)[0].tolist()
+    points["gray_plate_center"] = outer.mean(axis=0).tolist()
     source = np.asarray(points["source_footprint_center_approx"])
-    return {"points_table_xy_m": points, "gray_quad_table_xy_m": gray.tolist(),
-            "gray_edge_spans_m_top_right_bottom_left": np.linalg.norm(np.roll(gray, -1, axis=0)-gray, axis=1).tolist(),
+    return {"points_table_xy_m": points, "gray_uncovered_quad_table_xy_m": gray.tolist(),
+            "gray_inferred_outer_quad_table_xy_m": outer.tolist(),
+            "gray_uncovered_edge_spans_m_top_right_bottom_left": np.linalg.norm(np.roll(gray, -1, axis=0)-gray, axis=1).tolist(),
+            "gray_inferred_outer_edge_spans_m_top_right_bottom_left": np.linalg.norm(np.roll(outer, -1, axis=0)-outer, axis=1).tolist(),
             "ruler_measured_tick_distance_m": float(np.linalg.norm(ruler[1]-ruler[0])),
             "source_distances_m": {name: float(np.linalg.norm(np.asarray(points[name])-source)) for name in
                                    ("gray_plate_center", "robot_base_foot_center_approx", "bowl_rim_center_projected_approx")}}
@@ -44,31 +52,43 @@ def main():
     image = cv2.imread(str(image_path))
     if image is None or list(image.shape[1::-1]) != anchors["image_size_wh"]:
         raise ValueError("Frozen photo missing or dimensions differ")
-    quad = np.asarray(anchors["white_outer_corners_xy"], np.float32)
-    side = anchors["assumptions"]["white_studs_per_side"]*anchors["assumptions"]["stud_pitch_m"]
-    target = np.array([[side/2, -side/2], [-side/2, -side/2], [-side/2, side/2], [side/2, side/2]], np.float32)
+    quad = np.asarray(anchors["white_uncovered_corners_xy"], np.float32)
+    assumptions = anchors["assumptions"]
+    side = assumptions["measured_outer_side_m"]["white"]
+    inset = assumptions["tape_covered_stud_rows_each_opposite_y_edge"]*assumptions["stud_pitch_m"]
+    visible_y = side-2*inset
+    if visible_y <= 0:
+        raise ValueError("Tape inset exceeds physical plate side")
+    target = np.array([[side/2, -visible_y/2], [-side/2, -visible_y/2], [-side/2, visible_y/2], [side/2, visible_y/2]], np.float32)
+    white_outer = np.array([[side/2, -side/2], [-side/2, -side/2], [-side/2, side/2], [side/2, side/2]], np.float32)
     delta = np.sign(quad-quad.mean(axis=0))*anchors["pixel_pick_uncertainty"]["plate_corners_and_ruler_ticks_px"]
     homography = cv2.getPerspectiveTransform(quad, target)
     variants = {name: measure(anchors, cv2.getPerspectiveTransform(q.astype(np.float32), target)) for name, q in
                 (("nominal", quad), ("expanded_white_quad_3px", quad+delta), ("contracted_white_quad_3px", quad-delta))}
-    result = {"schema": "approximate-planar-photo-layout-v1", "frame": anchors["frame"],
+    result = {"schema": "approximate-planar-photo-layout-v2", "frame": anchors["frame"],
               "assumptions": anchors["assumptions"], "limitations": anchors["limitations"],
               "pixel_pick_uncertainty": anchors["pixel_pick_uncertainty"], "variants": variants,
               "nominal_image_to_table_homography": homography.tolist(),
+              "white_uncovered_quad_table_xy_m": target.tolist(),
+              "white_inferred_outer_quad_table_xy_m": white_outer.tolist(),
+              "white_inferred_outer_corners_image_xy": mapped(white_outer, np.linalg.inv(homography)).tolist(),
               "provenance": {"image": str(image_path.resolve()), "image_sha256": digest(image_path),
                              "measurements_sha256": digest(args.measurements), "source_sha256": digest(Path(__file__)),
                              "opencv": cv2.__version__, "numpy": np.__version__}}
     names = variants["nominal"]["points_table_xy_m"]
     result["point_scenario_ranges_m"] = {name: {"min_xy": np.min([v["points_table_xy_m"][name] for v in variants.values()], axis=0).tolist(),
         "max_xy": np.max([v["points_table_xy_m"][name] for v in variants.values()], axis=0).tolist()} for name in names}
-    gray_nominal = anchors["assumptions"]["gray_nominal_studs_per_side_for_comparison_only"]*anchors["assumptions"]["stud_pitch_m"]
-    result["independent_checks"] = {"gray_nominal_outer_span_m": gray_nominal,
-        "gray_nominal_span_difference_percent_each_edge": [(v/gray_nominal-1)*100 for v in variants["nominal"]["gray_edge_spans_m_top_right_bottom_left"]],
+    gray_reported = assumptions["measured_outer_side_m"]["gray"]
+    result["independent_checks"] = {"gray_user_reported_outer_span_m": gray_reported,
+        "gray_reported_span_difference_percent_each_inferred_outer_edge": [(v/gray_reported-1)*100 for v in variants["nominal"]["gray_inferred_outer_edge_spans_m_top_right_bottom_left"]],
+        "native_nominal_outer_span_m": {"white": assumptions["white_studs_per_side"]*assumptions["stud_pitch_m"], "gray": assumptions["gray_nominal_studs_per_side_for_comparison_only"]*assumptions["stud_pitch_m"]},
+        "native_minus_user_reported_outer_span_m": {"white": assumptions["white_studs_per_side"]*assumptions["stud_pitch_m"]-side, "gray": assumptions["gray_nominal_studs_per_side_for_comparison_only"]*assumptions["stud_pitch_m"]-gray_reported},
         "ruler_expected_tick_distance_m": anchors["assumptions"]["ruler_tick_distance_m"],
         "ruler_difference_percent": (variants["nominal"]["ruler_measured_tick_distance_m"]/anchors["assumptions"]["ruler_tick_distance_m"]-1)*100,
-        "interpretation": "Independent consistency checks; disagreement is retained, not corrected by fitting ruler or gray size."}
+        "interpretation": "Gray full Y spans include inferred 16mm per edge; X edges unmasked. Disagreement retained, not corrected by fitting ruler/gray dimensions. Native pitch/assets unchanged."}
     annotated = image.copy()
-    for label, points in (("white32_assumed", quad), ("gray48_check", anchors["gray_outer_corners_xy"])):
+    for label, points in (("white_UNCOVERED_250x218mm", quad), ("gray_UNCOVERED", anchors["gray_uncovered_corners_xy"]),
+                          ("white_OUTER_inferred", result["white_inferred_outer_corners_image_xy"])):
         points = np.rint(points).astype(np.int32)
         cv2.polylines(annotated, [points], True, (0, 0, 255), 2)
         cv2.putText(annotated, label, tuple(points[0]), cv2.FONT_HERSHEY_SIMPLEX, .5, (0, 0, 255), 1)
@@ -83,8 +103,10 @@ def main():
     def pixel(points):
         p = np.asarray(points, float)
         return np.rint(np.stack((50+(p[..., 0]-lo[0])*scale, 850-(p[..., 1]-lo[1])*scale), axis=-1)).astype(np.int32)
-    for q in (target, np.asarray(variants["nominal"]["gray_quad_table_xy_m"])):
+    for q in (white_outer, np.asarray(variants["nominal"]["gray_inferred_outer_quad_table_xy_m"])):
         cv2.polylines(canvas, [pixel(q)], True, (120, 120, 120), 2)
+    for q in (target, np.asarray(variants["nominal"]["gray_uncovered_quad_table_xy_m"])):
+        cv2.polylines(canvas, [pixel(q)], True, (0, 180, 180), 1)
     for name, position in names.items():
         point = tuple(pixel(position))
         cv2.circle(canvas, point, 4, (0, 0, 200), -1)

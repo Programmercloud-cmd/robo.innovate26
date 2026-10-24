@@ -1,18 +1,22 @@
 {
-  "schema": "manual-planar-photo-anchors-v1",
+  "schema": "manual-planar-photo-anchors-v2",
   "image": "resources/setup_images/final_workcell_20261024/photo_09.jpg",
   "image_size_wh": [1280, 960],
   "frame": "table: origin white plate center; +X toward gray plate; +Y toward bowl; +Z up; right-handed",
   "assumptions": {
     "white_studs_per_side": 32,
     "stud_pitch_m": 0.008,
+    "measured_outer_side_m": {"white": 0.25, "gray": 0.38},
+    "physical_size_source": "User reported 25cm white / 38cm gray; nominal stud counts remain visual hypotheses",
+    "tape_covered_stud_rows_each_opposite_y_edge": 2,
+    "tape_inset_interpretation": "Approximate 16mm per covered edge from 2 rows x 8mm pitch; tape inner-edge position within row gap unknown",
     "gray_nominal_studs_per_side_for_comparison_only": 48,
     "ruler_tick_distance_m": 0.2,
     "corner_order": ["image_top_left", "image_top_right", "image_bottom_right", "image_bottom_left"],
-    "white_outer_footprint_not_stud_center_span": true
+    "observed_quad_semantics": "X edges are full unmasked side edges; Y edges are tape inner edges bounding uncovered region, not full outer plate"
   },
-  "white_outer_corners_xy": [[526, 432], [721, 429], [727, 605], [528, 607]],
-  "gray_outer_corners_xy": [[142, 340], [450, 336], [458, 615], [139, 621]],
+  "white_uncovered_corners_xy": [[526, 432], [721, 429], [727, 605], [528, 607]],
+  "gray_uncovered_corners_xy": [[142, 340], [450, 336], [458, 615], [139, 621]],
   "ruler_tick_centers_xy": {"zero_cm": [714, 378], "twenty_cm": [569, 380]},
   "points_xy": {
     "source_footprint_center_approx": [625, 520],
@@ -30,11 +34,12 @@
     "base_foot_center_px": 20,
     "bowl_center_px": 8,
     "tape_and_board_centers_px": 3,
-    "scenarios": "Two fixed sensitivities: white quad expanded/contracted 3px on each axis about its center. Other pixel anchors remain fixed; not a statistical or worst-case uncertainty bound."
+    "scenarios": "Two fixed sensitivities: white uncovered quad expanded/contracted 3px on each axis about its center. Other pixel anchors and assumed 16mm tape insets remain fixed; not statistical or worst-case bounds."
   },
   "limitations": [
-    "Plate stud counts are visual hypotheses; white size sets scale and gray48 is only an independent nominal comparison.",
-    "Black tape conceals exact plate edges. Ruler0/20 marks are manually estimated and independent of the homography fit.",
+    "User-reported white 250mm outer width sets scale; Y calibration uses 218mm uncovered span after two 16mm insets. Gray 380mm outer width is an independent check.",
+    "Native 32/48 stud footprints at 8mm pitch are 256/384mm, differing 6/4mm from user-reported widths. No native geometry or stud pitch is stretched to fit.",
+    "Black tape conceals full outer Y edges; recorded quads are uncovered bounds. Hidden outer bounds are inferred with approximate 16mm insets, not directly observed. Ruler 0/20 marks remain independent manual checks.",
     "One plane approximates tabletop and raised plates; no lens distortion or phone intrinsics are inferred.",
     "Base foot is occluded; its approximate image center is not a calibrated FR3 frame or yaw. Bowl rim is above the table and not its measured contact footprint.",
     "Homography reprojection error cannot establish physical accuracy. Two perturbations omit independent point-pick, height/parallax, lens and dimension errors.",
