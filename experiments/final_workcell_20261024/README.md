@@ -120,3 +120,28 @@ The most useful additional information is verified plate stud counts, the
 marker-board PDF or square size, and robot-base position/yaw relative to two
 table edges or known plate corners. D435i intrinsics and a measured optical
 mount transform are needed for calibrated wrist-view equivalence.
+
+## Completed preview
+
+Final capture: **Pueue 1700**, frozen scene source `e02864e`.
+
+- [Overhead render](../../runs/20261024T204939.156692Z-final-workcell-preview/output/images/diagnostic_table_top.png)
+- [Oblique render](../../runs/20261024T204939.156692Z-final-workcell-preview/output/images/diagnostic_oblique.png)
+- [USD visual scene](../../runs/20261024T204939.156692Z-final-workcell-preview/output/final_workcell.usda)
+- [Native graph, scene and camera manifest](../../runs/20261024T204939.156692Z-final-workcell-preview/output/manifest.json)
+- [Jobs, snapshots, artifact hashes and validation](completion.json)
+- [Editable layout and destination recipes](scene_config.json)
+
+Validation passed for all 300 source bricks, 930 native connections and 301
+connected parts including the source plate. Joint readback matches requested
+nominal values exactly; hand PhysX/USD positions and orientations agree within
+the configured tolerances. Source placement and state are unchanged across
+the two captures. One explicit preassembly initialization step is recorded;
+no physics step occurs after native assembly.
+
+Jobs 1696–1700 all ran through default Pueue; earlier audits and previews are
+preserved. Kit cleanup stalled after validated capture and was bounded by the
+existing owned-process supervisor, independently of capture validation.
+The exported USD references the frozen snapshot's assets; use the launcher
+to recreate runtime native connections. No independent graph reload or
+load-bearing dynamics claim is made.
