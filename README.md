@@ -30,6 +30,12 @@ works on all five simulated views, with maximum angular error below 0.112° and
 all ten invalid/flat controls uncertain. It provides a layer orientation cue,
 without individual brick poses or physical grasp/placement validation.
 
+The [depth-assisted individual-brick experiment](experiments/depth_bricks_20261024/REPORT.md)
+uses that orientation and measured ridge extents to propose all top footprints
+in the five views. Depth/RGB checks confirm 27/150 correlated observations
+with no observed false matches; 123 remain uncertain. This is selective
+candidate confirmation, without complete-coverage or physical-control claims.
+
 Isaac Sim 5.1 / Isaac Lab workcell for the **Franka Research 3**, using native
 [BrickSim](https://github.com/intelligent-control-lab/BrickSim) interlocking-brick
 physics. The robot type follows the team's confirmed hardware. The supplied

@@ -1,5 +1,10 @@
 # Depth-assisted individual brick detection
 
+Completed: [results and overlays](REPORT.md). Job 1685 succeeded. Raw geometry
+matches all 150 top-face observations, while the stricter checks confirm 27
+with no observed false matches; 123 remain uncertain. Raw slots are not
+automatically confirmed detections.
+
 Bounded task: use the successful depth-selected upper surface and ridge direction
 to identify individual 2×4 brick hypotheses on the five existing corrected-stack
 views. No new rendering, training, learned model, ROS or hardware control.
@@ -25,7 +30,8 @@ Frozen method: group collinear top-band mask fragments; check the measured
 ridge width against 16±4 mm. Both current ends need inside top coverage ≥0.6,
 outside top coverage ≤0.2 and actual observed lower-depth support ≥0.5.
 An integer number of 32 mm footprints must explain the measured span within
-4 mm. No candidate is present unless it has ≥70% top-band coverage, at least
+4 mm. No candidate is present unless it has ≥70% closed depth-derived top-band
+mask coverage, at least
 four supported RGB studs distributed across both ends/rows, and long-side edge
 support ≥0.12. RGB cross-edges within ±2 mm may verify a boundary; their absence
 does not automatically shift or reset the chain. Settings and scoring are fixed
