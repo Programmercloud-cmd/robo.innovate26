@@ -101,8 +101,18 @@
         -0.4,
         0.0
       ],
-      "yaw_table_deg": 90.0,
-      "status": "estimated base center; yaw assumed, not robot calibration; joint pose remains nominal"
+      "yaw_table_deg": 45.0,
+      "status": "Base orientation estimated from photographs using fixed lower connector housing; base position remains estimated and nominal joint configuration unchanged. No calibrated robot-frame alignment.",
+      "orientation_evidence": {
+        "method": "Match fixed lower socket-bearing white flank and asymmetric mounting outline to composed FR3 asset axes; do not use arm bend.",
+        "asset_connector_face_direction": "approximately asset -Y",
+        "photo_table_connector_direction": "approximately table +X/-Y",
+        "rounded_yaw_table_deg": 45,
+        "previous_assumed_yaw_table_deg": 90,
+        "qualitative_uncertainty": "Coarse photograph-supported diagonal; perspective and partial occlusion limit visual precision. No numerical error bar or calibrated transform is claimed.",
+        "reference": "base_orientation/reference.json",
+        "canonical_probe_job": 1703
+      }
     },
     "source": {
       "studs": 32,
