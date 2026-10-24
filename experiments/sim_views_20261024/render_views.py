@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 import random
 import sys
+import traceback
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
@@ -218,6 +219,16 @@ def main():
     app = AppLauncher(args).app
     try:
         render(app, args, spec, bricks, config, views)
+    except BaseException as error:
+        # Kit shutdown may block after initialization failure: expose the error
+        # and persist it BEFORE closing the app, rather than hiding the traceback.
+        text = traceback.format_exc()
+        failure = {"completed": False, "exception_type": type(error).__name__,
+                   "error": str(error), "traceback": text,
+                   "connection_diagnostic": "connection_failure.json" if (output/"connection_failure.json").exists() else None}
+        (output/"failure.json").write_text(json.dumps(failure, indent=2))
+        print("RENDER_FAILURE_BEFORE_APP_CLOSE", text, file=sys.stderr, flush=True)
+        raise
     finally:
         app.close()
 
@@ -230,7 +241,9 @@ def render(app, args, spec, bricks, config, views):
     from isaaclab.scene import InteractiveScene
     from isaaclab.sim import SimulationContext, get_current_stage
     from isaaclab.utils.math import matrix_from_quat
-    from bricksim.core import create_connection, compute_connected_component, get_disassembled_connections
+    from bricksim.core import (create_connection, compute_connected_component, get_disassembled_connections,
+        get_assembled_connections, get_assembly_thresholds, set_assembly_thresholds,
+        get_breakage_thresholds, compute_connection_transform, compute_graph_transform)
     from challenge2.env_cfg import make_env_cfg
 
     output = args.output
@@ -238,6 +251,14 @@ def render(app, args, spec, bricks, config, views):
     cfg = json.loads((ROOT/"configs/workcell.json").read_text())
     cfg.update(source_cells=6, source_layers=10, baseplate_studs=spec["baseplate_studs"], source_xy=spec["source_xy_m"])
     env_cfg = make_env_cfg(cfg, capture=True)
+    # make_env_cfg enables automatic clutch detection. For this explicit static
+    # preassembly, prevent reset from authoring links that the manual loop would
+    # duplicate. Keep all forces/other thresholds and breakage checks unchanged.
+    assembly_thresholds = get_assembly_thresholds()
+    assembly_thresholds.enabled = False
+    set_assembly_thresholds(assembly_thresholds)
+    if get_assembly_thresholds().enabled:
+        raise RuntimeError("Automatic assembly detection remained enabled for explicit preassembly")
     configured_positions, configured_quaternions = [], []
     for brick in bricks:
         asset = getattr(env_cfg.scene, brick.name)
@@ -270,17 +291,56 @@ def render(app, args, spec, bricks, config, views):
     robot = scene["robot"]
     robot.write_joint_state_to_sim(robot.data.default_joint_pos, robot.data.default_joint_vel)
     robot.set_joint_position_target(robot.data.default_joint_pos)
+    source_path = "/World/envs/env_0/plate_source"
+    pre_parts, pre_connections = compute_connected_component(source_path)
+    assembled_before = get_assembled_connections(clear=False)
+    preassembly = {"automatic_assembly_enabled": get_assembly_thresholds().enabled,
+        "breakage_detection_enabled": get_breakage_thresholds().enabled,
+        "source_component_parts_before_manual": len(pre_parts),
+        "source_component_connections_before_manual": len(pre_connections),
+        "assembled_events_before_manual": [repr(event) for event in assembled_before],
+        "mode": "Explicit native preassembly; automatic detector disabled only in this process"}
+    (output/"preassembly.json").write_text(json.dumps(preassembly, indent=2))
+    print("PRE_MANUAL_GRAPH", json.dumps(preassembly), flush=True)
+    if pre_connections or assembled_before:
+        raise RuntimeError("Unexpected pre-existing native connections before explicit graph authoring")
     expected_connections = 0
+    layer_in_progress = -1
     for brick in bricks:
+        if brick.layer != layer_in_progress:
+            print("NATIVE_LAYER_BEGIN", brick.layer, "completed_links", expected_connections, flush=True)
+            layer_in_progress = brick.layer
         lower = [a for a in bricks if a.layer == brick.layer-1 and overlaps(a, brick)] if brick.layer else [None]
         for support in lower:
             offset, yaw = connection_offset(support, brick, spec["baseplate_studs"])
-            create_connection(f"/World/envs/env_0/{support.name if support else 'plate_source'}", 1,
-                              f"/World/envs/env_0/{brick.name}", 0, offset, yaw)
+            stud_path = f"/World/envs/env_0/{support.name if support else 'plate_source'}"
+            hole_path = f"/World/envs/env_0/{brick.name}"
+            try:
+                create_connection(stud_path, 1, hole_path, 0, offset, yaw)
+            except BaseException as error:
+                diagnostic = {"completed_native_links": expected_connections, "layer": brick.layer,
+                    "stud_path": stud_path, "stud_interface": 1, "hole_path": hole_path,
+                    "hole_interface": 0, "offset_studs": offset, "yaw_quarter_turn": yaw,
+                    "error": str(error), "traceback": traceback.format_exc(), "preassembly": preassembly}
+                for name, operation in (("computed_native_target_transform", lambda: compute_connection_transform(
+                        stud_path, 1, hole_path, 0, offset, yaw)),
+                        ("existing_graph_transform", lambda: compute_graph_transform(stud_path, hole_path))):
+                    try:
+                        diagnostic[name] = operation()
+                    except BaseException as diagnostic_error:
+                        diagnostic[name] = {"error": repr(diagnostic_error)}
+                (output/"connection_failure.json").write_text(json.dumps(diagnostic, indent=2))
+                print("NATIVE_CONNECTION_FAILURE", json.dumps(diagnostic), file=sys.stderr, flush=True)
+                raise
             expected_connections += 1
+            if expected_connections % 36 == 0:
+                progress = {"completed_native_links": expected_connections,
+                    "expected_native_links": spec["expected_native_connections"], "layer": brick.layer}
+                (output/"connection_progress.json").write_text(json.dumps(progress, indent=2))
+                print("NATIVE_CONNECTION_PROGRESS", json.dumps(progress), flush=True)
+    print("NATIVE_GRAPH_AUTHORED", expected_connections, flush=True)
     if expected_connections != spec["expected_native_connections"]:
         raise RuntimeError("Authored native-link count differs from the explicit geometry specification")
-    source_path = "/World/envs/env_0/plate_source"
     parts_initial, connections_initial = compute_connected_component(source_path)
     if len(parts_initial) != 361 or len(connections_initial) != expected_connections:
         raise RuntimeError("Full360 source graph is incomplete before settling")
@@ -408,6 +468,7 @@ def render(app, args, spec, bricks, config, views):
     make_panel(output, views, config)
     manifest = {"geometry": spec, "selected_views": [v["id"] for v in views], "camera_config": config,
         "geometry_contact_audit": geometry_audit(bricks),
+        "preassembly": preassembly,
         "brick_count": 360, "native_connected_parts": len(parts_after), "native_connections": len(connections_after),
         "settling": settle_audit, "physics_time_s": frozen_time, "all_capture_states_exactly_equal": True,
         "resolved_render_settings": resolved_settings,

@@ -53,3 +53,10 @@ native inter-brick/baseplate connections are required; no smaller fallback is
 used. RGB images and their panel are separate from depth, poses, identities and
 other evaluation truth. The panel is for visual comparison, not fused perception.
 No detection, training, ROS integration or manipulation is started by this task.
+
+Attempt 1678 stopped during native graph initialization before producing validated
+images. The retry disables automatic assembly only inside the render process,
+before explicitly creating all 1,125 native links. Every other threshold and
+breakage check remains unchanged. Progress and failure diagnostics are saved
+before application shutdown. This is a static preassembly initialization fix;
+it does not establish physical stability.
