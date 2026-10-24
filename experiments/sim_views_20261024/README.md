@@ -1,25 +1,27 @@
 # Individually selectable simulation views
 
-**Pending contact-pattern clarification.** Job 1677 was stopped when the user
-added edge/corner contact counts inconsistent with the current regular centered
-layout. No completed renders are claimed. Camera presets and renderer are ready;
-`geometry.json` now gates further submissions before Isaac starts. The original
-attempt remains under `runs/20261024T094826.076320Z-sim-views/`, with its stopped
-status in [attempts/1677.json](attempts/1677.json).
+**Geometry clarified by the user's close-up.** Dots mean engaged studs, rather
+than neighboring bricks. The visible one-stud stagger supersedes the earlier
+rough common-center interpretation. `geometry.json` defines **360 bricks**,
+six by six in each of ten alternating 90° layers, with two empty stud columns
+between parallel rows. Relative origins alternate horizontal `(1,0)` / vertical
+`(0,1)`, with four-stud padding on the 32-stud anchored source plate.
 
-The user confirmed that the ten layers share one center and alternate 90°.
-`geometry.json` therefore explicitly defines **360 bricks**, six by six in each
-of ten layers, centered on the 32-stud anchored source plate. Relative origins
-alternate `(0,1)` / `(1,0)`, with four-stud plate border. Historical blocked
-geometry files and earlier real-image experiments remain unchanged.
+Adjacent layers have 121 single-stud overlap patches. Each layer's total-contact
+distribution is one brick with one engaged stud, ten with two and 25 with four;
+the photo's local description is not imposed as a universal all-four-corners
+rule. The layer centers differ by two studs in each axis. The 25×25-stud union
+fits the plate on its legal stud grid without a half-stud recentering. All native
+connections are retained: 1089 interlayer plus 36 plate links, 361 connected
+parts including the plate. Source-photo path and hash are in the geometry file.
 
-This candidate already has two empty stud columns between parallel brick rows.
-For full 2×4 bricks touching end-to-end at four-stud pitch, however, it yields
-one distinct overlapping brick per adjacent layer for every brick. The newly
-reported two edge contacts / one corner contact therefore needs clarification
-(distinct bricks versus studs; one layer versus above and below together;
-whether all rows contain six full end-to-end bricks). No alternative layout or
-smaller brick count is substituted.
+Job 1677 was stopped before completed renders while the dots/contact distinction
+was being resolved. Its snapshot and [attempt record](attempts/1677.json) remain.
+It also emitted native solver convergence warnings during initialization; that
+attempt is not a successful physics validation. The current view comparison uses
+`settle_steps=0`: the complete native graph is initialized, then captured with
+render-only calls. **Static initialized renders do not validate dynamics or
+load-bearing clutch stability.** Earlier experiments remain unchanged.
 
 The existing FR3/BrickSim scene, pinned native dependency and Isaac runtime are
 reused. Five virtual cameras provide overhead, slightly oblique and side views.

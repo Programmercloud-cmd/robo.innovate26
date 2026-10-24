@@ -10,7 +10,7 @@
     10.0
   ],
   "calibration_status": "nominal approximate virtual cameras; not calibrated wrist poses",
-  "settle_steps": 24,
+  "settle_steps": 0,
   "render_warmup_frames": 12,
   "lighting": {
     "dome_intensity": 300.0,
@@ -120,5 +120,7 @@
         1
       ]
     }
-  ]
+  ],
+  "capture_mode": "static_initialized_not_physics_settled",
+  "dynamics_validation": "None; full native graph is present but no load-bearing stability is claimed."
 }

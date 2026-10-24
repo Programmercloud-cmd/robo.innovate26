@@ -6,6 +6,7 @@ The panel is for display only. All simulator truth is separate from RGB files.
 """
 
 import argparse
+from collections import Counter
 import hashlib
 import json
 import math
@@ -30,7 +31,8 @@ def load_geometry(path):
             or spec["pitch_studs_xy"] != [4, 4]
             or len(origins) != 10 or any(not isinstance(o, list) or len(o) != 2 for o in origins)
             or any(not isinstance(v, int) for o in origins for v in o)
-            or spec["layer_yaws_quarter_turn"] != [k % 2 for k in range(10)]):
+            or spec["layer_yaws_quarter_turn"] != [k % 2 for k in range(10)]
+            or origins != [[1, 0] if k % 2 == 0 else [0, 1] for k in range(10)]):
         raise ValueError("Full360 explicit alternating lattice specification is invalid")
     rng = random.Random(26)
     palette = ["dark_red", "brown", "tan", "reject_4211201", "reject_6135191"]
@@ -38,21 +40,55 @@ def load_geometry(path):
     bricks = [Brick(f"brick_{k}_{i}_{j}", border+origins[k][0]+i*4,
                     border+origins[k][1]+j*4, k, k % 2, rng.choice(palette))
               for k in range(10) for i in range(6) for j in range(6)]
-    centers = []
     for layer in range(10):
         group = [b for b in bricks if b.layer == layer]
         left, bottom = min(b.x for b in group), min(b.y for b in group)
         right = max(b.x+b.footprint[0] for b in group)
         top = max(b.y+b.footprint[1] for b in group)
-        centers.append(((left+right)/2, (bottom+top)/2))
         if not (0 <= left < right <= spec["baseplate_studs"] and 0 <= bottom < top <= spec["baseplate_studs"]):
             raise ValueError("Full layer does not fit on the configured studded baseplate")
-    if any(center != centers[0] for center in centers) or centers[0] != (spec["baseplate_studs"]/2,)*2:
-        raise ValueError("Confirmed layers must share the centered baseplate footprint")
     for brick in bricks:
         if brick.layer and not any(a.layer == brick.layer-1 and overlaps(a, brick) for a in bricks):
             raise ValueError(f"Unsupported source brick {brick.name}")
+    audit = geometry_audit(bricks)
+    if (audit["expected_native_connection_count"] != 1125
+            or spec["expected_native_connections"] != audit["expected_native_connection_count"]) or any(
+            interface["overlap_patch_studs_histogram"] != {1: 121} for interface in audit["adjacent_layer_interfaces"]):
+        raise ValueError("Photo-supported phase must yield121 one-stud patches per adjacent layer")
     return spec, bricks
+
+
+def geometry_audit(bricks):
+    """Contact patch area and whole-brick contact totals are distinct quantities."""
+    layers, interfaces = [], []
+    below = {b.name: (8 if b.layer == 0 else 0) for b in bricks}
+    above = {b.name: 0 for b in bricks}
+    for layer in range(1, 10):
+        patches = []
+        for upper in (b for b in bricks if b.layer == layer):
+            uw, ud = upper.footprint
+            for lower in (b for b in bricks if b.layer == layer-1):
+                lw, ld = lower.footprint
+                area = max(0, min(upper.x+uw, lower.x+lw)-max(upper.x, lower.x))*max(
+                    0, min(upper.y+ud, lower.y+ld)-max(upper.y, lower.y))
+                if area:
+                    patches.append(area)
+                    below[upper.name] += area
+                    above[lower.name] += area
+        interfaces.append({"lower_layer": layer-1, "upper_layer": layer,
+            "native_connection_count": len(patches), "overlap_patch_studs_histogram": dict(Counter(patches))})
+    for layer in range(10):
+        group = [b for b in bricks if b.layer == layer]
+        bounds = [min(b.x for b in group), min(b.y for b in group),
+                  max(b.x+b.footprint[0] for b in group), max(b.y+b.footprint[1] for b in group)]
+        layers.append({"layer": layer, "bounds_studs_xyxy": bounds,
+            "footprint_center_studs_xy": [(bounds[0]+bounds[2])/2, (bounds[1]+bounds[3])/2],
+            "per_brick_studs_touching_lower_histogram": dict(Counter(below[b.name] for b in group)),
+            "per_brick_studs_touching_upper_histogram": dict(Counter(above[b.name] for b in group))})
+    return {"layers": layers, "adjacent_layer_interfaces": interfaces,
+        "baseplate_connection_count": 36,
+        "expected_native_connection_count": 36+sum(i["native_connection_count"] for i in interfaces),
+        "note": "One native edge per overlapping brick pair; stud counts are geometric overlap area, not distinct neighboring-brick counts. Layer centers intentionally differ under the photo-supported phase."}
 
 
 def normalize(vector):
@@ -242,6 +278,8 @@ def render(app, args, spec, bricks, config, views):
             create_connection(f"/World/envs/env_0/{support.name if support else 'plate_source'}", 1,
                               f"/World/envs/env_0/{brick.name}", 0, offset, yaw)
             expected_connections += 1
+    if expected_connections != spec["expected_native_connections"]:
+        raise RuntimeError("Authored native-link count differs from the explicit geometry specification")
     source_path = "/World/envs/env_0/plate_source"
     parts_initial, connections_initial = compute_connected_component(source_path)
     if len(parts_initial) != 361 or len(connections_initial) != expected_connections:
@@ -263,7 +301,7 @@ def render(app, args, spec, bricks, config, views):
         "max_orientation_drift_rad": float((2*np.arccos(quat_dot)).max()),
         "max_linear_speed_m_s": float(np.linalg.norm(roots[:, 7:10], axis=1).max()),
         "max_angular_speed_rad_s": float(np.linalg.norm(roots[:, 10:13], axis=1).max()),
-        "note": "Idle settling audit; finite steps do not establish mechanical equilibrium or calibrated clutch forces"}
+        "note": "Static initialized state; no post-connection physics step, equilibrium/dynamics/clutch stability unvalidated" if config["settle_steps"] == 0 else "Idle settling audit; finite steps do not establish mechanical equilibrium or calibrated clutch forces"}
     center = np.mean([scene[b.name].data.root_pos_w[0].cpu().numpy() for b in bricks if b.layer == 9], axis=0)
     center[2] += HEIGHT+.0017
     lighting = config["lighting"]
@@ -369,10 +407,14 @@ def render(app, args, spec, bricks, config, views):
     stage.GetRootLayer().Export(str(truth/"full360_workcell.usda"))
     make_panel(output, views, config)
     manifest = {"geometry": spec, "selected_views": [v["id"] for v in views], "camera_config": config,
+        "geometry_contact_audit": geometry_audit(bricks),
         "brick_count": 360, "native_connected_parts": len(parts_after), "native_connections": len(connections_after),
         "settling": settle_audit, "physics_time_s": frozen_time, "all_capture_states_exactly_equal": True,
         "resolved_render_settings": resolved_settings,
         "capture_semantics": "Sequential camera relocation/render-only at one physics snapshot; no detector fusion",
+        "capture_mode": config.get("capture_mode", "static_initialized_not_physics_settled" if config["settle_steps"] == 0 else "idle_settled_snapshot"),
+        "post_connection_physics_steps": config["settle_steps"],
+        "dynamic_connection_stability_validated": False,
         "rgb_directory": "images", "truth_directory": "evaluation_truth", "panel_display_only": True,
         "frozen_state_sha256": hashlib.sha256(frozen.cpu().numpy().tobytes()).hexdigest(),
         "gpu": torch.cuda.get_device_name(0) if torch.cuda.is_available() else None,
