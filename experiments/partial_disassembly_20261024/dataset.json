@@ -1,0 +1,241 @@
+{
+  "render_run": "/home/faps/dev/github/robo.innovate26/runs/20261024T150707.478755Z-partial-disassembly-render",
+  "render_root": "/home/faps/dev/github/robo.innovate26/runs/20261024T150707.478755Z-partial-disassembly-render/render_output",
+  "render_job_id": 1686,
+  "benchmark_sha256": "be8d242d15d599334dbbd235474246c059cde8a3ee34e4af4182f65fddf90919",
+  "cases": [
+    {
+      "id": "I_mix",
+      "split": "development",
+      "capture_validated": true,
+      "actual_counts": [
+        300,
+        930,
+        301
+      ]
+    },
+    {
+      "id": "I_tan",
+      "split": "development",
+      "capture_validated": true,
+      "actual_counts": [
+        300,
+        930,
+        301
+      ]
+    },
+    {
+      "id": "H_mix",
+      "split": "development",
+      "capture_validated": true,
+      "actual_counts": [
+        299,
+        926,
+        300
+      ]
+    },
+    {
+      "id": "E_mix",
+      "split": "development",
+      "capture_validated": true,
+      "actual_counts": [
+        299,
+        926,
+        300
+      ]
+    },
+    {
+      "id": "A_mix",
+      "split": "development",
+      "capture_validated": true,
+      "actual_counts": [
+        298,
+        922,
+        299
+      ]
+    },
+    {
+      "id": "A_repeat",
+      "split": "development",
+      "capture_validated": true,
+      "actual_counts": [
+        298,
+        922,
+        299
+      ]
+    },
+    {
+      "id": "U_tan",
+      "split": "development",
+      "capture_validated": true,
+      "actual_counts": [
+        271,
+        834,
+        272
+      ]
+    },
+    {
+      "id": "T_mix",
+      "split": "development",
+      "capture_validated": true,
+      "actual_counts": [
+        270,
+        830,
+        271
+      ]
+    },
+    {
+      "id": "S_repeat",
+      "split": "reserved",
+      "capture_validated": true,
+      "actual_counts": [
+        294,
+        912,
+        295
+      ]
+    },
+    {
+      "id": "P_mix",
+      "split": "reserved",
+      "capture_validated": true,
+      "actual_counts": [
+        273,
+        838,
+        274
+      ]
+    }
+  ],
+  "sha256": {
+    "development/I_mix/manifest.json": "c677c11b850504ac5263f53ee6fe19b047d2ac78543e6bdac69e09fab60b31eb",
+    "development/I_mix/run_complete.json": "79981e8b734b947c8185d52c1b8c1c3f478ed3f1b5be99086c1b25c156ad1d11",
+    "development/I_mix/supervisor.json": "6a91d6a26b5a8b39698fededb1bce48fc48c8cb0b924810a97878d940d70e2ba",
+    "development/I_mix/evaluation_truth/active_bricks.json": "9c21497d05658106cad0f0baccd8f05db70c5b6c7ac92338abee693602aabc06",
+    "development/I_mix/evaluation_truth/active_root_states.npy": "74c1b8eefb675fd76fe7812532a2a52ca5ad638f964a10d9d8c634911c632610",
+    "development/I_mix/evaluation_truth/annotations.json": "dde3a246b3b0b9fb7b49b8a2316b418b281a6e931791a796bcec5a3c830ad950",
+    "development/I_mix/evaluation_truth/cameras.json": "7e6c7a5401f5da5ba526fb6a5d013f69528021d8a761e4b56180b20ad6086c8c",
+    "development/I_mix/evaluation_truth/native_graph.json": "a0628b3979af01e01204979aaac399532c4abe0b42e43133f48a8bbbc1400842",
+    "development/I_mix/evaluation_truth/case_state.json": "2552dbfa5c92166926d22f078a076b1366fbee38ddcf0e931b5d807d21bf936f",
+    "development/I_mix/images/top.png": "776d3e3b0d69b1753d379ffaad0694a5f6a73a12c6322a0240bf270936bbf283",
+    "development/I_mix/images/oblique_side.png": "6c237e7a7aa053e314d228a56d405481bfb62d716d2300506f7c252b61611d79",
+    "development/I_mix/evaluation_truth/top_depth.npy": "a166df3741d8d17812c6b058f1dd74d2f9ba6b858ebd0270ebbfe12cf19a6790",
+    "development/I_mix/evaluation_truth/oblique_side_depth.npy": "9c63fb81922acfe5a12fd04b6d3e8a20e4beef0fcbaa8fbfc4762e83bac1b598",
+    "development/I_tan/manifest.json": "08676430906c828f8eee44e95a33e54bb20d1caddc810cb375af6f1039f4e00d",
+    "development/I_tan/run_complete.json": "03aac6ab69a9dae2a4a1672be9c25e712bb474deb3c7bcea2197bab70d06e0b4",
+    "development/I_tan/supervisor.json": "9f6a97224d8292b7acf51743fdd832f8d1ea16adf862d7b19a615adc2b7e2d69",
+    "development/I_tan/evaluation_truth/active_bricks.json": "90dda9677655f1ea239ec07c99118af601c67c623208a42294ea40f9f1327739",
+    "development/I_tan/evaluation_truth/active_root_states.npy": "74c1b8eefb675fd76fe7812532a2a52ca5ad638f964a10d9d8c634911c632610",
+    "development/I_tan/evaluation_truth/annotations.json": "669f7d97540a6751e63b8c00bbd0a6d8c7032f52809e7bbe30a2a99f81a23e33",
+    "development/I_tan/evaluation_truth/cameras.json": "ad0a11f32c5758bcfe663fe3c89a5ad5ca6c2c87375c4af21e11f08a5ead7e70",
+    "development/I_tan/evaluation_truth/native_graph.json": "a0628b3979af01e01204979aaac399532c4abe0b42e43133f48a8bbbc1400842",
+    "development/I_tan/evaluation_truth/case_state.json": "8cbe2d7b22506305a89eb5b10aa6f1654384192f71b4064105e7067425699749",
+    "development/I_tan/images/top.png": "52649efa9cf62bb73efda7204303bd83e21f91fdffaaa1930008d79ff26eb928",
+    "development/I_tan/images/oblique_side.png": "a63f8296cef4e9b2083c48c39c6f8880a59a14d80a38587f554c2a14f33a4533",
+    "development/I_tan/evaluation_truth/top_depth.npy": "a166df3741d8d17812c6b058f1dd74d2f9ba6b858ebd0270ebbfe12cf19a6790",
+    "development/I_tan/evaluation_truth/oblique_side_depth.npy": "9c63fb81922acfe5a12fd04b6d3e8a20e4beef0fcbaa8fbfc4762e83bac1b598",
+    "development/H_mix/manifest.json": "08f45472ac1b8a9437c57216ec8b55bc0982d3cb67a96e96f68f510dc28506ba",
+    "development/H_mix/run_complete.json": "5785114b2e9776e4117f0ccd36a9ef33a64e2c2426d36f1427b17dfa8583889d",
+    "development/H_mix/supervisor.json": "da5037b6fe78c900f6006420528222f3b01e15bb0e320cd57c3d8c904d5de028",
+    "development/H_mix/evaluation_truth/active_bricks.json": "a5c6359b0f239118867005c2900e2796099275be0a4dc005fea0acd8caf27263",
+    "development/H_mix/evaluation_truth/active_root_states.npy": "bb854c337eb4f3e334c1927d23797a20b1e153761a62d6d645e66de23caa2e70",
+    "development/H_mix/evaluation_truth/annotations.json": "ccb8109ba56c04d7e667f71612c75ee897911b708d1d9de8fbdeedc303a3c3bd",
+    "development/H_mix/evaluation_truth/cameras.json": "6b088d20e1229548ff81c4a2bc6250dbac22a149b2e385914a8b0e585485cf3c",
+    "development/H_mix/evaluation_truth/native_graph.json": "3ed4c73717af9ed6cd23eefb0ba453d51c2390ecaf406d80c5efa94240b90088",
+    "development/H_mix/evaluation_truth/case_state.json": "0f7f080d09d83c53d1f98e5ca944767c27eb708d0e2a1708fedea39fd38371d6",
+    "development/H_mix/images/top.png": "7072de331baa235344023e0825e010f2d1ce006f4fb6c531066eba62059ceb05",
+    "development/H_mix/images/oblique_side.png": "0e1ed40ac673f1a5952e8ccf606ffd8fc307e2a837904206f058a34d8b91601c",
+    "development/H_mix/evaluation_truth/top_depth.npy": "921b3b1a0bc4a5e9cddadb5a47d949463842cfc0a6bd03a48b59140852c61764",
+    "development/H_mix/evaluation_truth/oblique_side_depth.npy": "81750e587503da1139b29afb6b969a1205994781944b52a05b898f88fa0ab735",
+    "development/E_mix/manifest.json": "df00ca761e5b5048881d303b2d48d4277c7c66a2182e247888c1a911533093c5",
+    "development/E_mix/run_complete.json": "23c415aadf4912a484bcc50afa2fc087edf781ccf758a9edefd58acf1ded78f0",
+    "development/E_mix/supervisor.json": "86bdc13fe985d9eaf5b33c7fc7cd9982deae66e08769b9dbf3ac30ef35a91da2",
+    "development/E_mix/evaluation_truth/active_bricks.json": "294209d9ab0583d9de6bd0700b693c649a883bf75fa0da5219960d30170a9f1e",
+    "development/E_mix/evaluation_truth/active_root_states.npy": "79547e3de8153e08e030c237047d793423883ba2456f99cbee89a6af60bf5cb6",
+    "development/E_mix/evaluation_truth/annotations.json": "efe1640ffb9f7913b162fa8bd75dc12cb80a8b45a28144f010c958f65337c25b",
+    "development/E_mix/evaluation_truth/cameras.json": "414666cd88f5e090677b53127e9f942e21fef1a262c7eb8439802c015cf253e5",
+    "development/E_mix/evaluation_truth/native_graph.json": "7801b2c01eb7d64ff0dd4e5a0ea22151765aadfab08f021577be5644455c6a59",
+    "development/E_mix/evaluation_truth/case_state.json": "95afae41b0853ad3bb398613cd76f814baacc84634246b16f94f696a91e8c4a4",
+    "development/E_mix/images/top.png": "a453ce67c6072f42f3845fdfdf71f8ba56f4d71b4c0c34579a4ec70aac9c87a9",
+    "development/E_mix/images/oblique_side.png": "7cdfb809112fb4b58af8c05de3f96c21a60c9a27db71ddb487af6b36d5d346ac",
+    "development/E_mix/evaluation_truth/top_depth.npy": "619da3c9b0792302c75784c98f161b15116cb341c456994c4d3ad97e76b15174",
+    "development/E_mix/evaluation_truth/oblique_side_depth.npy": "8d2c35f1ac41f97b32649c085d8db352003bf43a060af7e8fe7e7fedd855053d",
+    "development/A_mix/manifest.json": "1298f6ecf05478136d1f8c19537337522e0e850f4de4d91cd91ed29f02c031ed",
+    "development/A_mix/run_complete.json": "5cbcdd28d1ad04ba29720a60126c76e4e0ad0d6fdb8ccf8edd3c1392bfc1e115",
+    "development/A_mix/supervisor.json": "47b88d4f5636543ae5f818d21213b1f441e7eeacf2437a90f9dbc5d4444fe190",
+    "development/A_mix/evaluation_truth/active_bricks.json": "4f3748a6a148998bdf8826039163da2b5190e066610eb73fc1b158a474fcf9ca",
+    "development/A_mix/evaluation_truth/active_root_states.npy": "1a6a353b541715517b5d7caa295568d9a0c0a6d2e03cacc1355bd581ffd9bb92",
+    "development/A_mix/evaluation_truth/annotations.json": "895cb85bc9acba0f7a94e9aabcaf3926dbbee953815a9a8ebd361a92af2add3a",
+    "development/A_mix/evaluation_truth/cameras.json": "49c69c36316e27e7a914dde88fd6f18a0960f7ae356d8165a93114b873e02bf2",
+    "development/A_mix/evaluation_truth/native_graph.json": "20312c3b80980528db046ccc6e234c7d76266074c721d6d8d7d0dfad20476f83",
+    "development/A_mix/evaluation_truth/case_state.json": "6f10b709b5ff2d6d375305b724ec35fde2a9ea81da6a2014dac8bc953ff5255e",
+    "development/A_mix/images/top.png": "edf7940068f80d57a250f7d4542d206631b2dfef627210e36057705462733e61",
+    "development/A_mix/images/oblique_side.png": "e2182d0096f88c5f74886f2e0da88116a000d153c2aca7c70b7871ba6827b45a",
+    "development/A_mix/evaluation_truth/top_depth.npy": "f01f48d098af606df2abe01dd2cd56878bcd6a8efae8c081744b8c9362dce0ff",
+    "development/A_mix/evaluation_truth/oblique_side_depth.npy": "5c6ab698692e1b97da77d7aa3fbdec402b07218049961cb34847c5898bcbcb37",
+    "development/A_repeat/manifest.json": "114b7b8bd7a422802c5acc51ceca80fa555410424c5a00dccec8ff2f3d5b8fd5",
+    "development/A_repeat/run_complete.json": "6cdac5deb13bb655b27e0d82698638b8255f21fd4436a74a7bec624a32c35047",
+    "development/A_repeat/supervisor.json": "1de98b8f1b4b10246d05bbb83d9982b73cceedacd9f823cb0cbebc21058a7be2",
+    "development/A_repeat/evaluation_truth/active_bricks.json": "0bb08e5a90b06b434ecb7bfb9a0238745c85ca995db1f67e6ee2b8dfa0922881",
+    "development/A_repeat/evaluation_truth/active_root_states.npy": "1a6a353b541715517b5d7caa295568d9a0c0a6d2e03cacc1355bd581ffd9bb92",
+    "development/A_repeat/evaluation_truth/annotations.json": "b30b6a9597d3bd2386a5187ee29e4b2ad79c7c15378cbc1134c450fa2f203b99",
+    "development/A_repeat/evaluation_truth/cameras.json": "17ed51535bae4c013574a0d4ddf30947a2ff41d2317f57f4787db4ccbeaef840",
+    "development/A_repeat/evaluation_truth/native_graph.json": "20312c3b80980528db046ccc6e234c7d76266074c721d6d8d7d0dfad20476f83",
+    "development/A_repeat/evaluation_truth/case_state.json": "ee4423a5a0e008779c5e065064775666d402b6552c025f48c7020ddda66b35f7",
+    "development/A_repeat/images/top.png": "6d1b2fd073408695bf4887a0643488e3eadfe2a854fb1bd366c1c6fac47b4e31",
+    "development/A_repeat/images/oblique_side.png": "59eebddc9a7a3370cdb7ba8eb9a2256234f4df94ba4dd3a41b5f4fbf9f0eac2c",
+    "development/A_repeat/evaluation_truth/top_depth.npy": "f01f48d098af606df2abe01dd2cd56878bcd6a8efae8c081744b8c9362dce0ff",
+    "development/A_repeat/evaluation_truth/oblique_side_depth.npy": "5c6ab698692e1b97da77d7aa3fbdec402b07218049961cb34847c5898bcbcb37",
+    "development/U_tan/manifest.json": "b9ed711fe5b08deb962d5cbfdaa875618bb214b917ce08884a9ab3c6c0159901",
+    "development/U_tan/run_complete.json": "dcd22d3c46fe1f7dba30e469159105a971a225cbf97c66c8a897b31380b8185b",
+    "development/U_tan/supervisor.json": "96d50b1056fcfd09b70de49444b3f1af1bb7d2ed21ee4290401a44f113a02b92",
+    "development/U_tan/evaluation_truth/active_bricks.json": "127f5573a5a36464e379644015f9ea0c7ef7152256acb2aac2d8d39d47ccaf20",
+    "development/U_tan/evaluation_truth/active_root_states.npy": "58b2e4843dbb0a680e53121fd6bc62e021a5ae54b9517504a97743743f941d24",
+    "development/U_tan/evaluation_truth/annotations.json": "0945cab11a22e2e9b1072d99a1dca72271f0bfd2b576d88d636154e7ca1ec6a6",
+    "development/U_tan/evaluation_truth/cameras.json": "f56adaf91835d9a30573dda312ee83e799e42efbbf2ff0aacdca91d0d4af7164",
+    "development/U_tan/evaluation_truth/native_graph.json": "adf67254ac1812a1f0e8a439e571f99a5fa34c50748b8355389e401f0933c31e",
+    "development/U_tan/evaluation_truth/case_state.json": "3ea63c9f056f3c972bb2f7e6255ba59a1935267b116e5490b8b4bbd841886429",
+    "development/U_tan/images/top.png": "2be9ebc05c577692feb663b4f7db3ad8cc018375be1d976220ed10b6954f6871",
+    "development/U_tan/images/oblique_side.png": "90a36f0b26b6903b51fcd63aeccc40903cc7e39e4f3a9abd010529f55afb3178",
+    "development/U_tan/evaluation_truth/top_depth.npy": "35744a30e819dd935a5984ecaf3285b7e1ad8a8fac153684fe63c6977791f4f8",
+    "development/U_tan/evaluation_truth/oblique_side_depth.npy": "ff58af6849d988cd22ae23a8ca46ac5a20c8adb3436e9feee64178f3624097b0",
+    "development/T_mix/manifest.json": "7b464079eebcf5308a4300a0a5cb7323c107d5ebde0a948fa52596caf3f87329",
+    "development/T_mix/run_complete.json": "a2c3dd48803d48a5098f529dde06c725ba71463dc1c231653bf375638a843537",
+    "development/T_mix/supervisor.json": "40100c478141632973cfa55d5f42e30b904f3e3eddce6d9351c0b0caaca0fdcb",
+    "development/T_mix/evaluation_truth/active_bricks.json": "7bf22fff10b24cc1dd9e866538012569d4d94d1054bf0039908fedf21290bb65",
+    "development/T_mix/evaluation_truth/active_root_states.npy": "c5520b0597ced604168b3f6123e035506c9e460ecc7cebd583ac7db4d0eca90d",
+    "development/T_mix/evaluation_truth/annotations.json": "fd8d02dd5bf3c0ba408290cdab0f7fabecbec07e925e741954c50e333dedb123",
+    "development/T_mix/evaluation_truth/cameras.json": "93fab72d5aafac983ac9f7b20152077eee55df1dcd98c7d8e4d29ef7bac9c73d",
+    "development/T_mix/evaluation_truth/native_graph.json": "9447e1700dee305d7c3ab9f4a10a5c6d871823f42c97c579803862702b1e752a",
+    "development/T_mix/evaluation_truth/case_state.json": "2128b54a270fe95d21424acff876c067d04ac1cf9b2ae604fbe53392faed3e05",
+    "development/T_mix/images/top.png": "e42082733c13774ac28e1edba84c7e68cadcd4bdc076b64d17d24347dac9ffd1",
+    "development/T_mix/images/oblique_side.png": "680ffb94f7c9afc142cdb3fdc9f617f1210e307cc359a411e0a47786daae4d33",
+    "development/T_mix/evaluation_truth/top_depth.npy": "84c6ff5c82c283d2f62d1f6fcb2fdb7f637a6d3856a7bdc04bbaf1f7d5e84588",
+    "development/T_mix/evaluation_truth/oblique_side_depth.npy": "97989e9fb8968b9068991b5dc0f9adfcac74c03a80249881b7fbc555729481ac",
+    "reserved/S_repeat/manifest.json": "65d5f8d3347c7b2506da72a75fc4818f03ec8aa0b5acb33e56ab85fa93ff5b10",
+    "reserved/S_repeat/run_complete.json": "1a916895451a595b5717060862866dddfa96d08c4d6d2af25a36d7ba16383cb9",
+    "reserved/S_repeat/supervisor.json": "3d6b6035cbc347b78916e8927dcccc3f0f4565998c25100f95d547177db5fe06",
+    "reserved/S_repeat/evaluation_truth/active_bricks.json": "f6483c786d442c5d5f2fda6f122254063270e14589e1e9c60d72474224955945",
+    "reserved/S_repeat/evaluation_truth/active_root_states.npy": "cadba8fc1707b3f6e5ef6c92d9305984e6edfe5ebb2ba30fc32aa676645ca2a4",
+    "reserved/S_repeat/evaluation_truth/annotations.json": "fa08c1bc481397bba72390b1c34a607581595e54984b0dff3a2eb6da6b16be66",
+    "reserved/S_repeat/evaluation_truth/cameras.json": "4346a01193fdbb1a8a52abbd0341feb3c4306ed5f6674182de7e4ec53f6460bd",
+    "reserved/S_repeat/evaluation_truth/native_graph.json": "acc530ae8c043c875f5bc1f6ef6c365b83c9107ddfbbfe0b083f6bd4750f8c9e",
+    "reserved/S_repeat/evaluation_truth/case_state.json": "a02545148c6e74f259bd2113c4db3535571dcc1bcdc5c06a1318240f2efbfffa",
+    "reserved/S_repeat/images/top.png": "162939ab507c150d12d9096b407a4d89bdb600f15d9430e7071392dfd075ade5",
+    "reserved/S_repeat/images/oblique_side.png": "9d0586b411b85bb95a4b3a8458fb744f4df6b5a96862e4d011c89f219c390b4b",
+    "reserved/S_repeat/evaluation_truth/top_depth.npy": "fb72b4b9ad15357477597b512048552937df9dfcb72d8912c8bab07cdb420147",
+    "reserved/S_repeat/evaluation_truth/oblique_side_depth.npy": "d0beb5da4f1073e9bb95f7fac64cfc0988b654045b3cc0b1e623c3085b00e462",
+    "reserved/P_mix/manifest.json": "ba2fbfdc4e89b09e948659d9dc4914af82c9cf2b9188fc598be03dc03967e801",
+    "reserved/P_mix/run_complete.json": "b37467e6191a1bebbdf2f724723fa78e3f87f316e521888747c6f63d185668ba",
+    "reserved/P_mix/supervisor.json": "2bb68d01b932804843e5eea7081f000432e71068acc4480a6ee662340ff9717d",
+    "reserved/P_mix/evaluation_truth/active_bricks.json": "6c4713ba181bb2b906ed237845b268b3fe42e419afded542a037f491e19baa0c",
+    "reserved/P_mix/evaluation_truth/active_root_states.npy": "cd3931a6ecbac75df5a4c98cf9db3e3f56bf7b59627c8c61e661766a60959f11",
+    "reserved/P_mix/evaluation_truth/annotations.json": "f533e28d4c5383239ca7d5556299b289512f6c309cf838d1755c9dba3b2d319b",
+    "reserved/P_mix/evaluation_truth/cameras.json": "c53ca683a8de04ff6b723e1e5350538f0f97fc6059e9ed8f9ee61b4077424310",
+    "reserved/P_mix/evaluation_truth/native_graph.json": "d09285351ca62900173d73dfcbfb8625675bf67e1049c2062ff5491a24d60155",
+    "reserved/P_mix/evaluation_truth/case_state.json": "7f23261373c14144a3aeaf7e4ff163c72372b3c977d89a667143b5e4628060bb",
+    "reserved/P_mix/images/top.png": "d61bace9b8a578a035c239d8e47c2a717707b38aea55372d260ae5406986f9fe",
+    "reserved/P_mix/images/oblique_side.png": "48d454e4fc9b2da5ad896149592910e6710692c217bb6b58ba6a5c11e51e1ea5",
+    "reserved/P_mix/evaluation_truth/top_depth.npy": "6a1f12794b2c36fd4f8cb0abecff30519b9a15c61839a2805335856307726444",
+    "reserved/P_mix/evaluation_truth/oblique_side_depth.npy": "b9ded730f92d84cf2b5208facdefeea6b8f787b4e9549d38bba702afe4ad2382"
+  },
+  "reserved_integrity_only": true
+}

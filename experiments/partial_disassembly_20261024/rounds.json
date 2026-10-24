@@ -4,5 +4,14 @@
   "baseline_complete": false,
   "reserved_released": false,
   "final_method_frozen": false,
-  "rounds": []
+  "rounds": [],
+  "initial_planning_freeze_commit": "54f01b6",
+  "render_source_commit": "471daea",
+  "render_job_id": 1686,
+  "render_snapshot": "runs/20261024T150707.478755Z-partial-disassembly-render",
+  "dataset_sha256": "b896fb47da433888b7e7bb8c8cba2d79629c179d2a7fca39ea61c8d276c4dfb7",
+  "retained_versions": [
+    "B0"
+  ],
+  "current_phase": "unchanged_baseline_preparation"
 }
