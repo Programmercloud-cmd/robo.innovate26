@@ -341,6 +341,45 @@
         "validated": false
       }
     ],
-    "label_note": "Existing good palette keys are provisional recipe IDs; Challenge1 owns actual quality/shade classification. No routing/controller is implemented."
+    "label_note": "Existing good palette keys are provisional recipe IDs; Challenge1 owns actual quality/shade classification. No routing/controller is implemented.",
+    "additional_wrist_camera": {
+      "id": "wrist_c920",
+      "type": "Logitech C920",
+      "status": "Approximate user-described visual mounting; all dimensions, hinge limit, optical center and viewing direction unmeasured. No optical sensor activated.",
+      "parent_prim": "/World/envs/env_0/Robot/fr3_hand",
+      "stand_center_hand_x_m": -0.035,
+      "stand_size_depth_width_length_m": [
+        0.005,
+        0.045,
+        0.06
+      ],
+      "hinge_position_hand_m": [
+        -0.047,
+        0,
+        0.06
+      ],
+      "body_size_depth_width_height_m": [
+        0.024,
+        0.094,
+        0.029
+      ],
+      "body_center_from_hinge_local_m": [
+        -0.022,
+        0,
+        0.008
+      ],
+      "illustrative_forward_hinge_deg": 60.0,
+      "tape_centers_hand_z_m": [
+        0.018,
+        0.039
+      ],
+      "mount_constraints": [
+        "opposite D435i side",
+        "centered laterally on wrist axis when viewed from C920 side",
+        "stand fully folded and taped against hand",
+        "stand upper end at nominal circular wrist-face plane",
+        "body tilted toward fingers to illustrative unmeasured hinge stop; visibly noncoplanar"
+      ]
+    }
   }
 }

@@ -66,6 +66,9 @@ def main():
     assert m['post_connection_physics_steps'] == 0
     assert m['final_layout']['target_studs'] == 48 and len(m['final_layout']['target_zones']) == 3
     assert m['final_layout']['wrist_optical_transform_available'] is False
+    if m['final_layout'].get('additional_wrist_visual') is not None:
+        assert m['final_layout']['wrist_camera_config_count'] == 2
+        assert m['final_layout']['additional_wrist_visual']['optical_camera_activated'] is False
     assert m['final_layout']['external_physical_cameras_modeled'] == 0
     assert (a.output/'final_workcell.usda').is_file()
     record = {'capture_validated': True, 'child_returncode': code,
