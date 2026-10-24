@@ -185,3 +185,34 @@
 - Diagnostic wording correction: original 1668 JSON fields containing
   `true_center` mean historical marked locations. They are not validated true
   centers; the raw evidence and frozen references are preserved unchanged.
+
+## v3 illumination-weight result — rejected
+
+- Pre-change evaluated checkpoint `727dbe7`; implementation `e8ab714`.
+  Pueue **1671**, snapshot
+  `runs/20261024T000755.717569Z-known-layout-v3-development/`.
+- Change: only the relative feature contrast weighting described above. The
+  absolute observability guard and every v1 decision/geometry/search setting
+  remained intact. No labels or scoring rules changed.
+- Nominal development: **52/112 correct present (46.4%)**, zero nominal wrong
+  confirmations, six missing-face cells all uncertain. Lighting consistency
+  improved substantially: dark 52, bright 53, compared with v1's 17/47.
+  Blank confirmations remained zero. The proposed mechanism has real evidence.
+- Regression: `img_10`, +4 px x initialization again confirms the spatially
+  misregistered `c1r4`. Its new mean score 0.454 exceeds the retained 0.45
+  threshold. Case precision is 53/54 = 98.15%. This is the same failure that
+  rejected v2, not justification for tuning a threshold for that image.
+- Additional lower-fragment proxy flag: `img_3`, -4 px y initialization,
+  `c4r3` covers 50.77% of the labeled fragment envelope. Its center is outside
+  that fragment and it also matches a positive face, so this borderline proxy
+  is not presented as proof of a true physical layer misselection.
+- Decision: **reject and revert only v3** under the predeclared no-confident-error
+  regression condition. Preserve its useful lighting result and exact evaluated
+  source/configuration. V1 remains selected from development evidence.
+- Stop assessment: confidence and photometric changes repeatedly promote the
+  same wrong spatial hypothesis. The next defensible step requires a verified
+  reference plane/current layer geometry and reliable feature-center reference,
+  rather than per-strip warps or another confidence exception. Planner,
+  independent evaluator and reviewer recommend pausing algorithm changes after
+  auditing the already selected v1 on held-out group D.
+- Evidence: `results/v3_development/`; held-out D has not yet been used.
