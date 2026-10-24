@@ -1,0 +1,40 @@
+{
+  "schema": "rgb-ridge-chain-fixed-evaluation-v1",
+  "status": "agreed_by_orchestrator_before_all18_outputs",
+  "reference_sha256": "1a36cf4531bca88678a989fb01421df1304dcfe3a980318ac4b06a936e936e3f",
+  "missing_reference_sha256": "144050d78c2f8655f30c126d1470d5616bb709ede47f0d9095fbadb97393cd49",
+  "sam_evaluation_sha256": "35e8e50289d56fc6fd6044d52c619e512e64ce83d0289ebf19ef89ea78bbbbcd",
+  "size_evaluation_sha256": "b6b3f5c961051c2bf4bfe970aeb80003bc8077f9b49393ef7c3c6d6bbeac3177",
+  "base_evaluation_sha256": "5df88102f12dd004414b6931a0209518484a64c09e4a6927536d7d8b84e69207",
+  "inputs": "All18originalRGBimages; chain algorithm has no annotations, manual registrations, prior detector outputs or simulator truth. One fixed global config before one queued batch.",
+  "references": {
+    "positive_visual_faces": 166,
+    "historical_ambiguous_excluded": 14,
+    "sparse_lower_fragments": 23,
+    "supplemental_missing_faces": 6,
+    "annotated_images": [
+      "img_1.jpg",
+      "img_3.jpg",
+      "img_7.jpg",
+      "img_10.jpg",
+      "img_13.jpg",
+      "img_16.jpg"
+    ]
+  },
+  "correlation_groups": "A img1-6;B img7-9;C img10-12;D img13-18; correlated views, no independent-stack generalization.",
+  "primary_present": "Present slot boxes alone use byte-identical historical score_boxes: center-in-ROI; maximum-cardinality one-to-one envelopeIoU>=.50 thenIoU; multi-facecover>=.50 andcontainscentersmergeineligible; duplicate/lower/ambiguous/unresolved/outside precedence unchanged. No mask statistics for footprint polygons.",
+  "tri_state_slots": "All present/missing/uncertain slots jointly match positive+supplementalabsence polygons one-to-one envelopeIoU>=.50 by historical assignment; multi-positive-face mergedslots ineligible. Per-reference no output=no_match, never correctmissing. Original ambiguity roles unchanged; sixmissingrefs are separate supplemental visual-faceabsence, not physical hidden occupancy.",
+  "missing_precision": "Only matched labeled positive/absence refs: correctmissing/(correctmissing+wrongmissingonpositive). Report all unmatched missing claims as unverified rather than assigning invented trueabsence. Falsepresent on sixabsence refs separate from originalprimaryambiguity exclusion.",
+  "historical_baselines": {
+    "sam_raw": 124,
+    "dimensions_only": 113,
+    "dimensions_split": 117,
+    "source": "Immutable prior scored JSONs with hashes. Per-image global matched-reference set recovered/lost comparisons only; do not replay or tune previous methods.",
+    "absence": "All three old baselines only declare present detections; no missing calls and zero correctabsence calls. Missing output is never absence success."
+  },
+  "conditional_boundary_phase": "On joint slot/positive geometricmatches only, pair the slot two declared boundary line midpoints to frozenfacepolygon two shortest-edge midpoints by minimumdistance. Report midpointdistance,long-axisoffset andundirectedangle separatelyby declaredobserved/inferred tags. Phaseproxy=slotcenter longitudinaloffset/referenceend-to-endlength. N geometricmatches and166denominator reported; no truecenteraccuracy. Sharedends countperface, not uniquephysicalseams. Tags arealgorithmdeclarations, not observed-seamgroundtruth.",
+  "strip_consistency": "Existing positive IDs cNrM define visualstripgroups only. List predictedchainIDs coveringeach group, uncovered/fragmented groups andchains mixinggroups amongmatchedslots. No truefullchaincount/extentlabels invented.",
+  "all18": "Report declaredchaincounts,slotdecisioncounts,phase-statuscounts,boundary-provenancecounts; do not infer groundtruth for12unannotatedviews.",
+  "execution": "One stablecode/config/input snapshot defaultPueue postprocessing+independentscoring job in existing hostPython; refs/baselines available only to scoring. No new SAM inference, training, dependency changes, simulation or hardware.",
+  "limitations": "Image-plane footprints and ridgeevidence do not establish physicaltoplayer, metricposes, gripperaccessibility, true studcenters or independent generalization."
+}
