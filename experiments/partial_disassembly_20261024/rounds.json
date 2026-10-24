@@ -1,6 +1,6 @@
 {
   "maximum_improvement_rounds": 3,
-  "improvement_rounds_started": 1,
+  "improvement_rounds_started": 2,
   "baseline_complete": true,
   "reserved_released": false,
   "final_method_frozen": false,
@@ -8,7 +8,7 @@
     {
       "id": "R1",
       "parent": "B0",
-      "status": "approved_before_implementation",
+      "status": "retained_after_independent_audit",
       "observed_failure": "Singletonhigherband187/306mm\u00b2skippedby655.36mm\u00b2min;2wrongbandviews,10wronglowerpresentclaims",
       "single_change": {
         "minimum_band_roi_area_fraction": {
@@ -20,7 +20,37 @@
       },
       "target": "Eliminate2supportedwronglowerbands/10wronglowerclaims;topbandmayremainorientation-uncertain",
       "guards": "Retainall144task-correctreferenceoccurrences;nonewconfidentpresenterrors,wrongmissing,lower/controlerrors;initial10missingrefsremainuncertain",
-      "reviewer_approved": true
+      "reviewer_approved": true,
+      "job_id": 1688,
+      "snapshot": "runs/20261024T153014.420274Z-partial-R1-development",
+      "source_commit": "048765d",
+      "result": {
+        "correct_present": 144,
+        "wrong_present": 0,
+        "correct_recovered": 0,
+        "correct_lost": 0,
+        "wrong_lower_present_removed": 10,
+        "supported_wrong_layer_bands": 0,
+        "singleton_direction": "uncertain_at_correct_height",
+        "missing_calls": 0,
+        "missing_reference_count": 10,
+        "invalid_flat_false_claims": 0,
+        "patch_correct_retained": 9,
+        "independent_evaluator": "retain",
+        "references_sha256_unchanged": true
+      },
+      "evaluation_sha256": "1df781e26c10b38e67de13d770d15199b0b8cc564943e56a3e30cf2ae043e2f2"
+    },
+    {
+      "id": "R2",
+      "parent": "R1",
+      "status": "approved_before_implementation",
+      "observed_failure": "Correct singleton height admitted by R1, but ratio2.09/2.20 and sole component fail long-ridge eligibility; Hough mask is empty.",
+      "single_change": "One compact_singleton eligibility fallback: exactly one >=50mm2 component; minAreaRect long28-36mm short12-20mm; area>=256mm2; PCA ratio>=1.6; PCA/rectangle agreement<=10deg. Reuse unchanged Hough25mm/count2/concentration0.8/disagreement10deg. Normal path/end/RGB/present gates unchanged.",
+      "target": "At least one U_tan correct-height supported direction/raw single-brick hypothesis; present may stay uncertain.",
+      "guards": "Retain all144 primary and9patch task-correct IDs; no new confident errors, wrongmissing, lower/control errors;10gap references remain uncertain. No post-result tuning if Hough fails.",
+      "reviewer_approved": true,
+      "tiny_contracts": "PASS: rotated32x16; reject16x16,32x6,64x16,two-components; forcedHoughfailureabstains; source/config/Evidenceunchanged"
     }
   ],
   "initial_planning_freeze_commit": "54f01b6",
@@ -29,9 +59,10 @@
   "render_snapshot": "runs/20261024T150707.478755Z-partial-disassembly-render",
   "dataset_sha256": "b896fb47da433888b7e7bb8c8cba2d79629c179d2a7fca39ea61c8d276c4dfb7",
   "retained_versions": [
-    "B0"
+    "B0",
+    "R1"
   ],
-  "current_phase": "R1_implementation",
+  "current_phase": "R2_implementation",
   "baseline_job_id": 1687,
   "baseline_snapshot": "runs/20261024T152313.472731Z-partial-B0-development",
   "baseline_evaluation_sha256": "4b0077d168771710ee6a4198976b21f47f041a0454441396d296a3fbe6ea3a9b",
