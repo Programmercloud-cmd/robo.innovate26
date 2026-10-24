@@ -129,3 +129,28 @@
   endorsed the test. Expected nominal gain is only about 48/112, still below
   demonstration acceptance. Accept only after the full sensitivity/blank batch
   confirms useful gain without false-confirmation regressions.
+
+## v2 result — rejected
+
+- Pre-change evaluated checkpoint: `8f9a9d1`; implementation `1554d5c`.
+  Pueue **1670**, snapshot
+  `runs/20261024T000004.429624Z-known-layout-v2-development/`.
+- Actual nominal result matched the diagnostic: **48/112 correct present
+  (42.9%)**, zero nominal wrong confirmations, all six missing-face cells still
+  uncertain. Blank-image confirmations remained zero.
+- Correct-present sensitivity counts increased to dark 24, bright 58,
+  rotations 40/41, x initialization 49/39, y initialization 48/39.
+- Regression: the +4 px x-initialization case introduced one new confidently
+  present unmatched candidate (`img_10`, `c1r4`). Case precision became
+  39/40 = 97.5%. Its y extent 208–251 px differs materially from the reference
+  face's 191–237 px; the independent reviewer did not excuse this as harmless
+  annotation rounding. All fixed labels and rules remain unchanged.
+- Decision: **reject and revert v2's production rule change** under the
+  predeclared no-false-confirmation-regression expectation. Do not retroactively
+  weaken that expectation to accept the nominal gain. Retain v1 as the best
+  evaluated baseline. The failed source commit, exact evaluated configuration,
+  predictions and measurements remain available for reproduction.
+- Complexity assessment: removing a gate was simple but its measured protection
+  against a misregistered candidate mattered. No further gate relaxation is
+  justified. The missing-face goal also remains unmet.
+- Evidence: `results/v2_development/`. Held-out D remains reserved.

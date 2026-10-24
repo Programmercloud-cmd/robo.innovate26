@@ -1,0 +1,6 @@
+{
+  "pueue_job_id": 1670,
+  "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T000004.429624Z-known-layout-v2-development",
+  "source_commit": "1554d5c",
+  "decision": "rejected: new confident spatially incorrect/unmatched candidate under fixed +4 px x initialization case; retain v1"
+}
