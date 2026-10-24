@@ -12,7 +12,8 @@ parts including the plate. Whole-brick engaged-stud totals per interface are
 2 for ten outer-ridge bricks and 4 for twenty other bricks. An individual
 one-stud crossing and the total contact of a whole brick are distinct quantities.
 
-The [current report](REPORT.md) will link the corrected images. The prior
+The [current report](REPORT.md) links the completed corrected images (job 1681).
+Capture validated; stalled Isaac cleanup was stopped separately. The prior
 [360-brick report](REPORT_360_SUPERSEDED.md), geometry and `results/` files are
 preserved unchanged as superseded artifacts. New captures use `results_300/`.
 

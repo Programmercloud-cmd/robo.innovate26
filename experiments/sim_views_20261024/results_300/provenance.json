@@ -1,0 +1,36 @@
+{
+  "job_id": 1681,
+  "queue": "default",
+  "source_commit": "53053fba453b4007674e6a419fab83afe5962f1e",
+  "snapshot": "runs/20261024T104724.316246Z-sim-views",
+  "capture_validated": true,
+  "required_bricks": 300,
+  "ridges_per_layer": 6,
+  "bricks_per_ridge": 5,
+  "raw_truth_directory": "runs/20261024T104724.316246Z-sim-views/output/evaluation_truth",
+  "versions": {
+    "python": "3.11",
+    "IsaacSim": "5.1.0.0",
+    "IsaacLab": "2.3.2",
+    "BrickSim": "0.1.0.dev645+gcbd5de3",
+    "Torch": "2.7.0+cu128",
+    "NumPy": "1.26.0",
+    "Pillow": "11.3.0"
+  },
+  "image_sha256": {
+    "images/near_top_x.png": "6c848dfb0dbcfd59c3913eaaef94c9050d61e62b13667bb0a0deef40e77d433c",
+    "images/near_top_y.png": "a7397c605cc09619615a02b2115a19128fe0b1e4d6f1f4d4bb2ebc6447e9a8fa",
+    "images/oblique_front.png": "4a442ff59eea689155061e79211540f713e97b28588f3b6fa6870f0e2a1041ad",
+    "images/oblique_side.png": "2e82b2eeb22ccd93a97e2a39419192458da5d9debb7b5e25d0c244981b3859cb",
+    "images/top.png": "6367dabd18455e1b1ec785dd7402c316d7627b79e01d2f8a6abca8991a55318d",
+    "panel.png": "738640bb2773578eacae0302c83ef0e3283f9fd88862bd24ea9175b640cf4bc3"
+  },
+  "captures_are_static_not_dynamics_validated": true,
+  "shutdown_status": {
+    "completed": false,
+    "capture_validated": true,
+    "queue_result": "Killed",
+    "reason": "All corrected300-brick captures validated; application cleanup stalled and orchestrator stopped only this job to release queue.",
+    "ended_local": "2026-10-24T12:48:36.872933194+02:00"
+  }
+}

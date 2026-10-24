@@ -6,8 +6,8 @@ It is a working image-evidence baseline, not an accepted sorting demonstration.
 The [pretrained-detector comparison](experiments/detection_20261024/REPORT.md)
 is a closed historical experiment with separate execution and artifacts.
 The corrected simulation input has **300 bricks**: ten layers, each with six
-parallel ridges of five bricks, alternating by 90°. Updated
-[simulation views](experiments/sim_views_20261024/REPORT.md) are being generated;
+parallel ridges of five bricks, alternating by 90°. Five corrected
+[simulation views and their panel](experiments/sim_views_20261024/REPORT.md) are available;
 the [earlier 360-brick views](experiments/sim_views_20261024/REPORT_360_SUPERSEDED.md)
 are preserved as superseded geometry. These static renders do not validate
 load-bearing dynamics. The legacy 48-brick scene below is separate.

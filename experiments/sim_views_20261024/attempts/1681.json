@@ -1,0 +1,12 @@
+{
+  "job_id": 1681,
+  "group": "default",
+  "source_commit": "53053fba453b4007674e6a419fab83afe5962f1e",
+  "snapshot": "runs/20261024T104724.316246Z-sim-views",
+  "capture_validated": true,
+  "bricks": 300,
+  "native_connections": 930,
+  "pueue_result": "Killed",
+  "shutdown_returned": false,
+  "outcome": "All5corrected RGB views/panel passed exactsourcecount,center,graph,dualpose,state checks. Stopped stalled cleanup after validated capture; no dynamics claim."
+}
