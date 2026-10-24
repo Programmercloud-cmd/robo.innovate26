@@ -69,3 +69,51 @@ without rescoring. `package_report.py` makes before/after panels from saved
 images. Both require a queued execution. The configuration manifest, tables,
 exact run/job registry and final artifact location are recorded after the
 bounded experiment completes.
+
+## Development results and method selection
+
+Development contains 16 primary views (eight configurations), 410 visible
+current-layer face occurrences and 10 observable bracketed gap occurrences.
+The five sensor controls are reported separately. Counts across views, colors
+and removal states are correlated observations of the same design.
+
+| Version | Confirmed faces | Wrong present claims | Present precision / recall | Correct observable gaps | Raw face locations matched |
+|---|---:|---:|---:|---:|---:|
+| B0 unchanged | 144/410 | 10 lower-layer | 93.5% / 35.1% | 0/10 | 408/410 |
+| R1 band support | 144/410 | 0 | 100% / 35.1% | 0/10 | 408/410 |
+| R2 compact singleton | 144/410 | 0 | 100% / 35.1% | 0/10 | 410/410 |
+| R3 strict interior absence | 144/410 | 0 | 100% / 35.1% | 9/10 | 410/410 |
+
+R1 lowers only the band-support area threshold to 128 mm², admitting the
+isolated upper brick instead of selecting the much larger lower layer. It
+removes ten wrong confirmations through abstention. R2 adds one narrowly
+guarded 2×4 component exception, while retaining the original Hough checks;
+both singleton locations become uncertain hypotheses. R3 can relabel only an
+existing uncertain, internally bracketed slot using actual finite lower-depth
+returns. It preserves every present decision and chain coordinate.
+
+All versions retain the same 144 correctly confirmed primary face IDs and nine
+correct NaN-patch face IDs: zero recovered or lost confirmed faces. R3 has
+266 uncertain physical targets, nine correct missing decisions and one
+uncertain observable gap. Its nine missing calls have no wrong, wrong-height
+or unverified call. No version declares absence from the NaN patch. The four
+all-invalid/flat controls produce no supported claims.
+
+Both views correctly select the next perpendicular layer when the entire upper
+layer is removed. R2/R3 support the correct current-layer direction in all 16
+development views; singleton confidence still fails RGB evidence overhead and
+end/coverage evidence obliquely. The removed endpoint remains extent-unknown.
+No endpoint or original-full-stack absence success is credited.
+
+RGB evidence remains color/view dependent: intact mixed versus tan confirms
+11 versus 15 overhead, but seven versus four obliquely; the adjacent-removal
+mixed versus repeated pattern confirms 11 versus 24 overhead and six versus
+11 obliquely. These are paired comparisons of the same geometry, not a claim
+that any palette is universally easier.
+
+The selected method is a useful conservative surface/chain/gap hypothesis
+generator. Confirmed-face recall did not improve and it is insufficient as a
+complete autonomous partial-disassembly perception solution. Rendered depth
+is ideal, camera calibration is nominal, native graphs are static, and
+conditional metric errors do not establish physical grasp or insertion
+accuracy. Combined-view and temporal results are not measured.

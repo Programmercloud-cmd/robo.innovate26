@@ -3,7 +3,7 @@
   "improvement_rounds_started": 3,
   "baseline_complete": true,
   "reserved_released": false,
-  "final_method_frozen": false,
+  "final_method_frozen": true,
   "rounds": [
     {
       "id": "R1",
@@ -74,13 +74,32 @@
     {
       "id": "R3",
       "parent": "R2",
-      "status": "approved_before_implementation",
+      "status": "retained_after_independent_evaluation_and_review",
       "observed_failure": "Ten observable bracketed interior removals remain uncertain despite zero current-top coverage; lower surfaces can produce2-7RGBstudresponses.",
       "single_change": "Relabel only existing uncertain slots: selected current-window phase, <=0.2topcoverage, >=0.7topcoverage anchors onboth longitudinal sides, >=6/8 finitepositive actualdepthrays atprojectedstudsites >=3mm belowmeasuredsurface; anyfinitecontradictionveto. No endpoints/newslots/present or RGBgate changes.",
       "target": "At least1/10correct observable missing declarations.",
       "guards": "Retain allR2correctpresentIDs(144primary+9patch), zero new confident present/lower/control errors, wrong/unverifiedmissing and NaNpatchmissing calls. No post-result tuning.",
       "reviewer_approved": true,
-      "tiny_contracts": "PASS:6lower+2unknown;5lowerabstains;validtopveto;NaN/OOBunknown;openphase/endpointabstain;two-gapindicesgeometrypresentIDsunchanged"
+      "tiny_contracts": "PASS:6lower+2unknown;5lowerabstains;validtopveto;NaN/OOBunknown;openphase/endpointabstain;two-gapindicesgeometrypresentIDsunchanged",
+      "job_id": 1690,
+      "snapshot": "runs/20261024T155031.394271Z-partial-R3-development",
+      "source_commit": "692a277",
+      "result": {
+        "correct_present": 144,
+        "wrong_present": 0,
+        "correct_recovered": 0,
+        "correct_lost": 0,
+        "supported_correct_bands": 16,
+        "correct_missing": 9,
+        "missing_reference_count": 10,
+        "wrong_missing": 0,
+        "unverified_missing": 0,
+        "patch_missing": 0,
+        "patch_correct_retained": 9,
+        "independent_evaluator": "retain",
+        "references_sha256_unchanged": true
+      },
+      "evaluation_sha256": "617ffc964b332eb49f9024eb436aca22fba837f1904de679ac07a7993db418fa"
     }
   ],
   "initial_planning_freeze_commit": "54f01b6",
@@ -91,11 +110,14 @@
   "retained_versions": [
     "B0",
     "R1",
-    "R2"
+    "R2",
+    "R3"
   ],
-  "current_phase": "R3_implementation",
+  "current_phase": "final_method_frozen_before_reserved",
   "baseline_job_id": 1687,
   "baseline_snapshot": "runs/20261024T152313.472731Z-partial-B0-development",
   "baseline_evaluation_sha256": "4b0077d168771710ee6a4198976b21f47f041a0454441396d296a3fbe6ea3a9b",
-  "references_sha256": "7e8725373c2d086cff689bba79110595949d656eb9cdb6721ec6d702a1e30b13"
+  "references_sha256": "7e8725373c2d086cff689bba79110595949d656eb9cdb6721ec6d702a1e30b13",
+  "final_selected_version": "R3",
+  "final_selection_basis": "Development evidence only; three rounds spent; independent planner/evaluator/reviewer workflow. Reserved feedback cannot change implementation or version selection."
 }
