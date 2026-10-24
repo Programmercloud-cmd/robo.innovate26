@@ -162,3 +162,29 @@ interior-gap decisions. It improves false-layer rejection and absence handling,
 but does not improve confirmed-face recall and does not detect sparse multiple
 remnants. This bounded experiment is complete; no broader perception method,
 simulation expansion, training or robot work follows automatically.
+
+## Final artifacts and runtime
+
+- [Image panels and compact tables](../../runs/20261024T155602.872659Z-partial-final-report/output/index.html)
+- [All metrics and artifact paths](../../runs/20261024T155602.872659Z-partial-final-report/output/tables/summary.json)
+- [Configuration/source manifest](../../runs/20261024T155602.872659Z-partial-final-report/output/configuration_manifest.json)
+- [Completion, dependency versions and Pueue IDs](completion.json)
+- [Exact perception/evaluation snapshots](executions.json)
+
+Report packaging used job **1695**. Its immutable foreground `launch.sh`
+contains the exact aggregation/panel commands. All ten jobs completed
+successfully; default concurrency remained one. Every render, prediction,
+mask, reference and baseline result remains in its original run directory.
+
+The reused runtime is Python 3.11.15, Isaac Sim 5.1.0.0, Isaac Lab repository
+2.3.2 (its extension/distribution version is 0.54.3), BrickSim
+0.1.0.dev645+gcbd5de3, NumPy 1.26.0 and OpenCV 4.10.0. No dependencies were
+installed or shared environments changed. Exact dependency/source identifiers
+are in `completion.json`; rendering used the snapshotted project `.deps`.
+
+Isaac's post-capture cleanup stalled on these initialized scenes. The bounded
+supervisor first validated each capture, then terminated only its owned
+process group after the cleanup deadline. This is recorded separately in each
+capture's `supervisor.json`; accepted images have strict native graph,
+PhysX/USD pose and unchanged-state validation. No load-bearing connection
+dynamics or physical camera calibration was validated.

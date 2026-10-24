@@ -113,7 +113,7 @@
     "R2",
     "R3"
   ],
-  "current_phase": "reporting_only_no_further_implementation",
+  "current_phase": "complete_stopped_after_three_rounds",
   "baseline_job_id": 1687,
   "baseline_snapshot": "runs/20261024T152313.472731Z-partial-B0-development",
   "baseline_evaluation_sha256": "4b0077d168771710ee6a4198976b21f47f041a0454441396d296a3fbe6ea3a9b",
@@ -135,5 +135,7 @@
     "supported_correct_bands": 2,
     "unsupported_bands": 2,
     "notes": "Three separated compact components do not satisfy the singleton fallback or normal elongated-ridge gate; no reserved-driven change. Two S_repeat side gaps remain phase-uncertain."
-  }
+  },
+  "report_job_id": 1695,
+  "report_snapshot": "runs/20261024T155602.872659Z-partial-final-report"
 }
