@@ -1,5 +1,5 @@
 {
-  "status": "confirmed_explicit_geometry",
+  "status": "needs_contact_pattern_clarification",
   "confirmation": "User confirmed all ten layer centers coincide, with successive layers alternating90degrees.",
   "required_bricks": 360,
   "layers": 10,
@@ -77,5 +77,22 @@
     1
   ],
   "camera_matching": "approximate; no measured D435i intrinsics or mounting transform",
-  "native_connections_required": true
+  "native_connections_required": true,
+  "confirmed_facts": {
+    "layers": 10,
+    "bricks_per_layer": [
+      6,
+      6
+    ],
+    "two_stud_gap_between_parallel_rows": true,
+    "alternating_90_degrees": true,
+    "user_previously_confirmed_shared_layer_center": true
+  },
+  "reported_contact_pattern": {
+    "edge": 2,
+    "corner": 1,
+    "counting_unit": "pending: distinct bricks or contacting studs",
+    "per_adjacent_layer_or_combined": "pending"
+  },
+  "clarification_required": "The current regular common-center 2x4/four-stud-pitch candidate gives one distinct brick neighbor in each adjacent layer, including edges and corners. Clarify the stated contact counts and exact two-layer row arrangement before rendering."
 }

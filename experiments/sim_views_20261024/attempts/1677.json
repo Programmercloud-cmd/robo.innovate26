@@ -1,0 +1,16 @@
+{
+  "job_id": 1677,
+  "group": "default",
+  "status": {
+    "Done": {
+      "enqueued_at": "2026-10-24T11:48:26.252657344+02:00",
+      "start": "2026-10-24T11:48:26.491247509+02:00",
+      "end": "2026-10-24T11:50:43.241086079+02:00",
+      "result": "Killed"
+    }
+  },
+  "snapshot": "runs/20261024T094826.076320Z-sim-views",
+  "source_commit": "1e5e70e",
+  "outcome": "Stopped when the user supplied contact constraints inconsistent with the current geometric layout; no completed benchmark claimed.",
+  "pending": "Clarify distinct-brick versus stud contacts and two-layer arrangement before another full360 render."
+}
