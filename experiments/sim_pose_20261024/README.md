@@ -1,5 +1,10 @@
 # Bounded simulation RGB pose experiment
 
+Completed: [results and failure analysis](REPORT.md). Job 1683 succeeded in
+execution, but the frozen method accepted no poses; all candidates stayed
+uncertain. Job 1682's evaluator serialization failure and unchanged retry are
+recorded separately.
+
 Scope: use the five existing corrected 300-brick renders to test image-supported
 individual-brick pose refinement and layer consistency, with one frozen method
 and settings across all views. No new render, learned model, training, robot

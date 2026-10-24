@@ -20,6 +20,11 @@ The [RGB ridge-chain experiment](experiments/ridge_chains_20261024/REPORT.md)
 is also complete, with explicit uncertainty, missing-slot evaluation and
 comparison to the saved SAM outputs. It does not replace the active baseline.
 
+The [RGB pose experiment on five corrected simulation views](experiments/sim_pose_20261024/REPORT.md)
+is complete. Its frozen known-layout feature/pose method accepted no targets;
+rejected fits and prior baselines are retained. It is unsuitable for manipulation
+control and does not replace the current baseline.
+
 Isaac Sim 5.1 / Isaac Lab workcell for the **Franka Research 3**, using native
 [BrickSim](https://github.com/intelligent-control-lab/BrickSim) interlocking-brick
 physics. The robot type follows the team's confirmed hardware. The supplied

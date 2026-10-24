@@ -1,0 +1,15 @@
+{
+  "job_id": 1683,
+  "queue": "default",
+  "source_commit": "64a1df8",
+  "original_method_freeze_commit": "0a616f1",
+  "snapshot": "runs/20261024T123115.523960Z-sim-rgb-pose",
+  "result": "Succeeded, exit0",
+  "perception_complete": true,
+  "evaluation_complete": true,
+  "perception_cases": 15,
+  "perception_predictions_byte_identical_to_1682": true,
+  "method_settings_unchanged": true,
+  "accepted_poses": 0,
+  "outcome": "Execution succeeded; the frozen perception method failed to produce supported top-brick poses. All uncertain fits are retained and scored separately."
+}
