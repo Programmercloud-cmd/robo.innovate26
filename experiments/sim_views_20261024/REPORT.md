@@ -34,6 +34,11 @@ that distinction.
 | State, graph and physics time across all views | Unchanged |
 | Post-connection physics steps | Zero |
 
+Independent review and evaluation accepted the capture. The evaluator checked
+all 360 body/stud bounding corners against each saved camera: every stack corner
+lies inside every image. Five distinct camera poses produced five distinct RGB
+files; the combined panel is a labeled tiling of those views.
+
 These are **static initialized renders**, with native connections present.
 Load-bearing stability, clutch forces, grasping and disassembly are unvalidated.
 Camera settings are nominal virtual pinhole parameters, not measured D435i
