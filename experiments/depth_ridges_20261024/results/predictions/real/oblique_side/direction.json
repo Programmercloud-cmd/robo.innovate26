@@ -1,0 +1,509 @@
+{
+  "view": "oblique_side",
+  "condition": "real",
+  "status": "supported",
+  "frame": "world_xy",
+  "direction_world_deg_mod180": 90.02432566211104,
+  "height_band_world_m": [
+    0.099,
+    0.10200000000000001
+  ],
+  "estimated_surface_height_world_m": 0.09926704119298364,
+  "reasons": [],
+  "support": {
+    "sampled_depth_pixels": 230400,
+    "valid_sampled_depth_pixels": 230348,
+    "horizontal_roi_points": 28455,
+    "top_band_points": 9953,
+    "raw_band_xy_cells": 7348,
+    "closed_band_xy_cells": 10813,
+    "elongated_ridge_xy_cells": 10806
+  },
+  "band_search": [
+    {
+      "band_world_m": [
+        0.099,
+        0.10200000000000001
+      ],
+      "unique_xy_cells": 7348,
+      "support_area_m2": 0.0073479999999999995
+    }
+  ],
+  "components": [
+    {
+      "label": 1,
+      "area_m2": 0.001547,
+      "length_m": 0.15899986682589629,
+      "axis_ratio": 10.348326085631482,
+      "angle_deg_mod180": 90.07439076221972,
+      "center_roi_xy_m": [
+        0.04891725921137705,
+        0.12557983193277325
+      ],
+      "accepted": true
+    },
+    {
+      "label": 2,
+      "area_m2": 0.001451,
+      "length_m": 0.15899781851345096,
+      "axis_ratio": 11.266657424335008,
+      "angle_deg_mod180": 90.01558190060004,
+      "center_roi_xy_m": [
+        0.08011164713990293,
+        0.12669745003445915
+      ],
+      "accepted": true
+    },
+    {
+      "label": 3,
+      "area_m2": 0.0015069999999999999,
+      "length_m": 0.15900657912035687,
+      "axis_ratio": 11.479906232349176,
+      "angle_deg_mod180": 89.95784375393366,
+      "center_roi_xy_m": [
+        0.11195421366954245,
+        0.12793032514930341
+      ],
+      "accepted": true
+    },
+    {
+      "label": 4,
+      "area_m2": 0.00208,
+      "length_m": 0.15900426815167726,
+      "axis_ratio": 11.764108028078054,
+      "angle_deg_mod180": 89.97546227334769,
+      "center_roi_xy_m": [
+        0.1438576923076917,
+        0.12744519230769202
+      ],
+      "accepted": true
+    },
+    {
+      "label": 6,
+      "area_m2": 0.0020109999999999998,
+      "length_m": 0.16000028628109567,
+      "axis_ratio": 12.167587643895725,
+      "angle_deg_mod180": 90.00328353167619,
+      "center_roi_xy_m": [
+        0.1760850323222277,
+        0.12743560417702632
+      ],
+      "accepted": true
+    },
+    {
+      "label": 8,
+      "area_m2": 0.0022099999999999997,
+      "length_m": 0.16000034302333388,
+      "axis_ratio": 11.08710484692218,
+      "angle_deg_mod180": 89.97977885378012,
+      "center_roi_xy_m": [
+        0.20745972850678754,
+        0.12699999999999967
+      ],
+      "accepted": true
+    }
+  ],
+  "pca_consensus": {
+    "angle_deg_mod180": 89.9986154222223,
+    "concentration": 0.9999992248678065,
+    "count": 6
+  },
+  "hough_consensus": {
+    "angle_deg_mod180": 90.05003590199979,
+    "concentration": 0.9997455380303223,
+    "count": 26
+  },
+  "raster": {
+    "resolution_m": 0.001,
+    "roi_world_xy_m": {
+      "x": [
+        0.322,
+        0.578
+      ],
+      "y": [
+        -0.288,
+        -0.032
+      ]
+    },
+    "columns_axis": "+worldX",
+    "rows_axis": "+worldY"
+  },
+  "depth_semantics": "axial optical Z in meters, not Euclidean range",
+  "limitations": [
+    "Highest supported horizontal surface is an image/depth hypothesis, not a semantic brick-layer proof.",
+    "Nominal camera calibration; no physical D435i calibration or dynamics claim.",
+    "Component PCA and Hough are complementary checks sharing one sensor-derived mask."
+  ],
+  "hough_lines": [
+    {
+      "roi_pixel_endpoints": [
+        [
+          118,
+          206
+        ],
+        [
+          118,
+          48
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.158
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          150,
+          206
+        ],
+        [
+          150,
+          49
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.157
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          214,
+          206
+        ],
+        [
+          214,
+          48
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.158
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          74,
+          203
+        ],
+        [
+          74,
+          115
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.088
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          55,
+          206
+        ],
+        [
+          55,
+          49
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.157
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          137,
+          203
+        ],
+        [
+          137,
+          68
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.135
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          86,
+          201
+        ],
+        [
+          86,
+          49
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.152
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          182,
+          207
+        ],
+        [
+          182,
+          48
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.159
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          50,
+          203
+        ],
+        [
+          50,
+          51
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.152
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          106,
+          203
+        ],
+        [
+          106,
+          60
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.14300000000000002
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          81,
+          88
+        ],
+        [
+          82,
+          51
+        ]
+      ],
+      "angle_deg_mod180": 91.54815769897796,
+      "length_m": 0.037013511046643494
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          114,
+          203
+        ],
+        [
+          114,
+          51
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.152
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          170,
+          157
+        ],
+        [
+          170,
+          65
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.092
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          111,
+          173
+        ],
+        [
+          112,
+          110
+        ]
+      ],
+      "angle_deg_mod180": 90.90938044919913,
+      "length_m": 0.06300793600809346
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          81,
+          174
+        ],
+        [
+          82,
+          204
+        ]
+      ],
+      "angle_deg_mod180": 88.09084756700362,
+      "length_m": 0.03001666203960727
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          79,
+          169
+        ],
+        [
+          80,
+          110
+        ]
+      ],
+      "angle_deg_mod180": 90.97102193107916,
+      "length_m": 0.059008473967727716
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          82,
+          89
+        ],
+        [
+          82,
+          142
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.053
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          46,
+          197
+        ],
+        [
+          46,
+          170
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.027
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          41,
+          60
+        ],
+        [
+          43,
+          122
+        ]
+      ],
+      "angle_deg_mod180": 88.15238973400541,
+      "length_m": 0.0620322496770833
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          73,
+          62
+        ],
+        [
+          74,
+          94
+        ]
+      ],
+      "angle_deg_mod180": 88.21008939175394,
+      "length_m": 0.032015621187164243
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          42,
+          147
+        ],
+        [
+          42,
+          179
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.032
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          79,
+          173
+        ],
+        [
+          79,
+          201
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.028
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          45,
+          100
+        ],
+        [
+          47,
+          53
+        ]
+      ],
+      "angle_deg_mod180": 92.43664824681014,
+      "length_m": 0.047042533945356305
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          112,
+          89
+        ],
+        [
+          112,
+          53
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.036000000000000004
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          110,
+          100
+        ],
+        [
+          111,
+          48
+        ]
+      ],
+      "angle_deg_mod180": 91.10170611520637,
+      "length_m": 0.052009614495783375
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          111,
+          203
+        ],
+        [
+          111,
+          174
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.029
+    }
+  ],
+  "pca_hough_disagreement_deg": 0.05142047977749087,
+  "arrow_center_world_m": [
+    0.4729121678878928,
+    -0.16,
+    0.09926704119298364
+  ]
+}

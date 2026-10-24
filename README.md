@@ -25,6 +25,11 @@ is complete. Its frozen known-layout feature/pose method accepted no targets;
 rejected fits and prior baselines are retained. It is unsuitable for manipulation
 control and does not replace the current baseline.
 
+The [depth-only upper-layer ridge direction](experiments/depth_ridges_20261024/REPORT.md)
+works on all five simulated views, with maximum angular error below 0.112° and
+all ten invalid/flat controls uncertain. It provides a layer orientation cue,
+without individual brick poses or physical grasp/placement validation.
+
 Isaac Sim 5.1 / Isaac Lab workcell for the **Franka Research 3**, using native
 [BrickSim](https://github.com/intelligent-control-lab/BrickSim) interlocking-brick
 physics. The robot type follows the team's confirmed hardware. The supplied

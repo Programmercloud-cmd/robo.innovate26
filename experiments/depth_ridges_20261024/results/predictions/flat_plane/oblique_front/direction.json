@@ -1,0 +1,89 @@
+{
+  "view": "oblique_front",
+  "condition": "flat_plane",
+  "status": "uncertain",
+  "frame": "world_xy",
+  "direction_world_deg_mod180": null,
+  "height_band_world_m": [
+    0.028,
+    0.031
+  ],
+  "estimated_surface_height_world_m": 0.029999999509777546,
+  "reasons": [
+    "insufficient_elongated_surface_components",
+    "component_directions_ambiguous",
+    "insufficient_long_mask_edges",
+    "line_directions_ambiguous"
+  ],
+  "support": {
+    "sampled_depth_pixels": 230400,
+    "valid_sampled_depth_pixels": 230400,
+    "horizontal_roi_points": 71086,
+    "top_band_points": 71086,
+    "raw_band_xy_cells": 57787,
+    "closed_band_xy_cells": 65536,
+    "elongated_ridge_xy_cells": 0
+  },
+  "band_search": [
+    {
+      "band_world_m": [
+        0.028,
+        0.031
+      ],
+      "unique_xy_cells": 57787,
+      "support_area_m2": 0.057787
+    }
+  ],
+  "components": [
+    {
+      "label": 1,
+      "area_m2": 0.065536,
+      "length_m": 0.256,
+      "axis_ratio": 1.0000000000000004,
+      "angle_deg_mod180": 0.0,
+      "center_roi_xy_m": [
+        0.12750000000000097,
+        0.12750000000000108
+      ],
+      "accepted": false
+    }
+  ],
+  "pca_consensus": {
+    "angle_deg_mod180": null,
+    "concentration": 0.0,
+    "count": 0
+  },
+  "hough_consensus": {
+    "angle_deg_mod180": null,
+    "concentration": 0.0,
+    "count": 0
+  },
+  "raster": {
+    "resolution_m": 0.001,
+    "roi_world_xy_m": {
+      "x": [
+        0.322,
+        0.578
+      ],
+      "y": [
+        -0.288,
+        -0.032
+      ]
+    },
+    "columns_axis": "+worldX",
+    "rows_axis": "+worldY"
+  },
+  "depth_semantics": "axial optical Z in meters, not Euclidean range",
+  "limitations": [
+    "Highest supported horizontal surface is an image/depth hypothesis, not a semantic brick-layer proof.",
+    "Nominal camera calibration; no physical D435i calibration or dynamics claim.",
+    "Component PCA and Hough are complementary checks sharing one sensor-derived mask."
+  ],
+  "hough_lines": [],
+  "pca_hough_disagreement_deg": null,
+  "arrow_center_world_m": [
+    0.45,
+    -0.1932111447767881,
+    0.029999999509777546
+  ]
+}

@@ -1,0 +1,383 @@
+{
+  "view": "top",
+  "condition": "real",
+  "status": "supported",
+  "frame": "world_xy",
+  "direction_world_deg_mod180": 90.04829191145852,
+  "height_band_world_m": [
+    0.098,
+    0.101
+  ],
+  "estimated_surface_height_world_m": 0.09914999332427976,
+  "reasons": [],
+  "support": {
+    "sampled_depth_pixels": 230400,
+    "valid_sampled_depth_pixels": 230400,
+    "horizontal_roi_points": 28917,
+    "top_band_points": 13397,
+    "raw_band_xy_cells": 9603,
+    "closed_band_xy_cells": 13037,
+    "elongated_ridge_xy_cells": 13030
+  },
+  "band_search": [
+    {
+      "band_world_m": [
+        0.098,
+        0.101
+      ],
+      "unique_xy_cells": 9603,
+      "support_area_m2": 0.009603
+    }
+  ],
+  "components": [
+    {
+      "label": 1,
+      "area_m2": 0.002104,
+      "length_m": 0.15900167810755544,
+      "axis_ratio": 11.713720036625464,
+      "angle_deg_mod180": 90.01070070687571,
+      "center_roi_xy_m": [
+        0.0476055133079852,
+        0.1277243346007601
+      ],
+      "accepted": true
+    },
+    {
+      "label": 2,
+      "area_m2": 0.002113,
+      "length_m": 0.15900230743195376,
+      "axis_ratio": 11.697034816245209,
+      "angle_deg_mod180": 90.01472277610948,
+      "center_roi_xy_m": [
+        0.07963038334122077,
+        0.12768954093705595
+      ],
+      "accepted": true
+    },
+    {
+      "label": 3,
+      "area_m2": 0.002113,
+      "length_m": 0.15900543818520768,
+      "axis_ratio": 11.685780649065132,
+      "angle_deg_mod180": 90.03480616283214,
+      "center_roi_xy_m": [
+        0.11163038334122122,
+        0.1275773781353522
+      ],
+      "accepted": true
+    },
+    {
+      "label": 4,
+      "area_m2": 0.002124,
+      "length_m": 0.15900388224391498,
+      "axis_ratio": 11.686963451251584,
+      "angle_deg_mod180": 90.01714164142749,
+      "center_roi_xy_m": [
+        0.1436374764595097,
+        0.1278465160075326
+      ],
+      "accepted": true
+    },
+    {
+      "label": 5,
+      "area_m2": 0.0022979999999999997,
+      "length_m": 0.15900467958636716,
+      "axis_ratio": 10.7110188682187,
+      "angle_deg_mod180": 90.02992839705308,
+      "center_roi_xy_m": [
+        0.17480330722367302,
+        0.12774804177545676
+      ],
+      "accepted": true
+    },
+    {
+      "label": 7,
+      "area_m2": 0.002278,
+      "length_m": 0.15901156944747363,
+      "axis_ratio": 10.760097525335294,
+      "angle_deg_mod180": 90.07450380238,
+      "center_roi_xy_m": [
+        0.20674407374890258,
+        0.12752151009657575
+      ],
+      "accepted": true
+    }
+  ],
+  "pca_consensus": {
+    "angle_deg_mod180": 90.03085747258754,
+    "concentration": 0.9999997110918515,
+    "count": 6
+  },
+  "hough_consensus": {
+    "angle_deg_mod180": 90.06572635032951,
+    "concentration": 0.9999488655622066,
+    "count": 17
+  },
+  "raster": {
+    "resolution_m": 0.001,
+    "roi_world_xy_m": {
+      "x": [
+        0.322,
+        0.578
+      ],
+      "y": [
+        -0.288,
+        -0.032
+      ]
+    },
+    "columns_axis": "+worldX",
+    "rows_axis": "+worldY"
+  },
+  "depth_semantics": "axial optical Z in meters, not Euclidean range",
+  "limitations": [
+    "Highest supported horizontal surface is an image/depth hypothesis, not a semantic brick-layer proof.",
+    "Nominal camera calibration; no physical D435i calibration or dynamics claim.",
+    "Component PCA and Hough are complementary checks sharing one sensor-derived mask."
+  ],
+  "hough_lines": [
+    {
+      "roi_pixel_endpoints": [
+        [
+          54,
+          207
+        ],
+        [
+          54,
+          49
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.158
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          199,
+          206
+        ],
+        [
+          199,
+          50
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.156
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          137,
+          207
+        ],
+        [
+          137,
+          113
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.094
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          150,
+          207
+        ],
+        [
+          150,
+          49
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.158
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          118,
+          207
+        ],
+        [
+          118,
+          49
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.158
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          167,
+          206
+        ],
+        [
+          167,
+          50
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.156
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          86,
+          207
+        ],
+        [
+          86,
+          49
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.158
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          104,
+          145
+        ],
+        [
+          105,
+          113
+        ]
+      ],
+      "angle_deg_mod180": 91.78991060824606,
+      "length_m": 0.032015621187164243
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          214,
+          202
+        ],
+        [
+          214,
+          53
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.149
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          73,
+          102
+        ],
+        [
+          73,
+          48
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.054
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          182,
+          204
+        ],
+        [
+          182,
+          53
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.151
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          105,
+          170
+        ],
+        [
+          105,
+          204
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.034
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          41,
+          204
+        ],
+        [
+          41,
+          113
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.091
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          40,
+          112
+        ],
+        [
+          41,
+          48
+        ]
+      ],
+      "angle_deg_mod180": 90.89517371021107,
+      "length_m": 0.06400781202322103
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          73,
+          134
+        ],
+        [
+          73,
+          190
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.056
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          137,
+          102
+        ],
+        [
+          137,
+          57
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.045
+    },
+    {
+      "roi_pixel_endpoints": [
+        [
+          105,
+          77
+        ],
+        [
+          105,
+          48
+        ]
+      ],
+      "angle_deg_mod180": 90.0,
+      "length_m": 0.029
+    }
+  ],
+  "pca_hough_disagreement_deg": 0.034868877741971005,
+  "arrow_center_world_m": [
+    0.4601801076346116,
+    -0.15921691479733757,
+    0.09914999332427976
+  ]
+}

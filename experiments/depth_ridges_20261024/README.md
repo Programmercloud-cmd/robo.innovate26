@@ -1,5 +1,9 @@
 # Uppermost ridge direction from depth
 
+Completed: [results and direction overlays](REPORT.md). Job 1684 succeeded:
+five supported original simulated-depth views, maximum angular error below
+0.112°, and all ten invalid/flat controls uncertain. This is orientation only.
+
 Bounded task: infer the undirected direction of the highest visible ridge layer
 from the five existing depth images of the corrected 300-brick scene. No brick
 pose fitting, training, rendering, ROS integration or hardware control.
