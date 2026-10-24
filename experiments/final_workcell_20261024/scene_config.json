@@ -1,0 +1,299 @@
+{
+  "robot": "fr3",
+  "source_xy": [
+    0.0,
+    0.0
+  ],
+  "source_cells": 6,
+  "source_layers": 10,
+  "output_xy": [
+    0.42,
+    -0.06
+  ],
+  "output_cells": 3,
+  "baseplate_studs": 32,
+  "scrap_xy": [
+    0.3,
+    0.0
+  ],
+  "scrap_size": [
+    0.12,
+    0.12
+  ],
+  "recipe": "mixed",
+  "seed": 26,
+  "colors": {
+    "dark_red": [
+      114,
+      14,
+      15
+    ],
+    "brown": [
+      88,
+      42,
+      18
+    ],
+    "tan": [
+      190,
+      140,
+      80
+    ],
+    "reject_4211201": [
+      220,
+      25,
+      15
+    ],
+    "reject_6135191": [
+      155,
+      95,
+      30
+    ]
+  },
+  "reject_colors": [
+    "reject_4211201",
+    "reject_6135191"
+  ],
+  "physics": {
+    "dt": 0.008333333333333333,
+    "decimation": 4,
+    "clutch_preload_n": 3.5,
+    "clutch_friction": 0.2,
+    "assembly_force_n": 1.0
+  },
+  "episode_seconds": 180.0,
+  "tool": {
+    "kind": "parallel",
+    "tcp_offset_m": [
+      0.0,
+      0.0,
+      0.1034
+    ],
+    "cad_path": null
+  },
+  "final_layout": {
+    "status": "approximate visual twin, not calibrated robot workcell",
+    "frame": {
+      "origin": "white plate center on tabletop",
+      "axes": [
+        "+X toward gray plate",
+        "+Y away robot toward bowl",
+        "+Z up"
+      ]
+    },
+    "measurement_source": "Corrected photo audit1697: white uncovered span .25x.218m after two taped rows at each Y edge; rounded approximate poses",
+    "scale_ambiguity": "User outer sizes .25/.38m differ from native32/48 at8mm by6/4mm; native geometry is not stretched. Corrected1697 ruler18.68 vs20cm (-6.61%); inferred gray outerX40.75-40.85 vs38cm (+7.2-7.5%), Y38.42-38.99 vs38cm (+1.1-2.6%). Approximate planar reconstruction with systematic lens/anchor/parallax uncertainty, not calibrated metrology.",
+    "table": {
+      "size_m": [
+        1.2,
+        1.05,
+        0.05
+      ],
+      "center_table_m": [
+        0.15,
+        -0.055,
+        -0.025
+      ],
+      "status": "provisional local tabletop extent"
+    },
+    "robot": {
+      "base_table_m": [
+        -0.09,
+        -0.4,
+        0.0
+      ],
+      "yaw_table_deg": 90.0,
+      "status": "estimated base center; yaw assumed, not robot calibration; joint pose remains nominal"
+    },
+    "source": {
+      "studs": 32,
+      "center_table_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "status": "User-reported outer size; native32/48 geometry at8mm pitch left unstretched; tape/placement clearances unvalidated",
+      "measured_outer_size_m": [
+        0.25,
+        0.25
+      ],
+      "measurement_provenance": "User reported25x25cm white /38x38cm gray; not a calibrated metrology result",
+      "native_nominal_size_m": [
+        0.256,
+        0.256
+      ],
+      "native_minus_reported_size_m": [
+        0.006,
+        0.006
+      ],
+      "black_tape_covered_rows_each_y_edge": 2,
+      "black_tape_width_m": 0.035,
+      "black_tape_inner_stud_bounds_xyxy": [
+        0,
+        2,
+        32,
+        30
+      ]
+    },
+    "target": {
+      "studs": 48,
+      "center_table_m": [
+        0.42,
+        -0.06,
+        0.0
+      ],
+      "status": "User-reported outer size; native32/48 geometry at8mm pitch left unstretched; tape/placement clearances unvalidated",
+      "tape_width_m": 0.015,
+      "zone_cut_studs": [
+        24,
+        24
+      ],
+      "zones": [
+        {
+          "id": "main_sorted",
+          "bounds_studs_xyxy": [
+            0,
+            24,
+            48,
+            48
+          ]
+        },
+        {
+          "id": "buffer_a",
+          "bounds_studs_xyxy": [
+            0,
+            0,
+            24,
+            24
+          ]
+        },
+        {
+          "id": "buffer_b",
+          "bounds_studs_xyxy": [
+            24,
+            0,
+            48,
+            24
+          ]
+        }
+      ],
+      "measured_outer_size_m": [
+        0.38,
+        0.38
+      ],
+      "measurement_provenance": "User reported25x25cm white /38x38cm gray; not a calibrated metrology result",
+      "native_nominal_size_m": [
+        0.384,
+        0.384
+      ],
+      "native_minus_reported_size_m": [
+        0.004,
+        0.004
+      ],
+      "black_tape_covered_rows_each_y_edge": 2,
+      "black_tape_width_m": 0.035,
+      "black_tape_inner_stud_bounds_xyxy": [
+        0,
+        2,
+        48,
+        46
+      ],
+      "zone_fit_note": "Black tape covers first/last twoY studrows; yellow divider width is a separate estimate. Repeating22stud lattice fit in half-zone is unvalidated and may not fit once tape is excluded; target remains empty."
+    },
+    "reject_bowl": {
+      "center_table_m": [
+        0.01,
+        0.27,
+        0.0
+      ],
+      "outer_radius_m": 0.08,
+      "bottom_radius_m": 0.055,
+      "height_m": 0.06,
+      "wall_m": 0.003,
+      "segments": 32,
+      "status": "approximate open bowl; rim parallax and size unresolved; collision/drop behavior unvalidated"
+    },
+    "marker_board": {
+      "center_table_m": [
+        0.4,
+        -0.42,
+        0.0002
+      ],
+      "size_m": [
+        0.297,
+        0.21
+      ],
+      "status": "Paper placeholder at approximate photo-audit position; A4 size assumed, PDF/square size/pattern unknown; not a calibration target"
+    },
+    "wrist_camera": {
+      "id": "wrist_d435i",
+      "type": "RealSense D435i",
+      "parent_prim": "/World/envs/env_0/Robot/fr3_hand",
+      "intended_view": "vertical downward as physically reported",
+      "T_hand_optical": null,
+      "intrinsics": null,
+      "housing_measurements_m": {
+        "toward_fingers": 0.063,
+        "additional_on_top": 0.02
+      },
+      "status": "calibration_required; housing measurements do not define optical axes/center; no optical prim activated"
+    },
+    "physical_external_cameras": [],
+    "recipes_declarative_only": [
+      {
+        "id": "one_selected",
+        "selected_good_label_ids": [
+          "dark_red"
+        ],
+        "main_selected_labels": [
+          "dark_red"
+        ],
+        "buffer_a": [
+          "brown"
+        ],
+        "buffer_b": [
+          "tan"
+        ],
+        "faulty_destination": "reject_bowl",
+        "arrangement": "repeat input lattice in the main zone",
+        "validated": false
+      },
+      {
+        "id": "two_selected",
+        "selected_good_label_ids": [
+          "dark_red",
+          "brown"
+        ],
+        "main_selected_labels": [
+          "dark_red",
+          "brown"
+        ],
+        "buffer_a": [
+          "tan"
+        ],
+        "buffer_b": [],
+        "faulty_destination": "reject_bowl",
+        "arrangement": "repeat input lattice in the main zone",
+        "validated": false
+      },
+      {
+        "id": "three_selected",
+        "selected_good_label_ids": [
+          "dark_red",
+          "brown",
+          "tan"
+        ],
+        "main_selected_labels": [
+          "dark_red",
+          "brown",
+          "tan"
+        ],
+        "buffer_a": [],
+        "buffer_b": [],
+        "faulty_destination": "reject_bowl",
+        "arrangement": "repeat input lattice in the main zone",
+        "validated": false
+      }
+    ],
+    "label_note": "Existing good palette keys are provisional recipe IDs; Challenge1 owns actual quality/shade classification. No routing/controller is implemented."
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "image_size": [
+    1280,
+    960
+  ],
+  "focal_length_mm": 24.0,
+  "horizontal_aperture_mm": 33.25,
+  "clipping_range_m": [
+    0.01,
+    10.0
+  ],
+  "calibration_status": "Diagnostic virtual inspection cameras only, not physical wrist equivalence",
+  "settle_steps": 0,
+  "render_warmup_frames": 12,
+  "lighting": {
+    "dome_intensity": 300.0,
+    "key_intensity": 700.0,
+    "key_radius_m": 0.04,
+    "key_offset_m": [
+      0.35,
+      0.15,
+      0.45
+    ]
+  },
+  "panel": {
+    "columns": 3,
+    "thumbnail_size": [
+      640,
+      480
+    ]
+  },
+  "views": [
+    {
+      "id": "diagnostic_table_top",
+      "eye_offset_m": [
+        0.15,
+        -0.055,
+        1.4
+      ],
+      "target_offset_m": [
+        0.15,
+        -0.055,
+        -0.1
+      ],
+      "up_world": [
+        0,
+        -1,
+        0
+      ]
+    },
+    {
+      "id": "diagnostic_oblique",
+      "eye_offset_m": [
+        -0.85,
+        -1.15,
+        1.05
+      ],
+      "target_offset_m": [
+        0.15,
+        -0.02,
+        -0.06
+      ],
+      "up_world": [
+        0,
+        0,
+        1
+      ]
+    }
+  ],
+  "capture_mode": "static_initialized_not_physics_settled",
+  "dynamics_validation": "None; full native graph is present but no load-bearing stability is claimed."
+}
