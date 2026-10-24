@@ -10,7 +10,11 @@ The ten original images are archived unchanged under
 records their SHA256 hashes. All photos were inspected. Photo 9 provides the
 clearest whole-layout reference; photos 8 and 3 corroborate the layout and stud
 lattice, and the other views show the stack, ruler, bowl and robot mounting.
-The supplied JPEGs contain no focal-length or camera-model metadata.
+The user confirms an **iPhone 12**, with two overhead images at **0.5×** and
+the remainder at **1×**; the two image identities await confirmation.
+The supplied JPEGs contain no embedded focal-length or camera-model metadata;
+some have been resized. Device/zoom provenance is recorded separately from
+calibrated photo intrinsics and from the wrist D435i.
 
 ## Coordinate frame and evidence
 

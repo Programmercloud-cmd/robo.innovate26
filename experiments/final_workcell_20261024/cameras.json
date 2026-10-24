@@ -51,14 +51,14 @@
     {
       "id": "diagnostic_oblique",
       "eye_offset_m": [
-        -0.85,
-        -1.15,
-        1.05
+        -1.1,
+        1.7,
+        1.6
       ],
       "target_offset_m": [
         0.15,
-        -0.02,
-        -0.06
+        -0.05,
+        0.3
       ],
       "up_world": [
         0,
@@ -68,5 +68,6 @@
     }
   ],
   "capture_mode": "static_initialized_not_physics_settled",
-  "dynamics_validation": "None; full native graph is present but no load-bearing stability is claimed."
+  "dynamics_validation": "None; full native graph is present but no load-bearing stability is claimed.",
+  "framing_note": "Diagnostic oblique moved to bowl-side corner with raised look-at to avoid robot foreground occlusion; not a physical camera estimate."
 }

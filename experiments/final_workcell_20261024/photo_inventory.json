@@ -71,5 +71,12 @@
       "sha256": "c2931578eb2d691569c48ba28592a9ce639dce1da3365bc70f5cdb6670e1dcb9",
       "bytes": 1612089
     }
-  ]
+  ],
+  "capture_device_user_report": {
+    "model": "Apple iPhone 12",
+    "zoom": "Two overhead images at0.5x, remaining images at1x; identities awaiting confirmation",
+    "source": "User correction after initial device report",
+    "intrinsics_calibrated": false,
+    "note": "Embedded focal/device EXIF absent; mixed resolutions; per-image zoom unconfirmed. Photo-camera provenance is not wrist D435i calibration."
+  }
 }
