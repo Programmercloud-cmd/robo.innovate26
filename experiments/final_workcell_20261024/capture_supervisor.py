@@ -17,13 +17,14 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--python', required=True)
+    p.add_argument('--cameras', type=Path)
     a = p.parse_args()
     if os.environ.get('ROBO_PUEUE_JOB') != '1':
         raise RuntimeError('Rendering requires default Pueue')
     a.output.mkdir(parents=True, exist_ok=True)
     directory = Path(__file__).resolve().parent
     command = [a.python, str(directory/'render_final.py'), '--geometry', str(directory/'geometry.json'),
-               '--cameras', str(directory/'cameras.json'), '--output', str(a.output),
+               '--cameras', str(a.cameras or directory/'cameras.json'), '--output', str(a.output),
                '--views', 'all', '--headless', '--enable_cameras', '--device', 'cpu']
     with (a.output/'process.log').open('w') as log:
         process = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT, start_new_session=True)

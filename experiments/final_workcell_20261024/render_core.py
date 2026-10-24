@@ -515,9 +515,18 @@ def render(app, args, spec, bricks, config, views):
     frozen_time = float(sim.current_time)
     np.save(output/"evaluation_truth/frozen_physics_state.npy", frozen.cpu().numpy())
     truth_images, camera_records = [], []
+    visibility_restore = []
     for view in views:
         verify_placement(f"before_view_{view['id']}")
-        pose = camera_pose(center.tolist(), view)
+        if view.get("fixed_base_only", False):
+            for prim in stage.GetPrimAtPath("/World/envs/env_0/Robot").GetChildren():
+                imageable = UsdGeom.Imageable(prim)
+                if imageable and prim.GetName() != "fr3_link0":
+                    attr = imageable.GetVisibilityAttr()
+                    visibility_restore.append((attr, attr.HasAuthoredValueOpinion(), attr.Get()))
+                    imageable.MakeInvisible()
+        view_center = cfg["final_layout"]["robot"]["base_table_m"] if view.get("center_reference") == "robot_base" else center.tolist()
+        pose = camera_pose(view_center, view)
         camera.set_world_poses(positions=torch.tensor([pose["eye_world_m"]], dtype=torch.float32),
             orientations=torch.tensor([pose["quaternion_wxyz_opengl"]], dtype=torch.float32), convention="opengl")
         camera.reset()
@@ -529,6 +538,11 @@ def render(app, args, spec, bricks, config, views):
         verify_placement(f"after_render_{view['id']}")
         rgb = camera.data.output["rgb"][0, :, :, :3].cpu().numpy()
         depth = camera.data.output["distance_to_image_plane"][0, :, :, 0].cpu().numpy()
+        for attr, authored, value in visibility_restore:
+            attr.Set(value) if authored else attr.Clear()
+            if attr.HasAuthoredValueOpinion() != authored or attr.Get() != value:
+                raise RuntimeError("Robot visibility was not restored after fixed-base diagnostic")
+        visibility_restore.clear()
         if rgb.shape != (height, width, 3) or rgb.dtype != np.uint8:
             raise RuntimeError("Unexpected RGB shape/type; refusing silent conversion")
         if rgb.max() == rgb.min():
@@ -581,6 +595,12 @@ def render(app, args, spec, bricks, config, views):
             "resolved_render_settings": resolved_settings, "rgb_standard_deviation": float(rgb.std()),
             "camera_to_world_opengl": [[float(camera_to_world[i][j]) for j in range(4)] for i in range(4)],
             "physics_time_s": frozen_time, "camera_matching": "approximate; no measured physical intrinsics/extrinsics"}
+        if view.get("fixed_base_only", False):
+            base_transform = UsdGeom.Xformable(stage.GetPrimAtPath("/World/envs/env_0/Robot/fr3_link0")).ComputeLocalToWorldTransform(0)
+            base_axes = [base_transform.Transform(Gf.Vec3d(*point)) for point in ((0, 0, 0), (.1, 0, 0), (0, .1, 0))]
+            camera_record["fixed_base_axes"] = {"labels": ["origin", "+assetX", "+assetY"],
+                "world_points_m": [list(p) for p in base_axes], "image_points_uv_depth": project(base_axes),
+                "basis_length_m": .1, "visibility_restored": True}
         camera_records.append(camera_record)
         truth_images.append({"file": f"{view['id']}.png", "width": width, "height": height,
             "instances": instances, "intrinsics": intrinsics.tolist(), "physics_time_s": frozen_time,
@@ -619,6 +639,8 @@ def render(app, args, spec, bricks, config, views):
         "root_states_array": "active_root_states.npy", "records": active_records}, indent=2))
     if args.case_metadata is not None:
         (truth/"case_state.json").write_text(json.dumps(args.case_metadata, indent=2))
+    if visibility_restore:
+        raise RuntimeError("Temporary diagnostic visibility remained before USD export")
     stage.GetRootLayer().Export(str(output/"final_workcell.usda"))
     make_panel(output, views, config)
     manifest = {"geometry": spec, "selected_views": [v["id"] for v in views], "camera_config": config,

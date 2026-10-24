@@ -1,5 +1,6 @@
 """Freeze the editable workcell and queue a fresh preview without overwrites."""
 from datetime import datetime, timezone
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -13,6 +14,10 @@ PYTHON = '/home/faps/miniforge3/envs/unitree_sim_env/bin/python'
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--cameras', type=Path, default=EXP/'cameras.json')
+    args = parser.parse_args()
+    camera_relative = args.cameras.resolve().relative_to(EXP)
     if subprocess.check_output(['git', 'status', '--porcelain', '--', str(EXP.relative_to(ROOT))], cwd=ROOT):
         raise SystemExit('Commit scoped code/configuration before freezing a queued preview')
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S.%fZ')
@@ -30,7 +35,8 @@ def main():
         shutil.copy2(ROOT/f'resources/setup_images/final_workcell_20261024/photo_{number:02d}.jpg',
                      evidence/f'photo_{number:02d}.jpg')
     command = [PYTHON, str(snapshot/'experiments'/EXP.name/'capture_supervisor.py'),
-               '--python', PYTHON, '--output', str(snapshot/'output')]
+               '--python', PYTHON, '--output', str(snapshot/'output'),
+               '--cameras', str(snapshot/'experiments'/EXP.name/camera_relative)]
     board = json.loads((snapshot/'experiments'/EXP.name/'scene_config.json').read_text())['final_layout']['marker_board']
     center = list(board['center_table_m'])
     center[2] += .00025
@@ -51,6 +57,7 @@ def main():
     (snapshot/'launch.sh').write_text('\n'.join(lines))
     manifest = {'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
                 'scope': 'static approximate final workcell; no control', 'runtime_python': PYTHON,
+                'camera_configuration': str(camera_relative),
                 'sha256': {str(p.relative_to(snapshot)): hashlib.sha256(p.read_bytes()).hexdigest()
                            for p in sorted(snapshot.rglob('*')) if p.is_file()}}
     (snapshot/'manifest.json').write_text(json.dumps(manifest, indent=2)+'\n')
