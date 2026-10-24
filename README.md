@@ -13,6 +13,10 @@ The separate [fixed-prompt SAM 3 experiment](experiments/sam3_20261024/REPORT.md
 is complete. It records raw masks and measured failure modes without changing
 the active known-layout baseline.
 
+The [RGB ridge-chain experiment](experiments/ridge_chains_20261024/REPORT.md)
+is also complete, with explicit uncertainty, missing-slot evaluation and
+comparison to the saved SAM outputs. It does not replace the active baseline.
+
 Isaac Sim 5.1 / Isaac Lab workcell for the **Franka Research 3**, using native
 [BrickSim](https://github.com/intelligent-control-lab/BrickSim) interlocking-brick
 physics. The robot type follows the team's confirmed hardware. The supplied

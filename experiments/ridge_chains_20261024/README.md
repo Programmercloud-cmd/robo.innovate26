@@ -1,5 +1,8 @@
 # RGB ridge chains with interior gaps
 
+**Completed:** [measured comparison, limitations and artifacts](REPORT.md).
+Perception/scoring job 1675; saved-overlay-only job 1676. No follow-on trial.
+
 Bounded experiment fitting fixed 2×4 image-space footprints along independently
 detected ridges. The [agreed plan](PLAN.md) and global `config.json` are frozen
 before one batch. The selected edge-proposal variant does not require a SAM mask
