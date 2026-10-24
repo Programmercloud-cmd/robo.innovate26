@@ -1,6 +1,6 @@
 {
   "maximum_improvement_rounds": 3,
-  "improvement_rounds_started": 2,
+  "improvement_rounds_started": 3,
   "baseline_complete": true,
   "reserved_released": false,
   "final_method_frozen": false,
@@ -44,13 +44,43 @@
     {
       "id": "R2",
       "parent": "R1",
-      "status": "approved_before_implementation",
+      "status": "retained_after_independent_evaluation_and_review",
       "observed_failure": "Correct singleton height admitted by R1, but ratio2.09/2.20 and sole component fail long-ridge eligibility; Hough mask is empty.",
       "single_change": "One compact_singleton eligibility fallback: exactly one >=50mm2 component; minAreaRect long28-36mm short12-20mm; area>=256mm2; PCA ratio>=1.6; PCA/rectangle agreement<=10deg. Reuse unchanged Hough25mm/count2/concentration0.8/disagreement10deg. Normal path/end/RGB/present gates unchanged.",
       "target": "At least one U_tan correct-height supported direction/raw single-brick hypothesis; present may stay uncertain.",
       "guards": "Retain all144 primary and9patch task-correct IDs; no new confident errors, wrongmissing, lower/control errors;10gap references remain uncertain. No post-result tuning if Hough fails.",
       "reviewer_approved": true,
-      "tiny_contracts": "PASS: rotated32x16; reject16x16,32x6,64x16,two-components; forcedHoughfailureabstains; source/config/Evidenceunchanged"
+      "tiny_contracts": "PASS: rotated32x16; reject16x16,32x6,64x16,two-components; forcedHoughfailureabstains; source/config/Evidenceunchanged",
+      "job_id": 1689,
+      "snapshot": "runs/20261024T154216.903442Z-partial-R2-development",
+      "source_commit": "ba15b90",
+      "result": {
+        "correct_present": 144,
+        "wrong_present": 0,
+        "correct_recovered": 0,
+        "correct_lost": 0,
+        "singleton_raw_matches_recovered": 2,
+        "supported_correct_bands": 16,
+        "supported_wrong_layer_bands": 0,
+        "singleton_present": 0,
+        "missing_calls": 0,
+        "missing_reference_count": 10,
+        "patch_correct_retained": 9,
+        "independent_evaluator": "retain",
+        "references_sha256_unchanged": true
+      },
+      "evaluation_sha256": "24d8202ccc1c42a235a375e6d0bff298ef0838118cbf86df44d9f61d1f62d6b0"
+    },
+    {
+      "id": "R3",
+      "parent": "R2",
+      "status": "approved_before_implementation",
+      "observed_failure": "Ten observable bracketed interior removals remain uncertain despite zero current-top coverage; lower surfaces can produce2-7RGBstudresponses.",
+      "single_change": "Relabel only existing uncertain slots: selected current-window phase, <=0.2topcoverage, >=0.7topcoverage anchors onboth longitudinal sides, >=6/8 finitepositive actualdepthrays atprojectedstudsites >=3mm belowmeasuredsurface; anyfinitecontradictionveto. No endpoints/newslots/present or RGBgate changes.",
+      "target": "At least1/10correct observable missing declarations.",
+      "guards": "Retain allR2correctpresentIDs(144primary+9patch), zero new confident present/lower/control errors, wrong/unverifiedmissing and NaNpatchmissing calls. No post-result tuning.",
+      "reviewer_approved": true,
+      "tiny_contracts": "PASS:6lower+2unknown;5lowerabstains;validtopveto;NaN/OOBunknown;openphase/endpointabstain;two-gapindicesgeometrypresentIDsunchanged"
     }
   ],
   "initial_planning_freeze_commit": "54f01b6",
@@ -60,9 +90,10 @@
   "dataset_sha256": "b896fb47da433888b7e7bb8c8cba2d79629c179d2a7fca39ea61c8d276c4dfb7",
   "retained_versions": [
     "B0",
-    "R1"
+    "R1",
+    "R2"
   ],
-  "current_phase": "R2_implementation",
+  "current_phase": "R3_implementation",
   "baseline_job_id": 1687,
   "baseline_snapshot": "runs/20261024T152313.472731Z-partial-B0-development",
   "baseline_evaluation_sha256": "4b0077d168771710ee6a4198976b21f47f041a0454441396d296a3fbe6ea3a9b",

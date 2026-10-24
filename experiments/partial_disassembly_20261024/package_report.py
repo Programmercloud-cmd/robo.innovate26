@@ -34,7 +34,7 @@ def main():
                   'dataset': json.loads((exp/'dataset.json').read_text()),
                   'calibration': json.loads((exp/'frozen/calibration.json').read_text()),
                   'versions': {}, 'report_versions': {'opencv': cv2.__version__, 'numpy': np.__version__}}
-    for version in ledger['retained_versions']:
+    for version in dict.fromkeys(['B0']+[r['id'] for r in ledger['rounds']]):
         folder = exp/'versions'/version
         provenance['versions'][version] = {
             'files_sha256': {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
@@ -53,7 +53,11 @@ def main():
             '<p>Green = present, yellow = uncertain, blue = missing in the final method. '
             'Cyan boundary = sensor-supported; magenta = inferred. Raw footprints are not confirmed bricks. '
             'Missing end extent remains unknown.</p>',
-            '<p><a href="configuration_manifest.json">Configuration / source / job manifest</a></p>',
+            '<p><a href="configuration_manifest.json">Configuration / source / job manifest</a> · '
+            '<a href="tables/summary.json">All measurements (JSON)</a> · '
+            '<a href="tables/groups.csv">Grouped results</a> · '
+            '<a href="tables/frames.csv">Per-frame results</a> · '
+            '<a href="tables/recoveries.csv">Recovered / lost IDs</a></p>',
             '<table><tr><th>Split</th><th>Version</th><th>Targets</th><th>TP</th><th>Claims</th><th>P / R</th><th>Uncertain / no match</th><th>Correct gaps / refs</th><th>Wrong lower claims</th></tr>']
     for row in overall:
         p = row['present']

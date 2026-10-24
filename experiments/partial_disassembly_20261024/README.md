@@ -32,3 +32,40 @@ Static initialized native graphs are validated; load-bearing dynamics are not.
 Simulator inventory, removal state, identities, colors and actual poses are
 confined to rendering/evaluation. Perception receives sensor observations,
 nominal calibration and allowed geometric class priors only.
+
+## Reproduction and outputs
+
+Use `/home/faps/miniforge3/envs/unitree_sim_env/bin/python` for queued jobs.
+Submission helpers perform only lightweight freezing/copying and call
+`pueue add` in the default queue. Commit scoped changes before submission.
+Never run their generated `launch.sh` directly outside Pueue.
+
+Recorded submission pattern (before reserved release; the completed ledger
+deliberately prevents starting another development batch):
+
+```bash
+python3 experiments/partial_disassembly_20261024/submit_render.py
+python3 experiments/partial_disassembly_20261024/freeze_dataset.py --render-run <completed-render-snapshot>
+python3 experiments/partial_disassembly_20261024/submit_perception.py --version B0
+python3 experiments/partial_disassembly_20261024/submit_perception.py --version R1 --previous-evaluation <B0-snapshot>/output/evaluation/evaluation.json
+python3 experiments/partial_disassembly_20261024/submit_perception.py --version R2 --previous-evaluation <R1-snapshot>/output/evaluation/evaluation.json
+python3 experiments/partial_disassembly_20261024/submit_perception.py --version R3 --previous-evaluation <R2-snapshot>/output/evaluation/evaluation.json
+```
+
+Reserved evaluation adds `--split reserved`, after final method selection is
+committed; parent reports must come from the reserved split. The submission
+helper enforces the round budget and release guard. Do not rerun development
+or choose parameters after release.
+
+Each immutable `runs/*-partial-*` snapshot contains `manifest.json`, exact
+source/configuration/input hashes, `submission.txt`, and a foreground
+`launch.sh`. Perception outputs retain `detections.json`, overlays and
+world-XY masks for each opaque observation ID. Private observation-to-case
+mapping and truth are confined to `scoring_only`; quantitative results and
+evaluation-only references are in `output/evaluation`.
+
+The reporting helper `evaluation/summarize.py` aggregates saved associations
+without rescoring. `package_report.py` makes before/after panels from saved
+images. Both require a queued execution. The configuration manifest, tables,
+exact run/job registry and final artifact location are recorded after the
+bounded experiment completes.
