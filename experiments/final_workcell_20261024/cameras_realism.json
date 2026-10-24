@@ -15,7 +15,7 @@
   "lighting": {
     "dome_intensity": 120.0,
     "key_type": "rect",
-    "key_intensity": 2000.0,
+    "key_intensity": 20000.0,
     "key_normalize": false,
     "key_width_m": 0.26,
     "key_height_m": 0.18,

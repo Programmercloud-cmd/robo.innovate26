@@ -27,5 +27,21 @@
     "new perception/training",
     "camera or hardware calibration",
     "scene geometry modifications"
+  ],
+  "passes": [
+    {
+      "id": "first",
+      "job_id": 1707,
+      "snapshot": "runs/20261024T222727.585199Z-final-workcell-preview",
+      "key_intensity": 2000,
+      "outcome": "Valid geometry/capture but visual review found darker flat image; not promoted as realism improvement."
+    },
+    {
+      "id": "corrected",
+      "key_intensity": 20000,
+      "single_change": "RectLight intensity only, fixed materials/fill/exposure/cameras",
+      "reason": "Recorded Rect orientation correct; first direct-light contribution too weak",
+      "status": "frozen_before_corrected_render"
+    }
   ]
 }
