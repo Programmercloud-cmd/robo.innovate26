@@ -1,10 +1,28 @@
 {
   "maximum_improvement_rounds": 3,
-  "improvement_rounds_started": 0,
-  "baseline_complete": false,
+  "improvement_rounds_started": 1,
+  "baseline_complete": true,
   "reserved_released": false,
   "final_method_frozen": false,
-  "rounds": [],
+  "rounds": [
+    {
+      "id": "R1",
+      "parent": "B0",
+      "status": "approved_before_implementation",
+      "observed_failure": "Singletonhigherband187/306mm\u00b2skippedby655.36mm\u00b2min;2wrongbandviews,10wronglowerpresentclaims",
+      "single_change": {
+        "minimum_band_roi_area_fraction": {
+          "old": 0.01,
+          "new": 0.001953125,
+          "minimum_area_mm2": 128,
+          "rationale": "Quarterknown32x16mmbrickfootprint"
+        }
+      },
+      "target": "Eliminate2supportedwronglowerbands/10wronglowerclaims;topbandmayremainorientation-uncertain",
+      "guards": "Retainall144task-correctreferenceoccurrences;nonewconfidentpresenterrors,wrongmissing,lower/controlerrors;initial10missingrefsremainuncertain",
+      "reviewer_approved": true
+    }
+  ],
   "initial_planning_freeze_commit": "54f01b6",
   "render_source_commit": "471daea",
   "render_job_id": 1686,
@@ -13,5 +31,9 @@
   "retained_versions": [
     "B0"
   ],
-  "current_phase": "unchanged_baseline_preparation"
+  "current_phase": "R1_implementation",
+  "baseline_job_id": 1687,
+  "baseline_snapshot": "runs/20261024T152313.472731Z-partial-B0-development",
+  "baseline_evaluation_sha256": "4b0077d168771710ee6a4198976b21f47f041a0454441396d296a3fbe6ea3a9b",
+  "references_sha256": "7e8725373c2d086cff689bba79110595949d656eb9cdb6721ec6d702a1e30b13"
 }
