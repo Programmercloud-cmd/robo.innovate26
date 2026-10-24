@@ -60,3 +60,10 @@ before explicitly creating all 1,125 native links. Every other threshold and
 breakage check remains unchanged. Progress and failure diagnostics are saved
 before application shutdown. This is a static preassembly initialization fix;
 it does not establish physical stability.
+
+Attempt 1679 produced diagnostic frames and the complete native graph, but was
+rejected because reset had displaced bricks by up to 16.6 mm / 28.2 degrees.
+Its [attempt record](attempts/1679.json) and run directory are preserved. Capture
+now restores the configured lattice after reset and checks actual PhysX and USD
+poses before/after native graph authoring and throughout capture. Oblique views
+look 4 cm below the top surface to include the full stack height.

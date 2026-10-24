@@ -103,6 +103,12 @@ def cross(a, b):
     return (a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0])
 
 
+def quaternion_error(a, b):
+    # Normalize before acos: float32 quarter-turn quaternions are not unit-exact.
+    a, b = normalize(tuple(float(v) for v in a)), normalize(tuple(float(v) for v in b))
+    return 2*math.acos(min(1., abs(sum(x*y for x, y in zip(a, b)))))
+
+
 def matrix_quaternion(matrix):
     """Proper rotation matrix to normalized WXYZ, without importing Isaac."""
     trace = sum(matrix[i][i] for i in range(3))
@@ -187,6 +193,7 @@ def self_test():
                 assert abs(sum(rotation[k][i]*rotation[k][j] for k in range(3))-(1 if i == j else 0)) < 1e-10
     assert camera_pose((0, 0, 0), {"eye_offset_m": (0, 0, 1), "target_offset_m": (0, 0, 0),
                                 "up_world": (0, 0, 1)})["up_fallback_used"]
+    assert quaternion_error((.70710677, 0, 0, .70710677), (math.sqrt(.5), 0, 0, math.sqrt(.5))) < 1e-7
     print("camera pose tiny contracts passed")
 
 
@@ -230,7 +237,13 @@ def main():
         print("RENDER_FAILURE_BEFORE_APP_CLOSE", text, file=sys.stderr, flush=True)
         raise
     finally:
-        app.close()
+        shutdown = {"completed": False, "capture_validated": (output/"run_complete.json").exists()}
+        (output/"shutdown.json").write_text(json.dumps(shutdown, indent=2))
+        print("APP_CLOSE_BEGIN", json.dumps(shutdown), flush=True)
+        app.close(wait_for_replicator=False)
+        shutdown["completed"] = True
+        (output/"shutdown.json").write_text(json.dumps(shutdown, indent=2))
+        print("APP_CLOSE_RETURNED", flush=True)
 
 
 def render(app, args, spec, bricks, config, views):
@@ -245,6 +258,7 @@ def render(app, args, spec, bricks, config, views):
         get_assembled_connections, get_assembly_thresholds, set_assembly_thresholds,
         get_breakage_thresholds, compute_connection_transform, compute_graph_transform)
     from challenge2.env_cfg import make_env_cfg
+    from bricksim.mdp.brick_part import set_brick_part_xform
 
     output = args.output
     width, height = config["image_size"]
@@ -291,6 +305,48 @@ def render(app, args, spec, bricks, config, views):
     robot = scene["robot"]
     robot.write_joint_state_to_sim(robot.data.default_joint_pos, robot.data.default_joint_vel)
     robot.set_joint_position_target(robot.data.default_joint_pos)
+    # reset() internally steps unconnected bodies. Restore authored lattice in
+    # BOTH PhysX/caches and USD before native graph authoring, without a step.
+    placement_checks = []
+    expected_poses = {brick.name: (*position, *quaternion) for brick, position, quaternion
+                      in zip(bricks, configured_positions, configured_quaternions)}
+    expected_poses["plate_source"] = (*cfg["source_xy"], 0., 1., 0., 0., 0.)
+    if float(scene.env_origins[0].abs().max()) > 1e-8:
+        raise RuntimeError("This static single-workcell renderer expects an identity environment origin")
+    for name, pose in expected_poses.items():
+        asset = scene[name]
+        target = torch.tensor([[*pose, 0., 0., 0., 0., 0., 0.]], dtype=torch.float32, device=asset.device)
+        asset.write_root_state_to_sim(target)
+        set_brick_part_xform(stage.GetPrimAtPath(f"/World/envs/env_0/{name}"), pose[:3], pose[3:])
+
+    def verify_placement(label):
+        positions, angles, usd_positions, usd_angles, speeds = [], [], [], [], []
+        for name, expected in expected_poses.items():
+            asset = scene[name]
+            raw = asset.root_physx_view.get_transforms()[0].cpu().numpy()
+            velocity = asset.root_physx_view.get_velocities()[0].cpu().numpy()
+            transform = UsdGeom.Xformable(stage.GetPrimAtPath(f"/World/envs/env_0/{name}")).ComputeLocalToWorldTransform(0)
+            usd_pos = np.asarray(transform.ExtractTranslation())
+            usd_q = transform.ExtractRotationQuat()
+            usd_quat = (usd_q.GetReal(), *usd_q.GetImaginary())
+            if not np.isfinite(np.r_[raw, velocity, usd_pos, usd_quat]).all():
+                raise RuntimeError(f"Nonfinite actual pose/velocity for {name} at {label}")
+            positions.append(float(np.linalg.norm(raw[:3]-np.asarray(expected[:3]))))
+            angles.append(quaternion_error((raw[6], *raw[3:6]), expected[3:]))
+            usd_positions.append(float(np.linalg.norm(usd_pos-np.asarray(expected[:3]))))
+            usd_angles.append(quaternion_error(usd_quat, expected[3:]))
+            speeds.append(float(np.max(np.abs(velocity))))
+        audit = {"stage": label, "max_physics_position_error_m": max(positions),
+            "max_physics_orientation_error_rad": max(angles), "max_usd_position_error_m": max(usd_positions),
+            "max_usd_orientation_error_rad": max(usd_angles), "max_absolute_velocity": max(speeds),
+            "position_tolerance_m": 2e-6, "orientation_tolerance_rad": 1e-4}
+        placement_checks.append(audit)
+        (output/"placement_checks.json").write_text(json.dumps(placement_checks, indent=2))
+        if max(positions+usd_positions) > 2e-6 or max(angles+usd_angles) > 1e-4 or max(speeds) > 1e-8:
+            raise RuntimeError(f"Actual lattice differs from configured static geometry: {audit}")
+        print("PLACEMENT_VERIFIED", json.dumps(audit), flush=True)
+
+    verify_placement("restored_after_reset_before_native_links")
     source_path = "/World/envs/env_0/plate_source"
     pre_parts, pre_connections = compute_connected_component(source_path)
     assembled_before = get_assembled_connections(clear=False)
@@ -344,6 +400,7 @@ def render(app, args, spec, bricks, config, views):
     parts_initial, connections_initial = compute_connected_component(source_path)
     if len(parts_initial) != 361 or len(connections_initial) != expected_connections:
         raise RuntimeError("Full360 source graph is incomplete before settling")
+    verify_placement("after_native_links_before_capture")
     for _ in range(config["settle_steps"]):
         scene.write_data_to_sim()
         sim.step()
@@ -356,9 +413,9 @@ def render(app, args, spec, bricks, config, views):
 
     roots = torch.stack([scene[brick.name].data.root_state_w[0] for brick in bricks]).cpu().numpy()
     position_drift = np.linalg.norm(roots[:, :3]-np.asarray(configured_positions), axis=1)
-    quat_dot = np.clip(np.abs((roots[:, 3:7]*np.asarray(configured_quaternions)).sum(axis=1)), 0, 1)
+    orientation_drift = [quaternion_error(actual, expected) for actual, expected in zip(roots[:, 3:7], configured_quaternions)]
     settle_audit = {"steps": config["settle_steps"], "max_position_drift_m": float(position_drift.max()),
-        "max_orientation_drift_rad": float((2*np.arccos(quat_dot)).max()),
+        "max_orientation_drift_rad": max(orientation_drift),
         "max_linear_speed_m_s": float(np.linalg.norm(roots[:, 7:10], axis=1).max()),
         "max_angular_speed_rad_s": float(np.linalg.norm(roots[:, 10:13], axis=1).max()),
         "note": "Static initialized state; no post-connection physics step, equilibrium/dynamics/clutch stability unvalidated" if config["settle_steps"] == 0 else "Idle settling audit; finite steps do not establish mechanical equilibrium or calibrated clutch forces"}
@@ -383,6 +440,7 @@ def render(app, args, spec, bricks, config, views):
     np.save(output/"evaluation_truth/frozen_physics_state.npy", frozen.cpu().numpy())
     truth_images, camera_records = [], []
     for view in views:
+        verify_placement(f"before_view_{view['id']}")
         pose = camera_pose(center.tolist(), view)
         camera.set_world_poses(positions=torch.tensor([pose["eye_world_m"]], dtype=torch.float32),
             orientations=torch.tensor([pose["quaternion_wxyz_opengl"]], dtype=torch.float32), convention="opengl")
@@ -392,6 +450,7 @@ def render(app, args, spec, bricks, config, views):
         camera.update(0., force_recompute=True)
         if float(sim.current_time) != frozen_time or not torch.equal(physics_state(), frozen):
             raise RuntimeError("Physics state/time changed during render-only camera capture")
+        verify_placement(f"after_render_{view['id']}")
         rgb = camera.data.output["rgb"][0, :, :, :3].cpu().numpy()
         depth = camera.data.output["distance_to_image_plane"][0, :, :, 0].cpu().numpy()
         if rgb.shape != (height, width, 3) or rgb.dtype != np.uint8:
@@ -459,6 +518,7 @@ def render(app, args, spec, bricks, config, views):
         raise RuntimeError("Full360 graph changed during camera capture")
     if float(sim.current_time) != frozen_time or not torch.equal(physics_state(), frozen):
         raise RuntimeError("Final physics state/time differs from the shared capture snapshot")
+    verify_placement("final_capture")
     truth = output/"evaluation_truth"
     (truth/"annotations.json").write_text(json.dumps({"images": truth_images,
         "visibility_method": "Eight depth-tested stud samples, not pixel-exact instance masks or gripper accessibility"}, indent=2))
@@ -469,6 +529,7 @@ def render(app, args, spec, bricks, config, views):
     manifest = {"geometry": spec, "selected_views": [v["id"] for v in views], "camera_config": config,
         "geometry_contact_audit": geometry_audit(bricks),
         "preassembly": preassembly,
+        "placement_checks": placement_checks,
         "brick_count": 360, "native_connected_parts": len(parts_after), "native_connections": len(connections_after),
         "settling": settle_audit, "physics_time_s": frozen_time, "all_capture_states_exactly_equal": True,
         "resolved_render_settings": resolved_settings,
@@ -481,8 +542,11 @@ def render(app, args, spec, bricks, config, views):
         "gpu": torch.cuda.get_device_name(0) if torch.cuda.is_available() else None,
         "camera_matching": "Approximate nominal pinhole; not calibrated D435i equivalence"}
     (output/"manifest.json").write_text(json.dumps(manifest, indent=2))
-    sim.stop()
-    (output/"run_complete.json").write_text(json.dumps({"completed": True, "views": len(views), "bricks": 360}))
+    # This sentinel certifies validated capture, independently of Kit cleanup.
+    # Explicit timeline.stop() previously blocked before a success marker.
+    (output/"run_complete.json").write_text(json.dumps({"completed": True, "capture_validated": True,
+        "views": len(views), "bricks": 360, "shutdown_status_file": "shutdown.json"}))
+    print("CAPTURE_COMPLETE_VALIDATED", flush=True)
 
 
 if __name__ == "__main__":
