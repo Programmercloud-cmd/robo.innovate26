@@ -154,3 +154,34 @@
   against a misregistered candidate mattered. No further gate relaxation is
   justified. The missing-face goal also remains unmet.
 - Evidence: `results/v2_development/`. Held-out D remains reserved.
+
+## V2 rollback and proposed v3 illumination consistency test
+
+- Rollback checkpoint: `e4bb5d7`, verified byte-for-byte restoration of the v1
+  algorithm/documentation/test state preceding v2. The rejected v2 configuration
+  is no longer in the active configuration directory; its exact copy remains
+  with the failed experiment and in Git. Seven small tests pass.
+- Independent analysis of saved v1 expected-site pairs found that changing
+  brightness by 0.7/1.3 changes weighted stud responses substantially while the
+  response divided by sqrt(observability) is nearly invariant. Dark paired
+  response ratio median 0.8555 becomes 0.9960 without that weight; bright
+  1.0896 becomes 0.9999. These are image-output diagnostics, not changed labels
+  or a parameter sweep. Evidence: `results/v1_lighting_diagnostic.json`.
+- Hypothesis: the fixed absolute contrast scale in the feature weight causes
+  much of the measured lighting sensitivity. Test ROI-relative feature weighting
+  based on the median local contrast at all projected stud sites. Retain the
+  original absolute observability decision guard and every v1 structural,
+  registration, edge and mean-score decision condition.
+- Proposed single change: alter only the feature's observability weight. The
+  reference-contrast denominator floor is 8.75 gray levels, derived from the
+  existing 35 × 0.25 absolute observability guard; no image-specific exceptions.
+- Planner and reviewer endorsed the bounded test. Predeclared acceptance:
+  improved lighting consistency/useful coverage without false-present or blank
+  regressions. The previously misregistered `c1r4` gets no exemption.
+- If this test fails, restore v1 and report its measured limits. The remaining
+  irregular layer geometry, unknown true plane height and unvalidated center
+  references are concrete dependencies; do not add per-strip warps, relax more
+  gates, or use held-out D to chase the acceptance target.
+- Diagnostic wording correction: original 1668 JSON fields containing
+  `true_center` mean historical marked locations. They are not validated true
+  centers; the raw evidence and frozen references are preserved unchanged.
