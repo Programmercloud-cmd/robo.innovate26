@@ -134,12 +134,12 @@ Identifying the phone lenses and ChArUco design does not supply those transforms
 
 ## Completed preview
 
-Latest appearance capture: **Pueue 1708**, frozen scene source `810bcde`.
+Latest capture: **Pueue 1710**, frozen scene source `526fc7e`; corrected wrist mount side.
 
-- [Overhead render](../../runs/20261024T223031.192426Z-final-workcell-preview/output/images/diagnostic_table_top.png)
-- [Oblique render](../../runs/20261024T223031.192426Z-final-workcell-preview/output/images/diagnostic_oblique.png)
-- [USD visual scene](../../runs/20261024T223031.192426Z-final-workcell-preview/output/final_workcell.usda)
-- [Native graph, scene and camera manifest](../../runs/20261024T223031.192426Z-final-workcell-preview/output/manifest.json)
+- [Overhead render](../../runs/20261024T225412.612710Z-final-workcell-preview/output/images/diagnostic_table_top.png)
+- [Oblique render](../../runs/20261024T225412.612710Z-final-workcell-preview/output/images/diagnostic_oblique.png)
+- [USD visual scene](../../runs/20261024T225412.612710Z-final-workcell-preview/output/final_workcell.usda)
+- [Native graph, scene and camera manifest](../../runs/20261024T225412.612710Z-final-workcell-preview/output/manifest.json)
 - [Jobs, snapshots, artifact hashes and validation](completion.json)
 - [Editable layout and destination recipes](scene_config.json)
 
@@ -219,3 +219,7 @@ python3 experiments/final_workcell_20261024/submit_preview.py --cameras experime
 The annotated comparison is deliberately unregistered and uses different
 perspectives. This is a visual-twin adjustment, not calibrated robot-frame
 alignment, camera extrinsics or coordinates suitable for hardware commands.
+
+## Wrist camera side correction
+
+The camera and its bracket now occupy the opposite hand flank, as corrected by the user. See [mount correction and close-up](wrist_mount/README.md). The housing remains nominal; the optical transform is uncalibrated.
