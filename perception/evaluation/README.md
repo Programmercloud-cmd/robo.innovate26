@@ -14,9 +14,9 @@ stud centers across six images. The annotations establish visual faces, not
 calibrated current-top height, physical occupancy or gripper accessibility.
 
 - Development: `img_1`, `img_3`, `img_7`, `img_10` (112 positive faces, eight
-  ambiguous regions, 15 lower fragments, 32 manual studs).
+  ambiguous regions, 15 lower fragments, 32 historical marked points).
 - Held out: arrangement group D, `img_13`, `img_16` (54 positive faces, six
-  ambiguous regions, eight lower fragments, 16 manual studs). These views are
+  ambiguous regions, eight lower fragments, 16 historical marked points). These views are
   reserved from implementation tuning. They are still correlated observations
   of the same stack/disassembly sequence, not an independent-stack test.
 - Supplementary missing-face track: six clearly incomplete expected face slots
@@ -52,9 +52,13 @@ discrimination. Physical current-top accuracy remains unmeasurable.
 
 Image orientation and projected-stud residuals are measured on all geometric
 matches, whether selected or uncertain, with their sample counts. They largely
-reflect manually assisted registration. Image-derived confirmed stud peak
-localization is a separate measurement. Matched peak error must always be
-reported alongside coverage of the manual point set.
+reflect manually assisted registration. Image-derived confirmed stud peaks are measured separately against the historical
+marked points, with matched-point coverage. Independent crop inspection found
+that these marks often lie on cap rims or highlights rather than geometric
+centers. Consequently these distances do not establish stud-center localization
+or fine registration accuracy. This caveat also applies to the historical
+pretrained detector's 4/48 matched-point count; the original labels and results
+remain unchanged for reproducibility.
 
 The fixed cases are nominal, brightness ×0.70/×1.30, image rotation ±5° with
 coherently transformed input/reference geometry, initial global registration
@@ -80,4 +84,7 @@ held-out performance must not determine image-specific fixes or thresholds.
 
 `test_evaluate.py` contains small scoring-contract tests; it performs no
 perception batch inference. `diagnose_studs.py` is an explicitly evaluation-only
-development diagnostic at truth points, never a production perception input.
+development diagnostic at the historical marked points, never a production
+perception input. Its earlier true-center interpretation is unsupported by the
+subsequent reference audit; see `results/reference_audit` in the experiment
+artifacts. The complete-face polygon measurements remain a separate track.
