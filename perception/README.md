@@ -92,6 +92,42 @@ correction until independent evaluation establishes useful coverage without
 false-present or blank-image regressions. Nonzero feature scores alone do
 not establish success.
 
+## V3: exposure-relative feature weighting, retaining the absolute guard
+
+V1 development confirmed-face coverage changed from 17/112 under 0.7 image
+gain to 47/112 under 1.3 gain. A saved-output audit isolated a photometric
+mechanism: removing the multiplicative square-root absolute-observability
+weight from each score gave nearly unchanged median responses (0.493 nominal,
+0.490 dark, 0.493 bright), while the actual median scores were 0.393, 0.333,
+and 0.424. This motivates one exposure-relative **feature weight** correction.
+
+With `relative_contrast_weight=true`, the feature uses:
+
+```
+reference = max(median(contrast at all projected stud patches), 35 * 0.25)
+feature_weight = clip(local_contrast / reference, 0, 1)
+stud_score = circle_alignment * angular_support * sqrt(feature_weight)
+```
+
+The reference is one global statistic over the supplied observed window, never
+reference labels or manually chosen per-image thresholds. The 8.75 gray-level
+floor is derived from the existing absolute observability guard, not another
+fitted parameter. JSON and overlays report the frame's reference and each
+stud's local contrast and relative weight.
+
+The original absolute observability field, its minimum 0.25 decision guard,
+the v1 whole-face mean condition, all other conditions, features, radii,
+registration and search settings are unchanged. Old configurations without the
+explicit flag retain v1 absolute weighting. Blank/near-blank images do not
+gain permission to become certain merely by normalizing their contrast.
+
+V3 is a proposed correction until the unchanged independent development
+protocol demonstrates useful lighting-consistency gain with no false-present
+or blank regression. A known risk is increasing confidence in a misregistered
+candidate; that must cause rejection rather than a per-image exception. The
+rejected V2 mean-gate removal remains historical in Git and its evaluation
+record; it is not part of active V3.
+
 `decision=present` establishes only supported **visual face presence** under
 the supplied window. `layer_hypothesis` expresses top/lower compatibility;
 `layer_verified` stays false because actual top height, full geometry and

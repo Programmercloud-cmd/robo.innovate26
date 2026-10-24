@@ -26,6 +26,8 @@ class Evidence:
         self.feature_model = config.get("feature_model", "whole_patch_radial_v0")
         if self.feature_model not in ("whole_patch_radial_v0", "ring_coherence_v1"):
             raise ValueError(f"Unsupported explicit feature model: {self.feature_model}")
+        self.relative_contrast_weight = bool(config.get("relative_contrast_weight", False))
+        self.contrast_reference = float(config["contrast_range_for_observability"])
         self.pitch = config["pixels_per_stud"]
         smooth = cv2.GaussianBlur(self.gray, (0, 0), 0.7)
         self.gx = cv2.Sobel(smooth, cv2.CV_32F, 1, 0, ksize=3) / 8.0
@@ -33,6 +35,25 @@ class Evidence:
         self.mag = np.hypot(self.gx, self.gy)
         theta = np.arange(32, dtype=np.float32) * (2*np.pi/32)
         self.rays = np.stack((np.cos(theta), np.sin(theta)), axis=1)
+
+    def set_contrast_reference(self, points):
+        """Set one frame-wide reference from expected patches, never labels.
+
+        The absolute contrast guard remains unchanged. Only the multiplicative
+        feature weight becomes relative to the median expected-patch contrast.
+        """
+        if not self.relative_contrast_weight:
+            return
+        margin = int(math.ceil(self.pitch * .60))
+        contrasts=[]
+        for x,y in points:
+            xi,yi=round(float(x)),round(float(y))
+            if xi < margin or yi < margin or xi >= self.gray.shape[1]-margin or yi >= self.gray.shape[0]-margin:
+                continue
+            patch=self.gray[yi-margin:yi+margin+1,xi-margin:xi+margin+1]
+            contrasts.append(float(np.percentile(patch,90)-np.percentile(patch,10)))
+        minimum=self.config["contrast_range_for_observability"]*self.config["minimum_observability"]
+        self.contrast_reference=max(float(np.median(contrasts)) if contrasts else 0.,minimum)
 
     def stud(self, point, search=True):
         """Score a stud cap at a supplied location; return bounded local maximum.
@@ -45,10 +66,11 @@ class Evidence:
         margin = int(math.ceil(self.pitch * .60))
         xi, yi = round(float(x)), round(float(y))
         if xi < margin or yi < margin or xi >= self.gray.shape[1]-margin or yi >= self.gray.shape[0]-margin:
-            return dict(expected_xy=[float(x), float(y)], refined_xy=[float(x), float(y)], score=0., observability=0., boundary=True)
+            return dict(expected_xy=[float(x), float(y)], refined_xy=[float(x), float(y)], score=0., observability=0., feature_observability=0., contrast=0., boundary=True)
         patch = self.gray[yi-margin:yi+margin+1, xi-margin:xi+margin+1]
         contrast = float(np.percentile(patch, 90)-np.percentile(patch, 10))
         observable = float(np.clip(contrast/self.config["contrast_range_for_observability"], 0, 1))
+        feature_observable = float(np.clip(contrast/self.contrast_reference,0,1)) if self.relative_contrast_weight else observable
         # The mean of this patch is dominated by adjacent brick seams/shadows.
         # A median estimates quiet local gradient noise without that bias.
         gradients = self.mag[yi-margin:yi+margin+1, xi-margin:xi+margin+1]
@@ -74,12 +96,13 @@ class Evidence:
                 concentration = np.clip((coherence-isotropic_null)/(1-isotropic_null),0,1)
                 # A fixed half-gray-level floor excludes very weak gradients.
                 coverage = (radial > max(noise,.5)).mean(axis=1)
-            scores = concentration * coverage * math.sqrt(observable)
+            scores = concentration * coverage * math.sqrt(feature_observable)
             index = int(np.argmax(scores))
             if float(scores[index]) > best[0]:
                 best = (float(scores[index]), centers[index], fraction)
         return dict(expected_xy=[float(x),float(y)], refined_xy=[float(v) for v in best[1]],
-                    score=best[0], observability=observable, radius_fraction=best[2], boundary=False)
+                    score=best[0], observability=observable, feature_observability=feature_observable,
+                    contrast=contrast, radius_fraction=best[2], boundary=False)
 
     def edges(self, polygon):
         """Weak independent boundary evidence; do not require same-color seams."""
@@ -172,6 +195,7 @@ def analyze(image, registration, config):
     for c in range(layout["strips"]):
         for r in range(layout["groups_along_strip"]):
             top_grid += [[(4*c+u)*pitch+pad,(4*r+v)*pitch+pad] for v in (.5,1.5,2.5,3.5) for u in (.5,1.5)]
+    evidence.set_contrast_reference(top_grid)
     coarse=[evidence.stud(p) for p in top_grid]
     good=[f for f in coarse if f["score"]>=config["stud_confirm_score"]]
     correction=np.zeros(2,np.float32)
@@ -232,7 +256,8 @@ def analyze(image, registration, config):
                 expected=project(np.array([f["expected_xy"]])-pad,canonical_to_image)[0]
                 refined=project(np.array([f["refined_xy"]])-pad,canonical_to_image)[0]
                 studs.append(dict(expected_xy=expected.tolist(),refined_xy=refined.tolist(),score=f["score"],
-                                  confirmed=f["score"]>=config["stud_confirm_score"],observability=f["observability"]))
+                                  confirmed=f["score"]>=config["stud_confirm_score"],observability=f["observability"],
+                                  feature_observability=f["feature_observability"],contrast_gray_levels=f["contrast"]))
             candidates.append(dict(id=f"c{c}r{r}",polygon=poly.tolist(),orientation_deg=orientation,
                 decision=decision,layer_hypothesis=layer,layer_verified=False,
                 scores=dict(top_stud=top_score,confirmed_studs=int(confirmed.sum()),edge=edge,edge_components=edge_parts,
@@ -246,6 +271,9 @@ def analyze(image, registration, config):
             correction_px=(refined_center-initial_center).tolist(),correction_rectified_px=correction.tolist(),
             consensus_studs=inliers,registration_score=inliers/max(len(top_grid),1),manual_assisted=True,
             reference="supplied observed-window plane, not a measured baseplate frame",calibration_status="nominal_not_measured",lower_projection=plane_info),
+        contrast_weighting=dict(relative=evidence.relative_contrast_weight,reference_gray_levels=evidence.contrast_reference,
+            absolute_guard_reference_gray_levels=config["contrast_range_for_observability"],
+            minimum_absolute_observability=config["minimum_observability"]),
         supplied_layout=layout,candidates=candidates,
         limitations=["image-space visual presence, not robot-frame pose or gripper accessibility",
                      "supplied current plane and nominal intrinsics do not verify absolute layer height",
@@ -268,4 +296,8 @@ def overlay(image, result):
             cv2.circle(canvas,tuple(np.rint(stud["refined_xy"]).astype(int)),2,(255,0,255) if stud["confirmed"] else (130,130,130),1)
     cv2.putText(canvas,"MANUAL GLOBAL REGISTRATION | nominal calibration | visual presence only",(8,20),cv2.FONT_HERSHEY_SIMPLEX,.52,(0,0,0),3)
     cv2.putText(canvas,"MANUAL GLOBAL REGISTRATION | nominal calibration | visual presence only",(8,20),cv2.FONT_HERSHEY_SIMPLEX,.52,(255,255,255),1)
+    contrast=result.get("contrast_weighting",{})
+    label=f"contrast weight: {'ROI relative' if contrast.get('relative') else 'absolute'}; reference={contrast.get('reference_gray_levels',0):.1f} gray levels"
+    cv2.putText(canvas,label,(8,42),cv2.FONT_HERSHEY_SIMPLEX,.45,(0,0,0),3)
+    cv2.putText(canvas,label,(8,42),cv2.FONT_HERSHEY_SIMPLEX,.45,(255,255,255),1)
     return canvas
