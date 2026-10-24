@@ -17,6 +17,13 @@ CONDITIONS = ("nominal", "perturbed", "blank_nominal")
 GATE = .008
 
 
+def json_scalar(value):
+    """Serialize NumPy scalar counters without changing evaluated values."""
+    if isinstance(value, np.generic):
+        return value.item()
+    raise TypeError(f"Object of type {type(value).__name__} is not JSON serializable")
+
+
 def stats(values):
     return {"count": len(values), "median": float(np.median(values)) if values else None,
             "p90": float(np.percentile(values, 90)) if values else None,
@@ -204,6 +211,15 @@ def evaluate_record(record, truth, reference):
             "top_prior_cohort_decisions_by_image_geometry": dict(cohort_decisions),
             "top_prior_cohort_pose_errors_unfiltered": cohort_pose_rows,
             "paired_prior_imagefit": paired,
+            "reporting_from_existing_fields": {
+                "reason_flags_nonexclusive": dict(Counter(flag for c in candidates for flag in c.get("reason_flags", []))),
+                "prior_cohort_counts": {str(layer): {
+                    "hypotheses": sum(c["prior_layer"] == layer for c in candidates),
+                    "imagefit_pose_available": int(sum(pose_valid(c.get("pose_estimate")) for c in candidates if c["prior_layer"] == layer)),
+                    "supported": sum(c["decision"] == "supported" for c in candidates if c["prior_layer"] == layer),
+                    "selected_top": sum(c["selected_top"] for c in candidates if c["prior_layer"] == layer),
+                    "uncertain": sum(c["decision"] == "uncertain" for c in candidates if c["prior_layer"] == layer)}
+                    for layer in (8, 9)}},
             "counts": {"hypotheses": len(candidates), "supported": len(supported), "selected_top": len(selected),
                        "uncertain": sum(c["decision"] == "uncertain" for c in candidates),
                        "has_imagefit_pose": sum(pose_valid(c.get("pose_estimate")) for c in candidates)}}
@@ -233,6 +249,7 @@ def main():
             if condition == "blank_nominal":
                 blanks.append({"view": view, "counts": result["counts"],
                                "paired_prior_imagefit": result["paired_prior_imagefit"],
+                               "reporting_from_existing_fields": result["reporting_from_existing_fields"],
                                "interpretation": "No-image-evidence counterfactual only; no pose accuracy or physical absence metric."})
             else:
                 observations.append({"condition": condition, "view": view, **result})
@@ -249,6 +266,8 @@ def main():
                 "unmatched_valid": sum(r["unmatched_valid"] for r in metric), "invalid_or_no_pose": sum(r["invalid_or_no_pose"] for r in metric)},
             "selected_2d_matched_pose_errors_unfiltered": error_summary([x for r in rows for x in r["selected_2d_matched_pose_errors_unfiltered_by_3d_gate"]]),
             "top_prior_cohort_decisions": dict(sum((Counter(r["top_prior_cohort_decisions_by_image_geometry"]) for r in rows), Counter())),
+            "reason_flags_nonexclusive": dict(sum((Counter(r["reporting_from_existing_fields"]["reason_flags_nonexclusive"]) for r in rows), Counter())),
+            "prior_cohort_counts": {str(layer): dict(sum((Counter(r["reporting_from_existing_fields"]["prior_cohort_counts"][str(layer)]) for r in rows), Counter())) for layer in (8, 9)},
             "prior_errors_by_known_layer": {str(layer): error_summary([p["prior_error"] for p in paired if p["prior_layer"] == layer and p["prior_error"]]) for layer in (8, 9)},
             "imagefit_errors_to_own_prior_identity_by_layer": {str(layer): error_summary([p["imagefit_error_to_prior_identity"] for p in paired if p["prior_layer"] == layer and p["imagefit_error_to_prior_identity"]]) for layer in (8, 9)},
             "update_magnitude_mm": stats([p["update_from_prior"]["translation_mm"] for p in paired if p["update_from_prior"]]),
@@ -262,8 +281,8 @@ def main():
                                "selected_top": sum(r["counts"]["selected_top"] for r in blanks)},
               "interpretation": "Assisted known-layout two-layer4DOF imagefit; prior baselines are not detection. Fixed roll/pitch and known layer priors do not establish free6D or automatic top-layer localization. Metric8mm association is not an insertion tolerance. Five correlated views of one frozen scene; no physical access/real-camera equivalence claim."}
     args.output.mkdir(parents=True, exist_ok=True)
-    (args.output/"evaluation.json").write_text(json.dumps(report, indent=2)+"\n")
-    print(json.dumps({"conditions": summaries, "blank_supported": report["blank_sanity"]["supported"]}, indent=2))
+    (args.output/"evaluation.json").write_text(json.dumps(report, indent=2, default=json_scalar)+"\n")
+    print(json.dumps({"conditions": summaries, "blank_supported": report["blank_sanity"]["supported"]}, indent=2, default=json_scalar))
 
 
 if __name__ == "__main__":
