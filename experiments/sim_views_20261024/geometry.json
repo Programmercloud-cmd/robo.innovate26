@@ -1,0 +1,81 @@
+{
+  "status": "confirmed_explicit_geometry",
+  "confirmation": "User confirmed all ten layer centers coincide, with successive layers alternating90degrees.",
+  "required_bricks": 360,
+  "layers": 10,
+  "bricks_per_layer": [
+    6,
+    6
+  ],
+  "brick_dimensions_studs": [
+    4,
+    2,
+    3
+  ],
+  "pitch_studs_xy": [
+    4,
+    4
+  ],
+  "baseplate_studs": 32,
+  "border_studs": 4,
+  "source_xy_m": [
+    0.45,
+    -0.16
+  ],
+  "layer_origins_studs_xy": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "layer_yaws_quarter_turn": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1
+  ],
+  "camera_matching": "approximate; no measured D435i intrinsics or mounting transform",
+  "native_connections_required": true
+}

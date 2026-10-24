@@ -1,0 +1,124 @@
+{
+  "image_size": [
+    1280,
+    720
+  ],
+  "focal_length_mm": 24.0,
+  "horizontal_aperture_mm": 33.25,
+  "clipping_range_m": [
+    0.01,
+    10.0
+  ],
+  "calibration_status": "nominal approximate virtual cameras; not calibrated wrist poses",
+  "settle_steps": 24,
+  "render_warmup_frames": 12,
+  "lighting": {
+    "dome_intensity": 300.0,
+    "key_intensity": 700.0,
+    "key_radius_m": 0.04,
+    "key_offset_m": [
+      0.35,
+      0.15,
+      0.45
+    ]
+  },
+  "panel": {
+    "columns": 3,
+    "thumbnail_size": [
+      640,
+      360
+    ]
+  },
+  "views": [
+    {
+      "id": "top",
+      "eye_offset_m": [
+        0,
+        0,
+        0.36
+      ],
+      "target_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "up_world": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "near_top_x",
+      "eye_offset_m": [
+        0.08,
+        0,
+        0.36
+      ],
+      "target_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "up_world": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "near_top_y",
+      "eye_offset_m": [
+        0,
+        -0.08,
+        0.36
+      ],
+      "target_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "up_world": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "oblique_front",
+      "eye_offset_m": [
+        0,
+        -0.23,
+        0.28
+      ],
+      "target_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "up_world": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "oblique_side",
+      "eye_offset_m": [
+        0.23,
+        0,
+        0.28
+      ],
+      "target_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "up_world": [
+        0,
+        0,
+        1
+      ]
+    }
+  ]
+}
