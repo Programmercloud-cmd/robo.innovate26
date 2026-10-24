@@ -52,8 +52,8 @@ additional projection uncertainty.
 
 Rounded scene estimates in table coordinates are gray plate centre
 (0.42, -0.06) m, robot base (-0.09, -0.40) m, and bowl centre (0.01, 0.27) m.
-The robot yaw, table dimensions, bowl shape/height and plate thickness remain
-explicit assumptions. Reachability and insertion clearances are not validated.
+The robot yaw is photograph-estimated; table dimensions, bowl shape/height
+and plate thickness remain explicit assumptions. Reachability and insertion clearances are not validated.
 
 ## Destinations and camera
 
@@ -130,12 +130,12 @@ and ChArUco design does not supply those transforms.
 
 ## Completed preview
 
-Final ChArUco capture: **Pueue 1702**, frozen scene source `45ab945`.
+Latest yaw-adjusted capture: **Pueue 1704**, frozen scene source `0565e3a`.
 
-- [Overhead render](../../runs/20261024T211537.337776Z-final-workcell-preview/output/images/diagnostic_table_top.png)
-- [Oblique render](../../runs/20261024T211537.337776Z-final-workcell-preview/output/images/diagnostic_oblique.png)
-- [USD visual scene](../../runs/20261024T211537.337776Z-final-workcell-preview/output/final_workcell.usda)
-- [Native graph, scene and camera manifest](../../runs/20261024T211537.337776Z-final-workcell-preview/output/manifest.json)
+- [Overhead render](../../runs/20261024T214640.110593Z-final-workcell-preview/output/images/diagnostic_table_top.png)
+- [Oblique render](../../runs/20261024T214640.110593Z-final-workcell-preview/output/images/diagnostic_oblique.png)
+- [USD visual scene](../../runs/20261024T214640.110593Z-final-workcell-preview/output/final_workcell.usda)
+- [Native graph, scene and camera manifest](../../runs/20261024T214640.110593Z-final-workcell-preview/output/manifest.json)
 - [Jobs, snapshots, artifact hashes and validation](completion.json)
 - [Editable layout and destination recipes](scene_config.json)
 
@@ -161,11 +161,57 @@ not physical calibration or complete board-detection performance claims.
 
 - [Printed-board detection in photo 9](../../runs/20261024T211152.477912Z-charuco-asset-audit/output/photo09_charuco_detection.png)
 - [Generated board and real-photo audit](charuco_board.json)
-- [Rendered UV correspondence check](../../runs/20261024T211537.337776Z-final-workcell-preview/output/charuco_uv_check.json)
+- [Rendered UV correspondence check](../../runs/20261024T214640.110593Z-final-workcell-preview/output/charuco_uv_check.json)
 
-Jobs 1696–1702 all ran through default Pueue; earlier audits and previews are
+Jobs 1696–1706 all ran through default Pueue; earlier audits and previews are
 preserved. Kit cleanup stalled after validated capture and was bounded by the
 existing owned-process supervisor, independently of capture validation.
 The exported USD references the frozen snapshot's assets; use the launcher
 to recreate runtime native connections. No independent graph reload or
 load-bearing dynamics claim is made.
+
+## Photo-supported base orientation
+
+The previously assumed `yaw_table_deg: 90.0` is now **45.0**, a rounded visual
+estimate from the two new reference photographs. No additional physical
+measurement was required for this update.
+
+Photo 1 establishes that the fixed connector-bearing housing side faces the
+table +X/−Y quadrant. Photo 2 is used only to identify the lower connector bank
+and adjacent asymmetric mounting outline; its different brick layout is ignored.
+Neither arm bend nor nominal joint angles are used to infer yaw.
+
+Job **1703** inspected the existing composed FR3 asset with actual fixed-link0
+axes. The large lower socket and neighboring smaller sockets belong to the
+white housing flank on approximately **asset −Y**. The red upper fixtures are
+not the connector cue. A 45° root rotation maps asset −Y into table +X/−Y.
+The photo supports a coarse diagonal orientation, not angular metrology or a
+numerical uncertainty bound.
+
+Job **1704** rendered the updated orientation and comparable fixed-base views.
+Only yaw and its status/evidence metadata changed in `scene_config.json`.
+The base position, layout, plate dimensions, tower geometry and nominal joint
+configuration remain identical. Queued evidence checks also confirm identical
+300×13 source states and identical requested joint values versus the baseline.
+Native counts remain 300 bricks, 930 connections and 301 connected parts, with
+zero post-assembly physics steps. Diagnostic moving-link hiding is visual-only
+and restored before USD export.
+
+- [Annotated Photo 1](../../runs/20261024T214949.269584Z-base-orientation-evidence/output/photo1_annotated.png)
+- [Comparable annotated top render](../../runs/20261024T214949.269584Z-base-orientation-evidence/output/base_top_annotated.png)
+- [Connector-facing asset detail](../../runs/20261024T214949.269584Z-base-orientation-evidence/output/base_connector_face_annotated.png)
+- [Side-by-side visual comparison](../../runs/20261024T214949.269584Z-base-orientation-evidence/output/comparison.jpg)
+- [References, feature match and qualitative uncertainty](base_orientation/reference.json)
+- [Unchanged-configuration guard](base_orientation/change_guard.json)
+
+Jobs **1705/1706** create deterministic annotations; the second removes cropped
+text fragments without changing the estimate or render. All use frozen inputs
+and default Pueue. To recreate these diagnostic views in a new snapshot:
+
+```bash
+python3 experiments/final_workcell_20261024/submit_preview.py --cameras experiments/final_workcell_20261024/base_orientation/cameras_after.json
+```
+
+The annotated comparison is deliberately unregistered and uses different
+perspectives. This is a visual-twin adjustment, not calibrated robot-frame
+alignment, camera extrinsics or coordinates suitable for hardware commands.
