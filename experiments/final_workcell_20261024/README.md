@@ -130,12 +130,12 @@ and ChArUco design does not supply those transforms.
 
 ## Completed preview
 
-Final capture: **Pueue 1700**, frozen scene source `e02864e`.
+Final ChArUco capture: **Pueue 1702**, frozen scene source `45ab945`.
 
-- [Overhead render](../../runs/20261024T204939.156692Z-final-workcell-preview/output/images/diagnostic_table_top.png)
-- [Oblique render](../../runs/20261024T204939.156692Z-final-workcell-preview/output/images/diagnostic_oblique.png)
-- [USD visual scene](../../runs/20261024T204939.156692Z-final-workcell-preview/output/final_workcell.usda)
-- [Native graph, scene and camera manifest](../../runs/20261024T204939.156692Z-final-workcell-preview/output/manifest.json)
+- [Overhead render](../../runs/20261024T211537.337776Z-final-workcell-preview/output/images/diagnostic_table_top.png)
+- [Oblique render](../../runs/20261024T211537.337776Z-final-workcell-preview/output/images/diagnostic_oblique.png)
+- [USD visual scene](../../runs/20261024T211537.337776Z-final-workcell-preview/output/final_workcell.usda)
+- [Native graph, scene and camera manifest](../../runs/20261024T211537.337776Z-final-workcell-preview/output/manifest.json)
 - [Jobs, snapshots, artifact hashes and validation](completion.json)
 - [Editable layout and destination recipes](scene_config.json)
 
@@ -146,7 +146,24 @@ the configured tolerances. Source placement and state are unchanged across
 the two captures. One explicit preassembly initialization step is recorded;
 no physics step occurs after native assembly.
 
-Jobs 1696–1700 all ran through default Pueue; earlier audits and previews are
+Job **1701** generated and checked the specified board. Both the generated
+image and original photo 9 recover all 17 marker IDs and all 24 inner corners.
+Ordered per-ID corners support a nominal 0° scene rotation (raw fitted angle
+0.0603°) without changing any scene position or scale. The fit's diagnostic
+scale factor 1.05666 mixes approximate layout, lens, picking and possible print
+errors; it does not verify physical print scale.
+
+The rendered top view decodes seven markers and agrees with the intended
+ordered-corner mapping at 1.26 px RMS, versus 62.34 px for a mirrored mapping
+and 107.94 px for a 180° mapping. No markers decode in the distant oblique
+render, so that view remains unverified. These are asset/orientation checks,
+not physical calibration or complete board-detection performance claims.
+
+- [Printed-board detection in photo 9](../../runs/20261024T211152.477912Z-charuco-asset-audit/output/photo09_charuco_detection.png)
+- [Generated board and real-photo audit](charuco_board.json)
+- [Rendered UV correspondence check](../../runs/20261024T211537.337776Z-final-workcell-preview/output/charuco_uv_check.json)
+
+Jobs 1696–1702 all ran through default Pueue; earlier audits and previews are
 preserved. Kit cleanup stalled after validated capture and was bounded by the
 existing owned-process supervisor, independently of capture validation.
 The exported USD references the frozen snapshot's assets; use the launcher

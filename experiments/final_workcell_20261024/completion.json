@@ -41,17 +41,35 @@
       "source_commit": "e02864e3da7fa9afe3fbcb00f8781a1fbf36079f",
       "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T204939.156692Z-final-workcell-preview/launch.sh",
       "queue": "default"
+    },
+    {
+      "job_id": 1701,
+      "role": "nominal_charuco_asset_and_photo_correspondences",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T211152.477912Z-charuco-asset-audit",
+      "source_commit": "e0a639cf654c2f157d337f2b0d1ed5bc2c5977ad",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T211152.477912Z-charuco-asset-audit/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1702,
+      "role": "final_charuco_twin_and_rendered_UV_check",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T211537.337776Z-final-workcell-preview",
+      "source_commit": "45ab945508dd8ab4fddc5cb0cdef1bd76449fd6c",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T211537.337776Z-final-workcell-preview/launch.sh",
+      "queue": "default"
     }
   ],
-  "final_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T204939.156692Z-final-workcell-preview",
+  "final_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T211537.337776Z-final-workcell-preview",
   "final_scene_config": "/home/faps/dev/github/robo.innovate26/experiments/final_workcell_20261024/scene_config.json",
   "artifacts": {
-    "usd_visual_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T204939.156692Z-final-workcell-preview/output/final_workcell.usda",
-    "overhead": "/home/faps/dev/github/robo.innovate26/runs/20261024T204939.156692Z-final-workcell-preview/output/images/diagnostic_table_top.png",
-    "oblique": "/home/faps/dev/github/robo.innovate26/runs/20261024T204939.156692Z-final-workcell-preview/output/images/diagnostic_oblique.png",
-    "panel": "/home/faps/dev/github/robo.innovate26/runs/20261024T204939.156692Z-final-workcell-preview/output/panel.png",
-    "manifest": "/home/faps/dev/github/robo.innovate26/runs/20261024T204939.156692Z-final-workcell-preview/output/manifest.json",
-    "layout_estimate": "/home/faps/dev/github/robo.innovate26/experiments/final_workcell_20261024/layout_estimate.json"
+    "usd_visual_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T211537.337776Z-final-workcell-preview/output/final_workcell.usda",
+    "overhead": "/home/faps/dev/github/robo.innovate26/runs/20261024T211537.337776Z-final-workcell-preview/output/images/diagnostic_table_top.png",
+    "oblique": "/home/faps/dev/github/robo.innovate26/runs/20261024T211537.337776Z-final-workcell-preview/output/images/diagnostic_oblique.png",
+    "panel": "/home/faps/dev/github/robo.innovate26/runs/20261024T211537.337776Z-final-workcell-preview/output/panel.png",
+    "manifest": "/home/faps/dev/github/robo.innovate26/runs/20261024T211537.337776Z-final-workcell-preview/output/manifest.json",
+    "layout_estimate": "/home/faps/dev/github/robo.innovate26/experiments/final_workcell_20261024/layout_estimate.json",
+    "charuco_uv_check": "/home/faps/dev/github/robo.innovate26/runs/20261024T211537.337776Z-final-workcell-preview/output/charuco_uv_check.json",
+    "photo_charuco_overlay": "/home/faps/dev/github/robo.innovate26/runs/20261024T211152.477912Z-charuco-asset-audit/output/photo09_charuco_detection.png"
   },
   "validation": {
     "bricks": 300,
@@ -135,7 +153,7 @@
       "capture_validated": true,
       "child_returncode": 0,
       "cleanup_result": "cleanup_stall_after_validated_capture",
-      "seconds": 19.27395332499873,
+      "seconds": 19.97525050099648,
       "native_source_parts": 301,
       "native_source_connections": 930,
       "diagnostic_views": [
@@ -143,26 +161,692 @@
         "diagnostic_oblique"
       ],
       "physical_camera_calibration": "unavailable"
+    },
+    "charuco_asset": {
+      "photo9_marker_count": 17,
+      "photo9_inner_corner_count": 24,
+      "orientation_raw_yaw_deg": 0.060308579337151405,
+      "nominal_rotation_deg": 0,
+      "generated_png_sha256": "ef436eadc3801abd61f4eaffcca6d66f044babeafddb05f5117630b13800476d",
+      "print_scale_verified": false
+    },
+    "charuco_rendered_uv_check": {
+      "schema": "rendered-charuco-uv-check-v1",
+      "configured_center_table_m": [
+        0.4,
+        -0.42,
+        0.00045
+      ],
+      "configured_yaw_deg": 0.0,
+      "views": [
+        {
+          "view": "diagnostic_table_top",
+          "image_sha256": "537df6bbc8d2d478f65dd58b84f9570e929b32c752c01e6122a9594648fa9b83",
+          "detected_ids": [
+            13,
+            14,
+            15,
+            16,
+            3,
+            10,
+            2
+          ],
+          "matched_markers": 7,
+          "ordered_corner_checks": [
+            {
+              "id": 13,
+              "observed_ordered_corners_xy": [
+                [
+                  437.0,
+                  242.0
+                ],
+                [
+                  424.0,
+                  242.0
+                ],
+                [
+                  424.0,
+                  230.0
+                ],
+                [
+                  437.0,
+                  230.0
+                ]
+              ],
+              "hypotheses": {
+                "normal": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      437.4165251147846,
+                      243.55004187774944
+                    ],
+                    [
+                      423.86991225521933,
+                      243.550042318348
+                    ],
+                    [
+                      423.8699116630781,
+                      230.00342958862015
+                    ],
+                    [
+                      437.41652452264333,
+                      230.0034291567037
+                    ]
+                  ],
+                  "rms_px": 1.1386522931293868
+                },
+                "Y_mirrored": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      437.41652613757384,
+                      266.94873274072427
+                    ],
+                    [
+                      423.86991327800865,
+                      266.9487331963192
+                    ],
+                    [
+                      423.86991387014984,
+                      280.49534592604704
+                    ],
+                    [
+                      437.4165267297151,
+                      280.49534546176994
+                    ]
+                  ],
+                  "rms_px": 39.8271868842758
+                },
+                "rotated_180": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      534.7058187809481,
+                      266.94872946872454
+                    ],
+                    [
+                      548.252431498442,
+                      266.9487290131296
+                    ],
+                    [
+                      548.2524320905833,
+                      280.49534166313975
+                    ],
+                    [
+                      534.7058193730893,
+                      280.4953421274168
+                    ]
+                  ],
+                  "rms_px": 118.65351350090577
+                }
+              }
+            },
+            {
+              "id": 14,
+              "observed_ordered_corners_xy": [
+                [
+                  529.0,
+                  224.0
+                ],
+                [
+                  516.0,
+                  224.0
+                ],
+                [
+                  516.0,
+                  212.0
+                ],
+                [
+                  529.0,
+                  212.0
+                ]
+              ],
+              "hypotheses": {
+                "normal": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      529.7797860428803,
+                      225.07738440974072
+                    ],
+                    [
+                      516.2331733017078,
+                      225.0773848385
+                    ],
+                    [
+                      516.2331727095666,
+                      211.53077216796854
+                    ],
+                    [
+                      529.779785450739,
+                      211.5307717478914
+                    ]
+                  ],
+                  "rms_px": 1.0107838654335377
+                },
+                "Y_mirrored": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      529.7797886806003,
+                      285.4213840983231
+                    ],
+                    [
+                      516.2331759394278,
+                      285.4213845657573
+                    ],
+                    [
+                      516.233176531569,
+                      298.96799723628874
+                    ],
+                    [
+                      529.7797892727415,
+                      298.9679967601724
+                    ]
+                  ],
+                  "rms_px": 75.28838355667285
+                },
+                "rotated_180": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      442.34255789590406,
+                      285.4213871153987
+                    ],
+                    [
+                      455.88917073179084,
+                      285.4213866479645
+                    ],
+                    [
+                      455.8891713239321,
+                      298.9679993571709
+                    ],
+                    [
+                      442.3425584880453,
+                      298.9679998332873
+                    ]
+                  ],
+                  "rms_px": 105.96896644889475
+                }
+              }
+            },
+            {
+              "id": 15,
+              "observed_ordered_corners_xy": [
+                [
+                  492.0,
+                  224.0
+                ],
+                [
+                  479.0,
+                  224.0
+                ],
+                [
+                  479.0,
+                  212.0
+                ],
+                [
+                  492.0,
+                  212.0
+                ]
+              ],
+              "hypotheses": {
+                "normal": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      492.834479151656,
+                      225.07738557908417
+                    ],
+                    [
+                      479.2878663631264,
+                      225.07738600784347
+                    ],
+                    [
+                      479.28786577098515,
+                      211.5307733136335
+                    ],
+                    [
+                      492.83447855951476,
+                      211.5307728935563
+                    ]
+                  ],
+                  "rms_px": 1.0392679782542018
+                },
+                "Y_mirrored": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      492.834481789376,
+                      285.42138537314366
+                    ],
+                    [
+                      479.2878690008464,
+                      285.42138584057795
+                    ],
+                    [
+                      479.2878695929877,
+                      298.9679985347879
+                    ],
+                    [
+                      492.8344823815172,
+                      298.9679980586715
+                    ]
+                  ],
+                  "rms_px": 75.28877262477359
+                },
+                "rotated_180": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      479.2878649636412,
+                      285.42138584057807
+                    ],
+                    [
+                      492.83447775217087,
+                      285.42138537314383
+                    ],
+                    [
+                      492.83447834431206,
+                      298.96799805867175
+                    ],
+                    [
+                      479.2878655557825,
+                      298.9679985347881
+                    ]
+                  ],
+                  "rms_px": 76.44936392845018
+                }
+              }
+            },
+            {
+              "id": 16,
+              "observed_ordered_corners_xy": [
+                [
+                  455.0,
+                  224.0
+                ],
+                [
+                  442.0,
+                  224.0
+                ],
+                [
+                  442.0,
+                  212.0
+                ],
+                [
+                  455.0,
+                  212.0
+                ]
+              ],
+              "hypotheses": {
+                "normal": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      455.8891790128759,
+                      225.0773867484275
+                    ],
+                    [
+                      442.3425661769892,
+                      225.07738717718675
+                    ],
+                    [
+                      442.3425655848479,
+                      211.5307744592982
+                    ],
+                    [
+                      455.88917842073465,
+                      211.53077403922103
+                    ]
+                  ],
+                  "rms_px": 1.069795692170677
+                },
+                "Y_mirrored": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      455.8891816505959,
+                      285.4213866479641
+                    ],
+                    [
+                      442.34256881470924,
+                      285.4213871153983
+                    ],
+                    [
+                      442.3425694068505,
+                      298.9679998332869
+                    ],
+                    [
+                      455.88918224273715,
+                      298.9679993571705
+                    ]
+                  ],
+                  "rms_px": 75.28920147735265
+                },
+                "rotated_180": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      516.2331650206228,
+                      285.4213845657577
+                    ],
+                    [
+                      529.7797777617953,
+                      285.4213840983234
+                    ],
+                    [
+                      529.7797783539365,
+                      298.96799676017275
+                    ],
+                    [
+                      516.2331656127641,
+                      298.96799723628914
+                    ]
+                  ],
+                  "rms_px": 106.74925977668008
+                }
+              }
+            },
+            {
+              "id": 3,
+              "observed_ordered_corners_xy": [
+                [
+                  547.0,
+                  279.0
+                ],
+                [
+                  535.0,
+                  279.0
+                ],
+                [
+                  535.0,
+                  267.0
+                ],
+                [
+                  547.0,
+                  267.0
+                ]
+              ],
+              "hypotheses": {
+                "normal": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      548.2524412889884,
+                      280.49534487455264
+                    ],
+                    [
+                      534.7058279980279,
+                      280.4953453388298
+                    ],
+                    [
+                      534.7058274058866,
+                      266.94873268013754
+                    ],
+                    [
+                      548.2524406968472,
+                      266.94873222454254
+                    ]
+                  ],
+                  "rms_px": 1.395319162633662
+                },
+                "Y_mirrored": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      548.2524390819164,
+                      230.00342241142909
+                    ],
+                    [
+                      534.7058257909558,
+                      230.00342284334553
+                    ],
+                    [
+                      534.705826383097,
+                      243.55003550203776
+                    ],
+                    [
+                      548.2524396740577,
+                      243.55003506143916
+                    ]
+                  ],
+                  "rms_px": 38.42018077914744
+                },
+                "rotated_180": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      423.86990246467275,
+                      230.0034263772072
+                    ],
+                    [
+                      437.4165158977047,
+                      230.00342594529073
+                    ],
+                    [
+                      437.41651648984595,
+                      243.55003866633643
+                    ],
+                    [
+                      423.869903056814,
+                      243.55003910693506
+                    ]
+                  ],
+                  "rms_px": 117.54599542745594
+                }
+              }
+            },
+            {
+              "id": 10,
+              "observed_ordered_corners_xy": [
+                [
+                  547.0,
+                  242.0
+                ],
+                [
+                  535.0,
+                  242.0
+                ],
+                [
+                  535.0,
+                  230.0
+                ],
+                [
+                  547.0,
+                  230.0
+                ]
+              ],
+              "hypotheses": {
+                "normal": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      548.2524396740578,
+                      243.55003827285242
+                    ],
+                    [
+                      534.7058263830971,
+                      243.55003871345102
+                    ],
+                    [
+                      534.7058257909559,
+                      230.0034260547588
+                    ],
+                    [
+                      548.2524390819166,
+                      230.00342562284231
+                    ]
+                  ],
+                  "rms_px": 1.4243900015850328
+                },
+                "Y_mirrored": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      548.2524406968471,
+                      266.9487290131293
+                    ],
+                    [
+                      534.7058274058865,
+                      266.9487294687243
+                    ],
+                    [
+                      534.7058279980276,
+                      280.49534212741656
+                    ],
+                    [
+                      548.2524412889883,
+                      280.4953416631394
+                    ]
+                  ],
+                  "rms_px": 39.83637652723808
+                },
+                "rotated_180": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      423.8699040796035,
+                      266.9487331963195
+                    ],
+                    [
+                      437.4165175126354,
+                      266.9487327407245
+                    ],
+                    [
+                      437.4165181047766,
+                      280.4953454617702
+                    ],
+                    [
+                      423.86990467174473,
+                      280.4953459260474
+                    ]
+                  ],
+                  "rms_px": 118.01647270300066
+                }
+              }
+            },
+            {
+              "id": 2,
+              "observed_ordered_corners_xy": [
+                [
+                  454.0,
+                  298.0
+                ],
+                [
+                  442.0,
+                  297.0
+                ],
+                [
+                  443.0,
+                  286.0
+                ],
+                [
+                  455.0,
+                  286.0
+                ]
+              ],
+              "hypotheses": {
+                "normal": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      455.8891822427372,
+                      298.9680008481838
+                    ],
+                    [
+                      442.34256940685054,
+                      298.9680013243002
+                    ],
+                    [
+                      442.3425688147093,
+                      285.42138803294495
+                    ],
+                    [
+                      455.88918165059596,
+                      285.4213875655107
+                    ]
+                  ],
+                  "rms_px": 1.611587891508683
+                },
+                "Y_mirrored": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      455.88917842073454,
+                      211.53077254820775
+                    ],
+                    [
+                      442.3425655848479,
+                      211.53077296828488
+                    ],
+                    [
+                      442.3425661769891,
+                      225.0773862596401
+                    ],
+                    [
+                      455.8891790128759,
+                      225.07738583088084
+                    ]
+                  ],
+                  "rms_px": 74.51502374101977
+                },
+                "rotated_180": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      516.2331617907615,
+                      211.53077067695557
+                    ],
+                    [
+                      529.779774531934,
+                      211.53077025687844
+                    ],
+                    [
+                      529.7797751240753,
+                      225.0773834921944
+                    ],
+                    [
+                      516.2331623829027,
+                      225.0773839209537
+                    ]
+                  ],
+                  "rms_px": 106.14086394271533
+                }
+              }
+            }
+          ],
+          "rms_px": {
+            "normal": 1.2601457849429627,
+            "Y_mirrored": 62.3434549264693,
+            "rotated_180": 107.94100220099469
+          },
+          "minimum_error_hypothesis": "normal",
+          "status": "conditional_correspondence_check_available"
+        },
+        {
+          "view": "diagnostic_oblique",
+          "image_sha256": "71b93afa028b7154149636b7f488df2b8ae5c80bb4af54f3b27db53674fba9ad",
+          "detected_ids": [],
+          "matched_markers": 0,
+          "ordered_corner_checks": [],
+          "rms_px": {
+            "normal": null,
+            "Y_mirrored": null,
+            "rotated_180": null
+          },
+          "minimum_error_hypothesis": null,
+          "status": "unverified_insufficient_decoded_ids"
+        }
+      ],
+      "asset_png_sha256": "ef436eadc3801abd61f4eaffcca6d66f044babeafddb05f5117630b13800476d",
+      "source_sha256": "07a66ddf647680a2642f334cf2e63d00e2f84194258a082b4911b87ee73673d4",
+      "asset_audit_sha256": "da6e3e69a76f3a1589e35c087d9d789d50e001c7e77a52736072162118bc4e5c",
+      "cameras_sha256": "421d5b2d93191a9618adedd0b2c2355863e19d4d7c29b8526569b29063de6a5b",
+      "interpretation": "Conditional decoded-ID ordered-corner check of saved render against configured asset geometry. No detector tuning, layout fitting, scale change or physical camera calibration; low-resolution non-decoding remains unverified."
     }
   },
   "camera_provenance": {
     "model": "Apple iPhone 12",
-    "zoom": "Two overhead images at0.5x, remaining images at1x; identities awaiting confirmation",
-    "source": "User correction after initial device report",
+    "zoom": "Original photos6and7 at0.5x; originalphotos1-5,8-10 at1x",
+    "source": "User identified two reference images; exact-byte original matches recorded where available",
     "intrinsics_calibrated": false,
-    "note": "Embedded focal/device EXIF absent; mixed resolutions; per-image zoom unconfirmed. Photo-camera provenance is not wrist D435i calibration."
+    "note": "Embedded focal/device EXIF absent; mixed supplied resolutions. This records lens groups, not calibrated intrinsics or wristD435i calibration."
   },
   "limits": [
     "Reported25/38cm plate sizes differ from native25.6/38.4cm; stud geometry unstretched",
     "Tape-aware planar fit retains ruler/gray-size discrepancies; no robot/phone/wrist calibration",
-    "Robotbase SE2 and joint pose nominal/estimated, markerboard paper placeholder",
+    "Robotbase SE2 and joint pose nominal/estimated, nominal ChArUco graphic, actual print scale unverified",
     "Only physical wrist camera specified; opticalTF/intrinsics unset; additional2cameras omitted",
     "Native connections procedurally restored by launcher; standaloneUSD graph persistence unvalidated",
-    "Tape-covered studrows unavailable in placement metadata; no insertion/reachability/drop dynamics verified"
+    "Tape-covered studrows unavailable in placement metadata; no insertion/reachability/drop dynamics verified",
+    "ChArUco oblique render has no decoded markers; top-view UV evidence is conditional and does not calibrate physical cameras or robot."
   ],
   "artifact_sha256": {
-    "final_workcell.usda": "151f62ebd518e9948aea5ce6175ed71f90a0836ede4eabd779c02d836af4aa08",
-    "manifest.json": "a5b6a3df490360a6ed13b8c26d44ba5a2d0b9c8a4662202fcb099369e783ec07",
-    "robot_initialization.json": "6e4bd131b6c67c70acf035c3363f38075a0fc78687541493d9d072aeccb96f51"
-  }
+    "final_workcell.usda": "2281674b2518724699dac6095a59fc8a4988a207ac1751cb4ae3bd4341affeee",
+    "manifest.json": "19f6042432511d893ff203866539982a289b6b6b645e635d5109afceffb2eb44",
+    "robot_initialization.json": "6e4bd131b6c67c70acf035c3363f38075a0fc78687541493d9d072aeccb96f51",
+    "charuco_uv_check.json": "5e27ff5f9742957a7899719cbe4c30c47adb140cf46c2a8891df7d716059ffa4"
+  },
+  "previous_final_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T204939.156692Z-final-workcell-preview"
 }
