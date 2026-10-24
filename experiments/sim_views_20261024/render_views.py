@@ -86,6 +86,12 @@ def geometry_audit(bricks):
             "native_connection_count": len(patches), "overlap_patch_studs_histogram": dict(Counter(patches))})
     for layer in range(10):
         group = [b for b in bricks if b.layer == layer]
+        if not group:
+            layers.append({"layer": layer, "bounds_studs_xyxy": None,
+                "footprint_center_studs_xy": None,
+                "per_brick_studs_touching_lower_histogram": {},
+                "per_brick_studs_touching_upper_histogram": {}})
+            continue
         bounds = [min(b.x for b in group), min(b.y for b in group),
                   max(b.x+b.footprint[0] for b in group), max(b.y+b.footprint[1] for b in group)]
         layers.append({"layer": layer, "bounds_studs_xyxy": bounds,
@@ -96,7 +102,7 @@ def geometry_audit(bricks):
     return {"layers": layers, "adjacent_layer_interfaces": interfaces,
         "baseplate_connection_count": base_count,
         "expected_native_connection_count": base_count+sum(i["native_connection_count"] for i in interfaces),
-        "note": "One native edge per overlapping brick pair; stud counts are geometric overlap area. Five bricks per ridge and six ridges swap world-axis counts after rotation, yielding coincident layer centers."}
+        "note": "One native edge per overlapping brick pair; stud counts are geometric overlap area. Full design layer centers coincide; remaining partial-layer bounds may shift."}
 
 
 def normalize(vector):
@@ -204,13 +210,16 @@ def self_test():
     print("camera pose tiny contracts passed")
 
 
-def main():
+def main(case_adapter=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--geometry", type=Path)
     parser.add_argument("--cameras", type=Path)
     parser.add_argument("--views", default="all")
     parser.add_argument("--output", type=Path)
     parser.add_argument("--self-test", action="store_true")
+    if case_adapter is not None:
+        parser.add_argument("--case", required=True)
+        parser.add_argument("--benchmark", type=Path, required=True)
     if "--self-test" in sys.argv:
         parser.parse_args()
         self_test()
@@ -225,8 +234,17 @@ def main():
     if not args.enable_cameras:
         parser.error("--enable_cameras is required")
     spec, bricks = load_geometry(args.geometry)
+    args.case_metadata = None
+    if case_adapter is not None:
+        spec, bricks, args.case_metadata = case_adapter(spec, bricks, args.benchmark, args.case)
     config = json.loads(args.cameras.read_text())
-    views = selected_views(config, args.views)
+    selector = args.views
+    if args.case_metadata is not None:
+        permitted = args.case_metadata["views"]
+        selector = ",".join(permitted) if selector == "all" else selector
+        if selector.split(",") != permitted:
+            parser.error("Benchmark captures require exactly the frozen ordered camera views")
+    views = selected_views(config, selector)
     output = args.output
     (output/"images").mkdir(parents=True, exist_ok=True)
     (output/"evaluation_truth").mkdir(exist_ok=True)
@@ -281,7 +299,7 @@ def render(app, args, spec, bricks, config, views):
             delattr(env_cfg.scene, name)
             pruned_source_names.append(name)
     if {name for name in vars(env_cfg.scene) if name.startswith("brick_")} != desired_names:
-        raise RuntimeError("Scene config does not contain exactly the corrected300 source bricks")
+        raise RuntimeError("Scene config does not contain exactly the requested active source bricks")
     # make_env_cfg enables automatic clutch detection. For this explicit static
     # preassembly, prevent reset from authoring links that the manual loop would
     # duplicate. Keep all forces/other thresholds and breakage checks unchanged.
@@ -421,7 +439,7 @@ def render(app, args, spec, bricks, config, views):
         raise RuntimeError("Authored native-link count differs from the explicit geometry specification")
     parts_initial, connections_initial = compute_connected_component(source_path)
     if len(parts_initial) != len(bricks)+1 or len(connections_initial) != expected_connections:
-        raise RuntimeError("Full300 source graph is incomplete before settling")
+        raise RuntimeError("Active source graph is incomplete before settling")
     verify_placement("after_native_links_before_capture")
     for _ in range(config["settle_steps"]):
         scene.write_data_to_sim()
@@ -441,8 +459,13 @@ def render(app, args, spec, bricks, config, views):
         "max_linear_speed_m_s": float(np.linalg.norm(roots[:, 7:10], axis=1).max()),
         "max_angular_speed_rad_s": float(np.linalg.norm(roots[:, 10:13], axis=1).max()),
         "note": "Static initialized state; no post-connection physics step, equilibrium/dynamics/clutch stability unvalidated" if config["settle_steps"] == 0 else "Idle settling audit; finite steps do not establish mechanical equilibrium or calibrated clutch forces"}
-    center = np.mean([scene[b.name].data.root_pos_w[0].cpu().numpy() for b in bricks if b.layer == 9], axis=0)
-    center[2] += HEIGHT+.0017
+    highest_layer = max(brick.layer for brick in bricks)
+    if args.case_metadata is not None:
+        # Never follow removed/remaining truth with either camera or key light.
+        center = np.asarray(args.case_metadata["fixed_reference_center_world_m"], np.float64)
+    else:
+        center = np.mean([scene[b.name].data.root_pos_w[0].cpu().numpy() for b in bricks if b.layer == 9], axis=0)
+        center[2] += HEIGHT+.0017
     lighting = config["lighting"]
     dome = UsdLux.DomeLight.Get(stage, "/World/Light")
     dome.GetIntensityAttr().Set(lighting["dome_intensity"])
@@ -516,7 +539,7 @@ def render(app, args, spec, bricks, config, views):
                     and np.isfinite(depth[iy, ix]) and abs(float(depth[iy, ix])-z) < .002))
             fraction = sum(visible)/8
             inside = all(z > 0 and 0 <= u < width and 0 <= v < height for u, v, z in polygon)
-            role = "not_visible" if fraction == 0 else "exposed_top" if brick.layer == 9 and inside and fraction >= .75 else "visible_lower" if brick.layer < 9 else "ambiguous"
+            role = "not_visible" if fraction == 0 else "exposed_top" if brick.layer == highest_layer and inside and fraction >= .75 else "visible_lower" if brick.layer < highest_layer else "ambiguous"
             instances.append({"id": brick.name, "layer": brick.layer, "color": brick.color,
                 "polygon": [point[:2] for point in polygon], "role": role,
                 "orientation_deg": math.degrees(math.atan2(polygon[1][1]-polygon[0][1], polygon[1][0]-polygon[0][0])) % 180,
@@ -530,26 +553,47 @@ def render(app, args, spec, bricks, config, views):
         camera_records.append(camera_record)
         truth_images.append({"file": f"{view['id']}.png", "width": width, "height": height,
             "instances": instances, "intrinsics": intrinsics.tolist(), "physics_time_s": frozen_time,
-            "correlation_group": "one_full300_frozen_sim_scene"})
+            "highest_remaining_layer": highest_layer,
+            "correlation_group": args.case_metadata["case"]["id"] if args.case_metadata is not None else "one_full300_frozen_sim_scene"})
         print("RENDER_SAVED", view["id"], "physics_time", frozen_time, flush=True)
 
     if get_disassembled_connections(clear=True):
         raise RuntimeError("Native connections broke during camera capture")
     parts_after, connections_after = compute_connected_component(source_path)
     if set(parts_after) != set(parts) or set(connections_after) != set(connections):
-        raise RuntimeError("Full300 graph changed during camera capture")
+        raise RuntimeError("Active source graph changed during camera capture")
     if float(sim.current_time) != frozen_time or not torch.equal(physics_state(), frozen):
         raise RuntimeError("Final physics state/time differs from the shared capture snapshot")
     verify_placement("final_capture")
     truth = output/"evaluation_truth"
     (truth/"annotations.json").write_text(json.dumps({"images": truth_images,
+        "role_policy": "Uppermost remaining cohort first; visible_lower is not a physical accessibility judgment",
         "visibility_method": "Eight depth-tested stud samples, not pixel-exact instance masks or gripper accessibility"}, indent=2))
     (truth/"cameras.json").write_text(json.dumps(camera_records, indent=2))
     (truth/"native_graph.json").write_text(json.dumps({"parts": parts_after, "connections": connections_after}, indent=2))
-    stage.GetRootLayer().Export(str(truth/"full300_workcell.usda"))
+    active_records, active_states = [], []
+    for brick in bricks:
+        asset = scene[brick.name]
+        raw = asset.root_physx_view.get_transforms()[0].cpu().numpy()
+        velocity = asset.root_physx_view.get_velocities()[0].cpu().numpy()
+        state = [float(v) for v in np.r_[raw[:3], raw[6], raw[3:6], velocity]]
+        active_states.append(state)
+        active_records.append({"id": brick.name, "layer": brick.layer, "color": brick.color,
+            "root_state_world": state, "position_world_m": state[:3], "quaternion_wxyz": state[3:7]})
+    np.save(truth/"active_root_states.npy", np.asarray(active_states, np.float64))
+    (truth/"active_bricks.json").write_text(json.dumps({"active_ids": [b.name for b in bricks],
+        "removed_ids": args.case_metadata["removed_ids"] if args.case_metadata is not None else [],
+        "highest_remaining_layer": highest_layer, "frame": "world_robot_base", "pose_origin": "body_bottom_center",
+        "state_fields": ["x", "y", "z", "qw", "qx", "qy", "qz", "vx", "vy", "vz", "wx", "wy", "wz"],
+        "root_states_array": "active_root_states.npy", "records": active_records}, indent=2))
+    if args.case_metadata is not None:
+        (truth/"case_state.json").write_text(json.dumps(args.case_metadata, indent=2))
+    stage.GetRootLayer().Export(str(truth/("partial_workcell.usda" if args.case_metadata is not None else "full300_workcell.usda")))
     make_panel(output, views, config)
     manifest = {"geometry": spec, "selected_views": [v["id"] for v in views], "camera_config": config,
         "geometry_contact_audit": geometry_audit(bricks),
+        "benchmark_case": args.case_metadata,
+        "highest_remaining_layer": highest_layer,
         "preassembly": preassembly,
         "placement_checks": placement_checks,
         "brick_count": len(bricks), "native_connected_parts": len(parts_after), "native_connections": len(connections_after),
@@ -569,6 +613,7 @@ def render(app, args, spec, bricks, config, views):
     # This sentinel certifies validated capture, independently of Kit cleanup.
     # Explicit timeline.stop() previously blocked before a success marker.
     (output/"run_complete.json").write_text(json.dumps({"completed": True, "capture_validated": True,
+        "case_id": args.case_metadata["case"]["id"] if args.case_metadata is not None else None,
         "views": len(views), "bricks": len(bricks), "shutdown_status_file": "shutdown.json"}))
     print("CAPTURE_COMPLETE_VALIDATED", flush=True)
 
