@@ -213,8 +213,7 @@ def analyze(image, registration, config):
                 decision,layer="uncertain","ambiguous"
                 reasons.append("insufficient_local_contrast")
             elif (int(confirmed.sum())>=config["present_min_studs"] and ends
-                  and (not config.get("require_present_mean_gate", True) or top_score>=config["present_min_mean_stud_score"])
-                  and edge>=config["present_min_edge_score"]
+                  and top_score>=config["present_min_mean_stud_score"] and edge>=config["present_min_edge_score"]
                   and (lower_score is None or top_score-lower_score>=config["present_top_lower_margin"])):
                 decision,layer="present","top_compatible"
                 reasons.append("distributed_top_stud_and_edge_evidence")

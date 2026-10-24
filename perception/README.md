@@ -92,31 +92,6 @@ correction until independent evaluation establishes useful coverage without
 false-present or blank-image regressions. Nonzero feature scores alone do
 not establish success.
 
-## V2: simplify the distributed-stud decision rule
-
-The independent v1 development evaluation found 37 correctly confirmed faces
-among 112 positive references, no incorrect present/missing decisions in the
-scored set, and no blank-image confirmations. This remains far below the
-demonstration's coverage criterion. A saved-output predicate diagnostic found
-11 additional positives that passed every other present requirement but failed
-the whole-face mean-stud threshold; no supplemental missing reference passed
-that counterfactual rule.
-
-V2 removes **only** that redundant whole-face mean predicate. Six individually
-confirmed studs at score 0.35, distributed to both end rows, already model a
-partially visible eight-stud face. A mean over all eight can contradict this
-allowance: six scores of 0.55 and two unsupported sites give mean 0.4125 even
-though six sites are individually strong. The face mean is still reported for
-inspection. Edge, observability, lower-pattern margin, all feature definitions,
-all thresholds and registration geometry remain unchanged.
-
-`configs/baseline_v2.json` sets `require_present_mean_gate=false`; configurations
-without that explicit flag retain the historical predicate. The saved-output
-counterfactual motivates the change but does not replace the unchanged full
-development evaluation or establish held-out performance. V2 is accepted only
-if that independent evaluation confirms useful coverage gain without false
-present/blank regressions.
-
 `decision=present` establishes only supported **visual face presence** under
 the supplied window. `layer_hypothesis` expresses top/lower compatibility;
 `layer_verified` stays false because actual top height, full geometry and
