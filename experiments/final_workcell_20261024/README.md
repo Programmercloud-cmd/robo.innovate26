@@ -137,12 +137,12 @@ Identifying the phone lenses and ChArUco design does not supply those transforms
 
 ## Completed preview
 
-Latest capture: **Pueue 1716**, frozen scene source `aec7f2c`; approximate C920 added opposite the preserved D435i.
+Latest capture: **Pueue 1720**, frozen scene source `ac29781`; reference-corrected C920 and supplied fingertip visuals.
 
-- [Overhead render](../../runs/20261024T231138.248707Z-final-workcell-preview/output/images/diagnostic_table_top.png)
-- [Oblique render](../../runs/20261024T231138.248707Z-final-workcell-preview/output/images/diagnostic_oblique.png)
-- [USD visual scene](../../runs/20261024T231138.248707Z-final-workcell-preview/output/final_workcell.usda)
-- [Native graph, scene and camera manifest](../../runs/20261024T231138.248707Z-final-workcell-preview/output/manifest.json)
+- [Overhead render](../../runs/20261025T000918.719244Z-final-workcell-preview/output/images/diagnostic_table_top.png)
+- [Oblique render](../../runs/20261025T000918.719244Z-final-workcell-preview/output/images/diagnostic_oblique.png)
+- [USD visual scene](../../runs/20261025T000918.719244Z-final-workcell-preview/output/final_workcell.usda)
+- [Native graph, scene and camera manifest](../../runs/20261025T000918.719244Z-final-workcell-preview/output/manifest.json)
 - [Jobs, snapshots, artifact hashes and validation](completion.json)
 - [Editable layout and destination recipes](scene_config.json)
 
@@ -226,3 +226,7 @@ alignment, camera extrinsics or coordinates suitable for hardware commands.
 ## Wrist camera side correction
 
 The camera and its bracket now occupy the opposite hand flank, as corrected by the user. See [mount correction and close-up](wrist_mount/README.md). The housing remains nominal; the optical transform is uncalibrated.
+
+## Reference-based end-effector corrections
+
+The C920 folded-holder interpretation and fingertip visuals now follow the user-supplied photograph and STL. See [registration, limits and reproduction](end_effector/README.md). The pad collision model is still stock and must be checked separately before new-tip contact claims.

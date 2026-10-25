@@ -1,3 +1,9 @@
+# Superseded initial C920 proxy
+
+The folded-holder interpretation below was corrected from the user reference.
+Use [the reference-corrected model](../end_effector/README.md) for the current twin.
+Historical captures and settings below are retained as evidence.
+
 # Approximate C920 visual mounting
 
 A procedural Logitech C920 visual proxy is attached to `fr3_hand` on hand −X,
