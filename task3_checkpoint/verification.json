@@ -1,0 +1,12 @@
+{
+  "tests": 68,
+  "result": "passed",
+  "run_sha256": "8af9fea766aa33de3581e0654e4871f87d2603ac3a66c363d06b78155428c4bc",
+  "scene_sha256": "02467f85926315f19e65e4c824d0dd4512f40c39a96e287c97175c392f483080",
+  "synthetic_input_seeds": [
+    8,
+    18,
+    28
+  ],
+  "report_scope": "Kinematics and simulated flow; not commissioned hardware throughput"
+}

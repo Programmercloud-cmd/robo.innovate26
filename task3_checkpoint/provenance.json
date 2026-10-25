@@ -1,0 +1,10 @@
+{
+  "source_repository": "https://github.com/Comentario/robo.innovate-hackathon-TUM",
+  "source_commit": "d56c3b7566047ac5bdf41d25964623924b6b68ff",
+  "checkpoint": "greenfield_14",
+  "input_stacks_in_reference_run": 4,
+  "bricks_per_stack": 800,
+  "full_kiln_cart_stacks": 36,
+  "full_kiln_cart_bricks": 28800,
+  "note": "The reference batch is four stacks, not a complete kiln cart. Higher-capacity redesign is research only."
+}

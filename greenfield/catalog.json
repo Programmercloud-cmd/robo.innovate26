@@ -1,0 +1,200 @@
+[
+  {
+    "id": "layer_gantry",
+    "model": "Gudel FP-4, high-load reference",
+    "url": "https://www.gudel.com/products/linearaxis/fp",
+    "nominal": {
+      "Axis reference": "FP-4",
+      "Reference payload force": "2,000 N",
+      "Reference XY speed": "1.25 m/s",
+      "Modeled layer + tool": "102 kg",
+      "Modeled XY / Z": "1.0 / 0.7 m/s"
+    },
+    "scope": "Reference axis envelope, not an approved configured machine. Long axis maps to world Z; EOAT, vertical axis, dynamics, temperature and full stroke need integrator validation.",
+    "image_asset": "gantry.png",
+    "image_credit": "G\u00fcdel \u00b7 FP family manufacturer image (FP-7 pictured; not the selected FP-4)"
+  },
+  {
+    "id": "pallet_belt",
+    "model": "Interroll PM 9710",
+    "url": "https://www.interroll.com/fileadmin/products/product_data/PM-9710/PM9710_EN.pdf",
+    "nominal": {
+      "load_kg_per_m": 1250,
+      "load_kg_per_drive": 3000,
+      "speed_min_m_s": 0.1,
+      "speed_max_m_s": 0.5
+    },
+    "scope": "Configured pallet/support distribution and thermal suitability must be verified; not a certification of this layout."
+  },
+  {
+    "id": "vision",
+    "model": "Basler ace 2 a2A2600-64ucBAS",
+    "url": "https://docs.baslerweb.com/a2a2600-64ucbas",
+    "nominal": {
+      "Resolution": "2600 \u00d7 2160 pixels",
+      "Frame rate": "65 fps (default)",
+      "Shutter": "Global shutter",
+      "Color interface": "USB 3.0 color",
+      "Trigger": "Hardware trigger"
+    },
+    "scope": "Color, global shutter, hardware trigger. Exposure/inference/rejection errors are assumptions; no rendered-image perception is executed.",
+    "image_asset": "camera.jpg",
+    "image_credit": "Basler \u00b7 ace 2 USB color, official product documentation"
+  },
+  {
+    "id": "presence",
+    "model": "SICK WTB4-3P2162 \u00b7 miniature photoelectric sensor",
+    "url": "https://www.sick.com/media/pdf/2/92/992/dataSheet_WTB4-3P2162_1028084_es.pdf",
+    "nominal": {
+      "Supply": "10\u201330 V DC",
+      "Sensing range": "15\u2013150 mm",
+      "Response": "0.5 ms",
+      "Output": "PNP, 100 mA maximum",
+      "Light": "Visible red, 650 nm",
+      "Protection": "IP67"
+    },
+    "scope": "Background-suppression proximity sensor, mounted above the brick with a short downward sensing path. Red beam is illustrative. Not a safety protective sensor.",
+    "image_asset": "sensor.png",
+    "image_credit": "SICK \u00b7 official product datasheet, illustration may differ"
+  },
+  {
+    "id": "formation",
+    "model": "Custom row selector + guided lowering stacker",
+    "url": "https://lingl.com/wp-content/uploads/2018/03/Triangle_Brick_englisch.pdf",
+    "nominal": {},
+    "scope": "Published industrial reference for forming/mixing/lowering frames; geometry and selector/elevator speeds here are engineering assumptions, not a supplier datasheet."
+  },
+  {
+    "id": "zpa",
+    "model": "Interroll EC5000 + MultiControl \u00b7 ZPA reference",
+    "url": "https://www.interroll.com/fileadmin/user_upload/Downloads__PDF_/Drives___Controls/DC_Platform/EC5000_Catalog_PDF/EN/EC5000_50mm_IP54_EN.pdf",
+    "nominal": {
+      "roller_diameter_m": 0.05,
+      "reference_length_m": 0.5,
+      "drive_head_load_N": 350,
+      "selected_profile_max_m_s": 0.6,
+      "power_W": 35,
+      "gear_ratio": "30:1",
+      "selected_speed_m_s": 0.3,
+      "selected_acceleration_m_s2": 1.0,
+      "zone_pitch_m": 0.3,
+      "stop_distance_plus_10ms_m": 0.048,
+      "minimum_roller_support": "At least three rollers under a 245 mm brick"
+    },
+    "scope": "Motor-driven roller accumulation with occupancy sensors and downstream availability. No vertical stop actuators in this revision. Custom 300 mm zones and abrasive hot bricks require validation; this is not a complete qualified conveyor. Short transfer bridges use a separate 18:1 drive reference (35 W, maximum 1.00 m/s); buffer zones retain 30:1. Thermal suitability, torque and grip remain unvalidated."
+  },
+  {
+    "id": "bulk_bridge",
+    "model": "Complete-stack bridge / Demag KBK principle reference",
+    "url": "https://www.demagcranes.com/en-au/products/cranes/kbk-light-crane-system/kbk-double-girder-suspension-cranes",
+    "nominal": {
+      "family_payload_max_kg": 3200
+    },
+    "scope": "Family reference for overhead area handling only. Selected 2000 kg bulk lifting, 400 kg EOAT, travel speeds, building superstructure, long span/multiple supports and retention remain design assumptions requiring qualification. It is separate from the 102 kg layer tools."
+  },
+  {
+    "id": "cell_axis",
+    "model": "Festo ELGC-TB-80 \u00b7 guided toothed-belt axis",
+    "url": "https://ftp.festo.com/Public/PNEUMATIC/SOFTWARE_SERVICE/Documentation/2019/EN/ELGC-TB_EN.PDF",
+    "image_asset": "cell-axis.jpg",
+    "image_credit": "Festo \u00b7 ELGC-TB official catalog, family illustration",
+    "nominal": {
+      "Maximum feed force": "250 N",
+      "Maximum speed": "1.5 m/s",
+      "Repeatability": "\u00b10.1 mm",
+      "Available reference strokes": "200\u20132,000 mm",
+      "Guide": "Recirculating ball bearing",
+      "Protection": "IP40",
+      "Reference maximum acceleration": "15 m/s\u00b2",
+      "Modeled acceleration": "3 m/s\u00b2, load and moment validation pending"
+    },
+    "scope": "Reference for singulation, side ejection and selector axes. Custom multi-axis carriage, paddle, motor, selected stroke, contamination protection, acceleration and force limits require sizing. Force/speed maxima do not establish a valid operating point."
+  },
+  {
+    "id": "pallet_transfer_car",
+    "model": "HORSTMANN VWG \u00b7 rail-guided transfer-car reference",
+    "url": "https://www.horstmann-anlagentechnik.de/project/transfer-car/?lang=en",
+    "nominal": {
+      "Reference payload": "1,200 kg",
+      "Modeled pallet incl. wood": "1,033 kg",
+      "Drive": "Reversible gearmotor driving one wheel axle",
+      "Guidance": "Running rails + horizontal side guide rollers",
+      "Rail options": "A45 / S20",
+      "Modeled travel speed": "0.25 m/s"
+    },
+    "scope": "Industrial reference for an onboard conveyor on a rail carriage, with geared wheel drive, guide rollers and track buffers. The rendered low-profile chassis, geometry and integration remain custom. Does not qualify the full installation.",
+    "image_asset": "pallet-transfer-car.jpg",
+    "image_credit": "HORSTMANN \u00b7 official transfer-car reference photo; installation shown differs from this custom scene"
+  },
+  {
+    "id": "stack_clamp",
+    "model": "Industrial supported pack clamp \u00b7 custom hybrid",
+    "url": "https://www.kinshofer.com/us/crane/general-construction/brick-stack-grapples",
+    "nominal": {
+      "Mechanism reference": "Parallel synchronized hydraulic jaws with replaceable rubber pads",
+      "Catalog KM332-1300": "1,600 kg at 1,300 mm plunge (configuration dependent)",
+      "Our stack": "1,465 kg incl. assumed wooden pallet; 1,380 mm brick height",
+      "Our support": "Forks carry weight; side pads restrain loose bricks",
+      "Important difference": "Custom full-height pads and automatic bridge interface; not a selected KM332"
+    },
+    "scope": "KM332 data demonstrate the parallel-jaw principle only. Its catalog cautions that ratings depend on product and do not apply to low-profile unbundled items. Our hybrid requires supplier validation, load/support sensing, pressure limits and loss-of-pressure protection.",
+    "image_asset": "stack-clamp.jpg",
+    "image_credit": "KINSHOFER \u00b7 official KM332-V reference image; our supported full-height restraint is a custom hybrid"
+  },
+  {
+    "id": "zpa_control",
+    "model": "Interroll MultiControl AI",
+    "url": "https://www.interroll.com/products/controls/multicontrol-ai",
+    "nominal": {
+      "Controlled zones": "Up to 4 RollerDrive zones / controller",
+      "Supply": "24 or 48 V DC",
+      "Rated drive options": "20 / 35 / 50 W",
+      "Protection": "IP54",
+      "Ambient": "-30 to +40 \u00b0C",
+      "Zone assembly": "One motor roller coupled to idlers; one occupancy sensor per zone"
+    },
+    "scope": "Controller datasheet; not a complete brick conveyor qualification. Product surface temperature, contamination, stopping distance, roller support and custom 300 mm zones require validation."
+  },
+  {
+    "id": "roller_manual",
+    "model": "Interroll EC5000 \u00b7 drive ratios and ramps",
+    "url": "https://www.interroll.com/fileadmin/Downloads/User_Manuals/RollerDrive/User_Manual_EC5000_EN.pdf",
+    "nominal": {
+      "35 W 30:1 maximum speed": "0.60 m/s",
+      "35 W 18:1 maximum speed": "1.00 m/s",
+      "30:1 reference acceleration": "3.965 m/s\u00b2 speed mode; positioning limits differ",
+      "Our buffer selection": "0.30 m/s, 1.0 m/s\u00b2, speed mode",
+      "Stopping estimate": "v\u00b2/(2a) + v \u00d7 0.010 s = 48 mm",
+      "Sensor-to-zone-end allowance": "50 mm design allowance; commissioning needed"
+    },
+    "scope": "Manufacturer values at 20 \u00b0C. Ramp setting is not proof against brick slip or tipping. Motor torque, surface temperature and abrasive duty require trials."
+  },
+  {
+    "id": "long_axis",
+    "model": "Festo ELGA-TB-KF-70 \u00b7 longer horizontal sorter axis reference",
+    "url": "https://media.festo.com/media/202997_documentation.pdf",
+    "nominal": {
+      "Reference stroke": "50\u20135,000 mm (size 70)",
+      "Reference maximum feed force": "350 N",
+      "Reference maximum speed": "5 m/s",
+      "Reference maximum acceleration": "50 m/s\u00b2",
+      "Modeled rail travel": "3,750 mm",
+      "Modeled speed / acceleration": "1.0 m/s / 3.0 m/s\u00b2"
+    },
+    "scope": "Manufacturer family envelope only. Rail supports, belt tension, carriage load, moment loads, contamination and integrated drive require sizing. No overhead reserve axis is used."
+  },
+  {
+    "id": "surge_belt",
+    "model": "Compact reversible belt staging \u00b7 custom assembly",
+    "url": "https://www.interroll.com/products/controls/multicontrol-ai",
+    "nominal": {
+      "Capacity": "24 same-shade bricks per belt; 3 belts per cell",
+      "Drive principle": "One reversible motor per complete belt",
+      "Belt speed": "0.30 m/s selected assumption",
+      "Index pitch": "300 mm; all stored pieces move together",
+      "Control": "Entry detection + encoder indexing + occupancy count",
+      "Retrieval": "Same-height horizontal sorter; no overhead manipulator"
+    },
+    "scope": "Custom supported conveyor concept, not an Interroll product selection. The linked source documents drive/control principles; belt material, hot/abrasive duty, encoder and motor sizing remain to be selected."
+  }
+]
