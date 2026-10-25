@@ -188,8 +188,9 @@ def decorate_stage(stage, cfg, output):
         from experiments.final_workcell_20261024.c920_mount.model import add_c920
         spec = layout["additional_wrist_camera"]
         c920_report = add_c920(stage, spec, spec["parent_prim"])
-    from experiments.final_workcell_20261024.end_effector.fingertips import audit_native_fingers
-    finger_report = audit_native_fingers(stage, output)
+    from experiments.final_workcell_20261024.end_effector.fingertips import audit_native_fingers, add_updated_tip_visuals
+    finger_audit = audit_native_fingers(stage, output)
+    finger_report = add_updated_tip_visuals(stage, cfg, output) or finger_audit
     diagnostic = stage.GetPrimAtPath("/World/Overview")
     diagnostic.CreateAttribute("sensorPurpose", Sdf.ValueTypeNames.String).Set("Virtual diagnostic inspection only; not the physical wrist camera")
     return {"source_studs": layout["source"]["studs"], "target_studs": target["studs"],

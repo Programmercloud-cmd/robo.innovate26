@@ -381,6 +381,13 @@
         "Illustrative angle is not measured mechanical hard stop or calibrated optical direction"
       ],
       "reference_asset": "end_effector/assets/c920_folded_reference.jpg"
+    },
+    "fingertip_visual": {
+      "asset": "assets/franka_research3_gripper.stl",
+      "sha256": "30c3e47142dce9ba82ec46edf42f1dc2825d620d23bad0a95ce1e2de902b752d",
+      "assumed_stl_unit_m": 0.001,
+      "distal_tip_finger_z_m": 0.05389988,
+      "status": "Nominal visual registration from native pad bounds; STL units assumed millimeters. Mounting-face and distal-tip alignment plausible but physically unverified; new collision geometry pending validation."
     }
   }
 }
