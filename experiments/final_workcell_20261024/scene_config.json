@@ -386,8 +386,8 @@
       "asset": "assets/franka_research3_gripper.stl",
       "sha256": "30c3e47142dce9ba82ec46edf42f1dc2825d620d23bad0a95ce1e2de902b752d",
       "assumed_stl_unit_m": 0.001,
-      "distal_tip_finger_z_m": 0.05389988,
-      "status": "User-confirmed orientation with nominal translation from stock pad backplane/widthcenter and prior visual distal endpoint. STL millimeters assumed. Distal recess concentricity and clearance are unmeasured; no physical-fit/contact claim.",
+      "distal_tip_finger_z_m": 0.06164037066757202,
+      "status": "User-confirmed orientation and proximal-edge alignment. Nominal backplane/width placement; STL millimeters assumed. Simple rigid visual screw attachment, no form-fit/contact certification.",
       "width_center_cad_y_mm": -15.5,
       "stock_pad_backplane_abs_finger_y_m": 0.01090669,
       "body_mount_cad_x_mm": -9.5,
@@ -404,7 +404,9 @@
         "outward_protrusion_m": 0.002,
         "fallback_wall_thickness_m": 0.002,
         "status": "Simple round visual screw head rigidly parented to each finger. Diameter6mm/protrusion2mm estimated; no shaft, threads, form-fit, collision or mass model."
-      }
+      },
+      "stock_pad_proximal_finger_z_m": 0.03609037,
+      "height_anchor": "User-confirmed same proximal/top edge as stock pads; longer body extends distally below metal. Boss and outside head share the resulting axis height."
     }
   }
 }

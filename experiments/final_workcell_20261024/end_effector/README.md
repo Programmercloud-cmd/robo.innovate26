@@ -26,12 +26,15 @@ The supplied STL remains unchanged, with nominal CAD bounds X[−11,0],
 Y[−23,−8], Z[2.050005,27.600006]. STL has no units; millimeters remain assumed.
 The body mounting plane at CAD X=−9.5 is placed at the old stock-pad backplane;
 the boss front at X=−11 therefore extends nominally 1.5 mm into the support.
-Width centering and the previous visual distal endpoint are retained as
-**nominal visual anchors**. The saved-mesh seat inspection found only proximal
-circles unrelated to the distal mounting feature. Recess concentricity,
-clearances and physical fit have not been measured or established by this
-placement. The per-render `updated_fingertips.json` records the actual transform,
-axis probes, nominal boss center and depth, and these limitations.
+The user confirmed that the new pads share the stock pads’ **proximal/top
+edge**, at finger Z=36.09037 mm. The 25.550001 mm custom body therefore extends
+distally to Z=61.640371 mm, approximately 7.74049 mm beyond the old stock tip.
+The boss axis and screw head move together to Z≈45.09037 mm. The prior fixed
+53.89988 mm distal endpoint was an incorrect height anchor and is superseded.
+Width centering and backing-plane placement remain nominal; the boss enters
+the supporting finger’s screw hole as a simple rigid attachment, without
+form-fit or clearance certification. The per-render `updated_fingertips.json`
+records transforms, probes, boss depth and both proximal/distal extents.
 
 A simple round screw head is a rigid visual child of each finger, on the
 nominal boss axis. Head diameter 6 mm and outward protrusion
@@ -46,11 +49,13 @@ correction does not validate supplied-tip contact, grasping or insertion.
 Closed perception/contact experiments retain their original transforms and
 results; their old mounting is not silently updated by this correction.
 
-Current verified mounting: **Pueue1771**, source`3afda2d`, independent verification **1772:52/52 passed**.
+Earlier orientation/screw-head preview: **Pueue1771**, source`3afda2d`,
+verification **1772:52/52 passed**. Its distal-fixed **height is superseded**
+by the user’s proximal-edge alignment above; these results remain archived.
 
-- [Corrected pads and outside screw head](../../../runs/20261025T071719.927577Z-final-workcell-preview/output/images/diagnostic_pad_support_side.png)
-- [Opposed gripping faces](../../../runs/20261025T071719.927577Z-final-workcell-preview/output/images/diagnostic_pad_inner_faces.png)
-- [Updated visual USD](../../../runs/20261025T071719.927577Z-final-workcell-preview/output/final_workcell.usda)
+- [Superseded-height pads and outside screw head](../../../runs/20261025T071719.927577Z-final-workcell-preview/output/images/diagnostic_pad_support_side.png)
+- [Superseded-height opposed gripping faces](../../../runs/20261025T071719.927577Z-final-workcell-preview/output/images/diagnostic_pad_inner_faces.png)
+- [Superseded-height visual USD](../../../runs/20261025T071719.927577Z-final-workcell-preview/output/final_workcell.usda)
 - [Independent checks](../../../runs/20261025T071811.763056Z-pad-mount-verification/output/verification.json)
 - [Dimensions, envelopes, jobs and hashes](mount_correction/results.json)
 

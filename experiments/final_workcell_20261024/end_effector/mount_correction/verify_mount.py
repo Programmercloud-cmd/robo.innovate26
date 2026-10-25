@@ -17,6 +17,13 @@ def axis(p,m):
     return a/np.linalg.norm(a)
 
 
+def native_height_anchors(record):
+    if any(c!=3 for c in record['face_counts']):raise ValueError('Expected native triangle faces')
+    points=np.asarray(record['points_finger_m']);faces=np.asarray(record['face_indices'],int).reshape(-1,3)
+    subsets={s['path'].rsplit('/',1)[-1]:s['face_indices'] for s in record['material_subsets']}
+    return float(points[faces[subsets['material_1']],2].min()),float(points[faces[subsets['material_0']],2].max())
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ['before','after','output']:parser.add_argument('--'+name,type=Path,required=True)
@@ -56,6 +63,11 @@ def main():
         checks[label+'_nominal_body_mount_plane']=abs(seat[1]-t['nominal_mount_plane_finger_y_m'])<1e-6
         depth=float(np.dot(front-seat,boss));checks[label+'_visual_attached_to_finger']=t['prim'].startswith('/World/envs/env_0/Robot/'+label+'/')
         checks[label+'_taper_more_distal_than_boss_and_proximal']=bool(taper[2]>front[2] and taper[2]>proximal[2])
+        stock_prox,metal_distal=native_height_anchors(next(r for r in native[1] if r['finger']==label))
+        expected_tip=stock_prox+(probes['broad_proximal'][2]-probes['taper_distal'][2])*t['scale']
+        checks[label+'_proximal_edge_matches_stock_pad']=bool(abs(proximal[2]-stock_prox)<1e-6 and abs(t['bounds_finger_m'][0][2]-stock_prox)<1e-6)
+        checks[label+'_longer_tip_extends_beyond_metal']=bool(taper[2]>metal_distal and t['bounds_finger_m'][1][2]>metal_distal)
+        checks[label+'_height_matches_proximal_anchor_and_CAD_span']=bool(abs(taper[2]-expected_tip)<1e-6 and abs(t['bounds_finger_m'][1][2]-expected_tip)<1e-6)
         checks[label+'_only_old_pad_faces_hidden']=t['removed_stock_pad_faces']==262 and t['retained_white_finger_faces']==362
         checks[label+'_white_fingerprint_preserved']=t['white_fingerprint_before']==t['white_fingerprint_after']
         checks[label+'_stock_collision_fingerprint_preserved']=t['collision_fingerprint_before']==t['collision_fingerprint_after']
@@ -65,7 +77,7 @@ def main():
         checks[label+'_round_head_visual_attached']=head['visual_only'] is True and head['physical_fit_or_clearance_verified'] is False and head['parent_finger']=='/World/envs/env_0/Robot/'+label and head['parent'].startswith(head['parent_finger']+'/') and head['head_prim'].startswith(head['parent']+'/') and head['axis']=='Y'
         checks[label+'_head_configured_envelope']=bool(abs(radius-headcfg['head_radius_m'])<1e-9 and abs(head['head_height_m']-headcfg['outward_protrusion_m'])<1e-9 and abs(head['outward_protrusion_m']-headcfg['outward_protrusion_m'])<1e-9 and abs(sign*(outer-base)-headcfg['outward_protrusion_m'])<1e-9 and np.allclose(head['head_envelope_finger_m'],expected_envelope,atol=1e-6,rtol=0))
         checks[label+'_head_outside_at_boss_height']=bool(sign*base>=sign*front[1]-1e-6 and np.allclose(center,[(front[0]),(base+outer)/2,front[2]],atol=1e-6,rtol=0))
-        normals[label]=grip;details[label]={'grip_normal_finger':grip.tolist(),'boss_direction_finger':boss.tolist(),'nominal_mount_axis_finger_m':seat.tolist(),'nominal_boss_front_finger_m':front.tolist(),'nominal_taper_finger_m':taper.tolist(),'nominal_boss_depth_m':depth,'outside_screw_visual':head}
+        normals[label]=grip;details[label]={'grip_normal_finger':grip.tolist(),'boss_direction_finger':boss.tolist(),'nominal_mount_axis_finger_m':seat.tolist(),'nominal_boss_front_finger_m':front.tolist(),'nominal_taper_finger_m':taper.tolist(),'native_stock_pad_proximal_z_m':stock_prox,'native_metal_distal_z_m':metal_distal,'expected_tip_from_proximal_anchor_m':expected_tip,'nominal_boss_depth_m':depth,'outside_screw_visual':head}
     checks['grip_normals_opposed']=bool(np.allclose(normals['fr3_leftfinger'],-normals['fr3_rightfinger'],atol=1e-6,rtol=0))
     result={'schema':'visual-mount-correction-verification-v1','checks':{k:bool(v) for k,v in checks.items()},'all_passed':bool(all(checks.values())),
         'tip_readbacks':details,'unchanged_existing_camera_ids':common,'added_diagnostic_camera_ids':sorted(set(cameras[1])-set(cameras[0])),

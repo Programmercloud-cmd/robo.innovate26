@@ -32,7 +32,7 @@ def nominal_mount_parameters(spec, left):
     unit = spec['assumed_stl_unit_m']
     return sign*90., [sign*spec['width_center_cad_y_mm']*unit,
         sign*(spec['stock_pad_backplane_abs_finger_y_m']+spec['body_mount_cad_x_mm']*unit),
-        spec['distal_tip_finger_z_m']+spec['taper_distal_cad_z_mm']*unit]
+        spec['stock_pad_proximal_finger_z_m']+spec['broad_end_cad_z_mm']*unit]
 
 
 def add_updated_tip_visuals(stage, cfg, output):
@@ -120,8 +120,8 @@ def add_updated_tip_visuals(stage, cfg, output):
         registered = [list(xf.Transform(Gf.Vec3d(v))) for v in points]
         bounds = [[min(v[i] for v in registered) for i in range(3)],
                   [max(v[i] for v in registered) for i in range(3)]]
-        if abs(bounds[1][2]-spec['distal_tip_finger_z_m']) > 1e-6:
-            raise RuntimeError('Registered tip distal alignment failed')
+        if abs(bounds[0][2]-spec['stock_pad_proximal_finger_z_m']) > 1e-6 or abs(bounds[1][2]-spec['distal_tip_finger_z_m']) > 1e-6:
+            raise RuntimeError('Registered pad proximal alignment or derived distal extent failed')
         actual_probes = {key:list(xf.Transform(Gf.Vec3d(*point))) for key,point in probes.items()}
         grip_normal = list(xf.TransformDir(Gf.Vec3d(1,0,0)).GetNormalized())
         boss_direction = list(xf.TransformDir(Gf.Vec3d(-1,0,0)).GetNormalized())
@@ -168,10 +168,12 @@ def add_updated_tip_visuals(stage, cfg, output):
             'scale':spec['assumed_stl_unit_m'],'triangles':count})
     report = {'status':spec['status'],'sha256':spec['sha256'],'instances':reports,
         'collision_status':'Stock pad collision and friction unchanged; new STL contact geometry not yet validated',
-        'registration':'User-confirmed proper X/Z flip; low CAD Z tapered end distal, bosses toward metal, broad CAD X0 gripping faces inward. Body plane CAD X-9.5 nominally aligns with stock pad backplane.',
+        'registration':'User-confirmed proper X/Z flip and proximal/top edge aligned with stock pad; extra body length extends distally. Low CAD Z taper distal, bosses toward metal, broad CAD X0 gripping faces inward. Body plane CAD X-9.5 nominally aligns with stock pad backplane.',
         'reference_CAD_probes_mm':probes,
-        'seating_status':'Nominal visual placement only. Distal recess center/concentricity and clearances remain unmeasured; inspection1770 found only irrelevant proximal circles.',
-        'proximal_extension_vs_stock_m':.03609037-min(r['bounds_finger_m'][0][2] for r in reports),
+        'seating_status':'User-confirmed proximal alignment and boss-to-metal-hole attachment intent. Rigid visual attachment only; no form-fit or clearance certification.',
+        'stock_pad_proximal_edge_finger_z_m':spec['stock_pad_proximal_finger_z_m'],
+        'proximal_extension_vs_stock_m':spec['stock_pad_proximal_finger_z_m']-min(r['bounds_finger_m'][0][2] for r in reports),
+        'distal_extension_vs_stock_m':max(r['bounds_finger_m'][1][2] for r in reports)-.05389988,
         'material_status':'Illustrative dark pad finish; physical material/color unknown'}
     (output/'updated_fingertips.json').write_text(json.dumps(report,indent=2)+'\n')
     return report
