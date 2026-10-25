@@ -345,18 +345,18 @@
     "additional_wrist_camera": {
       "id": "wrist_c920",
       "type": "Logitech C920",
-      "status": "Approximate user-described visual mounting; all dimensions, hinge limit, optical center and viewing direction unmeasured. No optical sensor activated.",
+      "status": "Corrected from user folded-holder reference: underside against hand, rear tail at wrist face, lens fascia tilts toward fingers/nominal held-object region. Unmeasured dimensions/stop/optics; visual only.",
       "parent_prim": "/World/envs/env_0/Robot/fr3_hand",
       "stand_center_hand_x_m": -0.035,
       "stand_size_depth_width_length_m": [
-        0.005,
+        0.006,
         0.045,
-        0.06
+        0.05
       ],
       "hinge_position_hand_m": [
         -0.047,
         0,
-        0.06
+        0.043
       ],
       "body_size_depth_width_height_m": [
         0.024,
@@ -364,22 +364,23 @@
         0.029
       ],
       "body_center_from_hinge_local_m": [
-        -0.022,
+        -0.016,
         0,
-        0.008
+        -0.003
       ],
-      "illustrative_forward_hinge_deg": 60.0,
+      "illustrative_forward_hinge_deg": 50.0,
       "tape_centers_hand_z_m": [
-        0.018,
-        0.039
+        0.013,
+        0.031
       ],
       "mount_constraints": [
-        "opposite D435i side",
-        "centered laterally on wrist axis when viewed from C920 side",
-        "stand fully folded and taped against hand",
-        "stand upper end at nominal circular wrist-face plane",
-        "body tilted toward fingers to illustrative unmeasured hinge stop; visibly noncoplanar"
-      ]
+        "Folded foot underside against hand -X flank; not long vertical strap",
+        "Rear tail reaches nominal handZ0 circular wrist-face stop",
+        "Housing overlaps folded clip footprint",
+        "Fascia initially faces fingers +Z; housing-only pitch toward hand +X/grasp region",
+        "Illustrative angle is not measured mechanical hard stop or calibrated optical direction"
+      ],
+      "reference_asset": "end_effector/assets/c920_folded_reference.jpg"
     }
   }
 }

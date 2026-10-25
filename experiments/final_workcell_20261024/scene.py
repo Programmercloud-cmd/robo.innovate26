@@ -188,12 +188,14 @@ def decorate_stage(stage, cfg, output):
         from experiments.final_workcell_20261024.c920_mount.model import add_c920
         spec = layout["additional_wrist_camera"]
         c920_report = add_c920(stage, spec, spec["parent_prim"])
+    from experiments.final_workcell_20261024.end_effector.fingertips import audit_native_fingers
+    finger_report = audit_native_fingers(stage, output)
     diagnostic = stage.GetPrimAtPath("/World/Overview")
     diagnostic.CreateAttribute("sensorPurpose", Sdf.ValueTypeNames.String).Set("Virtual diagnostic inspection only; not the physical wrist camera")
     return {"source_studs": layout["source"]["studs"], "target_studs": target["studs"],
         "target_zones": target["zones"], "routing_implemented": False, "target_empty": True,
         "reject_bowl_open_top": True, "bowl_collision_validation": "unvalidated static approximation",
-        "wrist_camera_config_count": 1 + int(c920_report is not None), "additional_wrist_visual": c920_report, "wrist_optical_transform_available": False,
+        "wrist_camera_config_count": 1 + int(c920_report is not None), "additional_wrist_visual": c920_report, "fingertip_visual_update": finger_report, "wrist_optical_transform_available": False,
         "marker_board_pattern": pattern_report,
         "appearance_config": appearance, "applied_visual_materials": applied_materials,
         "native_tower_visual_material_paths_not_edited": sorted(untouched_brick_material_paths),
