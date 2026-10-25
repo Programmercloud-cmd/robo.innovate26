@@ -4,9 +4,10 @@ Updated 2026-10-25. **Latest measured state:** a free-coupon retention
 fixture fails with both the original early-force admission (1821) and a correctly
 executed position-only 14 mm / 30-endpoint-sample policy (1822). A matched
 1500-step stationary control passes. Neither trial completes the bounded lift
-and hold. Effective pad/brick material/contact behavior is the next dependency;
-a more complex controller or hardware grasping motion is not justified by this
-simulation failure. Native tower extraction, transfer, insertion and repeated
+and hold. Startup readback1823 now records1.3625mm contact/zero rest offsets in all
+returned finger/coupon slots and a coupon authored/runtime material mismatch.
+Shape-to-component mapping and actual traction remain unknown. No contact
+parameter change or more complex controller is justified as an established fix. Native tower extraction, transfer, insertion and repeated
 sorting remain unproven. See the [closed timing comparison](../experiments/stage2_free_position_20261025/README.md).
 
 Local pregrasp RGB color classification now has a saved-image benchmark
@@ -1097,3 +1098,23 @@ remain retained:1821 full232.401402697s and1822 full100.531788056s bring the
 aggregate to2388.038652171/2500s. Next investigate effective runtime material/
 contact offsets; no stronger squeeze, tilt, new controller or hardware action
 follows automatically.
+
+
+## Effective contact/material readback — configuration evidence only
+
+Startup-only1823 reuses the immutable1822initializer and replaces its trial hook.
+All60 checks and9getter arrays pass with zero measured steps or state changes.
+Each finger returns5 unordered material slots: four[.5,.5,0], one[2.5,2,0].
+The coupon returns2 uniform[.5,.5,0] slots, differing from its unbound USD
+collider-authored scalar attributes. All returned shape offsets are1.3625mm
+contact and0rest. Do not identify a BODY row by expected friction or infer
+measured pair traction.
+
+The2.725mm offset-sum scale is comparable to3.083mm nominal overlap, but this
+is not penetration, stand-off, exhausted band or a causal retention finding.
+A fixed BODY-only100µm contact offset is a reviewed proposal for a later
+sensitivity test, not an implemented fix; coupon unchanged means pair distance
+would remain about1.4625mm. No physical retry follows this readback.
+
+Full1823Pueue cost15.679833137s brings the retained total to2403.718485308/2500s.
+See [raw configuration result and limits](../experiments/stage2_contact_readback_20261025/README.md).
