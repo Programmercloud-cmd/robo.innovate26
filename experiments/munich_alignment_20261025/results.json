@@ -1,0 +1,56 @@
+{
+  "schema": "munich-optical-bridge-results-v1",
+  "job_id": 1811,
+  "source_commit": "0db955a",
+  "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T131143.845159Z-munich-optical-bridge",
+  "status": "PASS_LIMITED_OPTICAL_FRAME_AND_MODEL_COMPATIBILITY",
+  "active_pueue_seconds": 0.647848,
+  "check_seconds": 0.03562345998943783,
+  "checks_passed": 251,
+  "check_count": 251,
+  "observations": 12,
+  "board_closure_statistics": {
+    "translation_rms_m": 0.0013302187817240876,
+    "translation_max_m": 0.001771339457100305,
+    "rotation_rms_deg": 0.19229169547912844,
+    "rotation_max_deg": 0.35875169821343633
+  },
+  "model_FK_max_errors": {
+    "USD_flange": {
+      "translation_m": 4.996362553333094e-08,
+      "rotation_rad": 1.2253636143635637e-07
+    },
+    "USD_configured_EE": {
+      "translation_m": 5.084346552041858e-08,
+      "rotation_rad": 1.4233367335888933e-07
+    },
+    "URDF_flange": {
+      "translation_m": 3.650093290231163e-08,
+      "rotation_rad": 1.2253636204479997e-07
+    },
+    "URDF_configured_EE": {
+      "translation_m": 3.8838852103638604e-08,
+      "rotation_rad": 1.1620554403659467e-07
+    }
+  },
+  "saved_registry": "experiments/final_workcell_20261024/calibration/munich_realsense_20261025.json",
+  "saved_registry_sha256": "8a9172fba05c8abbb6224189f644983ec1f2ce64a632fe7010b044caa3ea07a1",
+  "source_report_sha256": "f10b74d37da773d6d52997c9b18deeac6aee3748ad3a2a7de21788934f5d1581",
+  "unknown_registrations_preserved": {
+    "T_isaac_world_base": null,
+    "T_base_input_plate": null,
+    "T_base_output_plate": null,
+    "T_base_bowl": null,
+    "T_base_opposite_c920": null
+  },
+  "active_runtime_applied": false,
+  "physical_accuracy_verified": false,
+  "hardware_execution_authorized": false,
+  "independent_review": "Evaluator and reviewer independently accept limited result and passive registry; no renderer/contact change authorized.",
+  "reproducibility": {
+    "synthetic_command": "/home/faps/miniforge3/envs/unitree_sim_env/bin/python experiments/munich_alignment_20261025/test_synthetic.py",
+    "original_submission": "python3 experiments/munich_alignment_20261025/submit.py from0db955a; onefixedjob, noautomaticresubmission",
+    "queued_command_file": "/home/faps/dev/github/robo.innovate26/runs/20261025T131143.845159Z-munich-optical-bridge/launch.sh"
+  },
+  "goal_status": "INCOMPLETE; native grasp1809failed and current measurements do not validate manipulation."
+}

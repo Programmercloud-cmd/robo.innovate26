@@ -1,0 +1,695 @@
+{
+  "schema": "munich-measured-realsense-optics-v1",
+  "accepted_scope": "Optical frame bridge and computational FR3 model compatibility",
+  "active_runtime_applied": false,
+  "hardware_execution_authorized": false,
+  "absolute_physical_alignment_verified": false,
+  "source": {
+    "bundle": "resources/alignment_export_munich_20261025_measured",
+    "archive_sha256": "649b8d72ca76867a1f5d8f41656bbc4ae4cdedec69976806168b2db42fee9354",
+    "bundle_files_verified": 119,
+    "local_check_job": 1811,
+    "check_source_commit": "0db955a",
+    "check_snapshot": "runs/20261025T131143.845159Z-munich-optical-bridge",
+    "check_report_sha256": "f10b74d37da773d6d52997c9b18deeac6aee3748ad3a2a7de21788934f5d1581",
+    "input_sha256": {
+      "frames": "d0aa661eb757898093af62971881df9bc980d3af5ba7add1d3b62dbbb215fc63",
+      "camera": "3cfd618d1b6a4701413acf8b6bf95885de5b6f0bd53576b68df65cff92dbcfb1",
+      "board_points": "bbf66948fa41c4bcf9d5b7cd391941209fde2a631cc54edfebeb0e18ebe5a3f9",
+      "validation": "96ec9ad1b9e63e7f013cdc1ee330262cac41f0fb20942f5f59cf538eb4314805",
+      "index": "7f0f601b67481d6bc7c7a06afbdaae426221aaf4f53ae5f44437685713b560f0",
+      "result": "47e594f6b7dab8851d7528de714487a29b28b102e6375a2f344ad8645096b383",
+      "urdf": "9f395c1dd0bd97779534b14e09777b183c0b5ddb6f0ae306a106fe6a0c8e4c0a",
+      "usd_chain": "56740a748b3885b3789f1fe3731cffb0586e3a615cde02110566b82987ece1d0",
+      "grip_science": "16ce8eb603e2d620c97b931c02dae43ed605060187d252a6873eb9d9a824d8ce",
+      "00_sample_1792922690051980112": "43e4c1d4fb8ee31df7c4f58112f4e1f62a1ea40f8e710015373e74317f225770",
+      "01_sample_1792922817859681857": "8a3e9392f5708d9e378713f2d6e7a233b97fffeb0f49986f318d1095974b2229",
+      "02_sample_1792922910364715476": "08821e6282ffb803c0328ee471242f3f69dc65863b6c346ac0d715c4664c7752",
+      "03_sample_1792922980404017411": "154292e596c40e7bf833b3b7afa96c2e55a2ecb55763f9d5e90e38fcd9a33e39",
+      "04_sample_1792923075472338107": "2aa27bfb242ae9cb209150bdf4fab37179fbd40cf5cda35e994fcb9ede6c928f",
+      "05_sample_1792923140871208906": "bf1e5127e79275d37e39b98ea3d1caaf52a208a08c84e7ce4c3e7cdc25c9eb7f",
+      "06_sample_1792923242254997714": "d96f51c544e9879a956c5a506b10ea0cd019edc4b78247c138b223f98e4d65dc",
+      "07_sample_1792923302810912302": "6d91530fa84430f651811cf8e9cc8627b136b49c6a58d1dfc9d70d7b60e8d410",
+      "08_sample_1792923443410579016": "893277f59261483434fa3e31c84dee7bf7a4a6e7738b0d152133f196cdceb8cf",
+      "09_sample_1792923533226772912": "0312203ea66a3ddb2513357e4367210ed21b0e036f8b4412d34ad5cc6a6a2040",
+      "10_sample_1792923587571311973": "87d2e8ec24f2fff01f39c4cb7c5f541801cbf084a1bdcc290899a4a8dac4b845",
+      "11_sample_1792923679250109469": "e94af763ebe8691638b99834dc694beff0de3715ff0e03b08e501cb7eedc1abd",
+      "00_sample_1792922690051980112_original": "6c26fd028af2264da82c93ae12e302c5af62e9217a950d0e3ebbe397a4f34ab6",
+      "01_sample_1792922817859681857_original": "2c4c00eac0ba3760b2f5c51bf2a310bebf1c8ea345aa638eff411dad4b48bf54",
+      "02_sample_1792922910364715476_original": "caab36e196c3bc09b226d7d0e20151e6d2d337d51f27e7433fd061ccee7c2343",
+      "03_sample_1792922980404017411_original": "2271ed2a10f4d141ca02a20c3923432ad22248f9408c718a9c6d9b30f10be82c",
+      "04_sample_1792923075472338107_original": "1203e7a754961b98d933f73467da85303e526d9db8d4a61c3a839b80469afde2",
+      "05_sample_1792923140871208906_original": "164d40664a4eb5d3f32fe32ae540aeed9819ec46618b1b20a254921478312959",
+      "06_sample_1792923242254997714_original": "615e43c6528a661d9b097518a3368373ec87093eac35651f80c1af7a74292c45",
+      "07_sample_1792923302810912302_original": "7bcb76524a4ab763bbb0bcf2780e1f05fdf7eed73947f8288ae31fc6c800ae58",
+      "08_sample_1792923443410579016_original": "d15fc073e613986943a6d5d4110861628fbb4e66e12434911fc9b5f924167a69",
+      "09_sample_1792923533226772912_original": "7ea50c558f63222b45d97b9800ad22127c91971502cb4b1b5f4c14915602961c",
+      "10_sample_1792923587571311973_original": "85c4a14b2bff1827b87ba0e7bca836774c4a1adf8df45693ef25fed24baacc05",
+      "11_sample_1792923679250109469_original": "93b42c2f958cd47137072936abea4961446cb683fcfff344a8c05daeb0c4d2e3"
+    }
+  },
+  "convention": "T_A_B maps B column-vector coordinates intoA; all translationsmeters; quaternionorder[x,y,z,w]",
+  "camera_optical_axes": "X right,Y down,Z forward; right-handed",
+  "device": {
+    "sdk_identified_model": "RealSense D435",
+    "serial": "943222073921",
+    "operator_model_label": "D435i",
+    "model_note": "SavedSDK reportsD435; do not infer anIMU or substituteD435i sensor parameters.",
+    "IMU_inferred": false
+  },
+  "rgb": {
+    "resolution": [
+      1280,
+      720
+    ],
+    "fps": 30,
+    "output_pixel_format": "BGR8",
+    "stored_dtype": "uint8",
+    "K": [
+      [
+        915.4964599609375,
+        0,
+        628.6519165039062
+      ],
+      [
+        0,
+        913.1514282226562,
+        370.4845275878906
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "distortion": "distortion.inverse_brown_conrady",
+    "coefficients": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "intrinsics_provenance": "SDK aligned-depth target profile. Equivalence to color intrinsics followsrs.align(color); a separate native-color intrinsics record was not saved."
+  },
+  "aligned_depth": {
+    "resolution": [
+      1280,
+      720
+    ],
+    "K": [
+      [
+        915.4964599609375,
+        0,
+        628.6519165039062
+      ],
+      [
+        0,
+        913.1514282226562,
+        370.4845275878906
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "distortion": "distortion.inverse_brown_conrady",
+    "coefficients": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "storage": "float32depth_m inNPZ; meters; lossless compressed",
+    "aligned_to": "RGB",
+    "invalid_zero_value": 0.0,
+    "not_native_z16": true,
+    "use_transform": "T_tcp_color",
+    "zero_distortion_coefficients": true
+  },
+  "depth_ingress_rule": "Saved float32 depth is already in meters and aligned toRGB. Zero is invalid. Use color K and T_tcp_color/T_hand_color; never multiply bydepthscale again or use native-depth T for these pixels.",
+  "accepted_exported_transforms": {
+    "T_tcp_color": {
+      "source_frame": "rs943222073921_color_optical",
+      "destination_frame": "fr3_hand_tcp",
+      "translation_units": "m",
+      "matrix": [
+        [
+          0.04075011627083899,
+          -0.999164356793603,
+          -0.003164828107862574,
+          0.05006879347004835
+        ],
+        [
+          0.9991656221522869,
+          0.04075843347587037,
+          -0.002609522872160514,
+          -0.02830298127058818
+        ],
+        [
+          0.002736335677923604,
+          -0.003055849085487652,
+          0.9999915870905345,
+          -0.050705558315491873
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "numerically_validated",
+      "provenance": "12-viewPARK hand-eye, operator-supported30mm-square refit"
+    },
+    "T_color_tcp": {
+      "source_frame": "fr3_hand_tcp",
+      "destination_frame": "rs943222073921_color_optical",
+      "translation_units": "m",
+      "matrix": [
+        [
+          0.040750116270813215,
+          0.999165622152292,
+          0.00273633567799976,
+          0.026377804162839684
+        ],
+        [
+          -0.9991643567937888,
+          0.040758433475902224,
+          -0.0030558490849483047,
+          0.05102559046824869
+        ],
+        [
+          -0.0031648281084038685,
+          -0.0026095228720664776,
+          0.9999915870921143,
+          0.05078973358225508
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "numerically_validated",
+      "provenance": "Inverse of hand-eye"
+    },
+    "T_tcp_depth": {
+      "source_frame": "rs943222073921_depth_optical_native",
+      "destination_frame": "fr3_hand_tcp",
+      "translation_units": "m",
+      "matrix": [
+        [
+          0.042526278310066036,
+          -0.9990812030362047,
+          -0.0053213635118740145,
+          0.050657597504568525
+        ],
+        [
+          0.9990878691266781,
+          0.042545971093351904,
+          -0.003643548483270429,
+          -0.013288240093861599
+        ],
+        [
+          0.003866603754848692,
+          -0.005161563244156842,
+          0.9999791937274968,
+          -0.050677975100600056
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "numerically_validated",
+      "provenance": "Hand-eye composed with SDK factorydepth-to-color"
+    },
+    "T_depth_tcp": {
+      "source_frame": "fr3_hand_tcp",
+      "destination_frame": "rs943222073921_depth_optical_native",
+      "translation_units": "m",
+      "matrix": [
+        [
+          0.04252627867544191,
+          0.999087863900511,
+          0.003866603308409978,
+          0.011317791928053156
+        ],
+        [
+          -0.9990811514563468,
+          0.04254596831158968,
+          -0.005161563079337887,
+          0.050914834321611854
+        ],
+        [
+          -0.005321363535832995,
+          -0.003643548988430443,
+          0.9999792134828697,
+          0.0508980728204242
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "numerically_validated",
+      "provenance": "Inverse of depth hand-eye"
+    },
+    "T_flange_color": {
+      "source_frame": "rs943222073921_color_optical",
+      "destination_frame": "fr3_link8",
+      "translation_units": "m",
+      "matrix": [
+        [
+          0.7353314579169462,
+          -0.6776953159090615,
+          -0.004083082665046527,
+          0.015390753140869644
+        ],
+        [
+          0.6777020918047297,
+          0.735336444325233,
+          0.0003926600910732294,
+          -0.05541721242430346
+        ],
+        [
+          0.002736335677923604,
+          -0.003055849085487652,
+          0.9999915870905345,
+          0.052694441124224466
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "numerically_validated",
+      "provenance": "ConfiguredF_T_EE composed with hand-eye"
+    },
+    "T_flange_depth": {
+      "source_frame": "rs943222073921_depth_optical_native",
+      "destination_frame": "fr3_link8",
+      "translation_units": "m",
+      "matrix": [
+        [
+          0.7365324144271507,
+          -0.6763725373750151,
+          -0.006339149956017325,
+          0.02642412558146498
+        ],
+        [
+          0.6763911759130758,
+          0.736541625689817,
+          0.0011863943639980213,
+          -0.0452165346206556
+        ],
+        [
+          0.003866603754848692,
+          -0.005161563244156842,
+          0.9999791937274968,
+          0.05272202433911628
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "numerically_validated",
+      "provenance": "ConfiguredF_T_EE composed with depth hand-eye"
+    },
+    "T_color_depth": {
+      "source_frame": "rs943222073921_depth_optical_native",
+      "destination_frame": "rs943222073921_color_optical",
+      "translation_units": "m",
+      "matrix": [
+        [
+          0.9999977834522724,
+          0.001783672720193863,
+          -0.0011210758239030838,
+          0.015026282519102097
+        ],
+        [
+          -0.0017813008216762682,
+          0.9999962077072269,
+          0.0021126259180164197,
+          2.3581034838571213e-05
+        ],
+        [
+          0.0011248402188357431,
+          -0.002110624231136171,
+          0.9999971301185724,
+          -1.3461791240843013e-05
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "device_provided",
+      "provenance": "Device-provided factory extrinsics, constructed usingSDK transformed basis vectors"
+    },
+    "T_depth_color": {
+      "source_frame": "rs943222073921_color_optical",
+      "destination_frame": "rs943222073921_depth_optical_native",
+      "translation_units": "m",
+      "matrix": [
+        [
+          0.9999977782441287,
+          -0.0017813013984189887,
+          0.0011248397848051962,
+          -0.015026191987081989
+        ],
+        [
+          0.0017836720430632917,
+          0.9999961560564034,
+          -0.002110624222837558,
+          -5.0411317017572115e-05
+        ],
+        [
+          -0.0011210762756368757,
+          0.0021126258604562036,
+          0.9999971498735909,
+          3.0257543812202465e-05
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "device_provided",
+      "provenance": "Inverse of factory extrinsics"
+    },
+    "T_base_board": {
+      "source_frame": "charuco_board",
+      "destination_frame": "fr3_link0",
+      "translation_units": "m",
+      "matrix": [
+        [
+          0.01283564560836859,
+          0.9998843855044577,
+          0.008152412292627654,
+          -0.0792572452953701
+        ],
+        [
+          -0.9997590510736336,
+          0.012687990377276106,
+          0.017912417383856138,
+          -0.363285087496756
+        ],
+        [
+          0.017806908720035954,
+          -0.008380365419166607,
+          0.9998063229832449,
+          -0.012116978678916576
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "numerically_validated",
+      "provenance": "Mean fixed-board pose from hand-eye observations"
+    },
+    "T_board_base": {
+      "source_frame": "fr3_link0",
+      "destination_frame": "charuco_board",
+      "translation_units": "m",
+      "matrix": [
+        [
+          0.012835645608368577,
+          -0.999759051073634,
+          0.017806908720035926,
+          -0.36196447049915387
+        ],
+        [
+          0.9998843855044582,
+          0.012687990377276128,
+          -0.008380365419166817,
+          0.08375589499419842
+        ],
+        [
+          0.008152412292627458,
+          0.017912417383856186,
+          0.9998063229832458,
+          0.01926808375603234
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "numerically_validated",
+      "provenance": "Inverse of fitted board pose"
+    },
+    "T_flange_tcp": {
+      "source_frame": "fr3_hand_tcp",
+      "destination_frame": "fr3_link8",
+      "translation_units": "m",
+      "matrix": [
+        [
+          0.7071067690849304,
+          0.7071067690849304,
+          0.0,
+          0.0
+        ],
+        [
+          -0.7071067690849304,
+          0.7071067690849304,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.10339999943971634
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "status": "configured",
+      "provenance": "Configured robotF_T_EE; matches exportedURDF"
+    }
+  },
+  "derived_asset_frame_bridges": {
+    "T_flange_hand_USD": {
+      "source_frame": "fr3_hand",
+      "destination_frame": "fr3_link8",
+      "matrix": [
+        [
+          0.7071067350592308,
+          0.7071068273138611,
+          0.0,
+          0.0
+        ],
+        [
+          -0.7071068273138611,
+          0.7071067350592308,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "translation_units": "m",
+      "status": "derived_by_fixed_asset_frame_composition; not measured pad-contact calibration"
+    },
+    "T_hand_configured_EE_URDF": {
+      "source_frame": "fr3_hand_tcp",
+      "destination_frame": "fr3_hand",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.1034
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "translation_units": "m",
+      "status": "derived_by_fixed_asset_frame_composition; not measured pad-contact calibration"
+    },
+    "T_hand_color": {
+      "source_frame": "rs943222073921_color_optical",
+      "destination_frame": "fr3_hand",
+      "matrix": [
+        [
+          0.04075005039398666,
+          -0.9991643423524618,
+          -0.0031648278834695565,
+          0.05006879445947044
+        ],
+        [
+          0.9991656077105815,
+          0.040758367598958095,
+          -0.0026095230339544234,
+          -0.02830297752002189
+        ],
+        [
+          0.002736335677923604,
+          -0.003055849085487652,
+          0.9999915870905345,
+          0.052694441124224466
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "translation_units": "m",
+      "status": "derived_by_fixed_asset_frame_composition; not measured pad-contact calibration"
+    },
+    "T_grip_color": {
+      "source_frame": "rs943222073921_color_optical",
+      "destination_frame": "modified_grip_model",
+      "matrix": [
+        [
+          0.04075005039398666,
+          -0.9991643423524618,
+          -0.0031648278834695565,
+          0.05006879445947044
+        ],
+        [
+          0.9991656077105815,
+          0.040758367598958095,
+          -0.0026095230339544234,
+          -0.02830297752002189
+        ],
+        [
+          0.002736335677923604,
+          -0.003055849085487652,
+          0.9999915870905345,
+          -0.0648631200766327
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "translation_units": "m",
+      "status": "derived_by_fixed_asset_frame_composition; not measured pad-contact calibration"
+    },
+    "T_hand_custom_grip_model": {
+      "source_frame": "modified_grip_model",
+      "destination_frame": "fr3_hand",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.11755756120085716
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "translation_units": "m",
+      "status": "derived_by_fixed_asset_frame_composition; not measured pad-contact calibration"
+    }
+  },
+  "board_definition": {
+    "object_table_file": "resources/alignment_export_munich_20261025_measured/calibration/board_object_points.json",
+    "object_table_sha256": "bbf66948fa41c4bcf9d5b7cd391941209fde2a631cc54edfebeb0e18ebe5a3f9",
+    "frame": "charuco_board",
+    "units": "m",
+    "origin": "Outer corner one square along-X and-Y from inner ChArUco cornerID0; not an image top-left assumption",
+    "axes": "X points from ChArUcoID0 towardID1; Y points fromID0 towardID6; Z=X cross Y. All printed points haveZ=0. Use this exact object-point table across OpenCV versions.",
+    "policy": "Use exact exported corner/marker table; no image-top-left or currentOpenCV convention substitution."
+  },
+  "validation": {
+    "checks_passed": 251,
+    "check_count": 251,
+    "actual_pose_count": 12,
+    "board_internal_consistency": {
+      "translation_rms_m": 0.0013302187817240876,
+      "translation_max_m": 0.001771339457100305,
+      "rotation_rms_deg": 0.19229169547912844,
+      "rotation_max_deg": 0.35875169821343633
+    },
+    "physical_accuracy": "Not independently surveyed; tiny modelFK residual is computational compatibility, not real placement accuracy."
+  },
+  "unknown_registrations": {
+    "T_isaac_world_base": null,
+    "T_base_input_plate": null,
+    "T_base_output_plate": null,
+    "T_base_bowl": null,
+    "T_base_opposite_c920": null
+  },
+  "excluded_camera_fits": "Rejected wrist Sonix/webcam transforms remain audit-only. Opposite fixed C920 and any nominal wrist C920 have no accepted extrinsic in this registry.",
+  "limitations": [
+    "Configuredfr3_hand_tcp has103.4mm hand offset; modified model grip117.55756mm is distinct and not measured pad contact point.",
+    "No camera entity, OpenGL conversion, source/target/bowl placement or robotbase alignment applied by this import.",
+    "RGBD validity at a proposed close working distance still requires observation checks.",
+    "Camera calibration does not establish friction, native LEGO separation/insertion forces, held-brick offset or successful manipulation."
+  ]
+}

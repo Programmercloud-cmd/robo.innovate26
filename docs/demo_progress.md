@@ -862,3 +862,34 @@ point/impulse association and BODY/WHITE/HEAD attribution on positive/negative
 fixtures, while exposing only known-robot roles online and keeping partner IDs
 evaluation-only. No such probe, new physical run or ownership change has been
 authorized by the source finding.
+
+
+## Accepted Munich optical calibration import
+
+The new report and33MB measured bundle are verified against the provided archive
+SHA and all119file checksums, without executing exported software. Source-only
+review confirms SDK RealSenseD435 serial943222073921, accepted12-pose PARK
+hand-eye, fittedT_base_board and1280x720 alignedRGB/depth profile. This supersedes
+older statements that no wrist optical calibration is available; application
+to an active simulated sensor is still pending. Rejected webcam fits remain
+inactive, and plate/bowl/Isaacworld registration is not supplied.
+
+One<=10s queued metadata-only job1811 (source`0db955a`) passes251/251 checks over
+all12actual poses in0.648active seconds (0.036check). It verifies rawactual
+robot_afterq/O_T_EE/F_T_EE once-column-major, theUSD/URDFfixedframe relations,
+base-relative modelFK and transform algebra without refit/exclusion. Maximum
+USDconfiguredEE mismatch is5.08e-8m: computational model agreement, not surveyed
+physical accuracy. Fixedboard closure reproduces1.330mmRMS/1.771mmmax and0.192°
+rotationRMS. These are internal consistency, not placement accuracy.
+
+The passive registry is
+`experiments/final_workcell_20261024/calibration/munich_realsense_20261025.json`.
+It preserves accepted base/board and camera transforms, plus explicit model
+hand/color and modifiedgrip/color bridges. Calibrated configuredEE103.4mm and
+modifiedgrip117.5576mm are never interchanged. Saved depth is already float32
+meters/RGBaligned, zero invalid: use COLOR K/extrinsics with no extra scale.
+Unknown world/base, plate, bowl and webcam registrations stayNULL.
+
+No active camera, renderer, base placement, collision model, contact guard or
+hardware setting changes follow from this import. It does not resolve the
+failed contactpoint in1809 or validate close-range depth/held-brick registration.
