@@ -1,0 +1,36 @@
+{
+  "schema": "native-collider-probe-results-v1",
+  "job_id": 1812,
+  "source_commit": "3887f8e",
+  "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T133731.323414Z-stage2-collider-probe",
+  "status": "FAILED_BEFORE_CONTACT_CONTROLS",
+  "capture": {
+    "steps": 1,
+    "phase": "quiet",
+    "controller_status": "aborted",
+    "stop_reason": "Kinematic target readback differs UNKNOWN",
+    "position_error_m": 0.0,
+    "original_angle_error_rad": 0.0002722371862198518,
+    "sampled_forces_N": {"left": 0.0, "right": 0.0, "coupon": 0.0},
+    "role_controls_completed": [],
+    "native_report_callback_count": 0,
+    "source_parts": 301,
+    "native_links": 930
+  },
+  "original_independent_audit": "Failed while serializing a NumPy bool; no evaluation.json emitted. Original evidence retained.",
+  "instrumentation_repairs": {
+    "orientation": "Promote both quaternion inputs to float64 and normalize separately before dot/acos; unchanged 1e-4 rad gate. Saved literal and threshold-control synthetic tests pass.",
+    "serialization": "Convert NumPy scalar/array containers to native JSON values without changing checks; strict nonfinite rejection retained.",
+    "physical_rerun_authorized": false
+  },
+  "actual_pueue_seconds": 16.199330879,
+  "supervised_capture_plus_audit_seconds": 15.796132840012433,
+  "prior_case_seconds": 1452.9025644630237,
+  "cumulative_case_seconds": 1469.1018953420237,
+  "case_limit_seconds": 1800,
+  "reporting_contract_established": false,
+  "old_grasp_failure_preserved": true,
+  "grasp_retry_authorized": false,
+  "saved_audit": "Pending separately reviewed audit-only replay; no simulation.",
+  "goal_status": "INCOMPLETE: native extraction and subsequent transfer/placement/stacking/repeated sorting remain unproven."
+}

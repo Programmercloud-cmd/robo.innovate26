@@ -116,7 +116,10 @@ def main():
                 for label,summary in observed['bodies'].items():
                     with np.load(output/summary['file'],allow_pickle=False) as raw:forces[label]=float(abs(raw['normal_forces_N']).sum())
                 actual=coupon.root_physx_view.get_transforms()[0].cpu().numpy()[[0,1,2,6,3,4,5]]
-                position_error=float(np.linalg.norm(actual[:3]-cube_pose[:3]));angle_error=float(2*np.arccos(np.clip(abs(actual[3:]@cube_pose[3:])/(np.linalg.norm(actual[3:])*np.linalg.norm(cube_pose[3:])),0,1)))
+                position_error=float(np.linalg.norm(actual[:3]-cube_pose[:3]))
+                qa=np.asarray(actual[3:],dtype=np.float64);qb=np.asarray(cube_pose[3:],dtype=np.float64)
+                qa=qa/np.linalg.norm(qa);qb=qb/np.linalg.norm(qb)
+                angle_error=float(2*np.arccos(np.clip(abs(qa@qb),0,1)))
                 row={'step':step,'role':role,'phase':phase,'time_before_s':before,'time_s':float(sim.current_time),'physics_dt_s':dt,
                     'fixture_pose_world_wxyz':actual.tolist(),'fixture_command_pose_world_wxyz':cube_pose.tolist(),'fixture_command_readback_position_error_m':position_error,'fixture_command_readback_angle_rad':angle_error,
                     'fixture_travel_m':float(travel),'robot_q':state['q'],'robot_qdot':state['qdot'],

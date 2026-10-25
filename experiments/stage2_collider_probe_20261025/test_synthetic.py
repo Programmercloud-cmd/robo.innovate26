@@ -3,6 +3,7 @@ import ast
 import json
 from pathlib import Path
 from types import SimpleNamespace
+import numpy as np
 from native_observer import NativeObserver,role_packet
 
 
@@ -36,7 +37,25 @@ def main():
     tick=next(n for n in ast.walk(source) if isinstance(n,ast.FunctionDef) and n.name=='tick')
     calls=[n.func.attr for n in ast.walk(tick) if isinstance(n,ast.Call) and isinstance(n.func,ast.Attribute)]
     assert 'set_kinematic_targets' in calls and 'write_root_pose_to_sim' not in calls
-    print('PASS: fixed signs/projection/redaction, UNKNOWN cases, empty LOST, raw IDs, target-only measured motion')
+    # Fixed1812 literals: no real files/arrays are loaded by this regression.
+    actual=np.array([-1.7136335372924805e-7,.9238798022270203,.38268306851387024,-2.4214389782173384e-7],dtype=np.float32)
+    command=np.array([-1.7136334627960553e-7,.9238797024587486,.3826830220752498,-2.4214385887335565e-7],dtype=np.float64)
+    old=float(2*np.arccos(np.clip(abs(actual@command)/(np.linalg.norm(actual)*np.linalg.norm(command)),0,1)))
+    # Execute the actual repaired producer's three angle expressions.
+    statements=tick.body
+    angle_statements=[n for n in statements if isinstance(n,ast.Assign) and any(
+        isinstance(t,ast.Name) and t.id in ('qa','qb','angle_error') for t in n.targets)]
+    # The subsequent TCP guard also has qa/qb assignments; restrict to the first angle output.
+    angle_statements=angle_statements[:next(i for i,n in enumerate(angle_statements) if any(isinstance(t,ast.Name) and t.id=='angle_error' for t in n.targets))+1]
+    namespace={'np':np,'actual':np.r_[np.zeros(3,dtype=np.float32),actual],'cube_pose':np.r_[np.zeros(3),command]}
+    exec(compile(ast.fix_missing_locations(ast.Module(body=angle_statements,type_ignores=[])),'<actual-angle-producer>','exec'),namespace)
+    assert old>1e-4 and namespace['angle_error']<1e-4
+    for theta in (5e-5,2e-4):
+        namespace['actual']=np.r_[np.zeros(3),[np.cos(theta/2),np.sin(theta/2),0.,0.]]
+        namespace['cube_pose']=np.array([0.,0.,0.,1.,0.,0.,0.])
+        exec(compile(ast.fix_missing_locations(ast.Module(body=angle_statements,type_ignores=[])),'<actual-angle-producer>','exec'),namespace)
+        assert (namespace['angle_error']<=1e-4)==(theta<=1e-4)
+    print('PASS: event contracts, target-only motion, saved1812 float64 angle regression and unchanged1e-4 gate')
 
 
 if __name__=='__main__':main()

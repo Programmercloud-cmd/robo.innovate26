@@ -20,6 +20,19 @@ def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def json_native(value):
+    """Preserve numeric/boolean meaning while removing NumPy JSON scalar types."""
+    if isinstance(value, np.generic):
+        return json_native(value.item())
+    if isinstance(value, np.ndarray):
+        return json_native(value.tolist())
+    if isinstance(value, dict):
+        return {key: json_native(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [json_native(item) for item in value]
+    return value
+
+
 def load_helpers():
     path = ROOT/'experiments/stage2_exploratory_20261025/evaluation/contact_helpers.py'
     spec = importlib.util.spec_from_file_location('frozen_contact_helpers', path)
@@ -425,7 +438,7 @@ def main():
     except Exception as error:
         report = {'proceed_gate_passed': False, 'observation_contract_passed': False,
                   'status': 'UNKNOWN', 'error': str(error), 'grasp_retry_authorized': False}
-    (args.output/'evaluation.json').write_text(json.dumps(report, indent=2, allow_nan=False)+'\n')
+    (args.output/'evaluation.json').write_text(json.dumps(json_native(report), indent=2, allow_nan=False)+'\n')
 
 
 if __name__ == '__main__':

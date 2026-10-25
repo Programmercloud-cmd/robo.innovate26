@@ -893,3 +893,26 @@ Unknown world/base, plate, bowl and webcam registrations stayNULL.
 No active camera, renderer, base placement, collision model, contact guard or
 hardware setting changes follow from this import. It does not resolve the
 failed contactpoint in1809 or validate close-range depth/held-brick registration.
+
+
+## Native collider reporting probe
+
+One independently reviewed observation-only probe, job 1812 (source `3887f8e`),
+stopped after its first unloaded quiet step. Position matched exactly, all three
+contact views reported zero load, and the 301-part/930-link source remained.
+No BODY, WHITE or HEAD contact control ran, so native reporting semantics remain
+unvalidated. The marker records an aborted sequence, not contact success.
+
+The orientation guard reported 0.000272237 rad from a float32 quaternion norm.
+Saved literal synthetic reproduction identifies arithmetic cancellation: casting
+both quaternions to float64 and separately normalizing yields 2.98e-8 rad. The
+repair retains the same 1e-4 rad threshold, with synthetic rotations on either
+side checked. The original capture and its failed guard are not overwritten.
+The independent audit also failed JSON serialization of a NumPy boolean; a
+value-preserving scalar/container conversion repairs output only, without
+changing acceptance checks. A separately reviewed audit-only replay will complete
+the failure record; no physical probe retry is authorized by these repairs.
+
+Authoritative 1812 Pueue start/end charges 16.199330879 seconds, including launch
+overhead; the inner supervisor reports 15.796132840 seconds. Both are preserved.
+The upward-corrected cumulative contact clock is 1469.101895342/1800 seconds.

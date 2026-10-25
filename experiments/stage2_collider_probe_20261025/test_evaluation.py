@@ -1,7 +1,8 @@
 """Synthetic independent matching checks; no captured inputs are read."""
 import copy
+import json
 import numpy as np
-from evaluate import event_points, map_points, public_packet
+from evaluate import event_points, map_points, public_packet, json_native
 
 
 def main():
@@ -45,6 +46,22 @@ def main():
     lost['callbacks'][0]['headers'][0].update(collider0='/unknown', proto_index0=0)
     empty = public_packet(lost, roles, {robot: 'left'})
     assert empty['complete'] and not empty['robot_contacts'] and empty['unknown_robot_shapes'] == 0
+    original = {'checks': {'valid': np.bool_(True), 'positive_roles': np.bool_(False)},
+                'roles': {'BODY': {'loaded_frames': np.int64(0)}},
+                'proceed_gate_passed': np.bool_(False), 'status': 'UNKNOWN',
+                'nested': [np.float64(.2), {'flags': np.array([True, False])}]}
+    normalized = json_native(original)
+    assert normalized['checks']['valid'] is True and normalized['checks']['positive_roles'] is False
+    assert normalized['proceed_gate_passed'] is False and normalized['roles']['BODY']['loaded_frames'] == 0
+    assert isinstance(original['checks']['valid'], np.bool_)
+    assert json.loads(json.dumps(normalized, allow_nan=False)) == normalized
+    assert normalized['nested'] == [.2, {'flags': [True, False]}]
+    try:
+        json.dumps(json_native({'invalid': np.float64(np.nan)}), allow_nan=False)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError('Nonfinite rejection was weakened')
     print('PASS: independent unique/missing/duplicate/sign/partner mapping, unknown shape/proto quarantine and empty LOST')
 
 
