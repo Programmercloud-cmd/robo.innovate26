@@ -30,9 +30,9 @@
   "actual_pueue_seconds": 16.199330879,
   "supervised_capture_plus_audit_seconds": 15.796132840012433,
   "prior_case_seconds": 1452.9025644630237,
-  "cumulative_case_seconds": 1469.6268372210236,
+  "cumulative_case_seconds": 1508.7453462320236,
   "case_limit_seconds": 1800,
-  "reporting_contract_established": false,
+  "reporting_contract_established": true,
   "old_grasp_failure_preserved": true,
   "grasp_retry_authorized": false,
   "saved_audit": {
@@ -79,5 +79,55 @@
     },
     "interpretation": "Audit completed; sensing benchmark remains UNKNOWN with no loaded evidence. terminal_source_graph conjunction fails because completion watchdog flag is false afterabort; native counts remain301/930."
   },
-  "goal_status": "INCOMPLETE: native extraction and subsequent transfer/placement/stacking/repeated sorting remain unproven."
+  "goal_status": "INCOMPLETE: native extraction and subsequent transfer/placement/stacking/repeated sorting remain unproven.",
+  "overall_observation_status": "VALIDATED_FOR_THREE_LEFT_FIXTURES_AFTER_INSTRUMENTATION_REPAIR",
+  "corrected_capture": {
+    "job_id": 1814,
+    "source_commit": "2c8852d",
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T134529.532656Z-stage2-collider-probe",
+    "status": "VALIDATED_OBSERVATION_ONLY",
+    "steps": 286,
+    "checks_passed": 47,
+    "check_count": 47,
+    "all_frame_checks_passed": true,
+    "roles": {
+      "BODY": {
+        "loaded_frames": 7,
+        "mapped_points": 21,
+        "peak_force_N": 0.2987912396201864,
+        "threshold_frames": 3
+      },
+      "WHITE": {
+        "loaded_frames": 18,
+        "mapped_points": 66,
+        "peak_force_N": 0.2207271746301558,
+        "threshold_frames": 3
+      },
+      "HEAD": {
+        "loaded_frames": 17,
+        "mapped_points": 47,
+        "peak_force_N": 0.2185771963559091,
+        "threshold_frames": 3
+      }
+    },
+    "audit_sha256": "e35c45949fd7acf0cf446f6264aa7b2ad35149da5f22c1c66cc51f8b01ad951d",
+    "actual_pueue_seconds": 39.118509011,
+    "supervised_capture_plus_audit_seconds": 38.827296948991716,
+    "source_parts": 301,
+    "native_links": 930,
+    "left_loaded_points": 134,
+    "reciprocal_cube_loaded_points": 134,
+    "right_positive_contact_tested": false,
+    "independent_review": "Evaluator and reviewer independently accept fixed LEFT fixture low-load contact-report semantics only; all original failures retained.",
+    "limitations": [
+      "Correlated points/frames, not independent grasps",
+      "No original1809 native shape attribution",
+      "No finite-surface fidelity or high-load holding validation",
+      "No ownership guard replacement, grasp/extraction retry or hardware authorization"
+    ]
+  },
+  "remaining_case_seconds": 291.2546537679764,
+  "reporting_contract_scope": "Only tested LEFT BODY/WHITE/HEAD fixtures with fixed shape/tensor correspondence, low loads and unloaded release; RIGHT unloaded control only.",
+  "capture_phase_closed": true,
+  "additional_capture_retry_authorized": false
 }

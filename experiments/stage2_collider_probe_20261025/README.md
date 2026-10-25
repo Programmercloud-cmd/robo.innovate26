@@ -48,3 +48,15 @@ contact clock. The current Python environment is reused without installation.
 limit and 240-second capture/audit allowance. All actual elapsed compute is
 charged to the existing 1800-second aggregate. Unknown/failed cases are retained;
 there is no fixture relocation, parameter tuning or automatic retry.
+
+## Recorded outcome
+
+Original 1812 failed at its first unloaded orientation readback. Saved audit
+1813 preserves UNKNOWN. Corrected 1814, frozen at `2c8852d`, validates all three
+LEFT fixture roles over 286 steps with 134 uniquely matched loaded points and
+reciprocal cube observations. All fixtures retract unloaded. RIGHT is only an
+unloaded control. The phase is closed after these two captures.
+
+See `results.json` for exact counts, forces, source/snapshot paths, audit hashes
+and retained Pueue-inclusive costs. This is observation-only validation at the
+tested low loads, not a passing grasp or a replacement of any ownership guard.

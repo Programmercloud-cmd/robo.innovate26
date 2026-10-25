@@ -925,3 +925,29 @@ fails because its completion watchdog flag is false after the abort, not because
 the measured 301 parts or 930 links were lost. No physics was run by this audit.
 Its 0.524941879-second full Pueue duration is charged above the prior cost,
 yielding 1469.626837221/1800 seconds. No repeated capture or grasp is implied.
+
+The prospective correction was independently reviewed before execution: same
+benchmark and physical/matching parameters, original plus exactly one corrected
+capture, no new pool, no further retry. Job 1814 (source `2c8852d`) completes 286
+steps and validates the observation contract: all 47 aggregate checks and every
+per-frame check pass. LEFT BODY has 7 loaded frames/21 points, WHITE 18/66 and
+HEAD 17/47. All 134 loaded points have unique native-event matches and reciprocal
+cube observations. Peak loads are 0.298791, 0.220727 and 0.218577 N respectively.
+All three release unloaded; RIGHT is an unloaded control, not positive evidence.
+The full source retains 301 parts/930 native links, with unchanged physical
+properties, cook identities and settings. Both independent agents accept this
+limited result. Frames/points are correlated, not separate grasp trials.
+
+This establishes low-load native/tensor component attribution for these three
+LEFT fixtures. It does not establish finite-surface fidelity, the component
+responsible for the old 1809 point, higher-load holding, actual extraction, or
+hardware-equivalent tactile feedback. The original point guard is untouched and
+the manipulation proceed gate remains false. Future use of component attribution
+needs an explicit control/feedback reassessment; it is not an automatic grasp
+retry or a substitute for rendered brick perception.
+
+Pueue 1814 charges 39.118509011 seconds versus 38.827296949 supervised seconds.
+The retained total is 1508.745346232/1800 seconds, leaving 291.254653768.
+The two-capture observation phase is closed; no further automatic retry exists.
+Machine-readable history and reproduction are in
+`experiments/stage2_collider_probe_20261025/results.json` and its README.
