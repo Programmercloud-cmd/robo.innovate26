@@ -1,6 +1,6 @@
 {
   "schema": "visible-pregrasp-initialization-r3-v1",
-  "execution_authorized": false,
+  "execution_authorized": true,
   "status": "FROZEN_BEFORE_DIAGNOSTIC",
   "scientific_improvement_round": 3,
   "maximum_improvement_rounds": 3,
@@ -45,5 +45,10 @@
   "failure": "AnyIKlimit/chain/readback/placement/clock/depth/clearance/budget failure =>STOP this final hypothesis, no new posture or gate exemption.",
   "following_phases": "Not authorized by diagnostic alone. Fresh3600-step matchedcontrol then ONEI pick require independent successfuldiagnostic review, frozen new q/science/control compatibility and sufficient aggregatebudget. H onlyafterIindependentpass.",
   "scope": "Initialization/perception diagnostic only; no physical transit from nominalposture, grasp/contact/extraction/heldidentity success.",
-  "execution_status": "Independently reviewed source; NOT submitted. User supplied new physical measurements before queueing. Scene-version decision awaits endpoint/camera clarification; all old costs retained."
+  "execution_status": "One independently reviewed diagnostic on immutable1805 historical scene, excluding current tape edits and pending physical measurement interpretations. No validation of revised physical workcell; no automatic control/pick/H.",
+  "scene_version": {
+    "immutable_template": "runs/20261025T105902.347591Z-stage2-pick-I-pick",
+    "template_source_commit": "5e1a4ca",
+    "purpose": "Algorithmic initialization/clearance development on preserved300-brick scene; current revised physical-layout scene remains unvalidated."
+  }
 }
