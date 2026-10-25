@@ -5,9 +5,12 @@ and an opt-in pregrasp LEGO color handoff. The [measured progress](docs/demo_pro
 and [stage protocol](docs/demo_stage_protocol.md) describe the active work.
 The saved handoff replay (1826) passes. The corrected-material regression (1830)
 passes its fresh stationary control but still fails free-brick retention; native
-extraction and transfer/stacking remain unproven. Further manipulation work needs
-a reference for the successful real grasp's requested/measured width and actual
-brick engagement depth. See the [closed regression](experiments/declared_material_retention_20261025/README.md).
+extraction and transfer/stacking remain unproven. The operator has now supplied
+[working-grasp poses and width observations](experiments/hardware_grasp_reference_20261025/README.md):
+20 mm approach, 14 mm closing request and 15.8 mm loaded readback, followed by
+straight upward extraction. Their data-only frame comparison does not change
+the active simulation or establish pad-gap/engagement-depth calibration. See
+the [closed regression](experiments/declared_material_retention_20261025/README.md).
 
 The manually assisted, known-layout **v1** under `perception/` is a preserved
 real-image baseline; see its [results and stopping decision](experiments/known_layout_20261024/REPORT.md).

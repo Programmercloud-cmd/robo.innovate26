@@ -1,0 +1,37 @@
+{
+  "scope": "Read-only numerical reference audit; no simulation, perception input or hardware commands",
+  "runtime_python": "/home/faps/miniforge3/envs/unitree_sim_env/bin/python",
+  "maximum_active_seconds": 12,
+  "files": {
+    "markdown": {
+      "path": "experiments/hardware_grasp_reference_20261025/source/1-lego_grasp_poses.md",
+      "sha256": "dce3e9632b4f572d5a73341ff381925f761cc7dc13a1d916d25101a1f1e69faa"
+    },
+    "photo": {
+      "path": "experiments/hardware_grasp_reference_20261025/source/2-saved_positions.jpeg",
+      "sha256": "0751d2d7a62b361fe83d07834b050290a1accf0927cc64237a5d2d342869864e"
+    },
+    "registry": {
+      "path": "experiments/hardware_grasp_reference_20261025/reference_registry.json",
+      "sha256": "66ba658f2341450694750bdcdeae4489ec3a6332f63e00260d5acffa73e46b02"
+    },
+    "science": {
+      "path": "experiments/stage2_closing_diagnostic_20261025/science.json",
+      "sha256": "9382013075e97767cc67daf8e29cdef2432d658d2a3cad2c8947ca07b70f765d"
+    },
+    "usd_chain": {
+      "path": "experiments/hardware_grasp_reference_20261025/source/model_kinematic_chain.json",
+      "sha256": "56740a748b3885b3789f1fe3731cffb0586e3a615cde02110566b82987ece1d0",
+      "original_source_path": "runs/20261025T115521.846258Z-stage2-initialization-r3/output/kinematic_chain.json"
+    },
+    "urdf": {
+      "path": "experiments/hardware_grasp_reference_20261025/source/hardware_fk_reference.urdf",
+      "sha256": "9f395c1dd0bd97779534b14e09777b183c0b5ddb6f0ae306a106fe6a0c8e4c0a",
+      "original_source_path": "resources/alignment_export_munich_20261025_measured/robot/fr3_fk_reference.urdf"
+    },
+    "width_reference": {
+      "path": "experiments/stage2_closing_diagnostic_20261025/hardware_closure_reference.json",
+      "sha256": "0420b382c30826063e5252d5f9496189848492c39b57983e803132a65b9fa6df"
+    }
+  }
+}

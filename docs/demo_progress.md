@@ -8,15 +8,20 @@ fixture comparison and this one-off correctness regression are closed. Native
 tower extraction, reject transfer, insertion and repeated sorting remain
 unproven. See the [corrected-model result](../experiments/declared_material_retention_20261025/README.md).
 
-**Current dependency:** a reference for the successful real grasp, linking the
-requested versus measured Desk width to actual custom-pad gap and pad–brick
-engagement depth. Existing CAD mounting intent and open-gripper photos do not
-supply that operating condition. Independent planner, evaluator and reviewer
-find no further grounded source correction or parameter variant to execute.
-The source-color/material work is complete within its stated limited scope;
-downstream handling still requires a retained grasp. No further experiment is
-scheduled pending that reference or a materially different approach supported
-by new evidence.
+**New working-grasp evidence:** the operator supplied 15 recorded and 300 inferred
+targets plus a labeled workcell photograph, and reports the inferred input-stack
+poses were tested. Approach uses a 20 mm opening, closing requests 14 mm, the
+loaded readback is 15.8 mm, and extraction is straight upward. The export names
+its base/EE frames and includes its configured flange-to-EE transform. Its
+15 mm base-Z downward offset is already applied. Original false validation flags
+are retained separately from the later operator attestation.
+
+The [data-only reference comparison](../experiments/hardware_grasp_reference_20261025/README.md)
+checks the configured EE against the current model grip frame. It does not
+change scene registration, pad mounting, width mapping, controllers or prior
+results. The remaining contact-reproduction questions are the saved upper
+reference's relation to the brick surface and the physical width-to-pad-gap
+mapping. No new simulation or parameter sweep is scheduled by this import.
 
 Local pregrasp RGB color classification has limited saved-render evidence.
 The current sensor-selected runner has an opt-in final-selection color hook;

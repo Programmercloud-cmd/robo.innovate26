@@ -1,0 +1,51 @@
+{
+  "schema": "hardware-grasp-reference-v1",
+  "original_files": {
+    "1-lego_grasp_poses.md": {
+      "path": "source/1-lego_grasp_poses.md",
+      "sha256": "dce3e9632b4f572d5a73341ff381925f761cc7dc13a1d916d25101a1f1e69faa"
+    },
+    "2-saved_positions.jpeg": {
+      "path": "source/2-saved_positions.jpeg",
+      "sha256": "0751d2d7a62b361fe83d07834b050290a1accf0927cc64237a5d2d342869864e"
+    }
+  },
+  "export_claim": {
+    "source_positions_sha256": "e61dddf9d1dc95ab66ac9089da2e3e681b663ea7f136f15a564ac5cde5397721",
+    "reference_frame": "robot_base_O",
+    "pose_frame": "configured_end_effector_EE",
+    "matrix_storage": "column_major",
+    "units": "m",
+    "offset_base_m": [
+      0,
+      0,
+      -0.015
+    ],
+    "offset_already_applied": true,
+    "validation_flags_policy": "Preserve exported flags exactly; do not overwrite with later user report.",
+    "source_positions_json_available": false,
+    "source_positions_sha256_independently_verified": false
+  },
+  "later_user_report": {
+    "provenance": "User statement accompanying this attachment, relayed by root on 2026-10-25; separate from embedded export flags.",
+    "approach_display_width_m": 0.02,
+    "commanded_display_width_m": 0.014,
+    "loaded_display_readback_m": 0.0158,
+    "straight_up_extraction_tested": true,
+    "all_inferred_positions_tested": true,
+    "independently_instrumented": false,
+    "display_readback_equals_sdk_joint_sum": "UNVERIFIED"
+  },
+  "bridge_scope": "Read-only reference comparison. Current model grip frame is not measured physical pad contact. No active controller, geometry, registration, width command or policy edits.",
+  "unknowns": {
+    "T_base_input_plate": null,
+    "T_base_referenced_brick": null,
+    "paired_upper_reference_to_physical_brick_top": null,
+    "actual_pad_gap_minus_sdk_width_m": null,
+    "loaded_display_to_sdk_joint_positions": null
+  },
+  "indispensable_spatial_relation": "One referenced brick/top relation in robot base, or equivalent plate registration with brick/layer origin. Full workcell/bowl/C920 calibration is not required for this comparison.",
+  "simulation_success_claim": false,
+  "hardware_execution_authorized": false,
+  "closed_experiments_preserved": true
+}
