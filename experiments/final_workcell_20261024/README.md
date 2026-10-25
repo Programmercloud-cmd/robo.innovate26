@@ -137,12 +137,13 @@ Identifying the phone lenses and ChArUco design does not supply those transforms
 
 ## Completed preview
 
-Latest capture: **Pueue 1720**, frozen scene source `ac29781`; reference-corrected C920 and supplied fingertip visuals.
+Latest capture: **Pueue1771**, frozen source`3afda2d`: corrected tapered pad mounting and simple outside screw heads. Independent job1772 passes52/52 visual/invariance checks.
 
-- [Overhead render](../../runs/20261025T000918.719244Z-final-workcell-preview/output/images/diagnostic_table_top.png)
-- [Oblique render](../../runs/20261025T000918.719244Z-final-workcell-preview/output/images/diagnostic_oblique.png)
-- [USD visual scene](../../runs/20261025T000918.719244Z-final-workcell-preview/output/final_workcell.usda)
-- [Native graph, scene and camera manifest](../../runs/20261025T000918.719244Z-final-workcell-preview/output/manifest.json)
+- [Overhead render](../../runs/20261025T071719.927577Z-final-workcell-preview/output/images/diagnostic_table_top.png)
+- [Pad support and outside screw head](../../runs/20261025T071719.927577Z-final-workcell-preview/output/images/diagnostic_pad_support_side.png)
+- [Opposing gripping faces](../../runs/20261025T071719.927577Z-final-workcell-preview/output/images/diagnostic_pad_inner_faces.png)
+- [USD visual scene](../../runs/20261025T071719.927577Z-final-workcell-preview/output/final_workcell.usda)
+- [Native graph, scene and camera manifest](../../runs/20261025T071719.927577Z-final-workcell-preview/output/manifest.json)
 - [Jobs, snapshots, artifact hashes and validation](completion.json)
 - [Editable layout and destination recipes](scene_config.json)
 

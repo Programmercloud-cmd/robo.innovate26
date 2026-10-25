@@ -473,3 +473,28 @@ separate reusable evidence. Physical mounting is still provisional. The full
 six-stage demonstration remains active and incomplete.
 
 [Native outcomes and retained failures](../experiments/compound_native_query_20261025/results.json).
+
+
+## User-corrected fingertip mounting and simple outside heads
+
+User confirmation supersedes the old nominal mounting: tapered lowCADZ ends
+point distal, broad CADX0 gripping faces point inward, and bosses point into
+the supporting stock fingers. The user explicitly permits simple rigid visual
+attachment without boss/hole form-fit. Source`3afda2d` applies a proper X/Z
+flip and adds only round outside head proxies (6mm diameter,2mm protrusion,
+configurable estimates), with no threads, shafts or fastener physics.
+
+Saved-mesh inspection1770 found no unique distal recess and did not invent an
+anchor. Static render1771 provides two closeups; independent1772 passes52/52
+checks. Root/evaluator/reviewer accept the visibly connected assembly. Both
+camera mounts, layout, nominal robot/source state, white-finger geometry and
+stock collisions remain unchanged; full300/930/301 graph retained. Head
+envelopes are recorded for later clearance work, not validated collision
+behavior. The corrected mount makes the historical inward-boss/bore fidelity
+gate physically inapplicable without reassessment; old failures remain saved.
+
+This completes the requested visual subtask. The end-to-end sorting demo
+remains active/incomplete; future external-contact modeling should follow the
+user's simplified attachment scope instead of reopening hidden form-fit work.
+
+[Current visual assembly and evidence](../experiments/final_workcell_20261024/end_effector/README.md).

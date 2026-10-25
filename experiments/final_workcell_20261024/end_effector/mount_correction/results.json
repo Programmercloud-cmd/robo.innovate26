@@ -1,0 +1,28 @@
+{
+  "scope": "User-requested simple visual mounting correction only; full sorting demo incomplete",
+  "visual_task_complete": true,
+  "capture_job_id": 1771,
+  "verification_job_id": 1772,
+  "seat_inspection_job_id": 1770,
+  "source_commit": "3afda2d53dfb00b768ad0c02347aaa8d891c95bc",
+  "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T071719.927577Z-final-workcell-preview",
+  "verification_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T071811.763056Z-pad-mount-verification",
+  "checks_passed": 52,
+  "check_count": 52,
+  "all_passed": true,
+  "manual_visual_review": "Root and independent reviewer/evaluator accepted visible pad-metal-head connection in both closeups. No further fit metrology required.",
+  "head_dimensions": {
+    "diameter_m": 0.006,
+    "outward_protrusion_m": 0.002,
+    "status": "Configurable estimates; not measured"
+  },
+  "camera_mounts_and_layout_unchanged": true,
+  "collision_status": "Stock collision/friction retained; head is visual-only with recorded clearance envelope, no custom-tip contact claim",
+  "old_experiments": "Original results/registrations remain preserved. Corrected shared visual mounting supersedes their nominal physical-mount interpretation.",
+  "sha256": {
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T071719.927577Z-final-workcell-preview/manifest.json": "57b8e75e34f1511f86c8b12c668a0d8fbf9f6eff00a6d8ad94622c7100dae684",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T071719.927577Z-final-workcell-preview/output/updated_fingertips.json": "238c2e624ff343d04588c40c1e65cdfa5532cdf46a14d23333d24f05d650cb96",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T071719.927577Z-final-workcell-preview/output/final_workcell.usda": "704e4258f788cb5786b69d45f5f4d964115c95f57fbf803d11ccde9f00fd3ada",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T071811.763056Z-pad-mount-verification/output/verification.json": "406cf0a54b10000b7093584ba8266b258c85673d966efd3c2425f58c08103912"
+  }
+}

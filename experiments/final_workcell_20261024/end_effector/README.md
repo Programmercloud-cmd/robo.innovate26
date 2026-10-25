@@ -46,6 +46,14 @@ correction does not validate supplied-tip contact, grasping or insertion.
 Closed perception/contact experiments retain their original transforms and
 results; their old mounting is not silently updated by this correction.
 
+Current verified mounting: **Pueue1771**, source`3afda2d`, independent verification **1772:52/52 passed**.
+
+- [Corrected pads and outside screw head](../../../runs/20261025T071719.927577Z-final-workcell-preview/output/images/diagnostic_pad_support_side.png)
+- [Opposed gripping faces](../../../runs/20261025T071719.927577Z-final-workcell-preview/output/images/diagnostic_pad_inner_faces.png)
+- [Updated visual USD](../../../runs/20261025T071719.927577Z-final-workcell-preview/output/final_workcell.usda)
+- [Independent checks](../../../runs/20261025T071811.763056Z-pad-mount-verification/output/verification.json)
+- [Dimensions, envelopes, jobs and hashes](mount_correction/results.json)
+
 Historical artifacts below show the **superseded fingertip mounting**. They
 remain useful for the earlier camera-holder and invariance work:
 
