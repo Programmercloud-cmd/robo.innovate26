@@ -242,7 +242,7 @@ The stock baseline has now run as recorded below; the supplied-STL proxy remains
 unvalidated. No fixture is claimed as a perception-driven grasp.
 
 
-## Stock-pad positive contact/reopen passed; supplied-tip proxy remains pending
+## Stock-pad positive contact/reopen passed
 
 Contact benchmark B0 capture **1754**, independent audit **1755**, passes all 27
 checks over 100 steps. Both stock pads exceed 0.2 N for three samples at step 49;
@@ -255,8 +255,8 @@ Earlier **1751** stops before play on an unsupported Cube representation;
 **1752/1753** fails the original nonnegative-scalar assumption at first small
 contacts. Both failures remain preserved. Primary API examples and unmodified
 signed vector checks justify the round-2 interpretation correction; no physical
-force or motion threshold was tuned. Contact rounds1/2 are now spent; one final
-supplied-tip proxy configuration is being assessed before any cooking or contact.
+force or motion threshold was tuned. Those two rounds were followed by the
+final supplied-tip geometry attempt recorded below.
 
 [Limits, exact commands and provenance](../experiments/stage2_contact_20261025/README.md),
 [all outcomes](../experiments/stage2_contact_20261025/results.json).
@@ -278,8 +278,13 @@ of invalid physical CAD. No updated-tip contact, reserved offset or grasp is
 credited. The shared visual workcell and earlier stock-pad pass remain intact.
 
 All three contact improvement rounds are closed. No recook, threshold change,
-D/R trial or fourth configuration follows. One independent read-only audit of
-the retained partial geometry will describe the failure without promoting G.
+D/R trial or fourth configuration follows. Independent read-only audit **1757**
+describes the retained partial geometry
+without promoting G. Seventeen of 32 left hulls fail the frozen containment
+check; maximum normalized residual is 48.703 µm (own-polygon residual 49.344 µm).
+Maximum outer-bound difference is 0.102881 mm against the frozen 0.1 mm limit.
+Capture plus audit consumes 13.437 s. Cause and full CAD/union fidelity remain
+unresolved; there is no right-tip or measured-contact evidence.
 The six-stage sorting demo remains incomplete, with supplied-tip collision
 validation the immediate manipulation prerequisite.
 

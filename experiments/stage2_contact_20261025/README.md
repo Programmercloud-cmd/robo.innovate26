@@ -10,7 +10,7 @@ measurement or proof of matching real-robot feedback availability.
 | Initial B0, `f9496b3` | 1751 / not submitted | 0 | Pre-play geometry exporter expected Mesh; actual stock colliders are Cubes |
 | Contact round 1, `922a0d6` | 1752 / 1753 | 36 | Frozen gate failed at first ~2 mN contacts because coupon scalars were negative |
 | Contact round 2, `3f0f9c9` | 1754 / 1755 | 100 | All 27 independent checks pass; both pads confirm contact and reopen |
-| Final contact round 3, `5e8ba6c` | 1756 / partial evidence audit pending | 0 | Supplied-tip query fails normalized vertex/plane consistency before contact; D/R skipped |
+| Final contact round 3, `5e8ba6c` | 1756 / 1757 (partial only) | 0 | Supplied-tip query fails normalized vertex/plane consistency before contact; D/R skipped |
 
 All eight composed stock finger colliders are USD Cubes; `collisions/mesh_3` is
 the pad on each finger, with separate white-finger boxes. The Cube exporter uses
@@ -85,8 +85,17 @@ tip, union/CAD fidelity acceptance, initialized source/property checks, centered
 contact and reserved +2 mm test remain untested.
 
 All three contact improvement rounds are now closed. There is no automatic
-recook, tolerance change or fourth configuration. The independent partial-data
-audit is descriptive only and cannot promote this failed G phase.
+recook, tolerance change or fourth configuration. Independent partial-data
+audit 1757 is descriptive only and cannot promote this failed G phase. Seventeen
+of 32 retained left hulls exceed the frozen 0.1 µm vertex/plane check; maximum
+normalized residual is 48.703 µm and maximum own-polygon residual is 49.344 µm.
+The maximum outer-bound difference is 0.102881 mm against the frozen 0.1 mm
+limit. These observations do not establish the cause or full CAD/union fidelity.
+The audit takes 0.064 s, for 13.437 s capture plus audit within the 180 s phase
+budget. Right-tip, initialized-source/property and contact checks remain untested.
+
+[1757 audit and per-hull evidence](../../runs/20261025T040920.106029Z-stage2-contact-R3-G-partial-evaluation/output/evaluation.json),
+[reproducible audit launch](../../runs/20261025T040920.106029Z-stage2-contact-R3-G-partial-evaluation/launch.sh).
 
 ```bash
 python experiments/stage2_contact_20261025/submit.py --proxy-stage G

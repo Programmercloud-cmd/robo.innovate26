@@ -79,7 +79,22 @@
       ],
       "retry": false,
       "promotion": false,
-      "partial_audit": "Pending one queued read-only retained-evidence audit; no recook or threshold change."
+      "partial_audit": "Completed descriptive retained-array audit only. No G proceed, contact or reserved trial.",
+      "partial_audit_job_id": 1757,
+      "partial_audit_snapshot": "runs/20261025T040920.106029Z-stage2-contact-R3-G-partial-evaluation",
+      "partial_audit_source_commit": "81878f4",
+      "partial_audit_wall_s": 0.06361652399937157,
+      "capture_plus_partial_audit_wall_s": 13.436586739000631,
+      "partial_findings": {
+        "available_tip": "left",
+        "hull_count": 32,
+        "hulls_exceeding_frozen_vertex_plane_containment_epsilon": 17,
+        "maximum_normalized_vertex_plane_residual_m": 4.8703320556134355e-05,
+        "maximum_own_polygon_absolute_plane_residual_m": 4.934367743898759e-05,
+        "maximum_cooked_vs_registered_STL_bound_difference_m": 0.00010288106108188519,
+        "frozen_outer_bound_limit_m": 0.0001,
+        "interpretation": "Reported plane/vertex consistency is not established. Bounds are also slightly outside the frozen limit. Cause, full external-union/CAD fidelity, right tip, native initialized-state equivalence and contact behavior remain unknown; no retrospective acceptance."
+      }
     }
   },
   "limitations": [
@@ -136,6 +151,10 @@
     "runs/20261025T040508.534018Z-stage2-contact-R3-G/manifest.json": "29de9f849fdb54604d8b1f46d90f04e13ed4e5419a1da889a8e31d7f11a795b2",
     "runs/20261025T040508.534018Z-stage2-contact-R3-G/output/failure.json": "8d91f43ec73760bf1acbc6d6bed6a1b386bca207522b46ecfa7440b89eb76197",
     "runs/20261025T040508.534018Z-stage2-contact-R3-G/output/supervisor.json": "5d755d5ff1d70f8d43d29fdd80b300539f3e1c0af83d11e590a228dfb4c724f1",
-    "runs/20261025T040508.534018Z-stage2-contact-R3-G/output/proxy_geometry.json": "daa9bb1ed5b6cbaa2229b7691df54d0aa28cb993373329054696ec8f1d69c4db"
+    "runs/20261025T040508.534018Z-stage2-contact-R3-G/output/proxy_geometry.json": "daa9bb1ed5b6cbaa2229b7691df54d0aa28cb993373329054696ec8f1d69c4db",
+    "runs/20261025T040920.106029Z-stage2-contact-R3-G-partial-evaluation/manifest.json": "eb75ffbaa720a57d3bdfb2b4361a6f1dbf95b2fc49fca5ce7e71c11008382191",
+    "runs/20261025T040920.106029Z-stage2-contact-R3-G-partial-evaluation/audit_supervisor.json": "89f91464691b478f2edf87791f988936ca011706ca1c9e5f2ff6251776969533",
+    "runs/20261025T040920.106029Z-stage2-contact-R3-G-partial-evaluation/output/evaluation.json": "fa0e1765aeb8a84f1650e1710cccea39753c826c51ce3ee5df61d53a9fa25bd6",
+    "runs/20261025T040920.106029Z-stage2-contact-R3-G-partial-evaluation/output/run_complete.json": "ab98c501695cc224d69deda88d34562c1a4809637a0e24da108151f43150798a"
   }
 }
