@@ -32,12 +32,12 @@ def registered_vertices(config,label):
     return vertices*config['stl_unit_m']@rotation.T+r['translation_m'],inverse.reshape(-1,3),rotation
 
 
-def main():
+def main(proxy_author=None,protocol_path=None,observation_hook=None):
     parser=argparse.ArgumentParser(add_help=False);parser.add_argument('--output',type=Path,required=True)
     args,remaining=parser.parse_known_args();output=args.output.resolve()
     sys.argv=[sys.argv[0],*remaining,'--output',str(output)]
     if os.environ.get('ROBO_PUEUE_JOB')!='1' or os.environ.get('OSQP_EPSILON')!='1e-4':raise RuntimeError('Default Pueue and baseline epsilon required')
-    protocol=json.loads((HERE/'protocol.json').read_text());config=json.loads((CONTACT/'proxy_config.json').read_text())
+    protocol=json.loads((Path(protocol_path) if protocol_path else HERE/'protocol.json').read_text());config=json.loads((CONTACT/'proxy_config.json').read_text())
     reference=json.loads((CONTACT/'proxy_reference.json').read_text())
     for path,digest in protocol['input_sha256'].items():
         if sha(ROOT/path)!=digest:raise RuntimeError('Frozen input changed: '+path)
@@ -51,31 +51,34 @@ def main():
         from isaaclab.sim import get_current_stage
         original_init(scene,cfg);stage=get_current_stage()
         if scene['robot'].is_initialized:raise RuntimeError('Proxy must be authored before play')
-        for label in ('left','right'):
-            vertices,triangles,_=registered_vertices(config,label)
-            path=BODIES[label]+'/collisions/mesh_3';prim=stage.GetPrimAtPath(path)
-            if prim.GetTypeName()!='Cube' or prim.IsInstanceProxy():raise RuntimeError('Expected stock mesh_3 Cube only')
-            material,_=UsdShade.MaterialBindingAPI(prim).ComputeBoundMaterial('physics');old_material=str(material.GetPath())
-            operations=UsdGeom.Xformable(prim).GetOrderedXformOps();mesh=UsdGeom.Mesh.Define(stage,path)
-            UsdGeom.Xformable(mesh).ClearXformOpOrder()
-            for operation in operations:operation.GetAttr().Block()
-            mesh.CreatePointsAttr(vertices.tolist());mesh.CreateFaceVertexCountsAttr([3]*len(triangles))
-            mesh.CreateFaceVertexIndicesAttr(triangles.ravel().tolist());mesh.CreateSubdivisionSchemeAttr('none')
-            mesh.CreateExtentAttr([vertices.min(axis=0).tolist(),vertices.max(axis=0).tolist()])
-            UsdPhysics.MeshCollisionAPI.Apply(prim).CreateApproximationAttr(config['collision']['approximation'])
-            api=PhysxSchema.PhysxConvexDecompositionCollisionAPI.Apply(prim)
-            for name,value in config['collision'].items():
-                if name!='approximation':getattr(api,'Create'+name[0].upper()+name[1:]+'Attr')(value)
-            readback={name:getattr(api,'Get'+name[0].upper()+name[1:]+'Attr')().Get() for name in config['collision'] if name!='approximation'}
-            for name,value in readback.items():
-                intended=config['collision'][name]
-                if (abs(value-intended)>config['schema_float_readback_atol'] if isinstance(intended,float) else value!=intended):raise RuntimeError('Cook attribute mismatch')
-            relative=UsdGeom.Xformable(prim).ComputeLocalToWorldTransform(0)*UsdGeom.Xformable(stage.GetPrimAtPath(BODIES[label])).ComputeLocalToWorldTransform(0).GetInverse()
-            if np.max(abs(np.asarray([list(row) for row in relative])-np.eye(4)))>1e-9:raise RuntimeError('Proxy transform not identity')
-            material,_=UsdShade.MaterialBindingAPI(prim).ComputeBoundMaterial('physics')
-            if str(material.GetPath())!=old_material:raise RuntimeError('Pad material binding changed')
-            authored[label]={'path':path,'vertices_finger_m':vertices.tolist(),'triangles':triangles.tolist(),
-                'material':old_material,'cook_readback':readback,'transform_finger':list(map(list,relative))}
+        if proxy_author is not None:
+            authored.update(proxy_author(stage,ROOT,config,output))
+        else:
+            for label in ('left','right'):
+                vertices,triangles,_=registered_vertices(config,label)
+                path=BODIES[label]+'/collisions/mesh_3';prim=stage.GetPrimAtPath(path)
+                if prim.GetTypeName()!='Cube' or prim.IsInstanceProxy():raise RuntimeError('Expected stock mesh_3 Cube only')
+                material,_=UsdShade.MaterialBindingAPI(prim).ComputeBoundMaterial('physics');old_material=str(material.GetPath())
+                operations=UsdGeom.Xformable(prim).GetOrderedXformOps();mesh=UsdGeom.Mesh.Define(stage,path)
+                UsdGeom.Xformable(mesh).ClearXformOpOrder()
+                for operation in operations:operation.GetAttr().Block()
+                mesh.CreatePointsAttr(vertices.tolist());mesh.CreateFaceVertexCountsAttr([3]*len(triangles))
+                mesh.CreateFaceVertexIndicesAttr(triangles.ravel().tolist());mesh.CreateSubdivisionSchemeAttr('none')
+                mesh.CreateExtentAttr([vertices.min(axis=0).tolist(),vertices.max(axis=0).tolist()])
+                UsdPhysics.MeshCollisionAPI.Apply(prim).CreateApproximationAttr(config['collision']['approximation'])
+                api=PhysxSchema.PhysxConvexDecompositionCollisionAPI.Apply(prim)
+                for name,value in config['collision'].items():
+                    if name!='approximation':getattr(api,'Create'+name[0].upper()+name[1:]+'Attr')(value)
+                readback={name:getattr(api,'Get'+name[0].upper()+name[1:]+'Attr')().Get() for name in config['collision'] if name!='approximation'}
+                for name,value in readback.items():
+                    intended=config['collision'][name]
+                    if (abs(value-intended)>config['schema_float_readback_atol'] if isinstance(intended,float) else value!=intended):raise RuntimeError('Cook attribute mismatch')
+                relative=UsdGeom.Xformable(prim).ComputeLocalToWorldTransform(0)*UsdGeom.Xformable(stage.GetPrimAtPath(BODIES[label])).ComputeLocalToWorldTransform(0).GetInverse()
+                if np.max(abs(np.asarray([list(row) for row in relative])-np.eye(4)))>1e-9:raise RuntimeError('Proxy transform not identity')
+                material,_=UsdShade.MaterialBindingAPI(prim).ComputeBoundMaterial('physics')
+                if str(material.GetPath())!=old_material:raise RuntimeError('Pad material binding changed')
+                authored[label]={'path':path,'vertices_finger_m':vertices.tolist(),'triangles':triangles.tolist(),
+                    'material':old_material,'cook_readback':readback,'transform_finger':list(map(list,relative))}
         control=protocol['query_control'];cube=UsdGeom.Cube.Define(stage,control['path']);cube.CreateSizeAttr(control['size_m'])
         cube.AddTranslateOp().Set(Gf.Vec3d(*control['center_world_m']));UsdPhysics.CollisionAPI.Apply(cube.GetPrim())
         save(output/'authored_proxy.json',{'config':config,'tips':authored,'control':control,'query_descriptor_guard':'Not invoked; observation only, oldG remains failed'})
@@ -114,7 +117,9 @@ def main():
                 'qdot':robot.root_physx_view.get_dof_velocities().cpu().numpy().tolist(),
                 'source':{n:{'pose':scene[n].root_physx_view.get_transforms().cpu().numpy().tolist(),
                     'velocity':scene[n].root_physx_view.get_velocities().cpu().numpy().tolist()} for n in names}}
-        initial=snapshot();parts,links=core.compute_connected_component('/World/envs/env_0/plate_source')
+        initial=snapshot()
+        extra_initial=observation_hook('initial',context) if observation_hook else None
+        parts,links=core.compute_connected_component('/World/envs/env_0/plate_source')
         if set(parts)!=expected or len(links)!=930 or len(names)!=301:raise RuntimeError('Full native source inventory mismatch')
         if threshold_snapshot(core.get_breakage_thresholds())!=protocol['native_breakage']:raise RuntimeError('Native break settings changed')
         assembly=core.get_assembly_thresholds()
@@ -189,10 +194,11 @@ def main():
                     point=np.r_[x,np.asarray(f['bore_center_cad_yz_mm'])+offset]*config['stl_unit_m']@rotation.T+r['translation_m']
                     overlap(f'{label}_bore_{x}_{k}',world(point),protocol['bore_overlaps']['radius_m'],{'tip':label,'center_finger_m':point.tolist(),'group':'bore_witness'})
             save(output/'queries.json',records)
+        extra_terminal=observation_hook('terminal',context) if observation_hook else None
         terminal=snapshot();terminal_parts,terminal_links=core.compute_connected_component('/World/envs/env_0/plate_source')
         save(output/'query_report.json',{'schema':protocol['schema'],'observation_complete':True,'proceed_gate_passed':False,
             'R3_G_status':'FAILED and closed; this does not authorize D/R','old_bounds_failure_m':protocol['old_bounds_failure_m'],
-            'initial':initial,'terminal':terminal,'frames':frames,'world_from_hand':list(map(list,hand)),'authored':'authored_proxy.json','queries':'queries.json',
+            'initial':initial,'terminal':terminal,'observation_extra':{'initial':extra_initial,'terminal':extra_terminal},'frames':frames,'world_from_hand':list(map(list,hand)),'authored':'authored_proxy.json','queries':'queries.json',
             'source_parts':sorted(parts),'native_connections':sorted(links),'runtime_source32_4':runtime,'physics_scenes':scenes,'scene_query_support_runtime':support,
             'factory':factory_record,'native_core_sha256':sha(core.__file__),'dt_s':sim.get_physics_dt(),
             'OSQP_EPSILON':os.environ['OSQP_EPSILON'],'preassembly_initialization_steps':1,'measured_postassembly_physics_steps':0,
