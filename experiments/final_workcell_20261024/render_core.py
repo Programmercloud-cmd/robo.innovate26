@@ -210,7 +210,7 @@ def self_test():
     print("camera pose tiny contracts passed")
 
 
-def main(case_adapter=None):
+def main(case_adapter=None, postassembly_hook=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--geometry", type=Path)
     parser.add_argument("--cameras", type=Path)
@@ -251,7 +251,7 @@ def main(case_adapter=None):
     (output/"evaluation_truth").mkdir(exist_ok=True)
     app = AppLauncher(args).app
     try:
-        render(app, args, spec, bricks, config, views)
+        render(app, args, spec, bricks, config, views, postassembly_hook=postassembly_hook)
     except BaseException as error:
         # Kit shutdown may block after initialization failure: expose the error
         # and persist it BEFORE closing the app, rather than hiding the traceback.
@@ -272,7 +272,7 @@ def main(case_adapter=None):
         print("APP_CLOSE_RETURNED", flush=True)
 
 
-def render(app, args, spec, bricks, config, views):
+def render(app, args, spec, bricks, config, views, postassembly_hook=None):
     import numpy as np
     import torch
     from PIL import Image
@@ -490,6 +490,9 @@ def render(app, args, spec, bricks, config, views):
     if len(parts_initial) != len(bricks)+1 or len(connections_initial) != expected_connections:
         raise RuntimeError("Active source graph is incomplete before settling")
     verify_placement("after_native_links_before_capture")
+    if postassembly_hook is not None:
+        postassembly_hook(sim=sim, scene=scene, bricks=bricks, spec=spec, output=output, robot=robot)
+        return  # Hook owns its result; no static capture or post-dynamics pose restoration.
     for _ in range(config["settle_steps"]):
         scene.write_data_to_sim()
         sim.step()
