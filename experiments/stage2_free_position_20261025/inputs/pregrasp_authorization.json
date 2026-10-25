@@ -1,0 +1,41 @@
+{
+  "schema": "exploratory-sim-initial-posture-evidence-v1",
+  "authorized_use": "Configured simulation initialization q only; not visual clearance or motion authorization",
+  "original_full_diagnostic_passed": false,
+  "original_failed_checks": [
+    "clearance_all_nonself_have_positive_witness",
+    "unresolved_points_still_stop"
+  ],
+  "pose_integrity_subset_valid": true,
+  "source_diagnostic_job": 1807,
+  "source_diagnostic": "runs/20261025T115521.846258Z-stage2-initialization-r3",
+  "source_sha256": {
+    "audit/evaluation.json": "169b47ea5f8e7996700a915f73eaedcc31ed8769b8172477a315e942f287bde1",
+    "output/kinematic_derivation.json": "b9458a6a35f51287fe15f1375217a14b11e515b414920ed605a57a97d460c9c2",
+    "output/kinematic_chain.json": "56740a748b3885b3789f1fe3731cffb0586e3a615cde02110566b82987ece1d0",
+    "output/robot_initialization.json": "a948dfe8e54434a7ae31a301c9578e1ff2ef35172d0463db01e5760cfed6e9ca",
+    "output/diagnostic_metadata.json": "d433f82809dedf42d08052bda22275d941dafbb6efe6a13858c9f1f078455286",
+    "output/evaluation_truth/graph.json": "17d5e7e24a7ab42ef9c64085a310920a13495516e5db2b1b5e38acd181e64373",
+    "pipeline_supervisor.json": "10e98a242060f89f21f2adf898eb1a44b776c2f0bce3bf09920df3b54f22debb"
+  },
+  "joint_names": [
+    "fr3_joint1",
+    "fr3_joint2",
+    "fr3_joint3",
+    "fr3_joint4",
+    "fr3_joint5",
+    "fr3_joint6",
+    "fr3_joint7"
+  ],
+  "q": [
+    0.16699823401117916,
+    -0.3864109874838779,
+    -0.0753851022689653,
+    -2.8004992320380473,
+    -0.04272049032825889,
+    2.4146261616300135,
+    0.12908185633576275
+  ],
+  "original_source_scene": "Historical1805 immutable scene; new tape/physical measurement interpretations excluded.",
+  "state_writes_authorized": "No measured state writes; use only cfg.init_state before reset."
+}
