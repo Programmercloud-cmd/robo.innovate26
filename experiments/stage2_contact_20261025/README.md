@@ -10,6 +10,7 @@ measurement or proof of matching real-robot feedback availability.
 | Initial B0, `f9496b3` | 1751 / not submitted | 0 | Pre-play geometry exporter expected Mesh; actual stock colliders are Cubes |
 | Contact round 1, `922a0d6` | 1752 / 1753 | 36 | Frozen gate failed at first ~2 mN contacts because coupon scalars were negative |
 | Contact round 2, `3f0f9c9` | 1754 / 1755 | 100 | All 27 independent checks pass; both pads confirm contact and reopen |
+| Final contact round 3, `5e8ba6c` | 1756 / partial evidence audit pending | 0 | Supplied-tip query fails normalized vertex/plane consistency before contact; D/R skipped |
 
 All eight composed stock finger colliders are USD Cubes; `collisions/mesh_3` is
 the pad on each finger, with separate white-finger boxes. The Cube exporter uses
@@ -73,8 +74,27 @@ launcher, never directly. Earlier snapshots preserve their original contracts.
 - [1755 independent audit](../../runs/20261025T032653.179734Z-stage2-contact-B0-R2-evaluation/output/evaluation.json)
 - [All outcomes, hashes and earlier failed artifacts](results.json)
 
-The supplied STL remains visual-only. Its collision proxy requires one separately
-frozen final round with actual cooked-hull fidelity checks before contact, using
-the exact B0 coupon center rather than recentering its extended geometry. The
-fixed +2 mm offset case remains withheld. No grasping, extraction or hardware
-control was performed.
+The supplied STL remains visual-only in the shared workcell. Final round 3
+attempted one experiment-local convex-decomposition collision representation:
+32 hulls, 64 vertices/hull, 1M voxels, 1% error, 0.1 mm minimum thickness and
+shrink-wrap. Job 1756 stopped after 13.373 s during the first tip query because
+normalized cooked planes did not contain their reported vertices within the
+frozen 0.1 µm representation check. This does not by itself identify the cause
+or prove physical CAD invalidity. The raw left-tip data are retained; the right
+tip, union/CAD fidelity acceptance, initialized source/property checks, centered
+contact and reserved +2 mm test remain untested.
+
+All three contact improvement rounds are now closed. There is no automatic
+recook, tolerance change or fourth configuration. The independent partial-data
+audit is descriptive only and cannot promote this failed G phase.
+
+```bash
+python experiments/stage2_contact_20261025/submit.py --proxy-stage G
+```
+
+The executed snapshot and input hashes are in
+[1756 manifest](../../runs/20261025T040508.534018Z-stage2-contact-R3-G/manifest.json);
+see the [failure](../../runs/20261025T040508.534018Z-stage2-contact-R3-G/output/failure.json)
+and [raw partial geometry](../../runs/20261025T040508.534018Z-stage2-contact-R3-G/output/proxy_geometry.json).
+This command documents the failed attempt; do not run it again as a retry.
+No grasping, extraction or hardware control was performed.

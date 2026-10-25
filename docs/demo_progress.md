@@ -264,3 +264,24 @@ This is a stock-pad fixture/feedback check. Actual supplied-STL collisions,
 dynamic holding, extraction, insertion, classification timing and the integrated
 demo remain unvalidated. Per-pad force availability on physical hardware and
 shared sim/real completion semantics are not established by this diagnostic.
+
+
+## Final contact round: supplied-tip geometry stopped before contact
+
+Source `5e8ba6c`, Pueue **1756**, tests one experiment-local supplied-STL
+collision decomposition in the full300 initializer. It stops after 13.373 s
+before measured contact: normalized SDK hull planes fail to contain their own
+vertices within the frozen 0.1 µm representation check. The raw left-tip
+32-hull RESULT_VALID query is retained; the right tip and subsequent union/CAD
+fidelity acceptance are untested. A representation-query failure is not proof
+of invalid physical CAD. No updated-tip contact, reserved offset or grasp is
+credited. The shared visual workcell and earlier stock-pad pass remain intact.
+
+All three contact improvement rounds are closed. No recook, threshold change,
+D/R trial or fourth configuration follows. One independent read-only audit of
+the retained partial geometry will describe the failure without promoting G.
+The six-stage sorting demo remains incomplete, with supplied-tip collision
+validation the immediate manipulation prerequisite.
+
+[Current contact results](../experiments/stage2_contact_20261025/results.json),
+[1756 failure](../runs/20261025T040508.534018Z-stage2-contact-R3-G/output/failure.json).

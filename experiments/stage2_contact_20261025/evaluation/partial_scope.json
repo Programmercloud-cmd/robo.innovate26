@@ -1,0 +1,11 @@
+{
+  "scope": "One read-only descriptive audit of retained partial1756R3 cooked data; not a fourth attempt",
+  "capture_job_id": 1756,
+  "capture_snapshot": "runs/20261025T040508.534018Z-stage2-contact-R3-G",
+  "capture_wall_seconds": 13.37297021500126,
+  "remaining_capture_plus_audit_budget_seconds": 166.62702978499874,
+  "available": "Left32actualSDK hulls retained before containment guard failed; right absent and untested",
+  "measurements": "Existing raw plane normal lengths; normalized all-vertex/all-plane residual range, violation counts and worst index; own-polygon plane residuals; combined cooked vs exported registered STL bounds",
+  "not_permitted": "No recook, simulation, sign/frame fit, new proxy, changed threshold, fidelity sampling, contact or reserved run",
+  "outcome": "Always proceed_gate_passed=false. FullGfidelity and allD/Rcontact remain untested; original1756failure and closed round3 retained."
+}

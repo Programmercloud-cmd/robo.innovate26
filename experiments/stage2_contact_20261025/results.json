@@ -1,8 +1,8 @@
 {
-  "schema": "stock-pad-contact-results-v2-signed-coefficients",
-  "scope": "Stock B0 reporting/geometry compatibility prerequisite only; supplied STL remains visual-only until separately reviewed proxy.",
+  "schema": "stock-and-supplied-tip-contact-results-v3",
+  "scope": "Stock positive reporting control passes; final supplied-tip geometry query fails before contact and is not promoted.",
   "maximum_contact_improvement_rounds": 3,
-  "completed_contact_improvement_rounds": 2,
+  "completed_contact_improvement_rounds": 3,
   "history": {
     "baseline_1751": {
       "capture_job_id": 1751,
@@ -59,13 +59,34 @@
       "reporting_guards": "Signed f*n/matrix/net/reciprocal/dt, finite data, pair ranges and unsaturated1024 buffers all pass.",
       "background": "Full300 source/301nativeparts/930links unchanged during100steps, PGS/source32/4; robot masses/inertia/actuator properties/native physical thresholds/stock materials/collider inventories unchanged.",
       "limits": "Command ramp<=1mm/s, actual measured speed<=2mm/s sampled abort, command+actualtravel<=1mm+2um, hand<=2mm/2deg; force peaks below2N sampled abort. All independent guards pass."
+    },
+    "R3": {
+      "change": "One supplied-STL convex decomposition; geometry audit required before unchanged centered contact and reserved +2mm test.",
+      "capture_job_id": 1756,
+      "capture_snapshot": "runs/20261025T040508.534018Z-stage2-contact-R3-G",
+      "capture_source_commit": "5e8ba6c",
+      "phase": "G",
+      "capture_completed": false,
+      "measured_contact_steps": 0,
+      "gate_passed": false,
+      "failure": "Cooked plane frame/orientation mismatch: normalized vertex-plane containment guard failed before play.",
+      "capture_wall_s": 13.37297021500126,
+      "retained_data": "Partial LEFT 32-hull SDK RESULT_VALID representation. RIGHT not queried/exported. No completed G geometry/native-initialization metadata.",
+      "not_executed": [
+        "G external-union/CAD-witness fidelity acceptance",
+        "D centered updated-tip contact",
+        "R reserved updated-tip offset contact"
+      ],
+      "retry": false,
+      "promotion": false,
+      "partial_audit": "Pending one queued read-only retained-evidence audit; no recook or threshold change."
     }
   },
   "limitations": [
     "Stock reporting positive control against truth-positioned kinematic coupon, not a perception-driven pick.",
     "Authored primitive/hull surface compatibility is not a direct cooked-mesh accuracy measurement.",
     "Existing FingerPad friction2.5/2 is uncalibrated; commanded actuator effort is not measured contact force.",
-    "No tangential friction test, supplied-STL collision proxy, reservedoffset case, grasp, held transform or extraction validated.",
+    "No supplied-STL collision fidelity, reserved offset, tangential friction, dynamic grasp, held transform or extraction validated. Final supplied-tip attempt failed before contact.",
     "Prior1753failure remains immutable; R2is a new run under a versioned signed-coefficient contract."
   ],
   "promotion": {
@@ -76,7 +97,7 @@
     "extraction_validated": false,
     "end_to_end_demo_complete": false
   },
-  "remaining_budget": "At most final contact round3 for ONE reviewed supplied-STL proxy configuration, with fidelity-before-closure gate and separately conditional frozen reserved2mm offset; no blind retry/sweep or reset of prior idle budget.",
+  "remaining_budget": "Contact benchmark closed after all three improvement rounds. No D/R execution, fourth configuration, retry or automatic recook. Any further proxy approach requires explicit reassessment.",
   "sha256": {
     "runs/20261025T031349.819124Z-stage2-contact-B0-stock/manifest.json": "93aef556f7edbe04d5d6e59a0e41c11048a78f9f38df7c0f4047b8b12f50c9b4",
     "runs/20261025T031857.554577Z-stage2-contact-B0-stock/manifest.json": "fcf8db1a5bb547bef05e2759d0727a648d1971819b1ab24e875b0dbb2ba69835",
@@ -111,6 +132,10 @@
     "runs/20261025T032638.185262Z-stage2-contact-B0-stock/output/source_initial.npy": "b3c3e9d002236fd2af1101563e23dda577c92f2f21f8e04d2047b9c348e84cd9",
     "runs/20261025T032638.185262Z-stage2-contact-B0-stock/output/source_last.npy": "55d6649f3a2159cee7dd8b0d8f1a6890de3c08a72dc02d64cebee09743d74b76",
     "runs/20261025T032638.185262Z-stage2-contact-B0-stock/output/contact_observations/metadata.json": "854e34b9ef8a2dc5f16ff2632356ab6d69122e08ff13f475757db3d62714b7ea",
-    "runs/20261025T032638.185262Z-stage2-contact-B0-stock/output/contact_observations/trace.jsonl": "1a245ba36402bb310226896a65ab537601eae1b92d58ccf6b43388033a6f7e85"
+    "runs/20261025T032638.185262Z-stage2-contact-B0-stock/output/contact_observations/trace.jsonl": "1a245ba36402bb310226896a65ab537601eae1b92d58ccf6b43388033a6f7e85",
+    "runs/20261025T040508.534018Z-stage2-contact-R3-G/manifest.json": "29de9f849fdb54604d8b1f46d90f04e13ed4e5419a1da889a8e31d7f11a795b2",
+    "runs/20261025T040508.534018Z-stage2-contact-R3-G/output/failure.json": "8d91f43ec73760bf1acbc6d6bed6a1b386bca207522b46ecfa7440b89eb76197",
+    "runs/20261025T040508.534018Z-stage2-contact-R3-G/output/supervisor.json": "5d755d5ff1d70f8d43d29fdd80b300539f3e1c0af83d11e590a228dfb4c724f1",
+    "runs/20261025T040508.534018Z-stage2-contact-R3-G/output/proxy_geometry.json": "daa9bb1ed5b6cbaa2229b7691df54d0aa28cb993373329054696ec8f1d69c4db"
   }
 }
