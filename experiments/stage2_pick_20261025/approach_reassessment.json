@@ -1,0 +1,38 @@
+{
+  "schema": "native-pick-approach-reassessment-v1",
+  "status": "DESIGN_ONLY_NOT_EXECUTION_AUTHORIZATION",
+  "evidence_jobs": [
+    1802,
+    1803,
+    1804,
+    1805
+  ],
+  "original_budget_seconds": 1200,
+  "spent_seconds": 1026.5510613980296,
+  "remaining_seconds": 173.4489386019704,
+  "scientific_improvement_rounds_used": 2,
+  "maximum_scientific_improvement_rounds": 3,
+  "full_task_status": "No measured native extraction; all six-stage objective remains incomplete.",
+  "observed_mechanisms": [
+    "Close-camera FOV excludes initial tool path; wide view shows robot-occluded returns rather than free-space evidence.",
+    "Twenty first-candidate near-target samples retain local occlusion/raster-edge ambiguity.",
+    "Repeating measured181.135s all-candidate screening cannot fit remaining173.449s even before motion/audit."
+  ],
+  "rejected_next_steps": [
+    "Blind additional camera preset without new evidence",
+    "Treat unseen/behind-return samples as free",
+    "Reset cost or improvement count under a renamed benchmark",
+    "Skip source stability/control or manually attach/detach bricks"
+  ],
+  "preferred_reassessment": "One declared sensor-visible pregrasp initialization, source300/native930 unchanged; same exact ray gate including near-target samples. No validated staging joint vector exists.",
+  "necessary_before_any_execution": [
+    "Derive and review ONE fixed staging joint vector using existing robot asset kinematics and a source-relative configured goal, never target truth.",
+    "Apply only before scene initialization; no post-init pose writes in measured episode.",
+    "Freeze new initialization/control compatibility, physical criteria and resource scope before queued jobs.",
+    "Fresh matched stationary control; original1801 control cannot validate changed posture.",
+    "Retain round3 as final remaining scientific change; preserve all previous costs/failures.",
+    "Prospectively review aggregate budget based on measured control/pick costs. Current pool alone cannot fund it."
+  ],
+  "alternative_not_justified": "Configured transport/local-corridor separation currently lacks a validated known-free transport volume/self-collision model; do not silently assume it.",
+  "parallel_required_work": "Bounded saved-image pregrasp color classification advances stage1 and does not authorize new stage2 physics."
+}
