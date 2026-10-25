@@ -1,0 +1,121 @@
+{
+  "schema": "stage2-native-collider-observation-probe-v1",
+  "execution_authorized": true,
+  "scope": "One sensor API fixture probe, not a grasp, extraction retry or acceptance-policy change",
+  "source_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick",
+  "prior_supervisor": "/home/faps/dev/github/robo.innovate26/runs/20261025T124546.786370Z-stage2-contact-point-diagnostic/pipeline_supervisor.json",
+  "prior_case_seconds": 1452.9025644630237,
+  "aggregate_case_ceiling_seconds": 1800,
+  "maximum_active_seconds": 240,
+  "capture_cutoff_seconds": 190,
+  "maximum_jobs": 1,
+  "maximum_physics_steps": 480,
+  "physics_dt_s": 0.008333333333333333,
+  "probe_size_m": 0.002,
+  "initial_clearance_m": 0.00025,
+  "maximum_travel_m": 0.0005,
+  "maximum_speed_m_s": 0.001,
+  "steps_per_role": 150,
+  "quiet_steps": 30,
+  "positive_force_N": 0.2,
+  "positive_consecutive_steps": 3,
+  "sampled_force_abort_N": 2.0,
+  "force_floor_N": 1e-08,
+  "fixtures": [
+    {
+      "id": "BODY",
+      "side": "left",
+      "collider_suffix": "collisions/mesh_3",
+      "point_finger_m": [
+        0,
+        0.00140669,
+        0.055
+      ],
+      "outward_finger": [
+        0,
+        -1,
+        0
+      ]
+    },
+    {
+      "id": "WHITE",
+      "side": "left",
+      "collider_suffix": "collisions/mesh_0",
+      "point_finger_m": [
+        0,
+        0.026,
+        0.012
+      ],
+      "outward_finger": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "HEAD",
+      "side": "left",
+      "collider_suffix": "UpdatedTipFastenerCollision/Head",
+      "point_finger_m": [
+        0,
+        0.01480522,
+        0.04509037
+      ],
+      "outward_finger": [
+        0,
+        1,
+        0
+      ]
+    }
+  ],
+  "matching": {
+    "position_atol_m": 2e-06,
+    "separation_atol_m": 2e-06,
+    "normal_atol": 0.001,
+    "impulse_atol_Ns": 1e-07,
+    "impulse_rtol": 1e-05,
+    "require_unique_bidirectional_loaded_point_accounting": true,
+    "missing_or_ambiguous": "UNKNOWN",
+    "tangential_impulse": "Preserve separately; do not compare full vector with tensor normal impulse",
+    "event_sensor_sign": "+1 if known robot is actor0/shape0, -1 if actor1/shape1; normal from shape1 to shape0. Fixed before data, never inferred per point.",
+    "primary_contract": "NVIDIA-Omniverse/PhysX 107.3-physx-5.6.1/physx/include/PxSimulationEventCallback.h: contact normal shape1 toward shape0; extracted impulse normal * scalar impulse"
+  },
+  "online_contract": "Known robot side/component role and loads only. No partner actor/collider IDs, native source identities, colors or source poses.",
+  "initialization_contract": "Explicit kinematic sensor fixture placements only, never task teleports or synthetic native attachment. Robot holds its initial joints; source remains full300/301parts/930links.",
+  "unchanged": [
+    "Robot geometry and mass properties",
+    "Native source connections and physical thresholds",
+    "Existing point/surface guards",
+    "Force abort bounds",
+    "All previous failed results"
+  ],
+  "prohibited": [
+    "Grasp retry",
+    "Transfer or extraction",
+    "Acceptance tolerance changes",
+    "Adaptive fixture relocation",
+    "Hardware or ROS control"
+  ],
+  "independent_review": "Planner/implementer and independent evaluator consider the compact method sufficient; independent reviewer approves completed runtime/observer/auditor for one <=240s default-Pueue observation probe. Global parameters frozen before any data. No grasp retry, ownership-policy replacement or model/force/tolerance changes authorized by this result.",
+  "prior_supervisor_sha256": "233027cee46c7ab570f7da2ad5b0bf21389ac20e46d45486a260878298864744",
+  "source_api_evidence": [
+    {
+      "path": "/home/faps/miniforge3/envs/unitree_sim_env/lib/python3.11/site-packages/isaacsim/extscache/omni.physx-107.3.26+107.3.3.lx64.r.cp311.u353/omni/physx/bindings/_physx.pyi",
+      "sha256": "ff13abb83480dcc707ac2ad60062306aef7a33f885d32ed4c8ee6dfea2008e79"
+    },
+    {
+      "path": "/home/faps/dev/resources/BrickSim/native/modules/bricksim/physx/physics_graph.cppm",
+      "sha256": "b8889b8f536b8781c6ff5e3e66cd7b7531b4438a03a24282a41bfb67cffc6cc6"
+    },
+    {
+      "path": "/home/faps/dev/resources/BrickSim/native/modules/bricksim/physx/patcher.cppm",
+      "sha256": "56ef4bc19a9c69ac9e3d18c0ab4a0624a91e962c2d7a255b9ef9ff5919f96024"
+    }
+  ],
+  "minimum_loaded_frames_per_role": 3,
+  "positive_force_semantics": "0.2N for 3 fresh frames triggers reversal only. Each role needs at least3 fresh frames with actual loaded points above force_floor_N and complete unique correspondence; no old D/R force-success criterion is claimed.",
+  "source_metadata": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick/output/capture_metadata.json",
+    "sha256": "3115ed79d7d87c27c3a4a75d830d575e18608ebc7e00476ffd895f15c931c61b"
+  }
+}
