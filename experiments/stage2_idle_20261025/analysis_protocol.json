@@ -1,0 +1,26 @@
+{
+  "schema": "bounded-native-dump-analysis-v1",
+  "expected_dumps": 7,
+  "watched_connections": [
+    836,
+    837
+  ],
+  "comparison_connections": [
+    832,
+    833,
+    922,
+    923
+  ],
+  "part_of_interest": 273,
+  "matrix_loader_source": ".deps/bricksim/utils/matrix_loader.py",
+  "matrix_loader_sha256": "c745fb09248ba70882ce31d7e1534a523630ad4be00b7c0ce32f150c9fbd68bf",
+  "solver_rerun": false,
+  "parameter_changes": false,
+  "gravity_reference_world_m_s2": [
+    0,
+    0,
+    -9.81
+  ],
+  "gravity_reference_status": "Nominal configured Isaac default reference; not independently separated in native J/H",
+  "scope": "Serialized solver info/residuals/utilization/capacity terms/mass/inertia/impulse observations only; root cause may remain unresolved"
+}
