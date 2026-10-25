@@ -80,3 +80,38 @@ frozen development comparison, with no camera, detector or bounds sweep. Filteri
 cannot recover pixels occluded by the robot or fix small brick image scale.
 Removed returns remain unknown and cannot establish physical absence. If the
 integration gate still fails, report the blocker rather than tune more parameters.
+
+## Separate fixed source-scale camera experiment
+
+After the distant-view development baselines yielded zero raw candidates,
+`source_views_v1.json` defines one reviewed close-view pair. It copies
+`cameras_realism.json` except for the two eye/target/up records. The configured
+full-design reference remains table `(0,0,.1009)`m for every intact or partial
+state. K, image dimensions, lights, geometry, appearance, R3 and the workspace
+prior remain unchanged. Closer sampling is an experiment, not a measured camera
+calibration or a guaranteed fix. The original benchmark/protocol stay intact;
+`benchmark_source_views_v1.json` and
+`evaluation/protocol_source_views_v1.json` preserve their cases and metric rules
+while pinning the new cameras.
+
+The following submitters create frozen default-Pueue jobs after scoped changes
+are reviewed and committed. `--include-intact` captures I alongside H/E/P/T with
+the same camera configuration. Reserved P/T images remain sealed until this
+interface/configuration version is frozen. No reserved-result tuning is allowed.
+
+```sh
+python3 experiments/stage1_20261025/submit_render.py \
+  --cameras source_views_v1.json --benchmark benchmark_source_views_v1.json \
+  --include-intact
+python3 experiments/stage1_20261025/submit_inference.py \
+  --render-snapshot runs/RENDER_SNAPSHOT \
+  --intact runs/RENDER_SNAPSHOT/render_output/development/I_mix \
+  --split development --workspace experiments/stage1_20261025/workspace_v1.json \
+  --cameras source_views_v1.json --benchmark benchmark_source_views_v1.json \
+  --protocol evaluation/protocol_source_views_v1.json
+```
+
+New configuration paths are relative to this Stage1 experiment. Custom camera,
+benchmark or protocol options require an explicit matching `--intact` capture;
+the old distant I image must not be silently reused. Omitting the new options
+preserves the original submission defaults.

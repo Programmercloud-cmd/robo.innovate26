@@ -1,4 +1,4 @@
-"""Supervise four final-workcell partial states; preserve the bounded Kit cleanup."""
+"""Supervise frozen final-workcell states; preserve the bounded Kit cleanup."""
 import argparse
 import json
 import os
@@ -31,6 +31,7 @@ def main():
     p.add_argument('--cameras',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
     p.add_argument('--appearance',type=Path,required=True);p.add_argument('--python',required=True);p.add_argument('--capture-timeout',type=float,default=180)
     p.add_argument('--cleanup-timeout',type=float,default=5)
+    p.add_argument('--include-intact',action='store_true',help='Also capture I_mix with these same frozen cameras')
     a=p.parse_args()
     if os.environ.get('ROBO_PUEUE_JOB')!='1':raise RuntimeError('Rendering must use default Pueue')
     benchmark=json.loads(a.benchmark.read_text());a.output.mkdir(parents=True,exist_ok=True)
@@ -47,7 +48,7 @@ def main():
         raise SystemExit(128+signum)
     signal.signal(signal.SIGTERM,cancelled);signal.signal(signal.SIGINT,cancelled)
     for case in benchmark['cases']:
-        if case['id'] == 'I_mix':
+        if case['id'] == 'I_mix' and not a.include_intact:
             continue  # Reuse the unchanged final full-stack capture.
         folder=a.output/case['split']/case['id'];folder.mkdir(parents=True,exist_ok=True)
         command=[a.python,str(adapter),'--case',case['id'],'--benchmark',str(a.benchmark),
