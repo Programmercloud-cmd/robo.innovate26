@@ -170,3 +170,24 @@ also present. Load origin remains unresolved and the idle gate still fails.
 [Protocol and commands](../experiments/stage2_idle_20261025/README.md),
 [independent contact audit](../runs/20261025T014929.925825Z-stage2-contact-evaluation/output/REPORT.md).
 This diagnostic does not reset the stage improvement budget or validate grasping.
+
+
+## Stage 2 round 2: solver-quality sensitivity did not fix idle stability
+
+Pueue **1740**, source `1debd6e`, tests source-only velocity iterations 4→16
+(position 32), retaining all physical/native break parameters and the original
+120-step acceptance gate. Runtime properties on all 300 source actors verify
+32/16 initially and terminally; the actual TGS scene clamps permit those values.
+Audit **1741** passes all 25 experiment-integrity checks, but the same links
+836/837 break at step 7. Initial states are byte-identical to both earlier
+baselines and recorded per-step aggregate drift/speed metrics agree exactly.
+No load/utilization comparison or executed-island iteration count is available.
+
+This is a failed numerical sensitivity result. Default settings remain unchanged;
+no reserved case or manipulation is run. Two Stage 2 improvement rounds are now
+used; a third parameter guess is not justified. The source/load model needs a
+concrete hypothesis before further contact work. The six-stage demo remains
+incomplete.
+
+[Round 2 protocol/results](../experiments/stage2_idle_20261025/README.md),
+[independent audit](../runs/20261025T020255.062438Z-stage2-round2-evaluation/output/evaluation.json).

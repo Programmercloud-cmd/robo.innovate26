@@ -259,5 +259,105 @@
     "capture_validated": false,
     "manipulation_validated": false,
     "independent_verdict": "Instrumentation reproduces baseline within frozen checks, including same step7 native break. All-zero reported streams without a positive control do not prove zero contact or explain native angular load; root cause and extraction prerequisite remain unresolved. No parameter tuning or further experiment follows automatically."
+  },
+  "round2_source_velocity16": {
+    "scope": "One configured source-velocity iteration4-to16 sensitivity trial; no manipulation",
+    "improvement_round": 2,
+    "capture_job_id": 1740,
+    "evaluation_job_id": 1741,
+    "capture_source_commit": "1debd6e",
+    "capture_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T020034.012576Z-stage2-round2-source-velocity16",
+    "evaluation_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T020255.062438Z-stage2-round2-evaluation",
+    "evaluation_file": "/home/faps/dev/github/robo.innovate26/runs/20261025T020255.062438Z-stage2-round2-evaluation/output/evaluation.json",
+    "evaluation_sha256": "96d25940042f4b30ac255f9b5b79c5d9ead5455f14f835dce7b25882adcafb25",
+    "evaluation_manifest_sha256": "b6aaa2c1378148d498cb32c4ea403876054cdb7bd6f726385df3a1cea61fa8c1",
+    "round2_protocol_sha256": "8109a9e0ff6716c74098bfe8986960cbfc055cfb8a3f80c8206d51776a654e92",
+    "idle_report_sha256": "9e28ec19b15006d1c1b33211e5c2563d22e3dc768d5815e680b75eff13f1362c",
+    "solver_property_report_sha256": "b3c83d6f0552485b4bda7e91b81f651e89c2b2df6a95e07ab31288154d340553",
+    "trial_integrity_checks": {
+      "300_distinct_source_paths": true,
+      "source_ids_match_1725": true,
+      "source_ids_match_1733": true,
+      "configured32_4_to32_16": true,
+      "baseline_runtime_before4_not_claimed": true,
+      "island_counter_not_claimed": true,
+      "unchanged_idle_protocol": true,
+      "default_epsilon1e4": true,
+      "wall_budget_respected": true,
+      "initial_native_ids_equal": true,
+      "301_initial_parts": true,
+      "initial_300_runtime32_16": true,
+      "initial_300_authored32_16": true,
+      "terminal_300_runtime32_16": true,
+      "terminal_300_authored32_16": true,
+      "native_breakage_parameters_unchanged": true,
+      "native_assembly_parameters_unchanged": true,
+      "available_plate_robot_controls_unchanged": true,
+      "TGS_and_velocity16_within_clamps": true,
+      "position32_within_clamps": true,
+      "initial_states_match_1725": true,
+      "initial_states_match_1733": true,
+      "step_budget_and_sequence": true,
+      "initial_robot_q_matches_baseline": true,
+      "no_initial_breaks": true
+    },
+    "integrity_check_count": 25,
+    "all_integrity_checks_passed": true,
+    "idle_gate_passed": false,
+    "maximum_steps": 120,
+    "steps_executed": 7,
+    "wall_limit_s": 180,
+    "initial_states_byte_identical_to1725_and1733": true,
+    "runtime_source_initial_and_terminal": {
+      "actor_count": 300,
+      "position_iterations": 32,
+      "velocity_iterations": 16
+    },
+    "baseline_configuration": {
+      "position_iterations": 32,
+      "velocity_iterations": 4,
+      "runtime_before4_measured": false,
+      "evidence": "Pinned authored configuration only; not an actual baseline getter measurement"
+    },
+    "TGS_scene_clamps": [
+      {
+        "path": "/physicsScene",
+        "solverType": "TGS",
+        "minVelocityIterationCount": 0,
+        "maxVelocityIterationCount": 255,
+        "minPositionIterationCount": 1,
+        "maxPositionIterationCount": 255
+      }
+    ],
+    "available_plate_and_robot_controls_unchanged": true,
+    "failure": {
+      "step": 7,
+      "reason": [
+        "native_component_changed_or_broken"
+      ],
+      "native_source_component_parts": 300,
+      "native_source_connections": 928,
+      "same_break_events_as1725": true,
+      "connection_ids": [
+        836,
+        837
+      ],
+      "top_body": "brick_9_0_3",
+      "maximum_position_drift_m": 0.0001707762518073223,
+      "maximum_orientation_drift_rad": 0.0013754981744850481,
+      "maximum_linear_speed_m_s": 0.041321293659287946,
+      "maximum_angular_speed_rad_s": 0.2633431449434304
+    },
+    "common_step_global_drift_and_speed_differences_all_zero": true,
+    "trajectory_limit": "Only initial full states and logged per-step global metrics compared; no claim that all intermediate per-body trajectories or loads are identical.",
+    "load_utilization_comparison": {
+      "measured": false,
+      "reason": "run_idle logs state/graph events, not native capacity utilization, impulses or forces. No values imputed."
+    },
+    "executed_island_iteration_counter_available": false,
+    "reserved_executed": false,
+    "extraction_validated": false,
+    "promoted_as_fix": false,
+    "independent_verdict": "All25 integrity checks pass; the full300 idle gate still fails at the same step7 events. No measured benefit in recorded global motion metrics. Preserve failed sensitivity result, do not promote settings or start a sweep; extraction remains blocked."
   }
 }

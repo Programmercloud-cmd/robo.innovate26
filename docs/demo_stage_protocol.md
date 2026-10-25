@@ -18,8 +18,8 @@ they are not unlimited free attempts. Preserve regressions, retries, misses and
 uncertainty. Reserved observations cannot drive changes within the same round.
 
 For accounting, Stage 1 already used two substantive changes (workspace filter,
-closer views). Stage 2 used one coupled numerical-epsilon comparison, which did
-not fix its failed idle gate. Native logging/offline audits are diagnostics, not
+closer views). Stage 2 used two improvements: coupled numerical epsilon and a source-only
+velocity-iteration 4→16 comparison. Neither fixed its failed idle gate. Native logging/offline audits are diagnostics, not
 additional claimed improvements. No unbounded sweep is planned; each new experiment still needs its frozen
 budget and independent review.
 

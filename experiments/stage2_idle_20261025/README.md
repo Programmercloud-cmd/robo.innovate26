@@ -154,3 +154,48 @@ python experiments/stage2_idle_20261025/submit_idle.py --diagnostic --osqp-epsil
 The bounded contact-observation round is closed without a physical-parameter
 change or a diagnosed load origin. Further work needs a separate reviewed
 hypothesis and remains within the existing three-round stage limit.
+
+
+## Round 2: source velocity-iteration sensitivity — failed
+
+Frozen source `1debd6e`, Pueue **1740**, changes only the source-brick authored
+velocity iteration count from 4 to 16; position iterations remain 32. It retains
+the full 300-brick/930-link initial source, original 120-step idle gate, timestep,
+nominal joint targets, epsilon 1e-4 and physical/native break settings. An
+experiment-local factory wrapper leaves the shared factory and default settings
+unchanged. The installed dynamic-control extension is activated only in the
+queued process, for readback; no runtime setter or dependency installation is
+used. A separate completion marker requires terminal verification.
+
+Independent audit **1741** passes all 25 integrity checks. All 300 source actors
+read back 32/16 initially and finally; plate/robot controls remain 16/1. The
+actual USD scene is TGS, with velocity clamps 0–255 and position clamps 1–255.
+Historical baseline 32/4 is pinned authored evidence, not a historical runtime
+getter measurement. Executed island iteration counts are unavailable.
+
+| Configuration | First break | Remaining source parts / links | Idle gate |
+|---|---:|---:|---|
+| Baseline authored 32/4 (1725) | Step 7, links 836/837 | 300 / 928 | Failed |
+| Variant runtime 32/16 (1740) | Step 7, links 836/837 | 300 / 928 | Failed |
+
+Initial 301-body state files are byte-identical to both 1725 and 1733. Every
+recorded per-step aggregate drift/orientation/speed metric through step 7 agrees
+with 1725. This does not establish identical unrecorded per-body trajectories or
+loads. Load/utilization changes were not measured in this idle runner.
+The experiment shows no measured benefit; it does not identify the cause.
+There is no promotion of 16, further parameter sweep, reserved-case execution,
+or extraction/placement claim. Reserved H_mix remains unexecuted for dynamics;
+it is a historically known perception layout, not independent-stack evidence.
+
+```bash
+python experiments/stage2_idle_20261025/submit_idle.py --velocity16 --osqp-epsilon 1e-4
+```
+
+- [Round 2 protocol and limits](round2_velocity16_protocol.json)
+- [1740 snapshot](../../runs/20261025T020034.012576Z-stage2-round2-source-velocity16/manifest.json)
+- [1740 failed idle report](../../runs/20261025T020034.012576Z-stage2-round2-source-velocity16/output/idle_report.json)
+- [1741 independent audit](../../runs/20261025T020255.062438Z-stage2-round2-evaluation/output/evaluation.json)
+
+Stage 2 has used two improvement rounds (coupled epsilon and velocity iterations),
+both unsuccessful. The maximum of three is a cap, not an obligation to try a
+third knob. Further work must test a concrete load/source-model hypothesis.
