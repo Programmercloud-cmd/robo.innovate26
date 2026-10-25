@@ -1,0 +1,25 @@
+{
+  "schema": "explicit-compound-native-query-results-v1",
+  "attempt1": {
+    "job_id": 1767,
+    "source_commit": "0fbc0bf",
+    "snapshot": "runs/20261025T062618.700247Z-explicit-tip-native-query",
+    "status": "FAILED_BEFORE_COOK_AND_QUERIES",
+    "reason": "Strict frozen1754 robot property equality failed: only rigidbody entries10/11 differ in mass/inertia/COM; actuator arrays exact. Body-name mapping not saved in this stopped capture.",
+    "target_geometry": "UNTESTED",
+    "physical_properties": "Not preserved in attempt1; no tolerance relaxation or baseline redefinition",
+    "actual_total_process_seconds": 14.699420149001526,
+    "sha256": {
+      "manifest.json": "9ca7638e1dbf3f600c0fe32faa3fc1a9718d663fcc55511eea8420dfb81fba42",
+      "output/failure.json": "c74894391cc18c0477b6641c8cd430851ee2a28460e7baf7febfbb86148cedb9",
+      "output/property_checks.json": "f5285357d53c748b59f2bda46a0acfe0e132266c057772e1e9f4444c6f98b659",
+      "output/supervisor.json": "d9e2a2156a2b2e7d56b05c449b9e18b045acfe5ea2feabcde04a357c97c1b89a",
+      "audit/evaluation.json": "8819c20bd919546a272c265e95685b340de3cb8f2c9b46b64879ed7156839e6f",
+      "pipeline_supervisor.json": "acd6fa34a531aaca1c3ddfb8c8a7bab955fc3477f11cd755d8983a5514e8ec6c"
+    }
+  },
+  "reviewed_reassessment": "One final initialization-only property preservation correction under source review. Same exact48geometry/probes/strictB0guard; total2attempts/cumulative180s incl14.699420149s. No new three-round pool.",
+  "tested_clear_features_passed": false,
+  "contact_authorized": false,
+  "physical_registration_validated": false
+}

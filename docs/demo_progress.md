@@ -402,3 +402,26 @@ benchmarks remain failed; no new three-round allowance is created.
 [Independent offline audit](../runs/20261025T061618.814542Z-explicit-tip-compound-255/audit/evaluation.json),
 [exact27-record check](../runs/20261025T061618.814542Z-explicit-tip-compound-255/prefix_check.json),
 [commands and source manifest](../runs/20261025T061618.814542Z-explicit-tip-compound-255/manifest.json).
+
+
+## Native compound observation stops at physical-property preservation
+
+Pueue1767 (source`0fbc0bf`) fails before any cooked-buffer capture or query.
+Replacing collider geometry changes automatic mass/inertia/COM entries10/11;
+all other body entries and all actuator arrays remain exact against1754. The
+strict guard correctly rejects an unfair physical comparison. These entries
+have not yet been mapped to saved historical body names. All target geometry
+and query quality remain UNTESTED. Capture plus independent failed-capture audit
+takes14.699s, with zero measured postassembly steps.
+
+The team supports one explicit initialization-only preservation correction: a
+same-instance scene.reset wrapper restores the declared frozen1754 mass model
+before the existing explicit nominal initialization step, verifies current
+finger mapping/nonfinger invariance and requires the same exact postreadback.
+This is not an estimate of the real updated tip's mass. Engine-internal reset
+initialization precedes this restoration. No CAD/geometry, query, tolerance or
+actuator tuning is proposed. At most two native setup attempts and cumulative
+180s including1767; no contact or new three-round allowance. Source review is
+pending before the final attempt.
+
+[Preserved native-test failure](../experiments/compound_native_query_20261025/results.json).
