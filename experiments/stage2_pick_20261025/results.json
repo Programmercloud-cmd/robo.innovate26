@@ -12,12 +12,12 @@
       "change": "Correct expected names from SHA-pinned geometry; audit-only replay of immutable1800 capture. Prospectively raise case budget600\u21921200 before first pick based measured443.339s cost; all original time remains charged.",
       "physics_or_manipulation_parameters_changed": false,
       "original_failure_preserved": true,
-      "status": "SOURCE_APPROVED"
+      "status": "AUDIT_ONLY_REPLAY_QUEUED"
     }
   ],
   "I": {
     "control": {
-      "status": "CORRECTED_AUDIT_PENDING",
+      "status": "AUDIT_ONLY_REPLAY_QUEUED",
       "original_failed_job": {
         "job_id": 1800,
         "status": "FAILED_AUDIT_EXPECTED_ID_ENUMERATION",
@@ -48,7 +48,11 @@
         "actual_capture_plus_audit_seconds": 443.33917641901644,
         "audit_sha256": "cfe6b016f95853d0962a15b65ccecbfb850054f116f0c88d7687e79d93e2edc4"
       },
-      "new_simulation_required": false
+      "new_simulation_required": false,
+      "correction_job_id": 1801,
+      "correction_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T095332.007786Z-stage2-pick-I-control-audit-correction",
+      "correction_source_commit": "ca77991",
+      "new_simulation_steps": 0
     },
     "pick": {
       "status": "NOT_STARTED_PENDING_CONTROL_PASS_AND_REVIEW"
