@@ -43,11 +43,24 @@
     "audit_sha256": "9e3f623e8f198f730727159009d0238f37207984bebed4f918505f7d2a731c9c"
   },
   "D": {
-    "job_id": 1788,
-    "source_commit": "61ffff3",
-    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T082958.777598Z-exposed-tip-D",
-    "status": "QUEUED",
-    "scope": "Separate lateral-qualified contact diagnostic; original G remains FAILED"
+    "status": "UNEXERCISED_PENDING_INVOCATION_ONLY_REPAIR",
+    "failed_invocations": [
+      {
+        "job_id": 1788,
+        "source_commit": "61ffff3",
+        "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T082958.777598Z-exposed-tip-D",
+        "status": "INCOMPLETE_CAPTURE_ARGUMENT_FORWARDING",
+        "scope": "Separate lateral-qualified contact diagnostic; original G remains FAILED",
+        "proceed_gate_passed": false,
+        "physical_case_exercised": false,
+        "target_claims": "UNTESTED",
+        "actual_capture_plus_audit_seconds": 0.8786062049912289,
+        "diagnosis": "Default argparse abbreviation consumed forwarded --geometry as --geometry-audit before simulator startup."
+      }
+    ],
+    "remaining_capture_plus_audit_budget_s": 179.12139379500877,
+    "physical_case_attempts": 0,
+    "scope": "Same one lateral D, not a new physical retry pool."
   },
   "R": {
     "status": "RESERVED_NOT_EXECUTED"

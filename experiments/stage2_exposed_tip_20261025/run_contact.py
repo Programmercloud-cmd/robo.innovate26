@@ -10,7 +10,7 @@ from experiments.stage2_contact_20261025 import geometry as stock
 from model import Adapter
 
 def main():
-    parser=argparse.ArgumentParser(add_help=False);parser.add_argument('--phase',choices=('G','D','R'),required=True)
+    parser=argparse.ArgumentParser(add_help=False,allow_abbrev=False);parser.add_argument('--phase',choices=('G','D','R'),required=True)
     parser.add_argument('--geometry-audit',type=Path);parser.add_argument('--side-authorization',type=Path)
     parser.add_argument('--predecessor-D',dest='predecessor_D',type=Path)
     args,remaining=parser.parse_known_args();sys.argv=[sys.argv[0],*remaining]
