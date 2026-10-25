@@ -1,0 +1,64 @@
+# Stage1: frozen R3 frame integration
+
+This experiment connects RGB/axial-depth observations to a small candidate
+interface and explicit Challenge1 mocks. It does not establish detector
+reliability, calibrated real-camera poses, physical accessibility or robot control.
+
+Development states are intact I_mix, interior H_mix and endpoint E_mix, each with
+the two unchanged final-workcell diagnostic views. P_mix and T_mix are reserved
+for the frozen interface audit; these known historical patterns are not new
+generalization evidence. Three development sensor controls use intact images:
+all-NaN depth in each view, and top-view NaN patch [600,280,680,360]. Missing depth
+does not mean physical absence.
+
+`upstream/` is byte-identical frozen R3, verified by `upstream_hashes.json`.
+Only the source-plate ROI is translated from the previous workcell coordinates
+to table X/Y [-.128,.128] meters. No threshold, confidence or source change is
+permitted. Camera calibration derives from configured scene design and presets;
+saved actual camera or brick truth is not an input.
+
+The queued orchestrator keeps three directories separate:
+
+- `sensors/`: online package containing frames.json, calibration.json, opaque
+  sensor paths and frozen R3 copies. No state labels or evaluation truth.
+- `inference/`: per-frame raw r3.json, candidates.json and overlays, plus mocks.
+- `evaluation_truth/`: private state/view mappings, actual simulator records and
+  references, available only to independent evaluation.
+
+The candidate contract reports table XY, shared-ridge yaw and an
+`estimated_body_top_from_selected_band_m` assumption. It provides evidence and
+abstention reasons with no calibrated covariance, physical layer identity,
+grasp accessibility, tracking identity or full 6D/root-pose claim. Geometric
+candidate IDs are meaningful only together with their frame ID.
+
+Challenge1 mocks use one sensor-supported PRESENT candidate selected without
+truth. Four separate fixtures exercise good-selected, good-unselected, faulty
+and unknown results. Exact frame/candidate joins are required; non-present,
+missing, duplicate, unknown or mismatched joins abstain. Destination strings are
+declarative mock outcomes, not robot commands or a routing scheduler.
+
+The integration gate requires at least one correct PRESENT in at least one view
+of each ordinary development state, with zero false-confident/lower/gap claims.
+Independent evaluation also reports all coverage, uncertainty and pose errors;
+sparse abstention is allowed. Failure is reported rather than changing R3 or
+tuning camera views. Reserved frames are processed only after interface freeze.
+
+Commands below belong inside the existing default-Pueue frozen-job workflow.
+The orchestrator owns submission, snapshots, reserved isolation and job IDs.
+
+```sh
+python experiments/stage1_20261025/render_stage.py --case H_mix \
+  --benchmark experiments/stage1_20261025/benchmark.json \
+  --geometry experiments/final_workcell_20261024/geometry.json \
+  --cameras experiments/final_workcell_20261024/cameras_realism.json \
+  --appearance experiments/final_workcell_20261024/appearance_config.json \
+  --views all --output CAPTURE --headless --enable_cameras --device cpu
+python experiments/stage1_20261025/calibration.py --geometry GEOMETRY \
+  --cameras CAMERAS --output calibration.json
+python experiments/stage1_20261025/prepare_inputs.py --sources PRIVATE_SOURCES \
+  --calibration calibration.json --output sensors
+python experiments/stage1_20261025/online.py --inputs sensors --output inference
+```
+
+The only tests run outside the queue are syntax and tiny contract fixtures;
+actual sensor preparation, inference, rendering and evaluation require Pueue.

@@ -1,0 +1,112 @@
+{
+  "schema": "stage1-independent-integration-smoke-v1",
+  "status": "frozen_before_online_batch",
+  "stage": "Perception and explicitly mocked Challenge1 handoff; not manipulation acceptance",
+  "benchmark_sha256": "60cb7a32312c41131708082e2df776bb440a4fea6e0165af6b541811b04fbb12",
+  "geometry_source": "experiments/final_workcell_20261024/geometry.json",
+  "geometry_sha256": "8a0266b2ccbf75f6d773fdd1e6309c70f9ab8828da96b563da133f383f83c897",
+  "frozen_helper_sha256": {
+    "references.py": "44ad8dc4a1c258d718ef9bd512465c191fb81276911995ce7d3bae3ab9d8e5fc",
+    "partial_evaluation.py": "ca415165eac7a3d92d38b219a809a50923d82d541ac6d2396da9ba83fea54583",
+    "base_evaluation.py": "5df88102f12dd004414b6931a0209518484a64c09e4a6927536d7d8b84e69207"
+  },
+  "development_cases": [
+    "I_mix",
+    "H_mix",
+    "E_mix"
+  ],
+  "reserved_cases": [
+    "P_mix",
+    "T_mix"
+  ],
+  "views": [
+    "diagnostic_table_top",
+    "diagnostic_oblique"
+  ],
+  "controls": [
+    {
+      "id": "invalid_top",
+      "case_id": "I_mix",
+      "view": "diagnostic_table_top",
+      "operation": "all_depth_NaN"
+    },
+    {
+      "id": "invalid_side",
+      "case_id": "I_mix",
+      "view": "diagnostic_oblique",
+      "operation": "all_depth_NaN"
+    },
+    {
+      "id": "no_return_patch",
+      "case_id": "I_mix",
+      "view": "diagnostic_table_top",
+      "operation": "depth_patch_NaN",
+      "pixel_xyxy": [
+        600,
+        280,
+        680,
+        360
+      ]
+    }
+  ],
+  "method_policy": "Frozen R3 code and thresholds unchanged; only declared source ROI [-.128,.128]m in both table axes. No automatic confidence tuning. Reserved views opened only after interface/source freeze.",
+  "truth_isolation": "Only this separate evaluator receives actual simulator IDs/roots/camera records, removal configuration, graph and annotations. Online inputs contain opaque frame IDs, RGB, axial depth, configured calibration, geometric class dimensions and declared source ROI.",
+  "references": {
+    "positive": "Highest remaining physical layer; full projected body-top face in frame and >=6/8 actual depth-visible stud samples within2mm. Includes isolated remnants.",
+    "excluded": "One to five visible samples or clipped face: ambiguous; zero visible samples: not visible. Report counts, never absence credit.",
+    "controls": "Physical-present references use original capture depth; NaN patch affects only sensor evidence, never removes physical bricks.",
+    "absence": "Only removed current-layer slots bracketed by surviving material on both longitudinal sides and >=6/8 actual finite returns >=3mm below current body top. Removed endpoints and original missing extent are unknown. Whole-layer removal switches current cohort rather than creating30 absence refs."
+  },
+  "matching": {
+    "rule": "Reuse unchanged one-to-one envelope IoU>=.5 max-cardinality then IoU; merge covering>=half2positive faces and their centers ineligibleTP. Existing duplicate/lower/ambiguous/outside/unresolved precedence retained.",
+    "stages": "Raw hypotheses, present declarations and joint present/missing/uncertain location assignments reported separately.",
+    "metric_eligibility": {
+      "xy_error_m_max": 0.003,
+      "undirected_yaw_error_deg_max": 5.0,
+      "surface_distance_to_body_or_stud_top_m_max": 0.003,
+      "semantics": "Initial integration consistency limits, not validated grasp/insertion tolerances, free6DOF/root-pose accuracy or gripper accessibility."
+    },
+    "report": "All matched errors with N before metric gating; TP/miss/merge/duplicate/lower/wrong-height/unverified, uncertain/no_match, known-reference absence precision/coverage and unverified missing separately."
+  },
+  "mock_handoff": {
+    "actual_Challenge1_integration": false,
+    "fixtures": {
+      "good_selected": {
+        "status": "joined",
+        "destination": "main"
+      },
+      "good_unselected": {
+        "status": "joined",
+        "destination": "buffer"
+      },
+      "faulty": {
+        "status": "joined",
+        "destination": "reject"
+      },
+      "unknown": {
+        "status": "abstain",
+        "destination": null
+      }
+    },
+    "guards": [
+      "wrong_frame",
+      "wrong_candidate",
+      "nonpresent",
+      "duplicate_join"
+    ],
+    "rule": "Fixture chosen from actual online PRESENT by public frame/candidate keys only. NoPRESENT => blocked; synthetic unit selftest does not count as observed integration. Unknown, missing, mismatched or nonpresent input abstains. Mock labels do not establish real classification correctness."
+  },
+  "acceptance": {
+    "scope": "INTEGRATION SMOKE ONLY",
+    "positive": "At least1 metric-eligible PRESENT per development state in >=1 of its2 views; every view and all coverage/errors still reported.",
+    "negative": "Zero noneligible/confident-unverified PRESENT, wrong/lower/height/ghost-target claims, wrong or unverified missing across both views and controls. AllNaN yields0confident present/missing; patch yields0missing.",
+    "handoff": "All4mock fixtures and4guard checks pass with exact actual PRESENT join; no simulator-identity/label fallback.",
+    "failure": "Zero eligibility is failure, not success by abstention. Baseline failure is reported without threshold changes or automatic implementation expansion."
+  },
+  "limitations": [
+    "Six development views are correlated static observations of one design.",
+    "Reserved geometry types were seen in prior experiments; this is held-out execution, not independent unseen-design generalization.",
+    "Ideal rendered depth, nominal configured calibration, shared ridge yaw/body-plane hypotheses; no physical or manipulation validation.",
+    "The final scene remains static initialized; native contact dynamics must be tested independently before extraction."
+  ]
+}
