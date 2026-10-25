@@ -21,6 +21,13 @@ def write(path, value):
     Path(path).write_text(json.dumps(value, indent=2, allow_nan=False)+'\n')
 
 
+def metadata_scalar(value):
+    """Represent SDK attribute infinities explicitly; never process physical arrays."""
+    if isinstance(value, float) and not math.isfinite(value):
+        return {'nonfinite_scalar': 'nan' if math.isnan(value) else 'inf' if value > 0 else '-inf'}
+    return value
+
+
 def quaternion_error(a, b):
     import numpy as np
     a, b = np.asarray(a, float), np.asarray(b, float)
@@ -148,7 +155,7 @@ def run(args, protocol):
         actors[name] = {'path':path, 'mass_kg':view.get_masses().cpu().numpy().tolist(),
             'inertias_kg_m2':view.get_inertias().cpu().numpy().tolist(),
             'com_local_pose_xyzw':view.get_coms().cpu().numpy().tolist(),
-            'usd_physics_attributes':{a.GetName():a.Get() for a in prim.GetAttributes()
+            'usd_physics_attributes':{a.GetName():metadata_scalar(a.Get()) for a in prim.GetAttributes()
                 if a.GetName().startswith(('physics:', 'physxRigidBody:')) and isinstance(a.Get(), (float, int, bool, str))}}
     physics_scene = next(prim for prim in stage.Traverse() if prim.IsA(UsdPhysics.Scene))
     gravity_direction = UsdPhysics.Scene(physics_scene).GetGravityDirectionAttr().Get()
@@ -161,7 +168,7 @@ def run(args, protocol):
         'actors':actors, 'gravity_configured_m_s2':list(sim_cfg.gravity),
         'gravity_usd_direction':list(gravity_direction),
         'gravity_usd_magnitude':UsdPhysics.Scene(physics_scene).GetGravityMagnitudeAttr().Get(),
-        'physics_scene_attributes':{a.GetName():a.Get() for a in physics_scene.GetAttributes()
+        'physics_scene_attributes':{a.GetName():metadata_scalar(a.Get()) for a in physics_scene.GetAttributes()
             if isinstance(a.Get(), (float, int, bool, str))},
         'connection_path':connection, 'connection_arguments':connection_args,
         'native_relative_transform_qpos':[q,p], 'native_local_interface_transforms_qpos':local,
@@ -222,7 +229,19 @@ def main():
         check_geometry()
         assert quaternion_error((1,0,0,0),(-1,0,0,0)) == 0
         assert abs(quaternion_error((1,0,0,0),(math.sqrt(.5),0,0,math.sqrt(.5)))-math.pi/2) < 1e-12
+        values = [True, 3, 2.5, 'TGS', math.inf, -math.inf, math.nan]
+        encoded = [metadata_scalar(value) for value in values]
+        assert encoded[:4] == values[:4]
+        assert encoded[4:] == [{'nonfinite_scalar':'inf'}, {'nonfinite_scalar':'-inf'}, {'nonfinite_scalar':'nan'}]
+        assert json.loads(json.dumps(encoded, allow_nan=False)) == encoded
+        try:
+            json.dumps({'mass_kg':[math.inf]}, allow_nan=False)
+        except ValueError:
+            pass
+        else:
+            raise AssertionError('Physical arrays must remain strict JSON')
         print('One-stud offset/footprint and quaternion tiny contracts: PASS')
+        print('SDK metadata tags and strict physical-array JSON: PASS')
         return
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True)

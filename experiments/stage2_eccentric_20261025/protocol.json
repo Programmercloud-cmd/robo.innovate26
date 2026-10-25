@@ -111,5 +111,19 @@
     ".deps/bricksim/core.pyi": "eaeb106bc91985b6215ba1bfc74a06dbf86d4e585802396e438c1ab7e4540987",
     ".deps/bricksim/mdp/brick_part.py": "a6189101f61d73480ee2a6cad3192c67b4d9de7bdd896280c69543284fd31fb2",
     ".deps/bricksim/mdp/connection_thresholds.py": "768a7eda2ae8c926af032c38fc19c7502f41a208ee40ae2206b49ae9d0bb37e8"
+  },
+  "execution_history_and_final_budget": {
+    "preserved_setup_attempt": {
+      "pueue_job_id": 1742,
+      "snapshot": "runs/20261025T022049.810033Z-stage2-eccentric-diagnostic",
+      "measured_postassembly_steps": 0,
+      "result": "Failed before measured step0/trace: nonfinite SDK USD scalar metadata rejected by strict JSON exporter."
+    },
+    "repair": "Tag nonfinite float scalars only in actor/scene USD attribute metadata; physical arrays and strict JSON unchanged.",
+    "remaining_attempts": 1,
+    "final_attempt_maximum_steps": 8,
+    "final_attempt_wall_limit_s": 180,
+    "further_retry_permitted": false,
+    "physical_geometry_numerical_parameters_changed": false
   }
 }
