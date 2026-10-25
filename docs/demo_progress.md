@@ -686,3 +686,13 @@ The full 829.309 seconds already spent remain charged, leaving 370.691 seconds
 for one retained I attempt and audit. This configured simulation view is not a
 calibrated physical-camera claim. H remains reserved pending an independent I
 pass. No extraction or transfer result follows from source approval.
+
+
+Job 1804 (source `f17c6fd`) stops before clearance selection or measured motion:
+`configured_pose.up_fallback_used` is a NumPy boolean that strict JSON cannot
+serialize. This is INCOMPLETE_CAPTURE, not a grasp/contact or geometry result.
+The original run is preserved. A local Python-bool conversion of that metadata
+field leaves all camera math, science, controller and physics unchanged. The
+independent evaluator/reviewer permit one repaired execution of the unexercised
+round-2 trial, without resetting rounds. All 15.943 seconds remain charged:
+845.251 seconds spent, 354.749 remaining of 1,200. H remains reserved.

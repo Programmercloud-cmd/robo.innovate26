@@ -49,7 +49,7 @@ class Sensors:
         K=self.camera.data.intrinsic_matrices[0].cpu().numpy().copy();position=self.camera.data.pos_w[0].cpu().numpy().copy();quaternion=self.camera.data.quat_w_opengl[0].cpu().numpy().copy()
         guard=self.safety_cfg['readback_guards'] if self.safety_cfg else {'K_atol_px':.001,'position_m':.000002,'angle_rad':.0001}
         if np.max(abs(K-cal['K']))>guard['K_atol_px'] or np.linalg.norm(position-pose['eye_world_m'])>guard['position_m'] or self.core.quaternion_error(quaternion,pose['quaternion_wxyz_opengl'])>guard['angle_rad']:raise RuntimeError('Configured geometry camera readback mismatch')
-        return {**frame,'depth_sha256':hashlib.sha256((self.output/frame['depth']).read_bytes()).hexdigest(),'calibration':{**{key:np.asarray(value).tolist() for key,value in cal.items()},'image_size':self.config['image_size']},'image_size':self.config['image_size'],'configured_pose':pose,'actual_sensor_readback':{'K':K.tolist(),'pos_world_m':position.tolist(),'quat_opengl_wxyz':quaternion.tolist()}}
+        return {**frame,'depth_sha256':hashlib.sha256((self.output/frame['depth']).read_bytes()).hexdigest(),'calibration':{**{key:np.asarray(value).tolist() for key,value in cal.items()},'image_size':self.config['image_size']},'image_size':self.config['image_size'],'configured_pose':{**pose,'up_fallback_used':bool(pose['up_fallback_used'])},'actual_sensor_readback':{'K':K.tolist(),'pos_world_m':position.tolist(),'quat_opengl_wxyz':quaternion.tolist()}}
 
     def _safety_capture(self,frame):
         import cv2

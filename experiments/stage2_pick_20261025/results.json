@@ -18,11 +18,11 @@
       "round": 2,
       "failure": "Close segmentation camera omits85162 sampled tool-path points;20 near-edge samples are unresolved behind depth returns.",
       "change": "One fixed existing wide-overhead measured RGB-D geometry view, unchanged closeR3; every nonself sample needs a positive actual depth witness in at least one view. Exact I/O cache equivalence already validated.",
-      "status": "SOURCE_APPROVED_ONE_PICK",
+      "status": "METADATA_REPAIR_REVIEW_PENDING_ONE_EXECUTION",
       "physics_controller_or_numerical_limits_changed": false,
       "original_failures_preserved": true,
-      "prior_case_wall_seconds": 829.3087081270351,
-      "remaining_case_seconds": 370.69129187296494
+      "prior_case_wall_seconds": 845.2514062500268,
+      "remaining_case_seconds": 354.7485937499732
     }
   ],
   "I": {
@@ -114,6 +114,19 @@
       "actual_capture_plus_audit_seconds": 144.23136035300558,
       "cumulative_case_seconds": 817.321114225022,
       "audit_sha256": "48282e7a36f18c9ce29f9a6b02d521ebaf5b8c39cb443f06d082cd2e26b036d2"
+    },
+    "round2_metadata_failure": {
+      "job_id": 1804,
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T104959.233288Z-stage2-pick-I-pick",
+      "source_commit": "f17c6fd",
+      "status": "INCOMPLETE_CAPTURE_METADATA_SERIALIZATION",
+      "measured_physics_steps": 0,
+      "reason": "NumPy bool_ camera configured_pose.up_fallback_used cannot be serialized; fails before clearance selection and measured motion.",
+      "actual_capture_plus_audit_seconds": 15.942698122991715,
+      "cumulative_case_seconds": 845.2514062500268,
+      "remaining_case_seconds": 354.7485937499732,
+      "audit_sha256": "4bd5bb649c4c0ca59bf2e41a2cbeda528af8d6cc9c8ef30a79134da6b3761769",
+      "proceed_gate_passed": false
     }
   },
   "H": {

@@ -110,9 +110,9 @@
     "rule": "Exact passing1801I/control audit49/49 only. Current scientific JSON must equal pinned prior_control_protocol.json after removing ONLY perception.geometry_safety_view; no physics/source/tool/controller/numerical limit changes. H uses a fresh current-protocol control. No old600s replay reopened."
   },
   "retained_case_clock": {
-    "sha256": "734b8a03803c832553ee0d1d2b0876850b01fc15676cc7cda6aa5c477c548670",
-    "cumulative_case_seconds": 829.3087081270351,
-    "rule": "Retained I/pick must charge latest1803 actual cumulative, never reset to control673.089753872s."
+    "sha256": "085741de790765a6a109fc47680b424fb5f58d75443ffe1cc690184b08c097b1",
+    "cumulative_case_seconds": 845.2514062500268,
+    "rule": "Retained I/pick must charge latest1804 actual cumulative including the pre-measurement bool_ metadata export failure; do not reset to1803 or control673.089753872s. Original1804 INCOMPLETE_CAPTURE remains immutable; same unexercised round2 metadata-only resumption."
   },
   "geometry_safety_acceptance": "Two actual same-clock RGB/depth captures and configured/actual camera readback; unchanged close R3 camera restored. Full numeric sampled-point/self/witness packet; independently recompute proprioceptive self mask and actual finite positive depth-gap witnesses, require all nonself points covered. Projection-only coverage and unresolved/unknown in both views never authorize clearance. Source sample generation/envelopes unchanged and provenance-reviewed, not global continuous-volume collision certification.",
   "round2_safety_view": {

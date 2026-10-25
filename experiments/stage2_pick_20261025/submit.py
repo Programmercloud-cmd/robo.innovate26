@@ -87,8 +87,8 @@ def main():
         prior = float(latest['cumulative_case_seconds'])
     if (args.case == 'I' and args.mode == 'pick'
             and 'geometry_safety_view' in protocol['perception']
-            and (args.prior_case_supervisor is None or prior < 829.3087081270351)):
-        raise RuntimeError('Round2 must include the failed pick and completed1803 diagnostic costs')
+            and (args.prior_case_supervisor is None or prior < 845.2514062500268)):
+        raise RuntimeError('Round2 must include all prior work through failed1804 metadata capture')
     if args.case == 'H':
         if args.predecessor_development is None:
             parser.error('Reserved H requires independent development I success')
