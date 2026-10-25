@@ -14,6 +14,17 @@ def metadata_scalar(value):
     return value
 
 
+def cube_surface(size):
+    """Exact Cube local surface, including the authored/default USD size."""
+    size=float(size)
+    if not math.isfinite(size) or size<=0:raise RuntimeError('Invalid Cube size')
+    half=size/2
+    points=[[x,y,z] for x in (-half,half) for y in (-half,half) for z in (-half,half)]
+    quads=((0,1,3,2),(4,6,7,5),(0,4,5,1),(2,3,7,6),(0,2,6,4),(1,5,7,3))
+    triangles=[[f[0],f[1],f[2]] for f in quads]+[[f[0],f[2],f[3]] for f in quads]
+    return points,triangles
+
+
 def distance_to_triangles(point, vertices, triangles):
     """Minimum unsigned point-to-triangle distance; faces and clamped edges."""
     import numpy as np
@@ -42,27 +53,42 @@ def audit(stage, output):
     from pxr import Gf,Usd,UsdGeom,UsdPhysics,UsdShade,PhysxSchema
     result={'surface_provenance':'Composed authored collision surface / mathematical convex hull, not an exported PhysX cooked mesh',
             'fingers':{}}
+    # Inventory BOTH fingers completely before validating any one geometry.
+    # A setup stop must not hide a second unsupported collider type.
+    for label in ('left','right'):
+        rows=[]
+        for prim in Usd.PrimRange(stage.GetPrimAtPath(BODIES[label]),Usd.TraverseInstanceProxies()):
+            if not prim.HasAPI(UsdPhysics.CollisionAPI) or not UsdPhysics.CollisionAPI(prim).GetCollisionEnabledAttr().Get():continue
+            material,_=UsdShade.MaterialBindingAPI(prim).ComputeBoundMaterial('physics')
+            rows.append({'path':str(prim.GetPath()),'type':prim.GetTypeName(),'enabled':True,
+                'is_pad':str(prim.GetPath())==BODIES[label]+'/collisions/mesh_3',
+                'physics_material_path':str(material.GetPath()) if material else None,
+                'attributes':{a.GetName():{'usd_type':str(a.GetTypeName()),
+                    'sdk_value':metadata_scalar(a.Get()) if a.Get() is None or isinstance(a.Get(),(float,int,bool,str)) else str(a.Get())}
+                    for a in prim.GetAttributes()}})
+        result['fingers'][label]={'body_path':BODIES[label],'colliders':rows}
+    Path(output).write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')
     for label in ('left','right'):
         root=BODIES[label]; finger=stage.GetPrimAtPath(root)
         inverse=UsdGeom.Xformable(finger).ComputeLocalToWorldTransform(0).GetInverse()
-        rows=[]
-        result['fingers'][label]={'body_path':root,'colliders':rows}
-        for prim in Usd.PrimRange(finger,Usd.TraverseInstanceProxies()):
-            if not prim.HasAPI(UsdPhysics.CollisionAPI):continue
-            if not UsdPhysics.CollisionAPI(prim).GetCollisionEnabledAttr().Get():continue
-            row={'path':str(prim.GetPath()),'type':prim.GetTypeName(),'enabled':True}
-            rows.append(row)
-            Path(output).write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')
-            if not prim.IsA(UsdGeom.Mesh):raise RuntimeError('Unsupported stock collision type: '+str(prim.GetPath()))
-            mesh=UsdGeom.Mesh(prim)
+        rows=result['fingers'][label]['colliders']
+        for row in rows:
+            prim=stage.GetPrimAtPath(row['path'])
             xf=UsdGeom.Xformable(prim).ComputeLocalToWorldTransform(0)*inverse
-            points=np.asarray([list(xf.Transform(Gf.Vec3d(p))) for p in mesh.GetPointsAttr().Get()],float)
-            indices=list(mesh.GetFaceVertexIndicesAttr().Get());triangles=[];start=0
-            for count in mesh.GetFaceVertexCountsAttr().Get():
-                face=indices[start:start+count];start+=count
-                triangles.extend([face[0],face[k],face[k+1]] for k in range(1,count-1))
+            if prim.IsA(UsdGeom.Cube):
+                local_points,triangles=cube_surface(UsdGeom.Cube(prim).GetSizeAttr().Get())
+                approximation='none';surface_kind='analytic_cube_exact'
+            elif prim.IsA(UsdGeom.Mesh):
+                mesh=UsdGeom.Mesh(prim);local_points=mesh.GetPointsAttr().Get()
+                indices=list(mesh.GetFaceVertexIndicesAttr().Get());triangles=[];start=0
+                for count in mesh.GetFaceVertexCountsAttr().Get():
+                    face=indices[start:start+count];start+=count
+                    triangles.extend([face[0],face[k],face[k+1]] for k in range(1,count-1))
+                approximation=UsdPhysics.MeshCollisionAPI(prim).GetApproximationAttr().Get()
+                surface_kind='mathematical_convex_hull' if approximation=='convexHull' else 'convex_authored_mesh'
+            else:raise RuntimeError('Unsupported stock collision type: '+str(prim.GetPath()))
+            points=np.asarray([list(xf.Transform(Gf.Vec3d(p))) for p in local_points],float)
             hull=ConvexHull(points)
-            approximation=UsdPhysics.MeshCollisionAPI(prim).GetApproximationAttr().Get()
             # Mesh input must itself have hull support planes, not an arbitrary concave input.
             volume=abs(sum(np.dot(points[i],np.cross(points[j],points[k])) for i,j,k in triangles)/6)
             reference=triangles if approximation=='none' else hull.simplices.tolist()
@@ -73,7 +99,7 @@ def audit(stage, output):
             row.update({'path':str(prim.GetPath()),'is_pad':str(prim.GetPath())==root+'/collisions/mesh_3',
                 'enabled':True,'is_instance_proxy':prim.IsInstanceProxy(),'approximation':approximation,
                 'points_finger_m':points.tolist(),'triangle_indices':reference,
-                'authored_triangle_indices':triangles,'reference_surface_kind':'mathematical_convex_hull' if approximation=='convexHull' else 'convex_authored_mesh',
+                'authored_triangle_indices':triangles,'reference_surface_kind':surface_kind,
                 'bounds_finger_m':[points.min(axis=0).tolist(),points.max(axis=0).tolist()],
                 'contact_offset_m':metadata_scalar(props.GetContactOffsetAttr().Get()),'rest_offset_m':metadata_scalar(props.GetRestOffsetAttr().Get()),
                 'physics_material_path':str(material.GetPath()) if material else None,'physics_material_attributes':material_attrs,
@@ -104,9 +130,21 @@ def own_point(point_finger, separation, finger, protocol):
 
 
 def self_test():
+    import numpy as np
     assert abs(distance_to_triangles([.2,.2,1],[[0,0,0],[1,0,0],[0,1,0]],[[0,1,2]])-1)<1e-12
     assert abs(distance_to_triangles([2,0,0],[[0,0,0],[1,0,0],[0,1,0]],[[0,1,2]])-1)<1e-12
     print('Triangle face/edge distance contracts: PASS')
+    points,triangles=cube_surface(2.)
+    assert len(points)==8 and len(triangles)==12
+    # Nonuniform scale, quarter-turn and translation: compose exactly once.
+    rotation=np.array([[0,-1,0],[1,0,0],[0,0,1]])
+    points=(np.asarray(points)*[.01,.02,.03])@rotation.T+[.1,.2,.3]
+    assert np.allclose(points.min(axis=0),[.08,.19,.27]) and np.allclose(points.max(axis=0),[.12,.21,.33])
+    volume=abs(sum(np.dot(points[i],np.cross(points[j],points[k])) for i,j,k in triangles)/6)
+    assert abs(volume-.02*.04*.06)<1e-14
+    assert distance_to_triangles(np.array([.12,.2,.3]),points,triangles)<1e-14
+    assert abs(distance_to_triangles(np.array([.13,.2,.3]),points,triangles)-.01)<1e-14
+    print('Cube8corners/12triangles transformed bounds/surface/scaled-volume: PASS')
 
 
 if __name__=='__main__':self_test()

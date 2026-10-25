@@ -144,7 +144,7 @@
     ".deps/bricksim/core.cpython-311-x86_64-linux-gnu.so": "4e62dc33ee02270993c20e3cfd658e6d6ef0ea9780e53ad15cedde12f41b2455"
   },
   "initial_geometry": {
-    "surface": "ComposedenabledMeshcolliders includinginstanceproxies; acceptconvexHull orconvexauthoredmesh only; mathematicalhullreference explicitlynotactualcooked",
+    "surface": "Composed enabled Cube/Mesh colliders including instance proxies. Cube analytical exact8corners/12triangles; Mesh original convexHull/convexsurface path unchanged. Unsupported types STOP.",
     "white_coupon_separation": "Conservative collider AABB versuscouponAABBinhand frame; ambiguitypreclosureSTOP",
     "parallel_finger_frame_rotation_tolerance_rad": 0.0001
   },
@@ -164,5 +164,24 @@
   "native_assembly": {
     "enabled": false,
     "required_force": 1.0
-  }
+  },
+  "current_improvement_round": 1,
+  "round_ledger": [
+    {
+      "round": 0,
+      "pueue_job_id": 1751,
+      "snapshot": "runs/20261025T031349.819124Z-stage2-contact-B0-stock",
+      "measured_contact_steps": 0,
+      "outcome": "Pre-play STOP: stock collider mesh_0 is Cube, previously unsupported. No force baseline observed."
+    },
+    {
+      "round": 1,
+      "status": "frozen_before_rerun",
+      "change": "Exact analytical UsdGeom.Cube representation only (8corners/12triangles/composedtransform); inventory all enabled collider types/attributes before validation. Mesh representation and physical/contact/motion/ownership gates unchanged.",
+      "maximum_attempts": 1,
+      "remaining_reviewed_improvement_rounds_after_this": 2,
+      "proxy_implemented": false,
+      "blind_retry_loop": false
+    }
+  ]
 }

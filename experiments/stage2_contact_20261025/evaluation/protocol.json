@@ -7,22 +7,33 @@
     "proxy": "Conditional later reviewed pad-only collision proxy; no proxy implementation/execution authorized by B0 acceptance",
     "reserved": "Fixed coupon offset +0.002m along coupon long/pad-width axis, unchanged closing width; once only after independently accepted stock and reviewed proxy development cases. No reserved feedback used to alter geometry or gates."
   },
-  "budget": {"B0_runs": 1, "maximum_postinitialization_steps": 360, "maximum_wall_time_s": 180, "retry_or_sweep": false, "tangential_motion": false, "stop_first_source_nonfinite_geometry_or_limit_failure": true},
+  "budget": {
+    "B0_runs": 1,
+    "maximum_postinitialization_steps": 360,
+    "maximum_wall_time_s": 180,
+    "retry_or_sweep": false,
+    "tangential_motion": false,
+    "stop_first_source_nonfinite_geometry_or_limit_failure": true
+  },
   "motion": {
     "initial_pad_coupon_clearance_per_side_m": 0.00025,
     "clearance_source": "Actual composed stock-pad collision planes and authored coupon surface, geometry audit before closure; not a truth-fed online grasp estimate",
     "maximum_command_speed_per_finger_m_s": 0.001,
     "maximum_command_travel_per_finger_m": 0.001,
     "maximum_actual_travel_per_finger_m": 0.001,
-    "actual_travel_serialization_allowance_m": 0.000002,
-    "command_travel_serialization_allowance_m": 0.000002,
+    "actual_travel_serialization_allowance_m": 2e-06,
+    "command_travel_serialization_allowance_m": 2e-06,
     "actual_joint_speed_sampled_abort_m_s_strictly_above": 0.002,
     "speed_caveat": "Commanded ramp is at most1mm/s; actual measured joint speed has a2mm/s sampled safety bound and is reported, not claimed to remain at1mm/s.",
     "arm": "Original seven arm targets and actuator configuration held; no arm trajectory. Actual compliance/motion remains reported, not confused with a commanded trajectory.",
     "hand_pose_abort_translation_m_strictly_above": 0.002,
     "hand_pose_abort_orientation_rad_strictly_above": 0.03490658503988659,
     "arm_actual_state": "Finite actual q/qdot required; per-joint drift reported descriptively. Actual hand pose must remain within2mm/2deg of initial measurement pose; no1e-6rad rigid-arm assumption.",
-    "hand_actuator": {"effort_limit_sim_N": 15.0, "stiffness_N_m": 2000.0, "damping_N_s_m": 100.0},
+    "hand_actuator": {
+      "effort_limit_sim_N": 15.0,
+      "stiffness_N_m": 2000.0,
+      "damping_N_s_m": 100.0
+    },
     "effort_caveat": "Commanded/estimated actuator effort is never counted as pad contact-force feedback."
   },
   "force_response": {
@@ -33,18 +44,22 @@
     "release_consecutive_fresh_steps": 3,
     "sampled_abort_normal_per_pad_N_strictly_above": 2.0,
     "abort_definition": "Sum ALL finger-coupon normal magnitudes, regardless of pad/white classification; any value above2N stops the attempt. Preserve the first overshoot and peak. This sampled abort does not guarantee a continuous-time force cap.",
-    "nonnegative_force_numerical_allowance_N": 0.00000001,
-    "unexpected_other_pair_normal_magnitude_floor_N": 0.000001,
+    "nonnegative_force_numerical_allowance_N": 1e-08,
+    "unexpected_other_pair_normal_magnitude_floor_N": 1e-06,
     "all_zero": "Unknown/unsupported positive reporting, never evidence of physical contact absence.",
     "friction": "Record separate friction-anchor points/vectors. No tangential-motion test, friction fitting or calibrated friction/force claim."
   },
   "geometry": {
-    "sensor_bodies": ["fr3_leftfinger", "fr3_rightfinger", "contact_coupon"],
+    "sensor_bodies": [
+      "fr3_leftfinger",
+      "fr3_rightfinger",
+      "contact_coupon"
+    ],
     "stock_pad_suffix": "/collisions/mesh_3",
     "other_finger_colliders": "Every other enabled collider under each actual finger body is treated as white/other geometry; do not silently drop overlapping shapes.",
     "before_closure": "Record actual enabled collider paths, composed geometry/frames/approximation/contact/rest offsets, materials and registration. Stop if mesh_3 identity, white-vs-pad distinction or coupon initial clearance is ambiguous.",
     "point_metric": "Exact point-to-triangle surface distance in the current finger frame against composed pad and other enabled finger collider surfaces. Export actual cooked hulls if exposed; otherwise identify authored/reference approximation explicitly.",
-    "pad_distance_allowance_m": 0.00005,
+    "pad_distance_allowance_m": 5e-05,
     "white_extra_clearance_m": 0.0001,
     "point_gate": "ALL force-carrying finger-coupon points in a positive frame must have d_pad <= abs(reported_separation)+50um and d_white > abs(reported_separation)+50um+0.1mm. White-compatible or unmapped points block positive classification; no favorable subset selection.",
     "point_gate_meaning": "Conservative authored-surface compatibility, not measured cooked-collider accuracy or whole-STL fidelity. A visual STL and CollisionAPI/decomposition request alone do not prove functional concavities survive cooking.",
@@ -56,8 +71,8 @@
     "capacity_per_view": 1024,
     "freshness": "Only data after completed step and scene update, before next step; clone shared buffers before subsequent API calls. Step0 is stale and excluded.",
     "units": "dt=1 query records impulses N s; actual dt query records forces N; world points/normal vectors and separate friction-anchor points retained",
-    "dt_scaling_absolute_tolerance_Ns": 0.0000001,
-    "dt_scaling_relative_tolerance": 0.00001,
+    "dt_scaling_absolute_tolerance_Ns": 1e-07,
+    "dt_scaling_relative_tolerance": 1e-05,
     "reciprocal_absolute_tolerance_N": 0.005,
     "reciprocal_relative_tolerance": 0.01,
     "aggregate_absolute_tolerance_N": 0.005,
@@ -66,18 +81,61 @@
     "completeness": "All required filters resolved, valid nonoverlapping pair ranges, finite arrays, unsaturated buffers, perpoint/pairmatrix/net normal agreement and reciprocal positive pairs. A missing stream, overflow, unverified omitted pair or all-zero stream is unknown; not absence."
   },
   "unchanged": {
-    "solver_type": "PGS", "source_actor_position_iterations": 32, "source_actor_velocity_iterations": 4,
-    "dt_s": 0.008333333333333333, "OSQP_EPSILON": "1e-4",
+    "solver_type": "PGS",
+    "source_actor_position_iterations": 32,
+    "source_actor_velocity_iterations": 4,
+    "dt_s": 0.008333333333333333,
+    "OSQP_EPSILON": "1e-4",
     "native_core_sha256": "4e62dc33ee02270993c20e3cfd658e6d6ef0ea9780e53ad15cedde12f41b2455",
-    "source_bricks": 300, "source_native_parts": 301, "source_native_connections": 930,
+    "source_bricks": 300,
+    "source_native_parts": 301,
+    "source_native_connections": 930,
     "source_maximum_position_drift_m": 0.002,
     "source_maximum_orientation_drift_rad": 0.03490658503988659,
     "source_maximum_final_linear_speed_m_s": 0.02,
     "source_maximum_final_angular_speed_rad_s": 0.2,
-    "native_breakage": {"enabled": true, "contact_regularization": 0.1, "clutch_axial_compliance": 1.0, "clutch_radial_compliance": 1.0, "clutch_tangential_compliance": 1.0, "friction_coefficient": 0.2, "preloaded_force": 3.5, "slack_fraction_warn": 0.1, "slack_fraction_b_floor": 1e-9, "breakage_cooldown_time": 0.05},
+    "native_breakage": {
+      "enabled": true,
+      "contact_regularization": 0.1,
+      "clutch_axial_compliance": 1.0,
+      "clutch_radial_compliance": 1.0,
+      "clutch_tangential_compliance": 1.0,
+      "friction_coefficient": 0.2,
+      "preloaded_force": 3.5,
+      "slack_fraction_warn": 0.1,
+      "slack_fraction_b_floor": 1e-09,
+      "breakage_cooldown_time": 0.05
+    },
     "physical_parameters": "Existing native capacity/rules, mass/inertia, materials/friction, collision/rest offsets, arm/hand actuator configuration unchanged. Report authored and runtime provenance; no friction calibration or native build.",
-    "stock_finger_pad_material": {"static_friction": 2.5, "dynamic_friction": 2.0, "restitution": 0.0, "calibrated": false}
+    "stock_finger_pad_material": {
+      "static_friction": 2.5,
+      "dynamic_friction": 2.0,
+      "restitution": 0.0,
+      "calibrated": false
+    }
   },
   "acceptance": "All integrity/source/motion/sampled-limit checks plus both-pad positive and release response with valid pad compatibility/reporting. Otherwise fail/unknown explicitly; no confidence or geometry tuning from B0 data.",
-  "claims": {"positive_reporting_control_only": true, "perception_pick_validated": false, "grasp_validated": false, "extraction_validated": false, "calibrated_contact_force": false, "full_STL_proxy_validated": false}
+  "claims": {
+    "positive_reporting_control_only": true,
+    "perception_pick_validated": false,
+    "grasp_validated": false,
+    "extraction_validated": false,
+    "calibrated_contact_force": false,
+    "full_STL_proxy_validated": false
+  },
+  "execution_history": {
+    "failed_baseline": {
+      "pueue_job_id": 1751,
+      "snapshot": "runs/20261025T031349.819124Z-stage2-contact-B0-stock",
+      "stage": "preplay_geometry_export",
+      "measured_contact_steps": 0,
+      "result": "First enabled stock white-finger collider mesh_0 is a Cube; Mesh-only exporter stopped before play."
+    },
+    "prepared_unsubmitted_audit": "runs/20261025T031408.321563Z-stage2-contact-B0-evaluation",
+    "contact_improvement_round": 1,
+    "maximum_contact_improvement_rounds": 3,
+    "approved_round1_change": "Analytic Cube representation:8corners/12triangles transformed by composed USD transform, type Cube, approximation none, analytic_cube_exact reference. Inventory all enabled collider types first. Mesh handling and every physical/scientific gate unchanged.",
+    "remaining_execution_authorization": "One corrected B0_stock capture attempt after independent source approval. No further blind retry, proxy execution or reserved execution; reassess the recorded result.",
+    "triangle_contract": "Existing points_finger_m / triangle_indices schema unchanged; no evaluator geometric calculation change required."
+  }
 }
