@@ -361,3 +361,21 @@ construction can progress without inventing the physical mounting.
 [Inspection evidence and plane/face provenance](../experiments/tip_partition_20261025/results.json),
 [orthographic facet projections](../runs/20261025T050607.814521Z-original-tip-feature-inspection/output/orthographic.png),
 [fixed raw cross-sections](../runs/20261025T050607.814521Z-original-tip-feature-inspection/output/sections.png).
+
+
+## Explicit compound: resource guard stopped construction
+
+Pueue1764 (source`8e1c4cd`) retains27 of48 cells and stops before cooking
+at the frozen128-vertex guard. Logging-only replay1765 (source`0ab784e`)
+reproduces all27 retained records exactly. Its independent audit confirms
+that`front_body_bored_11` has133 extreme vertices,262 triangular facets
+and3.245µm minimum vertex spacing. The124 exact plane rows are descriptive;
+none of these counts establishes native cooked polygon count or cookability.
+Both jobs together consume0.495s of supervised process time.
+
+Original1764 remains failed and incomplete. One unchanged-shape CPU resource
+guard reassessment is under review, with all48 cells and100µm fidelity
+checks retained. There is no cooking/contact approval or fresh three-round
+allowance. Mounting-face/distal-end questions remain unanswered.
+
+[Preserved outcomes](../experiments/tip_partition_20261025/compound/results.json).

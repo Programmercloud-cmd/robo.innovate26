@@ -10,6 +10,7 @@ import signal
 import struct
 import time
 
+PROCESS_STARTED=time.monotonic()
 import numpy as np
 from scipy.spatial import ConvexHull
 from geometry import contains,triangle_distances,mesh_samples,union_samples,outside_winding,deadline_check
@@ -104,14 +105,21 @@ def manifest_checks(candidate,v,faces,feature,cfg,rules):
 
 
 def main():
-    started=time.monotonic();parser=argparse.ArgumentParser(description=__doc__)
-    for name in ['stl','features','candidate','probe-config','output']:parser.add_argument('--'+name,type=Path,required=True)
+    started=PROCESS_STARTED;parser=argparse.ArgumentParser(description=__doc__)
+    for name in ['stl','features','candidate','probe-config','supervisor','output']:parser.add_argument('--'+name,type=Path,required=True)
     args=parser.parse_args()
     if os.environ.get('ROBO_PUEUE_JOB')!='1':raise RuntimeError('Actual construction/geometry audit requires default Pueue')
-    protocol=read(HERE/'protocol.json');cfg=protocol['construction_config'];rules=protocol['audit'];result={'schema':protocol['schema'],'offline_candidate_passed':False,'cooking_authorized':False,'physical_collision_validated':False,'protocol_sha256':sha(HERE/'protocol.json')}
+    protocol=read(HERE/'protocol.json');cfg=protocol['construction_config'];rules=protocol['audit'];result={'schema':protocol['schema'],'offline_candidate_passed':False,'cooking_authorized':False,'physical_collision_validated':False,'protocol_sha256':sha(HERE/'protocol.json'),'supervisor_sha256':sha(args.supervisor)}
     def stop(*_):raise TimeoutError('Shared construction+audit180s exhausted; no retry')
     signal.signal(signal.SIGALRM,stop);signal.setitimer(signal.ITIMER_REAL,cfg['maximum_construction_plus_audit_seconds'])
     try:
+        supervisor=read(args.supervisor);prior_wall=protocol['budget']['charged_prior_wall_seconds'];capture_wall=float(supervisor['capture_wall_seconds']);reported_remaining=float(supervisor['remaining_independent_audit_seconds'])
+        expected_remaining=cfg['maximum_construction_plus_audit_seconds']-prior_wall-capture_wall
+        if supervisor['construction_completed'] is not True or not math.isfinite(capture_wall) or not math.isfinite(reported_remaining) or capture_wall<0 or expected_remaining<=0 or abs(reported_remaining-expected_remaining)>1e-9 or cfg['prior_consumed_active_seconds']!=prior_wall:raise ValueError('Invalid actual supervisor budget/completion')
+        remaining=expected_remaining-(time.monotonic()-started)
+        if remaining<=0:raise TimeoutError('No actual cumulative audit time remains')
+        signal.setitimer(signal.ITIMER_REAL,remaining);deadline=started+expected_remaining
+        result.update(charged_prior_wall_seconds=prior_wall,capture_wall_seconds=capture_wall,remaining_independent_audit_seconds=expected_remaining)
         if sha(args.stl)!=cfg['source_stl_sha256'] or sha(args.features)!=cfg['source_features_sha256'] or sha(args.probe_config)!=protocol['probe_config_sha256']:raise ValueError('Frozen reference hash mismatch')
         raw=args.stl.read_bytes();count=struct.unpack_from('<I',raw,80)[0]
         if len(raw)!=84+50*count:raise ValueError('Unexpected original STL')
@@ -120,9 +128,7 @@ def main():
         if not topology(f) or not np.isfinite(v).all():raise ValueError('Original source mesh invalid')
         # Source normals and samples are fixed before reading any candidate data.
         source_points,source_normals,source_volume=mesh_samples(v,f,cfg['validation']['source_sample_seed'],100000,125000,rules['normal_floor_mm2'])
-        candidate=read(args.candidate);construction_wall=candidate['construction_wall_seconds'];remaining=cfg['maximum_construction_plus_audit_seconds']-construction_wall-(time.monotonic()-started)
-        if remaining<=0:raise TimeoutError('No audit time remains')
-        signal.setitimer(signal.ITIMER_REAL,remaining);deadline=started+cfg['maximum_construction_plus_audit_seconds']-construction_wall
+        candidate=read(args.candidate);construction_wall=candidate['construction_wall_seconds']
         if candidate['status']!='candidate_constructed_requires_independent_audit' or candidate['construction_config']!=cfg or candidate['source_stl_sha256']!=cfg['source_stl_sha256'] or candidate['source_features_sha256']!=cfg['source_features_sha256'] or candidate['protocol_sha256']!=protocol['construction_protocol_sha256']:raise ValueError('Incomplete or changed single candidate')
         checks,cell_reports=manifest_checks(candidate,v,f,read(args.features),cfg,rules);result.update(checks=checks,cells=cell_reports)
         if not all(checks.values()):raise ValueError('Structural/provenance gate failed; no fallback')
@@ -144,12 +150,12 @@ def main():
         points=np.asarray(points);reference_clear=triangle_distances(points,original,deadline);winding=outside_winding(points,original);void_inside=contains(points,cells,0,deadline);void_distance=triangle_distances(points,all_triangles,deadline)
         checks['all27_reference_free_spheres']=bool(len(points)==27 and np.all(abs(winding)<.1) and np.all(reference_clear>.25))
         checks['all27_candidate_free_spheres']=bool(not void_inside.any() and np.all(void_distance>cfg['validation']['void_sphere_radius_mm']))
-        elapsed=time.monotonic()-started;checks['shared_180s_budget']=construction_wall+elapsed<=cfg['maximum_construction_plus_audit_seconds']
+        elapsed=time.monotonic()-started;checks['shared_180s_budget']=prior_wall+capture_wall+elapsed<=cfg['maximum_construction_plus_audit_seconds']
         result.update(status='offline_audit_complete',checks={k:bool(x) for k,x in checks.items()},offline_candidate_passed=bool(all(checks.values())),
             bounds_error_mm=bounds_error,source_volume_mm3=source_volume,candidate_volume_mm3=volume,relative_volume_error=volume_error,
             candidate_samples={'total':len(sampled),'confirmed_exterior':int(external.sum()),'both_probes_inside':int((plus&minus).sum()),'other_filtered':int((~external&~(plus&minus)).sum()),'max_exact_STL_distance_mm':float(distances.max()) if len(distances) else None,'boundary_bracket_margin_mm':bracket},
             source_samples={'total':len(source_points),'strict_inside':int(inside.sum()),'outside_exact_distance_max_mm':float(outside_distance.max()) if len(outside_distance) else None,'inside_normal_endpoints_still_inside':int(endpoint_inside.sum()),'inside_metric':'Fixed100um-normal endpoint upper-bound test only; not nearest Euclidean or Hausdorff distance'},
-            bore_witnesses=[{'CAD_mm':p.tolist(),'reference_clearance_mm':float(a),'candidate_distance_mm':float(b),'candidate_inside':bool(c)} for p,a,b,c in zip(points,reference_clear,void_distance,void_inside)],construction_wall_seconds=construction_wall,audit_wall_seconds=elapsed,total_wall_seconds=construction_wall+elapsed,
+            bore_witnesses=[{'CAD_mm':p.tolist(),'reference_clearance_mm':float(a),'candidate_distance_mm':float(b),'candidate_inside':bool(c)} for p,a,b,c in zip(points,reference_clear,void_distance,void_inside)],construction_wall_seconds=construction_wall,audit_wall_seconds=elapsed,total_wall_seconds=prior_wall+capture_wall+elapsed,
             scope='One fixed sampled CAD candidate; not global certification, mounting confirmation, native cooking or contact validation. Old failed benchmarks remain closed.')
     except Exception as error:result.update(status='STOP',error=repr(error),audit_wall_seconds=time.monotonic()-started)
     finally:

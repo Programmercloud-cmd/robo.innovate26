@@ -1,0 +1,55 @@
+{
+  "schema": "explicit-tip-compound-results-v1",
+  "original_attempt": {
+    "job_id": 1764,
+    "source_commit": "8e1c4cd",
+    "snapshot": "runs/20261025T055949.493521Z-explicit-tip-compound",
+    "status": "STOP",
+    "error": "Fixed128-vertex CPU cap exceeded; no splitting",
+    "retained_cells": 27,
+    "failed_cell": "front_body_bored_11",
+    "actual_process_seconds": 0.16371565801091492
+  },
+  "unchanged_diagnostic": {
+    "job_id": 1765,
+    "source_commit": "0ab784e",
+    "snapshot": "runs/20261025T060952.563975Z-explicit-tip-cap-diagnostic",
+    "integrity_passed": true,
+    "same_27_records": true,
+    "failed_cell": "front_body_bored_11",
+    "extreme_vertices": 133,
+    "triangulated_facets": 262,
+    "exact_plane_rows_descriptive_only": 124,
+    "minimum_vertex_spacing_mm": 0.0032449698259259274,
+    "supervisor": {
+      "phases": [
+        {
+          "phase": "--replay",
+          "returncode": 1,
+          "wall_seconds": 0.2138703990058275
+        },
+        {
+          "phase": "--audit",
+          "returncode": 0,
+          "wall_seconds": 0.11380626999016386
+        }
+      ],
+      "diagnostic_wall_seconds": 0.3312722509872401,
+      "cumulative_supervised_seconds": 0.49498790899815504,
+      "cumulative_limit_seconds": 180,
+      "proceed_gate_passed": false,
+      "original128candidate_status": "FAILED and unchanged",
+      "within_cumulative_budget": true
+    }
+  },
+  "status": "incomplete_original_candidate; resource-only correction under review",
+  "cooking_authorized": false,
+  "physical_collision_validated": false,
+  "proceed_gate_passed": false,
+  "limitations": [
+    "Plane-row and triangle counts are not cooked polygon counts.",
+    "Only the first failed cell is assessed; later cells and native cookability remain untested.",
+    "No clustering, deduplication, fitting, cap change, geometry acceptance or cooking."
+  ],
+  "old_benchmarks": "Closed, unchanged; no new three-round pool"
+}

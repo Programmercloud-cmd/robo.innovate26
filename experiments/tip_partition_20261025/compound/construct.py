@@ -42,7 +42,7 @@ def area_centroid(points):
 
 class VertexCapStop(ValueError):
     def __init__(self,details):
-        super().__init__('Fixed128-vertex CPU cap exceeded; no splitting')
+        super().__init__(f"Fixed{details['vertex_cap']}-vertex CPU cap exceeded; no splitting")
         self.details=details
 
 
@@ -162,7 +162,7 @@ def main():
             (args.output/'vertex_cap_diagnostic.json').write_text(json.dumps(failure,indent=2,allow_nan=False)+'\n')
     finally:
         signal.setitimer(signal.ITIMER_REAL,0);result['construction_wall_seconds']=time.monotonic()-start
-        result['remaining_independent_audit_seconds']=max(0.,cfg['maximum_construction_plus_audit_seconds']-(diagnostic['baseline_process_wall_seconds'] if diagnostic else 0.)-result['construction_wall_seconds'])
+        result['remaining_independent_audit_seconds']=max(0.,cfg['maximum_construction_plus_audit_seconds']-(diagnostic['baseline_process_wall_seconds'] if diagnostic else cfg.get('prior_consumed_active_seconds',0.))-result['construction_wall_seconds'])
         if diagnostic:result['diagnostic_scope_sha256']=sha(HERE/'diagnostic_scope.json')
         (args.output/'compound.json').write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')
     if result['status']!='candidate_constructed_requires_independent_audit':raise SystemExit(1)
