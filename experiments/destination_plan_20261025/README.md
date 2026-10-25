@@ -86,3 +86,26 @@ then submits export and independent audit as one **default Pueue** job, with a
 25 s process timeout plus 2 s kill grace. No simulation, rendering, training,
 ROS integration or hardware control is started. The image output is a plan
 schematic, not an Isaac render or a calibrated photograph overlay.
+
+## Original audit and numerical-metadata correction
+
+Job **1832**, source `f3b5542`, exported all 900 references, but its original audit
+failed one metadata comparison on all rows: the inherited `3 * 0.0032` body
+height serializes as `0.009600000000000001`, one binary ULP above literal
+`0.0096`. All positions, matrices, spacing, phase, no-overlap, routing and state
+examples passed. The [original failed audit](artifacts/evaluation_original_1832.json)
+is preserved; it is not relabeled a success.
+
+The independent auditor now permits only **one ULP** in body-height metadata
+(1.7347×10⁻¹⁸ m). Synthetic controls reject two ULPs and NaN. Pitch remains an
+exact comparison, and all other criteria and production coordinates are
+unchanged. Planner and reviewer approved one hash-pinned **saved-output audit**:
+
+```bash
+python3 experiments/destination_plan_20261025/submit_saved_audit.py
+```
+
+This uses the original 1832 export without regeneration, in a separate default
+Pueue job with a 10 s timeout plus 2 s kill grace. The original failed job's
+cost and the later audit are reported separately. No new layout variant or
+physical tolerance is introduced.

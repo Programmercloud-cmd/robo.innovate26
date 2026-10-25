@@ -27,6 +27,10 @@ def near(actual, expected, atol=ATOL):
     return bool(a.shape == b.shape and np.isfinite(a).all() and np.allclose(a, b, atol=atol, rtol=0))
 
 
+def body_height_metadata(value):
+    return math.isfinite(value) and abs(value-HEIGHT) <= math.ulp(HEIGHT)
+
+
 def raw_rotation(pose):
     return np.asarray(pose['O_T_EE'], float).reshape(4, 4, order='F')[:3, :3]
 
@@ -78,7 +82,7 @@ def slot_checks(row, expected, zone, count, assumptions):
         'corners': near(row['footprint_corners_base_m'], expected['corners']),
         'individual_center': near(np.mean(np.asarray(row['footprint_corners_base_m']), axis=0), expected['position']),
         'common_center': near(row['footprint_center_base_m'], expected['center']),
-        'native_pitch_height': row['pitch_m'] == PITCH and row['body_height_m'] == HEIGHT,
+        'native_pitch_height': row['pitch_m'] == PITCH and body_height_metadata(row['body_height_m']),
         'assumptions': row['assumptions'] == assumptions,
         'no_authorization': row['hardware_authorized'] is False}
 
@@ -253,6 +257,10 @@ def evaluate(protocol_path, predictions):
 
 
 def self_test():
+    one_ulp = math.nextafter(HEIGHT, math.inf)
+    two_ulps = math.nextafter(one_ulp, math.inf)
+    assert body_height_metadata(HEIGHT) and body_height_metadata(one_ulp)
+    assert not body_height_metadata(two_ulps) and not body_height_metadata(float('nan'))
     # Invented reference, deliberately different destination Z values.
     points = {'a_0_0_9': [.4, .1, .1], 'a_0_1_9': [.3682, .1, .1], 'a_1_0_9': [.4, .0682, .1],
         'a_0_0_8': [.4159, .0841, .0904], 'point_03': [.4, .1, .1],
