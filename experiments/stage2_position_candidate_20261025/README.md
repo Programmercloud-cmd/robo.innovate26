@@ -47,3 +47,41 @@ python3 experiments/stage2_position_candidate_20261025/submit.py
 
 The foreground default-Pueue job uses a stable source/configuration snapshot,
 the previously reviewed control bridge, and unchanged runtime/dependencies.
+
+## Observed result — job 1819
+
+Frozen source `a2e1a2f`; snapshot
+`runs/20261025T151026.796083Z-stage2-position-candidate-I-r1`.
+The capture completed, but the physical extraction audit failed (145/153 checks
+passed). At step 1853 the endpoint had 30 completed commands and the last three
+samples passed bilateral contact and resisted-closure checks. Forces were
+0.990/1.237 N and actual joint-mapped opening 15.124 mm at the 14 mm nominal
+command. This was honestly recorded as a position candidate; force confirmation
+remained null.
+
+During the straight lift, step 2113 triggered motion and grip-plane/normal
+incompatibility stops. Independently mapped loaded robot contacts still belonged
+to the selected brick and custom fingertip BODY, with no WHITE/HEAD contact.
+That does not make them acceptable lateral gripping contact: the failing normal
+had dot product 0.133 against the expected grip normal, and one point exceeded
+the plane allowance. The brick never became a native singleton; measured rise
+was only 0.110 mm. No completed lift or retained hold is claimed. The run does
+not isolate whether contact geometry, native attachment, grasp position or
+controller behavior caused the failure. It does not contradict the operator's
+successful real Desk closure or justify a complex grasping controller.
+
+This single improvement round is closed without retry, threshold relaxation,
+H test or transfer. Full Pueue duration, including process overhead, was
+210.190672297 s. The retained aggregate is 2054.2607472610234/2200 s; the remaining
+145.739252739 s does not authorize another trial. Reassess the observed lift
+failure before any new prospective benchmark or resource decision.
+
+Machine-readable outcomes and provenance are in `results.json`; the full audit
+is under the snapshot's `audit/evaluation.json`. Previous job 1818 remains a
+failed force-confirmation baseline. Tiny source/synthetic tests use the existing
+runtime (they are scripts, not unittest-discovery tests):
+
+```bash
+/home/faps/miniforge3/envs/unitree_sim_env/bin/python experiments/stage2_position_candidate_20261025/test_source.py
+/home/faps/miniforge3/envs/unitree_sim_env/bin/python experiments/stage2_position_candidate_20261025/test_evaluation.py
+```
