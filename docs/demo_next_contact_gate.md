@@ -1,4 +1,8 @@
-# Next contact gate — proposal, not executed or frozen
+# Next contact gate — historical proposal
+
+Status update: the [stock-pad baseline](../experiments/stage2_contact_20261025/README.md)
+now passes. Supplied-tip collision fidelity remains pending. The original proposal
+below is retained as planning history.
 
 The initial idle benchmark is closed after three rounds. The tested setting is
 PGS, source actor iterations 32/4, with the recorded default native parameters.
@@ -42,6 +46,7 @@ initialization and independent evaluation; no robot-frame or perception pick
 claim follows from this check.
 
 All cooking, simulation and evaluation use default Pueue with frozen snapshots.
-No contact implementation, mesh cooking, robot trajectory or experiment has yet
-been run for this proposal. Held-brick transform, extraction pivot, 25°/5 mm
+At proposal creation, no contact implementation or experiment had run. The
+subsequent stock result is linked above; no supplied-tip mesh cooking or robot
+trajectory is established by it. Held-brick transform, extraction pivot, 25°/5 mm
 candidates, classification timing and insertion feedback remain later gates.

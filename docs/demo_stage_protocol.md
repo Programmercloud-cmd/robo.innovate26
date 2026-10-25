@@ -27,6 +27,10 @@ TGS→PGS workaround passed its frozen fixture, full300 and reserved-removal che
 That configuration benchmark is closed; no fourth physics-configuration round.
 Native logging/offline audits are diagnostics, not additional claimed improvements.
 Each new experiment still needs its frozen budget and independent review.
+The separate contact-feedback benchmark has used two adapter corrections (actual
+Cube geometry, then signed force coefficients); stock-pad positive contact/reopen
+passes. Supplied-tip collisions require the final frozen proxy/fidelity round;
+no fourth contact tuning round is implied.
 
 ## Classification observation timing
 

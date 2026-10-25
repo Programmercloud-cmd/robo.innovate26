@@ -237,7 +237,30 @@ sorting success is claimed.
 [Commands, frozen gates, all six job IDs and independent audits](../experiments/stage2_pgs_20261025/README.md),
 [machine-readable results](../experiments/stage2_pgs_20261025/results.json).
 
-A [read-only next-contact proposal](demo_next_contact_gate.md) identifies the
-actual stock collision paths, supplied-STL proxy limitation and a minimal positive
-contact-feedback fixture. It is not frozen or executed; no grasp target is chosen
-from privileged truth and claimed as a perception success.
+The original [next-contact proposal](demo_next_contact_gate.md) is preserved.
+The stock baseline has now run as recorded below; the supplied-STL proxy remains
+unvalidated. No fixture is claimed as a perception-driven grasp.
+
+
+## Stock-pad positive contact/reopen passed; supplied-tip proxy remains pending
+
+Contact benchmark B0 capture **1754**, independent audit **1755**, passes all 27
+checks over 100 steps. Both stock pads exceed 0.2 N for three samples at step 49;
+peaks are about 0.224 N. Force release first confirms at step 70, with controlled
+return to initial opening complete at step 100. All signed force-carrying points
+are pad-compatible; reciprocal/unit/buffer and source930-link guards pass. Arm
+commands, source PGS32/4 and existing mass/material/actuator settings are retained.
+
+Earlier **1751** stops before play on an unsupported Cube representation;
+**1752/1753** fails the original nonnegative-scalar assumption at first small
+contacts. Both failures remain preserved. Primary API examples and unmodified
+signed vector checks justify the round-2 interpretation correction; no physical
+force or motion threshold was tuned. Contact rounds1/2 are now spent; one final
+supplied-tip proxy configuration is being assessed before any cooking or contact.
+
+[Limits, exact commands and provenance](../experiments/stage2_contact_20261025/README.md),
+[all outcomes](../experiments/stage2_contact_20261025/results.json).
+This is a stock-pad fixture/feedback check. Actual supplied-STL collisions,
+dynamic holding, extraction, insertion, classification timing and the integrated
+demo remain unvalidated. Per-pad force availability on physical hardware and
+shared sim/real completion semantics are not established by this diagnostic.
