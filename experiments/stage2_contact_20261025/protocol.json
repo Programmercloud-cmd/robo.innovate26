@@ -68,7 +68,7 @@
     "reopen_force_N": 0.01,
     "reopen_consecutive_fresh_steps": 3,
     "sampled_abort_normal_force_per_finger_N": 2.0,
-    "abort_force_semantics": "SUM ABS of ALL finite normal scalar magnitudes perpad-coupon, regardlessownership; negativevalues invalidatepositive. Sampledabort, notguaranteedforcecap.",
+    "abort_force_semantics": "SUM ABS of ALL finite signed normal scalars perpad-coupon, regardlessownership. Preserve raw signedscalar\u00d7normal forvectors. Sampledabort, notguaranteedforcecap.",
     "maximum_steps": 360,
     "wall_limit_s": 180,
     "tangential_motion": false,
@@ -90,7 +90,7 @@
     "surface_slack_m": 5e-05,
     "white_clearance_extra_m": 0.0001,
     "white_distance_min": "abs(contact separation)+50\u00b5m+0.1mm",
-    "rule": "ALL force-carrying finger-coupon points uniquely pad-compatible; white/unmapped blocks positive gate and stops. No subsetselection.",
+    "rule": "ALL force-carrying points with abs(signedforce)>1e-8N from BOTH finger and reciprocal coupon views must be uniquely pad-compatible; white/unmapped blocks positive and stops. No favorable subset selection.",
     "surface_reference": "Authored collision triangles or mathematical convex hull if configured convexHull; not exact cooked-shape evidence."
   },
   "observation": {
@@ -116,7 +116,8 @@
     "force_direction_cosine_min": 0.9,
     "force_direction_check_min_N": 0.01,
     "sign_resolution": "Latch only UNIQUE\u00b1rawnormal-to-matrix agreement; subnoiseambiguity unknown; positiveframes require global consistent resolved sign.",
-    "negative_normal_allowance_N": 1e-08
+    "force_carrying_abs_floor_N": 1e-08,
+    "normal_scalar_contract": "Signed force-on-sensor scalars; raw scalar\u00d7normal gives world normal force. Negative scalar alone is not invalid. Force/motion thresholds unchanged."
   },
   "background_guards": {
     "maximum_position_drift_m": 0.002,
@@ -165,7 +166,7 @@
     "enabled": false,
     "required_force": 1.0
   },
-  "current_improvement_round": 1,
+  "current_improvement_round": 2,
   "round_ledger": [
     {
       "round": 0,
@@ -176,12 +177,26 @@
     },
     {
       "round": 1,
-      "status": "frozen_before_rerun",
+      "status": "measured_failed_capture_preserved",
       "change": "Exact analytical UsdGeom.Cube representation only (8corners/12triangles/composedtransform); inventory all enabled collider types/attributes before validation. Mesh representation and physical/contact/motion/ownership gates unchanged.",
       "maximum_attempts": 1,
       "remaining_reviewed_improvement_rounds_after_this": 2,
       "proxy_implemented": false,
-      "blind_retry_loop": false
+      "blind_retry_loop": false,
+      "pueue_job_id": 1752,
+      "independent_audit_job_id": 1753,
+      "measured_contact_steps": 36,
+      "outcome": "First contacts about2mN per finger; STOP on old nonnegative-scalar assumption. Source301/930intact. Frozen .2N positive gate not reached; negative coupon ownership was NOT tested by oldpositive-only selection. Original run/audit remain failed."
+    },
+    {
+      "round": 2,
+      "status": "frozen_before_corrected_attempt",
+      "change": "Signednormal API interpretation only: preserve signed f\u00d7n, magnitudeSUMABS, classifyALLabs(f)>existing1e-8Nfloor includingnegative reciprocalcouponpoints, unexpectedpartnersabs. Removeonlynegative-scalar-invalid assumption. No force/motion/geometry/native parameter relaxation.",
+      "maximum_attempts": 1,
+      "remaining_reviewed_improvement_rounds_after_this": 1,
+      "proxy_implemented": false,
+      "reserved_execution_authorized": false,
+      "separate_known_warning": "Kinematic zero-velocity warning preserved; no unrelated physical/API change bundled."
     }
   ]
 }

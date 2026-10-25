@@ -218,22 +218,29 @@ def main():
                     partner=filters.index(BODIES['coupon']);count=int(data['normal_counts'][0,partner]);start=int(data['normal_starts'][0,partner])
                     select=(data['normal_indices']>=start)&(data['normal_indices']<start+count)
                     values=data['normal_forces_N'].reshape(-1);forces[label]=float(np.abs(values[select]).sum())
-                    if np.any(values < -protocol['observation']['negative_normal_allowance_N']):reasons.append('negative_normal_magnitude')
-                    if np.maximum(values[~select],0).sum()>1e-6:reasons.append('unexpected_finger_contact')
+                    if np.abs(values[~select]).sum()>1e-6:reasons.append('unexpected_finger_contact')
                     if forces[label]>2:reasons.append('sampled_force_abort_'+label)
                     finger_pose=robot.data.body_link_pose_w[0,body_ids[label]].cpu().numpy();poses[label]=finger_pose.tolist()
                     world_to_finger=UsdGeom.Xformable(stage.GetPrimAtPath(BODIES[label])).ComputeLocalToWorldTransform(0).GetInverse()
                     ownership[label]=[]
-                    for point,sep,force in zip(data['normal_points_world_m'][select],data['normal_separations_m'][select].reshape(-1),values[select]):
-                        if force<=0:continue
-                        local=world_to_finger.Transform(Gf.Vec3d(*[float(v) for v in point]))
-                        own=own_point(np.asarray(local),sep,geometry_result['fingers'][label],protocol)
-                        ownership[label].append({**own,'point_world_m':point.tolist(),'separation_m':float(sep),'normal_force_N':float(force)})
-                        if not own['unique_pad']:reasons.append('nonunique_pad_contact_'+label)
                     vector=data['filtered_normal_impulse_matrix_world_Ns'][0,partner]/dt;vectors[label]=vector.tolist()
                     reverse=loaded['coupon'];rp=observer.metadata['resolved_views']['coupon']['filter_paths']
                     rp=rp[0] if len(rp)==1 and isinstance(rp[0],(list,tuple)) else rp
-                    reverse_vector=reverse['filtered_normal_impulse_matrix_world_Ns'][0,rp.index(BODIES[label])]/dt
+                    reverse_index=rp.index(BODIES[label])
+                    reverse_start=int(reverse['normal_starts'][0,reverse_index]);reverse_count=int(reverse['normal_counts'][0,reverse_index])
+                    reverse_select=(reverse['normal_indices']>=reverse_start)&(reverse['normal_indices']<reverse_start+reverse_count)
+                    # Signed scalars encode force-on-sensor direction; BOTH
+                    # reporting directions must own every force-carrying point.
+                    for sensor,raw,mask in ((label,data,select),('coupon',reverse,reverse_select)):
+                        raw_values=raw['normal_forces_N'].reshape(-1)
+                        for point,sep,force in zip(raw['normal_points_world_m'][mask],raw['normal_separations_m'][mask].reshape(-1),raw_values[mask]):
+                            if abs(force)<=protocol['observation']['force_carrying_abs_floor_N']:continue
+                            local=world_to_finger.Transform(Gf.Vec3d(*[float(v) for v in point]))
+                            own=own_point(np.asarray(local),sep,geometry_result['fingers'][label],protocol)
+                            ownership[label].append({**own,'sensor':sensor,'point_world_m':point.tolist(),'separation_m':float(sep),
+                                'normal_force_signed_N':float(force),'normal_force_N':float(abs(force))})
+                            if not own['unique_pad']:reasons.append('nonunique_pad_contact_'+label)
+                    reverse_vector=reverse['filtered_normal_impulse_matrix_world_Ns'][0,reverse_index]/dt
                     if np.linalg.norm(vector+reverse_vector)>max(.005,.01*np.linalg.norm(vector)):reasons.append('reciprocal_force_mismatch')
                     point_vector=(values[select,None]*data['normal_vectors_world'][select]).sum(axis=0)
                     if forces[label]>0:
@@ -247,7 +254,6 @@ def main():
                     if err.size and np.any(err>np.maximum(1e-7,1e-5*np.abs(data['normal_impulses_Ns']))):reasons.append('normal_dt_scaling')
                 for label,data in loaded.items():
                     if not observed['bodies'][label]['finite'] or observed['bodies'][label]['status'].startswith('capacity_'):reasons.append('invalid_contact_buffer_'+label)
-                    if np.any(data['normal_forces_N'] < -protocol['observation']['negative_normal_allowance_N']):reasons.append('negative_normal_magnitude_'+label)
                     for impulses,forces_key in (('normal_impulses_Ns','normal_forces_N'),('friction_impulses_world_Ns','friction_forces_world_N')):
                         err=np.abs(data[impulses]-data[forces_key]*dt)
                         if err.size and np.any(err>np.maximum(1e-7,1e-5*np.abs(data[impulses]))):reasons.append('dt_scaling_'+label)
@@ -257,7 +263,7 @@ def main():
                     if path in (BODIES['left'],BODIES['right']):continue
                     count=int(coupon_data['normal_counts'][0,index]);start=int(coupon_data['normal_starts'][0,index])
                     selected=(coupon_data['normal_indices']>=start)&(coupon_data['normal_indices']<start+count)
-                    if np.maximum(coupon_data['normal_forces_N'][selected],0).sum()>1e-6:reasons.append('unexpected_coupon_partner')
+                    if np.abs(coupon_data['normal_forces_N'][selected]).sum()>1e-6:reasons.append('unexpected_coupon_partner')
                 axis=np.asarray(hand_usd.TransformDir(Gf.Vec3d(0,1,0)))
                 for label in ('left','right'):
                     vector=np.asarray(vectors[label]);opening_axis=axis if label=='left' else -axis

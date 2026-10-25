@@ -1,6 +1,6 @@
 {
-  "schema": "stock-pad-positive-contact-audit-v1",
-  "status": "declared_before_B0_execution",
+  "schema": "stock-pad-positive-contact-audit-v2-signed-coefficients",
+  "status": "declared_before_R2_B0_execution",
   "scope": "B0 stock-pad closure/reopen against a declared kinematic2x4 coupon; diagnostic initialization truth is not a perception pick or extraction",
   "sequence": {
     "B0": "Centered stock pad/coupon positive-reporting and actual collider inventory test only",
@@ -39,15 +39,16 @@
   "force_response": {
     "positive_normal_per_pad_N": 0.2,
     "positive_consecutive_fresh_steps": 3,
-    "positive_definition": "Both finger-coupon sums of nonnegative scalar normal force reach threshold in the same three consecutive fresh samples, with all pad-identification, sign/unit/coverage guards valid. Then stop closing and reopen.",
+    "positive_definition": "Both finger-coupon SUM(abs(raw signed scalar force coefficients)) reach threshold in the same three consecutive fresh samples, with all pad-identification, raw signed f*normal/matrix/reciprocal/unit/coverage guards valid. Then stop closing and reopen.",
     "release_normal_per_pad_N_strictly_below": 0.01,
     "release_consecutive_fresh_steps": 3,
     "sampled_abort_normal_per_pad_N_strictly_above": 2.0,
     "abort_definition": "Sum ALL finger-coupon normal magnitudes, regardless of pad/white classification; any value above2N stops the attempt. Preserve the first overshoot and peak. This sampled abort does not guarantee a continuous-time force cap.",
-    "nonnegative_force_numerical_allowance_N": 1e-08,
     "unexpected_other_pair_normal_magnitude_floor_N": 1e-06,
     "all_zero": "Unknown/unsupported positive reporting, never evidence of physical contact absence.",
-    "friction": "Record separate friction-anchor points/vectors. No tangential-motion test, friction fitting or calibrated friction/force claim."
+    "friction": "Record separate friction-anchor points/vectors. No tangential-motion test, friction fitting or calibrated friction/force claim.",
+    "force_carrying_magnitude_floor_N": 1e-08,
+    "signed_coefficient_contract": "Raw scalar coefficients may be signed according to sensor/filter orientation. Preserve raw f and n, use SUM(f*n) for vectors, SUM(abs(f)) for magnitude thresholds/hardstop, and check ownership of ALL abs(f)>1e-8N points including negative coupon coefficients. Negative coefficient alone is not invalid contact or negative physical pressure. No gain, clipping, normal flipping or tolerance adjustment."
   },
   "geometry": {
     "sensor_bodies": [
@@ -61,7 +62,7 @@
     "point_metric": "Exact point-to-triangle surface distance in the current finger frame against composed pad and other enabled finger collider surfaces. Export actual cooked hulls if exposed; otherwise identify authored/reference approximation explicitly.",
     "pad_distance_allowance_m": 5e-05,
     "white_extra_clearance_m": 0.0001,
-    "point_gate": "ALL force-carrying finger-coupon points in a positive frame must have d_pad <= abs(reported_separation)+50um and d_white > abs(reported_separation)+50um+0.1mm. White-compatible or unmapped points block positive classification; no favorable subset selection.",
+    "point_gate": "ALL abs(raw signed force)>1e-8N force-carrying finger-coupon points in a positive frame must have d_pad <= abs(reported_separation)+50um and d_white > abs(reported_separation)+50um+0.1mm. White-compatible or unmapped points block positive classification; no favorable subset selection.",
     "point_gate_meaning": "Conservative authored-surface compatibility, not measured cooked-collider accuracy or whole-STL fidelity. A visual STL and CollisionAPI/decomposition request alone do not prove functional concavities survive cooking.",
     "proxy_later": "Only old two stock mesh_3 pad collisions may be replaced after review; white fingers, body mass/inertia and existing materials remain unchanged. A single convex hull that fills a functional notch is unsuitable."
   },
@@ -78,7 +79,8 @@
     "aggregate_absolute_tolerance_N": 0.005,
     "aggregate_relative_tolerance": 0.01,
     "sign": "Use documented force-on-sensor pair matrices and reciprocal coupon rows. Compare point-sum normal convention with both predeclared signs; one consistent convention must agree on both pads/nonzero reciprocal pairs. Preserve raw signs and reject unresolved sign; do not fit magnitudes.",
-    "completeness": "All required filters resolved, valid nonoverlapping pair ranges, finite arrays, unsaturated buffers, perpoint/pairmatrix/net normal agreement and reciprocal positive pairs. A missing stream, overflow, unverified omitted pair or all-zero stream is unknown; not absence."
+    "completeness": "All required filters resolved, valid nonoverlapping pair ranges, finite arrays, unsaturated buffers, perpoint/pairmatrix/net normal agreement and reciprocal positive pairs. A missing stream, overflow, unverified omitted pair or all-zero stream is unknown; not absence.",
+    "coefficient_primary_evidence": "Installed primary Isaac Sim rigid_contact_view.py example includes negative coefficients and computes SUM(force_i*normal_i); tensor API documents coefficients/normal buffers without a nonnegative guarantee. Frozen1753 records show unmodified signed products matching pair matrices, net normals, reciprocal vectors and dt scaling."
   },
   "unchanged": {
     "solver_type": "PGS",
@@ -132,10 +134,21 @@
       "result": "First enabled stock white-finger collider mesh_0 is a Cube; Mesh-only exporter stopped before play."
     },
     "prepared_unsubmitted_audit": "runs/20261025T031408.321563Z-stage2-contact-B0-evaluation",
-    "contact_improvement_round": 1,
+    "contact_improvement_round": 2,
     "maximum_contact_improvement_rounds": 3,
     "approved_round1_change": "Analytic Cube representation:8corners/12triangles transformed by composed USD transform, type Cube, approximation none, analytic_cube_exact reference. Inventory all enabled collider types first. Mesh handling and every physical/scientific gate unchanged.",
-    "remaining_execution_authorization": "One corrected B0_stock capture attempt after independent source approval. No further blind retry, proxy execution or reserved execution; reassess the recorded result.",
-    "triangle_contract": "Existing points_finger_m / triangle_indices schema unchanged; no evaluator geometric calculation change required."
+    "remaining_execution_authorization": "One reviewed R2 B0_stock attempt. No blind retry, proxy or reserved execution; three-round contact budget remains2of3 and idle-round budget remains closed.",
+    "triangle_contract": "Existing points_finger_m / triangle_indices schema unchanged; no evaluator geometric calculation change required.",
+    "approved_round2_change": "Version signed-scalar API interpretation only. Remove nonnegative coefficient validity guard; preserve signed f*normal vectors and matrix/reciprocal/dt checks, use SUMABS magnitudes and classify ALL abs(f)>existing1e-8N floor contact points. All physical/motion/geometry/0.2N3/release0.01N3/2N sampled-abort gates unchanged.",
+    "round1_result": {
+      "capture_job_id": 1752,
+      "capture_snapshot": "runs/20261025T031857.554577Z-stage2-contact-B0-stock",
+      "audit_job_id": 1753,
+      "audit_snapshot": "runs/20261025T031916.164276Z-stage2-contact-B0-R1-evaluation",
+      "audit_evaluation_sha256": "bce5b6d5f8160bd707c96f2ceac7472eff402bf4351266fd4a2b9b696c993f24",
+      "measured_steps": 36,
+      "gate_passed": false,
+      "result": "Stopped on negative coupon scalar coefficients at first small contacts; signed products/matrices/reciprocity/dt consistent. Neither0.2N3positive nor release gate reached. Negative coupon point ownership was not tested under old nonnegative contract; no retrospective pass."
+    }
   }
 }

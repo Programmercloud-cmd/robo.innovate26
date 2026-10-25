@@ -124,7 +124,6 @@ def view_summary(data, paths, protocol, dt):
     normal_force=np.asarray(data['normal_forces_N'],float).reshape(-1)
     impulses=np.asarray(data['normal_impulses_Ns'],float).reshape(-1)
     normals=np.asarray(data['normal_vectors_world'],float)
-    checks['nonnegative_normals']=bool(np.all(normal_force >= -protocol['force_response']['nonnegative_force_numerical_allowance_N']))
     checks['normal_unit_vectors']=bool(np.all(abs(np.linalg.norm(normals,axis=1)-1)<=1e-3))
     checks['normal_dt_scaling']=close(impulses,normal_force*dt,rules['dt_scaling_absolute_tolerance_Ns'],rules['dt_scaling_relative_tolerance'])
     matrix=np.asarray(data['filtered_normal_impulse_matrix_world_Ns'],float).reshape(-1,3)/dt
@@ -137,11 +136,12 @@ def view_summary(data, paths, protocol, dt):
         index=pair_rows(data,i,capacity)
         vector=(normal_force[index,None]*normals[index]).sum(axis=0)
         signs=[sign for sign in [1,-1] if close(sign*vector,matrix[i],rules['aggregate_absolute_tolerance_N'],rules['aggregate_relative_tolerance'])]
-        pairs[path]={'scalar_normal_N':float(np.maximum(normal_force[index],0).sum()),
+        pairs[path]={'raw_signed_coefficient_sum_N':float(normal_force[index].sum()),
+            'normal_magnitude_N':float(abs(normal_force[index]).sum()),
             'all_normal_magnitudes_N':float(abs(normal_force[index]).sum()),
             'matrix_force_N':matrix[i].tolist(),'point_sum_vector_N':vector.tolist(),
             'possible_signs':signs,'active_rows':index.tolist(),
-            'force_carrying_rows':index[normal_force[index]>0].tolist()}
+            'force_carrying_rows':index[abs(normal_force[index])>protocol['force_response']['force_carrying_magnitude_floor_N']].tolist()}
     checks['all_pairs_point_matrix_agree']=all(pair['possible_signs'] for pair in pairs.values())
     friction_count=data['friction_counts'].reshape(-1);friction_start=data['friction_starts'].reshape(-1)
     friction_indices=[]
@@ -232,7 +232,7 @@ def audit(args):
         ownership={};forces={};reciprocals={};positive_points=True;frame_signs={1,-1}
         for label in ['left','right']:
             pair=views[label]['pairs'][bodies['coupon']];reverse=views['coupon']['pairs'][bodies[label]]
-            force_peaks[label]=max(force_peaks[label],pair['all_normal_magnitudes_N']);forces[label]=pair['scalar_normal_N']
+            force_peaks[label]=max(force_peaks[label],pair['all_normal_magnitudes_N']);forces[label]=pair['normal_magnitude_N']
             frame_checks[label+'_force_ceiling']=pair['all_normal_magnitudes_N']<=protocol['force_response']['sampled_abort_normal_per_pad_N_strictly_above']
             reciprocal=close(pair['matrix_force_N'],-np.asarray(reverse['matrix_force_N']),rules['reciprocal_absolute_tolerance_N'],rules['reciprocal_relative_tolerance'])
             frame_checks[label+'_reciprocal']=reciprocal;reciprocals[label]=reciprocal
@@ -242,7 +242,7 @@ def audit(args):
                     point=classify_point(data[sensor]['normal_points_world_m'][index],data[sensor]['normal_separations_m'][index].item(),row['finger_poses_world_wxyz'][label],geometry['fingers'][label]['colliders'],protocol)
                     ownership[label].append({'sensor':sensor,'active_row':index,**point})
                     positive_points=positive_points and point['uniquely_pad_compatible']
-                if pair_value['scalar_normal_N']>=.005:
+                if pair_value['normal_magnitude_N']>=.005:
                     frame_signs&=set(pair_value['possible_signs'])
             allowed={bodies['coupon']} if label in ['left','right'] else set()
             frame_checks[label+'_no_other_contacts']=all(p['all_normal_magnitudes_N']<=1e-6 for path,p in views[label]['pairs'].items() if path not in allowed)
@@ -268,7 +268,7 @@ def audit(args):
     initial=np.load(args.input/'source_initial.npy',allow_pickle=False);last=np.load(args.input/'source_last.npy',allow_pickle=False)
     checks['source_saved_arrays_finite']=initial.shape==last.shape==(301,13) and bool(np.isfinite(initial).all() and np.isfinite(last).all())
     checks['source_final_speeds']=bool(np.linalg.norm(last[:,7:10],axis=1).max()<=unchanged['source_maximum_final_linear_speed_m_s'] and np.linalg.norm(last[:,10:13],axis=1).max()<=unchanged['source_maximum_final_angular_speed_rad_s'])
-    result={'schema':'B0-stock-contact-independent-audit-v1','input':str(args.input),'protocol_sha256':sha(HERE/'protocol.json'),'checks':checks,'geometry_checks':geometry_checks,'contact_gate_passed':all(checks.values()),'steps':len(rows),'positive_first_completed_step':positive_step,'release_first_completed_step':release_step,'peak_all_normal_magnitudes_N':force_peaks,'possible_normal_signs':sorted(possible_signs),'first_capture_failure':report['first_failure'],'frames':frame_results,'limitations':['Positive normal reporting and conservative authored-surface compatibility only; cooked geometry not directly measured.','Friction/materials remain uncalibrated; actuator effort is not pad force.','Sampled abort does not guarantee continuous-time force or speed caps.','No perception pick, grasp, extraction, held transform or complete STL validation.'],'claims':protocol['claims']}
+    result={'schema':'B0-stock-contact-independent-audit-v2-signed-coefficients','input':str(args.input),'protocol_sha256':sha(HERE/'protocol.json'),'checks':checks,'geometry_checks':geometry_checks,'contact_gate_passed':all(checks.values()),'steps':len(rows),'positive_first_completed_step':positive_step,'release_first_completed_step':release_step,'peak_all_normal_magnitudes_N':force_peaks,'possible_normal_signs':sorted(possible_signs),'first_capture_failure':report['first_failure'],'frames':frame_results,'limitations':['Positive normal reporting and conservative authored-surface compatibility only; cooked geometry not directly measured.','Signed scalar coefficients are retained in f*normal vectors; magnitude thresholds use SUM(abs(f)), not an inferred physical pressure sign.','Friction/materials remain uncalibrated; actuator effort is not pad force.','Sampled abort does not guarantee continuous-time force or speed caps.','No perception pick, grasp, extraction, held transform or complete STL validation.'],'claims':protocol['claims']}
     args.output.mkdir(parents=True,exist_ok=True)
     (args.output/'evaluation.json').write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')
     (args.output/'run_complete.json').write_text(json.dumps({'evaluation_completed':True,'contact_gate_passed':result['contact_gate_passed'],'evaluation_sha256':sha(args.output/'evaluation.json')})+'\n')
