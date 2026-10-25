@@ -3,8 +3,10 @@
 This supplements the six-stage simulation goal. It does not promote any
 unmeasured candidate parameter to a validated method. The measured state is in
 [demo_progress.md](demo_progress.md): ordinary top-view candidates/mock joins
-pass, sparse remnants fail, and the full 300-brick native idle gate fails before
-manipulation. Extra compute is optional and does not fix that model failure.
+pass and sparse remnants fail. The default TGS native idle test failed; the
+source-supported PGS workaround now passes full300 and reserved-removal one-second
+checks. This is an idle prerequisite only, not manipulation validation. Extra
+compute is optional and does not establish physical-model correctness.
 
 ## Experiment discipline
 
@@ -18,10 +20,13 @@ they are not unlimited free attempts. Preserve regressions, retries, misses and
 uncertainty. Reserved observations cannot drive changes within the same round.
 
 For accounting, Stage 1 already used two substantive changes (workspace filter,
-closer views). Stage 2 used two improvements: coupled numerical epsilon and a source-only
-velocity-iteration 4→16 comparison. Neither fixed its failed idle gate. Native logging/offline audits are diagnostics, not
-additional claimed improvements. No unbounded sweep is planned; each new experiment still needs its frozen
-budget and independent review.
+closer views). The initial Stage 2 idle benchmark used all three improvement
+rounds: coupled
+numerical epsilon and source velocity iterations 4→16 failed; the source-supported
+TGS→PGS workaround passed its frozen fixture, full300 and reserved-removal checks.
+That configuration benchmark is closed; no fourth physics-configuration round.
+Native logging/offline audits are diagnostics, not additional claimed improvements.
+Each new experiment still needs its frozen budget and independent review.
 
 ## Classification observation timing
 
@@ -84,7 +89,11 @@ is unknown, not zero force. Permit at most one renewed whole-brick attempt after
 failure, within the global eight-attempt budget; abort on lost association, slip, exceeded
 bounds, ambiguous completion or observed neighboring-stack disturbance. Simulator
 truth independently checks intended detachment and collateral native breaks.
-The current idle failure prohibits treating a spontaneous break as pick success.
+The historical TGS idle failure prohibits treating spontaneous disassembly as
+pick success. New contact trials must explicitly retain the tested PGS/32/4
+configuration, report spontaneous/collateral failures, and include appropriate
+stationary controls over their actual contact-trial duration. The one-second
+idle pass does not validate longer contact behavior or updated-tip collisions.
 
 ## Placement and stacking
 

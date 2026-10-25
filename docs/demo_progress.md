@@ -1,6 +1,11 @@
 # Challenge 2 simulation demo: measured progress
 
-Updated 2026-10-25. The active objective is an incremental end-to-end **simulation**
+Updated 2026-10-25. **Latest result:** the PGS workaround passes the full300
+and reserved-removal 120-step native idle checks. Grasping/extraction, actual
+classification, transfer, insertion and repeated sorting remain unfinished.
+See the [final idle-round results](../experiments/stage2_pgs_20261025/README.md).
+
+The active objective is an incremental end-to-end **simulation**
 demo. No hardware motion, ROS deployment or physical readiness is authorized or
 claimed. Existing visual and perception experiments remain preserved.
 
@@ -123,8 +128,8 @@ to stop this bounded round with the failed idle gate intact, rather than hide it
 
 [Machine-readable dynamics outcome](../experiments/stage2_idle_20261025/results.json),
 [perception outcomes and exact snapshots](../experiments/stage1_20261025/results.json).
-The six-stage goal remains incomplete. Further controller work needs a stable
-native source/contact model and checked tip/contact feedback; actual Challenge1
+The six-stage goal remains incomplete. The source later passes the bounded PGS idle checks recorded below. Further
+controller work still needs checked updated-tip collisions/contact feedback; actual Challenge1
 integration also remains unavailable. No extraction, transfer or stacking
 success is established by the candidate/mock-interface pass.
 
@@ -136,7 +141,8 @@ visibility/timing, held-offset/pivot/clearance experiments, receiving stud-grid
 placement and online-vs-native attachment evidence. It caps each frozen stage at
 three improvement rounds before reassessment and proposes a six-brick/eight-attempt
 cyclic-color demo. No classification timing or25°/5mm extraction parameter is
-promoted to validated status. Native idle failure remains the contact gate.
+promoted to validated status. PGS subsequently passes the initial idle gate;
+updated-tip collisions and contact feedback remain prerequisites.
 
 
 ## Optional Alex compute check
@@ -208,3 +214,25 @@ A single PGS workaround is being prepared as the final Stage 2 improvement round
 small-fixture gate, then full300 idle, then a reserved removal state, stopping at
 any failed gate. It retains physical capacities, break rules, timestep and default
 actor32/4. No native build or parameter sweep is planned.
+
+
+## Final idle round passed with PGS; contact/manipulation gates remain
+
+All three predeclared phases pass: A **1745/1746** suppresses the eccentric
+angular-reporting signature; B **1747/1748** keeps all 300 bricks and 930 native
+links through 120 steps; reserved C **1749/1750** keeps 299 bricks and 926 links
+through 120 steps. Maximum drift is 0.208 mm in B and 0.582 mm in C, within the
+unchanged 2 mm limit. No native break occurs. Actual PGS/source32/4, nominal joints,
+initial poses and native physical settings are independently checked.
+
+The sole change is TGS→PGS. Epsilon, clutch strength/friction, timestep, geometry
+and stock collision assets are unchanged. A's operational artifact screen is not
+force calibration; source/binary identity and broader physical validity remain
+qualified. Three configuration rounds are now closed; no fourth tuning round.
+New contact benchmarks must explicitly use this tested PGS setting and report
+stationary controls over their own duration. The supplied fingertips still have
+stock collision geometry, and no grasp, extraction, placement or integrated
+sorting success is claimed.
+
+[Commands, frozen gates, all six job IDs and independent audits](../experiments/stage2_pgs_20261025/README.md),
+[machine-readable results](../experiments/stage2_pgs_20261025/results.json).
