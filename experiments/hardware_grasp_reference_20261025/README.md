@@ -1,5 +1,17 @@
 # Operator working-grasp reference
 
+**Latest datum clarification:** use #3 as the trustworthy source anchor. The
+needle touched the flat brick body top; #11 is an uncertain recording and is
+retired as a cross-plate height reference. The tenth-layer body top is **96 mm**
+above the baseplate's brick-supporting surface. With the needle approximately
+10 mm below the pads, the taught upper **pad bottoms** are approximately
+**106 mm** above that surface. After the already-applied 15 mm descent they are
+approximately **91 mm**, giving about **5 mm body engagement**. These are
+approximate pad heights, not configured-EE coordinates: #3's exported grasp
+EE Z is 82.427 mm in robot base, and its saved upper EE Z is 97.427 mm there.
+No plate thickness, world registration or physical pad transform is fitted.
+The prior #11 discrepancy below is retained as history, not a current blocker.
+
 Data-only import of the supplied pose export and annotated workcell photo. The
 operator reports **20 mm approach opening, 14 mm closing request, 15.8 mm loaded
 readback, and straight upward extraction**, with the inferred input-stack poses
@@ -29,8 +41,9 @@ T_base_model_grip = T_base_EE @ inverse(T_hand_EE) @ T_hand_model_grip
 This yields about **14.158 mm farther toward the brick** for the downward poses;
 using the exported EE translation as the current grip target would be wrong.
 Neither this conversion nor the photograph establishes base-to-table/plate
-registration or the actual pad–brick engagement depth. The saved upper
-reference's relation to the physical brick top remains unspecified.
+registration or the actual pad–brick engagement depth. At the time of the original audit, the saved upper reference's relation to
+the physical brick top was unspecified; the latest clarification above resolves
+the touched surface and approximate pad engagement.
 
 The old model relation is `custom_gap = q_left + q_right + 2.81338 mm`.
 **Conditionally**, if the 15.8 mm display readback equals SDK joint sum and the
@@ -63,8 +76,8 @@ outputs preserve the authoritative embedded JSON and provide separate derived
 MODEL-frame transforms and a comparison report. Nearest recorded/inferred pose
 residuals are descriptive, not asserted physical correspondences or accuracy.
 
-Next contact reproduction needs the upper-reference/brick-surface relation and
-resolution of the physical width/mount mapping. Existing retention criteria and
+The needle clarification resolves the approximate upper-reference/brick-surface
+relation. Contact reproduction still needs a defensible physical width/mount mapping. Existing retention criteria and
 closed three-round experiments remain unchanged.
 
 ## Result — reference checks passed
@@ -91,7 +104,7 @@ Artifacts: [comparison](artifacts/comparison.json),
 [derived model-frame references](artifacts/transformed_reference_poses.json),
 and [job/provenance record](results.json).
 
-## Later needle and thin-baseplate clarification
+## Earlier needle and thin-baseplate clarification (superseded in part)
 
 The operator used a held needle projecting **approximately 10 mm below the pad
 bottoms** to teach the reference positions. Together with the already-applied
@@ -106,8 +119,9 @@ The operator identifies #11 as a working grasp on the gray plate and
 `a_0_0_9` as layer ten above the white plate. Their exported configured-EE
 heights differ by **76.845 mm**, versus **86.4 mm** for nine 9.6 mm body-height
 increments, conditional on equal support elevation and the same teaching and
-engagement datum. The approximately **9.555 mm discrepancy remains open**;
-it is not a measured plate offset or grounds to renumber the stack.
+engagement datum. The approximately **9.555 mm discrepancy was left open at that time**;
+it is not a measured plate offset or grounds to renumber the stack. The later
+operator withdrawal of #11 as a trustworthy reference retires this comparison.
 
 Both physical plates are thin LEGO baseplates. The old native scene's 3.2 mm
 plate-body assumption is not a measured physical thickness. No replacement
