@@ -127,3 +127,13 @@ The six-stage goal remains incomplete. Further controller work needs a stable
 native source/contact model and checked tip/contact feedback; actual Challenge1
 integration also remains unavailable. No extraction, transfer or stacking
 success is established by the candidate/mock-interface pass.
+
+
+## Updated technical starting points
+
+The [revisable stage protocol](demo_stage_protocol.md) now governs classification
+visibility/timing, held-offset/pivot/clearance experiments, receiving stud-grid
+placement and online-vs-native attachment evidence. It caps each frozen stage at
+three improvement rounds before reassessment and proposes a six-brick/eight-attempt
+cyclic-color demo. No classification timing or25°/5mm extraction parameter is
+promoted to validated status. Native idle failure remains the contact gate.
