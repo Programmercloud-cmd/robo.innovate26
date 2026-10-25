@@ -1,0 +1,41 @@
+{
+  "schema": "saved-retention-review-result-v1",
+  "job_id": 1820,
+  "source_commit": "dee7419",
+  "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T152631.480348Z-stage2-retention-review",
+  "diagnostic_complete": true,
+  "physics_steps": 0,
+  "physics_extraction_passed": false,
+  "physical_retry_authorized": false,
+  "automatic_retry": false,
+  "audit_sha256": "a2c8ac8037fd4aa61eded52feef62c757c33d797766908f803e9322bc820a1ad",
+  "actual_pueue_seconds": 0.844714157,
+  "inner_diagnostic_seconds": 0.38521206300356425,
+  "prior_case_seconds": 2054.2607472610234,
+  "cumulative_case_seconds": 2055.1054614180234,
+  "case_limit_seconds": 2200,
+  "remaining_case_seconds": 144.8945385819766,
+  "scope": "9fixed correlated samples, no newphysics/control/geometry/thresholdchanges",
+  "findings": {
+    "initial_nominal_body_side_overlap_mm": 3.082809466714867,
+    "target_peak_sampled_rise_since_admission_mm": 1.139417290687561,
+    "final_target_rise_since_admission_mm": 0.41843950748443604,
+    "final_TCP_rise_since_admission_mm": 1.904308795928955,
+    "final_relative_vertical_difference_mm": 1.485869288444519,
+    "approx_remaining_nominal_band_mm": 1.596940178270348,
+    "band_exhaustion_established": false,
+    "final_target_rise_since_initialization_mm": 0.10976195335388184,
+    "target_edges_retained": [
+      920,
+      921
+    ],
+    "final_contact_change": "Two LEFT BODY points near authored distal edge become nonlateral atstep2113; reported anchors are not exact cooked surfacetruth.",
+    "friction_signed_traction": "UNKNOWN",
+    "native_utilization": "UNKNOWN"
+  },
+  "independent_reviews": {
+    "evaluator": "ACCEPTEDcomplete saved evidence; partial rise then retreat; no capacity/depth-offset conclusion.",
+    "reviewer": "ACCEPTEDcomplete saved evidence; recommends one dynamic unclutched coupon retention fixture before changing release/grip parameters."
+  },
+  "next_hypothesis": "A passive-supported dynamic free brick at SAME gripping band/14mmcommand can separate gripretention from native release loading; not implemented/authorized bythis report."
+}
