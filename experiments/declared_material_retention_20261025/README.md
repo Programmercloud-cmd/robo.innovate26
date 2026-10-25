@@ -45,3 +45,43 @@ python3 experiments/declared_material_retention_20261025/submit.py
 
 No shared dependencies, native source, camera layout, gripper geometry or
 physical hardware are changed.
+
+
+## Result — closed negative regression
+
+Pueue **1830** (source `2f20f7a`) completes its fresh 1500-step control with
+all 175 control checks passing. The same-job bridge and combined material /
+100 µm offset / schema / property / native checks also pass. The pick admits
+at step 450 after 30 endpoint commands, then aborts at step **716** on an
+unqualified right contact.
+
+| Measure | Corrected-model result |
+|---|---:|
+| Relative-retention violating frames | 129 |
+| Maximum relative translation / rotation | 1.687 mm / 6.80° |
+| Final initialization-relative coupon rise | 0.766 mm |
+| Peak sampled pad normal loads, left/right | 1.482 / 1.690 N |
+| Maximum lift finger speeds, left/right | 3.292 / 3.327 mm/s |
+| Completed 5 mm lift and 30-step hold | No |
+
+This is a retention failure, not force/speed censoring. The material correction
+is real, but does not establish holding. Job 1825 stopped later (step 740), so
+smaller observed error maxima here do not show an improvement. Neither run
+completed the required lift/hold. The free coupon has no native clutch edges;
+clutch resistance therefore cannot be the sole bottleneck.
+
+Full Pueue cost is **216.692133457 s**, including capture, audits and overhead.
+The retained total is **2914.822749813 / 3000 s**. This one-off baseline is closed,
+with zero further tuning variants or retries. Source color handoff, configuration
+proof and a stationary control cannot establish held identity or authorize
+transfer. No tower extraction, insertion or integrated sorting was demonstrated.
+
+The next dependency is a reference for the successful real grasp, relating the
+Desk command/readback to actual custom-pad gap and engagement depth. Existing
+CAD and open-gripper photos do not supply that operating condition. No new
+width/depth/force/offset/controller variant follows from this negative result.
+
+Artifacts: [control audit](artifacts/control_evaluation.json),
+[pick audit](artifacts/pick_evaluation.json), [fresh-control bridge](artifacts/control_bridge.json),
+[authoring proof](artifacts/binding_authoring.json), [initial configuration](artifacts/combined_initial.json),
+[terminal configuration](artifacts/combined_terminal.json), and [compact provenance](results.json).

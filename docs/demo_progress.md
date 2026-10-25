@@ -1,11 +1,22 @@
 # Challenge 2 simulation demo: measured progress
 
-Updated 2026-10-25. **Latest measured state:** the final free-brick retention
-trial (1825) is no longer censored by the old finger-speed guard, but fails
-relative retention (maximum 1.861 mm / 7.946°) before completing lift/hold.
-The three-improvement fixture comparison is closed. Native tower extraction,
-reject transfer, insertion and repeated sorting remain unproven. See the
-[final retention result](../experiments/stage2_finger_response_20261025/README.md).
+Updated 2026-10-25. **Latest measured state:** the corrected-material regression
+(1830) passes its fresh 1500-step stationary control and configuration checks,
+but fails retention: 1.687 mm / 6.80° maximum relative error, 0.766 mm final
+rise, abort at step 716, no completed lift/hold. The original three-improvement
+fixture comparison and this one-off correctness regression are closed. Native
+tower extraction, reject transfer, insertion and repeated sorting remain
+unproven. See the [corrected-model result](../experiments/declared_material_retention_20261025/README.md).
+
+**Current dependency:** a reference for the successful real grasp, linking the
+requested versus measured Desk width to actual custom-pad gap and pad–brick
+engagement depth. Existing CAD mounting intent and open-gripper photos do not
+supply that operating condition. Independent planner, evaluator and reviewer
+find no further grounded source correction or parameter variant to execute.
+The source-color/material work is complete within its stated limited scope;
+downstream handling still requires a retained grasp. No further experiment is
+scheduled pending that reference or a materially different approach supported
+by new evidence.
 
 Local pregrasp RGB color classification has limited saved-render evidence.
 The current sensor-selected runner has an opt-in final-selection color hook;
@@ -1214,3 +1225,27 @@ Full costs14.646749434s +.538284444s bring the retained ledger to
 2698.130616356/2800s. No fourth fixture trial follows. The remaining grasp-width/
 depth mapping question is unresolved. See
 [readbacks, both audits and provenance](../experiments/brick_material_runtime_20261025/README.md).
+
+
+## Corrected-material retention regression — closed failure, grasp reference needed
+
+Job1830/source2f20f7a first passes the full1500-step corrected-model control,
+same-job bridge and combined declared-material/100µm/geometry/property/native
+checks. The single pick admits at450/30endpointcommands, then aborts at716 on
+an unqualified right contact. Relative holding limits fail129frames, reaching
+1.687mm/6.80°; final rise.766mm; no completed5mm lift or30-step hold. Sampled
+forces remain below2N and the reviewed finger-speed limits pass. This is an
+uncensored retention failure. Smaller observed maxima versus1825 do not prove
+improvement because this trial stopped earlier.
+
+The material authoring defect was real and is corrected in this isolated test;
+correcting it did not establish holding. Native clutch resistance is not the
+sole cause because the coupon is isolated. No additional source-supported model
+or controller defect, new parameter choice, downstream implementation, or
+training experiment is currently justified by the reviewed evidence.
+
+Full Pueue216.692133457s retains2914.822749813/3000s. The three original fixture
+improvements and this one-off regression remain closed with no retries. The
+repeated missing working-grasp width/depth reference is the current dependency;
+the six-stage simulation objective remains incomplete. See
+[full result, audits, configuration and provenance](../experiments/declared_material_retention_20261025/README.md).

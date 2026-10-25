@@ -3,8 +3,11 @@
 The current simulation demo uses the frozen depth-guided R3 candidate pipeline
 and an opt-in pregrasp LEGO color handoff. The [measured progress](docs/demo_progress.md)
 and [stage protocol](docs/demo_stage_protocol.md) describe the active work.
-The latest saved handoff replay (1826) passes; native extraction and free-brick
-retention still fail, and transfer/stacking remain unproven.
+The saved handoff replay (1826) passes. The corrected-material regression (1830)
+passes its fresh stationary control but still fails free-brick retention; native
+extraction and transfer/stacking remain unproven. Further manipulation work needs
+a reference for the successful real grasp's requested/measured width and actual
+brick engagement depth. See the [closed regression](experiments/declared_material_retention_20261025/README.md).
 
 The manually assisted, known-layout **v1** under `perception/` is a preserved
 real-image baseline; see its [results and stopping decision](experiments/known_layout_20261024/REPORT.md).

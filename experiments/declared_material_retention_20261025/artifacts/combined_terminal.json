@@ -1,0 +1,496 @@
+{
+  "phase": "terminal",
+  "views": {
+    "left": {
+      "requested_path": "/World/envs/env_0/Robot/fr3_leftfinger",
+      "prim_paths": [
+        "/World/envs/env_0/Robot/fr3_leftfinger"
+      ],
+      "count": 1,
+      "max_shapes": 5,
+      "row_to_collider_mapping": "UNKNOWN",
+      "view_error": null,
+      "getters": {
+        "material_properties": {
+          "status": "AVAILABLE",
+          "error": null,
+          "values": [
+            [
+              [
+                0.5,
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.5,
+                0.0
+              ],
+              [
+                2.5,
+                2.0,
+                0.0
+              ]
+            ]
+          ],
+          "shape": [
+            1,
+            5,
+            3
+          ],
+          "dtype": "float32"
+        },
+        "contact_offsets": {
+          "status": "AVAILABLE",
+          "error": null,
+          "values": [
+            [
+              0.0013625002466142178,
+              0.0013625002466142178,
+              0.0013625002466142178,
+              0.0013625002466142178,
+              9.999999747378752e-05
+            ]
+          ],
+          "shape": [
+            1,
+            5
+          ],
+          "dtype": "float32"
+        },
+        "rest_offsets": {
+          "status": "AVAILABLE",
+          "error": null,
+          "values": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "shape": [
+            1,
+            5
+          ],
+          "dtype": "float32"
+        }
+      }
+    },
+    "right": {
+      "requested_path": "/World/envs/env_0/Robot/fr3_rightfinger",
+      "prim_paths": [
+        "/World/envs/env_0/Robot/fr3_rightfinger"
+      ],
+      "count": 1,
+      "max_shapes": 5,
+      "row_to_collider_mapping": "UNKNOWN",
+      "view_error": null,
+      "getters": {
+        "material_properties": {
+          "status": "AVAILABLE",
+          "error": null,
+          "values": [
+            [
+              [
+                0.5,
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.5,
+                0.0
+              ],
+              [
+                2.5,
+                2.0,
+                0.0
+              ]
+            ]
+          ],
+          "shape": [
+            1,
+            5,
+            3
+          ],
+          "dtype": "float32"
+        },
+        "contact_offsets": {
+          "status": "AVAILABLE",
+          "error": null,
+          "values": [
+            [
+              0.0013625002466142178,
+              0.0013625002466142178,
+              0.0013625002466142178,
+              0.0013625002466142178,
+              9.999999747378752e-05
+            ]
+          ],
+          "shape": [
+            1,
+            5
+          ],
+          "dtype": "float32"
+        },
+        "rest_offsets": {
+          "status": "AVAILABLE",
+          "error": null,
+          "values": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "shape": [
+            1,
+            5
+          ],
+          "dtype": "float32"
+        }
+      }
+    },
+    "coupon": {
+      "requested_path": "/World/envs/env_0/contact_coupon",
+      "prim_paths": [
+        "/World/envs/env_0/contact_coupon"
+      ],
+      "count": 1,
+      "max_shapes": 2,
+      "row_to_collider_mapping": "UNKNOWN",
+      "view_error": null,
+      "getters": {
+        "material_properties": {
+          "status": "AVAILABLE",
+          "error": null,
+          "values": [
+            [
+              [
+                0.5,
+                0.4000000059604645,
+                0.10000000149011612
+              ],
+              [
+                1.0,
+                0.800000011920929,
+                0.20000000298023224
+              ]
+            ]
+          ],
+          "shape": [
+            1,
+            2,
+            3
+          ],
+          "dtype": "float32"
+        },
+        "contact_offsets": {
+          "status": "AVAILABLE",
+          "error": null,
+          "values": [
+            [
+              0.0013625002466142178,
+              0.0013625002466142178
+            ]
+          ],
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "rest_offsets": {
+          "status": "AVAILABLE",
+          "error": null,
+          "values": [
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "float32"
+        }
+      }
+    }
+  },
+  "baseline_readback_sha256": "5a13b78f5db08a7a5e2e9c20d7d29844d7d54c5b98b0ef83bde34a7122aa29db",
+  "checks": {
+    "left_binding": true,
+    "left_material_properties": true,
+    "left_contact_offsets": true,
+    "left_rest_offsets": true,
+    "right_binding": true,
+    "right_material_properties": true,
+    "right_contact_offsets": true,
+    "right_rest_offsets": true,
+    "coupon_binding": true,
+    "coupon_material_properties": true,
+    "coupon_contact_offsets": true,
+    "coupon_rest_offsets": true,
+    "no_time_or_q_change": true
+  },
+  "passed": true,
+  "mapping": "UNKNOWN",
+  "rest_offset_setting_changed": false,
+  "material_settings_changed": false,
+  "binding_schema": {
+    "/World/envs/env_0/contact_coupon/BodyCollider": {
+      "type": "Cube",
+      "apis": [
+        "MaterialBindingAPI",
+        "PhysicsCollisionAPI"
+      ],
+      "attributes": {
+        "physics:collisionEnabled": {
+          "usd_type": "bool",
+          "sdk_value": true,
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        },
+        "physics:dynamicFriction": {
+          "usd_type": "float",
+          "sdk_value": 0.4000000059604645,
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        },
+        "physics:restitution": {
+          "usd_type": "float",
+          "sdk_value": 0.10000000149011612,
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        },
+        "physics:staticFriction": {
+          "usd_type": "float",
+          "sdk_value": 0.5,
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        },
+        "size": {
+          "usd_type": "double",
+          "sdk_value": 1.0,
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        },
+        "visibility": {
+          "usd_type": "token",
+          "sdk_value": "invisible",
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        },
+        "xformOp:scale": {
+          "usd_type": "float3",
+          "sdk_value": "(0.032, 0.016, 0.0096)",
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        },
+        "xformOp:translate": {
+          "usd_type": "double3",
+          "sdk_value": "(0, 0, 0.0048000000000000004)",
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        },
+        "xformOpOrder": {
+          "usd_type": "token[]",
+          "sdk_value": "[xformOp:translate, xformOp:scale]",
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        }
+      },
+      "relationships": {
+        "material:binding:physics": [
+          "/World/envs/env_0/contact_coupon/DeclaredContactMaterials/Body"
+        ],
+        "physics:simulationOwner": [],
+        "proxyPrim": []
+      }
+    },
+    "/World/envs/env_0/contact_coupon/TopCollider": {
+      "type": "Cube",
+      "apis": [
+        "MaterialBindingAPI",
+        "PhysicsCollisionAPI"
+      ],
+      "attributes": {
+        "physics:collisionEnabled": {
+          "usd_type": "bool",
+          "sdk_value": true,
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        },
+        "physics:dynamicFriction": {
+          "usd_type": "float",
+          "sdk_value": 0.800000011920929,
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        },
+        "physics:restitution": {
+          "usd_type": "float",
+          "sdk_value": 0.20000000298023224,
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        },
+        "physics:staticFriction": {
+          "usd_type": "float",
+          "sdk_value": 1.0,
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        },
+        "size": {
+          "usd_type": "double",
+          "sdk_value": 1.0,
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        },
+        "visibility": {
+          "usd_type": "token",
+          "sdk_value": "invisible",
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        },
+        "xformOp:scale": {
+          "usd_type": "float3",
+          "sdk_value": "(0.032, 0.016, 0.0017)",
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        },
+        "xformOp:translate": {
+          "usd_type": "double3",
+          "sdk_value": "(0, 0, 0.010450000000000001)",
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        },
+        "xformOpOrder": {
+          "usd_type": "token[]",
+          "sdk_value": "[xformOp:translate, xformOp:scale]",
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        }
+      },
+      "relationships": {
+        "material:binding:physics": [
+          "/World/envs/env_0/contact_coupon/DeclaredContactMaterials/Top"
+        ],
+        "physics:simulationOwner": [],
+        "proxyPrim": []
+      }
+    },
+    "/World/envs/env_0/contact_coupon/DeclaredContactMaterials": {
+      "type": "Scope",
+      "apis": [],
+      "attributes": {},
+      "relationships": {
+        "proxyPrim": []
+      }
+    },
+    "/World/envs/env_0/contact_coupon/DeclaredContactMaterials/Body": {
+      "type": "Material",
+      "apis": [
+        "PhysicsMaterialAPI"
+      ],
+      "attributes": {
+        "physics:dynamicFriction": {
+          "usd_type": "float",
+          "sdk_value": 0.4000000059604645,
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        },
+        "physics:restitution": {
+          "usd_type": "float",
+          "sdk_value": 0.10000000149011612,
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        },
+        "physics:staticFriction": {
+          "usd_type": "float",
+          "sdk_value": 0.5,
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        }
+      },
+      "relationships": {}
+    },
+    "/World/envs/env_0/contact_coupon/DeclaredContactMaterials/Top": {
+      "type": "Material",
+      "apis": [
+        "PhysicsMaterialAPI"
+      ],
+      "attributes": {
+        "physics:dynamicFriction": {
+          "usd_type": "float",
+          "sdk_value": 0.800000011920929,
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        },
+        "physics:restitution": {
+          "usd_type": "float",
+          "sdk_value": 0.20000000298023224,
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        },
+        "physics:staticFriction": {
+          "usd_type": "float",
+          "sdk_value": 1.0,
+          "connections": [],
+          "has_authored_value": true,
+          "has_authored_connections": false
+        }
+      },
+      "relationships": {}
+    }
+  },
+  "binding_schema_unchanged": true,
+  "material_settings_changed_reference": "corrected1828_baseline",
+  "material_model_changed_from_1825": true
+}

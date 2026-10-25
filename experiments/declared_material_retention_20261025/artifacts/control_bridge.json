@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": {
+    "passed_fresh_control": true,
+    "control_capture_binding": true,
+    "same_current_protocol": true,
+    "physical_settings": true,
+    "initial_q": true,
+    "fixture": true,
+    "raw_observer": true,
+    "combined_runtime_bags": true,
+    "binding_schema": true,
+    "same_declared_authoring": true
+  },
+  "control_protocol_sha256": "ddd0fd6e6b3c1c815e431b77d0e9892955be7206fad42561f40b4107ef365995",
+  "control_audit_sha256": "b8caf2e604e602634f49f611253bdcbef36eb65b7c1ced62f0f3b2c25b80056a",
+  "control_capture_metadata_sha256": "49499da178bfd3265a843dc556c50e05cf1af34694d90b24a1297886238e338c",
+  "control_capture_directory": "/home/faps/dev/github/robo.innovate26/runs/20261025T181056.838163Z-declared-material-retention/control"
+}
