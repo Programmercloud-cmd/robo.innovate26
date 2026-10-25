@@ -43,11 +43,15 @@
     "audit_sha256": "9e3f623e8f198f730727159009d0238f37207984bebed4f918505f7d2a731c9c"
   },
   "D": {
-    "status": "NOT_EXECUTED"
+    "job_id": 1788,
+    "source_commit": "61ffff3",
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T082958.777598Z-exposed-tip-D",
+    "status": "QUEUED",
+    "scope": "Separate lateral-qualified contact diagnostic; original G remains FAILED"
   },
   "R": {
     "status": "RESERVED_NOT_EXECUTED"
   },
-  "reassessment": "Distinct lateral-qualified normal-contact authorization under source review. Original G remains failed. Same physical model/cook; add all-point flat gripping-plane and outward-normal cos>=.9 requirements, keep prior50um ownership/force/motion/native/source limits. No recook/new G/tuning or global fidelity claim.",
+  "reassessment": "Independent planner/evaluator/reviewer approved one distinct lateral-qualified D and conditional R with unchanged model/config/cooked hashes. Canonical side authorization is frozen; original global G remains failed.",
   "scope": "Contact/control primitive only; no native grasp/extraction/placement or physical calibration validated."
 }
