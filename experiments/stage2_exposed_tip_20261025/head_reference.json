@@ -1,0 +1,70 @@
+{
+  "source": "runs/20261025T072956.568941Z-final-workcell-preview/output/updated_fingertips.json",
+  "source_sha256": "cc28a415f85db1520f9de26c2fa477381f5cbb1c56c76a0a1dcfb620ce14e9b0",
+  "heads": {
+    "fr3_leftfinger": {
+      "parent_finger": "/World/envs/env_0/Robot/fr3_leftfinger",
+      "parent": "/World/envs/env_0/Robot/fr3_leftfinger/UpdatedTipFastenerVisual",
+      "visual_only": true,
+      "head_prim": "/World/envs/env_0/Robot/fr3_leftfinger/UpdatedTipFastenerVisual/Head",
+      "axis": "Y",
+      "head_radius_m": 0.003,
+      "head_height_m": 0.002,
+      "outward_protrusion_m": 0.002,
+      "head_center_finger_m": [
+        3.0362105919723437e-09,
+        0.013805219739675523,
+        0.04509036938006271
+      ],
+      "head_base_finger_y_m": 0.012805219739675522,
+      "head_outer_finger_y_m": 0.014805219739675522,
+      "head_envelope_finger_m": [
+        [
+          -0.002999996963789408,
+          0.012805219739675522,
+          0.042090369380062706
+        ],
+        [
+          0.003000003036210592,
+          0.014805219739675522,
+          0.04809036938006271
+        ]
+      ],
+      "outside_face_estimate": "Local white-visual vertex bound within head-radius height band; fallback nominal wall if empty",
+      "nearby_white_vertices": 49,
+      "physical_fit_or_clearance_verified": false
+    },
+    "fr3_rightfinger": {
+      "parent_finger": "/World/envs/env_0/Robot/fr3_rightfinger",
+      "parent": "/World/envs/env_0/Robot/fr3_rightfinger/UpdatedTipFastenerVisual",
+      "visual_only": true,
+      "head_prim": "/World/envs/env_0/Robot/fr3_rightfinger/UpdatedTipFastenerVisual/Head",
+      "axis": "Y",
+      "head_radius_m": 0.003,
+      "head_height_m": 0.002,
+      "outward_protrusion_m": 0.002,
+      "head_center_finger_m": [
+        -3.036210644014048e-09,
+        -0.013805219739500402,
+        0.04509036938006271
+      ],
+      "head_base_finger_y_m": -0.012805219739500402,
+      "head_outer_finger_y_m": -0.014805219739500402,
+      "head_envelope_finger_m": [
+        [
+          -0.003000003036210644,
+          -0.014805219739500402,
+          0.042090369380062706
+        ],
+        [
+          0.002999996963789356,
+          -0.012805219739500402,
+          0.04809036938006271
+        ]
+      ],
+      "outside_face_estimate": "Local white-visual vertex bound within head-radius height band; fallback nominal wall if empty",
+      "nearby_white_vertices": 49,
+      "physical_fit_or_clearance_verified": false
+    }
+  }
+}

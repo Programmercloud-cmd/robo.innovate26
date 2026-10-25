@@ -1,0 +1,80 @@
+{
+  "schema": "exposed-tip-model-v1",
+  "stl": "experiments/final_workcell_20261024/end_effector/assets/franka_research3_gripper.stl",
+  "stl_sha256": "30c3e47142dce9ba82ec46edf42f1dc2825d620d23bad0a95ce1e2de902b752d",
+  "body_min_cad_x_mm": -9.5,
+  "source_cut_epsilon_mm": 1e-05,
+  "body_collision": {
+    "approximation": "convexHull",
+    "hullVertexLimit": 255,
+    "minThickness": 0.0001
+  },
+  "schema_float_atol_m": 1e-10,
+  "head_sides": 32,
+  "scene_fingertip_spec": {
+    "asset": "assets/franka_research3_gripper.stl",
+    "sha256": "30c3e47142dce9ba82ec46edf42f1dc2825d620d23bad0a95ce1e2de902b752d",
+    "assumed_stl_unit_m": 0.001,
+    "distal_tip_finger_z_m": 0.06164037066757202,
+    "status": "User-confirmed orientation and proximal-edge alignment. Nominal backplane/width placement; STL millimeters assumed. Simple rigid visual screw attachment, no form-fit/contact certification.",
+    "width_center_cad_y_mm": -15.5,
+    "stock_pad_backplane_abs_finger_y_m": 0.01090669,
+    "body_mount_cad_x_mm": -9.5,
+    "boss_front_cad_x_mm": -11.0,
+    "boss_axis_center_cad_yz_mm": [
+      -15.5000023,
+      18.60000584
+    ],
+    "taper_distal_cad_z_mm": 2.0500054359436035,
+    "broad_end_cad_z_mm": 27.600006103515625,
+    "orientation": "User-confirmed: tapered lowCADZ distal; boss faces support; broadgripface inward. ProperRz(+/-90)*Ry180, no reflection.",
+    "outside_screw_visual": {
+      "head_radius_m": 0.003,
+      "outward_protrusion_m": 0.002,
+      "fallback_wall_thickness_m": 0.002,
+      "status": "Simple round visual screw head rigidly parented to each finger. Diameter6mm/protrusion2mm estimated; no shaft, threads, form-fit, collision or mass model."
+    },
+    "stock_pad_proximal_finger_z_m": 0.03609037,
+    "height_anchor": "User-confirmed same proximal/top edge as stock pads; longer body extends distally below metal. Boss and outside head share the resulting axis height."
+  },
+  "metal_distal_finger_z_m": 0.05385756120085716,
+  "coupon_proximal_beyond_metal_m": 0.0005,
+  "minimum_body_side_overlap_m": 0.007,
+  "reserved_hand_x_offset_m": 0.002,
+  "query": {
+    "grid_hand_x_offsets_m": [
+      -0.017,
+      -0.014,
+      -0.01,
+      -0.006,
+      -0.002,
+      0,
+      0.004,
+      0.008,
+      0.012,
+      0.017
+    ],
+    "grid_z_levels": 9,
+    "end_margin_m": 0.001,
+    "ray_padding_m": 0.02,
+    "distal_z_m": [
+      0.05485756120085716,
+      0.06064037066757202
+    ],
+    "maximum_clear_firsthit_error_m": 0.0001,
+    "maximum_bounds_error_m": 0.0001,
+    "edge_clearance_m": 0.0001,
+    "grazing_abs_dot_min": 0.1
+  },
+  "intent": "One exposed source-body hull; buried attachment boss omitted and attachment void filled under user simplification. No full-STL/bore fidelity claim. Head32-gon is a collision envelope for existing visual Cylinder.",
+  "head_reference_sha256": "e54947b70218a21f006701c6c9b503767d0f05f9c133e0c5d5d5d8ea1ee2c6fd",
+  "maximum_source_unique_body_points": 630,
+  "canonical_hash_quantization": {
+    "vertex_m": 1e-07,
+    "unit_normal": 1e-06,
+    "plane_offset_m": 1e-07
+  },
+  "visual_registration_readback_m": 1e-08,
+  "white_geometry_readback_m": 1e-09,
+  "readback_tolerance_reason": "Known Gf float32 scale/coordinate roundtrip only; all100um geometry and50um contact criteria unchanged."
+}

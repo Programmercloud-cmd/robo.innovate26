@@ -17,7 +17,7 @@ def save(path,value):
     Path(path).write_text(json.dumps(value,indent=2,allow_nan=False)+'\n')
 
 
-def main():
+def main(adapter=None):
     parser=argparse.ArgumentParser(add_help=False)
     parser.add_argument('--contact-case',choices=('B0_stock',),default='B0_stock')
     parser.add_argument('--proxy-stage',choices=('G','D','R'))
@@ -27,7 +27,7 @@ def main():
     sys.argv=[sys.argv[0],*remaining,'--output',str(output)]
     if os.environ.get('ROBO_PUEUE_JOB')!='1' or os.environ.get('OSQP_EPSILON')!='1e-4':
         raise RuntimeError('Contact baseline requires default Pueue and explicit epsilon1e-4')
-    protocol=json.loads((HERE/'protocol.json').read_text())
+    protocol=json.loads((adapter.protocol_path if adapter else HERE/'protocol.json').read_text())
     proxy_config=proxy_reference=approved_proxy=None;proxy_artifact={}
     if args.proxy_stage:
         if hashlib.sha256((HERE/'proxy_config.json').read_bytes()).hexdigest()!=protocol['proxy_config_sha256']:raise RuntimeError('Frozen R3 proxy configuration changed')
@@ -55,6 +55,7 @@ def main():
         env=original_factory(cfg,capture=capture)
         before=env.sim.physx.to_dict();env.sim.physx.solver_type=0
         if env.sim.physx.to_dict()!={**before,'solver_type':0}:raise RuntimeError('Only PGS scene change allowed')
+        if adapter:adapter.configure(env)
         env.scene.contact_coupon=RigidObjectCfg(prim_path=BODIES['coupon'],
             spawn=BrickPartCfg(dimensions=(4,2,3),color=(185,145,100),rigid_props=RigidBodyPropertiesCfg(
                 kinematic_enabled=True,disable_gravity=True,solver_position_iteration_count=32,solver_velocity_iteration_count=4)),
@@ -75,7 +76,10 @@ def main():
         original_scene(result,cfg)
         if result['robot'].is_initialized:raise RuntimeError('Finger opening must be configured BEFORE physics play')
         stage=get_current_stage()
-        if args.proxy_stage:
+        if adapter:
+            adapter.author(stage,result,output)
+            measured=audit(stage,output/'geometry.json')
+        elif args.proxy_stage:
             from proxy import author_and_query
             audit(stage,output/'geometry_stock_before_proxy.json')
             proxy_artifact.update(author_and_query(stage,ROOT,proxy_config,output,approved_proxy))
@@ -145,6 +149,7 @@ def main():
             raise RuntimeError('Actual FK/pad opening fails declared near-contact clearance')
         low=np.maximum(pad['left'][0],pad['right'][0]);high=np.minimum(pad['left'][1],pad['right'][1])
         center=np.array([(low[0]+high[0])/2,(left_plane+right_plane)/2,(low[2]+high[2])/2])
+        if adapter:center=adapter.fixture_center(relative,center)
         if args.proxy_stage:
             center=np.asarray(proxy_reference['coupon_center_hand_m'],float).copy()
             if args.proxy_stage=='R':center[0]+=.002
@@ -152,14 +157,16 @@ def main():
             if np.max(abs(np.asarray(clearances)-protocol['coupon']['initial_side_clearance_m']))>protocol['coupon']['clearance_tolerance_m']:
                 raise RuntimeError('Fixed B0 center does not have the declared new-pad clearance')
         coupon_lo=center+[-.016,-.008,-.0048];coupon_hi=center+[.016,.008,.0065]
-        if high[0]<=low[0] or coupon_lo[2]<low[2] or coupon_hi[2]>high[2]:raise RuntimeError('Coupon does not fit common pad contact band')
+        if adapter:
+            adapter.check_fixture(low,high,coupon_lo,coupon_hi)
+        elif high[0]<=low[0] or coupon_lo[2]<low[2] or coupon_hi[2]>high[2]:raise RuntimeError('Coupon does not fit common pad contact band')
         for label in ('left','right'):
             for collider,lo,hi in boxes[label]:
                 if not collider['is_pad'] and np.all(hi>=coupon_lo-.00015) and np.all(lo<=coupon_hi+.00015):
                     raise RuntimeError('Coupon/white-collider initial AABB overlap ambiguous: '+collider['path'])
         root_hand=center+[0,0,-.0048];world=hand_usd.Transform(Gf.Vec3d(*root_hand))
         pose=[*[float(v) for v in world],*[float(v) for v in hand_pose[3:7]]]
-        if args.proxy_stage!='G':
+        if args.proxy_stage!='G' and not (adapter and adapter.phase=='G'):
             scene['contact_coupon'].write_root_state_to_sim(torch.tensor([[*pose,*([0.]*6)]],dtype=torch.float32,device=robot.device))
             set_brick_part_xform(stage.GetPrimAtPath(BODIES['coupon']),pose[:3],pose[3:])
         coupon_colliders=[]
@@ -195,6 +202,9 @@ def main():
                 ('masses','get_masses'),('inertias','get_inertias'),('coms','get_coms'),
                 ('stiffnesses','get_dof_stiffnesses'),('dampings','get_dof_dampings'),('effort_limits','get_dof_max_forces'))}
         initial_props=robot_properties();q0=robot.data.joint_pos[0].cpu().numpy().copy()
+        if adapter:
+            adapter.initial(context,initial_props,geometry_result,center)
+            if adapter.phase=='G':return
         nominal_command=robot.data.default_joint_pos[0].cpu().numpy().copy();command=nominal_command.copy()
         if np.max(abs(q0[finger_ids]-[opening['left'],opening['right']]))>5e-5:raise RuntimeError('Initial finger q readback differs')
         if np.max(abs(np.asarray(initial_props['stiffnesses'])[0,finger_ids]-2000))>1e-6 or np.max(abs(np.asarray(initial_props['dampings'])[0,finger_ids]-100))>1e-6 or np.max(abs(np.asarray(initial_props['effort_limits'])[0,finger_ids]-15))>1e-6:
@@ -250,6 +260,7 @@ def main():
                 approved_G_geometry_sha256=hashlib.sha256(args.approved_proxy.read_bytes()).hexdigest(),
                 own_cooked_hashes={label:proxy_artifact['tips'][label]['canonical_sha256'] for label in ('left','right')})
         metadata['coupon_collision_geometry']=coupon_colliders
+        if adapter:metadata.update(adapter.metadata())
         metadata['coupon_collision_limit']='Native nominal body box plus full-footprint top slab, not individual-stud collision fidelity'
         metadata['fixture_geometry']['initial_clearance_per_side_m']={'left':clearance,'right':clearance}
         if metadata['initial_native_thresholds']!=protocol['native_breakage'] or metadata['native_assembly_initial']!=protocol['native_assembly']:
