@@ -32,3 +32,41 @@ python3 experiments/brick_material_runtime_20261025/submit.py
 The helper and new wrapper are copied into a stable snapshot; older source and
 readback artifacts are pinned. Shared environments and the BrickSim source are
 unchanged.
+
+
+## Result — startup values verified by separate saved-data adjudication
+
+Job **1828** (source `1955636`) captured the expected material rows and passed
+all runtime comparisons, but its original audit **failed** three metadata
+oracle checks. USD inserted `MaterialBindingAPI` before the existing API, and
+the new Scope exposed its built-in empty `proxyPrim` relationship. That failed
+audit is preserved unchanged.
+
+The separately reviewed semantic correction permits only that one API insertion
+while retaining all prior APIs/order, and only that new Scope's empty built-in
+relationship. Extra, duplicate or missing APIs and other/nonempty relationships
+remain failures. Job **1829** (source `85ffe4c`) re-audits the pinned saved JSON
+with no simulator rerun; all original input hashes match before and after.
+All **75 contract checks and 15 runtime comparisons** pass.
+
+| Exact one-body runtime readback | Material triples, unordered |
+|---|---|
+| Previous 1823 coupon | `[0.5, 0.5, 0]`, `[0.5, 0.5, 0]` |
+| Corrected coupon at startup | `[0.5, 0.4, 0.1]`, `[1, 0.8, 0.2]` |
+| Fingers / all contact and rest offsets | Unchanged from 1823 |
+
+Values above are rounded for display; raw float32 values are retained. Row-to-
+Body/Top assignment remains UNKNOWN, as does effective pair traction. Source
+301 parts / 930 connections, coupon singleton / zero connections, state, fixture,
+properties and settings are unchanged. Inherited initialization remains; no
+postassembly measured trial steps, closure or lift occurred.
+
+Full scheduler costs are **14.646749434 s** for 1828 and **0.538284444 s** for
+1829. The retained aggregate is **2698.130616356 / 2800 s**. This verifies the
+isolated coupon's startup configuration, not retention or global workcell
+adoption. Original grasp failures and the three-round stopping decision remain.
+
+Artifacts: [original failed audit](artifacts/original_evaluation.json),
+[separate adjudication](artifacts/adjudication_evaluation.json),
+[raw readback](artifacts/readback.json), [authoring delta](artifacts/binding_authoring.json),
+and [compact result/provenance](results.json).

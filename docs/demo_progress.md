@@ -49,8 +49,12 @@ Source review localized the known default-material discrepancy to missing native
 physics-material schemas/bindings. An opt-in authoring correction now copies the
 already declared Body/Top coefficients onto bound physics materials. Pure-USD
 job 1827 passes binding/preservation/reload and eight rejection cases in 0.430 s.
-It changes no active workcell or shared native code and establishes no PhysX or
-retention result. See [scope and artifacts](../experiments/brick_material_binding_20261025/README.md).
+It changes no active workcell or shared native code. Startup readback1828 and
+separate saved-data adjudication1829 now verify the isolated coupon's unordered
+material rows with all audited state/properties unchanged. The original1828
+metadata-oracle failure is preserved. No pair traction or retention result follows.
+See the [authoring check](../experiments/brick_material_binding_20261025/README.md)
+and [startup evidence with both audits](../experiments/brick_material_runtime_20261025/README.md).
 
 ## Stage 1: ordinary candidate/mock interface smoke passed; coverage remains limited
 
@@ -1190,3 +1194,23 @@ budget. The closed retention ledger remains 2682.945582478/2800 s. Source/model
 analysis still needs a physical bridge between Desk width, actual pad gap and
 gripping depth before more contact physics. See
 [handoff result and artifacts](../experiments/stage1_handoff_20261025/README.md).
+
+
+## Coupon material runtime check — startup values verified, no new grasp trial
+
+Startup-only1828 applies the opt-in declared-material helper only to an isolated
+coupon using the immutable1822 initializer and1823 baseline. Expected unordered
+rows `[.5,.4,.1]` / `[1,.8,.2]` are returned; fingers/offsets/rest and all audited
+state/properties/native inventory remain unchanged. The original audit remains
+FAILED on API-insertion order and the new Scope's empty built-in relationship.
+
+Separate saved-JSON-only adjudication1829 corrects precisely those metadata
+semantics, preserving all other criteria and all original inputs. Its75 contract
+checks and15 runtime comparisons pass. No simulator rerun or physical tolerance
+change occurred. Collider-row identity and pair traction remain UNKNOWN; this
+is not retention, grasp, hardware equivalence or global model adoption.
+
+Full costs14.646749434s +.538284444s bring the retained ledger to
+2698.130616356/2800s. No fourth fixture trial follows. The remaining grasp-width/
+depth mapping question is unresolved. See
+[readbacks, both audits and provenance](../experiments/brick_material_runtime_20261025/README.md).
