@@ -1,0 +1,356 @@
+{
+  "scope": "Nominal configured-EE first targets in robot_base_O",
+  "slots": [
+    {
+      "id": "b_0_0_0",
+      "destination": "B",
+      "count": 0,
+      "n": 0,
+      "m": 0,
+      "k": 0,
+      "reference_frame": "robot_base_O",
+      "pose_frame": "configured_end_effector_EE",
+      "position_m": [
+        0.4896472096443176,
+        -0.34887152910232544,
+        -0.003973287487030033
+      ],
+      "quaternion_wxyz": [
+        0.0,
+        0.7011338940361386,
+        0.7130296365746103,
+        0.0
+      ],
+      "T_base_EE": [
+        [
+          -0.01682252526744155,
+          0.9998584913094585,
+          0.0,
+          0.4896472096443176
+        ],
+        [
+          0.9998584913094585,
+          0.01682252526744155,
+          0.0,
+          -0.34887152910232544
+        ],
+        [
+          -0.0,
+          0.0,
+          -1.0,
+          -0.003973287487030033
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "O_T_EE": [
+        -0.01682252526744155,
+        0.9998584913094585,
+        -0.0,
+        0.0,
+        0.9998584913094585,
+        0.01682252526744155,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.4896472096443176,
+        -0.34887152910232544,
+        -0.003973287487030033,
+        1.0
+      ],
+      "long_axis_base": [
+        0.01682252526744155,
+        -0.9998584913094585,
+        0.0
+      ],
+      "across_axis_base": [
+        -0.9998584913094585,
+        -0.016822525267442115,
+        0.0
+      ],
+      "footprint_corners_base_m": [
+        [
+          0.49737691717051424,
+          -0.3327392130392346,
+          -0.003973287487030033
+        ],
+        [
+          0.49791523797907233,
+          -0.36473468476113724,
+          -0.003973287487030033
+        ],
+        [
+          0.481917502118121,
+          -0.3650038451654163,
+          -0.003973287487030033
+        ],
+        [
+          0.4813791813095629,
+          -0.33300837344351364,
+          -0.003973287487030033
+        ]
+      ],
+      "footprint_center_base_m": [
+        0.44219232287002175,
+        -0.38167448203706533,
+        -0.003973287487030033
+      ],
+      "footprint_center_scope": "Common whole-layer center; individual nominal brick center is position_m",
+      "footprint_scope": "Nominal32x16mm stud envelope at EE target XY; not measured held-brick geometry",
+      "pitch_m": 0.032,
+      "body_height_m": 0.009600000000000001,
+      "assumptions": {
+        "alternating_layers_share_center": "USER_CONFIRMED",
+        "cross_ridge_gap_two_studs": "USER_CONFIRMED",
+        "anchors_are_first_brick_EE_centers": "ASSUMED_UNCONFIRMED",
+        "physical_held_brick_T_EE": "UNVERIFIED",
+        "physical_mount_registration": "UNVERIFIED"
+      },
+      "target_scope": "Nominal configured EE target only",
+      "hardware_authorized": false
+    },
+    {
+      "id": "c_0_0_0",
+      "destination": "C",
+      "count": 0,
+      "n": 0,
+      "m": 0,
+      "k": 0,
+      "reference_frame": "robot_base_O",
+      "pose_frame": "configured_end_effector_EE",
+      "position_m": [
+        0.2978522479534149,
+        -0.35083502531051636,
+        -0.003973287487030033
+      ],
+      "quaternion_wxyz": [
+        0.0,
+        0.7011338940361386,
+        0.7130296365746103,
+        0.0
+      ],
+      "T_base_EE": [
+        [
+          -0.01682252526744155,
+          0.9998584913094585,
+          0.0,
+          0.2978522479534149
+        ],
+        [
+          0.9998584913094585,
+          0.01682252526744155,
+          0.0,
+          -0.35083502531051636
+        ],
+        [
+          -0.0,
+          0.0,
+          -1.0,
+          -0.003973287487030033
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "O_T_EE": [
+        -0.01682252526744155,
+        0.9998584913094585,
+        -0.0,
+        0.0,
+        0.9998584913094585,
+        0.01682252526744155,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.2978522479534149,
+        -0.35083502531051636,
+        -0.003973287487030033,
+        1.0
+      ],
+      "long_axis_base": [
+        0.01682252526744155,
+        -0.9998584913094585,
+        0.0
+      ],
+      "across_axis_base": [
+        -0.9998584913094585,
+        -0.016822525267442115,
+        0.0
+      ],
+      "footprint_corners_base_m": [
+        [
+          0.30558195547961153,
+          -0.3347027092474255,
+          -0.003973287487030033
+        ],
+        [
+          0.3061202762881696,
+          -0.36669818096932816,
+          -0.003973287487030033
+        ],
+        [
+          0.2901225404272183,
+          -0.3669673413736072,
+          -0.003973287487030033
+        ],
+        [
+          0.2895842196186602,
+          -0.33497186965170456,
+          -0.003973287487030033
+        ]
+      ],
+      "footprint_center_base_m": [
+        0.25039736117911904,
+        -0.38363797824525625,
+        -0.003973287487030033
+      ],
+      "footprint_center_scope": "Common whole-layer center; individual nominal brick center is position_m",
+      "footprint_scope": "Nominal32x16mm stud envelope at EE target XY; not measured held-brick geometry",
+      "pitch_m": 0.032,
+      "body_height_m": 0.009600000000000001,
+      "assumptions": {
+        "alternating_layers_share_center": "USER_CONFIRMED",
+        "cross_ridge_gap_two_studs": "USER_CONFIRMED",
+        "anchors_are_first_brick_EE_centers": "ASSUMED_UNCONFIRMED",
+        "physical_held_brick_T_EE": "UNVERIFIED",
+        "physical_mount_registration": "UNVERIFIED"
+      },
+      "target_scope": "Nominal configured EE target only",
+      "hardware_authorized": false
+    },
+    {
+      "id": "d_0_0_0",
+      "destination": "D",
+      "count": 0,
+      "n": 0,
+      "m": 0,
+      "k": 0,
+      "reference_frame": "robot_base_O",
+      "pose_frame": "configured_end_effector_EE",
+      "position_m": [
+        0.3013238310813904,
+        -0.5432363748550415,
+        -0.003973287487030033
+      ],
+      "quaternion_wxyz": [
+        0.0,
+        0.7011338940361386,
+        0.7130296365746103,
+        0.0
+      ],
+      "T_base_EE": [
+        [
+          -0.01682252526744155,
+          0.9998584913094585,
+          0.0,
+          0.3013238310813904
+        ],
+        [
+          0.9998584913094585,
+          0.01682252526744155,
+          0.0,
+          -0.5432363748550415
+        ],
+        [
+          -0.0,
+          0.0,
+          -1.0,
+          -0.003973287487030033
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "O_T_EE": [
+        -0.01682252526744155,
+        0.9998584913094585,
+        -0.0,
+        0.0,
+        0.9998584913094585,
+        0.01682252526744155,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.3013238310813904,
+        -0.5432363748550415,
+        -0.003973287487030033,
+        1.0
+      ],
+      "long_axis_base": [
+        0.01682252526744155,
+        -0.9998584913094585,
+        0.0
+      ],
+      "across_axis_base": [
+        -0.9998584913094585,
+        -0.016822525267442115,
+        0.0
+      ],
+      "footprint_corners_base_m": [
+        [
+          0.309053538607587,
+          -0.5271040587919507,
+          -0.003973287487030033
+        ],
+        [
+          0.3095918594161451,
+          -0.5590995305138533,
+          -0.003973287487030033
+        ],
+        [
+          0.29359412355519376,
+          -0.5593686909181323,
+          -0.003973287487030033
+        ],
+        [
+          0.2930558027466357,
+          -0.5273732191962297,
+          -0.003973287487030033
+        ]
+      ],
+      "footprint_center_base_m": [
+        0.2538689443070945,
+        -0.5760393277897814,
+        -0.003973287487030033
+      ],
+      "footprint_center_scope": "Common whole-layer center; individual nominal brick center is position_m",
+      "footprint_scope": "Nominal32x16mm stud envelope at EE target XY; not measured held-brick geometry",
+      "pitch_m": 0.032,
+      "body_height_m": 0.009600000000000001,
+      "assumptions": {
+        "alternating_layers_share_center": "USER_CONFIRMED",
+        "cross_ridge_gap_two_studs": "USER_CONFIRMED",
+        "anchors_are_first_brick_EE_centers": "ASSUMED_UNCONFIRMED",
+        "physical_held_brick_T_EE": "UNVERIFIED",
+        "physical_mount_registration": "UNVERIFIED"
+      },
+      "target_scope": "Nominal configured EE target only",
+      "hardware_authorized": false
+    }
+  ],
+  "runtime_versions": {
+    "python": "3.11.15",
+    "numpy": "1.26.0",
+    "opencv": "4.10.0",
+    "scipy": "1.15.3"
+  }
+}

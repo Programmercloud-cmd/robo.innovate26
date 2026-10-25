@@ -42,7 +42,10 @@ alternating orientation, and `destination_n_m_k` labels. Requested accepted
 colors route to B; remaining accepted colors map consistently to C/D. Only
 explicit caller confirmation advances placement counts. The legacy truth-based
 SortPlan, raw taught poses and controllers remain unchanged. These nominal
-base-frame references do not establish native insertion or hardware alignment.
+base-frame references do not establish native insertion or hardware alignment. Saved-output audit
+1833 checks all 900 slots, 63 routes, 42 preferences and 7 acknowledgment examples;
+1832's original one-ULP metadata failure is preserved. Production coordinates
+are unchanged between audits. See the linked results and raw orientation review.
 
 Local pregrasp RGB color classification has limited saved-render evidence.
 The current sensor-selected runner has an opt-in final-selection color hook;

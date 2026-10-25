@@ -1,0 +1,47 @@
+{
+  "scope": "Nominal B/C/D slot geometry, rotations, color routing and caller-confirmed count state",
+  "jobs": [
+    {
+      "id": 1832,
+      "source_commit": "f3b5542",
+      "snapshot": "runs/20261025T224030.750820Z-destination-plan",
+      "result": "Failed 1; sole exact body-height metadata check",
+      "full_scheduler_seconds": 0.521450992
+    },
+    {
+      "id": 1833,
+      "source_commit": "959633d",
+      "snapshot": "runs/20261025T224213.826214Z-destination-saved-audit",
+      "result": "Success; saved-output numerical-metadata adjudication only",
+      "full_scheduler_seconds": 0.516098961
+    }
+  ],
+  "total_scheduler_seconds": 1.037549953,
+  "export_regenerated_for_1833": false,
+  "source_export_sha256": "b80e993f7358c186dfca29e25b48dafd2c9c0e46b70a061969f7268098143bb8",
+  "slots": 900,
+  "slots_per_destination": 300,
+  "layers_data_capacity_per_destination": 25,
+  "routes_checked": 63,
+  "preferences_checked": 42,
+  "caller_acknowledgments_checked": 7,
+  "simulation_runs": 0,
+  "hardware_commands": 0,
+  "physical_placement_or_attachment_verified": false,
+  "prior_retention_budgets_unchanged": true,
+  "runtime_versions": {
+    "python": "3.11.15",
+    "numpy": "1.26.0",
+    "opencv": "4.10.0",
+    "scipy": "1.15.3"
+  },
+  "artifact_sha256": {
+    "destinations.csv": "09201b0f1a4aaa6e0a6fa9231be034bd363372574be459e37dcb858fd38de2dd",
+    "destinations.json": "b80e993f7358c186dfca29e25b48dafd2c9c0e46b70a061969f7268098143bb8",
+    "evaluation_corrected_1833.json": "ccafb407b39761d48ae2ffec3683e73bf270e91ffbbe398594be63ca3c0174db",
+    "evaluation_original_1832.json": "819dca7fdaa150f012dba16ef750e8ccc0cd0ec57de812d72002408b0fc9007d",
+    "first_slots.json": "dd25a61ad60753ff3ea0199ec78d0a440b242017c39ef635181eef47a6c826ae",
+    "layers_panel.png": "954e0e8caf9e374b389f415f83d2990c52a1da03d79c2c705fe35baf9add0165",
+    "orientation_review.json": "3715ca5eb1123186de9750694abe55607727f522da8a3eab674127d6b06a5839"
+  }
+}

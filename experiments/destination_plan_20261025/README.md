@@ -109,3 +109,54 @@ This uses the original 1832 export without regeneration, in a separate default
 Pueue job with a 10 s timeout plus 2 s kill grace. The original failed job's
 cost and the later audit are reported separately. No new layout variant or
 physical tolerance is introduced.
+
+## Result — nominal planning contract passes
+
+The saved-output audit **1833** passes all **900 slots**, **63 routing cases**,
+**42 mixing preferences** and **7 caller-confirmation examples**. The first
+export/audit **1832** remains a failed original metadata audit. The exact export
+SHA is unchanged between audits; no coordinates or rotations were regenerated.
+Full scheduled durations: 1832 **0.521 s**, 1833 **0.516 s**, total **1.038 s**.
+Sources: `f3b5542` for export, `959633d` for the numerical-metadata correction.
+
+### Rechecked taught-pose orientations
+
+| Old point | Nominal slot suggested by XY / anchor | Rotation change | XY residual | Basis |
+|---|---|---:|---:|---|
+| #8 | `b_0_1_1` | 2.61° | 0.730 mm | XY hypothesis |
+| #9 | `b_1_0_0` | 91.87° | 0.806 mm | XY hypothesis |
+| #10 | `b_0_0_1` | 2.57° | 0.005 mm | XY hypothesis |
+| #11 | `b_0_0_0` | 91.87° | 0.000 mm | Operator anchor |
+| #12 | `b_0_1_0` | 91.86° | 0.651 mm | XY hypothesis |
+| #13 | `b_1_0_1` | 2.54° | 0.498 mm | XY hypothesis |
+| #14 | `c_0_0_0` | 92.20° | 0.000 mm | Operator anchor |
+| #15 | `d_0_0_0` | 92.28° | 0.000 mm | Operator anchor |
+
+Thus #9/#11/#12/#14/#15 require roughly a quarter turn in the nominal layout;
+#8/#10/#13 lie near the alternating orientation and need only the smaller grid/
+vertical-alignment adjustment. For the non-anchor points, XY proximity is a
+diagnostic hypothesis; it does not validate their old layer or recorded height.
+None of the original taught records is overwritten.
+
+### First nominal targets
+
+| Target | X (mm) | Y (mm) | Configured EE Z (mm, robot base) |
+|---|---:|---:|---:|
+| `b_0_0_0` | 489.647 | -348.872 | -3.973 |
+| `c_0_0_0` | 297.852 | -350.835 | -3.973 |
+| `d_0_0_0` | 301.324 | -543.236 | -3.973 |
+
+The negative nominal EE Z is a robot-base coordinate copied from the lowest
+input-layer reference, not a negative height above the plate. A held-brick
+transform and bounded insertion/completion method are still required.
+
+Artifacts: [all targets CSV](artifacts/destinations.csv),
+[full target/evidence JSON](artifacts/destinations.json),
+[layer schematic](artifacts/layers_panel.png),
+[orientation review](artifacts/orientation_review.json),
+[corrected saved-output audit](artifacts/evaluation_corrected_1833.json),
+[original failed audit](artifacts/evaluation_original_1832.json),
+and [job/version/hash record](results.json).
+
+Independent evaluation and review accept these limited data results. No
+simulation, native attachment, manipulation or physical readiness is established.
