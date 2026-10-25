@@ -70,26 +70,30 @@
     {
       "id": "board_marker",
       "value_m": 0.02,
-      "status": "pending_rounding_or_actual_width_confirmation",
-      "question": "20mm actual marker width or rounded nominal22mm?"
+      "status": "hand_measurement_cannot_distinguish_20_from_22mm",
+      "question": "20mm actual marker width or rounded nominal22mm?",
+      "application": "Retain prior nominal22mm specification; 2cm annotation is approximate, with user unsure about1\u20132mm. No print rescale or calibrated width claim."
     },
     {
       "id": "plate_to_board_gap",
       "value_m": 0.116,
-      "status": "pending_endpoint_confirmation",
-      "question": "Gray outerplate edge to printedpattern edge, or tape/paper edges?"
+      "status": "user_boundary_references_clarified",
+      "question": "Gray outerplate edge to printedpattern edge, or tape/paper edges?",
+      "interpretation": "11.6cm physical plate boundary (not tape/paper boundary) to printed black-square pattern boundary, not A4 paper edge. Keep approximate hand-measured status."
     },
     {
       "id": "plate_to_base",
       "value_m": 0.215,
-      "status": "pending_endpoint_confirmation",
-      "question": "Whiteplate outeredge to nearestbasehousing edge versus rotationaxis center?"
+      "status": "user_reference_feature_clarified_root_mapping_pending",
+      "question": "Whiteplate outeredge to nearestbasehousing edge versus rotationaxis center?",
+      "interpretation": "21.5cm along a table-plane line perpendicular to the white plate edge, to the fixed FR3 front-center housing reference mark. This is a housing-face mark, not an asserted rotation-axis position."
     },
     {
       "id": "board_to_base",
       "value_m": 0.26,
-      "status": "pending_endpoint_confirmation",
-      "question": "Printedpattern loweredge to which fixedbasehousing point/axis?"
+      "status": "user_reference_feature_clarified_root_mapping_pending",
+      "question": "Printedpattern loweredge to which fixedbasehousing point/axis?",
+      "interpretation": "26cm along a line perpendicular to the ChArUco squares, from printed-pattern boundary toward the furthest protruding/widest fixed-base lobe facing the board; not a circular-base center/radius assumption."
     },
     {
       "id": "bowl_horizontal_image_offset",
@@ -106,14 +110,22 @@
     {
       "id": "fixed_camera_horizontal_offset",
       "value_m": 0.19,
-      "status": "pending_camera_identity_and_endpoint_confirmation",
-      "question": "Whichcamera? Whiteplate outeredge to opticalcenter verticalprojection? Which direction?"
+      "status": "perpendicular_offset_to_fixed_C920_clarified",
+      "question": "Whichcamera? Whiteplate outeredge to opticalcenter verticalprojection? Which direction?",
+      "interpretation": "A THIRD fixed Logitech C920, separate from wrist D435i and wrist C920. 19cm on tabletop perpendicular from white plate edge toward table edge to camera position/projection. Third (lateral) coordinate to be provided; optical-center offset remains unmeasured."
     },
     {
       "id": "fixed_camera_height",
       "value_m": 0.44,
-      "status": "pending_camera_identity_and_optical_center_confirmation",
-      "question": "Opticalcenter above tabletop, or housing/support height?"
+      "status": "housing_center_height_clarified_optical_frame_unmeasured",
+      "question": "Opticalcenter above tabletop, or housing/support height?",
+      "interpretation": "44cm vertical above tabletop to approximately center of front C920 housing. Not measured optical-center extrinsics or optical-axis direction."
+    },
+    {
+      "id": "fixed_camera_lateral_offset",
+      "value_m": 0.17,
+      "status": "user_edge_reference_clarified",
+      "interpretation": "In tabletop plane, from whiteplate bowl-facing edge (farthest from robotbase) across toward robot side to fixed C920 housing/camera axis. Sign inferred consistently with supplied photograph; no vertical17cm interpretation."
     }
   ],
   "applied_now": [
@@ -121,12 +133,11 @@
     "yellow_divider_width"
   ],
   "pending": [
-    "robot/base endpoint geometry",
-    "camera identity/opticalcenter/heading",
-    "board gap/marker rounding",
-    "bowl endpoint interpretation"
+    "Asset-local identification/offset of FR3 front-center mark and board-facing outerlobe to infer approximate base translation",
+    "Fixed C920 viewing direction/intrinsics and housing-to-optical-center transform remain unmeasured",
+    "Bowl13/16cm endpoint interpretation remains tentative"
   ],
-  "execution_state": "Initializer source reviewed but not submitted; execution_authorized remainsfalse until scene version decided. Historical renders/benchmarks preserved.",
+  "execution_state": "Physical measurement update remains separate from immutable1805 algorithmic benchmark. Bounded initializer1807 completed on that historical scene; no claim validates revised physical workcell.",
   "not_established": [
     "robot-frame calibration",
     "hand-eye extrinsics",
@@ -134,5 +145,27 @@
     "camera opticalaxis",
     "physicalgrasp/placement readiness"
   ],
-  "scene_version_note": "Tape boxes change rendered color/depth. Physical collision actors, native plate/brick geometry and conservative whole-stud working bounds are unchanged. Historical RGB-D belongs to the prior scene, not a fresh validation of these visuals."
+  "scene_version_note": "Tape boxes change rendered color/depth. Physical collision actors, native plate/brick geometry and conservative whole-stud working bounds are unchanged. Historical RGB-D belongs to the prior scene, not a fresh validation of these visuals.",
+  "clarification_source": "User prose reply2026-10-25 identifying front-center FR3 mark, base outerlobe, fixed THIRD C920, plate/pattern boundaries, and imprecise marker estimate.",
+  "fixed_C920_position_derivation": {
+    "frame": "TABLE: originwhiteplatecenter,+Xgrayplate,+Ybowl,+Zup",
+    "using_reported_250mm_plate_m": [
+      -0.315,
+      -0.045,
+      0.44
+    ],
+    "using_native_32x8mm_plate_m": [
+      -0.318,
+      -0.042,
+      0.44
+    ],
+    "formula": "X=-(plate_half_extent+0.19), Y=plate_half_extent-0.17, Z=0.44",
+    "report_rounded_m": [
+      -0.32,
+      -0.04,
+      0.44
+    ],
+    "reference": "Approximate center of front camera housing fromhandmeasurements, not calibrated optical center.",
+    "orientation": "Unmeasured; no calibrated extrinsic transform or C920depthstream established."
+  }
 }

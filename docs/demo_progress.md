@@ -767,3 +767,45 @@ frame transforms. Bowl13/16cm offsets retain tentative endpoint interpretation.
 The final-round initialization diagnostic source is independently reviewed,
 but no job is submitted and its execution flag remains false while the scene
 version is decided. No new simulation cost or manipulation credit is recorded.
+
+
+## Final visibility hypothesis and explicit simulation-only reassessment
+
+Job 1807 (source `decffbb`) runs on the immutable historical1805 scene, excluding
+new tape/measurement changes. One actual-FR3-USD kinematic solve reaches the fixed
+staging goal in 14 iterations. Independent nominal-FK agreement is 0.280um;
+derived/live hand agreement is 0.444um (synthetic consistency, not calibration).
+301 parts/930 native edges and zero post-native physics steps are confirmed.
+The full-clearance diagnostic still FAILS: 37,773 of 149,040 samples lack a free
+witness. All32 other checks pass; original full failure is preserved.
+
+This closes the three-round all-path ray-certificate approach. Total charged
+time is now1046.851 of the prospectively reviewed1800-second aggregate ceiling.
+No dynamic grasp has been attempted. The independent team accepts source review
+of one materially different, simulation-only finger-contact-guarded baseline:
+fresh3600-step matched control, then one conditional I attempt, with raw
+clearance remaining UNCERTIFIED_UNKNOWN. It is not a fourth visibility tweak,
+a passing old predecessor, unknown-as-free, or another improvement pool.
+
+All original physical/native/contact/pose/trajectory criteria remain unchanged.
+The two finger streams do not monitor all arm contacts; whole-arm collision
+safety remains unmeasured. An extraction pass would establish only that bounded
+simulation outcome. Online held identity remains separate and UNKNOWN blocks
+transfer. All source/model/force limits and prior costs are retained; no H,
+automatic retry or budget extension is authorized. No exploratory job has yet
+been submitted at this entry.
+
+## Physical measurement clarification
+
+21.5cm references the fixed FR3 front-center housing mark, and26cm the widest
+outer lobe facing the printed board. Neither is silently treated as the robot
+rotation axis. 11.6cm is a plate-to-printed-pattern boundary gap, not paper. The
+20mm marker annotation is too imprecise to supersede the prior22mm nominal.
+The third camera is a fixed C920, independent of both wrist cameras. Interpreting
+its17cm lateral distance from the whiteplate bowl-side edge across toward the
+robot side, the measured front-housing center is approximately TABLE
+(-.32,-.04,.44)m. The native256mm-plate calculation is(-.318,-.042,.44)m; rounded
+250mm dimensions give(-.315,-.045,.44)m. Those are arithmetic conventions, not
+submillimeter physical accuracy. Position metadata is recorded, while viewing
+direction, intrinsics and housing-to-optical transform remain unmeasured. No
+new third rendered sensor or physical depth stream is claimed.

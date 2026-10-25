@@ -4,7 +4,7 @@
   "baseline_source_commit": "efe9757",
   "scientific_protocol_sha256": "16ce8eb603e2d620c97b931c02dae43ed605060187d252a6873eb9d9a824d8ce",
   "maximum_improvement_rounds": 3,
-  "current_improvement_round": 2,
+  "current_improvement_round": 3,
   "rounds": [
     {
       "round": 1,
@@ -488,6 +488,76 @@
         ],
         "audit_sha256": "dafa7c83eb3b8410c5a9a2aa3514e605acf6356931933bb662ac137f6f3ed206"
       }
+    },
+    {
+      "round": 3,
+      "change": "One fixed pre-reset kinematic staging posture, unchanged full measured ray certificate.",
+      "job_id": 1807,
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T115521.846258Z-stage2-initialization-r3",
+      "source_commit": "decffbb",
+      "status": "FAILED_CLEARANCE_DIAGNOSTIC_POSE_AND_SOURCE_CHECKS_PASS",
+      "failed_checks": [
+        "clearance_all_nonself_have_positive_witness",
+        "unresolved_points_still_stop"
+      ],
+      "checks_passed": 32,
+      "check_count": 34,
+      "measured_post_native_physics_steps": 0,
+      "kinematic_metrics": {
+        "nominal_TCP_FK": {
+          "position_m": 2.8041670751234094e-07,
+          "angle_rad": 6.809031759975006e-07
+        },
+        "independent_goal_error": {
+          "position_m": 4.7963239029216665e-06,
+          "angle_rad": 7.913063792796194e-07
+        },
+        "q_max_error_rad": 4.0109017440670414e-08,
+        "PhysX_hand_vs_derived": {
+          "position_m": 4.443944664557609e-07,
+          "angle_rad": 7.977341898873167e-07
+        },
+        "USD_hand_vs_derived": {
+          "position_m": 4.4439446649571843e-07,
+          "angle_rad": 7.971773073134189e-07
+        },
+        "actual_q_TCP_vs_actual_proprio": {
+          "position_m": 4.614659027515028e-07,
+          "angle_rad": 8.150812584863735e-07
+        }
+      },
+      "depth_witnesses": {
+        "status": "INDEPENDENT_DEPTH_WITNESSES_CHECKED",
+        "views": {
+          "frame_0000": {
+            "depth_sha256": "535aa77a9e6e8ece2d0da6a6722843375d309fe00ce7f77597d1e976d9a500d5",
+            "image_size": [
+              1280,
+              960
+            ],
+            "measurement_time_s": 0.025000001303851604
+          },
+          "geometry_safety_wide_0000": {
+            "depth_sha256": "f67a1624fcc3280504f8b94da8b30fab457f54feee36d076a0d6a1d6d8b357f3",
+            "image_size": [
+              1280,
+              960
+            ],
+            "measurement_time_s": 0.025000001303851604
+          }
+        },
+        "samples": 149040,
+        "self_samples": 6277,
+        "close_only": 51466,
+        "wide_only": 1,
+        "both": 53523,
+        "no_free_view": 37773,
+        "scope": "Conditional frozen sampled-envelope depth evidence, not continuous-volume/global collision certification."
+      },
+      "actual_seconds": 20.30018373799976,
+      "cumulative_case_seconds": 1046.8512451360293,
+      "aggregate_limit_seconds": 1800,
+      "audit_sha256": "169b47ea5f8e7996700a915f73eaedcc31ed8769b8172477a315e942f287bde1"
     }
   ],
   "I": {
@@ -638,12 +708,21 @@
   },
   "round1_scientific_protocol_sha256": "0d902e26bc4f11eda1d668b5e92fc97a11f360ef40f26423247f86681a764471",
   "approach_reassessment": {
-    "status": "NO_FURTHER_TRIAL_AUTHORIZED_IN_THIS_POOL",
+    "status": "THREE_ROUND_ALL_PATH_RAY_CERTIFICATE_APPROACH_CLOSED_FAILED",
     "reason": "Wide view establishes additional witnesses but robot occlusion leaves all candidates unsupported. Last all-candidate capture181.135s exceeds remaining173.449s before motion/audit; do not spend round3 on blind extra camera or relax unknown into free.",
-    "spent_case_seconds": 1026.5510613980296,
-    "case_limit_seconds": 1200,
-    "third_improvement_round_used": false,
+    "spent_case_seconds": 1046.8512451360293,
+    "case_limit_seconds": 1800,
+    "third_improvement_round_used": true,
     "reserved_H_untouched": true,
-    "next_design_question": "Separate configured workcell transport from near-object observed corridor, or a declared visible pregrasp initialization with new matched control. Reassess before new physics and without resetting prior rounds/costs."
+    "next_design_question": "Explicit one-off simulation-only finger-contact-guarded feasibility admission. Does not call unknown free, reinterpret old failures, or create another tuning pool. Fresh matched control required."
+  },
+  "exploratory_followup": {
+    "source": "experiments/stage2_exploratory_20261025",
+    "status": "SOURCE_REVIEW_BEFORE_ANY_EXECUTION",
+    "one_fresh_control_then_one_conditional_I_pick": true,
+    "prior_cost_seconds": 1046.8512451360293,
+    "aggregate_ceiling_seconds": 1800,
+    "no_H_or_tuning_pool": true,
+    "scene": "Historical1805 scene only; new physical measurements not validated."
   }
 }
