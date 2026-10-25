@@ -1,9 +1,11 @@
 # Challenge 2 simulation demo: measured progress
 
-Updated 2026-10-25. **Latest result:** the PGS workaround passes the full300
-and reserved-removal 120-step native idle checks. Grasping/extraction, actual
-classification, transfer, insertion and repeated sorting remain unfinished.
-See the [final idle-round results](../experiments/stage2_pgs_20261025/README.md).
+Updated 2026-10-25. **Latest result:** the corrected exposed-tip model passes
+centered and reserved-offset lateral contact/reopen diagnostics (Pueue 1791 and
+1794). This is contact feedback evidence, not a dynamic grasp. Native extraction,
+actual classification, transfer, insertion and repeated sorting remain unfinished.
+See the [contact result ledger](../experiments/stage2_exposed_tip_20261025/results.json)
+and [source stability results](../experiments/stage2_pgs_20261025/README.md).
 
 The active objective is an incremental end-to-end **simulation**
 demo. No hardware motion, ROS deployment or physical readiness is authorized or
@@ -541,3 +543,41 @@ No tip-Z exclusion or tolerance change is proposed. Nominal fixture overlap
 is7.28mm; subtracting a sampled ray residual does not prove global support.
 A separate pinned authorization is under source review before one D and
 conditional reserved R; no new G, recook or improvement pool follows.
+
+
+## Corrected exposed tips: lateral contact and reserved offset
+
+The original global geometry G (1778) remains failed: two distal endcap rays
+retreat about 130 micrometers against the frozen 100 micrometer criterion.
+The independently reviewed side authorization retains that failure and permits
+only the unchanged model's flat inward-face contact, with both sensor directions
+checking body ownership, exclusion of metal/head contacts, plane distance and
+signed normal direction. No global collision fidelity is established.
+
+Invocation 1788 failed before simulator startup because argparse treated
+`--geometry` as an abbreviation of `--geometry-audit`. One reviewed line disables
+that abbreviation. A parser-only regression reproduces the failure and verifies
+D/R forwarding without importing Isaac. The failed invocation remains UNTESTED;
+its 0.879 seconds counts against D's original 180-second budget.
+
+| Case | Pueue | Steps | Positive contact / release step | Peak left / right normal load | Independent result |
+|---|---:|---:|---:|---:|---|
+| Centered D | 1791 | 102 | 50 / 72 | 0.235 / 0.238 N | Pass: 42 integrity and 27 contact checks |
+| Reserved, +2 mm hand X | 1794 | 100 | 49 / 70 | 0.224 / 0.225 N | Pass: 43 integrity and 27 contact checks |
+
+D, including its failed invocation, took 46.466 seconds; R took 39.078 seconds.
+The same model, cooked hashes, physical parameters and contact gates were used.
+D's 394 loaded-point observations include 197 reciprocal reports and are
+correlated, not independent trials. The source retains 300 bricks and 930 native
+connections. The coupon is kinematic and unconnected: this does not show dynamic
+holding, friction calibration, native extraction, insertion or hardware readiness.
+Generic static-renderer close flags and premeasurement kinematic velocity-write
+warnings remain recorded; contact markers, independent audit and cleanup status
+are reported separately rather than claiming those warnings were fixed.
+
+Reproduce the immutable invocation commands from each snapshot's `launch.sh`
+and `manifest.json`, using the default Pueue queue. Snapshot source is `e65db67`;
+D uses `runs/20261025T083717.764321Z-exposed-tip-D` and R uses
+`runs/20261025T084049.478049Z-exposed-tip-R`. Model, weight-free geometry and
+runtime identifiers are recorded in those manifests. Any future rerun needs its
+own declared purpose; these completed one-attempt cases are not a tuning pool.
