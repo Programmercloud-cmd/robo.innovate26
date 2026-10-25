@@ -45,6 +45,13 @@ original mass/inertia restored. Lateral contact/reopen diagnostics pass; global
 distal geometry validation and dynamic extraction do not. The passive Munich
 D435 registry does not calibrate either C920 or register the active workcell.
 
+Source review localized the known default-material discrepancy to missing native
+physics-material schemas/bindings. An opt-in authoring correction now copies the
+already declared Body/Top coefficients onto bound physics materials. Pure-USD
+job 1827 passes binding/preservation/reload and eight rejection cases in 0.430 s.
+It changes no active workcell or shared native code and establishes no PhysX or
+retention result. See [scope and artifacts](../experiments/brick_material_binding_20261025/README.md).
+
 ## Stage 1: ordinary candidate/mock interface smoke passed; coverage remains limited
 
 Frozen R3 is reused with configured synthetic camera calibration and a translated

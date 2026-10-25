@@ -31,3 +31,19 @@ python3 experiments/brick_material_binding_20261025/submit.py
 ```
 
 No dependencies are installed. Library paths are set only within this job.
+
+
+## Result
+
+Pueue **1827**, source `bf688ec`, passes in **0.430462881 s**.
+The installed USD library resolves both physics-purpose materials to the
+copied typed coefficients; all geometry/visual/mass/other-brick preservation,
+save/reload checks and **eight atomic rejection cases** pass. The evaluator
+and independent reviewer accept this limited result.
+
+See [report](artifacts/report.json), [corrected test stage](artifacts/corrected.usda)
+and [compact provenance](results.json). The stage is a small authoring test,
+not the workcell. The helper is ready as an opt-in correction; the active
+workcell is unchanged. Effective PhysX material values, retention and hardware
+equivalence remain unverified. No further test or grasp variant follows from
+this authoring pass alone.
