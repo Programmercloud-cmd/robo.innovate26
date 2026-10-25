@@ -26,7 +26,7 @@ explicit. No training or parameter tuning is performed.
 After source review and a clean experiment commit:
 
 ```bash
-python3 experiments/stage2_contact_screen_20261025/submit.py
+python3 experiments/stage2_contact_screen_20261025/submit.py --manifest-repair
 ```
 
 This submits one foreground default-Pueue CPU comparison, with a stable source
@@ -34,3 +34,10 @@ snapshot and pinned saved input files. The maximum is 15 active seconds above th
 retained 1666.880935217 seconds; there are zero new physics steps. Dependencies
 and shared environments stay unchanged. Reproduction commands, source hashes,
 job ID and results are retained in the snapshot and `results.json`.
+
+Original job 1816 stopped on a missing input pin: its frozen evaluator reads both
+finger buffers at any loaded frame, including empty opposite-side buffers. The
+manifest repair adds those 18 dependencies only. Candidate and evaluator hashes
+stay unchanged, with no completed scientific result to promote. The amended
+history permits original plus one explicitly reviewed repair, under the same
+prefix and cumulative clock, then refuses any additional submission.

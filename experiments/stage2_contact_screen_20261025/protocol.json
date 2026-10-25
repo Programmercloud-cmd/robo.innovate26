@@ -2,14 +2,14 @@
   "schema": "grip-plane-screen-counterfactual-v1",
   "execution_authorized": true,
   "scope": "ONE retrospective saved-data comparison, no simulation or policy installation",
-  "maximum_jobs": 1,
+  "maximum_jobs": 2,
   "maximum_active_seconds": 15,
   "physics_steps": 0,
-  "prior_case_seconds": 1666.8809352170235,
+  "prior_case_seconds": 1667.7541438010235,
   "aggregate_case_ceiling_seconds": 1800,
   "prior_supervisor": {
-    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/pipeline_supervisor.json",
-    "sha256": "e5d016181a17df66a3914ebf8d876fd528ca922545e24dfcd0cfe0c0b6f950fc"
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T142001.753603Z-stage2-contact-screen-comparison/pipeline_supervisor.json",
+    "sha256": "7a9be11e7a03fe15867b23c6a9f940eba6a88413c0fd0a7776b48a67f88ca558"
   },
   "cases": [
     {
@@ -186,7 +186,25 @@
     "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/evaluation_truth/contact_observations/step_1708/source.npz": "b4f706bca32c834f04bb1704bc449d986ad6aaf48804d2cfc7a3aa198c75b13a",
     "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/evaluation_truth/contact_observations/step_1709/source.npz": "b30cbef8507be52ed49b566c75b5751cd7b4d778e80b070ad1608b9b7c3ac9cc",
     "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/evaluation_truth/contact_observations/step_1710/source.npz": "896d70bdcde17be5d5bda2ce2b0046b6b6c9cc7c20883eeb28489316cdfc9fd6",
-    "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/evaluation_truth/contact_observations/step_1711/source.npz": "e9b5f76f9e0deba19248198e1eba2cb495339b1277b63ab0fa05ca8fc543f8c2"
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/evaluation_truth/contact_observations/step_1711/source.npz": "e9b5f76f9e0deba19248198e1eba2cb495339b1277b63ab0fa05ca8fc543f8c2",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/contact_observations/step_1693/right.npz": "4cb53262506c1c10ef570b5730e5d6002db6dff4aef83fc68b7c6fb3ac8848e8",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/contact_observations/step_1694/right.npz": "a008fabb2b79cde4da16001127ef4acea0f13e59c98b0def19850f88336b4e3c",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/contact_observations/step_1695/right.npz": "47985e5cf9c1990825b9b437501cde53fa0b0d320e07e21fbde120098c693ebb",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/contact_observations/step_1696/right.npz": "9e95aac614a3d61eb7e23ab34dd7647b51b2002a7f63b27da21065def23cbc3e",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/contact_observations/step_1697/right.npz": "209678670e97de8b907f442e1ef87bee50dd43e0a5622a8c80d11688a05a1fde",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/contact_observations/step_1698/right.npz": "682128835445984de2c7b27c33baf4ffae83c320149d770cd15771e394eb9dd6",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/contact_observations/step_1699/right.npz": "1ce8fdecc879ce23218cb022bf6209d39d6ae66dc244153c174926d5276655a2",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/contact_observations/step_1700/right.npz": "41f01e3f8df8b9de73f517b378cf70280d2bd3361e5dd7083a089f97c3beb1ae",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/contact_observations/step_1701/right.npz": "84b437cea51f04dd256dc99a2db6d2c953fe7fc3dc19a589abdfdfee808d25bf",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/contact_observations/step_1702/right.npz": "b6f0a64d65cf0a54de5aa0955ff03b7e21a34f0583228f8b9a435b9c55064dd5",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/contact_observations/step_1703/right.npz": "11ac0254271e4ba75d438a43958a638f80d0ab99abe2e89b17da626c1a640c80",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/contact_observations/step_1704/right.npz": "a94a0b097413b34fe5cd9d6756eaf499348c3f2865e974b8f408f5f6fc300d6d",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/contact_observations/step_1705/right.npz": "a5ea43f5514b62429e5efcc9365f4ab9589c1780a6361a9924f1805143154ff3",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/contact_observations/step_1706/right.npz": "19fdb0b717944c529a32041813ce8c671f0bdb48d8b8df6b3921a9ac199961fd",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/contact_observations/step_1707/right.npz": "1f08886667aad395b27091f0da2190e4a38f2e4b015a37e6c00612c87897cf8a",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/contact_observations/step_1708/right.npz": "087812d46004b0c5b347aa4f3ff62d5d94c2fb5b56313c994b1e20cacbfee56e",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/contact_observations/step_1709/right.npz": "b247307a2ebefe203b7c93f0304d9b25a3926a0d02bed8388a6d88c4a54ba637",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/contact_observations/step_1710/right.npz": "83c58a083b7c35aff3a7aa7c00acc4a840c930947b555c591741cae697443a1f"
   },
   "force_floor_N": 1e-08,
   "parameters": {
@@ -207,6 +225,21 @@
   "source_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic",
   "original_contact_protocol": "experiments/stage2_exploratory_20261025/evaluation/contact_protocol.json",
   "interpretation": "Development/regression only, selected after seeing1815; no heldout/generalization/bodyownership/grasp/hardware claim. Reciprocal observations verify data, not extra independent positives. One candidate, no tuning.",
-  "independent_review": "Planner implementsonefrozenpurecandidate; independent evaluator and reviewer approve allpoint/scoring/truthseparation/sourcewrappers forONE<=15s defaultqueue saved-data comparison. Retrospective development only; no policyinstallation/newphysics/bodyownership/heldout/hardware claim.",
-  "reciprocal_semantics": "Verification only: compare reciprocal point screens for eachmatched event; do not count as extra independent faces, objects orpositives."
+  "independent_review": "Independent evaluator/reviewer approveONE<=15s manifest-only replay. Exactly18empty-other-side buffers added; candidate/scorer/scientificsettingsbyteunchanged; original1816failure/costretained, sameprefixmax2, nofurtherretry/physics/policy.",
+  "reciprocal_semantics": "Verification only: compare reciprocal point screens for eachmatched event; do not count as extra independent faces, objects orpositives.",
+  "manifest_repair": {
+    "original_job": 1816,
+    "original_source_commit": "866f332",
+    "original_result": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T142001.753603Z-stage2-contact-screen-comparison/output/evaluation.json",
+      "sha256": "9ceff695c52b42f3ef06c6e2b80c76fb257430189dd3d6bcb409f60342f38fda"
+    },
+    "reason": "Evaluatorreads bothfingerbuffers at eachloaded frame, includingzero-loadopposite-side data; original manifest pinnedonlynonzero-side buffers. Add missingdependency pins only.",
+    "candidate_and_evaluator_unchanged": {
+      "screen.py": "77f700e0f6e9e2b2dd12324dfbe0fde1aba9186214c362ef9adff8cf0b083cd9",
+      "evaluate.py": "bb3785aa755409452a9c108522a20d9a6c0cc417c738bdde6d20f43052e62712"
+    },
+    "maximum_original_plus_repair_jobs": 2,
+    "additional_retry": false
+  }
 }

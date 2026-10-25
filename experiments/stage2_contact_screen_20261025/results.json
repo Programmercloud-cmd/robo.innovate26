@@ -1,0 +1,15 @@
+{
+  "schema": "contact-screen-comparison-results-v1",
+  "original_job_id": 1816,
+  "original_source_commit": "866f332",
+  "original_snapshot": "runs/20261025T142001.753603Z-stage2-contact-screen-comparison",
+  "original_status": "INCOMPLETE_INPUT_MANIFEST",
+  "original_error": "Unpinned contact array for empty opposite-finger buffer at closingstep1693/right.npz",
+  "original_actual_pueue_seconds": 0.873208584,
+  "cumulative_case_seconds": 1667.7541438010235,
+  "case_limit_seconds": 1800,
+  "manifest_repair": "Exactly18empty-opposite-finger dependencies added; screen/scorer/scientificparameters unchanged; originalfailurepreserved. Onecorrectedjobprospectivelyreviewed, pendingexecution.",
+  "policy_installed": false,
+  "physics_steps": 0,
+  "goal_status": "INCOMPLETE; no grasp/extraction/transfer/placement/stack/repeatedsorting proven."
+}
