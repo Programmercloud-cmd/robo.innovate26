@@ -998,3 +998,43 @@ ownership assertion. It must never claim the point became geometrically correct
 or use native labels online. Actual BODY-only contact and native grasp outcomes
 remain independent evaluation requirements. No such policy change or subsequent
 physics run is implemented or authorized by the diagnostic result itself.
+
+
+## Retrospective grip-plane screen comparison
+
+One pure candidate removes only finite BODY-surface proximity from compatibility.
+It retains the same abs(separation)+50 um grip-plane allowance, normal dot >=0.9,
+metal/head clearance beyond that allowance+100 um, and rendered association.
+Its API contains only numeric robot CAD, point/normal/pose and association; no
+BODY mesh, native label or source identity. Compatible means UNVERIFIED, with
+ownership and pick permission false. Existing task control is unchanged.
+
+Initial saved-data job 1816 (source `866f332`) stops because its manifest omitted
+an empty opposite-finger buffer the frozen evaluator also reads. Its incomplete
+result and 0.873208584-second Pueue cost remain. A prospective manifest-only
+repair adds exactly 18 missing dependencies, retaining candidate/scorer bytes
+and all scientific settings. JSON-only completeness checks cover all 141 needed
+contact files within the resulting 156 pins. No parameter tuning occurs.
+
+Corrected job 1817 (source `31434ba`) completes all 1920 checks. Primary counts:
+
+| Saved case | Native evaluation label | Points | Old compatible | Candidate compatible |
+| --- | --- | ---: | ---: | ---: |
+| LEFT fixture | BODY | 21 | 21 | 21 |
+| LEFT fixture | WHITE metal | 66 | 0 | 0 |
+| LEFT fixture | HEAD | 47 | 0 | 0 |
+| Closing reproduction | BODY | 104 | 103 | 104 |
+
+The only recovered point is the current step-1711 RIGHT rejection. No BODY point
+is lost, no UNKNOWN appears, and all 113 forbidden fixture observations remain
+incompatible. The 238 reciprocal observations agree but are verification only,
+not extra independent positives. Fixture association was deliberately forced
+true to stress the component veto; closing uses the original rendered spatial
+association. Both independent agents accept the limited comparison. It was
+proposed after seeing 1815 and is development/regression evidence, not held-out
+generalization, whole-arm safety, actual BODY ownership or grasp success.
+
+1817 charges 1.151101580 full Pueue seconds versus 0.932660199 supervised seconds.
+Retained cumulative contact cost is 1668.905245381/1800 seconds. The two-job saved
+comparison is closed. A future position-controlled native pick needs a separate
+prospective policy/resource review; no such execution follows automatically.

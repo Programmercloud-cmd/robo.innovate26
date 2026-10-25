@@ -6,10 +6,132 @@
   "original_status": "INCOMPLETE_INPUT_MANIFEST",
   "original_error": "Unpinned contact array for empty opposite-finger buffer at closingstep1693/right.npz",
   "original_actual_pueue_seconds": 0.873208584,
-  "cumulative_case_seconds": 1667.7541438010235,
+  "cumulative_case_seconds": 1668.9052453810234,
   "case_limit_seconds": 1800,
-  "manifest_repair": "Exactly18empty-opposite-finger dependencies added; screen/scorer/scientificparameters unchanged; originalfailurepreserved. Onecorrectedjobprospectivelyreviewed, pendingexecution.",
+  "manifest_repair": "Original1816faileddependencyretained; exactly18empty-opposite-sideNPZ added. Frozen candidate/scorer unchanged; corrected1817completed. Two-jobphaseclosed.",
   "policy_installed": false,
   "physics_steps": 0,
-  "goal_status": "INCOMPLETE; no grasp/extraction/transfer/placement/stack/repeatedsorting proven."
+  "goal_status": "INCOMPLETE; no grasp/extraction/transfer/placement/stack/repeatedsorting proven.",
+  "corrected_job": {
+    "job_id": 1817,
+    "source_commit": "31434ba",
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T142341.930089Z-stage2-contact-screen-comparison",
+    "evaluation_complete": true,
+    "failed_checks": [],
+    "tables": [
+      {
+        "case": "fixture_1814",
+        "direction": "primary_finger",
+        "label": "BODY",
+        "count": 21,
+        "old_accepted": 21,
+        "candidate_accepted": 21,
+        "candidate_unknown": 0,
+        "recovered_BODY": 0,
+        "lost_BODY": 0,
+        "forbidden_false_accepts": 0
+      },
+      {
+        "case": "fixture_1814",
+        "direction": "reciprocal_verification_only",
+        "label": "BODY",
+        "count": 21,
+        "old_accepted": 21,
+        "candidate_accepted": 21,
+        "candidate_unknown": 0,
+        "recovered_BODY": 0,
+        "lost_BODY": 0,
+        "forbidden_false_accepts": 0
+      },
+      {
+        "case": "fixture_1814",
+        "direction": "primary_finger",
+        "label": "WHITE",
+        "count": 66,
+        "old_accepted": 0,
+        "candidate_accepted": 0,
+        "candidate_unknown": 0,
+        "recovered_BODY": 0,
+        "lost_BODY": 0,
+        "forbidden_false_accepts": 0
+      },
+      {
+        "case": "fixture_1814",
+        "direction": "reciprocal_verification_only",
+        "label": "WHITE",
+        "count": 66,
+        "old_accepted": 0,
+        "candidate_accepted": 0,
+        "candidate_unknown": 0,
+        "recovered_BODY": 0,
+        "lost_BODY": 0,
+        "forbidden_false_accepts": 0
+      },
+      {
+        "case": "fixture_1814",
+        "direction": "primary_finger",
+        "label": "HEAD",
+        "count": 47,
+        "old_accepted": 0,
+        "candidate_accepted": 0,
+        "candidate_unknown": 0,
+        "recovered_BODY": 0,
+        "lost_BODY": 0,
+        "forbidden_false_accepts": 0
+      },
+      {
+        "case": "fixture_1814",
+        "direction": "reciprocal_verification_only",
+        "label": "HEAD",
+        "count": 47,
+        "old_accepted": 0,
+        "candidate_accepted": 0,
+        "candidate_unknown": 0,
+        "recovered_BODY": 0,
+        "lost_BODY": 0,
+        "forbidden_false_accepts": 0
+      },
+      {
+        "case": "closing_1815",
+        "direction": "primary_finger",
+        "label": "BODY",
+        "count": 104,
+        "old_accepted": 103,
+        "candidate_accepted": 104,
+        "candidate_unknown": 0,
+        "recovered_BODY": 1,
+        "lost_BODY": 0,
+        "forbidden_false_accepts": 0
+      },
+      {
+        "case": "closing_1815",
+        "direction": "reciprocal_verification_only",
+        "label": "BODY",
+        "count": 104,
+        "old_accepted": 103,
+        "candidate_accepted": 104,
+        "candidate_unknown": 0,
+        "recovered_BODY": 1,
+        "lost_BODY": 0,
+        "forbidden_false_accepts": 0
+      }
+    ],
+    "primary_finger_observations": 238,
+    "reciprocal_observations_verification_only": 238,
+    "recovered_BODY_ids": [
+      "closing_1815:1711:right:4"
+    ],
+    "lost_BODY_ids": [],
+    "current_bad_point_counterfactual_recovered": [
+      "closing_1815:1711:right:4"
+    ],
+    "reciprocal_decision_disagreements_verification_only": [],
+    "audit_sha256": "4b9cc6bed0e3c85078b809f9c4b4d34d52b055d221b76eecfa8c57eb19a49596",
+    "actual_pueue_seconds": 1.15110158,
+    "supervised_seconds": 0.9326601990032941,
+    "interpretation": "Post1815development/regression evidence only. Correlated points/frames, no heldout/general ownership/safety/grasp claim."
+  },
+  "remaining_case_seconds": 131.0947546189766,
+  "independent_review": "Independent evaluator/reviewer accept1920/1920checks,238primary+238reciprocalverification observations: recoveroneknownBODYpoint, noretainedBODYloss, all66WHITE/47HEADstresspoints rejected. Retrospectivedevelopmentonly; no policyinstalledorphysicsauthorized.",
+  "grasp_or_hardware_permission": false
 }
