@@ -40,6 +40,12 @@ def area_centroid(points):
     return abs(twice)/2,np.sum((points+other)*cross[:,None],axis=0)/(3*twice)
 
 
+class VertexCapStop(ValueError):
+    def __init__(self,details):
+        super().__init__('Fixed128-vertex CPU cap exceeded; no splitting')
+        self.details=details
+
+
 def cell(planes,minimum_clearance,vertex_cap):
     import numpy as np
     from scipy.optimize import linprog
@@ -50,8 +56,16 @@ def cell(planes,minimum_clearance,vertex_cap):
     if not lp.success or lp.x[3]<=minimum_clearance:raise ValueError('Cell lacks strict LP interior; no fallback')
     intersections=HalfspaceIntersection(planes,lp.x[:3]).intersections
     if not np.isfinite(intersections).all():raise ValueError('Nonfinite cell intersections')
-    h=ConvexHull(intersections);vertices=intersections[h.vertices];h=ConvexHull(vertices)
-    if len(vertices)>vertex_cap:raise ValueError('Fixed128-vertex CPU cap exceeded; no splitting')
+    first_hull=ConvexHull(intersections);vertices=intersections[first_hull.vertices];h=ConvexHull(vertices)
+    if len(vertices)>vertex_cap:
+        raise VertexCapStop({'vertex_cap':vertex_cap,'final_vertex_count':len(vertices),
+            'raw_HSI_intersection_count':len(intersections),'exact_unique_raw_HSI_intersections':len(np.unique(intersections,axis=0)),
+            'exact_unique_final_vertices':len(np.unique(vertices,axis=0)),'raw_HSI_intersections_mm':intersections.tolist(),
+            'first_hull_extreme_indices':first_hull.vertices.tolist(),'final_vertices_mm':vertices.tolist(),
+            'final_hull_triangles':h.simplices.tolist(),'final_hull_equations':h.equations.tolist(),
+            'final_triangular_facet_count':len(h.simplices),
+            'exact_unique_final_plane_rows':len(set(map(tuple,h.equations))),
+            'construction_planes_mm':planes.tolist(),'LP_interior_mm':lp.x[:3].tolist(),'LP_clearance_mm':float(lp.x[3])})
     triangles=[]
     for face,plane in zip(h.simplices,h.equations):
         face=face.copy();t=vertices[face]
@@ -65,13 +79,16 @@ def cell(planes,minimum_clearance,vertex_cap):
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     for name in ['stl','features','output']:p.add_argument('--'+name,type=Path,required=True)
+    p.add_argument('--cap-diagnostic',action='store_true')
     args=p.parse_args()
     if os.environ.get('ROBO_PUEUE_JOB')!='1':raise RuntimeError('Default Pueue required')
     cfg=json.loads((HERE/'protocol.json').read_text());start=time.monotonic();args.output.mkdir(parents=True,exist_ok=True)
+    diagnostic=json.loads((HERE/'diagnostic_scope.json').read_text()) if args.cap_diagnostic else None
+    if diagnostic and sha(HERE/'protocol.json')!=diagnostic['construction_protocol_sha256']:raise ValueError('Diagnostic constructionprotocol changed')
     result={'schema':cfg['schema'],'proceed_gate_passed':False,'cooking_authorized':False,'coordinate_frame':cfg['coordinate_frame'],
         'protocol_sha256':sha(HERE/'protocol.json'),'cells':[],'prior_benchmarks':'Closed and unchanged'}
     def timeout(*_):raise TimeoutError('Fixed construction budget exhausted; no retry/alternate cells')
-    signal.signal(signal.SIGALRM,timeout);signal.setitimer(signal.ITIMER_REAL,cfg['maximum_construction_seconds'])
+    signal.signal(signal.SIGALRM,timeout);signal.setitimer(signal.ITIMER_REAL,diagnostic['maximum_wall_seconds'] if diagnostic else cfg['maximum_construction_seconds'])
     try:
         import numpy as np
         import scipy
@@ -130,14 +147,23 @@ def main():
                 result['cells'].append(formed)
                 if region=='boss_annular':provenance['sector_planes_mm'].append((wedge/np.linalg.norm(wedge[:,:3],axis=1)[:,None]).tolist())
         if len(result['cells'])!=cfg['required_parts']:raise ValueError('Fixed48-cell inventory failed')
+        if diagnostic:raise RuntimeError('Expected128capSTOP did not recur; diagnostic only, no candidate acceptance')
         points=np.concatenate([np.asarray(c['vertices_mm']) for c in result['cells']])
         result.update(status='candidate_constructed_requires_independent_audit',source_stl_sha256=sha(args.stl),source_features_sha256=sha(args.features),
             construction_config=cfg,provenance=provenance,union_bounds_mm=[points.min(axis=0).tolist(),points.max(axis=0).tolist()],
             total_cell_volume_mm3=sum(c['volume_mm3'] for c in result['cells']),versions={'numpy':np.__version__,'scipy':scipy.__version__})
-    except Exception as error:result.update(status='STOP',error=repr(error))
+    except Exception as error:
+        result.update(status='STOP',error=repr(error))
+        if diagnostic and isinstance(error,VertexCapStop):
+            failure={'schema':diagnostic['schema'],'proceed_gate_passed':False,'status':'UNCHANGED128CAP_STOP',
+                'id':f'{region}_{i:02d}','region':region,'sector':i,'axial_interval_mm':[lo,hi],
+                'construction_protocol_sha256':sha(HERE/'protocol.json'),'source_stl_sha256':sha(args.stl),
+                'source_features_sha256':sha(args.features),'details':error.details}
+            (args.output/'vertex_cap_diagnostic.json').write_text(json.dumps(failure,indent=2,allow_nan=False)+'\n')
     finally:
         signal.setitimer(signal.ITIMER_REAL,0);result['construction_wall_seconds']=time.monotonic()-start
-        result['remaining_independent_audit_seconds']=max(0.,cfg['maximum_construction_plus_audit_seconds']-result['construction_wall_seconds'])
+        result['remaining_independent_audit_seconds']=max(0.,cfg['maximum_construction_plus_audit_seconds']-(diagnostic['baseline_process_wall_seconds'] if diagnostic else 0.)-result['construction_wall_seconds'])
+        if diagnostic:result['diagnostic_scope_sha256']=sha(HERE/'diagnostic_scope.json')
         (args.output/'compound.json').write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')
     if result['status']!='candidate_constructed_requires_independent_audit':raise SystemExit(1)
 
