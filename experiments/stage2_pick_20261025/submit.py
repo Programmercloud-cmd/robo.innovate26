@@ -37,6 +37,8 @@ def main():
     parser.add_argument('--mode', choices=('control', 'pick'), required=True)
     parser.add_argument('--predecessor-control', type=Path)
     parser.add_argument('--predecessor-development', type=Path)
+    parser.add_argument('--replay-control-capture', type=Path,
+                        help='One reviewed audit-only correction of the immutable 1800 capture')
     args = parser.parse_args()
     protocol = json.loads((HERE/'protocol.json').read_text())
     protocol_sha = sha(HERE/'protocol.json')
@@ -45,6 +47,15 @@ def main():
     if subprocess.check_output(['git', 'status', '--porcelain', '--', str(HERE)], cwd=ROOT):
         raise RuntimeError('Commit the reviewed stage source before freezing')
     prior = 0.
+    replay = args.replay_control_capture
+    if replay is not None:
+        expected = ROOT/'runs/20261025T093331.984420Z-stage2-pick-I-control'
+        if args.case != 'I' or args.mode != 'control' or replay.resolve() != expected.resolve():
+            parser.error('Only the specifically reviewed 1800 I-control audit may be replayed')
+        clock = json.loads((replay/'pipeline_supervisor.json').read_text())
+        if clock['proceed_gate_passed'] is not False or clock['within_budget'] is not True:
+            raise RuntimeError('Original failed control audit/timing must remain explicit')
+        prior = clock['cumulative_case_seconds']
     if args.mode == 'pick':
         if args.predecessor_control is None:
             parser.error('A passing matched stationary control is required')
@@ -58,8 +69,9 @@ def main():
     elif args.predecessor_development is not None:
         parser.error('Development I cannot take a reserved predecessor')
 
+    suffix = '-audit-correction' if replay is not None else ''
     snapshot = ROOT/'runs'/(datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S.%fZ')
-                            +f'-stage2-pick-{args.case}-{args.mode}')
+                            +f'-stage2-pick-{args.case}-{args.mode}'+suffix)
     snapshot.mkdir()
     # Reuse the known working runtime/asset inventory; copy current sources,
     # not old run output or a symlink to a mutable checkout.
@@ -93,9 +105,17 @@ def main():
         'baseline_metadata.json': stock/'metadata.json',
         'baseline_geometry.json': stock/'geometry.json',
         'tip.stl': ROOT/'experiments/final_workcell_20261024/end_effector/assets/franka_research3_gripper.stl',
+        'frozen_geometry.json': ROOT/'experiments/final_workcell_20261024/geometry.json',
+        'legacy_capture_protocol.json': ROOT/'runs/20261025T093331.984420Z-stage2-pick-I-control/experiments/stage2_pick_20261025/protocol.json',
+        'legacy_failed_control_audit.json': ROOT/'runs/20261025T093331.984420Z-stage2-pick-I-control/audit/evaluation.json',
     }
     command = [PYTHON, str(snapshot/'experiments'/HERE.name/'pipeline.py'),
                '--case', args.case, '--mode', args.mode, '--prior-wall-seconds', repr(prior)]
+    if replay is not None:
+        files['replay_prior_supervisor.json'] = replay/'pipeline_supervisor.json'
+        command = [PYTHON, str(snapshot/'experiments'/HERE.name/'replay_audit.py'),
+                   '--input', str(replay/'output'),
+                   '--prior-supervisor', str(inputs/'replay_prior_supervisor.json')]
     for flag in ('predecessor_control', 'predecessor_development'):
         value = getattr(args, flag)
         if value is not None:
@@ -115,6 +135,8 @@ def main():
     (snapshot/'launch.sh').write_text('\n'.join(lines))
     manifest = {
         'scope': protocol['objective'], 'case': args.case, 'mode': args.mode,
+        'execution_kind': 'audit_only_correction' if replay is not None else 'capture_and_audit',
+        'immutable_source_capture': str(replay.resolve()) if replay is not None else None,
         'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
         'protocol_sha256': protocol_sha, 'maximum_attempts_this_phase': 1,
         'prior_case_wall_seconds': prior,
@@ -124,7 +146,7 @@ def main():
         'sha256': {str(p.relative_to(snapshot)): sha(p) for p in sorted(snapshot.rglob('*')) if p.is_file()},
     }
     (snapshot/'manifest.json').write_text(json.dumps(manifest, indent=2)+'\n')
-    submitted = subprocess.run(['pueue', 'add', '--label', f'robo26-native-pick-{args.case}-{args.mode}',
+    submitted = subprocess.run(['pueue', 'add', '--label', f'robo26-native-pick-{args.case}-{args.mode}'+suffix,
                                 shlex.join(['bash', str(snapshot/'launch.sh')])],
                                check=True, capture_output=True, text=True)
     (snapshot/'submission.txt').write_text(submitted.stdout)

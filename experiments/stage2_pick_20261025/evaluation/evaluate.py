@@ -37,6 +37,32 @@ def initial_matches(polygon,faces):
     highest=max(face['layer'] for face in faces)
     return [{'id':face['id'],'iou':polygon_iou(polygon,face['image_polygon']),'layer':face['layer']} for face in faces if face['layer']==highest]
 
+def expected_names(spec,removed):
+    yaws=spec['layer_yaws_quarter_turn'];counts=spec['world_axis_counts_by_yaw_quarter_turn']
+    if len(yaws)!=spec['layers']:raise ValueError('Frozen geometry layer-count mismatch')
+    return ({'plate_source'}|{f'brick_{layer}_{i}_{j}' for layer,yaw in enumerate(yaws) for i in range(counts[str(yaw)][0]) for j in range(counts[str(yaw)][1])})-set(removed)
+
+def legacy_budget_only(legacy,current):
+    comparison=json.loads(json.dumps(current))
+    if legacy['budget']['capture_plus_independent_audit_seconds_per_case']!=600 or comparison['budget']['capture_plus_independent_audit_seconds_per_case']!=1200:return False
+    comparison['budget']['capture_plus_independent_audit_seconds_per_case']=600
+    return comparison==legacy
+
+def replay_setup(args,p,science,supervisor):
+    rule=p['replay']
+    if args.case!='I' or args.mode!='control' or args.predecessor_control is not None or args.predecessor_development is not None:raise ValueError('Replay only authorizes original I/control')
+    if args.input.resolve()!=Path(rule['original_capture_directory']):raise ValueError('Replay must read original immutable1800 capture directory')
+    pins=[(args.replay_prior_supervisor,rule['prior_supervisor_sha256']),(args.input/'supervisor.json',rule['capture_supervisor_sha256']),(args.input/'capture_metadata.json',rule['capture_metadata_sha256']),(args.input/'capture_complete.json',rule['control_marker_sha256'])]
+    for path,digest in pins:
+        if sha(path)!=digest:raise ValueError('Replay original artifact changed: '+str(path))
+    for name,digest in rule['files_sha256'].items():
+        if sha(HERE.parent/'inputs'/name)!=digest:raise ValueError('Replay frozen legacy input changed: '+name)
+    legacy=read(HERE.parent/'inputs/legacy_capture_protocol.json');failure=read(HERE.parent/'inputs/legacy_failed_control_audit.json');prior=read(args.replay_prior_supervisor)
+    if not legacy_budget_only(legacy,science):raise ValueError('Legacy/current scientific protocols differ beyond the single wall-budget leaf')
+    if not (failure['case']=='I' and failure['mode']=='control' and failure['proceed_gate_passed'] is False and failure['protocol_sha256']==rule['legacy_capture_protocol_sha256'] and [k for k,v in failure['checks'].items() if not v]==['case_named_inventory']):raise ValueError('Replay failure is not the pinned inventory-only1800 audit')
+    if not (prior['case']=='I' and prior['mode']=='control' and prior['proceed_gate_passed'] is False and prior['within_budget'] is True and prior['audit_sha256']==rule['original_failed_audit_sha256'] and prior['cumulative_case_seconds']==rule['prior_case_wall_seconds'] and supervisor['capture_wall_seconds']==rule['original_capture_wall_seconds']):raise ValueError('Replay prior/capture accounting mismatch')
+    return float(prior['cumulative_case_seconds']),0.,rule['legacy_capture_protocol_sha256']
+
 def relative_pose(tcp,body):
     rt,rb=rotation(tcp[3:7]),rotation(body[3:7])
     return rt.T@(np.asarray(body[:3])-tcp[:3]),rt.T@rb
@@ -128,7 +154,7 @@ def contact_frame(folder,row,gt,observer,geometry,protocol,target):
 
 def audit(args,p,science,deadline):
     folder=args.input;meta=read(folder/'capture_metadata.json');inv=read(folder/meta['truth_inventory']);rules=p['cases'][args.case]
-    checks={'capture_case_mode':meta['case']==args.case and meta['mode']==args.mode,'capture_scientific_pin':meta['protocol_sha256']==sha(HERE.parent/'protocol.json')}
+    checks={'capture_case_mode':meta['case']==args.case and meta['mode']==args.mode,'capture_scientific_pin':meta['protocol_sha256']==args.accepted_capture_protocol_sha256}
     baseline=read(HERE.parent/'inputs/baseline_metadata.json');oldgeometry=read(HERE.parent/'inputs/baseline_geometry.json')
     gaudit=read(HERE.parent/'inputs/geometry_audit.json');auth=read(HERE.parent/'inputs/side_authorization.json')
     checks['original_G_stays_failed']=gaudit['phase']=='G' and gaudit['proceed_gate_passed'] is False and auth['global_G_passed'] is False and auth['geometry_audit_sha256']==sha(HERE.parent/'inputs/geometry_audit.json')
@@ -149,8 +175,7 @@ def audit(args,p,science,deadline):
     truthroot=folder/Path(meta['truth_inventory']).parent
     with np.load(truthroot/inv['body_states_file'],allow_pickle=False) as raw:initial=raw['states']
     checks['initial_states']=initial.shape==(len(ids),13) and finite(initial)
-    expected_names={'plate_source'}|{f'brick_{layer}_{ridge}_{index}' for layer in range(10) for ridge in range(6) for index in range(5)}
-    expected_names-=set(rules.get('removed',[]));checks['case_named_inventory']={x.rsplit('/',1)[-1] for x in ids}==expected_names
+    names=expected_names(read(HERE.parent/'inputs/frozen_geometry.json'),rules.get('removed',[]));checks['case_named_inventory']={x.rsplit('/',1)[-1] for x in ids}==names
     selected=None;binding=[];target=None
     if args.mode=='pick':
         selected=read(folder/'online/selection.json');candidate=selected.get('candidate')
@@ -264,13 +289,18 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__,allow_abbrev=False)
     parser.add_argument('--case',choices=['I','H'],required=True);parser.add_argument('--mode',choices=['control','pick'],required=True)
     for key in ['input','output']:parser.add_argument('--'+key,type=Path,required=True)
-    for key in ['predecessor-control','predecessor-development']:parser.add_argument('--'+key,type=Path)
+    for key in ['predecessor-control','predecessor-development','replay-prior-supervisor']:parser.add_argument('--'+key,type=Path)
     args=parser.parse_args();result={'case':args.case,'mode':args.mode,'proceed_gate_passed':False,'protocol_sha256':sha(HERE.parent/'protocol.json'),'evaluation_protocol_sha256':sha(HERE/'protocol.json')}
     if os.environ.get('ROBO_PUEUE_JOB')!='1':raise RuntimeError('Default Pueue required')
-    p=read(HERE/'protocol.json');science=read(HERE.parent/'protocol.json');supervisor=read(args.input/'supervisor.json');prior=float(supervisor['prior_case_wall_seconds']);capture=float(supervisor['capture_wall_seconds']);remaining=600-prior-capture
-    def stop(*_):raise TimeoutError('Cumulative600s case budget exhausted')
+    p=read(HERE/'protocol.json');science=read(HERE.parent/'protocol.json');supervisor=read(args.input/'supervisor.json');prior=float(supervisor['prior_case_wall_seconds']);capture=float(supervisor['capture_wall_seconds']);limit=float(science['budget']['capture_plus_independent_audit_seconds_per_case']);args.accepted_capture_protocol_sha256=sha(HERE.parent/'protocol.json')
+    def stop(*_):raise TimeoutError('Frozen cumulative case budget exhausted')
     signal.signal(signal.SIGALRM,stop)
     try:
+        if limit!=p['case_budget_seconds']:raise ValueError('Scientific/evaluator case budgets differ')
+        if args.replay_prior_supervisor is not None:
+            prior,capture,args.accepted_capture_protocol_sha256=replay_setup(args,p,science,supervisor)
+            result.update(audit_only_replay=True,original_failed_audit_sha256=p['replay']['original_failed_audit_sha256'],replay_prior_supervisor_sha256=sha(args.replay_prior_supervisor),original_capture_wall_seconds=float(supervisor['capture_wall_seconds']),capture_protocol_sha256=args.accepted_capture_protocol_sha256)
+        remaining=limit-prior-capture
         if not math.isfinite(prior+capture) or min(prior,capture)<0 or remaining<=0:raise ValueError('Invalid cumulative budget')
         signal.setitimer(signal.ITIMER_REAL,max(.001,remaining-(time.monotonic()-STARTED)));deadline=STARTED+remaining
         if sha(HERE.parent/'protocol.json')!=p['capture_protocol_sha256']:raise ValueError('Frozen scientific protocol changed')
@@ -290,12 +320,12 @@ def main():
         marker=read(args.input/'capture_complete.json') if (args.input/'capture_complete.json').exists() else {}
         if supervisor['capture_completed'] is not True or marker.get('capture_completed') is not True:result.update(status='INCOMPLETE_CAPTURE',scientific_claims='No extraction acceptance; incomplete capture and any partial motion/contact evidence remain unverified',capture_controller_status=marker.get('controller_status','NOT_RECORDED'),capture_failure=read(args.input/'failure.json') if (args.input/'failure.json').exists() else None)
         else:
-            result.update(audit(args,p,science,deadline));result['checks']['completion_marker_case_mode']=marker['case']==args.case and marker['mode']==args.mode;result['checks'].update(predecessor_checks);result['checks']['cumulative_case_wall']=prior+capture+time.monotonic()-STARTED<=600
+            result.update(audit(args,p,science,deadline));result['checks']['completion_marker_case_mode']=marker['case']==args.case and marker['mode']==args.mode;result['checks'].update(predecessor_checks);result['checks']['cumulative_case_wall']=prior+capture+time.monotonic()-STARTED<=limit
             result.update(status='independent_audit_complete',proceed_gate_passed=all(result['checks'].values()))
             result['physics_extraction_passed']=args.mode=='pick' and result['proceed_gate_passed'];result['stationary_guard_passed']=args.mode=='control' and result['proceed_gate_passed'];result['transfer_authorized']=False
     except Exception as error:result.update(status='STOP',error=repr(error))
     finally:
-        signal.setitimer(signal.ITIMER_REAL,0);result.update(prior_case_wall_seconds=prior,capture_wall_seconds=capture,audit_wall_seconds=time.monotonic()-STARTED,cumulative_case_seconds=prior+capture+time.monotonic()-STARTED,scope=p['scope'],global_geometry_passed=False)
+        signal.setitimer(signal.ITIMER_REAL,0);result.update(case_limit_seconds=limit,prior_case_wall_seconds=prior,capture_wall_seconds=capture,audit_wall_seconds=time.monotonic()-STARTED,cumulative_case_seconds=prior+capture+time.monotonic()-STARTED,scope=p['scope'],global_geometry_passed=False)
         args.output.mkdir(parents=True,exist_ok=True);(args.output/'evaluation.json').write_text(json.dumps(result,indent=2,allow_nan=False,default=json_default)+'\n');(args.output/'run_complete.json').write_text(json.dumps({'evaluation_completed':True,'case':args.case,'mode':args.mode,'proceed_gate_passed':result['proceed_gate_passed'],'evaluation_sha256':sha(args.output/'evaluation.json')})+'\n')
 
 if __name__=='__main__':main()

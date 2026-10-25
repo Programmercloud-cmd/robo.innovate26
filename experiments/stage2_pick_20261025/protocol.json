@@ -32,7 +32,7 @@
     "pick_steps_per_case_maximum": 3600,
     "physics_dt_s": 0.008333333333333333,
     "maximum_total_steps_per_case": 7200,
-    "capture_plus_independent_audit_seconds_per_case": 600,
+    "capture_plus_independent_audit_seconds_per_case": 1200,
     "queue_wait_excluded": true,
     "attempts_per_case_version": 1,
     "automatic_retry": false,

@@ -1,0 +1,73 @@
+{
+  "schema": "stage2-native-pick-results-v1",
+  "goal_status": "INCOMPLETE",
+  "baseline_source_commit": "efe9757",
+  "scientific_protocol_sha256": "0d902e26bc4f11eda1d668b5e92fc97a11f360ef40f26423247f86681a764471",
+  "maximum_improvement_rounds": 3,
+  "current_improvement_round": 1,
+  "rounds": [
+    {
+      "round": 1,
+      "failure": "Evaluator enumerated6x5 world-axis IDs for every layer instead of frozen parity-dependent5x6/6x5.",
+      "change": "Correct expected names from SHA-pinned geometry; audit-only replay of immutable1800 capture. Prospectively raise case budget600\u21921200 before first pick based measured443.339s cost; all original time remains charged.",
+      "physics_or_manipulation_parameters_changed": false,
+      "original_failure_preserved": true,
+      "status": "SOURCE_APPROVED"
+    }
+  ],
+  "I": {
+    "control": {
+      "status": "CORRECTED_AUDIT_PENDING",
+      "original_failed_job": {
+        "job_id": 1800,
+        "status": "FAILED_AUDIT_EXPECTED_ID_ENUMERATION",
+        "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control",
+        "proceed_gate_passed": false,
+        "measured_steps": 3600,
+        "checks_passed": 48,
+        "check_count": 49,
+        "failed_checks": [
+          "case_named_inventory"
+        ],
+        "metrics": {
+          "first_singleton_step": null,
+          "target_rise_m": null,
+          "held_translation_max_m": null,
+          "held_angle_max_rad": null,
+          "non_target_translation_max_m": 0.00020829330605920404,
+          "non_target_angle_max_rad": 0.002183660166338086,
+          "force_peak_N": {
+            "left": 0.0,
+            "right": 0.0
+          },
+          "first_force_trigger_step": null,
+          "loaded_point_observations": 0,
+          "max_loaded_flat_distance_m": null,
+          "min_loaded_outward_dot": null
+        },
+        "actual_capture_plus_audit_seconds": 443.33917641901644,
+        "audit_sha256": "cfe6b016f95853d0962a15b65ccecbfb850054f116f0c88d7687e79d93e2edc4"
+      },
+      "new_simulation_required": false
+    },
+    "pick": {
+      "status": "NOT_STARTED_PENDING_CONTROL_PASS_AND_REVIEW"
+    }
+  },
+  "H": {
+    "control": {
+      "status": "RESERVED_NOT_STARTED"
+    },
+    "pick": {
+      "status": "RESERVED_NOT_STARTED"
+    }
+  },
+  "budget": "Prospective1200 seconds per I or H case, including every original/replayed audit and capture. Original600s experiment remains saved as failed. No automatic extension.",
+  "scope": "Native extraction benchmark only. No successful pick/hold/extraction, classification, transfer or placement established by implementation or a stationary control.",
+  "baseline_scientific_protocol_sha256": "9fa39756db2343ee2b96caa85c7ecfe7528e704012c8defbbb25a3ef80aff8ad",
+  "remote_compute": {
+    "Alex_matching_Isaac_runtime_available": false,
+    "source": "User confirmation2026-10-25",
+    "use": "Continue verified local runtime; no remote Isaac equivalence claimed."
+  }
+}

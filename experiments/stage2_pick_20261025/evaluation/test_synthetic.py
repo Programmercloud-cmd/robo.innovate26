@@ -2,11 +2,20 @@
 import json
 import math
 import numpy as np
-from evaluate import polygon_iou,relative_pose,initial_matches
+from evaluate import polygon_iou,relative_pose,initial_matches,expected_names,legacy_budget_only
 from contact_helpers import rotation,angle_between,classify_point
 
 def main():
     square=[[0,0],[10,0],[10,10],[0,10]]
+    spec={'layers':2,'layer_yaws_quarter_turn':[0,1],'world_axis_counts_by_yaw_quarter_turn':{'0':[5,6],'1':[6,5]}}
+    names=expected_names(spec,[])
+    assert len(names)==61 and 'brick_0_4_5' in names and 'brick_0_5_4' not in names and 'brick_1_5_4' in names and 'brick_1_4_5' not in names
+    assert 'brick_1_5_4' not in expected_names(spec,['brick_1_5_4'])
+    legacy={'budget':{'capture_plus_independent_audit_seconds_per_case':600},'physics':{'solver':'PGS'}}
+    current={'budget':{'capture_plus_independent_audit_seconds_per_case':1200},'physics':{'solver':'PGS'}}
+    assert legacy_budget_only(legacy,current)
+    changed={'budget':{'capture_plus_independent_audit_seconds_per_case':1200},'physics':{'solver':'TGS'}}
+    assert not legacy_budget_only(legacy,changed)
     assert polygon_iou(square,square)==1
     assert initial_matches(square,[{'id':'hidden','layer':7,'image_polygon':square},{'id':'top','layer':9,'image_polygon':square}])==[{'id':'top','iou':1.,'layer':9}]
     assert polygon_iou(square,[[20,0],[30,0],[30,10],[20,10]])==0

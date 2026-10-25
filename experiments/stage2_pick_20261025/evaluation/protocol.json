@@ -1,8 +1,8 @@
 {
   "schema": "stage2-pick-independent-audit-v1",
   "scope": "One sensor-selected native extraction plus matched stationary control. Separate physics extraction, online held association and transition permission. No transfer/insertion/repeated-demo claim.",
-  "capture_protocol_sha256": "9fa39756db2343ee2b96caa85c7ecfe7528e704012c8defbbb25a3ef80aff8ad",
-  "case_budget_seconds": 600,
+  "capture_protocol_sha256": "0d902e26bc4f11eda1d668b5e92fc97a11f360ef40f26423247f86681a764471",
+  "case_budget_seconds": 1200,
   "cases": {
     "I": {
       "bricks": 300,
@@ -68,9 +68,34 @@
     "R_contact_audit.json": "b9e2f0268a2258489be48995487564f55bb75a8327fb15d93743795baa73c71a",
     "baseline_metadata.json": "a86cc9a735b0464b06f4503be5fb30dd895fa9f50a15dd394ef6e01a7ee02fc1",
     "baseline_geometry.json": "40081b54c140ab4cbb67b07e3ab3b077ccb7805ede2521f9f3ab61ce53b7e930",
-    "tip.stl": "30c3e47142dce9ba82ec46edf42f1dc2825d620d23bad0a95ce1e2de902b752d"
+    "tip.stl": "30c3e47142dce9ba82ec46edf42f1dc2825d620d23bad0a95ce1e2de902b752d",
+    "frozen_geometry.json": "8a0266b2ccbf75f6d773fdd1e6309c70f9ab8828da96b563da133f383f83c897"
   },
-  "budget_accounting": "600s cumulative per CASE: matched3600-step control capture+audit plus pick capture+audit, prior runtime charged from pinned predecessor pipeline supervisor. Control+pick<=7200steps; no hidden retry/parallel execution. Queue wait excluded.",
+  "budget_accounting": "1200s prospective cumulative per CASE before the first pick: original1800capture+failedaudit443.33917641901644s plus ONE corrected audit replay plus subsequent pick capture/audit. Replay charges original capture only within prior wall, never twice. Old600s result remains immutable. No physics/step/force/data gate change or new simulation retry.",
   "phase_boundaries": "At final-approach and lift transition, commanded waypoint interpolation begins at previous same-row actual TCP pose, as frozen controller specifies; lift stays straight TABLE+Z for5mm from that measured start. No target/body pose write or post-hoc target substitution.",
-  "abstention": "Completed zero-step sensor abstention has no selected identity, measured load or extraction credit; report ABSTAIN/coverage failure rather than try to score absent contact files."
+  "abstention": "Completed zero-step sensor abstention has no selected identity, measured load or extraction credit; report ABSTAIN/coverage failure rather than try to score absent contact files.",
+  "expected_inventory": "Derive names only from SHA-pinned frozen_geometry.json layers, layer_yaws_quarter_turn and world_axis_counts_by_yaw_quarter_turn; subtract the preregistered case removals. No observed-inventory-derived expected names.",
+  "replay": {
+    "scope": "Exactly one audit-only revalidation of I/control1800; no simulation, oldFAIL preserved.",
+    "maximum_replay_audits": 1,
+    "original_capture_directory": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control/output",
+    "prior_case_wall_seconds": 443.33917641901644,
+    "original_capture_wall_seconds": 218.55016999400686,
+    "prior_supervisor_sha256": "bd51034caedc34ecaf9b947ec7c179f6352b98e5c0567637245bae2e8d72a09f",
+    "capture_supervisor_sha256": "a92c39ae15694c01be306748c1f97cc02e3a40008a4c1a64dd6be0a9de2eafd0",
+    "capture_metadata_sha256": "6df1899e82d85cd0aba37a73dfd0f652a264124323f420f663caf15750eb1b8f",
+    "control_marker_sha256": "8334057ac3ae265c7faf3ce4352be74ae51479ff48dbb2bbd8c82b5c81446e08",
+    "legacy_capture_protocol_sha256": "9fa39756db2343ee2b96caa85c7ecfe7528e704012c8defbbb25a3ef80aff8ad",
+    "original_failed_audit_sha256": "cfe6b016f95853d0962a15b65ccecbfb850054f116f0c88d7687e79d93e2edc4",
+    "files_sha256": {
+      "legacy_capture_protocol.json": "9fa39756db2343ee2b96caa85c7ecfe7528e704012c8defbbb25a3ef80aff8ad",
+      "legacy_failed_control_audit.json": "cfe6b016f95853d0962a15b65ccecbfb850054f116f0c88d7687e79d93e2edc4"
+    },
+    "allowed_scientific_difference": {
+      "JSON_pointer": "/budget/capture_plus_independent_audit_seconds_per_case",
+      "legacy": 600,
+      "current": 1200
+    },
+    "compatibility": "Only this pinned I/control capture may use the legacy capture protocol; parsed legacy JSON must equal current JSON after replacing only this single wall-budget leaf by600. All physics and data validation remains unchanged."
+  }
 }

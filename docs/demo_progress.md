@@ -581,3 +581,51 @@ D uses `runs/20261025T083717.764321Z-exposed-tip-D` and R uses
 `runs/20261025T084049.478049Z-exposed-tip-R`. Model, weight-free geometry and
 runtime identifiers are recorded in those manifests. Any future rerun needs its
 own declared purpose; these completed one-attempt cases are not a tuning pool.
+
+
+## Native pick benchmark: implementation frozen, stationary control running
+
+Source `efe9757` implements one sensor-selected straight 5 mm lift, reusing the
+frozen R3 detector, corrected exposed tool model and Isaac Lab DLS controller.
+The benchmark keeps full I (300/930) for development and H (299/926, previously
+known one-interior-removal geometry) reserved. Each case has a cumulative
+600-second control/pick/audit budget and at most one attempt per version; at most
+three independently reviewed development improvements are allowed.
+
+The matched control holds exact joint targets for 3,600 steps. Job 1800 uses
+`runs/20261025T093331.984420Z-stage2-pick-I-control`; a passing independent
+control and remaining budget are required before any pick. Perception/control
+receive configured virtual RGB-D, proprioception and unlabelled finger-contact
+observations. Initial actor matching, native graph/root states and a reciprocal
+source contact stream remain isolated evaluation instrumentation. No native
+edge edit, grasp joint or post-initialization root pose write can establish a
+pick. Engineered pose/clearance envelopes remain simulation assumptions.
+
+Online held identity is reported separately from independently measured physical
+extraction; UNKNOWN blocks transfer. Classification, reject transfer, insertion,
+stacking and the integrated demo remain incomplete. No hardware readiness or
+physical wrist-camera equivalence follows from this virtual-camera benchmark.
+
+[Protocol](../experiments/stage2_pick_20261025/protocol.json),
+[results ledger](../experiments/stage2_pick_20261025/results.json).
+
+
+### Control audit correction before the first pick
+
+Job 1800 captured all 3,600 stationary steps. All 48 physical/integrity checks
+passed; its sole failing check was an evaluator bug that expected 6 by 5 world
+indices in every layer. The frozen geometry alternates 5 by 6 and 6 by 5 world
+indices. The original failed audit and raw capture remain unchanged. Maximum
+source drift was 0.2083 mm and 0.002184 rad, with all native edges retained and
+zero finger loads; this is source stability evidence, not grasping.
+
+The independently reviewed correction derives the exact expected names from the
+SHA-pinned geometry and re-audits the same capture without simulation. Before any
+pick, the case limit is revised from 600 to 1,200 seconds based on the measured
+218.550-second capture and 224.740-second audit. All 443.339 seconds already
+spent remain charged, followed by the corrected audit and any future pick/audit.
+Only that budget leaf may differ when accepting the exact old control protocol;
+no force, geometry, motion or scoring threshold is relaxed. This uses preflight
+correction round 1 of the three permitted improvements, without resetting the
+pool. Alex has no matching Isaac runtime available per user confirmation; the
+verified local runtime and default Pueue queue remain in use.
