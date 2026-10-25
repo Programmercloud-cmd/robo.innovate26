@@ -90,3 +90,30 @@ Artifacts: [comparison](artifacts/comparison.json),
 [authoritative extracted poses](artifacts/authoritative_poses.json),
 [derived model-frame references](artifacts/transformed_reference_poses.json),
 and [job/provenance record](results.json).
+
+## Later needle and thin-baseplate clarification
+
+The operator used a held needle projecting **approximately 10 mm below the pad
+bottoms** to teach the reference positions. Together with the already-applied
+15 mm base-Z descent, this conditionally puts the pad bottoms about **5 mm
+below the needle-touch surface**. That is not yet measured body-side engagement:
+a stud-top touch and a flat-body-top touch give different results. The actual
+needle extension/projection has no supplied numeric tolerance. The nominal
+1.7 mm model stud height must not be presented as a new physical measurement.
+This clarification does not independently justify deepening the current grip.
+
+The operator identifies #11 as a working grasp on the gray plate and
+`a_0_0_9` as layer ten above the white plate. Their exported configured-EE
+heights differ by **76.845 mm**, versus **86.4 mm** for nine 9.6 mm body-height
+increments, conditional on equal support elevation and the same teaching and
+engagement datum. The approximately **9.555 mm discrepancy remains open**;
+it is not a measured plate offset or grounds to renumber the stack.
+
+Both physical plates are thin LEGO baseplates. The old native scene's 3.2 mm
+plate-body assumption is not a measured physical thickness. No replacement
+thickness, pose offset or brick-grid origin is inferred from the four-stud
+location description. The block's 9.6 mm body height is retained separately.
+
+See the [unaltered operator evidence and conditional reasoning](operator_clarification_20261025.json).
+The original 1831 audit and inputs remain unchanged. This is a documentation
+addendum only; no further batch processing, simulation or hardware command ran.

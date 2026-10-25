@@ -1,0 +1,67 @@
+{
+  "schema": "operator-grasp-datum-clarification-v1",
+  "source": "Later user clarification following the 1831 reference import, 2026-10-25",
+  "historical_job_1831_changed": false,
+  "operator_evidence": {
+    "teaching_indicator": "Needle held in the gripper for precise positioning",
+    "needle_extension_below_pad_bottom_m_approx": 0.010,
+    "needle_extension_numeric_tolerance_m": null,
+    "needle_touched_surface": null,
+    "point_11": {
+      "operator_role": "Working grasp pose for a brick positioned on the gray baseplate",
+      "location_description": "Its left bottom corner has four studs to the left black tape and four studs to the bottom end of the plate, relative to the supplied labeled image",
+      "boundary_or_stud_center_interpretation_verified": false
+    },
+    "a_0_0_9": {
+      "operator_layer_one_based_from_white_baseplate": 10,
+      "export_layer_zero_based": 9
+    },
+    "brick_body_height_without_studs_m": 0.0096,
+    "white_and_gray_baseplate_type": "Thin LEGO baseplates",
+    "measured_baseplate_body_thickness_m": null,
+    "white_minus_gray_brick_support_height_m": null
+  },
+  "conditional_depth_reasoning": {
+    "already_applied_base_Z_descent_m": 0.015,
+    "assumptions": [
+      "The needle reference and the grasp use the same pad mounting",
+      "The approximate needle extension projects along the downward approach direction",
+      "The needle-touch surface is identified before interpreting body engagement"
+    ],
+    "approximate_pad_bottom_below_needle_touch_surface_m": 0.005,
+    "this_is_not_a_measured_body_engagement_depth": true,
+    "body_top_touch_case": "Approximately 5 mm below body top, subject to the unquantified needle-extension uncertainty",
+    "stud_top_touch_case": "Approximately 5 mm minus the actual stud height below body top; 3.3 mm only if the existing MODEL 1.7 mm stud-height assumption applies",
+    "full_frame_rule": "Use the actual rotated pad/needle vectors for a precise comparison; do not equate the 15 mm base-Z descent to insertion depth"
+  },
+  "height_consistency_reasoning": {
+    "source": "The two already imported and numerically checked configured-EE Z coordinates; scalar consistency comparison only",
+    "point_03_equals_a_0_0_9_EE_Z_m": 0.08242671251296997,
+    "point_11_EE_Z_m": 0.005581649616360665,
+    "exported_EE_Z_separation_m_approx": 0.0768450628966093,
+    "conditional_nine_body_height_intervals_m": 0.0864,
+    "conditional_residual_m_approx": -0.0095549371033907,
+    "assumptions": [
+      "Point 11 addresses a first-layer brick directly on the gray plate",
+      "a_0_0_9 addresses a tenth-layer brick above the white plate",
+      "Both references use the same needle, tool transform, contact feature and engagement procedure",
+      "Both plates have the same brick-support elevation"
+    ],
+    "conclusion": "Approximately one brick-height discrepancy; do not resolve it by changing layer count, support height, pad mounting or grasp offsets without evidence",
+    "this_is_not_a_measured_plate_height_difference": true
+  },
+  "existing_scene_assumptions": {
+    "source_files": ["challenge2/layout.py", "challenge2/env_cfg.py"],
+    "plate_body_height_m": 0.0032,
+    "plate_root_table_Z_m": 0.0,
+    "physical_thin_baseplate_match_verified": false,
+    "note": "Keep the confirmed 9.6 mm brick body height separate from the physical baseplate thickness; do not substitute a brick height for a thin plate or silently change native connection geometry"
+  },
+  "runtime_changes": [],
+  "new_simulation_jobs": [],
+  "hardware_commands": [],
+  "pending_clarifications": [
+    "What surface did the needle tip touch at the saved upper reference?",
+    "Were the source/gray references taught with the same needle/tool datum, a full ten-layer source stack, and equal tabletop support heights?"
+  ]
+}

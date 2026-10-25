@@ -19,9 +19,15 @@ are retained separately from the later operator attestation.
 The [data-only reference comparison](../experiments/hardware_grasp_reference_20261025/README.md)
 checks the configured EE against the current model grip frame. It does not
 change scene registration, pad mounting, width mapping, controllers or prior
-results. The remaining contact-reproduction questions are the saved upper
-reference's relation to the brick surface and the physical width-to-pad-gap
-mapping. No new simulation or parameter sweep is scheduled by this import.
+results. The operator subsequently identified a held needle extending approximately
+10 mm below the pads and confirmed thin physical baseplates. The resulting
+approximately 5 mm descent below the needle-touch surface is conditional on
+the touched feature; it is not yet body-side engagement. The #3/source-top and
+#11/gray-plate EE heights also leave a 76.845 versus 86.4 mm consistency question
+under equal support and engagement datums. See the
+[clarification addendum](../experiments/hardware_grasp_reference_20261025/README.md#later-needle-and-thin-baseplate-clarification).
+No pose, plate thickness or width mapping has been fitted to resolve these
+questions. No new simulation or parameter sweep is scheduled by this import.
 
 Local pregrasp RGB color classification has limited saved-render evidence.
 The current sensor-selected runner has an opt-in final-selection color hook;
