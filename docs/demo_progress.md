@@ -236,3 +236,8 @@ sorting success is claimed.
 
 [Commands, frozen gates, all six job IDs and independent audits](../experiments/stage2_pgs_20261025/README.md),
 [machine-readable results](../experiments/stage2_pgs_20261025/results.json).
+
+A [read-only next-contact proposal](demo_next_contact_gate.md) identifies the
+actual stock collision paths, supplied-STL proxy limitation and a minimal positive
+contact-feedback fixture. It is not frozen or executed; no grasp target is chosen
+from privileged truth and claimed as a perception success.
