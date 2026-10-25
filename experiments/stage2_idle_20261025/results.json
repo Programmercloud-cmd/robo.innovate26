@@ -183,5 +183,81 @@
   "updated_tip_collision_validated": false,
   "independent_evaluation": "agrees",
   "independent_review": "agrees; stop bounded round without parameter tuning",
-  "next_blocker": "Resolve spontaneous native breakage through a separately scoped contact/angular-load-accounting investigation before contact manipulation. No evidence justifies increasing preload/friction, changing dt/cooldown or hiding native breakage."
+  "next_blocker": "Resolve spontaneous native breakage through a separately scoped contact/angular-load-accounting investigation before contact manipulation. No evidence justifies increasing preload/friction, changing dt/cooldown or hiding native breakage.",
+  "contact_observation": {
+    "scope": "One unchanged-threshold finite contact-report observation and independent offline evaluation; no manipulation",
+    "capture_job_id": 1738,
+    "evaluation_job_id": 1739,
+    "capture_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T014802.480148Z-stage2-native-contacts-1e-4",
+    "evaluation_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T014929.925825Z-stage2-contact-evaluation",
+    "evaluation_file": "/home/faps/dev/github/robo.innovate26/runs/20261025T014929.925825Z-stage2-contact-evaluation/output/contact_evaluation.json",
+    "evaluation_sha256": "882ee32b5635efa4c5a406dbc504233077fd6f8f58b9ba7066892a58671314c7",
+    "frozen_evaluation_manifest_sha256": "1f6ca0bae51a35657e9b1bbc439a3cef75a64d230d539669e68c116e17966bb8",
+    "capture_source_commit": "2d759ad",
+    "protocol_sha256": "aa1246e68d7202a7b8bde1d7230aa6a1ea17e0a9562affacd8166b9aa113beea",
+    "capture_contact_metadata_sha256": "07c60b806eaccc5bde2686af14421a058a9d8379fe1100025a758be9d076e5e5",
+    "budget": {
+      "physical_observation_runs": 1,
+      "maximum_postassembly_steps": 8,
+      "steps_executed": 7,
+      "stop_first_failure": true,
+      "watched_bodies": 6,
+      "body_steps_reported": 42,
+      "normal_and_friction_capacity_per_view": 1024,
+      "API_setup_adaptations_used": 0,
+      "queue": "default"
+    },
+    "baseline_reference_job_id": 1733,
+    "baseline_equivalence_checks_all_passed": true,
+    "initial_and_terminal_state_files_byte_identical": true,
+    "source_state_difference_summary": {
+      "initial": {
+        "source_position_m_max": 0.0,
+        "source_orientation_rad_max": 0.0,
+        "source_linear_velocity_m_s_max": 0.0,
+        "source_angular_velocity_rad_s_max": 0.0
+      },
+      "last": {
+        "source_position_m_max": 0.0,
+        "source_orientation_rad_max": 4.2146848510894035e-08,
+        "source_linear_velocity_m_s_max": 0.0,
+        "source_angular_velocity_rad_s_max": 0.0
+      }
+    },
+    "orientation_metric_note": "Terminal4.21e-8rad is floating-point quaternion self-distance; the complete state files are byte-identical.",
+    "reporting_setting": {
+      "path": "/physics/disableContactProcessing",
+      "before": true,
+      "after": false,
+      "scope": "process-local; potentially perturbing, requires baseline-equivalence evaluation"
+    },
+    "API": {
+      "source_file": "/home/faps/miniforge3/envs/unitree_sim_env/lib/python3.11/site-packages/isaacsim/extscache/omni.physics.tensors-107.3.26+107.3.3.lx64.r.cp311.u353/omni/physics/tensors/impl/api.py",
+      "source_sha256": "5dd16f8a37eccc94ac82338d6c1127e785cccf761cae1f6f18ef03d55b0f325f",
+      "extension_version_directory": "omni.physics.tensors-107.3.26+107.3.3.lx64.r.cp311.u353"
+    },
+    "filter_coverage": {
+      "requested_and_resolved_paths_per_view": 319,
+      "unresolved_requested_paths": 0,
+      "all_six_views_checked": true
+    },
+    "reported_normal_entries": 0,
+    "reported_friction_entries": 0,
+    "reported_net_and_filtered_normal_impulses_all_zero": true,
+    "all_returned_arrays_finite": true,
+    "positive_reporting_control_verified": false,
+    "contact_completeness": "unknown",
+    "unknown_categories": [
+      "friction_completeness_unverified",
+      "no_positive_reporting_control",
+      "normal_sign_unverified",
+      "substep_time_alignment_unverified"
+    ],
+    "native_JH_comparison_performed": false,
+    "diagnostic_completed": true,
+    "idle_validated": false,
+    "capture_validated": false,
+    "manipulation_validated": false,
+    "independent_verdict": "Instrumentation reproduces baseline within frozen checks, including same step7 native break. All-zero reported streams without a positive control do not prove zero contact or explain native angular load; root cause and extraction prerequisite remain unresolved. No parameter tuning or further experiment follows automatically."
+  }
 }

@@ -152,3 +152,21 @@ Isaac/CUDAapplication compatibility remains NOT_TESTED: no verified matching
 runtime/container was identified. The default probe interpreter isPython3.9.25;
 metadata absence there is not cluster-wide absence. No remote installation,
 training, simulation or scaling follows. See [probe evidence and budgets](../experiments/alex_preflight_20261025/README.md).
+
+
+## Bounded contact-observation diagnostic
+
+Pueue **1738** enables only process-local contact reporting and native debug
+logging for the unchanged full source, capped at eight steps/first failure.
+Independent audit **1739** confirms equivalence to the default 1733 baseline:
+source initial/terminal state files are byte-identical and available per-step
+metrics/joints match; connections 836/837 still break at step 7. No API adaptation
+or physics adjustment was made. All 42 watched body-step records report zero
+normal/friction contacts, including zero aggregate normal impulses. Without a
+positive reporting control, these zeros do not establish complete sensing or
+zero physical loads. Native internal same-component contact suppression is
+also present. Load origin remains unresolved and the idle gate still fails.
+
+[Protocol and commands](../experiments/stage2_idle_20261025/README.md),
+[independent contact audit](../runs/20261025T014929.925825Z-stage2-contact-evaluation/output/REPORT.md).
+This diagnostic does not reset the stage improvement budget or validate grasping.

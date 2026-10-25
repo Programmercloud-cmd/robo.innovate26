@@ -117,3 +117,40 @@ tuning follows. No source-size reduction, fixed-support substitution, scripted
 attachment, teleportation or extraction/transfer/stacking claim is made.
 Further contact/angular-load-accounting work needs a new narrow hypothesis;
 controller development cannot treat spontaneous disassembly as a successful pick.
+
+
+## Contact observation: API queries completed, load origin unresolved
+
+Source `2d759ad`, Pueue **1738**, runs the same full source for at most eight
+postassembly steps, stopping on first failure. Direct tensor views reuse native
+zero-threshold reporters for six watched bodies, with all 319 scene actor/static
+paths requested and a fixed 1024-entry capacity per view. No material, contact,
+clutch, solver, nominal joint or geometry parameter changes. The process-local
+`/physics/disableContactProcessing` setting changes from true to false; this is
+potentially perturbing and requires measured baseline equivalence.
+
+Independent queued audit **1739** passes all frozen equivalence checks against
+1733: initial and terminal source-state files are byte-identical, available
+per-step drift/speed/joint/time metrics agree, and the same connections 836/837
+break at step 7. The tiny quaternion angular self-distance is numerical rounding.
+All 42 body-step records are finite and report **zero normal and zero friction
+entries**; all-partner and filtered normal totals also report zero. Native code
+suppresses contacts within a connected LEGO component. There is no independently
+verified positive contact-reporting control, so completeness, signs and substep
+timing remain unknown. These zeros do not prove absence of physical load.
+Native J/H causal comparison is withheld. This is diagnostic completion, not an
+idle, contact-sensor calibration or extraction pass. No API retry was used.
+
+```bash
+python experiments/stage2_idle_20261025/submit_idle.py --diagnostic --osqp-epsilon 1e-4 --contact-observer
+# Audit is also queued; the exact frozen command is in the evaluation launch.sh.
+```
+
+- [Frozen observation protocol](contact_analysis_protocol.json)
+- [Observation snapshot](../../runs/20261025T014802.480148Z-stage2-native-contacts-1e-4/manifest.json)
+- [Independent audit](../../runs/20261025T014929.925825Z-stage2-contact-evaluation/output/contact_evaluation.json)
+- [Audit summary](../../runs/20261025T014929.925825Z-stage2-contact-evaluation/output/REPORT.md)
+
+The bounded contact-observation round is closed without a physical-parameter
+change or a diagnosed load origin. Further work needs a separate reviewed
+hypothesis and remains within the existing three-round stage limit.
