@@ -191,3 +191,20 @@ incomplete.
 
 [Round 2 protocol/results](../experiments/stage2_idle_20261025/README.md),
 [independent audit](../runs/20261025T020255.062438Z-stage2-round2-evaluation/output/evaluation.json).
+
+
+## Isolated bookkeeping signature and final-round hypothesis
+
+The eccentric two-brick diagnostic **1743**, audited in **1744**, completes eight
+steps/no break with all 36 integrity checks passing. Gravity-consistent linear
+impulse accompanies a persistent native external angular residual, despite zero
+observed angular velocity/momentum change. Independent source reviews find a
+public PhysX TGS writeback expression predicting its exact sign/scale. The
+loaded-binary-to-public-tag correspondence remains qualified. This does not clear
+the failed full300 idle gate or justify removing BrickSim wrench transport.
+
+[Fixture measurements, preserved setup failure and source hypothesis](../experiments/stage2_eccentric_20261025/README.md).
+A single PGS workaround is being prepared as the final Stage 2 improvement round:
+small-fixture gate, then full300 idle, then a reserved removal state, stopping at
+any failed gate. It retains physical capacities, break rules, timestep and default
+actor32/4. No native build or parameter sweep is planned.
