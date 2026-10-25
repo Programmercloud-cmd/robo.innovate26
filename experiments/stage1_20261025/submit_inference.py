@@ -18,6 +18,7 @@ def main():
     p.add_argument('--render-snapshot',type=Path,required=True)
     p.add_argument('--intact',type=Path,default=ROOT/'runs/20261025T000918.719244Z-final-workcell-preview/output')
     p.add_argument('--split',choices=('development','reserved'),required=True)
+    p.add_argument('--workspace',type=Path,help='Optional frozen sensor working-volume prior')
     a = p.parse_args()
     scope = ['experiments/stage1_20261025','experiments/final_workcell_20261024',
              'experiments/sim_pose_20261024/calibration.py','experiments/sim_views_20261024/render_views.py','challenge2']
@@ -25,7 +26,8 @@ def main():
         raise SystemExit('Commit scoped code/configuration before freezing')
     protocol = json.loads((EXP/'evaluation/protocol.json').read_text())
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S.%fZ')
-    snap = ROOT/'runs'/(stamp+'-stage1-'+a.split)
+    version = '-'+a.workspace.stem if a.workspace else ''
+    snap = ROOT/'runs'/(stamp+'-stage1-'+a.split+version)
     snap.mkdir()
     for name in ('stage1_20261025','final_workcell_20261024','sim_pose_20261024','sim_views_20261024'):
         shutil.copytree(ROOT/'experiments'/name,snap/'experiments'/name,
@@ -65,6 +67,9 @@ def main():
          '--frames',str(private/'frames.json'),'--geometry',str(final/'geometry.json'),'--benchmark',str(code/'benchmark.json'),
          '--protocol',str(code/'evaluation/protocol.json'),'--mock-results',str(snap/'inference/mock_results.json'),
          '--split',a.split,'--output',str(snap/'evaluation')]]
+    if a.workspace is not None:
+        relative = a.workspace.resolve().relative_to(EXP)
+        commands[2] += ['--workspace',str(code/relative)]
     lines = ['#!/usr/bin/env bash','set -eo pipefail','cd '+shlex.quote(str(snap)),
              'export PYTHONPATH='+shlex.quote(str(snap)),
              'export ROBO_PUEUE_JOB=1 PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2']
@@ -73,7 +78,7 @@ def main():
     files = [f for f in snap.rglob('*') if f.is_file() and not f.is_relative_to(truth)]
     (snap/'manifest.json').write_text(json.dumps({
         'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
-        'split':a.split,'render_snapshot':str(a.render_snapshot.resolve()),'intact_capture':str(a.intact.resolve()),
+        'split':a.split,'workspace':str(a.workspace) if a.workspace else None,'render_snapshot':str(a.render_snapshot.resolve()),'intact_capture':str(a.intact.resolve()),
         'truth_separation':'Only sensor package/configuration given to online.py; private frame/truth mapping only given to evaluator',
         'sha256':{str(f.relative_to(snap)):hashlib.sha256(f.read_bytes()).hexdigest() for f in files}},indent=2)+'\n')
     result = subprocess.run(['pueue','add','--label','robo26-stage1-'+a.split,

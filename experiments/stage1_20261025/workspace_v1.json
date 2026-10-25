@@ -1,0 +1,12 @@
+{
+  "schema": "stage1-workspace-prior-v1",
+  "table_z_bounds_m": [
+    -0.005,
+    0.2
+  ],
+  "frame": "table",
+  "selection_provenance": "Chosen after baseline development observed a robot surface at about .583m inside source XY ROI; declared and frozen before the single corrected development batch",
+  "basis": "Known approximately .10m input tower with conservative height margin; not actual object poses or simulator truth",
+  "semantics": "Outside-volume returns become NaN unknown; cannot recover occluded stack, infer absence or fill lower surfaces",
+  "bounds_policy": "One fixed comparison only; no bound, detector or camera sweep"
+}

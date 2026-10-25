@@ -30,12 +30,39 @@ def candidate_contract(candidate):
         'pose_limitations': 'XY and shared ridge yaw with selected-band body-top assumption; no per-brick 6D/root pose or tracking identity'}
 
 
+def filter_workspace_depth(depth, calibration, workspace):
+    """Out-of-volume returns become unknown; no completion or lower-depth fill."""
+    import numpy as np
+    if depth.ndim != 2 or depth.dtype.kind != 'f':
+        raise ValueError('Axial depth must be a floating-point image in meters')
+    low, high = workspace['table_z_bounds_m']
+    if [low, high] != [-.005, .20]:
+        raise ValueError('Only the single declared Stage1 workspace bounds are allowed')
+    valid = np.isfinite(depth) & (depth > 0)
+    rows, columns = np.nonzero(valid)
+    K, R, t = calibration['K'], calibration['R'], calibration['t']
+    rays = np.column_stack(((columns-K[0, 2])/K[0, 0],
+                            (rows-K[1, 2])/K[1, 1], np.ones(len(rows))))
+    world = (depth[valid, None]*rays-t)@R
+    below, above = world[:, 2] < low, world[:, 2] > high
+    keep = np.isfinite(world).all(axis=1) & ~below & ~above
+    filtered = np.full_like(depth, np.nan)
+    filtered[rows[keep], columns[keep]] = depth[rows[keep], columns[keep]]
+    return filtered, {'kind': 'declared_table_z_working_volume', 'table_z_bounds_m': [low, high],
+        'total_pixels': int(depth.size), 'finite_positive_input': int(valid.sum()),
+        'invalid_input': int((~valid).sum()), 'below_volume': int(below.sum()),
+        'above_volume': int(above.sum()), 'kept_returns': int(keep.sum()),
+        'removed_valid_returns': int(valid.sum()-keep.sum()),
+        'semantics': 'Removed and invalid returns are NaN/unknown, not physical absence; raw RGB/depth unchanged'}
+
+
 def main():
     import cv2
     import numpy as np
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--inputs', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--workspace', type=Path, help='Optional single declared table-Z preprocessing prior')
     args = parser.parse_args()
     if os.environ.get('ROBO_PUEUE_JOB') != '1':
         raise RuntimeError('Perception batches require default Pueue')
@@ -55,6 +82,7 @@ def main():
     if depth_config != expected_depth_config:
         raise RuntimeError('Only the approved source ROI translation may change R3 configuration')
     package = json.loads((args.inputs/'calibration.json').read_text())
+    workspace = json.loads(args.workspace.read_text()) if args.workspace else None
     frame_records = json.loads((args.inputs/'frames.json').read_text())
     summaries, contracts = [], {}
     started = time.monotonic()
@@ -69,10 +97,16 @@ def main():
         calibration = {'K': np.asarray(package['K'], np.float64),
             'R': np.asarray(nominal['R_world_to_camera'], np.float64),
             't': np.asarray(nominal['t_world_to_camera_m'], np.float64)}
-        result, mask, ridges = method.analyze(depth, rgb, calibration, depth_module,
-            depth_config, config, Evidence, frame['camera'], 'observed')
         folder = args.output/frame['id']
         folder.mkdir()
+        if workspace is not None:
+            depth, preprocessing = filter_workspace_depth(depth, calibration, workspace)
+            preprocessing['workspace_spec'] = workspace
+            preprocessing['raw_depth_sha256'] = hashlib.sha256((args.inputs/frame['depth']).read_bytes()).hexdigest()
+            np.save(folder/'processed_depth.npy', depth)
+            (folder/'preprocessing.json').write_text(json.dumps(preprocessing, indent=2, allow_nan=False)+'\n')
+        result, mask, ridges = method.analyze(depth, rgb, calibration, depth_module,
+            depth_config, config, Evidence, frame['camera'], 'observed')
         payload = {'schema': 'stage1-candidates-v1', 'frame_id': frame['id'],
             'coordinate_frame': 'table', 'image_size': [rgb.shape[1], rgb.shape[0]],
             'candidates': [candidate_contract(c) for c in result['candidates']]}

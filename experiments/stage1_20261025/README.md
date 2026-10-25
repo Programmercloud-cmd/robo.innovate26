@@ -62,3 +62,21 @@ python experiments/stage1_20261025/online.py --inputs sensors --output inference
 
 The only tests run outside the queue are syntax and tiny contract fixtures;
 actual sensor preparation, inference, rendering and evaluation require Pueue.
+
+## One workspace-preprocessing comparison
+
+The first development batch produced no candidates: the top view selected a
+robot surface inside the source XY ROI, while the oblique view had sparse
+top-band support. After inspecting that result, `workspace_v1.json` declares one
+table-Z working volume [-.005,.20]m, based on the known approximately.10m tower
+with margin. This is a post-baseline physical prior, not a tuned R3 threshold or
+truth-derived pose. The optional `online.py --workspace workspace_v1.json`
+backprojects axial depth using configured K/R/t and sets invalid/outside-volume
+returns to NaN. Raw RGB/depth remain unchanged; processed_depth.npy and
+preprocessing.json preserve the filtered input and counts separately.
+
+Without the flag the original depth goes directly to unchanged R3. This is one
+frozen development comparison, with no camera, detector or bounds sweep. Filtering
+cannot recover pixels occluded by the robot or fix small brick image scale.
+Removed returns remain unknown and cannot establish physical absence. If the
+integration gate still fails, report the blocker rather than tune more parameters.
