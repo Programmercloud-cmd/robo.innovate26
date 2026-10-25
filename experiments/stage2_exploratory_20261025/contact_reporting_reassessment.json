@@ -1,0 +1,47 @@
+{
+  "schema": "contact-representation-reassessment-v1",
+  "status": "SOURCE_API_CONFIRMED_PROBE_NOT_AUTHORIZED",
+  "evidence_jobs": [
+    1809,
+    1810
+  ],
+  "source_evidence": [
+    {
+      "path": "/home/faps/miniforge3/envs/unitree_sim_env/lib/python3.11/site-packages/isaacsim/extscache/omni.physx-107.3.26+107.3.3.lx64.r.cp311.u353/omni/physx/bindings/_physx.pyi",
+      "sha256": "ff13abb83480dcc707ac2ad60062306aef7a33f885d32ed4c8ee6dfea2008e79"
+    },
+    {
+      "path": "/home/faps/dev/resources/BrickSim/native/modules/bricksim/physx/physics_graph.cppm",
+      "sha256": "b8889b8f536b8781c6ff5e3e66cd7b7531b4438a03a24282a41bfb67cffc6cc6"
+    },
+    {
+      "path": "/home/faps/dev/resources/BrickSim/native/modules/bricksim/physx/patcher.cppm",
+      "sha256": "56ef4bc19a9c69ac9e3d18c0ab4a0624a91e962c2d7a255b9ef9ff5919f96024"
+    }
+  ],
+  "findings": [
+    "InstalledContactEventHeader exposes separate actor0/1 and collider0/1 uint64 USDpath identifiers plus point-array offset/count.",
+    "PhysicsSchemaTools.intToSdfPath provides collider-path decoding; exact known robot collider path can distinguish pad BODY, metal WHITE and screw HEAD.",
+    "BrickSim native callback forwards the wrapped PhysX onContact before its own processing; source enables robot/LEGO contact notifications.",
+    "Callback buffers have one-step lifetime and must be copied immediately; availability does not establish timing/impulse correspondence with tensor observations."
+  ],
+  "allowed_online_semantics": "Known robot side/component role only. Opposing/source actor/collider IDs remain evaluation-only; no target GT labels/poses used for taskcontrol.",
+  "current_unresolved": "Reported actor-level point is outside authored and returned BODY surfaces. Neither saved data nor API availability proves which shape generated that event or effective runtime offsets.",
+  "proposed_minimal_probe": {
+    "scope": "One separately reviewed observation-only validation of actualrobot collider IDs and unique same-step point/impulse association; fixed positiveBODY and forbiddenWHITE/HEAD cases. No extraction-success claim.",
+    "requirements": [
+      "Keep existing rawtensor force/motion/geometry checks; observerread-only, copy transientbuffers.",
+      "Exact step/time/dt and SIimpulse alignment; missing/ambiguous/unmatched report staysUNKNOWN.",
+      "All loaded points must be accounted; noselective omission of badrepresentativepoint.",
+      "PositiveBODY and negativeWHITE/HEAD assignments verified offline, with sourceIDs strippedonline.",
+      "Fresh source/resource/protocol review before any queued probe; all previous1452.903s retained under1800 aggregate."
+    ],
+    "not_authorized": [
+      "Changing ownership acceptance",
+      "Extending BODYsurface or increasing tolerance",
+      "Newcontactretry/extractionattempt",
+      "Hardwarecontrol or wholearm safetymodel"
+    ]
+  },
+  "completion_status": "Stage2 extraction and stages3\u20136 incomplete; this is not a passing oldgate or a new improvementpool."
+}

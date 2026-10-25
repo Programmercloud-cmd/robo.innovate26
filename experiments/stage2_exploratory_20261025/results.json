@@ -97,8 +97,26 @@
   "independent_review": "Evaluator and reviewer accept58/58 currentqcontrol and one unchanged conditionalIattempt with501.475s remaining.",
   "baseline_status": "CLOSED_FAILED_ONE_OFF_ATTEMPT_NO_RETRY",
   "next_diagnostic": {
-    "scope": "Fixed1710/1711right+source reciprocal, no physics or changes",
-    "maximum_active_seconds": 10,
-    "status": "SOURCE_REVIEW_PENDING"
-  }
+    "job_id": 1810,
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T124546.786370Z-stage2-contact-point-diagnostic",
+    "source_commit": "a797518",
+    "status": "COMPLETE_FIXED_SAVED_POINT_COMPARISON",
+    "post_native_physics_steps": 0,
+    "actual_pueue_seconds": 0.453791,
+    "script_seconds": 0.11846918100491166,
+    "truncated": false,
+    "cumulative_case_seconds": 1452.9025644630237,
+    "remaining_case_seconds": 347.09743553697615,
+    "failure_preserved": true,
+    "key_measurements": {
+      "authored_body_distance_m": 0.0013003736102400743,
+      "returned_cook_fan_distance_m": 0.0016057111358637717,
+      "white_distance_m": 0.025479806792445703,
+      "head_distance_m": 0.018715887761751208,
+      "tolerance_m": 5.108488484329428e-05,
+      "prior_pose_sensitivity_m": 8.080243020016822e-06
+    },
+    "interpretation": "Both predicates agree finite BODYsurface incompatible. No white/head proximity, sign mismatch or one-step-pose explanation established. Underlying contact reporting/cooking cause remains unresolved; offsetsUNMEASURED. No threshold/model change or contactretry authorized."
+  },
+  "next_direction": "Read-only installed contact-report API inspection for exact robot collider identity and per-point time/impulse mapping; no new probe/physics authorized."
 }

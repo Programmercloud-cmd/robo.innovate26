@@ -834,3 +834,31 @@ will compare fixed right/source points at1710/1711 (1709poseonly), exact authore
 BODY/white/head distances and returned-cook representation distances. It cannot
 rescale geometry, infer runtime offsets from None, loosen tolerances, promote
 1809 to success or establish a new manipulation result.
+
+
+Saved-point job1810 (source`a797518`) completes without truncation in0.454active
+seconds (0.118script),0physics. At1710 neither right/source-right has a loaded
+point; at1711 each reports three reciprocal points. One4.074mN point is1.300mm
+from the authored BODY versus0.0511mm allowance, while metal/head are25.480/
+18.716mm away. Both unchanged qualifiers reject it. Previous-pose sensitivity
+is8.08um; the descriptive returned-cook fan distance is1.606mm, so neither that
+representation nor a one-step pose correction establishes compatibility. The
+underlying native reporting/cooking cause and effective offsets remain unknown.
+
+Total charged time is1452.903/1800seconds. The failed grasp remains failed, with
+no model/tolerance/force change or retry. The next narrow direction is read-only
+inspection of installed native contact-report headers for exact known-robot
+collider identity and per-point timing/impulse attribution. That could improve
+component attribution, but cannot retrospectively pass the old finite-surface
+gate or itself authorize new physics. Partner actor IDs must stay evaluator-only.
+
+
+Installed primary source confirms `ContactEventHeader.collider0/1` separately
+from actor IDs, with per-header point offset/count. BrickSim's native patch
+forwards the wrapped contact callback, so a narrow observer may be possible
+without a rebuild. Source availability is not tested runtime correspondence.
+A future separately reviewed observation must establish unique same-step
+point/impulse association and BODY/WHITE/HEAD attribution on positive/negative
+fixtures, while exposing only known-robot roles online and keeping partner IDs
+evaluation-only. No such probe, new physical run or ownership change has been
+authorized by the source finding.
