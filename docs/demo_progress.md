@@ -310,3 +310,31 @@ It cannot promote the old benchmark or authorize D/R/contact. The full goal
 remains active and incomplete.
 
 [Reassessment evidence, versions and source contracts](../experiments/stage2_contact_20261025/reassessment/results.json).
+
+
+## Active-shape observation: setup fixed, proxy discrepancies measured
+
+Original setup1759/audit1760 stops at four empty controls; there are no target
+observations. A reviewed process-local `enable_scene_query_support=True`
+correction addresses the installed headless default. Corrected1761/audit1762
+passes34/34 integrity checks and all250 fixed queries in15.047s including
+the supervised audit command, with nominal
+joints/full300/930/PGS32/4 unchanged and zero measured postassembly steps.
+
+Each pad matches all42 CAD-predicted ray-hit cases outof96, but largest first-hit
+differences are6.500mm left and1.346mm right (nongrazing/nonedge). Active pad
+sphere queries overlap2/27 left and9/27 right independently CAD-free bore
+locations; their clearance is~.598mm/.500mm against50µm probe radius. These
+conditional local discrepancies reject the current automatic-decomposition
+model for faithful updated-tip contact. Negative probes are not global void
+proof. No contact/grasp result follows from the integrity pass.
+
+The two observational attempts and old three-round contact benchmark are
+closed. Planner/evaluator/reviewer recommend inspecting one explicit CAD-derived
+convex compound with preserved bore/contact surfaces and unchanged registration.
+Concrete parts need review before a single frozen approach attempt, with no new
+three-round tuning pool. If this requires substantial geometry infrastructure,
+obtain the original CAD/convex parts instead. No new proxy is implemented yet.
+The full six-stage goal remains active and incomplete.
+
+[Active-query commands, versions, raw data and outcomes](../experiments/stage2_active_query_20261025/README.md).

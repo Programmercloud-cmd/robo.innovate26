@@ -3,9 +3,12 @@
 Status update: the [stock-pad baseline](../experiments/stage2_contact_20261025/README.md)
 now passes. The final supplied-tip geometry attempt failed before contact;
 all three contact improvement rounds are closed. Saved-data audit1758 shows
-representation ambiguity without establishing active collider suitability. A
-separately frozen, motion-free active-shape query diagnostic is the current
-reassessment; there is no contact retry or new decomposition configuration.
+representation ambiguity without establishing active collider suitability. The
+active-shape observation1761/1762 subsequently measures local CAD discrepancies
+(2left/9right overlaps in CAD-free spheres; millimetre ray-distance differences).
+That two-attempt diagnostic is also closed. The next reassessed approach is a
+possible explicit CAD-derived convex compound, whose actual parts must be
+reviewed before cooking; no new proxy or contact run is implemented.
 The original proposal below is retained as planning history.
 
 The initial idle benchmark is closed after three rounds. The tested setting is
