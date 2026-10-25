@@ -338,3 +338,26 @@ obtain the original CAD/convex parts instead. No new proxy is implemented yet.
 The full six-stage goal remains active and incomplete.
 
 [Active-query commands, versions, raw data and outcomes](../experiments/stage2_active_query_20261025/README.md).
+
+
+## Original fingertip inspection supports a concrete partition candidate
+
+Pueue1763, source `b534b2c`, inspects only the supplied original STL in1.677s
+(60s limit). The1256-triangle/630-vertex mesh is closed, consistently oriented
+and nondegenerate. All35 component loops across20 fixed Xsections are closed
+and unbranched, with no coplanar-face sections. Source-plane clusters identify
+the boss front atX=-11mm, body front=-9.5mm, blind bore cap=-4.5mm and back=0mm.
+Nominal STL volume is3366.462mm³ versus3574.971mm³ for its full vertex hull.
+
+These measurements support a possible48-cell model-specific partition—16
+sectors for each of the boss, bored-body and solid-body axial regions. It is
+not yet constructed or accepted. Source-derived polygon supports, cell coverage,
+original100µm fidelity/bounds and bore preservation need independent checks
+before any cooking. No new framework, decomposition sweep or freshthree-round
+allowance is proposed. Current CAD-to-finger registration is also unverified;
+contact-face and distal-end confirmation questions are pending. CAD-frame part
+construction can progress without inventing the physical mounting.
+
+[Inspection evidence and plane/face provenance](../experiments/tip_partition_20261025/results.json),
+[orthographic facet projections](../runs/20261025T050607.814521Z-original-tip-feature-inspection/output/orthographic.png),
+[fixed raw cross-sections](../runs/20261025T050607.814521Z-original-tip-feature-inspection/output/sections.png).
