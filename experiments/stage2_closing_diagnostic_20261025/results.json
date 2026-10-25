@@ -1,0 +1,158 @@
+{
+  "schema": "closing-diagnostic-results-v1",
+  "job_id": 1815,
+  "source_commit": "a32ee7d",
+  "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic",
+  "status": "CURRENT_FAILURE_IDENTIFIED",
+  "observation_complete": true,
+  "steps": 1711,
+  "close_steps": 308,
+  "termination": {
+    "kind": "old_guard_abort",
+    "step": 1711,
+    "original_guard_reasons": [
+      "unqualified_contact_right"
+    ],
+    "diagnostic_stop_reasons": []
+  },
+  "loaded_observations": {
+    "left": 101,
+    "right": 3,
+    "source": 104
+  },
+  "failed_checks": [],
+  "current_bad_points": [
+    {
+      "status": "IDENTIFIED_CURRENT_POINT",
+      "robot_role": "body",
+      "robot_collider": "/World/envs/env_0/Robot/fr3_rightfinger/collisions/mesh_3",
+      "event_role_evidence": "body",
+      "selected_source_partner": true,
+      "same_event_reciprocal": true,
+      "finite_surface_only_failure": true,
+      "step": 1711,
+      "side": "right",
+      "tensor_row": 4,
+      "raw_index": 4,
+      "private_partner": "/World/envs/env_0/brick_9_5_0",
+      "force_signed_N": 0.004073902498930693,
+      "point_world_m": [
+        0.07198528945446014,
+        -0.06440692394971848,
+        0.09482183307409286
+      ],
+      "private_partner_layer": 9,
+      "partner_scope": "SELECTED_SOURCE",
+      "original_point": {
+        "point_world_m": [
+          0.07198528945446014,
+          -0.06440692394971848,
+          0.09482183307409286
+        ],
+        "separation_m": -1.084884843294276e-06,
+        "force_signed_N": 0.004073902498930693,
+        "outward_normal_finger": [
+          0.00014095358644281388,
+          0.9999997943662243,
+          0.0006256193695500672
+        ],
+        "flat_face_distance_m": 8.061717845092142e-06,
+        "lateral_qualified": false,
+        "unique_body": false,
+        "spatial_candidate_association": true
+      },
+      "independently_recomputed": {
+        "point_finger_m": [
+          8.962479812453339e-05,
+          -0.0014147517072256308,
+          0.0629407442474185
+        ],
+        "pad_distance_m": 0.0013003736102400743,
+        "white_distance_m": 0.025479806792445703,
+        "head_distance_m": 0.018715887761751208,
+        "tolerance_m": 5.108488484329428e-05,
+        "unique_body_geometry": false,
+        "flat_face_distance_m": 8.061717845092358e-06,
+        "flat_face_compatible": true,
+        "outward_normal_finger": [
+          0.0001409535864424806,
+          0.9999997943662243,
+          0.0006256193695500673
+        ],
+        "expected_grip_normal_finger": [
+          0,
+          1,
+          0
+        ],
+        "outward_dot_grip_normal": 0.9999997943662243,
+        "lateral_qualified": true,
+        "compatible_roles": [],
+        "external_union_boundary_crossing": true,
+        "uniquely_pad_compatible": false
+      },
+      "reciprocal_source_point": {
+        "tensor_row": 12,
+        "point_world_m": [
+          0.07198528945446014,
+          -0.06440692394971848,
+          0.09482183307409286
+        ],
+        "recomputed": {
+          "point_finger_m": [
+            8.962479812453339e-05,
+            -0.0014147517072256308,
+            0.0629407442474185
+          ],
+          "pad_distance_m": 0.0013003736102400743,
+          "white_distance_m": 0.025479806792445703,
+          "head_distance_m": 0.018715887761751208,
+          "tolerance_m": 5.108488484329428e-05,
+          "unique_body_geometry": false,
+          "flat_face_distance_m": 8.061717845092358e-06,
+          "flat_face_compatible": true,
+          "outward_normal_finger": [
+            0.0001409535864424806,
+            0.9999997943662243,
+            0.0006256193695500673
+          ],
+          "expected_grip_normal_finger": [
+            0,
+            1,
+            0
+          ],
+          "outward_dot_grip_normal": 0.9999997943662243,
+          "lateral_qualified": true,
+          "compatible_roles": [],
+          "external_union_boundary_crossing": true,
+          "uniquely_pad_compatible": false
+        }
+      }
+    }
+  ],
+  "comparison_to_1809": {
+    "same_candidate_id": true,
+    "same_private_target": true
+  },
+  "original_guard_outcome": {
+    "passed": false,
+    "reasons": [
+      "unqualified_contact_right"
+    ]
+  },
+  "old1809_reinterpreted": false,
+  "audit_sha256": "78441e7ccaae218e2b26ffa25e57565c94bf7895fa551d6ae0fb48c44ef377f9",
+  "actual_pueue_seconds": 158.135588985,
+  "supervised_capture_plus_audit_seconds": 157.8759030509973,
+  "prior_case_seconds": 1508.7453462320236,
+  "cumulative_case_seconds": 1666.8809352170235,
+  "case_limit_seconds": 1800,
+  "remaining_case_seconds": 133.11906478297647,
+  "grasp_retry_authorized": false,
+  "lift_or_extraction_authorized": false,
+  "additional_diagnostic_retry_authorized": false,
+  "independent_review": "Independent evaluator and reviewer accept41/41topchecks andall1711frames: currentrejectedpoint uniquelyRIGHTBODY/selectedsource withreciprocalmatch. Originalguardfailed; no grasp/lift/old1809attribution.",
+  "interpretation": "A fresh uniquely mapped BODY/selected-source point fails only finite authored surface extent. This identifies current component attribution; root reporting/cooking point-location cause and effective offsets remain unmeasured. It does not prove secure grasp, physical fidelity or justify native identities online.",
+  "hardware_closure_reference": "hardware_closure_reference.json; Desk14mm operator success supports simple position closure, firmware-to-custom-gap mapping not verified",
+  "goal_status": "INCOMPLETE; no successful lift/extraction/transfer/placement/stack/repeatedsort.",
+  "next_approach": "Prospective simulation-only grip-plane compatibility screen retaining normal/spatial/forbidden-metal-head vetoes and force/motion stops, with native roles strictly offline. Favor a bounded position-width close; Desk14mm\u2192custom gap mapping remains unverified. No new execution authorized by this result."
+}

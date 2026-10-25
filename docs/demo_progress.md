@@ -951,3 +951,50 @@ The retained total is 1508.745346232/1800 seconds, leaving 291.254653768.
 The two-capture observation phase is closed; no further automatic retry exists.
 Machine-readable history and reproduction are in
 `experiments/stage2_collider_probe_20261025/results.json` and its README.
+
+
+## Current closing failure attributed without changing task control
+
+Job 1815 (source `a32ee7d`) performs the prospectively reviewed closing-only
+physical simulation execution: original 1809 RGB-D selection, q, controller,
+geometry and guards; native headers strictly private; no lift or hold. It
+reproduces `unqualified_contact_right` at step 1711, after 308 closing steps,
+on the same sensor candidate and privately bound source. No diagnostic force
+or step limit is reached. The old contact guard remains failed.
+
+The independent audit passes all 41 observation checks and every frame. All 101
+LEFT, 3 RIGHT and 104 reciprocal source loaded observations map uniquely. The
+current rejected point belongs to RIGHT BODY mesh_3 and the selected layer-9
+brick, with the same event seen from the reciprocal source stream. Its finite
+authored BODY distance is 1.300374 mm against a 51.0849 um allowance. Flat-plane
+distance is 8.0617 um, normal dot is 0.999999794, and rendered-candidate spatial
+association passes. Metal and head distances are 25.480 and 18.716 mm. Both
+independent agents accept this limited current-run finding. It identifies a
+BODY-generated point rejected by the finite authored-surface predicate, not a
+metal/head collision or a secure grasp. The underlying point-location/cooking
+cause and effective offsets remain unmeasured. It does not relabel 1809.
+
+Native identities never enter task decisions. The 301-part/930-link source and
+physical properties remain unchanged. No grasp, extraction, transfer or insertion
+has passed. Full Pueue 1815 duration is 158.135588985 seconds versus 157.875903051
+supervised seconds. Retained total is 1666.880935217/1800 seconds, leaving
+133.119064783. Another full same-path capture/audit does not fit this ceiling;
+any next physical experiment requires an explicit prospective resource decision
+with all previous costs retained.
+
+The user reports successful Franka Desk closure to 14 mm and confirms that simple
+finger position control suffices. Existing simulation already uses position
+targets; its 1.5 N threshold was a phase trigger, not a force-control framework.
+No complex grasp motion or RL is indicated by this failure. Desk setting versus
+measured gap and the tip version used remain pending clarification. Source-only
+kinematics give the nominal custom-pad gap `q1 + q2 + 2.81338 mm`; this is not
+calibrated firmware behavior. The observation and conditional joint targets are
+recorded in `experiments/stage2_closing_diagnostic_20261025/hardware_closure_reference.json`.
+
+The smallest reviewed next policy direction is an explicitly unverified
+grip-plane compatibility screen retaining the existing plane/normal/spatial and
+forbidden-metal/head distance vetoes, while removing finite BODY proximity as an
+ownership assertion. It must never claim the point became geometrically correct
+or use native labels online. Actual BODY-only contact and native grasp outcomes
+remain independent evaluation requirements. No such policy change or subsequent
+physics run is implemented or authorized by the diagnostic result itself.
