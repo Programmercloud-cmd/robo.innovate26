@@ -290,3 +290,23 @@ validation the immediate manipulation prerequisite.
 
 [Current contact results](../experiments/stage2_contact_20261025/results.json),
 [1756 failure](../runs/20261025T040508.534018Z-stage2-contact-R3-G/output/failure.json).
+
+
+## Representation reassessment: observe active shapes next
+
+Pueue **1758**, source `10177e6`, analyzes saved left-tip data only (0.109 s).
+All32 indexed surfaces are closed/oriented/nondegenerate, but only16 meet the
+original convexity precision. Maximum polygon nonplanarity is144.508 µm, and
+fan convexity excess115.407 µm. For27 reference-free bore probes, a vertex-hull
+interpretation reports27 outside, SDK halfspaces26 outside/1unknown, and
+conservative indexed winding27unknown. These candidates do not establish the
+actual collision shape or its suitability. OldG/bounds failure/right-tip
+unknown and the closed three-round contact budget remain unchanged.
+
+Planner, independent evaluator and reviewer agree to stop saved-data forensics.
+One separately frozen, motion-free active-PhysX query diagnostic will inspect
+the unchanged STL/registration/decomposition using fixed probes and controls.
+It cannot promote the old benchmark or authorize D/R/contact. The full goal
+remains active and incomplete.
+
+[Reassessment evidence, versions and source contracts](../experiments/stage2_contact_20261025/reassessment/results.json).

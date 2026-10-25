@@ -107,3 +107,34 @@ see the [failure](../../runs/20261025T040508.534018Z-stage2-contact-R3-G/output/
 and [raw partial geometry](../../runs/20261025T040508.534018Z-stage2-contact-R3-G/output/proxy_geometry.json).
 This command documents the failed attempt; do not run it again as a retry.
 No grasping, extraction or hardware control was performed.
+
+## Saved-data representation reassessment
+
+Pueue **1758**, source `10177e6`, performs one read-only analysis of the retained
+left-tip data in 0.109 s (60 s limit). All 32 indexed surfaces have closed,
+consistent, nondegenerate triangle topology, but only 16 meet the original
+convexity precision. Maximum indexed polygon nonplanarity is 144.508 µm; maximum
+fan convexity excess is 115.407 µm. They cannot be assumed to be exact planar
+faces for our earlier halfspace/union audit.
+
+The reference STL confirms all 27 fixed bore probes free. The vertex-derived
+hull candidate puts all 27 outside, supplied SDK planes put 26 outside and one
+unknown, and conservative indexed winding leaves all 27 unknown. This is
+representation ambiguity, not evidence that the actual collider blocks the bore
+or proof that it is usable. The original 102.881 µm versus 100 µm bounds failure,
+missing right-tip evidence and closed R3 remain unchanged.
+
+The [SDK API](https://docs.omniverse.nvidia.com/kit/docs/omni_physics/107.3/extensions/runtime/source/omni.physx/docs/api/python.html)
+exposes vertices, indexed polygons and planes without establishing the earlier
+0.1 µm agreement requirement. The matching-family
+[PhysX cooking source](https://github.com/NVIDIA-Omniverse/PhysX/blob/107.3-physx-5.6.1/physx/include/cooking/PxCooking.h)
+describes scale-dependent near-plane handling. These contracts motivate direct
+observation of active collision shapes; they do not retroactively pass G.
+
+[Machine-readable results, versions and source references](reassessment/results.json),
+[per-hull and per-probe evidence](../../runs/20261025T042001.531758Z-tip-representation-reassessment/output/evaluation.json),
+[exact queued command](../../runs/20261025T042001.531758Z-tip-representation-reassessment/launch.sh).
+
+The reviewed next diagnostic uses one unchanged-proxy, motion-free active-shape
+query setup with fixed ray/overlap controls. It is not a fourth contact tuning
+round, new CAD proxy or authorization to run D/R.

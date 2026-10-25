@@ -1,8 +1,12 @@
 # Next contact gate — historical proposal
 
 Status update: the [stock-pad baseline](../experiments/stage2_contact_20261025/README.md)
-now passes. Supplied-tip collision fidelity remains pending. The original proposal
-below is retained as planning history.
+now passes. The final supplied-tip geometry attempt failed before contact;
+all three contact improvement rounds are closed. Saved-data audit1758 shows
+representation ambiguity without establishing active collider suitability. A
+separately frozen, motion-free active-shape query diagnostic is the current
+reassessment; there is no contact retry or new decomposition configuration.
+The original proposal below is retained as planning history.
 
 The initial idle benchmark is closed after three rounds. The tested setting is
 PGS, source actor iterations 32/4, with the recorded default native parameters.
