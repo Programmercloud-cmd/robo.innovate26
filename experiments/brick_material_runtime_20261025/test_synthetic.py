@@ -2,7 +2,7 @@
 import copy
 from pathlib import Path
 import tempfile
-from evaluate import authoring_contract, f32, getter_contract, runtime_comparison, sha, usd_inventory_delta
+from evaluate import authoring_contract, binding_api_addition, f32, getter_contract, runtime_comparison, sha, usd_inventory_delta
 
 
 def getter(values):
@@ -68,15 +68,39 @@ def test_authoring():
                 'targets': targets, 'runtime_coefficients_verified': False, 'retention_claim': False}}
         original = copy.deepcopy(record)
         assert all(authoring_contract(record, root, pin, pin, pin).values()) and record == original
+        semantic = copy.deepcopy(record)
+        for name in ('BodyCollider', 'TopCollider'):
+            semantic['after'][root+'/'+name]['apis'] = ['MaterialBindingAPI', 'PhysicsCollisionAPI']
+        semantic['after'][scope]['relationships'] = {'proxyPrim': []}
+        assert all(authoring_contract(semantic, root, pin, pin, pin).values())
         for mutate in (
             lambda r: r['after'][root]['attributes']['physics:mass'].update(sdk_value=.1),
             lambda r: r['after'].update({root+'/Extra': empty}),
             lambda r: r['after'][root+'/BodyCollider']['relationships'].update({'material:binding': ['/Changed']}),
             lambda r: r['after'][scope+'/Body']['attributes'].update({'physics:density': {'sdk_value': 1.}}),
             lambda r: r['density_defaults'][scope+'/Top'].update(has_authored_value=True),
+            lambda r: r['after'][root+'/BodyCollider']['apis'].append('ExtraAPI'),
+            lambda r: r['after'][root+'/BodyCollider'].update(apis=['MaterialBindingAPI']),
+            lambda r: r['after'][root+'/BodyCollider']['apis'].append('MaterialBindingAPI'),
+            lambda r: r['after'][scope]['relationships'].update(proxyPrim=['/Unexpected']),
+            lambda r: r['after'][scope]['relationships'].update(other=[]),
         ):
             bad = copy.deepcopy(record); mutate(bad)
             assert not all(authoring_contract(bad, root, pin, pin, pin).values())
+
+
+def test_api_order():
+    old = ['PhysicsCollisionAPI', 'PhysxCollisionAPI']
+    assert binding_api_addition(old, ['MaterialBindingAPI', *old])
+    assert binding_api_addition(old, [old[0], 'MaterialBindingAPI', old[1]])
+    assert binding_api_addition(old, [*old, 'MaterialBindingAPI'])
+    assert not binding_api_addition(old, ['MaterialBindingAPI', *reversed(old)])
+    assert not binding_api_addition(old, ['MaterialBindingAPI', old[0]])
+    assert not binding_api_addition(old, ['MaterialBindingAPI', *old, 'ExtraAPI'])
+    assert not binding_api_addition(old, ['MaterialBindingAPI', *old, 'MaterialBindingAPI'])
+    already = ['MaterialBindingAPI', *old]
+    assert binding_api_addition(already, already)
+    assert not binding_api_addition(already, [*old, 'MaterialBindingAPI'])
 
 
 def test_usd_inventory():
@@ -98,5 +122,5 @@ def test_usd_inventory():
 
 
 if __name__ == '__main__':
-    test_runtime(); test_authoring(); test_usd_inventory()
+    test_runtime(); test_authoring(); test_api_order(); test_usd_inventory()
     print('PASS: unordered float32 bags, missing/error UNKNOWN, exact USD delta and immutable JSON inputs')

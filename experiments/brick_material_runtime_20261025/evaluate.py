@@ -84,6 +84,15 @@ def runtime_comparison(views, baseline):
             'checks': checks, 'getters': results}
 
 
+def binding_api_addition(before, after):
+    """Allow one binding API insertion; preserve every other API and its order."""
+    if not isinstance(before, list) or not isinstance(after, list) or len(before) != len(set(before)):
+        return False
+    name = 'MaterialBindingAPI'
+    if name in before: return after == before
+    return after.count(name) == 1 and [api for api in after if api != name] == before
+
+
 def authoring_contract(record, coupon_path, helper, original_author, wrapper):
     before, after = record['before'], record['after']; scope = coupon_path+'/DeclaredContactMaterials'
     targets = {coupon_path+'/'+name: scope+'/'+('Body' if name == 'BodyCollider' else 'Top') for name in DECLARED}
@@ -94,13 +103,15 @@ def authoring_contract(record, coupon_path, helper, original_author, wrapper):
         'authoring_subtree_inventory': coupon_path in before and all(p == coupon_path or p.startswith(coupon_path+'/') for p in before)
             and set(after) == set(before) | new_paths and not set(before) & new_paths}
     for path, old in before.items():
-        expected = copy.deepcopy(old)
+        expected = copy.deepcopy(old); api_ok = True
         if path in targets:
-            if 'MaterialBindingAPI' not in expected['apis']: expected['apis'].append('MaterialBindingAPI')
+            observed_apis = after.get(path, {}).get('apis')
+            api_ok = binding_api_addition(old['apis'], observed_apis)
+            expected['apis'] = observed_apis
             expected['relationships']['material:binding:physics'] = [targets[path]]
-        checks['authoring_preserved_'+path] = after.get(path) == expected
+        checks['authoring_preserved_'+path] = api_ok and after.get(path) == expected
     empty = {'type': 'Scope', 'apis': [], 'attributes': {}, 'relationships': {}}
-    checks['authoring_scope_only'] = after.get(scope) == empty
+    checks['authoring_scope_only'] = after.get(scope) in (empty, {**empty, 'relationships': {'proxyPrim': []}})
     for name, triple in DECLARED.items():
         target = targets[coupon_path+'/'+name]
         expected = {'type': 'Material', 'apis': ['PhysicsMaterialAPI'], 'relationships': {},
