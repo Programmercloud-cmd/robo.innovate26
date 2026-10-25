@@ -629,3 +629,11 @@ no force, geometry, motion or scoring threshold is relaxed. This uses preflight
 correction round 1 of the three permitted improvements, without resetting the
 pool. Alex has no matching Isaac runtime available per user confirmation; the
 verified local runtime and default Pueue queue remain in use.
+
+
+The audit-only correction (Pueue 1801, source `ca77991`) passes all 49 checks
+on the same 3,600-step capture, without new simulation. Both independent agents
+accept the corrected control; original job 1800 remains failed and unchanged.
+Total charged case time is 673.090 seconds, leaving 526.910 seconds for one
+intact-stack pick and its audit. This is stationary stability, with no extraction
+or transfer established. The unchanged H case remains reserved.
