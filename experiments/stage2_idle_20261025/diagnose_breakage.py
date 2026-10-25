@@ -32,7 +32,7 @@ def diagnostic(*, sim, scene, bricks, spec, output, robot):
     if (hashlib.sha256(protocol_path.read_bytes()).hexdigest() != debug_protocol['baseline_protocol_sha256']
         or debug_protocol['maximum_steps'] != 8 or debug_protocol['first_failure_stops'] is not True
         or debug_protocol['physics_changes'] is not False or debug_protocol['idle_validation_claim'] is not False
-        or debug_protocol['only_changed_setting'] != 'BreakageThresholds.debug_dump False→True'):
+        or debug_protocol['only_changed_breakage_setting'] != 'BreakageThresholds.debug_dump False→True'):
         raise RuntimeError('Diagnostic protocol differs from the single unchanged-physics observation')
     for path, digest in protocol['frozen_input_hashes'].items():
         if hashlib.sha256((ROOT/path).read_bytes()).hexdigest() != digest:
@@ -40,6 +40,13 @@ def diagnostic(*, sim, scene, bricks, spec, output, robot):
     if not math.isclose(sim.get_physics_dt(), protocol['dt_s'], abs_tol=1e-12, rel_tol=0.):
         raise RuntimeError('Diagnostic dt differs from idle baseline')
     thresholds = get_breakage_thresholds()
+    epsilon_raw = os.environ.get('OSQP_EPSILON')
+    if epsilon_raw is not None and epsilon_raw not in ('1e-4','1e-6'):
+        raise RuntimeError('Only declared default/precision epsilon variants are allowed')
+    numerical = {'environment_raw':epsilon_raw, 'effective_requested':float(epsilon_raw) if epsilon_raw else 1e-4,
+        'status':'Existing OsqpSolver constructor environment/default; value is not a serialized solver-setting getter',
+        'coupling':['solver eps_abs and eps_rel','G >= -epsilon','stage2 Hx-Vv <= 1-epsilon'],
+        'physical_thresholds_changed':False,'break_selection_changed':False}
     before = threshold_snapshot(thresholds)
     thresholds.debug_dump = True
     set_breakage_thresholds(thresholds)
@@ -104,7 +111,7 @@ def diagnostic(*, sim, scene, bricks, spec, output, robot):
     dumps = sorted(str(p.relative_to(output)) for p in (output/'native_debug_tmp').rglob('breakage_debug_*.json'))
     report = {'diagnostic_completed': True, 'idle_validated': False, 'capture_validated': False,
         'maximum_steps': debug_protocol['maximum_steps'], 'steps_executed': records[-1]['step'],
-        'thresholds_before': before, 'thresholds_after': after, 'source_ids': names,
+        'thresholds_before': before, 'thresholds_after': after, 'numerical_epsilon':numerical, 'source_ids': names,
         'first_failure': records[-1] if records[-1]['reasons'] else None,
         'native_debug_dumps': dumps, 'protocol': debug_protocol,
         'interpretation': 'Observation only; first breakage or reaching8steps does not establish idle stability or a cause. Cooldown delays selection; it is not inferred as the cause.'}

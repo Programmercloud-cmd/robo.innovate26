@@ -1,6 +1,5 @@
 {
-  "schema": "bounded-native-dump-analysis-v2-relaxation",
-  "expected_dumps": 7,
+  "schema": "bounded-native-dump-analysis-v3-coupled-epsilon",
   "watched_connections": [
     836,
     837
@@ -31,5 +30,17 @@
     "stage2 relaxed constraint gap and nonnegative-v violation",
     "serialized primal residuals and source-configured tolerance reference"
   ],
-  "no_additional_physics_or_solver_execution": true
+  "no_additional_physics_or_solver_execution": true,
+  "executed_step_bounds": [
+    1,
+    8
+  ],
+  "dump_count_policy": "Exactly diagnostic_report.steps_executed dumps, trace0..N, within1..8; legacy7step inputs retained",
+  "supported_requested_numerical_epsilons": [
+    0.0001,
+    1e-06
+  ],
+  "numerical_epsilon_source": "diagnostic_report.numerical_epsilon.effective_requested; absent legacy field assumes source default1e-4 with explicit provenance caveat",
+  "numerical_coupling": "Epsilon changes eps_abs/eps_rel AND G lower bound AND stage2 1-epsilon capacity margin; not a pure termination test",
+  "extension_v3": "Offline interpretation/count adaptation only; same frozen matrix reader and unchanged previous outputs"
 }

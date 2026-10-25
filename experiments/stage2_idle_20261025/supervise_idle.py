@@ -17,7 +17,10 @@ def main(diagnostic=False):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--python', required=True)
+    parser.add_argument('--osqp-epsilon', choices=('1e-4','1e-6'), help='Coupled native numerical setting; diagnostic only')
     args = parser.parse_args()
+    if args.osqp_epsilon and not diagnostic:
+        parser.error('Numerical epsilon variants are restricted to diagnostics')
     if os.environ.get('ROBO_PUEUE_JOB') != '1':
         raise RuntimeError('Idle smoke requires default Pueue')
     directory = Path(__file__).resolve().parent
@@ -26,8 +29,16 @@ def main(diagnostic=False):
     command = [args.python, str(directory/('diagnose_breakage.py' if diagnostic else 'run_idle.py')), '--geometry', str(final/'geometry.json'),
         '--cameras', str(final/'cameras_realism.json'), '--appearance', str(final/'appearance_config.json'),
         '--output', str(args.output), '--views', 'all', '--headless', '--enable_cameras', '--device', 'cpu']
+    child_env = os.environ.copy()
+    if args.osqp_epsilon is not None:
+        child_env['OSQP_EPSILON'] = args.osqp_epsilon
+    (args.output/'numerical_environment.json').write_text(json.dumps({
+        'OSQP_EPSILON_present': 'OSQP_EPSILON' in child_env,
+        'OSQP_EPSILON_raw': child_env.get('OSQP_EPSILON'),
+        'requested': args.osqp_epsilon,
+        'scope': 'Couples solver eps_abs/eps_rel, G lower bound and stage2 capacity interior margin; no physical-threshold or break-selection change'},indent=2)+'\n')
     with (args.output/'process.log').open('w') as log:
-        child = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
+        child = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT, start_new_session=True, env=child_env)
         def cancelled(signum, _frame):
             try: os.killpg(child.pid, signal.SIGKILL)
             except ProcessLookupError: pass

@@ -1,4 +1,4 @@
-"""Read-only, bounded analysis of seven native solver dumps; no solver rerun."""
+"""Read-only analysis of one bounded1..8-step native diagnostic; no solver rerun."""
 import argparse
 import hashlib
 import importlib.util
@@ -46,10 +46,11 @@ def dump_order(path):
     return match[1], int(match[2] or 0)
 
 
-def relaxation_summary(hx_opt, hx_rlx, allowance_opt, allowance_raw, raw_v, info):
+def relaxation_summary(hx_opt, hx_rlx, allowance_opt, allowance_raw, raw_v, info, epsilon):
     """Native dimensionless capacity bounds, not a force or a new tolerance."""
     import numpy as np
-    epsilon = 1e-4  # Source osqp.cppm: build_u_rlx_ and build_settings_.
+    if epsilon not in (1e-4, 1e-6):
+        raise ValueError('Only the two declared coupled numerical epsilon diagnostics are supported')
     opt_gap = hx_opt-1.-allowance_opt
     rlx_gap = hx_rlx-allowance_raw-(1.-epsilon)
     return {'raw_v_k': float(raw_v), 'clamped_v_k': float(max(raw_v, 0.)),
@@ -62,8 +63,8 @@ def relaxation_summary(hx_opt, hx_rlx, allowance_opt, allowance_raw, raw_v, info
         'stage2_v_nonnegative_violation': float(max(-raw_v, 0.)),
         'serialized_stage3_prim_res': info.get('opt_info', {}).get('prim_res'),
         'serialized_stage2_prim_res': info.get('rlx_info', {}).get('prim_res'),
-        'source_configured_eps_abs_and_eps_rel_reference': epsilon,
-        'tolerance_status': 'Source-configured reference only; per-dump settings and auxiliary z/scaling were not serialized, so no exact row termination tolerance is claimed',
+        'requested_eps_abs_and_eps_rel_reference': epsilon,
+        'tolerance_status': 'Recorded request or legacy source-default assumption; native per-dump settings and auxiliary z/scaling were not serialized, so no exact row termination tolerance is claimed',
         'units': 'Dimensionless normalized capacity relaxation; v is not Newtons',
         'native_bounds': 'rlx_sol=[x,v_raw]; v=max(v_raw,0); stage2 H*x-V*v_raw<=1-epsilon; stage3 H*x<=1+V*v'}
 
@@ -74,9 +75,21 @@ def analyze(args):
     if hashlib.sha256(args.matrix_loader.read_bytes()).hexdigest() != protocol['matrix_loader_sha256']:
         raise ValueError('Matrix reader differs from the frozen existing BrickSim source')
     reader = load_reader(args.matrix_loader)
+    diagnostic = json.loads((args.input/'diagnostic_report.json').read_text())
+    count = diagnostic['steps_executed']
+    if diagnostic['maximum_steps'] != 8 or not isinstance(count, int) or not 1 <= count <= 8:
+        raise ValueError('Only a completed1..8-step diagnostic is supported')
+    numerical = diagnostic.get('numerical_epsilon')
+    epsilon = float(numerical['effective_requested']) if numerical else 1e-4
+    if epsilon not in (1e-4, 1e-6):
+        raise ValueError('Undeclared numerical epsilon; no general parameter sweep is supported')
+    epsilon_provenance = {'effective_requested': epsilon,
+        'source': 'recorded_diagnostic_report' if numerical else 'legacy_assumed_source_default_env_not_recorded',
+        'recorded_environment': numerical,
+        'interpretation': 'Coupled numerical epsilon: solver eps_abs/eps_rel, G lower bound and stage2 capacity margin change together; not a pure termination-tolerance test'}
     paths = sorted((args.input/'native_debug_tmp').rglob('breakage_debug_*.json'), key=dump_order)
-    if len(paths) != 7:
-        raise ValueError('This bounded audit requires exactly the seven frozen dumps')
+    if len(paths) != count:
+        raise ValueError('Native dump count must equal the recorded executed diagnostic steps')
     mappings = json.loads((args.input/'native_id_mappings.json').read_text())
     part_names = {int(value): key for key, value in mappings['physx'][0].items()}
     connection_names = {int(value): key for key, value in mappings['physx'][1].items()}
@@ -84,8 +97,8 @@ def analyze(args):
         raise ValueError('Frozen part273 mapping does not identify the observed failed brick')
     trace = [json.loads(line) for line in (args.input/'diagnostic_trace.jsonl').read_text().splitlines()]
     steps = {row['step']: row for row in trace}
-    if sorted(steps) != list(range(8)):
-        raise ValueError('Expected unchanged diagnostic steps0..7 only')
+    if sorted(steps) != list(range(count+1)):
+        raise ValueError('Trace must contain exactly steps0..recorded_steps_executed')
     gravity = np.asarray([0., 0., -9.81])
     records = []
     for step, path in enumerate(paths, 1):
@@ -161,7 +174,7 @@ def analyze(args):
                     row['relaxation'] = {'available': True, 'V_rows_one_hot_to_this_clutch_verified': True,
                         **relaxation_summary(relaxation['H_opt'][selected_rows], relaxation['H_rlx'][selected_rows],
                             relaxation['V_clamped'][selected_rows], relaxation['V_raw'][selected_rows],
-                            relaxation['raw_v'][k], solution.get('info', {}))}
+                            relaxation['raw_v'][k], solution.get('info', {}), epsilon)}
                 else:
                     row['relaxation'] = {'available': False, 'reason': 'Serialized V rows do not verify one-hot clutch correspondence'}
             clutches[str(cid)] = row
@@ -199,7 +212,8 @@ def analyze(args):
                if c['public_match_when_available'] is not None]
     watched_overload = any(row['clutches'][str(cid)]['native_utilization'] is not None
         and row['clutches'][str(cid)]['native_utilization'] > 1 for row in records for cid in WATCHED)
-    summary = {'schema': 'stage2-native-dump-audit-v2-relaxation', 'dump_count': len(records),
+    summary = {'schema': 'stage2-native-dump-audit-v3-coupled-epsilon', 'dump_count': len(records),
+        'numerical_epsilon': epsilon_provenance,
         'part273_mapping': part_names.get(273), 'watched_connection_ids': list(WATCHED),
         'comparison_connection_ids': list(CONTROLS), 'all_serialized_solver_converged': all_converged,
         'all_available_selected_public_utilizations_match_dump': bool(matches) and all(matches),
@@ -209,7 +223,7 @@ def analyze(args):
         'root_cause_status': ('Watched native capacity criterion exceeded before or at disconnection; this identifies a selection mechanism, not the underlying load origin.'
             if watched_overload else 'No watched capacity overload verified from available dump fields; underlying cause remains unresolved.'),
         'limitations': ['No solver or physics rerun, fit or parameter modification.',
-            'Seven dumps are paired chronologically with steps1..7 under one full301/930component; selected public utilization comparisons audit this pairing.',
+            f'{count} dumps are paired chronologically with steps1..{count} under one full301/930component; selected public utilization comparisons audit this pairing.',
             'Solver status is reported only from serialized info; a converged capacity-relaxed optimization does not imply physical contact validation.',
             'Native J/H are momentum change minus internal weld impulses; gravity and contact were not independently logged. Gravity-subtracted values are a reference residual, not a contact sensor.',
             'CC-frame wrench reconstruction uses A and whitened opt_sol; native capacity terms use unwhitened solution.x.',
@@ -237,7 +251,8 @@ def analyze(args):
                 lines.append('|'+str(row['step'])+'|'+str(cid)+'|'+'|'.join('unavailable' if x is None else f'{x:.6g}' for x in numeric)+'|')
             else:
                 lines.append(f"|{row['step']}|{cid}|unavailable||||||")
-    lines += ['', 'v and Hx are normalized capacity quantities. The source sets eps_abs=eps_rel=1e−4; exact per-row termination bounds are unavailable without solver z/scaling. This offline extension changes no physics and does not establish that any utilization excess is purely numerical.']
+    lines += ['', f'Coupled numerical epsilon reference: {epsilon:g} ({epsilon_provenance["source"]}).',
+        'v and Hx are normalized capacity quantities. Epsilon affects solver eps_abs/eps_rel, the G lower bound and the stage2 capacity margin together; this is not a pure termination-tolerance test. Exact per-row termination bounds are unavailable without solver z/scaling. This offline extension changes no physics and does not establish that any utilization excess is purely numerical.']
     (args.output/'REPORT.md').write_text('\n'.join(lines)+'\n')
     (args.output/'run_complete.json').write_text(json.dumps({'complete': True, 'dumps_analyzed': len(records),
         'analysis_sha256': hashlib.sha256((args.output/'debug_analysis.json').read_bytes()).hexdigest(),

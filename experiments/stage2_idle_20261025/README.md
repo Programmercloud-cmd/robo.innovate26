@@ -57,3 +57,25 @@ selection; its timing is not evidence of the failure's cause.
 expected first failure; it explicitly does not mean idle stability passed.
 Use the same frozen default-queue workflow, replacing supervise_idle.py with
 supervise_diagnostic.py. No physics tuning, solver rebuild or recovery is tried.
+
+
+## Coupled numerical-epsilon diagnostic
+
+The installed native binary already accepts process `OSQP_EPSILON`; no rebuild
+or dependency change is needed. One explicit default control at `1e-4` and one
+variant at `1e-6` are bounded to eight steps/first failure. This setting couples
+OSQP absolute/relative tolerances, the G lower bound and the stage2 capacity
+interior margin. It is **not** an isolated solver-termination test, a physical
+clutch-strength change, or an idle pass. The supervisor sets only the owned
+child environment before native import and saves the requested value. Full
+120-step idle mode rejects this diagnostic-only flag. The numerical value must
+also be used when interpreting any serialized stage2 constraint gap.
+
+```bash
+python3 experiments/stage2_idle_20261025/submit_idle.py --diagnostic --osqp-epsilon 1e-4
+python3 experiments/stage2_idle_20261025/submit_idle.py --diagnostic --osqp-epsilon 1e-6
+```
+
+Both retain all physical thresholds, native break selection, geometry and
+nominal robot pose. Surviving eight steps would establish sensitivity only;
+it would not pass the one-second idle gate or authorize an extraction claim.
