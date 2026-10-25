@@ -1,0 +1,67 @@
+{
+  "schema": "stage2-closing-only-diagnostic-v1",
+  "execution_authorized": true,
+  "scope": "ONE additional physical sensor-selected approach/closing execution for private contact-report diagnosis; not an extraction attempt or a new improvement pool",
+  "source_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick",
+  "source_runner_sha256": "a8db27f3e6ab599472d1ba6be65eda449a867bb66ec35bf55c88d45d8e843bb7",
+  "science_sha256": "9382013075e97767cc67daf8e29cdef2432d658d2a3cad2c8947ca07b70f765d",
+  "maximum_jobs": 1,
+  "maximum_active_seconds": 240,
+  "capture_cutoff_seconds": 190,
+  "maximum_physics_steps": 1800,
+  "maximum_close_steps": 400,
+  "sampled_force_stop_N": 0.1,
+  "physics_dt_s": 0.008333333333333333,
+  "prior_case_seconds": 1508.7453462320236,
+  "aggregate_case_ceiling_seconds": 1800,
+  "prior_supervisor": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T134529.532656Z-stage2-collider-probe/pipeline_supervisor.json",
+    "sha256": "87683d825fa17776a7c66cdf57248b334b3c2ed9a53da3288baf2b8b92f3812d"
+  },
+  "source_metadata": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick/output/capture_metadata.json",
+    "sha256": "3115ed79d7d87c27c3a4a75d830d575e18608ebc7e00476ffd895f15c931c61b"
+  },
+  "original_selection": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick/output/online/selection.json",
+    "sha256": "10e77e27601ae411ed6b95a7829e610948e1866ed60a8b496e6979bb7f889898"
+  },
+  "original_binding": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick/output/evaluation_truth/initial_binding.json",
+    "sha256": "e2100054b3ab4620a5df9c1530e7860e8d02226162042fc2a0f7abe0768da54a"
+  },
+  "observer_validation": {
+    "job_id": 1814,
+    "audit": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T134529.532656Z-stage2-collider-probe/audit/evaluation.json",
+      "sha256": "e35c45949fd7acf0cf446f6264aa7b2ad35149da5f22c1c66cc51f8b01ad951d"
+    },
+    "source_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T134529.532656Z-stage2-collider-probe",
+    "native_observer_sha256": "673ee75e4c091054f6de6199bcb465654f19cc54427381e236ae1b8ab3412c25",
+    "mapping_helpers_sha256": "8cee5c606d21bf1a9e0c63c31a3825c44f05b437596477de07641e5d98774311",
+    "protocol_sha256": "f59bd5aaf5bc3f35ad1ec235816518a6f88ed748b5cc1586e0eda8c6ea3c07a0"
+  },
+  "matching": {
+    "position_atol_m": 2e-06,
+    "separation_atol_m": 2e-06,
+    "normal_atol": 0.001,
+    "impulse_atol_Ns": 1e-07,
+    "impulse_rtol": 1e-05,
+    "require_unique_bidirectional_loaded_point_accounting": true,
+    "missing_or_ambiguous": "UNKNOWN",
+    "tangential_impulse": "Preserve separately; do not compare full vector with tensor normal impulse",
+    "event_sensor_sign": "+1 if known robot is actor0/shape0, -1 if actor1/shape1; normal from shape1 to shape0. Fixed before data, never inferred per point.",
+    "primary_contract": "NVIDIA-Omniverse/PhysX 107.3-physx-5.6.1/physx/include/PxSimulationEventCallback.h: contact normal shape1 toward shape0; extracted impulse normal * scalar impulse"
+  },
+  "force_floor_N": 1e-08,
+  "online_contract": "Rendered-RGBD selection and original tensor contact/proprioception guards only. Native callback role/shape/partner identities are evaluation-only and never qualify, exempt or select a point/brick.",
+  "stopping": "Record simultaneous original and diagnostic reasons. Stop earliest originalguard abort, eitherpad SUMABS normal>=0.1N,400close steps,1800total steps orwallbudget. No lift/hold/transport.",
+  "source_watchdog": "Same frozen Recorder.stationary source watchdog:301parts/930links and no catastrophic drift/events; no target exemption.",
+  "interpretation": "Unique current bad-point shape attribution only if all loaded points map fresh in BOTH fingers and selected-source reciprocal stream. Missing orambiguous =>UNKNOWN. No current badpoint =>NOT_REPRODUCED. Never retrospectively attribute1809.",
+  "unchanged": [
+    "Original1809 perception/controller/initialq/cameras/model/nativephysics",
+    "All original finite-surface/flat-normal/spatial/motion/force/early-contact checks",
+    "All previous failed results and aggregatecosts"
+  ],
+  "independent_review": "Planner/implementer plus independent evaluator and reviewer agree compactclosing-onlyplan. Final reviewer approves completed source forONE<=240s additional physical approach/closing diagnostic. Existing science/controller/contactguards unchanged, native IDs evaluation-only, no lift/hold/successretry. NewoperatorDesk14mmreference is preserved separately and changes no current parameter."
+}

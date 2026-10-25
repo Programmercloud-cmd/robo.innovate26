@@ -1,0 +1,12 @@
+{
+  "schema": "operator-gripper-closure-reference-v1",
+  "source": "User report, 2026-10-25",
+  "observation": "Commanding the gripper through Franka Desk to close to14mm worked perfectly; simple position closure is sufficient.",
+  "desk_setting_m": 0.014,
+  "requested_width_versus_measured_gap": "Pending clarification",
+  "fingertip_version_during_test": "Pending clarification",
+  "interpretation": "Use simple position-controlled closure as the manipulation baseline. This observation does not by itself calibrate firmware width to simulated finger joints or actual custom-pad face separation.",
+  "current_diagnostic_changed": false,
+  "current_control": "Existing controller already sends finger position targets; the old1.5N condition was an experimental phase trigger, not evidence that complex force control or RL is required.",
+  "not_inferred": ["Actual pad/brick deformation or measured gap", "Contact force", "Calibrated firmware-to-custom-pad offset", "Native simulated extraction or physical extraction readiness"]
+}
