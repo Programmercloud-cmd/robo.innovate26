@@ -1,0 +1,138 @@
+{
+  "schema": "user-annotated-workcell-measurements-v1",
+  "source": "User hand measurements and red/blue annotations,2026-10-25",
+  "image": "resources/setup_images/final_workcell_20261025_measurements/annotated_top_view.jpg",
+  "image_sha256": "30558420854a71ebe7cec10ee45dee5a0774e26176dc56aaf5c2e5ba85a25338",
+  "original_attachment": "/tmp/codex-remote-attachments/01a1695a-4748-7da0-9e58-161d211f20b4/9E8E2773-D908-4970-AB32-6BAA79E285AD/1-Photo-1.jpg",
+  "frame_convention": "ExistingTABLE +X toward grayplate,+Y towardbowl,+Zup; image directions alone do not establish robot-frame transforms.",
+  "measurement_quality": "Approximate hand measurements; no numerical uncertainty or calibration precision assigned.",
+  "measurements": [
+    {
+      "id": "source_plate",
+      "values": {
+        "approximate_outer_size_m": [
+          0.25,
+          0.25
+        ],
+        "studs": [
+          32,
+          32
+        ]
+      },
+      "status": "confirms_prior_user_description",
+      "note": "Keep native8mm pitch; do not shrink native.256m plate to rounded25cm."
+    },
+    {
+      "id": "target_plate",
+      "values": {
+        "approximate_outer_size_m": [
+          0.38,
+          0.38
+        ],
+        "studs": [
+          48,
+          48
+        ]
+      },
+      "status": "confirms_prior_user_description",
+      "note": "Keep native8mm pitch/.384m plate."
+    },
+    {
+      "id": "black_tape_width",
+      "value_m": 0.035,
+      "status": "clear_on_annotated_target_side",
+      "application": "Confirms current35mm visual tape width."
+    },
+    {
+      "id": "black_tape_intrusion",
+      "value_m": 0.014,
+      "status": "clear_annotations_on_source_and_target_sides",
+      "application": "Update visual overlap from16mm to14mm; existing whole-stud working bounds remain conservatively two rows. Opposite-side symmetry follows prior workcell convention, not independently measured here."
+    },
+    {
+      "id": "yellow_divider_width",
+      "value_m": 0.02,
+      "status": "clear_annotation",
+      "application": "Update visual width from15mm to20mm; nominal2.5studpitches, not exact three rows."
+    },
+    {
+      "id": "board_pattern_long_side",
+      "value_m": 0.21,
+      "status": "clear_number_endpoint_pattern_edge_likely",
+      "application": "Consistent with7squares of nominal30mm; no camera calibration."
+    },
+    {
+      "id": "board_square",
+      "value_m": 0.03,
+      "status": "clear_annotation",
+      "application": "Confirms nominal30mm square; hand-measured/printflatness not metrology."
+    },
+    {
+      "id": "board_marker",
+      "value_m": 0.02,
+      "status": "pending_rounding_or_actual_width_confirmation",
+      "question": "20mm actual marker width or rounded nominal22mm?"
+    },
+    {
+      "id": "plate_to_board_gap",
+      "value_m": 0.116,
+      "status": "pending_endpoint_confirmation",
+      "question": "Gray outerplate edge to printedpattern edge, or tape/paper edges?"
+    },
+    {
+      "id": "plate_to_base",
+      "value_m": 0.215,
+      "status": "pending_endpoint_confirmation",
+      "question": "Whiteplate outeredge to nearestbasehousing edge versus rotationaxis center?"
+    },
+    {
+      "id": "board_to_base",
+      "value_m": 0.26,
+      "status": "pending_endpoint_confirmation",
+      "question": "Printedpattern loweredge to which fixedbasehousing point/axis?"
+    },
+    {
+      "id": "bowl_horizontal_image_offset",
+      "value_m": 0.16,
+      "status": "tentative_endpoint_interpretation_not_applied",
+      "interpretation": "Dashed horizontal appears bowlcenter to whiteplate outeredge; keep endpoint uncertainty."
+    },
+    {
+      "id": "bowl_vertical_image_offset",
+      "value_m": 0.13,
+      "status": "tentative_endpoint_interpretation_not_applied",
+      "interpretation": "Dashed vertical appears bowlcenter to whiteplate loweredge extension; not robot-frame data."
+    },
+    {
+      "id": "fixed_camera_horizontal_offset",
+      "value_m": 0.19,
+      "status": "pending_camera_identity_and_endpoint_confirmation",
+      "question": "Whichcamera? Whiteplate outeredge to opticalcenter verticalprojection? Which direction?"
+    },
+    {
+      "id": "fixed_camera_height",
+      "value_m": 0.44,
+      "status": "pending_camera_identity_and_optical_center_confirmation",
+      "question": "Opticalcenter above tabletop, or housing/support height?"
+    }
+  ],
+  "applied_now": [
+    "black_tape_intrusion",
+    "yellow_divider_width"
+  ],
+  "pending": [
+    "robot/base endpoint geometry",
+    "camera identity/opticalcenter/heading",
+    "board gap/marker rounding",
+    "bowl endpoint interpretation"
+  ],
+  "execution_state": "Initializer source reviewed but not submitted; execution_authorized remainsfalse until scene version decided. Historical renders/benchmarks preserved.",
+  "not_established": [
+    "robot-frame calibration",
+    "hand-eye extrinsics",
+    "camera intrinsics",
+    "camera opticalaxis",
+    "physicalgrasp/placement readiness"
+  ],
+  "scene_version_note": "Tape boxes change rendered color/depth. Physical collision actors, native plate/brick geometry and conservative whole-stud working bounds are unchanged. Historical RGB-D belongs to the prior scene, not a fresh validation of these visuals."
+}

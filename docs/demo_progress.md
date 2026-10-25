@@ -747,3 +747,23 @@ authorized for this frozen benchmark.
 [Color settings and source](../experiments/stage1_color_20261025/),
 [results](../experiments/stage1_color_20261025/results.json),
 [representative overlay](../runs/20261025T112235.070296Z-stage1-color/predictions/f000_overlay.png).
+
+
+## New annotated physical measurements, 2026-10-25
+
+The user supplied a hand-annotated top view, archived with SHA provenance in
+`experiments/final_workcell_20261024/measurements_20261025.json`. Source/target
+32/48studs and approximate25/38cm sizes are reconfirmed; native8mm pitch and
+plate geometry are preserved. Visual black tape overlap is updated16→14mm
+(1.75nominal pitches), and yellow divider width15→20mm. Black width35mm stays.
+Whole-stud working bounds still exclude two rows conservatively; this is not a
+new validated insertion keepout or hardware calibration. The changed visuals
+have not been rendered, and all earlier captures/results stay unchanged.
+
+Base offsets21.5/26cm, board gap11.6cm, marker20versus22mm and fixed-camera
+19cm offset/44cm height have unresolved endpoints/identity. Clarification is
+pending; these numbers are recorded without inventing base-center or optical-
+frame transforms. Bowl13/16cm offsets retain tentative endpoint interpretation.
+The final-round initialization diagnostic source is independently reviewed,
+but no job is submitted and its execution flag remains false while the scene
+version is decided. No new simulation cost or manipulation credit is recorded.

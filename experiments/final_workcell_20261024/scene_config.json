@@ -135,14 +135,15 @@
         0.006,
         0.006
       ],
-      "black_tape_covered_rows_each_y_edge": 2,
+      "black_tape_covered_rows_each_y_edge": 1.75,
       "black_tape_width_m": 0.035,
       "black_tape_inner_stud_bounds_xyxy": [
         0,
         2,
         32,
         30
-      ]
+      ],
+      "black_tape_intrusion_note": "Approximate hand measurement (2026-10-25): 14 mm, or 1.75 nominal 8 mm pitches. Whole-stud working bounds still exclude two rows. Opposite sides assumed symmetric."
     },
     "target": {
       "studs": 48,
@@ -152,7 +153,7 @@
         0.0
       ],
       "status": "User-reported outer size; native32/48 geometry at8mm pitch left unstretched; tape/placement clearances unvalidated",
-      "tape_width_m": 0.015,
+      "tape_width_m": 0.02,
       "zone_cut_studs": [
         24,
         24
@@ -199,7 +200,7 @@
         0.004,
         0.004
       ],
-      "black_tape_covered_rows_each_y_edge": 2,
+      "black_tape_covered_rows_each_y_edge": 1.75,
       "black_tape_width_m": 0.035,
       "black_tape_inner_stud_bounds_xyxy": [
         0,
@@ -207,7 +208,8 @@
         48,
         46
       ],
-      "zone_fit_note": "Black tape covers first/last twoY studrows; yellow divider width is a separate estimate. Repeating22stud lattice fit in half-zone is unvalidated and may not fit once tape is excluded; target remains empty."
+      "zone_fit_note": "Whole-stud working bounds conservatively exclude two Y rows; visual black overlap is 14 mm and yellow divider width is 20 mm from hand measurements. Fit of the repeating 22-stud lattice in a half-zone remains unvalidated; target remains empty.",
+      "black_tape_intrusion_note": "Approximate hand measurement (2026-10-25): 14 mm, or 1.75 nominal 8 mm pitches. Whole-stud working bounds still exclude two rows. Opposite sides assumed symmetric."
     },
     "reject_bowl": {
       "center_table_m": [
@@ -407,6 +409,10 @@
       },
       "stock_pad_proximal_finger_z_m": 0.03609037,
       "height_anchor": "User-confirmed same proximal/top edge as stock pads; longer body extends distally below metal. Boss and outside head share the resulting axis height."
+    },
+    "measurement_update_20261025": {
+      "source": "experiments/final_workcell_20261024/measurements_20261025.json",
+      "status": "Tape visuals updated only; measured base/camera/board/bowl endpoint geometry pending clarification. Native plates and historical benchmarks unchanged."
     }
   }
 }

@@ -98,7 +98,7 @@ def decorate_stage(stage, cfg, output):
         width = studs*.008
         plate = layout[prefix]
         tape_width = plate["black_tape_width_m"]
-        # Tape intrudes exactly two8mm stud rows on each photographed Y edge.
+        # Visual overlap uses nominal8mm-pitch units; 2026-10-25 hand measurement is14mm.
         tape_center_offset = width/2-plate["black_tape_covered_rows_each_y_edge"]*.008+tape_width/2
         for sign in (-1, 1):
             box(f"{prefix}_black_border_{sign+1}", (center[0], center[1]+sign*tape_center_offset, .0052),
