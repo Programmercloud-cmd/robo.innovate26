@@ -379,3 +379,26 @@ checks retained. There is no cooking/contact approval or fresh three-round
 allowance. Mounting-face/distal-end questions remain unanswered.
 
 [Preserved outcomes](../experiments/tip_partition_20261025/compound/results.json).
+
+
+## Explicit compound passes offline sampled geometry checks
+
+Pueue1766 (source`9d789ab`) completes the unchanged48-cell construction
+with one reviewed128→255 offline vertex-guard correction. All27 earlier
+records remain exactly equal. All16 independent checks pass; source-outside
+maximum exact distance is59.735µm, candidate exterior sampled distance plus
+its1µm bracket is60.667µm, bounds error is numerical noise and volume differs
+by0.0530%. All27 reference-free50µm bore spheres remain free in the candidate.
+Actual cumulative supervised time including1764/1765 is6.547s of180s.
+
+This is sampled CAD-frame evidence, not a global Hausdorff guarantee, native
+cookability, confirmed physical mounting, or contact/grasp success. Source
+inside samples use a fixed100µm outward-normal endpoint bound, not nearest
+Euclidean distance. Candidate filtering excludes internal interfaces;22
+samples have unresolved exterior brackets. One narrow native cooking/query
+gate is being reviewed before any contact is attempted. All previous failed
+benchmarks remain failed; no new three-round allowance is created.
+
+[Independent offline audit](../runs/20261025T061618.814542Z-explicit-tip-compound-255/audit/evaluation.json),
+[exact27-record check](../runs/20261025T061618.814542Z-explicit-tip-compound-255/prefix_check.json),
+[commands and source manifest](../runs/20261025T061618.814542Z-explicit-tip-compound-255/manifest.json).
