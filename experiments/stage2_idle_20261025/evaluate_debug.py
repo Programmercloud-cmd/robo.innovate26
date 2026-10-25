@@ -46,6 +46,28 @@ def dump_order(path):
     return match[1], int(match[2] or 0)
 
 
+def relaxation_summary(hx_opt, hx_rlx, allowance_opt, allowance_raw, raw_v, info):
+    """Native dimensionless capacity bounds, not a force or a new tolerance."""
+    import numpy as np
+    epsilon = 1e-4  # Source osqp.cppm: build_u_rlx_ and build_settings_.
+    opt_gap = hx_opt-1.-allowance_opt
+    rlx_gap = hx_rlx-allowance_raw-(1.-epsilon)
+    return {'raw_v_k': float(raw_v), 'clamped_v_k': float(max(raw_v, 0.)),
+        'stage3_max_Hx_minus_one': float(np.max(hx_opt-1.)),
+        'stage3_Vv_range': [float(allowance_opt.min()), float(allowance_opt.max())],
+        'stage3_max_signed_gap_to_1_plus_Vv_bound': float(opt_gap.max()),
+        'stage3_max_positive_violation': float(max(opt_gap.max(), 0.)),
+        'stage2_max_signed_gap_to_1_minus_epsilon_bound': float(rlx_gap.max()),
+        'stage2_max_positive_violation': float(max(rlx_gap.max(), 0.)),
+        'stage2_v_nonnegative_violation': float(max(-raw_v, 0.)),
+        'serialized_stage3_prim_res': info.get('opt_info', {}).get('prim_res'),
+        'serialized_stage2_prim_res': info.get('rlx_info', {}).get('prim_res'),
+        'source_configured_eps_abs_and_eps_rel_reference': epsilon,
+        'tolerance_status': 'Source-configured reference only; per-dump settings and auxiliary z/scaling were not serialized, so no exact row termination tolerance is claimed',
+        'units': 'Dimensionless normalized capacity relaxation; v is not Newtons',
+        'native_bounds': 'rlx_sol=[x,v_raw]; v=max(v_raw,0); stage2 H*x-V*v_raw<=1-epsilon; stage3 H*x<=1+V*v'}
+
+
 def analyze(args):
     import numpy as np
     protocol = json.loads(Path(__file__).with_name('analysis_protocol.json').read_text())
@@ -85,6 +107,19 @@ def analyze(args):
         slack, b = reader(state['slack']).ravel(), reader(dump['b']).ravel()
         capacities = reader(system['capacities'])
         capacity_indices = np.asarray(system['capacity_clutch_indices'], int)
+        relaxation = None
+        if 'rlx_sol' in state:
+            rlx_sol = reader(state['rlx_sol']).ravel()
+            nx, nv = system['num_vars'], system['num_clutches']
+            capacity_H, capacity_V = reader(system['H']), reader(system['V'])
+            if (len(rlx_sol) != nx+nv or capacity_H.shape != (len(capacity_indices), nx)
+                or capacity_V.shape != (len(capacity_indices), nv)):
+                raise ValueError('Native [x,v] relaxation layout differs from the documented source')
+            raw_v = rlx_sol[nx:]
+            relaxation = {'H_opt': np.asarray(capacity_H@solver_x),
+                'H_rlx': np.asarray(capacity_H@rlx_sol[:nx]), 'raw_v': raw_v,
+                'V_clamped': np.asarray(capacity_V@np.maximum(raw_v, 0.)),
+                'V_raw': np.asarray(capacity_V@raw_v), 'V': capacity_V}
         if len(solver_x) != A.shape[1] or len(b) != A.shape[0]:
             raise ValueError('Unexpected serialized solver dimensions')
         physical_solution_available = len(physical_x) == len(solver_x)
@@ -116,6 +151,19 @@ def analyze(args):
             public = steps[step]['utilization'].get(connection_names.get(cid, ''))
             row['public_utilization_after_step'] = public
             row['public_match_when_available'] = None if public is None or public < 0 or not utilization_available else bool(np.isclose(public, utilization[k], rtol=1e-8, atol=1e-8))
+            row['relaxation'] = {'available': False, 'reason': 'rlx_sol absent from serialized state'}
+            if relaxation is not None:
+                selected_rows = capacity_indices == k
+                selected_V = relaxation['V'][selected_rows]
+                one_hot = (selected_rows.any() and np.all(selected_V.getnnz(axis=1) == 1)
+                    and np.all(np.asarray(selected_V[:, k].toarray()).ravel() == 1.))
+                if one_hot:
+                    row['relaxation'] = {'available': True, 'V_rows_one_hot_to_this_clutch_verified': True,
+                        **relaxation_summary(relaxation['H_opt'][selected_rows], relaxation['H_rlx'][selected_rows],
+                            relaxation['V_clamped'][selected_rows], relaxation['V_raw'][selected_rows],
+                            relaxation['raw_v'][k], solution.get('info', {}))}
+                else:
+                    row['relaxation'] = {'available': False, 'reason': 'Serialized V rows do not verify one-hot clutch correspondence'}
             clutches[str(cid)] = row
         parts = {}
         for pid in sorted(interested):
@@ -151,7 +199,7 @@ def analyze(args):
                if c['public_match_when_available'] is not None]
     watched_overload = any(row['clutches'][str(cid)]['native_utilization'] is not None
         and row['clutches'][str(cid)]['native_utilization'] > 1 for row in records for cid in WATCHED)
-    summary = {'schema': 'stage2-native-dump-audit-v1', 'dump_count': len(records),
+    summary = {'schema': 'stage2-native-dump-audit-v2-relaxation', 'dump_count': len(records),
         'part273_mapping': part_names.get(273), 'watched_connection_ids': list(WATCHED),
         'comparison_connection_ids': list(CONTROLS), 'all_serialized_solver_converged': all_converged,
         'all_available_selected_public_utilizations_match_dump': bool(matches) and all(matches),
@@ -165,6 +213,7 @@ def analyze(args):
             'Solver status is reported only from serialized info; a converged capacity-relaxed optimization does not imply physical contact validation.',
             'Native J/H are momentum change minus internal weld impulses; gravity and contact were not independently logged. Gravity-subtracted values are a reference residual, not a contact sensor.',
             'CC-frame wrench reconstruction uses A and whitened opt_sol; native capacity terms use unwhitened solution.x.',
+            'Stage3 intentionally permits Hx<=1+Vv after stage2 relaxation; utilization slightly above1 cannot be attributed solely to numerical solver error without inspecting v and the actual relaxed constraint gap.',
             'Cooldown only gates break selection and is not inferred as a cause.',
             'Updated fingertip geometry remains visual only; no grasping or hardware validation.']}
     args.output.mkdir(parents=True, exist_ok=True)
@@ -175,6 +224,20 @@ def analyze(args):
         lines.append('|'+str(row['step'])+'|'+str(row['solver_info_serialized'].get('converged', 'unavailable'))+'|'+
             f"{row['slack_fraction_serialized']:.6g}|"+'|'.join('unavailable' if row['clutches'][str(cid)]['native_utilization'] is None else f"{row['clutches'][str(cid)]['native_utilization']:.6g}" for cid in WATCHED+CONTROLS)+'|')
     lines += ['', summary['root_cause_status'], '', 'Masses, inertia, impulses, normalized capacity terms, reconstructed wrenches and exact solver status/residuals are in debug_analysis.json.', '', 'The nominal gravity subtraction is not independently measured contact force. No parameter change is recommended from timing alone.']
+    lines += ['', '## Watched relaxation bounds', '',
+        '|Step|Clutch|v raw|v clamped|max Hx−1|max Vv|max relaxed gap|OSQP opt primal residual|',
+        '|---:|---:|---:|---:|---:|---:|---:|---:|']
+    for row in records:
+        for cid in WATCHED:
+            values = row['clutches'][str(cid)]['relaxation']
+            if values['available']:
+                numeric = [values['raw_v_k'], values['clamped_v_k'], values['stage3_max_Hx_minus_one'],
+                    values['stage3_Vv_range'][1], values['stage3_max_signed_gap_to_1_plus_Vv_bound'],
+                    values['serialized_stage3_prim_res']]
+                lines.append('|'+str(row['step'])+'|'+str(cid)+'|'+'|'.join('unavailable' if x is None else f'{x:.6g}' for x in numeric)+'|')
+            else:
+                lines.append(f"|{row['step']}|{cid}|unavailable||||||")
+    lines += ['', 'v and Hx are normalized capacity quantities. The source sets eps_abs=eps_rel=1e−4; exact per-row termination bounds are unavailable without solver z/scaling. This offline extension changes no physics and does not establish that any utilization excess is purely numerical.']
     (args.output/'REPORT.md').write_text('\n'.join(lines)+'\n')
     (args.output/'run_complete.json').write_text(json.dumps({'complete': True, 'dumps_analyzed': len(records),
         'analysis_sha256': hashlib.sha256((args.output/'debug_analysis.json').read_bytes()).hexdigest(),

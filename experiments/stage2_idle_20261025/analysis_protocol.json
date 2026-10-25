@@ -1,5 +1,5 @@
 {
-  "schema": "bounded-native-dump-analysis-v1",
+  "schema": "bounded-native-dump-analysis-v2-relaxation",
   "expected_dumps": 7,
   "watched_connections": [
     836,
@@ -22,5 +22,14 @@
     -9.81
   ],
   "gravity_reference_status": "Nominal configured Isaac default reference; not independently separated in native J/H",
-  "scope": "Serialized solver info/residuals/utilization/capacity terms/mass/inertia/impulse observations only; root cause may remain unresolved"
+  "scope": "Serialized solver info/residuals/utilization/capacity terms/mass/inertia/impulse observations only; root cause may remain unresolved",
+  "extension_reason": "Independent review found stage2 per-clutch nonnegative relaxation intentionally permits stage3 Hx<=1+Vv; need distinguish permitted relaxation from a numerical feasibility gap before considering any fix",
+  "only_added_offline_fields": [
+    "raw and clamped v[k] from rlx_sol tail(num_clutches)",
+    "H*opt_sol-1 and V*max(v_raw,0)",
+    "stage3 signed/positive relaxed constraint gaps",
+    "stage2 relaxed constraint gap and nonnegative-v violation",
+    "serialized primal residuals and source-configured tolerance reference"
+  ],
+  "no_additional_physics_or_solver_execution": true
 }
