@@ -715,3 +715,35 @@ further trial is authorized in this pool. Round 3 remains unused; prior rounds,
 failures and costs stay recorded. H remains untouched, and no grasp, extraction
 or transfer has been established. Future transport/observation changes need
 explicitly reviewed initialization/control compatibility and resource scope.
+
+
+## Measured pregrasp RGB color classification
+
+Pueue 1806, frozen source `cd0cc55`, completes the reviewed <=60-second saved-
+image experiment in approximately 2.05 active seconds (1.740 inference, 0.032
+audit). No new rendering, model, training or dependency changes are used. Five
+human-labelled RGB rectangles provide screened float-Lab reference medians;
+simulator colors/identities remain evaluator-only. Reference bricks are excluded
+across every state/view, and other bricks keep one hash-defined evaluation split.
+
+All 35 eligible non-reference PRESENT observations are classified correctly
+across 14 distinct bricks, with zero wrong or unverified confident calls. The
+all-UNKNOWN baseline has zero color coverage. Development has 18/18 correct
+observations; reserved has 17/17 across six objects, but no visible reserved dark
+red object, so reserved dark red is unvalidated. All five colors have correct
+non-reference evidence overall. The forced-PRESENT mixed tan/ochre control
+abstains specifically on mixed pixels; invalid-depth control has no confident
+label. Settings were frozen before scoring and are not tuned afterwards.
+
+Conditional color coverage is 35/35. Overall visible occurrence recall is 35/98
+(35.7%); overhead is 35/73 (47.9%), while oblique supplies zero PRESENT targets
+out of 25 visible references. Low recall remains a detector coverage limitation.
+These are correlated views/states of the same arrangement, not independent-stack
+generalization. A source color label does not establish held identity, physical
+shade correctness, quality/defects or C920 focus. Stage2 still abstains, so this
+is not actual color-to-manipulation integration. No further color tuning/job is
+authorized for this frozen benchmark.
+
+[Color settings and source](../experiments/stage1_color_20261025/),
+[results](../experiments/stage1_color_20261025/results.json),
+[representative overlay](../runs/20261025T112235.070296Z-stage1-color/predictions/f000_overlay.png).
