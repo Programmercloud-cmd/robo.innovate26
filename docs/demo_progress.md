@@ -1136,3 +1136,25 @@ diagnostic, independently of the1mm/s commanded ramp and implicit-drive asset
 limits. Any revised criterion is a separately frozen engineering reassessment;
 1824 remains FAIL/CENSORED. Full190.508734634s charges the retained aggregate
 to2594.227219942/2800s.
+
+
+## Fixed-target finger response — final fixture comparison closed
+
+Job 1825 removes the earlier speed censoring through the reviewed prospective
+lift-only criterion. The unchanged position admission occurs at step 450 after
+30 endpoint commands. Maximum lift finger speeds are 3.947/3.991 mm/s, below the
+20 mm/s ceiling; all model, margin and control-compatibility checks pass.
+
+Retention nevertheless fails for 151 frames: maximum coupon–TCP drift is
+1.861 mm / 7.946°, final initialization-relative rise is 0.854 mm, and the
+capture aborts at step 740 on an unqualified right contact. There is no completed
+5 mm lift or 30-step hold. This is a physical retention failure in the declared
+fixture, not proof that the real Desk 14 mm method fails. The simulated custom-pad
+gap and gripping band are not calibrated to that hardware grasp.
+
+Independent evaluation and review close the third/final fixture comparison.
+Reconcile actual jaw-gap and gripping-depth mapping before further physics;
+no fourth cutoff, offset, force or trajectory variant follows. Full Pueue cost
+88.718362536 s brings the retained total to 2682.945582478/2800 s.
+Source `9c8dbb4`, snapshot `runs/20261025T165816.000989Z-stage2-finger-response`.
+See [result and limitations](../experiments/stage2_finger_response_20261025/README.md).
