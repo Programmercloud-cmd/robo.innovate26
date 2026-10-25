@@ -18,8 +18,50 @@
       "pipeline_supervisor.json": "acd6fa34a531aaca1c3ddfb8c8a7bab955fc3477f11cd755d8983a5514e8ec6c"
     }
   },
-  "reviewed_reassessment": "One final initialization-only property preservation correction under source review. Same exact48geometry/probes/strictB0guard; total2attempts/cumulative180s incl14.699420149s. No new three-round pool.",
+  "reviewed_reassessment": "Targeted per-finger RigidBodyView initialization contract under review, addressing observed collateral writes. No tolerance/order/geometry changes; no fresh three-round pool. Proposed aggregate max3 native executions/one targeted route,180s cumulative including29.796654914s.",
   "tested_clear_features_passed": false,
   "contact_authorized": false,
-  "physical_registration_validated": false
+  "physical_registration_validated": false,
+  "attempt2": {
+    "job_id": 1768,
+    "source_commit": "cd7aca3",
+    "snapshot": "runs/20261025T063606.330409Z-explicit-tip-native-query-fixed-mass",
+    "status": "FAILED_BEFORE_EXPLICIT_INITIALIZATION_COOK_AND_QUERIES",
+    "reason": "Full-articulation setters restored both fingers exactly but rewrote previously correct nonfinger inertia/principal-axis readbacks. Strict full-robot equality failed.",
+    "saved_record_findings": {
+      "all_masses_exact": true,
+      "all_COM_positions_exact": true,
+      "both_finger_all3_physical_arrays_exact": true,
+      "all_actuator_arrays_exact": true,
+      "nonfinger_inertia_and_principal_quaternion_differences": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9
+      ],
+      "q_qdot_time_unchanged": true,
+      "setters_completed_once": [
+        "set_masses",
+        "set_coms",
+        "set_inertias"
+      ],
+      "physical_equivalence_not_established": true
+    },
+    "actual_cumulative_process_seconds": 29.796654913996463,
+    "target_geometry": "UNTESTED",
+    "sha256": {
+      "manifest.json": "bf17c4f19c62c7308517b9ed9deb606658b0bc12bb3a617a04d8f5e68cda2df7",
+      "output/failure.json": "2dae0207bd3ae88d1a6964538740a96804ad4cdb3b9081bdf59c35094441f6d9",
+      "output/property_restoration.json": "d0a1b86cd2ad6201e4d1b13f98351b9c38beb38168e1be9cd84799a958a24792",
+      "output/supervisor.json": "0eeae48d00ffb4f6d6a09df3aedc70e3a558885f532dee26a789e4cc10a3b0eb",
+      "audit/evaluation.json": "9f71f4552ecf3fc99a8c7177b0e8e61b8717917154c5ee0213e520fc32e46067",
+      "pipeline_supervisor.json": "0809981498fce296da1b68df315715eccfdbd48abc69996866b236f138ac0f07"
+    }
+  },
+  "status": "Two full-articulation setup attempts closed/failed. Offline compound fidelity passed; native geometry untested."
 }

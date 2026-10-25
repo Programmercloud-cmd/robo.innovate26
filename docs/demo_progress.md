@@ -425,3 +425,23 @@ actuator tuning is proposed. At most two native setup attempts and cumulative
 pending before the final attempt.
 
 [Preserved native-test failure](../experiments/compound_native_query_20261025/results.json).
+
+
+## Full-articulation property restoration fails on untouched arm links
+
+Pueue1768 (source`cd7aca3`) completes the fixed three setters once but fails
+strict readback before the explicit initialization step, cooking or queries.
+Saved records show both finger property sets, all masses/COM translations and
+actuators exactly restored. Only nonfinger inertia matrices/principal-axis
+quaternions at indices0–7,9 differ; q/qdot and physics time are unchanged.
+This is consistent with documented inertia re-diagonalization on rewritten
+links; physical equivalence is not established. Both setup attempts remain
+closed/failed, with29.797s cumulative process time.
+
+A concrete source-supported reassessment targets only the two finger actors
+through RigidBodyView setters, leaving arm actors unwritten. Same B0 model,
+setter order, strict full-robot readback, shape, query and state guards remain.
+This is under independent source review, not a fresh three-round pool or a
+retroactive pass. At most one targeted-route run is proposed (aggregate three
+native executions, cumulative180s including prior29.797s). Native cooked
+geometry/contact and physical tool mounting remain unvalidated.
