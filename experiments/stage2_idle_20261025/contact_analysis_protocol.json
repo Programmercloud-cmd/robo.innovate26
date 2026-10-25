@@ -1,0 +1,142 @@
+{
+  "schema": "bounded-contact-observation-analysis-v1",
+  "status": "frozen_before_contact_observation_run",
+  "scope": "One finite observation-only local native diagnostic; no grasp, contact-model correction or idle success claim",
+  "budget": {
+    "runs": 1,
+    "maximum_postassembly_steps": 8,
+    "stop_first_failure": true,
+    "physics_dt_s": 0.008333333333333333,
+    "normal_contact_entry_capacity": 1024,
+    "friction_contact_entry_capacity": 1024,
+    "native_debug_dump_maximum": 8,
+    "policy": "Same full300 source, no reduced scene, sweep, reset, post-initialization state writes or retry loop. This does not reset the existing three-round stage budget.",
+    "capacity_semantics": "1024 entries per direct tensor contact view, including its documented normal/friction buffers; record actual capacity returned by each API.",
+    "maximum_pre_step_API_adaptations": 1,
+    "API_adaptation_policy": "At most one reviewed source/snapshot correction after an explicit API setup/argument error before postassembly step1. Preserve failed setup. No adaptation from contact values, breakage, trajectory or physics feedback; no second postassembly observation run. Reassess if collection fails after stepping."
+  },
+  "baseline": {
+    "pueue_job_id": 1733,
+    "output": "runs/20261025T005714.927650Z-stage2-native-epsilon-1e-4/output",
+    "protocol_sha256": "9f43c444cd0154147630b2ea3765d1526ed34549378dea510596b61577c5466b",
+    "frozen_files_sha256": {
+      "diagnostic_report.json": "1fc67f495556f674ef8d0d12a18ed8cd8f717eb3bd91b0fcc4325f09fb45511f",
+      "diagnostic_trace.jsonl": "f68c380c3b5d72edf5e919b4c2dcb630972970c114209a4efc51423a02cfaa62",
+      "diagnostic_states_initial.npy": "b3c3e9d002236fd2af1101563e23dda577c92f2f21f8e04d2047b9c348e84cd9",
+      "diagnostic_states_last.npy": "1dacf9d85e76161203a082d0ce6ef632ef2a513a20624af20d6fe74700757173"
+    },
+    "expected_first_break_step": 7,
+    "expected_broken_connection_ids": [
+      836,
+      837
+    ],
+    "expected_broken_endpoint_pairs": [
+      [
+        "brick_8_0_3",
+        "brick_9_0_3"
+      ],
+      [
+        "brick_8_0_4",
+        "brick_9_0_3"
+      ]
+    ],
+    "source_component_initial_parts": 301,
+    "source_initial_native_links": 930,
+    "physical_source_bricks": 300,
+    "source_component_at_expected_failure_parts": 300,
+    "source_native_links_at_expected_failure": 928,
+    "note": "Default coupled OSQP_EPSILON=1e-4. The1e-6 pair is contextual evidence, not a new physical baseline."
+  },
+  "unchanged_settings": {
+    "OSQP_EPSILON": "1e-4",
+    "physical_breakage_fields": "Every public breakage field equals baseline1733; debug_dump=True is reporting only. Compare assembly thresholds too; automatic assembly stays disabled and breakage enabled.",
+    "geometry": "Same300 source bodies/301 parts/930 links, stock collisions, masses/inertia/materials/transforms/gravity, native connection frames and initial state.",
+    "control": "Same nominal arm/finger joint targets and actuator setup; no task motion, force command or pose correction.",
+    "disallowed": [
+      "preload/friction/compliance/contact-regularization/slack/cooldown changes",
+      "dt/substep/solver/break-rule changes",
+      "collision/geometry/constraint modifications",
+      "deleting clutches or suppressing break detection"
+    ]
+  },
+  "instrumentation": {
+    "api": "Direct PhysX tensor contact view; record exact installed API/version/return semantics. Do not use convenience wrappers that silently change stabilization or physics settings.",
+    "reporters": "Reuse existing contact reporters and thresholds; record setup and assert no reporter threshold/shape edits.",
+    "process_local_setting": {
+      "path": "/physics/disableContactProcessing",
+      "requested": false,
+      "status": "Explicitly potentially perturbing reporting/processing setting; record before/after. Equivalence must be measured, never assumed."
+    },
+    "watched_bodies": [
+      "brick_9_0_3",
+      "brick_8_0_3",
+      "brick_8_0_4",
+      "brick_9_0_2",
+      "brick_9_0_4",
+      "brick_9_5_1"
+    ],
+    "unbroken_control": {
+      "body": "brick_9_5_1",
+      "connection_ids": [
+        922,
+        923
+      ]
+    },
+    "coverage": "All contact partners for every watched body, including other bricks, robot, table and nonLEGO assets. Same connected-component LEGO contact suppression/refiltering must be recorded; internal zero cannot exclude external contacts.",
+    "capacity_policy": "1024 entries per view. Record allocated capacity, active counts/start indices, truncation/overflow/backend warnings. At capacity or without demonstrable completeness, label contact completeness unknown. Do not silently increase capacity and rerun.",
+    "positive_control": "Record any independently justified positive reporting/control contact within existing unchanged scene and why it should be observable. Do not invent a contact or create a new collider. Without a positive control, contact-stream completeness remains UNKNOWN, including when all sensors return zero. An unbroken native clutch is not a positive PhysX contact-report control."
+  },
+  "timing_frames_units": {
+    "step0": "After existing initialization/manual native preassembly, before any postassembly step. Preassembly/stale contact buffers are not current observations.",
+    "per_step": "Record step index, sim time before and after sim.step, actual dt, scene.update/read order, native dump sequence and source/robot snapshots. Stop at first baseline failure condition.",
+    "association": "Pair contact data with same-step native J/H and world COM only when timestamp/order convention is supported; otherwise time_alignment_unknown.",
+    "units": "Record whether API returns forces or impulses and its dt convention. Convert documented force output to impulse with actual step dt only; no guessed unit conversion.",
+    "coordinates": "Record world/local frame and sensor body/filter shape ordering for normals, normal scalar, friction vectors and points. Preserve raw arrays and path/index maps.",
+    "normal_sign": "Use primary installed API contract and available reciprocal watched-body contacts. If sign/body orientation is unresolved, retain magnitudes but do not claim a signed wrench.",
+    "friction": "Keep friction patch points separate from normal points; no per-point pairing unless API explicitly provides it. Unknown or unreported tangent data is not zero.",
+    "COM": "Use same-step actual world COM, not body-bottom/root position. Record pre/poststep convention and native COM correspondence; unresolved COM/time invalidates signed moment comparison."
+  },
+  "derived_metrics": {
+    "normal_impulse": "Per watched body Jn=sum(jn*n), using documented body-force normal sign.",
+    "tangential_impulse": "Per watched body Jt=sum(jt), using actual available tangential vectors and documented frame.",
+    "moments": "Sum cross(contact_point-COM,normal_impulse) and cross(friction_point-COM,tangential_impulse) separately, in world frame. Do not double-count reciprocal body rows.",
+    "aggregate_check": "Compare per-point sums to API aggregates only where their documented force/impulse/friction semantics match; record discrepancy rather than force agreement.",
+    "native_comparison": "Same-run contact impulses and moments may be compared descriptively with native J/H only after unit/frame/time/sign/completeness gates. J/H minus nominal gravity is not an independent contact sensor; weld/damping/gyroscopic/accounting and unlogged terms may remain.",
+    "interpretation": "Contact contribution/accounting evidence only. Convergence, empty streams or near-boundary utilization do not establish physical overload, numerical error, stability, extraction or calibrated force sensing."
+  },
+  "equivalence_tolerances": {
+    "source_position_m_max": 2e-06,
+    "source_orientation_rad_max": 0.0001,
+    "source_linear_velocity_m_s_max": 1e-05,
+    "source_angular_velocity_rad_s_max": 0.0001,
+    "joint_position_native_units_max": 1e-06,
+    "joint_velocity_native_units_per_s_max": 1e-06,
+    "simulation_time_s_max": 1e-07,
+    "native_threshold_comparison": "Exact serialized public values, apart from debug-reporting metadata already enabled in reference.",
+    "state_coverage": "Compare initial and same terminal-step301body states, and all baseline-available per-step global drift/speed/q metrics. Do not claim complete per-body trajectories if baseline lacks those intermediate states.",
+    "breakage": "Exact first failure step and endpoint pair set; connection IDs must match recorded mapping or explicitly report identity/mapping difference.",
+    "outcome": "Any mismatch, premature instrumentation failure, missing comparison states or changed break timing is an instrumentation perturbation/unverified equivalence. Do not use it as a causal explanation of the original baseline."
+  },
+  "unknown_categories": [
+    "normal_data_unavailable",
+    "tangent_data_unavailable",
+    "contact_partner_mapping_unknown",
+    "normal_sign_unknown",
+    "force_impulse_units_or_dt_unknown",
+    "time_alignment_unknown",
+    "COM_alignment_unknown",
+    "buffer_overflow_or_capacity_saturation",
+    "contact_stream_completeness_unknown",
+    "suppressed_internal_contacts",
+    "instrumentation_perturbation",
+    "baseline_trajectory_comparison_incomplete",
+    "no_positive_reporting_control"
+  ],
+  "completion": {
+    "diagnostic_completed": "Collection/reporting finished within declared budget; missing observations remain explicitly unknown.",
+    "idle_validated": false,
+    "capture_validated": false,
+    "manipulation_validated": false,
+    "report": "Preserve source/config/API/setup/protocol hashes and raw contact counts/streams, state equivalence, native event identities, per-body normal/tangent impulses/moments, applicable gates and unmeasured terms. Do not recommend a physical parameter change from one diagnostic alone."
+  }
+}

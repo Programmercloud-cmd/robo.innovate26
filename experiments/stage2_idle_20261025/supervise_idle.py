@@ -18,9 +18,12 @@ def main(diagnostic=False):
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--python', required=True)
     parser.add_argument('--osqp-epsilon', choices=('1e-4','1e-6'), help='Coupled native numerical setting; diagnostic only')
+    parser.add_argument('--contact-observer', action='store_true', help='Public raw contact observation; diagnostic only')
     args = parser.parse_args()
     if args.osqp_epsilon and not diagnostic:
         parser.error('Numerical epsilon variants are restricted to diagnostics')
+    if args.contact_observer and (not diagnostic or args.osqp_epsilon != '1e-4'):
+        parser.error('Contact observation requires diagnostic and explicit baseline epsilon1e-4')
     if os.environ.get('ROBO_PUEUE_JOB') != '1':
         raise RuntimeError('Idle smoke requires default Pueue')
     directory = Path(__file__).resolve().parent
@@ -32,6 +35,7 @@ def main(diagnostic=False):
     child_env = os.environ.copy()
     if args.osqp_epsilon is not None:
         child_env['OSQP_EPSILON'] = args.osqp_epsilon
+    child_env['ROBO_CONTACT_OBSERVER'] = '1' if args.contact_observer else '0'
     (args.output/'numerical_environment.json').write_text(json.dumps({
         'OSQP_EPSILON_present': 'OSQP_EPSILON' in child_env,
         'OSQP_EPSILON_raw': child_env.get('OSQP_EPSILON'),

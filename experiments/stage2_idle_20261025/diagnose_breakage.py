@@ -77,9 +77,14 @@ def diagnostic(*, sim, scene, bricks, spec, output, robot):
     initial = states()
     np.save(output/'diagnostic_states_initial.npy', initial)
     records = []
+    observer = None
+    if os.environ.get('ROBO_CONTACT_OBSERVER') == '1':
+        from contact_observer import ContactObserver
+        observer = ContactObserver(sim, scene, output)
     with (output/'diagnostic_trace.jsonl').open('w') as trace:
         for step in range(debug_protocol['maximum_steps']+1):
             if step:
+                if observer is not None: observer.before_step()
                 scene.write_data_to_sim(); sim.step(render=False); scene.update(sim.get_physics_dt())
             current = states()
             record = assess_state(initial, current, protocol)
@@ -103,6 +108,7 @@ def diagnostic(*, sim, scene, bricks, spec, output, robot):
             if events or set(actual_parts) != expected_parts or set(actual_connections) != set(connections):
                 record['reasons'].append('native_component_changed_or_broken')
             if not robot_finite: record['reasons'].append('nonfinite_robot_state')
+            if observer is not None: record['contact_observation'] = observer.sample(step)
             trace.write(json.dumps(record, allow_nan=False)+'\n'); trace.flush()
             records.append(record)
             print('DIAGNOSTIC_STEP', step, record['reasons'], flush=True)
@@ -112,6 +118,7 @@ def diagnostic(*, sim, scene, bricks, spec, output, robot):
     report = {'diagnostic_completed': True, 'idle_validated': False, 'capture_validated': False,
         'maximum_steps': debug_protocol['maximum_steps'], 'steps_executed': records[-1]['step'],
         'thresholds_before': before, 'thresholds_after': after, 'numerical_epsilon':numerical, 'source_ids': names,
+        'contact_observer_enabled': observer is not None,
         'first_failure': records[-1] if records[-1]['reasons'] else None,
         'native_debug_dumps': dumps, 'protocol': debug_protocol,
         'interpretation': 'Observation only; first breakage or reaching8steps does not establish idle stability or a cause. Cooldown delays selection; it is not inferred as the cause.'}
