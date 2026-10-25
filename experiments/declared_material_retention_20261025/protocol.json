@@ -1,0 +1,456 @@
+{
+  "schema": "declared-material-correctness-regression-v1",
+  "execution_authorized": true,
+  "scope": "ONE corrected-model baseline: fresh1500 stationarycontrol thenconditionalunchanged1825free-couponretention. Realizepre-existingdeclaredBody/Topcoefficients usingverifiedbindinghelper only. Oldthreeimprovementroundsremainclosed; zero newvariants/retries or Desk14mm/hardwareequivalence.",
+  "source_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T165816.000989Z-stage2-finger-response",
+  "original_pick_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick",
+  "source_runner_sha256": "a8db27f3e6ab599472d1ba6be65eda449a867bb66ec35bf55c88d45d8e843bb7",
+  "source_science_sha256": "9382013075e97767cc67daf8e29cdef2432d658d2a3cad2c8947ca07b70f765d",
+  "maximum_jobs": 1,
+  "maximum_physics_steps": 1500,
+  "maximum_active_seconds": 300,
+  "capture_cutoff_seconds": 230,
+  "audit_limit_seconds": 40,
+  "prior_case_seconds": 2698.1306163560234,
+  "prior_supervisor": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T175236.440880Z-brick-material-adjudication/pipeline_supervisor.json",
+    "sha256": "5729eedf026dacdb714b98b790a92b49b5cecd392a030a44555b6bcd414b7baa"
+  },
+  "aggregate_case_ceiling_seconds": 3000,
+  "previous_case_ceiling_seconds": 2800,
+  "budget_amendment": "Prospective one-off correctness regression after verified pre-existing material-authoring defect. Retain all2698.130616356s; ONE<=300s control+conditionalpick+audits under3000(worst2998.130616356). No budget reset, coefficient alternatives or new improvement pool.",
+  "case": "FREE_RETENTION",
+  "expected_initial": {
+    "bricks": 300,
+    "parts": 301,
+    "native_connections": 930
+  },
+  "reserved_configuration": {
+    "id": "H",
+    "removed": [
+      "brick_9_2_2"
+    ],
+    "bricks": 299,
+    "parts": 300,
+    "native_connections": 926,
+    "status": "RESERVED_UNTESTED_NOT_AUTHORIZED",
+    "requires_own_matched_control_and_resource_decision": true
+  },
+  "nominal_pad_gap_m": 0.014,
+  "expected_finger_endpoint_m": 0.00559331,
+  "endpoint_derived_match_tolerance_m": 2e-06,
+  "endpoint_command_tolerance_m": 1e-09,
+  "endpoint_settle_steps": 30,
+  "grasp_confirmation_N": 1.5,
+  "grasp_confirmation_consecutive_steps": 3,
+  "confirmation_command": "Freeze LAST COMMANDED symmetric fingerq atthirdfreshboth>=1.5N sample, no extra closingincrement; endpointsettle mayconfirm otherwiseabstain.",
+  "commanded_lift_m": 0.005,
+  "hold_steps": 30,
+  "online_hold_status": "UNKNOWN; blocksStage3transfer",
+  "model_gap_convention": "Nominal gap fromactualcomposedpadplanes/jointsigns. No equivalence claimed toDesk14mm, actualdeformedgap orachievedtargetundercontact.",
+  "contact_policy": "UNVERIFIED_GRIP_PLANE_COMPATIBILITY_ONLY; nativeidentities evaluation-only, retiredfiniteBODYnecessity loggedasreferencefailure, noownershipassertion",
+  "force_floor_N": 1e-08,
+  "source_metadata": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick/output/capture_metadata.json",
+    "sha256": "3115ed79d7d87c27c3a4a75d830d575e18608ebc7e00476ffd895f15c931c61b"
+  },
+  "control_evidence": {
+    "job_id": 1808,
+    "audit": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T121511.546955Z-stage2-exploratory-I-control/audit/evaluation.json",
+      "sha256": "a68175ef3e718ad1a1d3e7fce7e7f7fdf097e3bbede3927d991e31879ac447c3"
+    },
+    "metadata": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T121511.546955Z-stage2-exploratory-I-control/output/capture_metadata.json",
+      "sha256": "fcedca7bbec20d163ff8d63e5b1d96c14c3eef6476c9211cb7074fa1cf58dd63"
+    },
+    "observer_metadata": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T121511.546955Z-stage2-exploratory-I-control/output/contact_observations/metadata.json",
+      "sha256": "d06019403161b0cc34261895491e88f4a6315017a9efd6731b7a35da32aafb71"
+    },
+    "supervisor": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T121511.546955Z-stage2-exploratory-I-control/pipeline_supervisor.json",
+      "sha256": "a2917464ece1724ab0b9d7b82a6b34ee078997bd852ef7093392aa7a10cd5ec8"
+    },
+    "reuse_scope": "Historical1808 settings/reference only; NOT a substitute for this fixture fresh matched control. Fresh control capture and independent audit required before fresh-reset pick."
+  },
+  "diagnostic_evidence": {
+    "job_id": 1815,
+    "audit": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/audit/evaluation.json",
+      "sha256": "78441e7ccaae218e2b26ffa25e57565c94bf7895fa551d6ae0fb48c44ef377f9"
+    },
+    "metadata": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/capture_metadata.json",
+      "sha256": "7f1e1b0e6c332e2c1393b225b5297255e46304467e22254319b737ede777d9a5"
+    },
+    "observer_metadata": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic/output/contact_observations/metadata.json",
+      "sha256": "b9f70be574020082aadb6ad6b7afb702a0e51fe0a46725d8de2191fbc320dcca"
+    }
+  },
+  "screen_evidence": {
+    "job_id": 1817,
+    "audit": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T142341.930089Z-stage2-contact-screen-comparison/output/evaluation.json",
+      "sha256": "4b9cc6bed0e3c85078b809f9c4b4d34d52b055d221b76eecfa8c57eb19a49596"
+    },
+    "source_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T142341.930089Z-stage2-contact-screen-comparison",
+    "screen_sha256": "77f700e0f6e9e2b2dd12324dfbe0fde1aba9186214c362ef9adff8cf0b083cd9"
+  },
+  "native_mapping_evidence": {
+    "source_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T140207.382992Z-stage2-closing-diagnostic",
+    "observer_sha256": "673ee75e4c091054f6de6199bcb465654f19cc54427381e236ae1b8ab3412c25",
+    "mapper_sha256": "8cee5c606d21bf1a9e0c63c31a3825c44f05b437596477de07641e5d98774311",
+    "mapper_protocol_sha256": "f59bd5aaf5bc3f35ad1ec235816518a6f88ed748b5cc1586e0eda8c6ea3c07a0",
+    "matching": {
+      "position_atol_m": 2e-06,
+      "separation_atol_m": 2e-06,
+      "normal_atol": 0.001,
+      "impulse_atol_Ns": 1e-07,
+      "impulse_rtol": 1e-05,
+      "require_unique_bidirectional_loaded_point_accounting": true,
+      "missing_or_ambiguous": "UNKNOWN",
+      "tangential_impulse": "Preserve separately; do not compare full vector with tensor normal impulse",
+      "event_sensor_sign": "+1 if known robot is actor0/shape0, -1 if actor1/shape1; normal from shape1 to shape0. Fixed before data, never inferred per point.",
+      "primary_contract": "NVIDIA-Omniverse/PhysX 107.3-physx-5.6.1/physx/include/PxSimulationEventCallback.h: contact normal shape1 toward shape0; extracted impulse normal * scalar impulse"
+    }
+  },
+  "acceptance": "Same14mmpos30+all2N/command/travel/TCP/geometry/material/margin/native/raw/plane/source/support/relativeheldgates. OnlyactualfingerLIFT/HOLDresponsecriterion changes toperjointmin.02,actualassetlimit, afteradmission andLASTtargets frozen. Requirefull5mmlift,4mmrise,30hold,1mm/3degretention. Old2mmcrossingsreportedreference; no physicalsuccessfromnewceilingalone.",
+  "independent_review": "Combined FINAL planner/evaluator/reviewer approval: ONE <=300 s corrected-material correctness regression, fresh1500-step stationarycontrol thenoneconditionalfreshpick/audit, aggregate3000 retains2698.130616356 s. Only pre-existing declaredcouponmaterials realized, unchanged1825trial+MarginTool+physicalframeAST/geometry/mass/drives/14mm/3.083mm/100um/phaseguards/2N/admission/lift/hold/native gates. Exactinitial+terminalcombinedbags/schema andcurrentjobcontrol bridge reviewed; synthetic/source/compile testsPASS. Oldthree-round history closed, zero newtuning pool/retries. Passfree-couponretentiononly; no nativeextraction/Desk/hardware/heldidentity/transfer credit. Failureendsbaseline andrequiresdifferent evidence-based reassessment.",
+  "endpoint_serialization_note": "1nm command comparison allowance covers the existing float32 target serialization; this is not a physical gap/travel allowance or fitted endpoint.",
+  "improvement_round": 0,
+  "maximum_authorized_improvement_rounds": 0,
+  "baseline_failure_evidence": {
+    "job_id": 1818,
+    "audit": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T145002.336445Z-stage2-plane-pick-I/audit/evaluation.json",
+      "sha256": "62bb0efb12e9cacdfdda110ed90b0ff8efd39503a514c8878d79977e786a9541"
+    },
+    "metadata": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T145002.336445Z-stage2-plane-pick-I/output/capture_metadata.json",
+      "sha256": "8686ce96492985795473c7f3b24483ae51827b710b70637e05466af8f8b3b035"
+    }
+  },
+  "position_contact_floor_N": 1e-06,
+  "blocked_finger_allowance_m": 2e-06,
+  "blocked_gap_allowance_m": 4e-06,
+  "candidate_consecutive_steps": 3,
+  "candidate_rule": "After30 completed endpoint commands, the last3 fresh endpoint samples must each have BOTH pad loads >existing1e-6N, BOTH actualq-lastcommand>existing2um, and joint-mapped actualgap-commandgap>4um. Existing screen/raw/motion/2N stops must pass. Freeze LASTcommandedfloat32q; label GRASP_CANDIDATE, not secure ownership.",
+  "admission_semantics": "Samepositioncandidate rule andearlyforcebranch as1819. Knownfixturegeometry replaces sensorcandidateinitialization only; no nativeidentityonline. No securegraspfromadmission.",
+  "fixture_only": true,
+  "physics_extraction_credit": false,
+  "control_steps": 1500,
+  "nominal_body_side_overlap_m": 0.003082809466714867,
+  "post_size_xy_m": [
+    0.008,
+    0.008
+  ],
+  "table_z_m": 0.0,
+  "body_size_m": [
+    0.032,
+    0.016,
+    0.0096
+  ],
+  "stud_height_m": 0.0017,
+  "post_material": {
+    "static_friction": 0.5,
+    "dynamic_friction": 0.5,
+    "restitution": 0.0
+  },
+  "minimum_coupon_rise_m": 0.004,
+  "held_translation_limit_m": 0.001,
+  "held_angle_limit_rad": 0.05235987755982989,
+  "minimum_support_separation_m": 0.001,
+  "control_max_coupon_translation_m": 0.002,
+  "control_max_coupon_angle_rad": 0.03490658503988659,
+  "fixture_max_initial_pose_error_m": 2e-06,
+  "fixture_max_initial_angle_error_rad": 0.0001,
+  "fixture_nominal_band_tolerance_m": 2e-06,
+  "physical_retry_authorized": false,
+  "fixture_reference_metadata": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T151026.796083Z-stage2-position-candidate-I-r1/output/capture_metadata.json",
+    "sha256": "de0959029cec3032fad0c1fcf0e5b5e23d3a37e1d2ec807174ee68f8d12127e6"
+  },
+  "expected_source": {
+    "bricks": 300,
+    "parts": 301,
+    "native_connections": 930
+  },
+  "expected_coupon": {
+    "parts": 1,
+    "native_connections": 0,
+    "dynamic": true,
+    "gravity_enabled": true,
+    "automatic_assembly": false
+  },
+  "baseline_metadata": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T151026.796083Z-stage2-position-candidate-I-r1/output/capture_metadata.json",
+    "sha256": "de0959029cec3032fad0c1fcf0e5b5e23d3a37e1d2ec807174ee68f8d12127e6"
+  },
+  "baseline_geometry": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T151026.796083Z-stage2-position-candidate-I-r1/output/tool_geometry.json",
+    "sha256": "807ddbd9f4d1c163c0e12c58051727f2e4eee0a73994eeb5069ed95fc13c4146"
+  },
+  "helper_pins": {
+    "experiments/stage2_position_candidate_20261025/evaluate.py": "c3327d2bf48825e738b9e8cc5d3835fccdef264fac5a4a9e4303d557672e32c9",
+    "experiments/stage2_position_candidate_20261025/run_pick.py": "b5571067251e526ecb5e86264f0688ef93ca6442ec6add0825d2886168028299",
+    "experiments/stage2_plane_pick_20261025/evaluate.py": "767bd182e93f15b1e14fc0099474abc59dbd0c36cbf251f85e9bb004e85edbd4",
+    "experiments/stage2_plane_pick_20261025/bridge.py": "d89e3cb6eb1e4537eb452ae05641357894be5b445676d489ea3534c2e24bf848",
+    "experiments/stage2_contact_screen_20261025/screen.py": "77f700e0f6e9e2b2dd12324dfbe0fde1aba9186214c362ef9adff8cf0b083cd9",
+    "experiments/stage2_collider_probe_20261025/native_observer.py": "673ee75e4c091054f6de6199bcb465654f19cc54427381e236ae1b8ab3412c25",
+    "experiments/stage2_collider_probe_20261025/evaluate.py": "8cee5c606d21bf1a9e0c63c31a3825c44f05b437596477de07641e5d98774311",
+    "experiments/stage2_pick_20261025/recording.py": "208b6cf207804dbd8839fbed3032fd0f436b9dcb9a2181123ab20266af6bf26f"
+  },
+  "fixture_control_scope": "Knownfixture dynamic/gravity-on frominitialization, independentlyisolated nativepart, no kinematicrelease/posecorrection/scriptedattachment. Static8x8mmpost passive initial support; normalcontact mustcease byhold.",
+  "held_transform_scope": "Admission-relative T_TCP_coupon throughlift andhold, not old post-detachment-only convention.",
+  "minimum_remaining_before_pick_seconds": 145,
+  "horizon_amendment": "Prospectively frozen1500steps percontrol/pick at1/120s=12.5s; NOapproach:3.5sclose+.25endpoint+5lift+.25hold=9s1080steps,420stepmargin. FullcontrolcoversMAXpick. Old3600evidence remainsunchanged, no credit asnewfixturecontrol. Planner/evaluator/reviewer agree beforedata.",
+  "position_only_admission": true,
+  "force_trigger_scope": "1.5N crossing retainedasreference; cannotadvancephase orsubstitute for30completedpositioncommands+3freshblockedbilateral samples.",
+  "control_reuse_scope": "No reuse of any old-material control. Fresh control in this same immutable job, current protocol and corrected material/offset/schema fingerprints, full1500steps, independent audit and content-bound metadata required.",
+  "original_control_protocol": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T163329.924990Z-stage2-body-margin/experiments/stage2_body_margin_20261025/protocol.json",
+    "sha256": "ef94b42b512eceff43dfee214fc542d5799b31ace4a67a1737897084bfdfab17"
+  },
+  "original_control_audit": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T163329.924990Z-stage2-body-margin/control_audit/evaluation.json",
+    "sha256": "9856c14d9d2ce12c529890a62ba60e7f8684f4bfefb8d14d2e84df2c2dbc1be6"
+  },
+  "original_control_metadata": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T163329.924990Z-stage2-body-margin/control/capture_metadata.json",
+    "sha256": "4f04d96f888811a95d3ae9c8004ca9814ebe9c527da9872562ad045b0c382699"
+  },
+  "original_pick_audit": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T163329.924990Z-stage2-body-margin/pick_audit/evaluation.json",
+    "sha256": "057826035836018190285f9ef056178a2922791b8931fe31d3634c4b21f6e138"
+  },
+  "original_pick_metadata": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T163329.924990Z-stage2-body-margin/pick/capture_metadata.json",
+    "sha256": "c87cac341144c3adfca40c883de0df1a789a15e54f52b9094b14b054a383aff4"
+  },
+  "original_control_capture_directory": "/home/faps/dev/github/robo.innovate26/runs/20261025T163329.924990Z-stage2-body-margin/control",
+  "automatic_retry": false,
+  "control_physical_equivalence_keys": [
+    "source_science_sha256",
+    "nominal_pad_gap_m",
+    "expected_finger_endpoint_m",
+    "endpoint_derived_match_tolerance_m",
+    "endpoint_command_tolerance_m",
+    "endpoint_settle_steps",
+    "grasp_confirmation_N",
+    "grasp_confirmation_consecutive_steps",
+    "commanded_lift_m",
+    "hold_steps",
+    "position_contact_floor_N",
+    "blocked_finger_allowance_m",
+    "blocked_gap_allowance_m",
+    "candidate_consecutive_steps",
+    "control_steps",
+    "maximum_physics_steps",
+    "nominal_body_side_overlap_m",
+    "post_size_xy_m",
+    "table_z_m",
+    "body_size_m",
+    "stud_height_m",
+    "post_material",
+    "minimum_coupon_rise_m",
+    "held_translation_limit_m",
+    "held_angle_limit_rad",
+    "minimum_support_separation_m",
+    "control_max_coupon_translation_m",
+    "control_max_coupon_angle_rad",
+    "fixture_max_initial_pose_error_m",
+    "fixture_max_initial_angle_error_rad",
+    "fixture_nominal_band_tolerance_m",
+    "fixture_reference_metadata",
+    "source_metadata",
+    "baseline_metadata",
+    "baseline_geometry",
+    "expected_source",
+    "expected_coupon",
+    "screen_evidence",
+    "native_mapping_evidence",
+    "helper_pins",
+    "body_contact_offset_m",
+    "runtime_property_tolerance_m",
+    "readback_helper",
+    "baseline_readback",
+    "baseline_readback_audit",
+    "expected_body_paths",
+    "collision_schema",
+    "allowed_unauthored_collision_defaults",
+    "margin_authoring_contract"
+  ],
+  "single_policy_change_source": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T154448.823497Z-stage2-free-retention/experiments/stage2_free_retention_20261025/run_fixture.py",
+    "sha256": "4eda338b8fc97eab630f07c43c11ed5370ca6dd55d94a80a3ddea35e4cfb3868"
+  },
+  "body_contact_offset_m": 0.0001,
+  "runtime_property_tolerance_m": 1e-08,
+  "parent_runner": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T165816.000989Z-stage2-finger-response/experiments/stage2_finger_response_20261025/newtrial.py",
+    "sha256": "66fa614d5c638e49387ce5e8ea2b01acf78196c98acd338d430158260492ad03"
+  },
+  "readback_helper": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T161523.798508Z-stage2-contact-readback/code/readback.py",
+    "sha256": "22de373439ea1cc44e29b10a4f0ab43fbc40691ba83dbf5ffb28cb9573917c7d"
+  },
+  "baseline_readback": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T174525.554088Z-brick-material-runtime/output/readback.json",
+    "sha256": "5a13b78f5db08a7a5e2e9c20d7d29844d7d54c5b98b0ef83bde34a7122aa29db"
+  },
+  "baseline_readback_audit": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T175236.440880Z-brick-material-adjudication/audit/evaluation.json",
+    "sha256": "a90356f4513e840ba02cfd639d8b27fcd6493a7d3e5586d695b1ab9e7d0ada90"
+  },
+  "expected_body_paths": {
+    "left": "/World/envs/env_0/Robot/fr3_leftfinger/collisions/mesh_3",
+    "right": "/World/envs/env_0/Robot/fr3_rightfinger/collisions/mesh_3"
+  },
+  "margin_authoring_contract": {
+    "only_authored_value_change": "physxCollision:contactOffset on exactlyexpected_body_paths",
+    "allowed_api_declaration": "PhysxCollisionAPI on exactlythetwoBODYMeshprims",
+    "rest_offset_authored_change": false,
+    "unauthored_defaults": "OnlynamedPhysxCollisionAPI schemafallbacks maynewlyappear inmetadata without authoredopinions; runtime rest/material/otheroffset multisets mustremainbaseline. No arbitrary attribute exclusion.",
+    "component_row_mapping": "UNKNOWN; prescribedmultisets corroborateexactpathauthoring, not rowindexidentity.",
+    "rest_schema_metadata": "Previouslyabsent None maybecome tagged nonfinite_scalar:-inf for unauthored automaticrestfallback; effective runtime restmuststay0. No restsetterallowed."
+  },
+  "fixture_improvement_history": {
+    "baseline_job": 1821,
+    "timing_improvement_1": 1822,
+    "startup_readback_job": 1823,
+    "body_margin_improvement_2": 1824,
+    "this_improvement": 3,
+    "maximum_improvements": 3,
+    "reassess_after_this_attempt": true,
+    "no_fourth_fixture_improvement": true
+  },
+  "collision_schema": {
+    "path": "/home/faps/miniforge3/envs/unitree_sim_env/lib/python3.11/site-packages/isaacsim/extscache/omni.usd.schema.physx-107.3.26+107.3.3.lx64.r.cp311.u353/plugins/PhysxSchema/resources/generatedSchema.usda",
+    "sha256": "d2dd1873e165d280ac302f2b2e6e95cc5c4c1f72580478492990ea0f711e00f8"
+  },
+  "allowed_unauthored_collision_defaults": {
+    "physxCollision:restOffset": {
+      "usd_type": "float",
+      "sdk_value": {
+        "nonfinite_scalar": "-inf"
+      }
+    },
+    "physxCollision:minTorsionalPatchRadius": {
+      "usd_type": "float",
+      "sdk_value": 0.0
+    },
+    "physxCollision:torsionalPatchRadius": {
+      "usd_type": "float",
+      "sdk_value": 0.0
+    }
+  },
+  "fixed_target_response_ceiling_m_s": 0.02,
+  "control_close_ceiling_m_s": 0.002,
+  "original_trial_source": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/experiments/stage2_free_position_20261025/run_fixture.py",
+    "sha256": "e5e8323cb111f216527c9e37dd3582fb3be4a66690953160e6656e3e2eac81a5"
+  },
+  "original_margin_wrapper": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T163329.924990Z-stage2-body-margin/experiments/stage2_body_margin_20261025/run_fixture.py",
+    "sha256": "102a2c0c2888b9a8b47db4bbfb00ab2588f236a553f1eee8705be68e737d089f"
+  },
+  "finger_response_contract": {
+    "normal_contact_phases": [
+      "control",
+      "close"
+    ],
+    "fixed_target_phases": [
+      "lift",
+      "hold"
+    ],
+    "unknown_phase": "FAIL",
+    "asset_velocity_api": "get_dof_max_velocities",
+    "joint_type_api": "get_dof_types",
+    "finger_joint_names": [
+      "fr3_finger_joint1",
+      "fr3_finger_joint2"
+    ],
+    "required_dof_type": 1,
+    "required_stage_meters_per_unit": 1.0,
+    "asset_readback_required": true,
+    "minimum_supported_asset_limit_m_s": 0.002,
+    "physical_calibration_claim": false,
+    "historical_reference_cutoff_m_s": 0.002,
+    "engineering_scale_note": "2N/100Ns_per_m=.02m/s onlyscalemotivation; springerror,inertia,friction/generalizedloadmatter. NOTmechanicalguarantee/safetycalibration orfitto2.078mm/s. ImplicitPD remainsactive."
+  },
+  "maximum_improvement_rounds": 0,
+  "simulation_correctness_regression_authorized": true,
+  "immutable_margin_wrapper": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T165816.000989Z-stage2-finger-response/experiments/stage2_finger_response_20261025/run_fixture.py",
+    "sha256": "d6e118c19788105f5538c156092967668e51d975195e89a9a97520a13c607069"
+  },
+  "binding_helper": {
+    "path": "/home/faps/dev/github/robo.innovate26/experiments/brick_material_binding_20261025/materials.py",
+    "sha256": "09f28c7a6ca0e2b7d30ab8a5f56d0757e81f97a3f9931461559a29662a2bdd80"
+  },
+  "binding_snapshot_helper": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T174525.554088Z-brick-material-runtime/code/readback.py",
+    "sha256": "43b652a8946f25eb2e84f2eb70919a5c2fc17f16c2d509296899cdc12daa004f"
+  },
+  "binding_authoring_auditor": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T175236.440880Z-brick-material-adjudication/code/evaluate.py",
+    "sha256": "90af14a79657a5074d50d4cd3a74cc6a1aef50e65bf75dc4763d61fcf168ae5d"
+  },
+  "binding_authoring_file": "binding_authoring.json",
+  "expected_coupon_materials": [
+    [
+      0.5,
+      0.4,
+      0.1
+    ],
+    [
+      1.0,
+      0.8,
+      0.2
+    ]
+  ],
+  "original_author_source": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T165816.000989Z-stage2-finger-response/experiments/stage2_exposed_tip_20261025/model.py",
+    "sha256": "c5b4baf5b0720881c7c791866030d65fe18770fa1b2fa1b1593995884bb51a78"
+  },
+  "closed_fixture_history": {
+    "baseline_job": 1821,
+    "improvement_jobs": [
+      1822,
+      1824,
+      1825
+    ],
+    "maximum_improvements": 3,
+    "status": "CLOSED_NO_FOURTH_PARAMETER_IMPROVEMENT",
+    "verified_material_authoring_jobs": [
+      1827,
+      1828,
+      1829
+    ],
+    "this_case": "ONE_CORRECTED_CONFIGURATION_BASELINE_ZERO_IMPROVEMENTS"
+  },
+  "fresh_control_capture_directory": "control",
+  "fresh_control_audit_path": "control_audit/evaluation.json",
+  "historical_control_descriptors_scope": "original_control_* descriptors are retained history only and cannot admit this regression.",
+  "unchanged_grasp_contract": {
+    "nominal_custom_pad_gap_m": 0.014,
+    "nominal_body_side_overlap_m": 0.003082809466714867,
+    "Desk_width_equivalence": "UNVERIFIED_NOT_CLAIMED",
+    "finger_target_policy": "Same1825positiononly30endpointcommands; 1mm/s closing, frozenlastcommand inlift/hold",
+    "physical_properties_and_gates": "All1825 force/motion/geometry/cook/mass/inertia/COM/drives/100umBODY/rest/native/relativeholding limits unchanged",
+    "success": "Full5mmcommandedlift,>=4mmactualcouponrise,30hold,1mm/3degrelativeheld error and supportclearance; no tower/perception/transfer credit"
+  },
+  "input_sha256": {
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T165816.000989Z-stage2-finger-response/experiments/stage2_finger_response_20261025/run_fixture.py": "d6e118c19788105f5538c156092967668e51d975195e89a9a97520a13c607069",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T165816.000989Z-stage2-finger-response/experiments/stage2_finger_response_20261025/newtrial.py": "66fa614d5c638e49387ce5e8ea2b01acf78196c98acd338d430158260492ad03",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T174525.554088Z-brick-material-runtime/output/readback.json": "5a13b78f5db08a7a5e2e9c20d7d29844d7d54c5b98b0ef83bde34a7122aa29db",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T175236.440880Z-brick-material-adjudication/audit/evaluation.json": "a90356f4513e840ba02cfd639d8b27fcd6493a7d3e5586d695b1ab9e7d0ada90",
+    "/home/faps/dev/github/robo.innovate26/experiments/brick_material_binding_20261025/materials.py": "09f28c7a6ca0e2b7d30ab8a5f56d0757e81f97a3f9931461559a29662a2bdd80",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T174525.554088Z-brick-material-runtime/code/readback.py": "43b652a8946f25eb2e84f2eb70919a5c2fc17f16c2d509296899cdc12daa004f",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T175236.440880Z-brick-material-adjudication/code/evaluate.py": "90af14a79657a5074d50d4cd3a74cc6a1aef50e65bf75dc4763d61fcf168ae5d",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T165816.000989Z-stage2-finger-response/experiments/stage2_exposed_tip_20261025/model.py": "c5b4baf5b0720881c7c791866030d65fe18770fa1b2fa1b1593995884bb51a78",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T175236.440880Z-brick-material-adjudication/pipeline_supervisor.json": "5729eedf026dacdb714b98b790a92b49b5cecd392a030a44555b6bcd414b7baa"
+  }
+}
