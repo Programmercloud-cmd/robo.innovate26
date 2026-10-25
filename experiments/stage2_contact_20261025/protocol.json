@@ -5,7 +5,7 @@
   "maximum_improvement_rounds": 3,
   "baseline_improvement_round": 0,
   "execution_authorized_cases": [
-    "B0_stock"
+    "G_proxy"
   ],
   "cases": [
     {
@@ -166,7 +166,7 @@
     "enabled": false,
     "required_force": 1.0
   },
-  "current_improvement_round": 2,
+  "current_improvement_round": 3,
   "round_ledger": [
     {
       "round": 0,
@@ -190,13 +190,65 @@
     },
     {
       "round": 2,
-      "status": "frozen_before_corrected_attempt",
+      "status": "independent_PASS_preserved",
       "change": "Signednormal API interpretation only: preserve signed f\u00d7n, magnitudeSUMABS, classifyALLabs(f)>existing1e-8Nfloor includingnegative reciprocalcouponpoints, unexpectedpartnersabs. Removeonlynegative-scalar-invalid assumption. No force/motion/geometry/native parameter relaxation.",
       "maximum_attempts": 1,
       "remaining_reviewed_improvement_rounds_after_this": 1,
       "proxy_implemented": false,
       "reserved_execution_authorized": false,
-      "separate_known_warning": "Kinematic zero-velocity warning preserved; no unrelated physical/API change bundled."
+      "separate_known_warning": "Kinematic zero-velocity warning preserved; no unrelated physical/API change bundled.",
+      "pueue_job_id": 1754,
+      "independent_audit_job_id": 1755,
+      "measured_contact_steps": 100,
+      "outcome": "All 27 checks passed. Both-pad positive completed at step49; force release at step70 and initial opening at step100. Peak about .224N. Native301/930 and all limits retained. Earlier1752/1753 remain failed records."
+    },
+    {
+      "round": 3,
+      "status": "frozen_before_G",
+      "last_contact_round": true,
+      "change": "One supplied-tip cooked convex-decomposition proxy only. Replace only two mesh_3 colliders; preserve white Cubes, materials, robot mass/inertia/actuators, tested PGS32/4 and native source.",
+      "phases": [
+        "G: cooked export plus independent sampled fidelity, zero contact steps.",
+        "D: same centered contact after G PASS, re-query and match canonical cooked hashes.",
+        "R: fixed +2mm hand-X reserved case after D PASS only."
+      ],
+      "maximum_attempts_per_phase": 1,
+      "maximum_active_seconds_per_phase_capture_plus_audit": 180,
+      "maximum_active_seconds_all_phases": 540,
+      "maximum_measured_contact_steps_all_phases": 720,
+      "retry_or_fourth_round": false,
+      "coarsen_sampling_on_budget": false,
+      "coupon_center_policy": "Keep exact1754 B0 hand-frame center XYZ; only adapt initial Y opening to cooked geometry, plus declared reserved +2mmX."
     }
-  ]
+  ],
+  "conditional_proxy_stages": {
+    "D": "Requires independent G fidelity PASS and exact cooked hash match.",
+    "R": "Requires independent D contact PASS, with the same G hashes."
+  },
+  "proxy_fidelity": {
+    "surface_sample_spacing_m": 0.00025,
+    "maximum_stl_samples_per_tip": 200000,
+    "maximum_hull_samples_per_tip": 200000,
+    "maximum_bidirectional_external_boundary_sample_distance_m": 0.00025,
+    "maximum_outer_bound_error_m": 0.0001,
+    "membership_epsilon_m": 1e-07,
+    "external_probe_offset_m": 1e-06,
+    "contact_ray_extra_m": 1e-06,
+    "witness_reference_clearance_m": 0.00025,
+    "bore_center_cad_yz_mm": [
+      -15.5,
+      18.600005
+    ],
+    "bore_x_cad_mm": [
+      -10.5,
+      -8.0,
+      -5.0
+    ],
+    "bore_witness_radius_mm": 1.0,
+    "bore_witnesses_per_x": 9,
+    "interpretation": "A bounded sampled CAD screen only. Bore purpose and physical mounting remain unverified. Internal hull faces are excluded from surface fidelity.",
+    "inside_solid_rule": "Closed solid: a point is inside a hull when every normalized plane residual is <= +1e-7 m. Union membership means inside any hull.",
+    "contact_outward_rule": "Use documented signed scalar times normal. Pad outward is minus force direction for a finger sensor and plus force direction for a coupon sensor. Never fit or try both ray directions."
+  },
+  "proxy_config_sha256": "1c760e4971d0765b3e142e770584c65078d43a1c2504d897aa182031fd941e62"
 }

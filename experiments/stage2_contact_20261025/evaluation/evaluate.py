@@ -56,14 +56,20 @@ def surface_distance(point, vertices, indices):
     return float(np.min(np.concatenate(distances)))
 
 
-def classify_point(point_world, separation, pose, colliders, protocol):
+def classify_point(point_world, separation, pose, colliders, protocol, hulls=None, outward_world=None, proxy_config=None):
     point = rotation(pose[3:7]).T@(np.asarray(point_world)-np.asarray(pose[:3]))
     distances = [(c['is_pad'],surface_distance(point,c['points_finger_m'],c['triangle_indices'])) for c in colliders if c['enabled']]
     pad = min((d for p,d in distances if p),default=float('inf'))
     white = min((d for p,d in distances if not p),default=float('inf'))
     tolerance = abs(float(separation))+protocol['geometry']['pad_distance_allowance_m']
+    boundary=True
+    if hulls is not None:
+        from union_geometry import hull_triangles,boundary_contact
+        pad=min(surface_distance(point,h['vertices_m'],hull_triangles(h)[0]) for h in hulls)
+        boundary=boundary_contact(point,rotation(pose[3:7]).T@np.asarray(outward_world),hulls,tolerance,proxy_config)
     return {'pad_distance_m':pad if np.isfinite(pad) else None,'white_distance_m':white if np.isfinite(white) else None,'tolerance_m':tolerance,
-        'uniquely_pad_compatible':bool(np.isfinite([pad,white]).all() and pad<=tolerance and white>tolerance+protocol['geometry']['white_extra_clearance_m'])}
+        'external_union_boundary_crossing':boundary,
+        'uniquely_pad_compatible':bool(boundary and np.isfinite([pad,white]).all() and pad<=tolerance and white>tolerance+protocol['geometry']['white_extra_clearance_m'])}
 
 
 def close(a,b,absolute,relative):
@@ -164,7 +170,8 @@ def audit(args):
     rows=[json.loads(line) for line in (args.input/'trace.jsonl').read_text().splitlines()]
     observation_rows=[json.loads(line) for line in (args.input/'contact_observations/trace.jsonl').read_text().splitlines()]
     checks={};rules=protocol['contact_reporting'];motion=protocol['motion'];unchanged=protocol['unchanged']
-    checks['B0_only']=meta['case']=='B0_stock' and meta['stock_collision_unchanged'] is True
+    proxy_phase=getattr(args,'proxy_phase',None);proxy=getattr(args,'proxy_artifact',None)
+    checks['B0_only' if not proxy_phase else 'declared_proxy_case']=(meta['case']=='B0_stock' and meta['stock_collision_unchanged'] is True) if not proxy_phase else (meta['stage']==proxy_phase and meta['case']==('D_updated_tip' if proxy_phase=='D' else 'R_updated_offset') and meta['only_pad_mesh3_replaced'] is True)
     checks['budget_and_exact_steps']=0<len(rows)<=protocol['budget']['maximum_postinitialization_steps'] and [r['step'] for r in rows]==list(range(1,len(rows)+1)) and report['steps_executed']==len(rows)
     checks['same_observer_steps']=[r['step'] for r in observation_rows]==[r['step'] for r in rows]
     checks['native_binary']=meta['native_core_sha256']==unchanged['native_core_sha256']
@@ -185,7 +192,7 @@ def audit(args):
         colliders=geometry['fingers'][label]['colliders'];enabled=[c for c in colliders if c['enabled']]
         pads=[c for c in enabled if c['is_pad']]
         geometry_checks[label+'_pad_identity']=len(pads)==1 and pads[0]['path']==bodies[label]+protocol['geometry']['stock_pad_suffix'] and len(enabled)>1
-        geometry_checks[label+'_valid_triangle_references']=all(c['approximation'] in ['convexHull','none'] and len(c['triangle_indices'])>0 and np.isfinite(c['points_finger_m']).all() for c in enabled)
+        geometry_checks[label+'_valid_triangle_references']=all(c['approximation'] in (['convexDecomposition'] if proxy_phase and c['is_pad'] else ['convexHull','none']) and len(c['triangle_indices'])>0 and np.isfinite(c['points_finger_m']).all() for c in enabled)
         geometry_checks[label+'_stock_pad_material']=len(pads)==1 and all(pads[0]['physics_material_attributes'].get(key)==value for key,value in [('physics:staticFriction',2.5),('physics:dynamicFriction',2.0),('physics:restitution',0.0)])
     checks['pad_white_geometry_inventory']=all(geometry_checks.values())
     terminal_geometry=read(args.input/'geometry_terminal.json')
@@ -209,6 +216,9 @@ def audit(args):
     frame_results=[];positive=[];release=[];possible_signs={1,-1};force_peaks={'left':0.,'right':0.};positive_first=None
     q_previous=q0.copy();step_previous=None
     for row,observation in zip(rows,observation_rows):
+        if hasattr(args,'deadline'):
+            from union_geometry import check_time
+            check_time(args.deadline)
         dt=row['physics_dt_s'];step=row['step'];frame_checks={}
         frame_checks['clock']=abs(dt-unchanged['dt_s'])<1e-12 and abs(row['physics_time_after_s']-row['physics_time_before_s']-dt)<=1e-7 and (step_previous is None or abs(row['physics_time_before_s']-step_previous)<=1e-7) and abs(observation['physics_time_after_s']-row['physics_time_after_s'])<=1e-7
         frame_checks['three_fresh_bodies']=set(row['bodies'])==set(bodies) and row['bodies']==observation['bodies']
@@ -239,7 +249,11 @@ def audit(args):
             ownership[label]=[]
             for sensor,pair_value in [(label,pair),('coupon',reverse)]:
                 for index in pair_value['force_carrying_rows']:
-                    point=classify_point(data[sensor]['normal_points_world_m'][index],data[sensor]['normal_separations_m'][index].item(),row['finger_poses_world_wxyz'][label],geometry['fingers'][label]['colliders'],protocol)
+                    extra={}
+                    if proxy is not None:
+                        force=data[sensor]['normal_forces_N'][index].item()*data[sensor]['normal_vectors_world'][index]
+                        extra={'hulls':proxy['tips'][label]['cooked_hulls'],'outward_world':force*(-1 if sensor==label else 1),'proxy_config':proxy['config']}
+                    point=classify_point(data[sensor]['normal_points_world_m'][index],data[sensor]['normal_separations_m'][index].item(),row['finger_poses_world_wxyz'][label],geometry['fingers'][label]['colliders'],protocol,**extra)
                     ownership[label].append({'sensor':sensor,'active_row':index,**point})
                     positive_points=positive_points and point['uniquely_pad_compatible']
                 if pair_value['normal_magnitude_N']>=.005:

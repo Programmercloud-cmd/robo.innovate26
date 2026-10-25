@@ -47,7 +47,7 @@ def distance_to_triangles(point, vertices, triangles):
     return float(best)
 
 
-def audit(stage, output):
+def audit(stage, output, cooked=None):
     import numpy as np
     from scipy.spatial import ConvexHull
     from pxr import Gf,Usd,UsdGeom,UsdPhysics,UsdShade,PhysxSchema
@@ -86,12 +86,22 @@ def audit(stage, output):
                     triangles.extend([face[0],face[k],face[k+1]] for k in range(1,count-1))
                 approximation=UsdPhysics.MeshCollisionAPI(prim).GetApproximationAttr().Get()
                 surface_kind='mathematical_convex_hull' if approximation=='convexHull' else 'convex_authored_mesh'
+                if approximation=='convexDecomposition' and row['is_pad'] and cooked is not None:
+                    actual=cooked['tips'][label]
+                    if actual['path']!=str(prim.GetPath()):raise RuntimeError('Cooked data belongs to another pad')
+                    local_points=[];triangles=[]
+                    for component in actual['cooked_hulls']:
+                        offset=len(local_points);local_points.extend(component['vertices_m'])
+                        for face in component['polygons']:
+                            triangles.extend([offset+face[0],offset+face[k],offset+face[k+1]] for k in range(1,len(face)-1))
+                    row['cooked_hulls']=actual['cooked_hulls'];row['cooked_canonical_sha256']=actual['canonical_sha256']
+                    surface_kind='cooked_convex_union'
             else:raise RuntimeError('Unsupported stock collision type: '+str(prim.GetPath()))
             points=np.asarray([list(xf.Transform(Gf.Vec3d(p))) for p in local_points],float)
             hull=ConvexHull(points)
             # Mesh input must itself have hull support planes, not an arbitrary concave input.
             volume=abs(sum(np.dot(points[i],np.cross(points[j],points[k])) for i,j,k in triangles)/6)
-            reference=triangles if approximation=='none' else hull.simplices.tolist()
+            reference=triangles if approximation=='none' or surface_kind=='cooked_convex_union' else hull.simplices.tolist()
             material,_=UsdShade.MaterialBindingAPI(prim).ComputeBoundMaterial('physics')
             props=PhysxSchema.PhysxCollisionAPI(prim)
             material_attrs={a.GetName():metadata_scalar(a.Get()) for a in (material.GetPrim().GetAttributes() if material else [])
@@ -105,7 +115,7 @@ def audit(stage, output):
                 'physics_material_path':str(material.GetPath()) if material else None,'physics_material_attributes':material_attrs,
                 'material_binding_status':'resolved' if material else 'unbound/default unknown'})
             Path(output).write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')
-            if approximation not in ('convexHull','none') or (approximation=='none' and abs(volume-hull.volume)>max(1e-12,hull.volume*1e-4)):
+            if surface_kind!='cooked_convex_union' and (approximation not in ('convexHull','none') or (approximation=='none' and abs(volume-hull.volume)>max(1e-12,hull.volume*1e-4))):
                 raise RuntimeError('Stock cooked surface cannot be safely represented: '+str(prim.GetPath()))
         pads=[row for row in rows if row['is_pad']]
         if len(pads)!=1 or len(rows)<2 or not (pads[0]['physics_material_path'] or '').endswith('/PhysicsMaterials/FingerPad'):
@@ -118,15 +128,31 @@ def audit(stage, output):
     return result
 
 
-def own_point(point_finger, separation, finger, protocol):
+def own_point(point_finger, separation, finger, protocol, outward_finger=None):
     pad=[];white=[]
     for collider in finger['colliders']:
         distance=distance_to_triangles(point_finger,collider['points_finger_m'],collider['triangle_indices'])
         (pad if collider['is_pad'] else white).append(distance)
     tolerance=abs(float(separation))+protocol['point_gate']['surface_slack_m']
     dp,dw=min(pad),min(white)
-    return {'distance_pad_m':dp,'distance_white_m':dw,'tolerance_m':tolerance,
+    result={'distance_pad_m':dp,'distance_white_m':dw,'tolerance_m':tolerance,
         'unique_pad':bool(dp<=tolerance and dw>tolerance+protocol['point_gate']['white_clearance_extra_m'])}
+    actual=next((c for c in finger['colliders'] if c['is_pad'] and 'cooked_hulls' in c),None)
+    if actual is not None:
+        import numpy as np
+        from proxy import inside_any,outside_all
+        cfg=protocol['proxy_fidelity'];normal=np.asarray(outward_finger,float) if outward_finger is not None else np.zeros(3)
+        norm=np.linalg.norm(normal)
+        if not np.isfinite(normal).all() or norm<1e-12:
+            result.update(unique_pad=False,outer_boundary_crossing=False)
+        else:
+            normal/=norm;delta=tolerance+cfg['contact_ray_extra_m'];epsilon=cfg['membership_epsilon_m']
+            outside=outside_all(np.asarray(point_finger)+delta*normal,actual['cooked_hulls'],epsilon)
+            inside=inside_any(np.asarray(point_finger)-delta*normal,actual['cooked_hulls'],epsilon)
+            result.update(unique_pad=bool(result['unique_pad'] and outside and inside),
+                outer_boundary_crossing=bool(outside and inside),outward_finger=normal.tolist(),
+                ray_outside_all=outside,ray_inside_any=inside)
+    return result
 
 
 def self_test():

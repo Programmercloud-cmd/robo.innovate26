@@ -1,0 +1,90 @@
+{
+  "schema": "R3-one-supplied-tip-proxy-v1",
+  "improvement_round": 3,
+  "last_contact_round": true,
+  "stl": "experiments/final_workcell_20261024/end_effector/assets/franka_research3_gripper.stl",
+  "stl_sha256": "30c3e47142dce9ba82ec46edf42f1dc2825d620d23bad0a95ce1e2de902b752d",
+  "stl_unit_m": 0.001,
+  "registration": {
+    "left": {
+      "rotation_z_deg": 90.0,
+      "translation_m": [
+        -0.0155,
+        0.01090669,
+        0.026299879999999998
+      ]
+    },
+    "right": {
+      "rotation_z_deg": -90.0,
+      "translation_m": [
+        0.0155,
+        -0.01090669,
+        0.026299879999999998
+      ]
+    }
+  },
+  "collision": {
+    "approximation": "convexDecomposition",
+    "maxConvexHulls": 32,
+    "hullVertexLimit": 64,
+    "voxelResolution": 1000000,
+    "errorPercentage": 1.0,
+    "minThickness": 0.0001,
+    "shrinkWrap": true
+  },
+  "parameter_units": {
+    "minThickness": "meters",
+    "errorPercentage": "percent,1.0=1%",
+    "voxelResolution": "voxels"
+  },
+  "frame": "finger_local_m, baked registered vertices, identity collider transform",
+  "canonical_hash": {
+    "vertex_quantum_m": 1e-07,
+    "unit_plane_normal_quantum": 1e-06,
+    "plane_offset_quantum_m": 1e-07,
+    "rule": "Sort unique quantized vertices and normalized outward planes within each hull, then sort hulls. D/R require exact canonical hash equality; no fallback."
+  },
+  "fidelity": {
+    "surface_sample_spacing_m": 0.00025,
+    "maximum_stl_samples_per_tip": 200000,
+    "maximum_hull_samples_per_tip": 200000,
+    "maximum_bidirectional_external_boundary_sample_distance_m": 0.00025,
+    "maximum_outer_bound_error_m": 0.0001,
+    "membership_epsilon_m": 1e-07,
+    "external_probe_offset_m": 1e-06,
+    "contact_ray_extra_m": 1e-06,
+    "witness_reference_clearance_m": 0.00025,
+    "bore_center_cad_yz_mm": [
+      -15.5,
+      18.600005
+    ],
+    "bore_x_cad_mm": [
+      -10.5,
+      -8.0,
+      -5.0
+    ],
+    "bore_witness_radius_mm": 1.0,
+    "bore_witnesses_per_x": 9,
+    "interpretation": "A bounded sampled CAD screen only. Bore purpose and physical mounting remain unverified. Internal hull faces are excluded from surface fidelity.",
+    "inside_solid_rule": "Closed solid: a point is inside a hull when every normalized plane residual is <= +1e-7 m. Union membership means inside any hull.",
+    "contact_outward_rule": "Use documented signed scalar times normal. Pad outward is minus force direction for a finger sensor and plus force direction for a coupon sensor. Never fit or try both ray directions."
+  },
+  "budgets": {
+    "capture_plus_audit_per_phase_s": 180.0,
+    "cook_query_total_s": 90.0,
+    "maximum_all_phase_active_s": 540.0,
+    "maximum_D_steps": 360,
+    "maximum_R_steps": 360,
+    "retry": false,
+    "coarsen_on_budget": false
+  },
+  "reference": "proxy_reference.json",
+  "reference_sha256": "cb46c2fab2833fa267a45980fa7e2adf27e0f8626edfd9f514ff1c7d6b7dddc6",
+  "phases": {
+    "G": "Use the same full initializer. Export cooked data before play; verify 300 bricks/930 native links and robot properties after initialization. Coupon stays parked; zero measured contact steps. Independent fidelity audit required.",
+    "D": "Only after independent G audit passes. Re-query the actual collider data and match the approved canonical hashes before closing. Keep the exact B0 coupon center.",
+    "R": "Only after independent D audit passes. Use the same proxy and approved G hashes; offset the coupon by +2 mm along hand X only. No tuning after reserved feedback."
+  },
+  "schema_float_readback_atol": 1e-10,
+  "visual_registration_match_m": 1e-08
+}
