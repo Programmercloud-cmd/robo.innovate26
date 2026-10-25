@@ -33,6 +33,17 @@ The former #11 height discrepancy is retired, not fitted away. Physical width
 mapping/model mounting remains unverified. No active simulation change or new
 parameter sweep follows from this documentation update.
 
+
+**Destination references:** the operator now specifies B (#11 XY), C (#14 XY),
+and D (#15 XY), all using the trusted source's first-layer nominal EE height.
+The new [destination helper and export](../experiments/destination_plan_20261025/README.md)
+uses four ridges of three bricks, confirmed shared centers/two-stud gaps,
+alternating orientation, and `destination_n_m_k` labels. Requested accepted
+colors route to B; remaining accepted colors map consistently to C/D. Only
+explicit caller confirmation advances placement counts. The legacy truth-based
+SortPlan, raw taught poses and controllers remain unchanged. These nominal
+base-frame references do not establish native insertion or hardware alignment.
+
 Local pregrasp RGB color classification has limited saved-render evidence.
 The current sensor-selected runner has an opt-in final-selection color hook;
 job 1826 verifies 116 unchanged prior outputs and all 10 invalidation controls.

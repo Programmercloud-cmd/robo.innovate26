@@ -12,6 +12,12 @@ straight upward extraction. Their data-only frame comparison does not change
 the active simulation or establish pad-gap/engagement-depth calibration. See
 the [closed regression](experiments/declared_material_retention_20261025/README.md).
 
+
+The separate [B/C/D destination planner](experiments/destination_plan_20261025/README.md)
+implements the confirmed four-ridge-by-three-brick fill pattern, color routing
+and caller-confirmed placement counts. It exports nominal base-frame targets;
+it does not establish held-brick compensation, insertion or robot readiness.
+
 The manually assisted, known-layout **v1** under `perception/` is a preserved
 real-image baseline; see its [results and stopping decision](experiments/known_layout_20261024/REPORT.md).
 It is not an accepted sorting demonstration.
