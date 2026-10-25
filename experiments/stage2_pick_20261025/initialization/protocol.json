@@ -1,0 +1,49 @@
+{
+  "schema": "visible-pregrasp-initialization-r3-v1",
+  "execution_authorized": false,
+  "status": "FROZEN_BEFORE_DIAGNOSTIC",
+  "scientific_improvement_round": 3,
+  "maximum_improvement_rounds": 3,
+  "source_case": "I_full300_native930",
+  "maximum_diagnostic_jobs": 1,
+  "maximum_diagnostic_active_seconds": 60,
+  "maximum_candidates_tested": 1,
+  "prior_case_seconds": 1026.5510613980296,
+  "prior_supervisor": "runs/20261025T105902.347591Z-stage2-pick-I-pick/pipeline_supervisor.json",
+  "prior_supervisor_sha256": "d8dc826b2bbe61d8c8e2bbeb17c32ec3e8cd1a1d16944d4d8e177553bae1367d",
+  "aggregate_case_ceiling_seconds": 1800,
+  "resource_decision": "Prospective explicit independent review of final initialization hypothesis, not automatic extension or fresh pool. Original1200s record and all1026.551s preserved and charged. Includes this diagnostic plus any later fresh control/pick/audits; stop on failure/budget.",
+  "existing_scientific_protocol_sha256": "16ce8eb603e2d620c97b931c02dae43ed605060187d252a6873eb9d9a824d8ce",
+  "nominal_capture_metadata": "runs/20261025T105902.347591Z-stage2-pick-I-pick/output/capture_metadata.json",
+  "nominal_capture_metadata_sha256": "536fc86c300cfc05a8a60f069d2b45425aedb306e0437a076d013bbfe64bde52",
+  "kinematics": {
+    "goal_tcp_pose_world_wxyz": [
+      0.14,
+      -0.12,
+      0.2,
+      0,
+      0.7071067811865476,
+      0.7071067811865476,
+      0
+    ],
+    "maximum_iterations": 200,
+    "damping": 0.01,
+    "maximum_joint_update_rad": 0.05,
+    "position_tolerance_m": 0.0001,
+    "angle_tolerance_rad": 0.0017453292519943296,
+    "nominal_position_tolerance_m": 2e-06,
+    "nominal_angle_tolerance_rad": 0.0001
+  },
+  "pose_readback": {
+    "q_atol": 0.001,
+    "position_m": 0.0001,
+    "angle_rad": 0.001
+  },
+  "initialization": "Derive one q from composed actualUSD jointframes in existing post-construction/pre-reset hook. Only seven configured arm init positions change; unchanged existing preassemblystep. No new q/root statewrites orforward/step calls after source nativeassembly.",
+  "selection": "Nearest supported PRESENT candidate sorted by actual initialTCP; test ONLYfirstcandidate complete approach/finaldescent path using unchanged sampledpositive-depth gate. No alternate candidate/goal/seed if failure.",
+  "success": "Finite inlimits q + nominal FK guard + target convergence + derived hand vs actual PhysX andUSD agreement; correct requested actual q; full300/301/930 init intact; actual fresh two-view sampled clearance completepositive, allnear-edgepointsretained;0postnativephysicssteps.",
+  "failure": "AnyIKlimit/chain/readback/placement/clock/depth/clearance/budget failure =>STOP this final hypothesis, no new posture or gate exemption.",
+  "following_phases": "Not authorized by diagnostic alone. Fresh3600-step matchedcontrol then ONEI pick require independent successfuldiagnostic review, frozen new q/science/control compatibility and sufficient aggregatebudget. H onlyafterIindependentpass.",
+  "scope": "Initialization/perception diagnostic only; no physical transit from nominalposture, grasp/contact/extraction/heldidentity success.",
+  "execution_status": "Independently reviewed source; NOT submitted. User supplied new physical measurements before queueing. Scene-version decision awaits endpoint/camera clarification; all old costs retained."
+}

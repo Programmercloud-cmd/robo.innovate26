@@ -34,5 +34,15 @@
     "Prospectively review aggregate budget based on measured control/pick costs. Current pool alone cannot fund it."
   ],
   "alternative_not_justified": "Configured transport/local-corridor separation currently lacks a validated known-free transport volume/self-collision model; do not silently assume it.",
-  "parallel_required_work": "Bounded saved-image pregrasp color classification advances stage1 and does not authorize new stage2 physics."
+  "parallel_required_work": "Bounded saved-image pregrasp color classification advances stage1 and does not authorize new stage2 physics.",
+  "prepared_diagnostic": {
+    "source": "experiments/stage2_pick_20261025/initialization",
+    "source_review": "Planner, evaluator and reviewer approve one bounded pre-reset derivation and independent sensor audit.",
+    "prospective_aggregate_ceiling_seconds": 1800,
+    "maximum_diagnostic_seconds": 60,
+    "original_costs_retained_seconds": 1026.5510613980296,
+    "execution_authorized": false,
+    "job_submitted": false,
+    "pending": "New user annotated workcell measurements; decide scene version after endpoint/camera clarification. No new cost/physics/extraction credit."
+  }
 }
