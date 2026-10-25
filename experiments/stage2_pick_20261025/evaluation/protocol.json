@@ -1,0 +1,76 @@
+{
+  "schema": "stage2-pick-independent-audit-v1",
+  "scope": "One sensor-selected native extraction plus matched stationary control. Separate physics extraction, online held association and transition permission. No transfer/insertion/repeated-demo claim.",
+  "capture_protocol_sha256": "9fa39756db2343ee2b96caa85c7ecfe7528e704012c8defbbb25a3ef80aff8ad",
+  "case_budget_seconds": 600,
+  "cases": {
+    "I": {
+      "bricks": 300,
+      "parts": 301,
+      "edges": 930
+    },
+    "H": {
+      "bricks": 299,
+      "parts": 300,
+      "edges": 926,
+      "removed": [
+        "brick_9_2_2"
+      ]
+    }
+  },
+  "identity_binding": {
+    "before_motion": true,
+    "method": "Unique IoU>=0.5 among actual highest remaining physical-layer faces only, independently derived from frozen initial reference layers; no hidden repeated-XY lower faces. Selected measured upper depth must agree within frozen1mm with actual matched body/stud top in TABLE frame. No postmotion reassignment or truth feedback.",
+    "iou_minimum": 0.5,
+    "clock": "Selection and projected-reference packet must have identical initial frame ID and measurement time; only one initial IoU>=0.5 reference may qualify.",
+    "local_depth_tolerance_m": 0.001,
+    "body_top_local_m": 0.0096,
+    "stud_top_local_m": 0.0113
+  },
+  "native_success": {
+    "only_initial_edges": true,
+    "all_lost_edges_incident_prebound_target": true,
+    "target_component_size": 1,
+    "minimum_target_rise_m": 0.004,
+    "held_translation_m": 0.001,
+    "held_angle_rad": 0.05235987755982989,
+    "minimum_final_hold_s": 0.25,
+    "relative_pose_reference": "First singleton detachment, every later measured step through final hold; body-root relative to actual TCP, world coordinates.",
+    "grasp_before_detachment": true,
+    "commanded_lift_m": 0.005
+  },
+  "stationary": {
+    "steps": 3600,
+    "position_m": 0.002,
+    "angle_rad": 0.03490658503988659,
+    "terminal_linear_m_s": 0.02,
+    "terminal_angular_rad_s": 0.2
+  },
+  "raw_contact": {
+    "helpers": "Pinned existing signed raw-vector/dt/range/matrix and body/white/head point-classification checks. SUMABS all-partner magnitude; every loaded point at abs(f)>1e-8N. Geometry work only for nonzero loaded frames.",
+    "thresholds": "contact_protocol.json numeric reporting and 50um ownership tolerances unchanged; pick force/motion thresholds come from frozen scientific protocol.",
+    "unavailable_reciprocal": "UNMEASURED, never fabricate agreement or interpret zero as completeness.",
+    "reciprocal": "Two online finger views and one offline-only source view bound once by the unique initial selected-face match. Independently recompute binding; do not expose source paths/IDs to policy. Raw signed reciprocal vectors and ALL loaded source\u2194finger points checked.",
+    "loaded_only_geometry": "Skip triangle-distance work only when abs(raw scalar)<=frozen1e-8N; retain raw completeness/dt/matrix checks on every frame, including all-zero frames. Summaries contain counts/maxima rather than verbose point tables."
+  },
+  "historical_geometry_scope": "Original G remains failed; canonical model/cooked identity and explicit lateral-qualified domain only. No endcap/global-STL pass or hardware force-equivalence claim.",
+  "online_hold": "Independent physics pass does not establish online held identity; UNKNOWN blocks transfer.",
+  "reference_sha256": "cb46c2fab2833fa267a45980fa7e2adf27e0f8626edfd9f514ff1c7d6b7dddc6",
+  "helpers_sha256": {
+    "contact_helpers.py": "db61a8eb5470c42f13a54c982e3f9cbb263ad92d7576de71689b6792b510b1b7",
+    "mass_reference.py": "0c5e454125a8746638b06010f4481a5e367dc57203fd8da9ee1308ce19887675",
+    "contact_protocol.json": "f47d8eb97a6291aa74bf45dfa698efcaf2ba6a31c5b04be846cc9d69dfc66442"
+  },
+  "inputs_sha256": {
+    "geometry_audit.json": "9e3f623e8f198f730727159009d0238f37207984bebed4f918505f7d2a731c9c",
+    "side_authorization.json": "985a293bad0d02c12511f10ff11eac59ccb4f722c0a15ee83540a7278fe758ea",
+    "D_contact_audit.json": "940f2926afc45a238c059ce4ecb90583d4668a5c3af7e10f8c1d59942a79c1ab",
+    "R_contact_audit.json": "b9e2f0268a2258489be48995487564f55bb75a8327fb15d93743795baa73c71a",
+    "baseline_metadata.json": "a86cc9a735b0464b06f4503be5fb30dd895fa9f50a15dd394ef6e01a7ee02fc1",
+    "baseline_geometry.json": "40081b54c140ab4cbb67b07e3ab3b077ccb7805ede2521f9f3ab61ce53b7e930",
+    "tip.stl": "30c3e47142dce9ba82ec46edf42f1dc2825d620d23bad0a95ce1e2de902b752d"
+  },
+  "budget_accounting": "600s cumulative per CASE: matched3600-step control capture+audit plus pick capture+audit, prior runtime charged from pinned predecessor pipeline supervisor. Control+pick<=7200steps; no hidden retry/parallel execution. Queue wait excluded.",
+  "phase_boundaries": "At final-approach and lift transition, commanded waypoint interpolation begins at previous same-row actual TCP pose, as frozen controller specifies; lift stays straight TABLE+Z for5mm from that measured start. No target/body pose write or post-hoc target substitution.",
+  "abstention": "Completed zero-step sensor abstention has no selected identity, measured load or extraction credit; report ABSTAIN/coverage failure rather than try to score absent contact files."
+}
