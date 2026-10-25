@@ -39,3 +39,33 @@ python3 experiments/stage2_free_position_20261025/submit.py
 Existing `unitree_sim_env`/Isaac5.1/BrickSim runtime, no dependency changes.
 All simulation and captured-array evaluation use the foreground default-Pueue
 job with a stable source/configuration snapshot and pinned original evidence.
+
+## Result — Pueue1822
+
+Source `f7d3a9a`; snapshot `runs/20261025T155936.755455Z-stage2-free-position-r1`.
+The timing policy was exercised correctly: force crossing424 is reference only;
+position admission450 occurs after30 completed endpoint commands. Candidate,
+force-reference and exact reused-control bridge checks pass. There is no repeat
+of the original force-record schema bug.
+
+| Free-coupon method | Endpoint samples at lift admission | Maximum relative drift | Final rise from initialization | Outcome |
+| --- | ---: | ---: | ---: | --- |
+| Early force branch1821 | 4 | 2.673mm /4.145° | 0.230mm | Failed |
+| Position-only dwell1822 | 30 | 2.808mm /3.312° | 0.041mm | Failed |
+
+1822 aborts at808 on finger speed and left lateral-contact qualification. There
+are219 retention-violating frames, no completed5mm lift or30-step hold. Peaks
+1.591/1.595N remain below2N. One frame also has unresolved RIGHT/source native
+bijection and BODY-pair evidence; this stays UNKNOWN and prevents any all-point
+ownership claim. The lower count of failing frames is not successful retention
+or statistical improvement. These are two correlated single attempts.
+
+Independent evaluator and reviewer accept the negative result. This one-round
+timing comparison is closed with no retry, extra dwell, trajectory, force or
+friction fitting. The next explicit dependency is effective runtime pad/brick
+material/contact-offset behavior; there is no evidence that complex hardware
+grasping is necessary. Real Desk14mm mapping remains unmeasured in simulation.
+
+Full Pueue100.531788056s is retained (inner100.143545866s), giving
+2388.038652171/2500s total. Machine-readable evidence/provenance is in
+`results.json`; the original full audit remains under the immutable snapshot.

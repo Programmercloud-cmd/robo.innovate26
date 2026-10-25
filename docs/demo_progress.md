@@ -1,11 +1,13 @@
 # Challenge 2 simulation demo: measured progress
 
-Updated 2026-10-25. **Latest measured state:** simple position-controlled
-closure at a nominal 14 mm custom-pad gap produces bilateral contact and a
-resisted-closure candidate (Pueue 1819), but straight extraction fails. The
-selected brick remains natively connected; the lift stops on finger-speed and
-lateral-contact checks. No extraction, transfer, insertion or repeated sorting
-has passed. See the [latest reviewed result](../experiments/stage2_position_candidate_20261025/README.md).
+Updated 2026-10-25. **Latest measured state:** a free-coupon retention
+fixture fails with both the original early-force admission (1821) and a correctly
+executed position-only 14 mm / 30-endpoint-sample policy (1822). A matched
+1500-step stationary control passes. Neither trial completes the bounded lift
+and hold. Effective pad/brick material/contact behavior is the next dependency;
+a more complex controller or hardware grasping motion is not justified by this
+simulation failure. Native tower extraction, transfer, insertion and repeated
+sorting remain unproven. See the [closed timing comparison](../experiments/stage2_free_position_20261025/README.md).
 
 Local pregrasp RGB color classification now has a saved-image benchmark
 ([Stage 1 color results](../experiments/stage1_color_20261025/results.json)); it is
@@ -1072,3 +1074,26 @@ prospectively frozen reassessment, preserving that ledger.
 
 Source `a2e1a2f`, results record `777402a`; snapshot
 `runs/20261025T151026.796083Z-stage2-position-candidate-I-r1`.
+
+
+## Free-body retention and position-only dwell — comparison closed
+
+Known free-coupon control1821 passes1500steps without finger load, coupon drift
+or source connection loss. Its pick advances at step424 after4 endpoint commands
+on the old1.5N branch; retention fails before completion. One independent
+bookkeeping defect in its force-record dictionary is fixed in source/synthetic
+tests; the original1821 audit and physical failures are retained.
+
+Timing-only1822 uses force crossing424 solely as telemetry and admits the lift
+at450 after30 endpoint commands. The original matched control is reused through
+pinned source/protocol and exact physical/proprio/fixture/observer evidence.
+Retention still fails:2.808mm/3.312° relative drift,0.041mm final initialization-
+relative rise, no completed lift/hold. One frame has UNKNOWN native-point
+matching; do not claim complete contact ownership. Both trials are centered
+fixtures, not sensor-selected extraction or generalization evidence.
+
+Independent reviews close this one improvement without more tuning. All costs
+remain retained:1821 full232.401402697s and1822 full100.531788056s bring the
+aggregate to2388.038652171/2500s. Next investigate effective runtime material/
+contact offsets; no stronger squeeze, tilt, new controller or hardware action
+follows automatically.

@@ -1,0 +1,185 @@
+{
+  "schema": "free-position-dwell-result-v1",
+  "job_id": 1822,
+  "source_commit": "f7d3a9a",
+  "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1",
+  "improvement_round": 1,
+  "phase_closed": true,
+  "automatic_retry": false,
+  "retention_fixture_passed": false,
+  "physics_extraction_passed": false,
+  "perception_credit": false,
+  "transfer_authorized": false,
+  "audit_sha256": "e4653a1930944666959d290179348d7ce02b644cc4e464a2810f079b96363e23",
+  "failed_checks": [
+    "all_frames",
+    "completed_pick",
+    "coupon_rise",
+    "lift_5mm",
+    "held_30"
+  ],
+  "frame_failure_counts": {
+    "coupon_relative_retention": 219,
+    "right_bijection": 1,
+    "source_bijection": 1,
+    "BODY_coupon_pairs_only": 1,
+    "no_capture_abort": 1,
+    "actual_joint_speeds": 1,
+    "plane_compatible": 1
+  },
+  "metrics": {
+    "coupon_rise_m": 4.094839096069336e-05,
+    "relative_translation_max_m": 0.002808289768779326,
+    "relative_angle_max_rad": 0.05779846790502863,
+    "minimum_hold_support_clearance_m": null,
+    "source_drift_max_m": 0.00020829330605920404,
+    "source_angle_max_rad": 0.002178899707942024,
+    "force_peak_N": {
+      "left": 1.5914256925425434,
+      "right": 1.5950110871344805
+    }
+  },
+  "force_confirmation_reference": {
+    "step": 424,
+    "command_q_m": 0.005593305453658104,
+    "at_endpoint": true,
+    "commanded_finger_q_m": [
+      0.005593305453658104,
+      0.005593305453658104
+    ]
+  },
+  "position_candidate": {
+    "status": "GRASP_CANDIDATE",
+    "step": 450,
+    "command_q_m": 0.005593305453658104,
+    "commanded_finger_q_m": [
+      0.005593305453658104,
+      0.005593305453658104
+    ],
+    "consecutive_steps": 30,
+    "endpoint_settle_completed_commands": 30,
+    "window": [
+      {
+        "step": 448,
+        "endpoint_settle_completed_commands": 28,
+        "sample_passed": true,
+        "forces_N": {
+          "left": 1.447898268699646,
+          "right": 1.4576365947723389
+        },
+        "actual_finger_q_m": [
+          0.006319604814052582,
+          0.006319634150713682
+        ],
+        "commanded_finger_q_m": [
+          0.005593305453658104,
+          0.005593305453658104
+        ],
+        "finger_tracking_errors_m": [
+          0.0007262993603944778,
+          0.0007263286970555782
+        ],
+        "actual_joint_gap_m": 0.015452628256774407,
+        "commanded_joint_gap_m": 0.014000000199324354
+      },
+      {
+        "step": 449,
+        "endpoint_settle_completed_commands": 29,
+        "sample_passed": true,
+        "forces_N": {
+          "left": 1.447930932044983,
+          "right": 1.4576663970947266
+        },
+        "actual_finger_q_m": [
+          0.006319605279713869,
+          0.006319634150713682
+        ],
+        "commanded_finger_q_m": [
+          0.005593305453658104,
+          0.005593305453658104
+        ],
+        "finger_tracking_errors_m": [
+          0.0007262998260557652,
+          0.0007263286970555782
+        ],
+        "actual_joint_gap_m": 0.015452628722435694,
+        "commanded_joint_gap_m": 0.014000000199324354
+      },
+      {
+        "step": 450,
+        "endpoint_settle_completed_commands": 30,
+        "sample_passed": true,
+        "forces_N": {
+          "left": 1.44792902469635,
+          "right": 1.4576674699783325
+        },
+        "actual_finger_q_m": [
+          0.006319605279713869,
+          0.006319634150713682
+        ],
+        "commanded_finger_q_m": [
+          0.005593305453658104,
+          0.005593305453658104
+        ],
+        "finger_tracking_errors_m": [
+          0.0007262998260557652,
+          0.0007263286970555782
+        ],
+        "actual_joint_gap_m": 0.015452628722435694,
+        "commanded_joint_gap_m": 0.014000000199324354
+      }
+    ]
+  },
+  "lift_admission": {
+    "kind": "position_candidate",
+    "step": 450,
+    "command_q_m": 0.005593305453658104
+  },
+  "grasp_confirmation": null,
+  "scope": "ONE known freecoupon timing comparison, correlated with1821; not taskextraction/hardware. Material/contact offsets and Desk widthmapping notmeasured.",
+  "conclusion": "Position-only30-endpointadmission exercised correctly but didnot yieldacceptedfreebodyretention. No evidenceofretention improvement; no furtherdwell/trajectory/force tuning underthiscomparison. Oneframe nativeRIGHT/source mapping UNKNOWN isadditionalobservationlimitation, notproofofforbiddencontact/cause.",
+  "independent_reviews": {
+    "evaluator": "Acceptedlimitednegative; timing/control/schema gatespass, physicalretentionfailure +oneframemappingUNKNOWN.",
+    "reviewer": "Acceptedlimitednegative; closecomparison, checkeffective runtime material/contact behaviornext; no complexcontrollerjustified."
+  },
+  "timing": {
+    "schema": "free-position-dwell-supervisor-v1",
+    "phases": [
+      {
+        "phase": "capture",
+        "wall_seconds": 71.34158843298792,
+        "returncode": 0,
+        "cleanup": "complete_marker_cleanup",
+        "capture_completed": true
+      },
+      {
+        "phase": "audit",
+        "wall_seconds": 28.79988942699856,
+        "returncode": 0
+      }
+    ],
+    "actual_capture_plus_audit_seconds": 100.14354586598347,
+    "prior_case_seconds": 2287.5068641150233,
+    "cumulative_case_seconds": 2388.0386521710234,
+    "case_limit_seconds": 2500,
+    "maximum_active_seconds": 150,
+    "within_budget": true,
+    "control_reused": true,
+    "improvement_round": 1,
+    "retention_fixture_passed": false,
+    "proceed_gate_passed": false,
+    "physics_extraction_passed": false,
+    "perception_credit": false,
+    "transfer_authorized": false,
+    "automatic_retry": false,
+    "audit_sha256": "e4653a1930944666959d290179348d7ce02b644cc4e464a2810f079b96363e23",
+    "supervised_cumulative_case_seconds": 2387.6504099810068,
+    "full_pueue_job_seconds": 100.531788056,
+    "pueue_job_id": 1822,
+    "pueue_start": "2026-10-25T16:59:37.395741746+01:00",
+    "pueue_end": "2026-10-25T17:01:17.927529802+01:00",
+    "remaining_case_seconds": 111.9613478289766,
+    "full_pueue_timing_authoritative": true
+  },
+  "next_dependency": "Effective runtime pad/coupon material/offset behavior under shallowgrip; inspect/source-readback before anynewphysicalchange."
+}
