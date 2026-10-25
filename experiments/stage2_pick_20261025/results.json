@@ -18,11 +18,476 @@
       "round": 2,
       "failure": "Close segmentation camera omits85162 sampled tool-path points;20 near-edge samples are unresolved behind depth returns.",
       "change": "One fixed existing wide-overhead measured RGB-D geometry view, unchanged closeR3; every nonself sample needs a positive actual depth witness in at least one view. Exact I/O cache equivalence already validated.",
-      "status": "METADATA_REPAIR_REVIEW_PENDING_ONE_EXECUTION",
+      "status": "FAILED_CLEARANCE_ABSTENTION_APPROACH_REASSESSMENT",
       "physics_controller_or_numerical_limits_changed": false,
       "original_failures_preserved": true,
       "prior_case_wall_seconds": 845.2514062500268,
-      "remaining_case_seconds": 354.7485937499732
+      "remaining_case_seconds": 354.7485937499732,
+      "repair_execution": {
+        "job_id": 1805,
+        "source_commit": "5e1a4ca",
+        "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T105902.347591Z-stage2-pick-I-pick",
+        "status": "ABSTAINED",
+        "science_changed": false,
+        "prior_case_wall_seconds": 845.2514062500268,
+        "remaining_case_seconds": 173.44893860197044,
+        "independent_review": "One repaired execution after metadata-only fix; no automatic retries or H authorization",
+        "actual_capture_plus_audit_seconds": 181.29965514800278,
+        "cumulative_case_seconds": 1026.5510613980296,
+        "proceed_gate_passed": false,
+        "measured_physics_steps": 0,
+        "present_hypotheses": 14,
+        "first_candidate_clearance": {
+          "passed": false,
+          "unknown_samples": 0,
+          "nonfree_samples": 79283,
+          "samples": 274320,
+          "minimum_observed_ray_clearance_m": -0.46923598836766045,
+          "minimum_positive_witness_gap_m": 0.0006521000182708736,
+          "per_view_counts": {
+            "frame_0000": {
+              "self_known_proprio_skip": 7522,
+              "invalid_projection_or_behind_camera": 0,
+              "out_of_image": 85162,
+              "invalid_depth": 0,
+              "observed_ray_free": 181616,
+              "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED": 20
+            },
+            "geometry_safety_wide_0000": {
+              "self_known_proprio_skip": 7522,
+              "invalid_projection_or_behind_camera": 0,
+              "out_of_image": 0,
+              "invalid_depth": 0,
+              "observed_ray_free": 119421,
+              "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED": 147377
+            }
+          },
+          "witness_counts": {
+            "known_self": 7522,
+            "close_only": 68094,
+            "wide_only": 5899,
+            "both": 113522,
+            "none": 79283
+          },
+          "known_self_samples": 7522,
+          "samples_with_no_free_view": 79283,
+          "view_frame_ids": [
+            "frame_0000",
+            "geometry_safety_wide_0000"
+          ],
+          "evidence_file": "online/clearance_0000.npz",
+          "primary_unresolved_examples": [
+            {
+              "sample_id": 268504,
+              "point_world_m": [
+                0.08820071925960347,
+                -0.07437926377218113,
+                0.09839003983944422
+              ],
+              "categories": [
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED",
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED"
+              ],
+              "gaps_m": [
+                -0.0007599618294858446,
+                -0.45340672396213044
+              ],
+              "positive_witness": [
+                false,
+                false
+              ]
+            },
+            {
+              "sample_id": 268506,
+              "point_world_m": [
+                0.08820071925960347,
+                -0.06963005376342805,
+                0.09839003983944422
+              ],
+              "categories": [
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED",
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED"
+              ],
+              "gaps_m": [
+                -0.0007599916318082323,
+                -0.44869706295520295
+              ],
+              "positive_witness": [
+                false,
+                false
+              ]
+            },
+            {
+              "sample_id": 268648,
+              "point_world_m": [
+                0.0882063662896097,
+                -0.05937945192942614,
+                0.09839003968413304
+              ],
+              "categories": [
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED",
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED"
+              ],
+              "gaps_m": [
+                -0.0007599917871193851,
+                -0.0007599917871192741
+              ],
+              "positive_witness": [
+                false,
+                false
+              ]
+            },
+            {
+              "sample_id": 268650,
+              "point_world_m": [
+                0.0882063662896097,
+                -0.05462987287908102,
+                0.09839003968413304
+              ],
+              "categories": [
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED",
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED"
+              ],
+              "gaps_m": [
+                -0.0007599619847969974,
+                -0.0007599917871192741
+              ],
+              "positive_witness": [
+                false,
+                false
+              ]
+            },
+            {
+              "sample_id": 270664,
+              "point_world_m": [
+                0.08820071925960347,
+                -0.07437926377218113,
+                0.09639003983944422
+              ],
+              "categories": [
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED",
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED"
+              ],
+              "gaps_m": [
+                -0.0027599618294858463,
+                -0.45540672396213044
+              ],
+              "positive_witness": [
+                false,
+                false
+              ]
+            },
+            {
+              "sample_id": 270666,
+              "point_world_m": [
+                0.08820071925960347,
+                -0.06963005376342805,
+                0.09639003983944422
+              ],
+              "categories": [
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED",
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED"
+              ],
+              "gaps_m": [
+                -0.0027599618294858463,
+                -0.45069706295520295
+              ],
+              "positive_witness": [
+                false,
+                false
+              ]
+            },
+            {
+              "sample_id": 270736,
+              "point_world_m": [
+                0.08842927608087199,
+                -0.0668778581252903,
+                0.09643234441422842
+              ],
+              "categories": [
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED",
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED"
+              ],
+              "gaps_m": [
+                -0.002717687057024021,
+                -0.44631852047300913
+              ],
+              "positive_witness": [
+                false,
+                false
+              ]
+            },
+            {
+              "sample_id": 270738,
+              "point_world_m": [
+                0.08842927608087199,
+                -0.062131463046767865,
+                0.09643234441422842
+              ],
+              "categories": [
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED",
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED"
+              ],
+              "gaps_m": [
+                -0.002717687057024021,
+                -0.002717687057024021
+              ],
+              "positive_witness": [
+                false,
+                false
+              ]
+            },
+            {
+              "sample_id": 270808,
+              "point_world_m": [
+                0.0882063662896097,
+                -0.05937945192942614,
+                0.09639003968413304
+              ],
+              "categories": [
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED",
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED"
+              ],
+              "gaps_m": [
+                -0.002759961984796999,
+                -0.002759991787119276
+              ],
+              "positive_witness": [
+                false,
+                false
+              ]
+            },
+            {
+              "sample_id": 270810,
+              "point_world_m": [
+                0.0882063662896097,
+                -0.05462987287908102,
+                0.09639003968413304
+              ],
+              "categories": [
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED",
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED"
+              ],
+              "gaps_m": [
+                -0.002759961984796999,
+                -0.002759991787119276
+              ],
+              "positive_witness": [
+                false,
+                false
+              ]
+            },
+            {
+              "sample_id": 272824,
+              "point_world_m": [
+                0.08820071925960347,
+                -0.07437926377218113,
+                0.09439003983944422
+              ],
+              "categories": [
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED",
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED"
+              ],
+              "gaps_m": [
+                -0.0047600214341306235,
+                -0.45740672396213045
+              ],
+              "positive_witness": [
+                false,
+                false
+              ]
+            },
+            {
+              "sample_id": 272825,
+              "point_world_m": [
+                0.08820071925960347,
+                -0.07437926377218113,
+                0.09784443606430747
+              ],
+              "categories": [
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED",
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED"
+              ],
+              "gaps_m": [
+                -0.0013055954069449704,
+                -0.45395232773726724
+              ],
+              "positive_witness": [
+                false,
+                false
+              ]
+            },
+            {
+              "sample_id": 272826,
+              "point_world_m": [
+                0.08820071925960347,
+                -0.06963005376342805,
+                0.09439003983944422
+              ],
+              "categories": [
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED",
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED"
+              ],
+              "gaps_m": [
+                -0.006509954200091317,
+                -0.45269706295520296
+              ],
+              "positive_witness": [
+                false,
+                false
+              ]
+            },
+            {
+              "sample_id": 272827,
+              "point_world_m": [
+                0.08820071925960347,
+                -0.06963005376342805,
+                0.09784443606430747
+              ],
+              "categories": [
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED",
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED"
+              ],
+              "gaps_m": [
+                -0.0013055954069449704,
+                -0.44924266673033975
+              ],
+              "positive_witness": [
+                false,
+                false
+              ]
+            },
+            {
+              "sample_id": 272896,
+              "point_world_m": [
+                0.08842927608087199,
+                -0.0668778581252903,
+                0.09443234441422842
+              ],
+              "categories": [
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED",
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED"
+              ],
+              "gaps_m": [
+                -0.004717687057024023,
+                -0.44498793213224985
+              ],
+              "positive_witness": [
+                false,
+                false
+              ]
+            },
+            {
+              "sample_id": 272898,
+              "point_world_m": [
+                0.08842927608087199,
+                -0.062131463046767865,
+                0.09443234441422842
+              ],
+              "categories": [
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED",
+                "observed_ray_free"
+              ],
+              "gaps_m": [
+                -0.004717687057024023,
+                0.014482280327314356
+              ],
+              "positive_witness": [
+                false,
+                true
+              ]
+            },
+            {
+              "sample_id": 272968,
+              "point_world_m": [
+                0.0882063662896097,
+                -0.05937945192942614,
+                0.09439003968413304
+              ],
+              "categories": [
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED",
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED"
+              ],
+              "gaps_m": [
+                -0.004759961984797001,
+                -0.004759991787119278
+              ],
+              "positive_witness": [
+                false,
+                false
+              ]
+            },
+            {
+              "sample_id": 272969,
+              "point_world_m": [
+                0.0882063662896097,
+                -0.05937945192942614,
+                0.09784443621961864
+              ],
+              "categories": [
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED",
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED"
+              ],
+              "gaps_m": [
+                -0.0013055952516338176,
+                -0.001305595251633651
+              ],
+              "positive_witness": [
+                false,
+                false
+              ]
+            },
+            {
+              "sample_id": 272970,
+              "point_world_m": [
+                0.0882063662896097,
+                -0.05462987287908102,
+                0.09439003968413304
+              ],
+              "categories": [
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED",
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED"
+              ],
+              "gaps_m": [
+                -0.004759961984797001,
+                -0.004759991787119278
+              ],
+              "positive_witness": [
+                false,
+                false
+              ]
+            },
+            {
+              "sample_id": 272971,
+              "point_world_m": [
+                0.0882063662896097,
+                -0.05462987287908102,
+                0.09784443621961864
+              ],
+              "categories": [
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED",
+                "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED"
+              ],
+              "gaps_m": [
+                -0.00130556544931143,
+                -0.001305595251633651
+              ],
+              "positive_witness": [
+                false,
+                false
+              ]
+            }
+          ],
+          "method": "Fixed inflated box corners/midplanes over2mm/1deg path samples; ANY-view positive measured ray witness; conditional sampled screen, not global collision certification"
+        },
+        "failed_checks": [
+          "unique_premotion_identity",
+          "sensor_supported_clearance",
+          "selected_upper_depth_1mm",
+          "nonempty_pick_coverage"
+        ],
+        "audit_sha256": "dafa7c83eb3b8410c5a9a2aa3514e605acf6356931933bb662ac137f6f3ed206"
+      }
     }
   ],
   "I": {
@@ -171,5 +636,14 @@
       "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED": 20
     }
   },
-  "round1_scientific_protocol_sha256": "0d902e26bc4f11eda1d668b5e92fc97a11f360ef40f26423247f86681a764471"
+  "round1_scientific_protocol_sha256": "0d902e26bc4f11eda1d668b5e92fc97a11f360ef40f26423247f86681a764471",
+  "approach_reassessment": {
+    "status": "NO_FURTHER_TRIAL_AUTHORIZED_IN_THIS_POOL",
+    "reason": "Wide view establishes additional witnesses but robot occlusion leaves all candidates unsupported. Last all-candidate capture181.135s exceeds remaining173.449s before motion/audit; do not spend round3 on blind extra camera or relax unknown into free.",
+    "spent_case_seconds": 1026.5510613980296,
+    "case_limit_seconds": 1200,
+    "third_improvement_round_used": false,
+    "reserved_H_untouched": true,
+    "next_design_question": "Separate configured workcell transport from near-object observed corridor, or a declared visible pregrasp initialization with new matched control. Reassess before new physics and without resetting prior rounds/costs."
+  }
 }

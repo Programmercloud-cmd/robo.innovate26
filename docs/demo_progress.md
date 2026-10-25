@@ -696,3 +696,22 @@ field leaves all camera math, science, controller and physics unchanged. The
 independent evaluator/reviewer permit one repaired execution of the unexercised
 round-2 trial, without resetting rounds. All 15.943 seconds remain charged:
 845.251 seconds spent, 354.749 remaining of 1,200. H remains reserved.
+
+
+The repaired round-2 execution, Pueue 1805 (source `5e1a4ca`), completes with
+ABSTAIN and zero measured motion/contact steps. All 14 PRESENT hypotheses fail
+the unchanged sampled clearance gate. For the first candidate, the close view
+retains exactly the old counts; the measured wide view adds 5,899 unique free
+witnesses but leaves 79,283 points without either witness. Its robot-occluded
+returns cannot be interpreted as either free space or proven solid obstruction.
+The 13-to-14 PRESENT change is one unchanged footprint whose far-end stud score
+changes from .33905 to .37310 across the fixed .35 threshold; the cause of RGB
+variation is unproven. R3 runs before the wide capture.
+
+Both independent agents recommend approach reassessment, not a blind third
+camera or unknown-as-free relaxation. Total spent is 1,026.551 of 1,200 seconds,
+leaving 173.449; this all-rejected capture alone required 181.135 seconds. No
+further trial is authorized in this pool. Round 3 remains unused; prior rounds,
+failures and costs stay recorded. H remains untouched, and no grasp, extraction
+or transfer has been established. Future transport/observation changes need
+explicitly reviewed initialization/control compatibility and resource scope.
