@@ -13,7 +13,7 @@ layout and native 300-brick design are retained. See
 STL units/attachment and both cameras' optical calibration remain unmeasured;
 stock pad collisions are still used and do not validate updated-tip contact.
 
-## Stage 1: image candidates and classification handoff — not passed
+## Stage 1: ordinary candidate/mock interface smoke passed; coverage remains limited
 
 Frozen R3 is reused with configured synthetic camera calibration and a translated
 source ROI. Online code receives RGB, axial depth, calibration and opaque frame
@@ -33,6 +33,8 @@ transition are reserved for the frozen interface audit, not novel-stack evidence
 | Unchanged R3, development | 1723 | 0 / 171 | 0% | 0 / 6 | Fail; no candidate, mock blocked |
 | Unchanged R3, reserved | 1724 | 0 / 64 | 0% | 0 / 4 | Fail; no candidate |
 | R3 + fixed Z workspace, development | 1726 | 0 / 171 | 0% | 3 / 6 | Fail; height corrected, fragments rejected |
+| Same R3/workspace, closer virtual views, development | 1729 | 41 / 176 | 23.3% | 6 / 6 | Ordinary integration smoke passes |
+| Same closer views, reserved | 1730 | 19 / 66 | 28.8% | 2 / 4 | Sparse-state gate fails |
 
 Zero detections give undefined precision, not 100% precision. No-match targets
 are not uncertain *instances*. All-NaN controls and the fixed NaN patch produce
@@ -44,14 +46,36 @@ work-volume prior [-0.005, 0.20] m converts excluded depth to unknown without
 altering raw inputs or R3 thresholds. This finds the right overhead band but
 all fragments remain too narrow (7–10 mm versus unchanged 16±4 mm). Oblique
 bands remain unsupported. No threshold relaxation followed these failures.
-A separately versioned, fixed close-view sampling experiment is being prepared;
-its results must not be substituted retroactively for the wide-view baseline.
+A separately versioned fixed close-view experiment (render job 1728) subsequently
+recovers confirmed candidates without changing R3 or workspace settings. Its
+results are separate from the wide-view baseline.
 
 Source and reproducibility:
 [Stage 1 code/protocol](../experiments/stage1_20261025/README.md),
 [development baseline](../runs/20261025T001958.593862Z-stage1-development/evaluation/evaluation.json),
 [workspace comparison](../runs/20261025T002637.845861Z-stage1-development-workspace_v1/evaluation/evaluation.json).
-Rendering job 1722 preserves native links in each partial-state snapshot.
+Rendering jobs 1722 and 1728 preserve native links in each partial-state snapshot.
+
+The close-view ordinary gate confirms 15 intact, 13 interior-gap and 13 endpoint
+faces, all overhead. The complementary view confirms none. Conditional accepted
+XY median is 0.50 mm and max 0.716 mm (N=41); these are ideal synthetic metric
+checks, not verified grasp precision. There are 135 missed visible occurrences
+(127 matched uncertain hypotheses and 8 no-match), and no confident false/lower/
+merge/duplicate errors. Two lower-fragment **raw** hypotheses are unconfirmed.
+The interior gap is correctly missing overhead and uncertain obliquely; a
+removed endpoint remains unknown extent. NaN controls and all mock guards pass.
+Of the 41 confirmed occurrences, 38 recover previously visible IDs and 3 concern
+newly visible references; zero previously confirmed faces are lost. Reference
+visibility changes from 171 to 176, so the two camera sets are not identical
+samples. Reserved transition top confirms 19; sparse remnants confirm zero in
+both views. No reserved-driven threshold or view tuning follows.
+
+[Ordinary close-view evaluation](../runs/20261025T003437.436801Z-stage1-development-workspace_v1/evaluation/evaluation.json),
+[reserved evaluation](../runs/20261025T003437.726220Z-stage1-reserved-workspace_v1/evaluation/evaluation.json),
+[representative sensor overlay](../runs/20261025T003437.436801Z-stage1-development-workspace_v1/inference/f000/overlay.png).
+The actual Challenge 1 service is still unavailable; passing mocked joins is
+not actual classification integration. These views are virtual inspection
+views, not calibrated wrist-camera or hardware reachability evidence.
 
 ## Stage 2 prerequisite: full-stack dynamics — failed baseline
 
@@ -64,9 +88,11 @@ robot joints hold their nominal values. Thus the visual twin's prior zero-step
 captures did not establish load-bearing native stability.
 
 No preload, friction, cooldown, timestep, breakage rule or stack size is changed
-to hide this result. The next diagnostic may enable native debug output and
-read utilization while keeping all physical settings unchanged. The failure
-mechanism is not yet established. An idle pass alone would still not prove
+to hide this result. Diagnostic job **1727** enables only native debug output
+and records utilization; it reproduces the same first failure at step 7 and
+collects seven native solver dumps. Debug completion is not an idle pass. The
+failure mechanism is not yet established; queued analysis must distinguish
+serialized force/solver evidence from conjecture. An idle pass alone would still not prove
 extraction. Bilateral contact feedback and a checked updated-tip collision
 representation are further prerequisites for that claim.
 

@@ -115,3 +115,31 @@ New configuration paths are relative to this Stage1 experiment. Custom camera,
 benchmark or protocol options require an explicit matching `--intact` capture;
 the old distant I image must not be silently reused. Omitting the new options
 preserves the original submission defaults.
+
+
+## Measured results
+
+| Version / split | Pueue | Confirmed / visible | Result |
+|---|---:|---:|---|
+| Wide-view unchanged R3, development | 1723 | 0/171 | No candidates |
+| Wide-view unchanged R3, reserved | 1724 | 0/64 | No candidates |
+| Fixed Z workspace, development | 1726 | 0/171 | Correct overhead band; all fragments rejected |
+| Fixed closer views + same workspace, development | 1729 | 41/176 | Ordinary integration smoke passes |
+| Fixed closer views + same workspace, reserved | 1730 | 19/66 | Sparse-remnant gate fails |
+
+Jobs1722/1728 render the respective camera configurations. All confirmed
+close-view candidates come from overhead: I15/H13/E13, T19/P0. No confident
+false/lower/merge/duplicate target is measured, but raw geometry includes two
+unconfirmed lower fragments. Development misses135 occurrences (127 matched
+uncertain and8 no-match). New views change visibility171→176;38 previously
+visible occurrences are newly confirmed,3 confirmed occurrences are newly
+visible,0 prior confirmations are lost. No thresholds or R3 source change.
+
+The mock four-class join and four abstention guards pass only after close-view
+PRESENT candidates exist. Challenge1 remains **mocked**, not integrated.
+Sparse residual failures remain; no tuning follows reserved results.
+
+- [Close-view development results](../../runs/20261025T003437.436801Z-stage1-development-workspace_v1/evaluation/evaluation.json)
+- [Close-view reserved results](../../runs/20261025T003437.726220Z-stage1-reserved-workspace_v1/evaluation/evaluation.json)
+- [Overhead overlay](../../runs/20261025T003437.436801Z-stage1-development-workspace_v1/inference/f000/overlay.png)
+- [Overall demo gates and limitations](../../docs/demo_progress.md)
