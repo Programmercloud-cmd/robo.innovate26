@@ -12,9 +12,10 @@ Login metadata shows Slurm/Apptainer, Python3.9.25 and glibc2.34. No matching
 Isaac runtime was identified in the limited standard-path inventory; this is
 not an exhaustive cluster search or proof that none exists.
 
-The probe budget is one A40, five minutes,16CPU/60GiB; it exits immediately
+The probe budget is one A40, five minutes, with the documented16CPU/60GB share assigned automatically; it exits immediately
 when metadata collection ends. Alex's documented GPU allocations include the
-associated CPU/memory share. A100/H100 have no RT cores and are unsupported
+associated CPU/memory share; explicit --mem is rejected and no CPU/memory
+overrides are supplied. A100/H100 have no RT cores and are unsupported
 for Isaac rendering according to the pinned [Isaac5.1 requirements](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/requirements.html).
 A40 is a candidate only; scheduling it does not certify runtime compatibility.
 
@@ -35,3 +36,8 @@ currently failed local native-stack dynamics gate.
 Snapshots include both source files, hashes, the resource budget, source commit,
 SSH submission commands and returned Pueue/Slurm IDs. Shared environments,
 concurrency limits and SSH settings remain unchanged.
+
+The initial Pueue submission1736 was rejected by Slurm before allocation because
+it included --mem. Its immutable snapshot is preserved; the corrected payload
+uses GPU-count-based automatic resources. This is a scheduler-argument fix,
+not a second allocated GPU experiment.

@@ -30,7 +30,9 @@ def main():
                    '--format=csv,noheader,nounits']) if selector else {'error':'No allocated GPU selector; refusing an unscoped device query'}
     report = {'schema':'alex-minimal-capability-preflight-v1',
         'slurm_job_id':os.environ['SLURM_JOB_ID'], 'partition':os.environ.get('SLURM_JOB_PARTITION'),
-        'requested_budget':{'gpu_type':'a40','gpu_count':1,'walltime_minutes':5,'cpu_cores':16,'memory_GiB':60},
+        'requested_budget':{'gpu_type':'a40','gpu_count':1,'walltime_minutes':5,'documented_cpu_share':16,'documented_memory_share_GB':60,'cpu_memory_policy':'Assigned automatically by Slurm from GPU count'},
+        'allocated_cpu_count':os.environ.get('SLURM_CPUS_ON_NODE'),
+        'allocated_memory_MiB':os.environ.get('SLURM_MEM_PER_NODE'),
         'hostname':platform.node(),'python':sys.version.split()[0],'python_executable':sys.executable,
         'glibc':os.confstr('CS_GNU_LIBC_VERSION'),'gpu_inventory':gpu,
         'apptainer':command(['apptainer','--version']) if shutil.which('apptainer') else None,

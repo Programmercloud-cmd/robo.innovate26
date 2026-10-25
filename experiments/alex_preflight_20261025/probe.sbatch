@@ -3,8 +3,6 @@
 #SBATCH --partition=a40
 #SBATCH --gres=gpu:a40:1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=16
-#SBATCH --mem=60G
 #SBATCH --time=00:05:00
 #SBATCH --export=NONE
 #SBATCH --output=slurm-%j.out
