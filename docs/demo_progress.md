@@ -108,3 +108,22 @@ static graph authoring, mock labels or preview renders as these stages.
 Native connections may be created only for reset initialization or by native
 assembly detection during measured task execution; no post-reset teleportation,
 scripted attachment or manually declared connection success is allowed.
+
+
+## Closed numerical diagnostic round
+
+Native debug/analysis jobs1727/1731/1732 are followed by the explicit coupled
+numerical-epsilon pair1733/1734 and read-only comparison1735. Both1e-4 and1e-6
+break the same two top-edge connections at step7. The tighter value lowers the
+watched relaxed-bound violation from~5.52e-5 to~5.7e-9, but positive model
+relaxation remains. Numerical tightening is not a sufficient fix; underlying
+contact/angular-load origin is unresolved. No physical threshold, break rule,
+source geometry or task motion is changed. Independent evaluation/review agree
+to stop this bounded round with the failed idle gate intact, rather than hide it.
+
+[Machine-readable dynamics outcome](../experiments/stage2_idle_20261025/results.json),
+[perception outcomes and exact snapshots](../experiments/stage1_20261025/results.json).
+The six-stage goal remains incomplete. Further controller work needs a stable
+native source/contact model and checked tip/contact feedback; actual Challenge1
+integration also remains unavailable. No extraction, transfer or stacking
+success is established by the candidate/mock-interface pass.

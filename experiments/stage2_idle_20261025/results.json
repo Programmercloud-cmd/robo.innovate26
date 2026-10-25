@@ -1,0 +1,187 @@
+{
+  "scope": "Bounded native full-stack idle baseline and diagnostics; no manipulation success",
+  "round_complete": true,
+  "stage_passed": false,
+  "overall_six_stage_goal_complete": false,
+  "initial_design": {
+    "bricks": 300,
+    "native_connections": 930,
+    "source_parts_including_plate": 301
+  },
+  "baseline_job": 1725,
+  "debug_job": 1727,
+  "offline_analysis_jobs": [
+    1731,
+    1732,
+    1735
+  ],
+  "controlled_pair": [
+    {
+      "job_id": 1733,
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T005714.927650Z-stage2-native-epsilon-1e-4",
+      "numerical_epsilon": {
+        "environment_raw": "1e-4",
+        "effective_requested": 0.0001,
+        "status": "Existing OsqpSolver constructor environment/default; value is not a serialized solver-setting getter",
+        "coupling": [
+          "solver eps_abs and eps_rel",
+          "G >= -epsilon",
+          "stage2 Hx-Vv <= 1-epsilon"
+        ],
+        "physical_thresholds_changed": false,
+        "break_selection_changed": false
+      },
+      "steps_executed": 7,
+      "idle_validated": false,
+      "first_failure": {
+        "finite": true,
+        "max_position_drift_m": 0.0001707762518073223,
+        "position_drift_part_index": 300,
+        "max_orientation_drift_rad": 0.0013754981744850481,
+        "orientation_drift_part_index": 99,
+        "max_linear_speed_m_s": 0.041321293659287946,
+        "max_angular_speed_rad_s": 0.2633431449434304,
+        "reasons": [
+          "native_component_changed_or_broken"
+        ],
+        "step": 7,
+        "physics_time_s": 0.08333333767950535,
+        "source_parts": 300,
+        "native_connections": 928,
+        "broken_connections": [
+          "ConnectionInfo(physics_csid=836, physics_stud_pid=243, physics_hole_pid=273, stud_ifid=1, hole_ifid=0, offset=[1, 1], yaw=1, env_id=0, usd_stud_pid=245, usd_hole_pid=275, stud_path='/World/envs/env_0/brick_8_0_3', hole_path='/World/envs/env_0/brick_9_0_3', usd_csid=836, conn_path='/World/envs/env_0/managed/Conns/Conn_836')",
+          "ConnectionInfo(physics_csid=837, physics_stud_pid=244, physics_hole_pid=273, stud_ifid=1, hole_ifid=0, offset=[1, -3], yaw=1, env_id=0, usd_stud_pid=246, usd_hole_pid=275, stud_path='/World/envs/env_0/brick_8_0_4', hole_path='/World/envs/env_0/brick_9_0_3', usd_csid=837, conn_path='/World/envs/env_0/managed/Conns/Conn_837')"
+        ],
+        "robot_finite": true,
+        "watched_utilization": {
+          "/World/envs/env_0/managed/Conns/Conn_836": -1.0,
+          "/World/envs/env_0/managed/Conns/Conn_837": -1.0
+        },
+        "joint_positions": [
+          0.0,
+          -0.4000000059604645,
+          0.0,
+          -2.5,
+          0.0,
+          2.0999999046325684,
+          0.7853999733924866,
+          0.03999999910593033,
+          0.03999999910593033
+        ],
+        "joint_velocities": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "all_serialized_solves_converged": true,
+      "watched_final": {
+        "836": {
+          "utilization": 1.0000978907974745,
+          "raw_relaxation_v": 4.313486607232978e-05,
+          "relaxed_bound_positive_gap": 5.5195162954819596e-05
+        },
+        "837": {
+          "utilization": 1.0001407681942294,
+          "raw_relaxation_v": 8.752080755590996e-05,
+          "relaxed_bound_positive_gap": 5.5159094195298186e-05
+        }
+      },
+      "analysis": "/home/faps/dev/github/robo.innovate26/runs/20261025T010002.112809Z-stage2-epsilon-pair-analysis/output/default_1e4/debug_analysis.json",
+      "analysis_sha256": "5bd3d2608218dee0ac1aed9d59c14aa65aeb86ecbe7570cbc859c6e6d8b68fb9"
+    },
+    {
+      "job_id": 1734,
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T005715.221682Z-stage2-native-epsilon-1e-6",
+      "numerical_epsilon": {
+        "environment_raw": "1e-6",
+        "effective_requested": 1e-06,
+        "status": "Existing OsqpSolver constructor environment/default; value is not a serialized solver-setting getter",
+        "coupling": [
+          "solver eps_abs and eps_rel",
+          "G >= -epsilon",
+          "stage2 Hx-Vv <= 1-epsilon"
+        ],
+        "physical_thresholds_changed": false,
+        "break_selection_changed": false
+      },
+      "steps_executed": 7,
+      "idle_validated": false,
+      "first_failure": {
+        "finite": true,
+        "max_position_drift_m": 0.0001707762518073223,
+        "position_drift_part_index": 300,
+        "max_orientation_drift_rad": 0.0013754981744850481,
+        "orientation_drift_part_index": 99,
+        "max_linear_speed_m_s": 0.041321293659287946,
+        "max_angular_speed_rad_s": 0.2633431449434304,
+        "reasons": [
+          "native_component_changed_or_broken"
+        ],
+        "step": 7,
+        "physics_time_s": 0.08333333767950535,
+        "source_parts": 300,
+        "native_connections": 928,
+        "broken_connections": [
+          "ConnectionInfo(physics_csid=836, physics_stud_pid=243, physics_hole_pid=273, stud_ifid=1, hole_ifid=0, offset=[1, 1], yaw=1, env_id=0, usd_stud_pid=245, usd_hole_pid=275, stud_path='/World/envs/env_0/brick_8_0_3', hole_path='/World/envs/env_0/brick_9_0_3', usd_csid=836, conn_path='/World/envs/env_0/managed/Conns/Conn_836')",
+          "ConnectionInfo(physics_csid=837, physics_stud_pid=244, physics_hole_pid=273, stud_ifid=1, hole_ifid=0, offset=[1, -3], yaw=1, env_id=0, usd_stud_pid=246, usd_hole_pid=275, stud_path='/World/envs/env_0/brick_8_0_4', hole_path='/World/envs/env_0/brick_9_0_3', usd_csid=837, conn_path='/World/envs/env_0/managed/Conns/Conn_837')"
+        ],
+        "robot_finite": true,
+        "watched_utilization": {
+          "/World/envs/env_0/managed/Conns/Conn_836": -1.0,
+          "/World/envs/env_0/managed/Conns/Conn_837": -1.0
+        },
+        "joint_positions": [
+          0.0,
+          -0.4000000059604645,
+          0.0,
+          -2.5,
+          0.0,
+          2.0999999046325684,
+          0.7853999733924866,
+          0.03999999910593033,
+          0.03999999910593033
+        ],
+        "joint_velocities": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "all_serialized_solves_converged": true,
+      "watched_final": {
+        "836": {
+          "utilization": 1.0000425438856184,
+          "raw_relaxation_v": 4.273102189170412e-05,
+          "relaxed_bound_positive_gap": 5.717016717989704e-09
+        },
+        "837": {
+          "utilization": 1.0000857535480696,
+          "raw_relaxation_v": 8.691632169126482e-05,
+          "relaxed_bound_positive_gap": 5.37522289025883e-09
+        }
+      },
+      "analysis": "/home/faps/dev/github/robo.innovate26/runs/20261025T010002.112809Z-stage2-epsilon-pair-analysis/output/variant_1e6/debug_analysis.json",
+      "analysis_sha256": "1738b2e5baeaf25b82fbd6979f862fcff2c18ba2b79e6564da0eed3854123139"
+    }
+  ],
+  "interpretation": "Both epsilon values break the same connections at step7. Tighter coupled numerical epsilon reduces relaxed-bound violation but positive model relaxation and break selection persist; underlying load/contact origin remains unresolved. This does not prove physical overload or eliminate all numerical/model effects.",
+  "physical_settings_changed": false,
+  "break_selection_changed": false,
+  "updated_tip_collision_validated": false,
+  "independent_evaluation": "agrees",
+  "independent_review": "agrees; stop bounded round without parameter tuning",
+  "next_blocker": "Resolve spontaneous native breakage through a separately scoped contact/angular-load-accounting investigation before contact manipulation. No evidence justifies increasing preload/friction, changing dt/cooldown or hiding native breakage."
+}

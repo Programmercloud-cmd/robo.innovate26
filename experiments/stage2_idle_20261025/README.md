@@ -79,3 +79,41 @@ python3 experiments/stage2_idle_20261025/submit_idle.py --diagnostic --osqp-epsi
 Both retain all physical thresholds, native break selection, geometry and
 nominal robot pose. Surviving eight steps would establish sensitivity only;
 it would not pass the one-second idle gate or authorize an extraction claim.
+
+
+## Measured outcome: idle gate failed
+
+Initial full120-step baseline **1725** stops at step7: native connections836/837
+on top-edge brick `brick_9_0_3` break without task motion. The source component
+changes301→300parts and930→928links. Maximum source drift is0.170776mm, and the
+nominal arm joints remain held. Debug-only rerun **1727** exactly repeats that
+failure and collects7native solver dumps. Analyses **1731–1732** distinguish
+allowed capacity relaxation from numerical residuals.
+
+The explicit numerical-epsilon pair **1733–1734** also breaks the same two links
+at step7. All serialized solver stages converge. Paired offline analysis **1735**
+uses each recorded epsilon, with the existing reader and no solver rerun:
+
+| Coupled epsilon | Break step | Clutch836 utilization | Clutch836 relaxed-bound violation |
+|---|---:|---:|---:|
+| 1e-4 | 7 | 1.00009789 | 5.52e-5 |
+| 1e-6 | 7 | 1.00004254 | 5.72e-9 |
+
+At1e-6 the native normalized relaxation remains positive (clutches836/837:
+4.2731e-5/8.6916e-5). Tighter numerical epsilon improves constraint feasibility
+but is not sufficient to prevent the break. The experiment changes coupled
+numerical settings, so it is not a pure termination-tolerance causal test.
+Underlying load/contact origin remains unresolved. Logged J/H are momentum
+accounting quantities, not independent contact-force measurements.
+
+- [Baseline first-failure report](../../runs/20261025T002411.589299Z-stage2-full300-idle/output/idle_report.json)
+- [Paired analysis, explicit default](../../runs/20261025T010002.112809Z-stage2-epsilon-pair-analysis/output/default_1e4/REPORT.md)
+- [Paired analysis, numerical variant](../../runs/20261025T010002.112809Z-stage2-epsilon-pair-analysis/output/variant_1e6/REPORT.md)
+- [Machine-readable outcome and snapshots](results.json)
+
+Independent evaluator and reviewer agree to close this bounded round with the
+failed idle gate intact. No preload, friction, dt, cooldown or break-threshold
+tuning follows. No source-size reduction, fixed-support substitution, scripted
+attachment, teleportation or extraction/transfer/stacking claim is made.
+Further contact/angular-load-accounting work needs a new narrow hypothesis;
+controller development cannot treat spontaneous disassembly as a successful pick.
