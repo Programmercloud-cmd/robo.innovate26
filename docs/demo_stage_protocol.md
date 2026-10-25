@@ -2,11 +2,13 @@
 
 This supplements the six-stage simulation goal. It does not promote any
 unmeasured candidate parameter to a validated method. The measured state is in
-[demo_progress.md](demo_progress.md): ordinary top-view candidates/mock joins
-pass and sparse remnants fail. The default TGS native idle test failed; the
-source-supported PGS workaround now passes full300 and reserved-removal one-second
-checks. This is an idle prerequisite only, not manipulation validation. Extra
-compute is optional and does not establish physical-model correctness.
+[demo_progress.md](demo_progress.md). Ordinary top-view candidates and the saved
+RGB color benchmark have limited passing evidence; dynamic native extraction
+still fails. The latest 14 mm position candidate passes closure but loses qualified
+contact during lift (job 1819). Sparse remnants, held identity, transfer, native
+insertion and repeated sorting are unproven. Existing PGS idle/contact evidence
+is a prerequisite, not a completed manipulation result. Extra compute does not
+establish physical-model correctness.
 
 ## Experiment discipline
 
@@ -31,9 +33,10 @@ The separate contact-feedback benchmark used two adapter corrections (actual
 Cube geometry, then signed force coefficients); stock-pad positive contact/reopen
 passes. Its final supplied-tip proxy round failed the cooked vertex/plane
 consistency guard before contact (1756). All three contact rounds are closed;
-no fourth contact tuning, recook or tolerance change follows. Centered/reserved
-updated-tip contact and dynamic grasp/extraction remain untested. Further proxy
-work requires an explicit approach reassessment.
+no fourth contact tuning, recook or tolerance change follows. The subsequent
+exposed-tip approach passes centered/reserved lateral contact diagnostics 1791/1794, but its global distal geometry gate remains failed. Latest
+position-candidate extraction 1819 fails. These bounded results do not authorize
+further proxy fitting or a hidden reset of any closed improvement budget.
 
 ## LEGO color classification and observation timing
 
@@ -45,8 +48,10 @@ tests, not an implemented LEGO color classifier.
 **Recommended primary timing: the existing segmentation view before grasp.**
 It already associates a visible region with the selected frame/candidate, avoids
 covering it with the fingers, and adds no inspection motion or held-object
-segmentation dependency. This is a design recommendation, not a measured color
-accuracy result. R3 polygons are footprint hypotheses, not certified masks: use
+segmentation dependency. Job 1806 now provides limited evidence from saved
+rendered images for this timing; runtime pick integration and physical image
+accuracy remain unproven. R3 polygons are footprint hypotheses, not certified
+masks: use
 a supported interior, exclude neighboring surfaces and unreliable pixels, and
 abstain if the region mixes bricks, glare or shadow. Distinguishing shades also
 requires controlled exposure/white balance and representative color references;

@@ -1,11 +1,19 @@
 # Challenge 2 simulation demo: measured progress
 
-Updated 2026-10-25. **Latest result:** the corrected exposed-tip model passes
-centered and reserved-offset lateral contact/reopen diagnostics (Pueue 1791 and
-1794). This is contact feedback evidence, not a dynamic grasp. Native extraction,
-actual classification, transfer, insertion and repeated sorting remain unfinished.
-See the [contact result ledger](../experiments/stage2_exposed_tip_20261025/results.json)
-and [source stability results](../experiments/stage2_pgs_20261025/README.md).
+Updated 2026-10-25. **Latest measured state:** simple position-controlled
+closure at a nominal 14 mm custom-pad gap produces bilateral contact and a
+resisted-closure candidate (Pueue 1819), but straight extraction fails. The
+selected brick remains natively connected; the lift stops on finger-speed and
+lateral-contact checks. No extraction, transfer, insertion or repeated sorting
+has passed. See the [latest reviewed result](../experiments/stage2_position_candidate_20261025/README.md).
+
+Local pregrasp RGB color classification now has a saved-image benchmark
+([Stage 1 color results](../experiments/stage1_color_20261025/results.json)); it is
+not yet integrated into the pick loop, and a source label cannot establish held
+identity. Challenge 1 is unrelated to this LEGO task. The measured Munich D435
+calibration is preserved in a passive registry and is not active workcell
+registration. Earlier dated sections below are historical results, not the
+current implementation summary.
 
 The active objective is an incremental end-to-end **simulation**
 demo. No hardware motion, ROS deployment or physical readiness is authorized or
@@ -16,10 +24,11 @@ claimed. Existing visual and perception experiments remain preserved.
 The user clarifies that Challenge 1 handles industrial bricks, not this LEGO
 color task. Older references below to waiting for that classifier are superseded;
 there is no external classifier dependency. Local RGB color classification is
-still unimplemented. The recommended primary observation is the existing
-segmentation view before grasp; held C920 confirmation is optional pending
-visibility/sharpness/association evidence. This recommendation is not a measured
-classification result. A source-region label cannot confirm held identity.
+implemented and benchmarked on saved rendered segmentation candidates (job1806), with limited detection coverage and no
+real-image accuracy claim. Its integration into the runtime pick loop remains
+unfinished. The primary observation is the segmentation view before grasp; held
+C920 confirmation is optional pending visibility/sharpness/association evidence.
+A source-region label cannot confirm held identity.
 
 ## Current end-effector model
 
@@ -27,8 +36,11 @@ The reference-corrected folded C920 holder and supplied fingertip STL visuals
 are complete as a nominal visual update. The D435i mount, arm configuration,
 layout and native 300-brick design are retained. See
 [registration, renders and limitations](../experiments/final_workcell_20261024/end_effector/README.md).
-STL units/attachment and both cameras' optical calibration remain unmeasured;
-stock pad collisions are still used and do not validate updated-tip contact.
+STL units/attachment remain nominal. The current manipulation experiment uses
+the reviewed exposed custom-tip BODY hull and separate screw-head envelope, with
+original mass/inertia restored. Lateral contact/reopen diagnostics pass; global
+distal geometry validation and dynamic extraction do not. The passive Munich
+D435 registry does not calibrate either C920 or register the active workcell.
 
 ## Stage 1: ordinary candidate/mock interface smoke passed; coverage remains limited
 
@@ -1038,3 +1050,25 @@ generalization, whole-arm safety, actual BODY ownership or grasp success.
 Retained cumulative contact cost is 1668.905245381/1800 seconds. The two-job saved
 comparison is closed. A future position-controlled native pick needs a separate
 prospective policy/resource review; no such execution follows automatically.
+
+
+## Position closure and first bounded lift — current result
+
+Job 1818 reaches the nominal 14 mm endpoint with about 0.990/1.237 N pad
+loads but abstains at the old 1.5 N phase trigger. Job 1819 preserves that
+force-confirmed branch and tests one explicitly separate position-candidate
+admission: three fresh bilateral/contact-resisted endpoint samples, then the
+unchanged bounded straight lift. Its admission passes at step 1853 without
+fabricating force confirmation. Step 2113 aborts on finger speed and nonlateral
+left BODY contact. Target rise is 0.110 mm; all 930 native links remain.
+The real operator's successful Franka Desk 14 mm closure supports keeping a
+simple position primitive; model nominal gap is not calibrated Desk readback.
+
+Independent evaluator and reviewer accept this negative physical result. The
+one-round experiment is closed; no stronger squeeze, relaxed contact checks or
+automatic repeat follows. Full Pueue 1819 duration is 210.190672297 s; the
+retained aggregate is 2054.260747261/2200 s. Any further physics requires a
+prospectively frozen reassessment, preserving that ledger.
+
+Source `a2e1a2f`, results record `777402a`; snapshot
+`runs/20261025T151026.796083Z-stage2-position-candidate-I-r1`.
