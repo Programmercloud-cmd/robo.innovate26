@@ -137,3 +137,18 @@ placement and online-vs-native attachment evidence. It caps each frozen stage at
 three improvement rounds before reassessment and proposes a six-brick/eight-attempt
 cyclic-color demo. No classification timing or25°/5mm extraction parameter is
 promoted to validated status. Native idle failure remains the contact gate.
+
+
+## Optional Alex compute check
+
+The savedSSHprofile currently reachesalex2.nhr.fau.de with strict known-host
+verification and no interactive authentication or credential copying. Local
+Pueue1737 submits Slurm4685752: a bounded1A40/5minute inventory probe, which
+completes in10seconds with16CPU/60000M and driver610.57.04. The first submission
+1736 was rejected before allocation because Alex forbids explicit --mem forGPU
+jobs; the corrected payload uses automatic per-GPU resource shares.
+
+Isaac/CUDAapplication compatibility remains NOT_TESTED: no verified matching
+runtime/container was identified. The default probe interpreter isPython3.9.25;
+metadata absence there is not cluster-wide absence. No remote installation,
+training, simulation or scaling follows. See [probe evidence and budgets](../experiments/alex_preflight_20261025/README.md).

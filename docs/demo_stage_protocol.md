@@ -3,7 +3,7 @@
 This supplements the six-stage simulation goal. It does not promote any
 unmeasured candidate parameter to a validated method. The measured state is in
 [demo_progress.md](demo_progress.md): ordinary top-view candidates/mock joins
-pass, sparse remnants fail, and the full300 native idle gate fails before
+pass, sparse remnants fail, and the full 300-brick native idle gate fails before
 manipulation. Extra compute is optional and does not fix that model failure.
 
 ## Experiment discipline
@@ -17,10 +17,11 @@ Log bounded diagnostic runs separately, with a predeclared run/step/time budget;
 they are not unlimited free attempts. Preserve regressions, retries, misses and
 uncertainty. Reserved observations cannot drive changes within the same round.
 
-For accounting, Stage1 already used two substantive changes (workspace filter,
-closer views). Stage2 used one coupled numerical-epsilon comparison, which did
+For accounting, Stage 1 already used two substantive changes (workspace filter,
+closer views). Stage 2 used one coupled numerical-epsilon comparison, which did
 not fix its failed idle gate. Native logging/offline audits are diagnostics, not
-additional claimed improvements. No new sweep is authorized by this document.
+additional claimed improvements. No unbounded sweep is planned; each new experiment still needs its frozen
+budget and independent review.
 
 ## Classification observation timing
 
@@ -28,10 +29,10 @@ additional claimed improvements. No new sweep is authorized by this document.
 stationary held-brick inspection before choosing. The C920 housing and fascia
 are visual proxies; they do not establish optics, focus or visibility of a held
 brick. Existing source detection accuracy does not establish classification crop
-adequacy. Challenge1 must identify which region/face its classifier needs.
+adequacy. Challenge 1 must identify which region/face its classifier needs.
 
 A compact proposed reference set is three identified brick examples observed
-at both timings by D435i and C920 (12RGB observations), plus one empty-hand/source
+at both timings by D435i and C920 (12 RGB observations), plus one empty-hand/source
 negative per camera. Reserve one whole brick and its four observations from
 implementation choices. Prefer existing captures; if physical images must be
 provided, a person can present examples near stationary fingers. This does not
@@ -51,7 +52,7 @@ and pick/presentation association. A new held observation is not silently joined
 to an old source frame: preserve an explicit transaction link and invalidate it
 on slip, regrasp or stale observations. Missing/duplicate/unknown results abstain.
 Allow at most two captures and one request per attempted brick. Until a real
-Challenge1 interface is available, provider and results remain explicitly mocked;
+Challenge 1 interface is available, provider and results remain explicitly mocked;
 never use simulator colors or quality labels as classifier inputs.
 
 ## Extraction and contact prerequisites
@@ -67,12 +68,12 @@ relative slip and swept finger clearance using the actual pad geometry. Do not
 assume stock TCP offsets still describe the changed pads. A candidate can be
 visually exposed yet physically inaccessible.
 
-The earlier **25° tilt and5mm withdrawal are unverified trials**. Declare the
+The earlier **25° tilt and 5 mm withdrawal are unverified trials**. Declare the
 brick's long/short axes and outward top normal in the table frame. Distinguish
 TCP-centered rotation from a bottom/contact-edge peel: for an edge pivot, compute
 the TCP path using the held transform and estimated edge, not an in-place TCP
 rotation relabeled as peeling. A fixed edge hypothesis is not a measured contact
-pivot. Withdrawal candidate is5mm along the *tilted brick's outward top normal*,
+pivot. Withdrawal candidate is 5 mm along the *tilted brick's outward top normal*,
 not automatically gripper Z; record frame, sign and actual observed displacement.
 
 Start with one exposed-brick/contact configuration and a reserved offset or
@@ -114,7 +115,7 @@ Use at most six processed input bricks and eight total manipulation attempts,
 including retries. One attempt is a complete brick-handling try from approach
 to verified destination or abort; individual waypoints do not consume separate
 attempts. A failed try can be renewed only after observed safe recovery and
-reassociation, never by post-reset teleportation. Target four accepted bricks in a small fit-checked4×2-stud
+reassociation, never by post-reset teleportation. Target four accepted bricks in a small fit-checked 4×2-stud
 column, so the demo includes placement on the plate and on an existing brick.
 Include a reject case and, when applicable, an unrequested-good-color buffer case.
 These counts are a proposed first fixture, not a guarantee of source availability.
