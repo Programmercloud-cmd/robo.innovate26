@@ -1,0 +1,242 @@
+{
+  "schema": "stage2-pick-contact-cache-equivalence-v1",
+  "purpose": "Exactly three source-line cache compatibility/call changes; same arrays, metrics, thresholds and sample sets. Descriptive timing, no speedup gate.",
+  "queue": "Default Pueue only; part of the ONE shared <=30s saved-data diagnostic, no separate budget.",
+  "old_helper": "/home/faps/dev/github/robo.innovate26/runs/20261025T100014.190794Z-stage2-pick-I-pick/experiments/stage2_pick_20261025/evaluation/contact_helpers.py",
+  "old_helper_sha256": "db61a8eb5470c42f13a54c982e3f9cbb263ad92d7576de71689b6792b510b1b7",
+  "new_helper_sha256": "66822b8ee50400ea7905731d35499644a7bb16bb8ac81b135a14493c99d135e2",
+  "contact_protocol_sha256": "f47d8eb97a6291aa74bf45dfa698efcaf2ba6a31c5b04be846cc9d69dfc66442",
+  "old_contact_protocol": "/home/faps/dev/github/robo.innovate26/runs/20261025T100014.190794Z-stage2-pick-I-pick/experiments/stage2_pick_20261025/evaluation/contact_protocol.json",
+  "old_contact_protocol_sha256": "f47d8eb97a6291aa74bf45dfa698efcaf2ba6a31c5b04be846cc9d69dfc66442",
+  "order": "OLD then CACHED per fixed fixture; both timings include load/materialize/copy+array hash checks. Timing is descriptive and order/cache effects are not controlled.",
+  "exact_result_comparison": "Canonical sorted-key JSON bytes, including every returned pair/check/count/sign.",
+  "immutability": "Before/after SHA-256 of ordered key, dtype, shape and array bytes for each existing copied cache.",
+  "fixtures": [
+    {
+      "fixture": "zero_I_control",
+      "step": 1,
+      "sensor": "left",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control/output/contact_observations/step_01/left.npz",
+      "data_sha256": "c7abcf07ce10dd501003813157291f577c164d9e2439698e5b47d1d06c35efd7",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control/output/contact_observations/metadata.json",
+      "metadata_sha256": "d06019403161b0cc34261895491e88f4a6315017a9efd6731b7a35da32aafb71"
+    },
+    {
+      "fixture": "zero_I_control",
+      "step": 1,
+      "sensor": "right",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control/output/contact_observations/step_01/right.npz",
+      "data_sha256": "94010ea05d4d36c94157721f75858996c9660a58dab0f97189e3f82acf6fafca",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control/output/contact_observations/metadata.json",
+      "metadata_sha256": "d06019403161b0cc34261895491e88f4a6315017a9efd6731b7a35da32aafb71"
+    },
+    {
+      "fixture": "zero_I_control",
+      "step": 900,
+      "sensor": "left",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control/output/contact_observations/step_900/left.npz",
+      "data_sha256": "c7abcf07ce10dd501003813157291f577c164d9e2439698e5b47d1d06c35efd7",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control/output/contact_observations/metadata.json",
+      "metadata_sha256": "d06019403161b0cc34261895491e88f4a6315017a9efd6731b7a35da32aafb71"
+    },
+    {
+      "fixture": "zero_I_control",
+      "step": 900,
+      "sensor": "right",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control/output/contact_observations/step_900/right.npz",
+      "data_sha256": "94010ea05d4d36c94157721f75858996c9660a58dab0f97189e3f82acf6fafca",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control/output/contact_observations/metadata.json",
+      "metadata_sha256": "d06019403161b0cc34261895491e88f4a6315017a9efd6731b7a35da32aafb71"
+    },
+    {
+      "fixture": "zero_I_control",
+      "step": 1800,
+      "sensor": "left",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control/output/contact_observations/step_1800/left.npz",
+      "data_sha256": "c7abcf07ce10dd501003813157291f577c164d9e2439698e5b47d1d06c35efd7",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control/output/contact_observations/metadata.json",
+      "metadata_sha256": "d06019403161b0cc34261895491e88f4a6315017a9efd6731b7a35da32aafb71"
+    },
+    {
+      "fixture": "zero_I_control",
+      "step": 1800,
+      "sensor": "right",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control/output/contact_observations/step_1800/right.npz",
+      "data_sha256": "94010ea05d4d36c94157721f75858996c9660a58dab0f97189e3f82acf6fafca",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control/output/contact_observations/metadata.json",
+      "metadata_sha256": "d06019403161b0cc34261895491e88f4a6315017a9efd6731b7a35da32aafb71"
+    },
+    {
+      "fixture": "zero_I_control",
+      "step": 2700,
+      "sensor": "left",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control/output/contact_observations/step_2700/left.npz",
+      "data_sha256": "c7abcf07ce10dd501003813157291f577c164d9e2439698e5b47d1d06c35efd7",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control/output/contact_observations/metadata.json",
+      "metadata_sha256": "d06019403161b0cc34261895491e88f4a6315017a9efd6731b7a35da32aafb71"
+    },
+    {
+      "fixture": "zero_I_control",
+      "step": 2700,
+      "sensor": "right",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control/output/contact_observations/step_2700/right.npz",
+      "data_sha256": "94010ea05d4d36c94157721f75858996c9660a58dab0f97189e3f82acf6fafca",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control/output/contact_observations/metadata.json",
+      "metadata_sha256": "d06019403161b0cc34261895491e88f4a6315017a9efd6731b7a35da32aafb71"
+    },
+    {
+      "fixture": "zero_I_control",
+      "step": 3600,
+      "sensor": "left",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control/output/contact_observations/step_3600/left.npz",
+      "data_sha256": "c7abcf07ce10dd501003813157291f577c164d9e2439698e5b47d1d06c35efd7",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control/output/contact_observations/metadata.json",
+      "metadata_sha256": "d06019403161b0cc34261895491e88f4a6315017a9efd6731b7a35da32aafb71"
+    },
+    {
+      "fixture": "zero_I_control",
+      "step": 3600,
+      "sensor": "right",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control/output/contact_observations/step_3600/right.npz",
+      "data_sha256": "94010ea05d4d36c94157721f75858996c9660a58dab0f97189e3f82acf6fafca",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T093331.984420Z-stage2-pick-I-control/output/contact_observations/metadata.json",
+      "metadata_sha256": "d06019403161b0cc34261895491e88f4a6315017a9efd6731b7a35da32aafb71"
+    },
+    {
+      "fixture": "loaded_D1791",
+      "step": 48,
+      "sensor": "left",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/step_48/left.npz",
+      "data_sha256": "509f0d7d153aa76a3ef3fa7af4ce8f79e6a2baf9fbb607275cb0325085da5da1",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/metadata.json",
+      "metadata_sha256": "158b50bba0869775740c88f5d58ac02eec74e02d0234730213a28ec6bf6dc1c1"
+    },
+    {
+      "fixture": "loaded_D1791",
+      "step": 48,
+      "sensor": "right",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/step_48/right.npz",
+      "data_sha256": "6d75c40b66c9b6a29aa3a7ca842bd2becfc34850e0e2ea43d26280b401fee8fd",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/metadata.json",
+      "metadata_sha256": "158b50bba0869775740c88f5d58ac02eec74e02d0234730213a28ec6bf6dc1c1"
+    },
+    {
+      "fixture": "loaded_D1791",
+      "step": 48,
+      "sensor": "coupon",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/step_48/coupon.npz",
+      "data_sha256": "fb68d3ff8072a48327606fb8b123a7c630a3c5365cccd37c1286ee0ef3a3f9f5",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/metadata.json",
+      "metadata_sha256": "158b50bba0869775740c88f5d58ac02eec74e02d0234730213a28ec6bf6dc1c1"
+    },
+    {
+      "fixture": "loaded_D1791",
+      "step": 49,
+      "sensor": "left",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/step_49/left.npz",
+      "data_sha256": "4798d2785c2c216c69cb2906516c603fb252a9237971b06caf65933fb3607788",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/metadata.json",
+      "metadata_sha256": "158b50bba0869775740c88f5d58ac02eec74e02d0234730213a28ec6bf6dc1c1"
+    },
+    {
+      "fixture": "loaded_D1791",
+      "step": 49,
+      "sensor": "right",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/step_49/right.npz",
+      "data_sha256": "3ee5a5317337f168362f5433c64b0b102d1ee29eb7edf74a8a960de00dae741d",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/metadata.json",
+      "metadata_sha256": "158b50bba0869775740c88f5d58ac02eec74e02d0234730213a28ec6bf6dc1c1"
+    },
+    {
+      "fixture": "loaded_D1791",
+      "step": 49,
+      "sensor": "coupon",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/step_49/coupon.npz",
+      "data_sha256": "746d84f86de819b757681a2a4b598dc48f6d1edb155c77d1dd8892b5c1f333de",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/metadata.json",
+      "metadata_sha256": "158b50bba0869775740c88f5d58ac02eec74e02d0234730213a28ec6bf6dc1c1"
+    },
+    {
+      "fixture": "loaded_D1791",
+      "step": 50,
+      "sensor": "left",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/step_50/left.npz",
+      "data_sha256": "5fb3c148d5cd480a4a74d89530b9658af67979eba8e17f8d252d59a7b3b5f8c8",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/metadata.json",
+      "metadata_sha256": "158b50bba0869775740c88f5d58ac02eec74e02d0234730213a28ec6bf6dc1c1"
+    },
+    {
+      "fixture": "loaded_D1791",
+      "step": 50,
+      "sensor": "right",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/step_50/right.npz",
+      "data_sha256": "ded7dd6b80d50b265d6ed0ab7ced38afe3679cb92e0499b9e50b53ba3b4a7bf8",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/metadata.json",
+      "metadata_sha256": "158b50bba0869775740c88f5d58ac02eec74e02d0234730213a28ec6bf6dc1c1"
+    },
+    {
+      "fixture": "loaded_D1791",
+      "step": 50,
+      "sensor": "coupon",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/step_50/coupon.npz",
+      "data_sha256": "0d1b15ddb70a85bb4466fd27b4e3cd3fb680f4170dffa5551163553b593df184",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/metadata.json",
+      "metadata_sha256": "158b50bba0869775740c88f5d58ac02eec74e02d0234730213a28ec6bf6dc1c1"
+    },
+    {
+      "fixture": "loaded_D1791",
+      "step": 51,
+      "sensor": "left",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/step_51/left.npz",
+      "data_sha256": "53e03219f08764f614f928857dd6d82281246c04490356148beb15f096b610eb",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/metadata.json",
+      "metadata_sha256": "158b50bba0869775740c88f5d58ac02eec74e02d0234730213a28ec6bf6dc1c1"
+    },
+    {
+      "fixture": "loaded_D1791",
+      "step": 51,
+      "sensor": "right",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/step_51/right.npz",
+      "data_sha256": "2c420d16da15299badcf6d30bbdd449dfe5ae94215da9c29a9502c16da8fcf44",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/metadata.json",
+      "metadata_sha256": "158b50bba0869775740c88f5d58ac02eec74e02d0234730213a28ec6bf6dc1c1"
+    },
+    {
+      "fixture": "loaded_D1791",
+      "step": 51,
+      "sensor": "coupon",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/step_51/coupon.npz",
+      "data_sha256": "568ef7657fbfa30804b92cd715f8ae672d3ef71f8d4362b4fc5937f8278693d0",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/metadata.json",
+      "metadata_sha256": "158b50bba0869775740c88f5d58ac02eec74e02d0234730213a28ec6bf6dc1c1"
+    },
+    {
+      "fixture": "loaded_D1791",
+      "step": 52,
+      "sensor": "left",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/step_52/left.npz",
+      "data_sha256": "471316b119914aa8e468391220fc87c3b4a7d6c27d85b3828cccb018fa342a36",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/metadata.json",
+      "metadata_sha256": "158b50bba0869775740c88f5d58ac02eec74e02d0234730213a28ec6bf6dc1c1"
+    },
+    {
+      "fixture": "loaded_D1791",
+      "step": 52,
+      "sensor": "right",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/step_52/right.npz",
+      "data_sha256": "5f17d938238323c92b09eba5737c9a0c1165d57bfeb0d8233a7bafd503353aa6",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/metadata.json",
+      "metadata_sha256": "158b50bba0869775740c88f5d58ac02eec74e02d0234730213a28ec6bf6dc1c1"
+    },
+    {
+      "fixture": "loaded_D1791",
+      "step": 52,
+      "sensor": "coupon",
+      "data": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/step_52/coupon.npz",
+      "data_sha256": "46bba1a1cd8b498ab0cb10c11b92f6798f3d0766b62f2ad9f38561b78a155bed",
+      "metadata": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D/output/contact_observations/metadata.json",
+      "metadata_sha256": "158b50bba0869775740c88f5d58ac02eec74e02d0234730213a28ec6bf6dc1c1"
+    }
+  ],
+  "never": "No actual simulation, re-evaluation of a case gate, thresholds, sampling changes, alternate fixture fallback, perf tuning or hardware-force claim."
+}

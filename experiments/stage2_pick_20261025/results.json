@@ -78,7 +78,32 @@
       }
     },
     "pick": {
-      "status": "APPROVED_ONE_FROZEN_ATTEMPT"
+      "status": "ABSTAINED_UNSUPPORTED_SWEPT_ENVELOPE",
+      "job_id": 1802,
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T100014.190794Z-stage2-pick-I-pick",
+      "source_commit": "ecd1dcf",
+      "prior_case_wall_seconds": 673.0897538720164,
+      "remaining_case_seconds": 382.67888577497797,
+      "proceed_gate_passed": false,
+      "measured_physics_steps": 0,
+      "raw_candidate_count": 30,
+      "present_hypotheses": 13,
+      "uncertain_hypotheses": 17,
+      "rejected_present_hypotheses": 13,
+      "reason": "All present hypotheses failed observed swept-envelope clearance; no target selected or contact attempted.",
+      "failed_checks": [
+        "unique_premotion_identity",
+        "sensor_supported_clearance",
+        "selected_upper_depth_1mm",
+        "nonempty_pick_coverage"
+      ],
+      "metrics": {
+        "measured_contact_steps": 0,
+        "force_peak_N": null
+      },
+      "actual_capture_plus_audit_seconds": 144.23136035300558,
+      "cumulative_case_seconds": 817.321114225022,
+      "audit_sha256": "48282e7a36f18c9ce29f9a6b02d521ebaf5b8c39cb443f06d082cd2e26b036d2"
     }
   },
   "H": {
@@ -96,5 +121,18 @@
     "Alex_matching_Isaac_runtime_available": false,
     "source": "User confirmation2026-10-25",
     "use": "Continue verified local runtime; no remote Isaac equivalence claimed."
+  },
+  "classification_scope": {
+    "owner": "This LEGO pipeline; Challenge1 industrial-brick classifier is unrelated.",
+    "recommended_primary_timing": "Selected segmentation region before grasp",
+    "secondary": "Held C920 confirmation only after framing/focus/association evidence",
+    "status": "Recommended policy; not yet implemented or validated color accuracy."
+  },
+  "diagnostic": {
+    "status": "SOURCE_REVIEW",
+    "attempt_limit": 1,
+    "maximum_active_seconds": 30,
+    "scope": "First candidate only: FOV/depth/unresolved clearance categories and projection-only alternate views; fixed exact cache-equivalence comparison.",
+    "new_physics_steps": 0
   }
 }

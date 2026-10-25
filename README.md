@@ -125,8 +125,12 @@ automatically committed.
   more than 15 mm terminates the episode. Full success requires every source
   brick to be transferred. Idle stability is not sorting success.
 
-The color labels currently come from **simulator ground truth**. Challenge 1's
-vision system is not implemented here. In `configs/workcell.json`, the two
+The legacy RL scaffold's color labels come from **simulator ground truth**;
+it is not the sensor-driven color classifier for the current demo. Challenge 1
+concerns industrial bricks and is separate from this LEGO task. The current
+plan is local RGB color classification from the selected pre-grasp segmentation
+region, with optional C920 confirmation after visibility/focus checks. That LEGO
+classifier is not yet implemented or validated. In `configs/workcell.json`, the two
 reject categories preserve the element IDs stated in slide 24. Their RGB values
 are placeholders; they are not verified LEGO element-to-color mappings. A real
 detector must provide a brick identity/pose and shade/quality estimate in the

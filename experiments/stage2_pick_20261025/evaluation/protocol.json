@@ -57,7 +57,7 @@
   "online_hold": "Independent physics pass does not establish online held identity; UNKNOWN blocks transfer.",
   "reference_sha256": "cb46c2fab2833fa267a45980fa7e2adf27e0f8626edfd9f514ff1c7d6b7dddc6",
   "helpers_sha256": {
-    "contact_helpers.py": "db61a8eb5470c42f13a54c982e3f9cbb263ad92d7576de71689b6792b510b1b7",
+    "contact_helpers.py": "66822b8ee50400ea7905731d35499644a7bb16bb8ac81b135a14493c99d135e2",
     "mass_reference.py": "0c5e454125a8746638b06010f4481a5e367dc57203fd8da9ee1308ce19887675",
     "contact_protocol.json": "f47d8eb97a6291aa74bf45dfa698efcaf2ba6a31c5b04be846cc9d69dfc66442"
   },

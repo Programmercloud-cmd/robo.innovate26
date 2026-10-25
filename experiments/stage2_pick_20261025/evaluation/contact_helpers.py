@@ -136,7 +136,7 @@ def run_lengths(values):
 
 def view_summary(data, paths, protocol, dt):
     rules=protocol['contact_reporting'];capacity=rules['capacity_per_view']
-    finite=all(np.isfinite(data[key]).all() for key in data.files)
+    finite=all(np.isfinite(data[key]).all() for key in data.keys())
     checks={'finite':finite,'normal_ranges_complete_unsaturated':ranges_valid(data,capacity)}
     normal_force=np.asarray(data['normal_forces_N'],float).reshape(-1)
     impulses=np.asarray(data['normal_impulses_Ns'],float).reshape(-1)

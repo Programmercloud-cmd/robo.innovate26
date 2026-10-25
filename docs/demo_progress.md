@@ -11,6 +11,16 @@ The active objective is an incremental end-to-end **simulation**
 demo. No hardware motion, ROS deployment or physical readiness is authorized or
 claimed. Existing visual and perception experiments remain preserved.
 
+## Classification scope correction
+
+The user clarifies that Challenge 1 handles industrial bricks, not this LEGO
+color task. Older references below to waiting for that classifier are superseded;
+there is no external classifier dependency. Local RGB color classification is
+still unimplemented. The recommended primary observation is the existing
+segmentation view before grasp; held C920 confirmation is optional pending
+visibility/sharpness/association evidence. This recommendation is not a measured
+classification result. A source-region label cannot confirm held identity.
+
 ## Current end-effector model
 
 The reference-corrected folded C920 holder and supplied fingertip STL visuals
@@ -637,3 +647,22 @@ accept the corrected control; original job 1800 remains failed and unchanged.
 Total charged case time is 673.090 seconds, leaving 526.910 seconds for one
 intact-stack pick and its audit. This is stationary stability, with no extraction
 or transfer established. The unchanged H case remains reserved.
+
+
+The first I pick (Pueue 1802, source `ecd1dcf`) deliberately abstains before
+motion. R3 emits 13 PRESENT and 17 uncertain hypotheses; all 13 PRESENT regions
+pass local height/nominal overlap checks but fail the swept-envelope screen.
+There is no selected target, contact measurement, holding or native extraction.
+The first candidate has 85,162 unknown and 20 behind-first-return samples among
+274,320 tested points. Behind a depth return means occluded or obstructed, not
+proven solid penetration. The close view may clip the initial tool path.
+Case runtime is now 817.321 seconds of 1,200, leaving 382.679 seconds.
+
+One independently reviewed, at-most-30-second queued saved-data diagnostic is
+being prepared: first candidate only, explicit FOV/invalid-depth/unresolved
+categories, nominal finger-FK replay with disclosed mismatch, and projection-only
+coverage for existing alternate presets. It cannot establish unseen free space
+or authorize a pick. The same job checks an exact three-line audit cache change
+on fixed zero/positive records, preserving every value, check and sample; no
+full case reevaluation or performance search is included. No new camera or
+manipulation parameter is selected before that evidence is reviewed.

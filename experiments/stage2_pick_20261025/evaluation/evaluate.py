@@ -120,7 +120,7 @@ def contact_frame(folder,row,gt,observer,geometry,protocol,target):
         path=path['file'] if isinstance(path,dict) else path
         with np.load(folder/path,allow_pickle=False) as raw:
             data[label]={k:raw[k].copy() for k in raw.files}
-            summary=view_summary(raw,filter_paths(view),protocol,row['physics_dt_s']);summaries[label]=summary
+            summary=view_summary(data[label],filter_paths(view),protocol,row['physics_dt_s']);summaries[label]=summary
         checks[label+'_raw']=all(summary['checks'].values())
         peak[label]=sum(p['all_normal_magnitudes_N'] for p in summary['pairs'].values())
         checks[label+'_all_partner_force_abort']=peak[label]<=2.
@@ -137,7 +137,7 @@ def contact_frame(folder,row,gt,observer,geometry,protocol,target):
         source_view=observer['resolved_views']['source'];source_file=gt['contacts']['source'];source_file=source_file['file'] if isinstance(source_file,dict) else source_file
         checks['source_view_exact_prebound_target']=source_view['sensor_paths']==[target] and source_view['sensor_count']==1
         with np.load(folder/source_file,allow_pickle=False) as raw:
-            source={k:raw[k].copy() for k in raw.files};summary=view_summary(raw,filter_paths(source_view),protocol,row['physics_dt_s'])
+            source={k:raw[k].copy() for k in raw.files};summary=view_summary(source,filter_paths(source_view),protocol,row['physics_dt_s'])
         checks['source_raw_complete']=all(summary['checks'].values());reciprocal='MEASURED'
         for label in ['left','right']:
             finger_path=geometry['fingers'][label]['body_path'];pair=summaries[label]['pairs'][target];reverse=summary['pairs'][finger_path]

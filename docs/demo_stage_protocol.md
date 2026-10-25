@@ -35,37 +35,42 @@ no fourth contact tuning, recook or tolerance change follows. Centered/reserved
 updated-tip contact and dynamic grasp/extraction remain untested. Further proxy
 work requires an explicit approach reassessment.
 
-## Classification observation timing
+## LEGO color classification and observation timing
 
-**Timing is not yet selected.** Compare before-grasp/source inspection against
-stationary held-brick inspection before choosing. The C920 housing and fascia
-are visual proxies; they do not establish optics, focus or visibility of a held
-brick. Existing source detection accuracy does not establish classification crop
-adequacy. Challenge 1 must identify which region/face its classifier needs.
+User correction (2026-10-25): Challenge 1 concerns different, industrial bricks.
+Its classifier is not a dependency of this LEGO demo. We must classify the LEGO
+colors locally from RGB; historical Challenge 1 mock fixtures remain interface
+tests, not an implemented LEGO color classifier.
 
-A compact proposed reference set is three identified brick examples observed
-at both timings by D435i and C920 (12 RGB observations), plus one empty-hand/source
-negative per camera. Reserve one whole brick and its four observations from
-implementation choices. Prefer existing captures; if physical images must be
-provided, a person can present examples near stationary fingers. This does not
-authorize robot or camera hardware control. Rendered fixture images can test
-geometry under declared provisional optics, but cannot verify physical focus.
-Manually initializing a held fixture is not a measured grasp or extraction.
+**Recommended primary timing: the existing segmentation view before grasp.**
+It already associates a visible region with the selected frame/candidate, avoids
+covering it with the fingers, and adds no inspection motion or held-object
+segmentation dependency. This is a design recommendation, not a measured color
+accuracy result. R3 polygons are footprint hypotheses, not certified masks: use
+a supported interior, exclude neighboring surfaces and unreliable pixels, and
+abstain if the region mixes bricks, glare or shadow. Distinguishing shades also
+requires controlled exposure/white balance and representative color references;
+hue alone does not establish the required shade distinction.
 
-Measure required-face visibility, finger/stand occlusion, brick/stud pixel scale,
-blur, glare and selected/held-brick association. Record ambiguous associations
-and missing crops. Choose one timing only if the development comparison and
-reserved check support usable, unambiguous inputs; otherwise abstain and leave
-timing unresolved. Freeze any numeric crop-quality screen before scoring;
-unknown classifier requirements cannot be filled with arbitrary thresholds.
+The C920 held view is an optional confirmation or fallback. It can isolate one
+brick, but its framing, occlusion, pixel scale and close-range sharpness remain
+unverified. The visual housing model and a sharp ideal render do not verify
+physical focus. Do not make the main sorting path depend on that view until a
+small visibility comparison shows usable, associated color regions.
 
-Use one bounded classification request at that timing, with an exact observation
-and pick/presentation association. A new held observation is not silently joined
-to an old source frame: preserve an explicit transaction link and invalidate it
-on slip, regrasp or stale observations. Missing/duplicate/unknown results abstain.
-Allow at most two captures and one request per attempted brick. Until a real
-Challenge 1 interface is available, provider and results remain explicitly mocked;
-never use simulator colors or quality labels as classifier inputs.
+Use a compact comparison covering the required shades in the segmentation view
+and a few matched C920 held examples when available, with a whole brick or
+lighting condition reserved from implementation choices. Existing captures are
+preferred. Record color-region coverage, glare/shadow, blur, scale and identity
+ambiguity; freeze any numeric quality screens before scoring. A manually
+initialized held fixture tests visibility only and is not grasp evidence.
+
+Store the color result with the exact observation and selected candidate. A
+source color label describes that source brick; it does not prove that the
+robot subsequently holds it. Preserve the transaction through grasp verification
+and invalidate it on slip, regrasp or stale association. Missing/ambiguous results
+abstain. Allow at most two captures per attempted brick. No simulator object
+colors, quality labels or IDs may supply online classification results.
 
 ## Extraction and contact prerequisites
 
