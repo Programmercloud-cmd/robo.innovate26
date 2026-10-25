@@ -1,0 +1,66 @@
+{
+  "space": "OpenCV_float_BGR_to_Lab",
+  "labels": {
+    "tan": {
+      "median_lab": [
+        52.01416015625,
+        12.609375,
+        43.171875
+      ],
+      "interior_pixels": 1560,
+      "valid_pixels": 1560,
+      "valid_fraction": 1.0,
+      "valid": true,
+      "reasons": []
+    },
+    "brown": {
+      "median_lab": [
+        13.079833984375,
+        19.375,
+        16.640625
+      ],
+      "interior_pixels": 1620,
+      "valid_pixels": 1620,
+      "valid_fraction": 1.0,
+      "valid": true,
+      "reasons": []
+    },
+    "dark_red": {
+      "median_lab": [
+        19.44580078125,
+        38.53125,
+        26.453125
+      ],
+      "interior_pixels": 1566,
+      "valid_pixels": 1566,
+      "valid_fraction": 1.0,
+      "valid": true,
+      "reasons": []
+    },
+    "bright_red": {
+      "median_lab": [
+        39.19677734375,
+        62.234375,
+        50.75
+      ],
+      "interior_pixels": 1482,
+      "valid_pixels": 1482,
+      "valid_fraction": 1.0,
+      "valid": true,
+      "reasons": []
+    },
+    "ochre": {
+      "median_lab": [
+        35.595703125,
+        25.15625,
+        42.8125
+      ],
+      "interior_pixels": 1430,
+      "valid_pixels": 1430,
+      "valid_fraction": 1.0,
+      "valid": true,
+      "reasons": []
+    }
+  },
+  "ready": true
+}

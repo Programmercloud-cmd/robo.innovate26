@@ -1,0 +1,16 @@
+{
+  "schema": "frozen-source-color-reference-v1",
+  "scope": "Observed rendered RGB references from job1806; provisional color names, not physical shade standards. No new fit.",
+  "classifier": {
+    "path": "experiments/stage1_color_20261025/color.py",
+    "sha256": "e2a5d7d15ac128fda73b8937d6d2416f9142b82c9c059fe34c3946f3e26af4a4"
+  },
+  "settings": {
+    "path": "experiments/stage1_color_20261025/settings.json",
+    "sha256": "c41761cc438f5509c50681e2030ea2261f53e76c2725b4e17d70b05843c2cd85"
+  },
+  "prototypes": {
+    "path": "experiments/stage1_handoff_20261025/prototypes.json",
+    "sha256": "52b6b6e64d25c92a0edb75ec6b53c7ff7ccc8cedfb505f091303c56352a020c0"
+  }
+}

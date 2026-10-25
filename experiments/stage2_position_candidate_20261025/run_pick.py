@@ -81,6 +81,7 @@ def main():
     parser=argparse.ArgumentParser(add_help=False,allow_abbrev=False)
     parser.add_argument('--case',choices=('I',),required=True);parser.add_argument('--mode',choices=('pick',),required=True)
     parser.add_argument('--output',type=Path,required=True);parser.add_argument('--geometry',type=Path,required=True);parser.add_argument('--cameras',type=Path,required=True)
+    parser.add_argument('--source-color-reference',type=Path)
     args,remaining=parser.parse_known_args();output=args.output.resolve();output.mkdir(exist_ok=True);(output/'online').mkdir(exist_ok=True)
     sys.argv=[sys.argv[0],*remaining,'--output',str(output),'--geometry',str(args.geometry),'--cameras',str(args.cameras)]
     if os.environ.get('ROBO_PUEUE_JOB')!='1' or os.environ.get('OSQP_EPSILON')!='1e-4':raise RuntimeError('Default Pueue and frozen epsilon required')
@@ -133,8 +134,9 @@ def main():
         if dt!=protocol['physics']['dt_s']:raise RuntimeError('Unexpected dt')
         tool.validate(context);controller=Controller(robot,protocol);initial=controller.state();q0=np.asarray(initial['q']);finger_ids=controller.finger_ids;arm_ids=controller.arm_ids
         sensors=None;selection=None;selected=None;upper=None;target=None;status='running';stop=[]
+        source_color_handoff=None
         if args.mode=='pick':
-            sensors=Sensors(sim,scene,args.geometry,args.cameras,output,protocol);candidates,frame=sensors.select(initial['tcp_pose_table_wxyz'])
+            sensors=Sensors(sim,scene,args.geometry,args.cameras,output,protocol,source_color_reference=args.source_color_reference);candidates,frame=sensors.select(initial['tcp_pose_table_wxyz'])
             current_pose=np.asarray(initial['tcp_pose_table_wxyz']);current_rotation=Rotation.from_quat(current_pose[3:][[1,2,3,0]]).as_matrix();parts=[];current_parts=[]
             for label,finger in tool.geometry['fingers'].items():
                 fp=np.asarray(initial['finger_poses_world_wxyz'][label]);fr=Rotation.from_quat(fp[3:][[1,2,3,0]]).as_matrix()
@@ -160,6 +162,8 @@ def main():
             if selection is None:selection={**frame,'candidate':None,'local_depth_support':{'supported':False},'clearance':{'passed':False},'engineering_envelopes':protocol['engineering_envelopes'],'rejected_candidates':rejected};status='abstained'
             selection['geometry_views']=sensors.geometry_views;selection['geometry_safety_config_sha256']=sensors.safety_config_sha256
             selection['admission']=admission(selection['clearance'],pregrasp['authorization_sha256'])
+            source_color_handoff=sensors.color_handoff(selection,args.case)
+            if source_color_handoff is not None:selection['source_color_handoff_file']='online/source_color_handoff.json'
             save(output/'online/selection.json',selection)
         else:save(output/'online/selection.json',None)
         recorder=Recorder(context,output,args.case,sensors,selection);recorder.stationary=args.mode=='control'
@@ -174,6 +178,9 @@ def main():
         metadata={'case':args.case,'mode':args.mode,'protocol_sha256':sha(HERE/'source_science.json'),'dt_s':dt,'OSQP_EPSILON':os.environ['OSQP_EPSILON'],'T_world_table':np.eye(4).tolist(),'table_pose_world_wxyz':[0,0,0,1,0,0,0],'settings_initial':startup,'settings_terminal':None,'tool_geometry_file':'tool_geometry.json','cook_file':'cook_results.json','property_restoration_file':'property_restoration.json','online_trace':'online/trace.jsonl','truth_inventory':'evaluation_truth/initial_inventory.json','truth_trace':'evaluation_truth/trace.jsonl','observer_metadata':'contact_observations/metadata.json','evaluation_observer_metadata':'evaluation_truth/contact_observations/metadata.json' if recorder.source_observer else None,'initial_joint_positions':initial['q'],'finger_joint_indices':finger_ids,'arm_joint_indices':arm_ids,'joint_limits':robot.data.joint_pos_limits[0].cpu().numpy().tolist()}
         metadata.update(contact_policy_protocol_sha256=sha(HERE/'protocol.json'),source_science_sha256=sha(HERE/'source_science.json'),endpoint_preflight=derived,control_bridge_file='control_bridge.json',
             native_observer_metadata='evaluation_truth/native_contacts/metadata.json',native_contact_index='evaluation_truth/native_contact_index.jsonl')
+        if source_color_handoff is not None:
+            metadata['source_color_handoff_file']='online/source_color_handoff.json'
+            metadata['source_color_reference_sha256']=source_color_handoff['reference_bundle_sha256']
         metadata['initial_proprioception']=initial
         metadata['admission']=selection['admission'] if selection else None
         metadata['pregrasp_init']=pregrasp
@@ -274,6 +281,12 @@ def main():
         if status=='running':
             status='control_completed' if args.mode=='control' and step==3600 else 'step_limit'
             if args.mode=='control':recorder.finish_control(protocol['stationary_guard'])
+        if source_color_handoff is not None:
+            if status!='bounded_sequence_completed':
+                from experiments.stage1_handoff_20261025.adapter import invalidate
+                reason='slip' if any('slip' in value for value in stop) else 'abort' if status=='aborted' else status
+                source_color_handoff=invalidate(source_color_handoff,reason,float(sim.current_time))
+            save(output/'online/source_color_handoff.json',source_color_handoff)
         from isaaclab.sim import get_current_stage
         tool.audit(get_current_stage(),output/'geometry_terminal.json')
         metadata['settings_terminal']=settings(context,tool);metadata['controller_status']=status;metadata['steps_executed']=step
@@ -283,6 +296,17 @@ def main():
         save(output/'capture_metadata.json',metadata)
         save(output/'position_pick_complete.json',{'capture_completed':True,'case':args.case,'mode':args.mode,'controller_status':status,'steps_executed':step,'stop_reasons':sorted(set(stop)),'online_held_verification':'UNKNOWN; blocksStage3transfer','native_extraction_claim':'Independent evaluation only'})
     final_scene.make_env_cfg=factory;render_core.load_geometry=loader
-    render_core.main(postassembly_hook=run)
+    try:
+        render_core.main(postassembly_hook=run)
+    except BaseException:
+        if args.source_color_reference is not None:
+            path=output/'online/source_color_handoff.json'
+            if path.exists():
+                try:
+                    from experiments.stage1_handoff_20261025.adapter import invalidate
+                    save(path,invalidate(json.loads(path.read_text()),'capture_exception',None))
+                except Exception as invalidation_error:
+                    print('SOURCE_COLOR_INVALIDATION_ERROR',str(invalidation_error),file=sys.stderr,flush=True)
+        raise
 
 if __name__=='__main__':main()

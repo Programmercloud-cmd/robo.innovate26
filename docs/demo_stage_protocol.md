@@ -4,9 +4,17 @@ This supplements the six-stage simulation goal. It does not promote any
 unmeasured candidate parameter to a validated method. The measured state is in
 [demo_progress.md](demo_progress.md). Ordinary top-view candidates and the saved
 RGB color benchmark have limited passing evidence; dynamic native extraction
-still fails. The latest 14 mm position candidate passes closure but loses qualified
-contact during lift (job 1819). Sparse remnants, held identity, transfer, native
-insertion and repeated sorting are unproven. Existing PGS idle/contact evidence
+still fails. The sensor-selected 14 mm position candidate loses qualified contact
+during lift (job 1819). The subsequent free-brick fixture comparison is closed
+after three improvement rounds: position-only dwell (1822), BODY contact-margin
+sensitivity (1824), and the prospective fixed-target finger-response criterion
+(1825). The final trial is no longer speed-censored, but fails relative retention
+before completing lift/hold. See the [recorded result](../experiments/stage2_finger_response_20261025/results.json).
+The simulated nominal pad gap and gripping depth are not calibrated equivalents
+of the operator's successful Desk 14 mm grasp. Reconcile that mapping before
+further contact experiments; no fourth fixture parameter variant follows.
+Sparse remnants, held identity, transfer, native insertion and repeated sorting
+are unproven. Existing PGS idle/contact evidence
 is a prerequisite, not a completed manipulation result. Extra compute does not
 establish physical-model correctness.
 
@@ -78,6 +86,18 @@ abstain. Allow at most two captures per attempted brick. No simulator object
 colors, quality labels or IDs may supply online classification results.
 
 ## Extraction and contact prerequisites
+
+The operator's successful Desk 14 mm closure supports a simple position
+primitive. The current composed custom-pad model instead uses
+`gap = q_left + q_right + 2.813389 mm`: commanding a nominal 14 mm custom-pad gap
+means a joint sum of 11.186611 mm. A 14 mm joint sum would give a nominal
+16.813389 mm custom-pad gap, opening this model further. These are source-derived
+relations, not a firmware-to-physical calibration. See the
+[separate operator/model reference](../experiments/stage2_closing_diagnostic_20261025/hardware_closure_reference.json).
+The missing evidence is the requested versus measured width and actual gripping
+depth of the successful hardware grasp. Historical open-gripper and brick-top
+photos do not establish these quantities. No replacement width, deeper insertion,
+or new retention trial is selected from this comparison alone.
 
 First pass the full-source native idle gate. Register the supplied tip model's
 collision representation and material separately from its current visual fit.

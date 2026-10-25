@@ -1,0 +1,119 @@
+{
+  "schema": "pregrasp-source-color-handoff-v1",
+  "execution_authorized": true,
+  "scope": "Add unchanged RGB color evidence to the final sensor-selected source candidate. No new physics, detector/classifier tuning, held identity, routing, simulation success or hardware claim.",
+  "maximum_jobs": 1,
+  "maximum_active_seconds": 30,
+  "maximum_improvement_rounds": 0,
+  "automatic_retry": false,
+  "source_color_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T112235.070296Z-stage1-color",
+  "selected_pick_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T151026.796083Z-stage2-position-candidate-I-r1",
+  "frame_ids": [
+    "f000",
+    "f001",
+    "f002",
+    "f004",
+    "f006"
+  ],
+  "held_out_use": "Reuse original 1806 development/reserved counts solely as prior evidence; no new independent split or tuning. All views remain correlated.",
+  "acceptance": [
+    "Same classifier/settings/prototypes and RGB-D/calibration produce exactly the previous decisions and numeric evidence on all original candidates.",
+    "Final Stage2 selection classified with exact frame, candidate, time and sensor content binding; do not use the first ranked candidate implicitly.",
+    "Missing, mismatched or stale source observation abstains. Invalidation retains immutable source evidence and denies current handoff.",
+    "No result permits held-color inference or transfer. No altered R3 candidates, selection, geometry checks or commands.",
+    "Process and list zero-candidate f006; preserve all 116 original candidate outputs including 41 raw known calls, distinct from prior 35 non-reference correct / 98 visible.",
+    "Replay the historical Stage2 selection as an as-of source observation and then invalidate its attempt on the recorded abort; do not portray an aborted historical attempt as a current valid handoff."
+  ],
+  "evaluation_scope": "Equivalence and source-observation plumbing, not a new color accuracy or grasp benchmark. Prior 35/98 visible coverage and calibration exclusions remain; selected Stage2 observation has no new physical identity/color truth input.",
+  "independent_review": "Planner, independent evaluator and reviewer agree additive source-only handoff. Final patch reviewed and applied to shared Sensors/current position-candidate runner only; pinned parent unchanged. Existing adapter/evaluator tests and direct tiny Sensors helper test pass. One <=30 s saved observation replay approved; no physics/render/motion/tuning or new accuracy claim.",
+  "frozen_inputs_sha256": {
+    "runs/20261025T112235.070296Z-stage1-color/predictions/prototypes.json": "52b6b6e64d25c92a0edb75ec6b53c7ff7ccc8cedfb505f091303c56352a020c0",
+    "runs/20261025T112235.070296Z-stage1-color/code/color.py": "e2a5d7d15ac128fda73b8937d6d2416f9142b82c9c059fe34c3946f3e26af4a4",
+    "runs/20261025T112235.070296Z-stage1-color/code/settings.json": "c41761cc438f5509c50681e2030ea2261f53e76c2725b4e17d70b05843c2cd85",
+    "runs/20261025T112235.070296Z-stage1-color/code/protocol.json": "72a7d3abd3624293e5f3cb9cc3561183ad0df7566e2197b8a5dbca945ace3420",
+    "runs/20261025T112235.070296Z-stage1-color/public/calibration.json": "022f614bfddd48ce5a4352fa92ee48e11e12d19312d9bc599b7639c1b3155220",
+    "runs/20261025T112235.070296Z-stage1-color/public/frames.json": "3c6459fff22352f7abc56b513678b7d602da16e576eae45f3066831e8bf239ab",
+    "runs/20261025T112235.070296Z-stage1-color/audit/evaluation.json": "cf9677bceca1c83814ff7a88f614aebcf4c8e7c2ee2b6463c7ed0b21d6718295",
+    "runs/20261025T151026.796083Z-stage2-position-candidate-I-r1/output/online/selection.json": "7b2f51f30227aef8d700e5119b4b85fc56b3d047b22dd77f9e1ff163db6456ce",
+    "runs/20261025T151026.796083Z-stage2-position-candidate-I-r1/output/capture_metadata.json": "de0959029cec3032fad0c1fcf0e5b5e23d3a37e1d2ec807174ee68f8d12127e6",
+    "runs/20261025T112235.070296Z-stage1-color/public/f000/rgb.png": "e129622b431c08997d0d8e583d3233f0212434286df504cf5de44bf607639a20",
+    "runs/20261025T112235.070296Z-stage1-color/public/f000/depth.npy": "d8b6d8f2103724083434c7990c1e8508b288096215f1401831097d39cb694f60",
+    "runs/20261025T112235.070296Z-stage1-color/public/f000/candidates.json": "e4faf76cf9db99240e49e89d1988821fbc30db0cfa9a8ea683a3c47c1c183bfc",
+    "runs/20261025T112235.070296Z-stage1-color/predictions/f000.json": "7801effd474b6ba8f8f6ac0050a673f5bb5655dc1610aca6ed44b2001a2813e5",
+    "runs/20261025T112235.070296Z-stage1-color/public/f001/rgb.png": "c98f75349f38a2096fa6746da5353fafbae445e00156e506d4bdba50a142558f",
+    "runs/20261025T112235.070296Z-stage1-color/public/f001/depth.npy": "9081bca7a864496d94f1257b0a592c71a64944ac15fa0755aa9dddb125465cbd",
+    "runs/20261025T112235.070296Z-stage1-color/public/f001/candidates.json": "ab34b61a5b0544070487f84f881c7d9f5e793c978946506ebefef99509f07036",
+    "runs/20261025T112235.070296Z-stage1-color/predictions/f001.json": "4d47132cf4b9ac405e6a3fa0d0db6dc94afeffba357499aa49396da6867fab0c",
+    "runs/20261025T112235.070296Z-stage1-color/public/f002/rgb.png": "88ba12b6fa267783aa5cec8e48bc8bee8831c4bb48412a829180954766981569",
+    "runs/20261025T112235.070296Z-stage1-color/public/f002/depth.npy": "7a2c17d889eadf7c011e46734759eb37f39eea3242345d7c3942e43afea3d9e0",
+    "runs/20261025T112235.070296Z-stage1-color/public/f002/candidates.json": "eac93961acd75d9d400c709eda5c45bef938e61dab6671b0b97263b704644525",
+    "runs/20261025T112235.070296Z-stage1-color/predictions/f002.json": "9ef57451ddd444d10694fbe603a4f15b46cb2478dfde34e7d16064044711dddf",
+    "runs/20261025T112235.070296Z-stage1-color/public/f004/rgb.png": "7b15f524dc175be6e6f984c99af05dd765b43a2e7a50a399857a2c6e7b374c1b",
+    "runs/20261025T112235.070296Z-stage1-color/public/f004/depth.npy": "4be9d777d86f0fb1fd51eedc530937cc5f707ff696cb873267ad40555632dba5",
+    "runs/20261025T112235.070296Z-stage1-color/public/f004/candidates.json": "1e7d9dfa60f64bc3e32ad7fa861f412b76c2e5d7d3b97a2346ae9c7d03924256",
+    "runs/20261025T112235.070296Z-stage1-color/predictions/f004.json": "8b5c509952cd99397f9f2059542fb153d1c375bb377c6bdc87451f6080e463fe",
+    "runs/20261025T112235.070296Z-stage1-color/public/f006/rgb.png": "e129622b431c08997d0d8e583d3233f0212434286df504cf5de44bf607639a20",
+    "runs/20261025T112235.070296Z-stage1-color/public/f006/depth.npy": "1be0246b0ad5e9b38a66b4294afaf9534e848535f1e940423e1d2dd039d940a7",
+    "runs/20261025T112235.070296Z-stage1-color/public/f006/candidates.json": "a57e2a800c277fd9e9b8c923716d3f5b5eda4c5a70d7dadee6cb546069a67f79",
+    "runs/20261025T112235.070296Z-stage1-color/predictions/f006.json": "14a58e7bb0fa40f4366ddacf7eaa02483eb1f73aaca931512aeb54cf571a7588",
+    "runs/20261025T151026.796083Z-stage2-position-candidate-I-r1/output/online/observations/frame_0000/rgb.png": "87dfa5e3623557085642999a0eb25d87775882834e0d938b18ed4b9c7e4fa64b",
+    "runs/20261025T151026.796083Z-stage2-position-candidate-I-r1/output/online/observations/frame_0000/depth.npz": "535aa77a9e6e8ece2d0da6a6722843375d309fe00ce7f77597d1e976d9a500d5",
+    "runs/20261025T151026.796083Z-stage2-position-candidate-I-r1/output/position_pick_complete.json": "92714656f0bd298be2c838f6e25359da8fe3aebf2ff233578299d5f1f333f509"
+  },
+  "classification_contract": {
+    "input_order": "BGR uint8 adapter input; live Sensors converts its retained RGB exactly once to BGR. Saved PNGs load with cv2.imread as BGR.",
+    "classifier": "unchanged stage1_color_20261025/color.py",
+    "prototypes": "immutable observed-RGB medians from job1806; no shader colors",
+    "binding": "frame_id + selected candidate_id + measurement_time_s + RGB/depth/calibration content hashes",
+    "timing": "pregrasp final source selection; physics remains at measurement time during selection",
+    "source_color_only": true,
+    "held_identity": "UNKNOWN",
+    "transfer_authorized": false
+  },
+  "selected_observation": {
+    "frame_id": "frame_0000",
+    "candidate_id": "ridge_00_s00",
+    "measurement_time_s": 0.025000001303851604,
+    "rgb": "output/online/observations/frame_0000/rgb.png",
+    "depth": "output/online/observations/frame_0000/depth.npz",
+    "depth_array_key": "depth",
+    "selection": "output/online/selection.json",
+    "calibration": "selection.geometry_views[0].calibration; use K/R/t only"
+  },
+  "case_ids": {
+    "baseline_prefix": "stage1_",
+    "selected": "stage2_selected"
+  },
+  "control_ids": [
+    "no_candidate",
+    "frame_mismatch",
+    "stale_frame",
+    "rgb_content_mismatch",
+    "depth_content_mismatch",
+    "calibration_mismatch",
+    "candidate_geometry_mismatch",
+    "abort",
+    "slip",
+    "historical_abort"
+  ],
+  "live_hook": {
+    "runner": "experiments/stage2_position_candidate_20261025/run_pick.py",
+    "sensors": "experiments/stage2_pick_20261025/sensors.py",
+    "opt_in_argument": "--source-color-reference experiments/stage1_handoff_20261025/references.json",
+    "source_only": true,
+    "physics_run_authorized_by_this_protocol": false,
+    "failure_invalidation": [
+      "normal abort",
+      "slip",
+      "other incomplete status",
+      "capture exception"
+    ],
+    "unmodified_parent_runner": "experiments/stage2_pick_20261025/run_pick.py"
+  },
+  "frozen_runtime_sources_sha256": {
+    "experiments/stage1_color_20261025/color.py": "e2a5d7d15ac128fda73b8937d6d2416f9142b82c9c059fe34c3946f3e26af4a4",
+    "experiments/stage1_color_20261025/settings.json": "c41761cc438f5509c50681e2030ea2261f53e76c2725b4e17d70b05843c2cd85",
+    "experiments/stage2_pick_20261025/sensors.py": "1600961fc236f0fd760302d5a7809f83c4635e53014fbbe5f4d8b50efe1072ad",
+    "experiments/stage2_position_candidate_20261025/run_pick.py": "7e7706d4c793e5eb93d330a305a92278eed46b2340a882fd7a13e610e73292e2"
+  }
+}

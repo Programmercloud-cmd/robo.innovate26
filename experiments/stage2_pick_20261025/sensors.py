@@ -10,12 +10,13 @@ from experiments.stage1_20261025.calibration import build
 from experiments.stage2_exposed_tip_20261025.model import save
 
 class Sensors:
-    def __init__(self,sim,scene,geometry,cameras,output,protocol):
+    def __init__(self,sim,scene,geometry,cameras,output,protocol,source_color_reference=None):
         import torch
         from pxr import Gf,UsdGeom,UsdLux
         from isaaclab.sim import get_current_stage
         from experiments.final_workcell_20261024 import render_core
         self.sim,self.scene,self.output,self.protocol=sim,scene,output,protocol
+        self.source_color_reference=Path(source_color_reference) if source_color_reference is not None else None
         self.core,self.torch=render_core,torch
         self.camera=scene['overview'];self.index=0;self.config=json.loads(cameras.read_text())
         self.calibration=build(geometry,cameras);nominal=self.calibration['views']['camera_0']
@@ -91,12 +92,36 @@ class Sensors:
     def select(self,current_tcp):
         import cv2
         rgb,depth,frame=self.capture();filtered,_=online.filter_workspace_depth(depth,self.cal,self.workspace)
+        if self.source_color_reference is not None:
+            from experiments.stage1_handoff_20261025.adapter import make_observation
+            self.color_rgb_bgr=cv2.cvtColor(rgb,cv2.COLOR_RGB2BGR)
+            self.color_depth=depth
+            self.color_observation=make_observation(frame,self.color_rgb_bgr,depth,self.cal)
         cv2.setRNGSeed(26);result,_,_=self.method.analyze(filtered,cv2.cvtColor(rgb,cv2.COLOR_RGB2BGR),self.cal,self.depth_module,self.depth_config,self.method_config,self.Evidence,'camera_0','observed')
         save(self.output/'online/r3_initial.json',result);candidates=[online.candidate_contract(c) for c in result['candidates'] if c['decision']=='present']
         candidates.sort(key=lambda c:(float(np.linalg.norm(np.asarray(c['table_xy_m'])-current_tcp[:2])),c['candidate_id']))
         self.initial_depth=depth;self.initial_cloud=self.cloud(filtered);self.frame=frame
         self._safety_capture(frame)
         return candidates,frame
+
+    def color_handoff(self,selection,case_id):
+        if self.source_color_reference is None:return None
+        from experiments.stage1_handoff_20261025.adapter import classify_selection,json_digest
+        raw=self.source_color_reference.read_bytes();reference=json.loads(raw)
+        if reference['schema']!='frozen-source-color-reference-v1':raise RuntimeError('Unknown source-color reference bundle')
+        values={};hashes={}
+        for name in ('classifier','settings','prototypes'):
+            record=reference[name];path=Path(record['path']);path=path if path.is_absolute() else ROOT/path
+            contents=path.read_bytes();digest=hashlib.sha256(contents).hexdigest()
+            if digest!=record['sha256']:raise RuntimeError('Frozen source-color reference changed: '+name)
+            hashes[name+'_sha256']=digest
+            if name!='classifier':values[name]=json.loads(contents)
+        observation={**self.color_observation,'candidate_sha256':json_digest(selection.get('candidate'))}
+        packet=classify_selection(selection,self.color_rgb_bgr,self.color_depth,self.cal,values['prototypes'],values['settings'],
+            observation=observation,reference_hashes=hashes,current_time_s=float(self.sim.current_time),case_id=case_id)
+        packet['reference_bundle_sha256']=hashlib.sha256(raw).hexdigest()
+        save(self.output/'online/source_color_handoff.json',packet)
+        return packet
 
     def local_height(self,candidate):
         xy=np.asarray(candidate['table_xy_m']);yaw=candidate['yaw_table_rad'];c,s=np.cos(yaw),np.sin(yaw);axes=np.array([[c,s],[-s,c]])
