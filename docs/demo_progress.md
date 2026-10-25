@@ -809,3 +809,12 @@ robot side, the measured front-housing center is approximately TABLE
 submillimeter physical accuracy. Position metadata is recorded, while viewing
 direction, intrinsics and housing-to-optical transform remain unmeasured. No
 new third rendered sensor or physical depth stream is claimed.
+
+
+Fresh exploratory control1808 (source`4ab5ad2`) passes58/58 checks over3600steps
+with301parts/930edges preserved,0.208293mm maximum source translation and zero
+finger loads. Independent evaluator/reviewer accept exactly one conditional
+I pick under unchanged source/science. Authoritative aggregate time is1298.525
+of1800seconds, leaving501.475. Child termination after the complete marker is
+bounded cleanup, not graceful shutdown; scientific capture/audit are complete.
+This is source stability at the new q, not grasping or a ray-clearance pass.

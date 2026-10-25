@@ -1,0 +1,45 @@
+{
+  "schema": "exploratory-sim-native-pick-results-v1",
+  "goal_status": "INCOMPLETE",
+  "scene": "Immutablehistorical1805 scene; current physical measurements excluded",
+  "scope": "One-off simulation-only finger-contact-guarded feasibility, not full ray-clearance pass or hardware-safe motion",
+  "previous_three_round_visibility_approach": "CLOSED_FAILED; originalresults preserved",
+  "aggregate_ceiling_seconds": 1800,
+  "prior_case_seconds": 1046.8512451360293,
+  "control": {
+    "job_id": 1808,
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T121511.546955Z-stage2-exploratory-I-control",
+    "source_commit": "4ab5ad2",
+    "status": "PASS_INDEPENDENTLY_ACCEPTED",
+    "checks_passed": 58,
+    "check_count": 58,
+    "measured_steps": 3600,
+    "metrics": {
+      "first_singleton_step": null,
+      "target_rise_m": null,
+      "held_translation_max_m": null,
+      "held_angle_max_rad": null,
+      "non_target_translation_max_m": 0.00020829330605920404,
+      "non_target_angle_max_rad": 0.002183660166338086,
+      "force_peak_N": {
+        "left": 0.0,
+        "right": 0.0
+      },
+      "first_force_trigger_step": null,
+      "loaded_point_observations": 0,
+      "max_loaded_flat_distance_m": null,
+      "min_loaded_outward_dot": null
+    },
+    "audit_sha256": "a68175ef3e718ad1a1d3e7fce7e7f7fdf097e3bbede3927d991e31879ac447c3",
+    "cumulative_case_seconds": 1298.5247959960252,
+    "remaining_case_seconds": 501.4752040039748,
+    "cleanup": "Child forciblyterminated after complete marker; rawcapture and independent audit valid, not gracefulshutdown."
+  },
+  "pick": {
+    "status": "ONE_CONDITIONAL_ATTEMPT_APPROVED_NOT_YET_SUBMITTED"
+  },
+  "no_H_retries_or_improvement_pool": true,
+  "whole_arm_contact_coverage": "UNMEASURED",
+  "online_held_verification": "UNKNOWN blocks transfer",
+  "independent_review": "Evaluator and reviewer accept58/58 currentqcontrol and one unchanged conditionalIattempt with501.475s remaining."
+}
