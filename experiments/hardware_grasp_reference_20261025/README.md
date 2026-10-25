@@ -66,3 +66,27 @@ residuals are descriptive, not asserted physical correspondences or accuracy.
 Next contact reproduction needs the upper-reference/brick-surface relation and
 resolution of the physical width/mount mapping. Existing retention criteria and
 closed three-round experiments remain unchanged.
+
+## Result — reference checks passed
+
+**Pueue 1831**, source `a885f97`, snapshot
+`runs/20261025T214646.773393Z-hardware-grasp-reference`: all **18 data checks pass**
+for 315 targets (15 recorded, 300 inferred). Full scheduled duration was
+**0.490 s**; Python 3.11.15, NumPy 1.26.0, SciPy 1.15.3. No simulation ran.
+
+Internal lattice arithmetic is consistent with the exported 31.8 mm pitch,
+9.6 mm layer step and alternating 90° orientations. This is export consistency,
+not physical pose accuracy. All 315 `motion_validated` flags remain false;
+300 inferred `grasp_physically_validated` flags remain false and that field is
+absent for the 15 recorded poses. The later operator report remains separate.
+
+The derived model-frame offset is **14.15756 mm along configured EE-local Z**
+(approximately downward for these poses). No second 15 mm offset was applied.
+The current gap mapping remains conditional and uncalibrated. Independent
+source and result review accepted these limited conclusions. Old retention
+failures, budgets and downstream unproven stages are preserved.
+
+Artifacts: [comparison](artifacts/comparison.json),
+[authoritative extracted poses](artifacts/authoritative_poses.json),
+[derived model-frame references](artifacts/transformed_reference_poses.json),
+and [job/provenance record](results.json).

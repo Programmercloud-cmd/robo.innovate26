@@ -1,0 +1,19 @@
+{
+  "scope": "Data-only operator reference import and frame audit",
+  "pueue_job_id": 1831,
+  "source_commit": "a885f97",
+  "snapshot": "runs/20261025T214646.773393Z-hardware-grasp-reference",
+  "pueue_result": "Success",
+  "scheduler_start": "2026-10-25T22:46:47.105296123+01:00",
+  "scheduler_end": "2026-10-25T22:46:47.595207091+01:00",
+  "scheduler_seconds": 0.489910968,
+  "maximum_active_seconds": 12,
+  "physics_steps": 0,
+  "hardware_commands": 0,
+  "prior_retention_budget_unchanged": true,
+  "artifact_sha256": {
+    "authoritative_poses.json": "2c1af183dea78ef5d7ba220d593dc31cc418c7a02bc98c2d626ef40f5498c967",
+    "comparison.json": "09bac202998ef33689f1c4dce533b7b274008dbfd3bfc1f1b525f5229e10339f",
+    "transformed_reference_poses.json": "bfb3a7abaeb2e7e18f38f6350623d93b04dc869a2f37fb63d6253119d49e5952"
+  }
+}

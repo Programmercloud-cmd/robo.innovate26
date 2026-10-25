@@ -1,0 +1,338 @@
+{
+  "data_checks_passed": true,
+  "checks": {
+    "original_bytes": true,
+    "export_conventions": true,
+    "counts": true,
+    "grid_ids": true,
+    "grid_id_spelling": true,
+    "proper_exported_poses": true,
+    "xyz_matrix_agree": true,
+    "offset_already_applied_declarations": true,
+    "orthogonal_318mm_grid": true,
+    "fixed_spacing_layer_centers": true,
+    "parity_orientations_preserved": true,
+    "alternating90_degrees": true,
+    "anchor_record3_exact_xyz": true,
+    "USD_fixed_named_frames": true,
+    "USD_URDF_flange_hand": true,
+    "T01_rigid_tool_frames": true,
+    "T01_configured_route": true,
+    "T01_nominal_route": true
+  },
+  "input_sha256": {
+    "markdown": "dce3e9632b4f572d5a73341ff381925f761cc7dc13a1d916d25101a1f1e69faa",
+    "photo": "0751d2d7a62b361fe83d07834b050290a1accf0927cc64237a5d2d342869864e",
+    "registry": "66ba658f2341450694750bdcdeae4489ec3a6332f63e00260d5acffa73e46b02",
+    "science": "9382013075e97767cc67daf8e29cdef2432d658d2a3cad2c8947ca07b70f765d",
+    "usd_chain": "56740a748b3885b3789f1fe3731cffb0586e3a615cde02110566b82987ece1d0",
+    "urdf": "9f395c1dd0bd97779534b14e09777b183c0b5ddb6f0ae306a106fe6a0c8e4c0a",
+    "width_reference": "0420b382c30826063e5252d5f9496189848492c39b57983e803132a65b9fa6df"
+  },
+  "pose_counts": {
+    "total": 315,
+    "recorded": 15,
+    "inferred": 300
+  },
+  "exported_flag_counts": {
+    "motion_validated": {
+      "False": 315
+    },
+    "grasp_physically_validated": {
+      "ABSENT": 15,
+      "False": 300
+    }
+  },
+  "later_user_report": {
+    "provenance": "User statement accompanying this attachment, relayed by root on 2026-10-25; separate from embedded export flags.",
+    "approach_display_width_m": 0.02,
+    "commanded_display_width_m": 0.014,
+    "loaded_display_readback_m": 0.0158,
+    "straight_up_extraction_tested": true,
+    "all_inferred_positions_tested": true,
+    "independently_instrumented": false,
+    "display_readback_equals_sdk_joint_sum": "UNVERIFIED"
+  },
+  "maximum_grid_residual_m": 1.6883057536160649e-16,
+  "parity_angle_rad": 1.5707963267948966,
+  "grid_basis_from_named_top_layer_anchors": {
+    "u": [
+      -0.9998584913094587,
+      -0.01682252526744212,
+      0.0
+    ],
+    "v": [
+      0.016822525267441546,
+      -0.9998584913094583,
+      0.0
+    ]
+  },
+  "recorded_inferred_descriptive_residuals": [
+    {
+      "recorded_id": "point_01",
+      "nearest_inferred_id": "a_0_2_8",
+      "translation_residual_m": 0.22303734857316743,
+      "rotation_residual_rad": 1.5806966751348601,
+      "correspondence": "Nearest exported XYZ only; not asserted same physical brick"
+    },
+    {
+      "recorded_id": "point_02",
+      "nearest_inferred_id": "a_0_1_9",
+      "translation_residual_m": 0.0003431808513009329,
+      "rotation_residual_rad": 0.002816921709167112,
+      "correspondence": "Nearest exported XYZ only; not asserted same physical brick"
+    },
+    {
+      "recorded_id": "point_03",
+      "nearest_inferred_id": "a_0_0_9",
+      "translation_residual_m": 0.0,
+      "rotation_residual_rad": 0.0017658685752062384,
+      "correspondence": "Explicit XYZ anchor"
+    },
+    {
+      "recorded_id": "point_04",
+      "nearest_inferred_id": "a_1_0_8",
+      "translation_residual_m": 0.001445054899750341,
+      "rotation_residual_rad": 1.5781988010084849,
+      "correspondence": "Nearest exported XYZ only; not asserted same physical brick"
+    },
+    {
+      "recorded_id": "point_05",
+      "nearest_inferred_id": "a_1_0_9",
+      "translation_residual_m": 0.00041193921009051617,
+      "rotation_residual_rad": 0.011843109391423265,
+      "correspondence": "Nearest exported XYZ only; not asserted same physical brick"
+    },
+    {
+      "recorded_id": "point_06",
+      "nearest_inferred_id": "a_0_1_8",
+      "translation_residual_m": 0.001163477306846677,
+      "rotation_residual_rad": 1.5777425352604888,
+      "correspondence": "Nearest exported XYZ only; not asserted same physical brick"
+    },
+    {
+      "recorded_id": "point_07",
+      "nearest_inferred_id": "a_0_0_8",
+      "translation_residual_m": 0.0009361938896190621,
+      "rotation_residual_rad": 1.576109645871577,
+      "correspondence": "Nearest exported XYZ only; not asserted same physical brick"
+    },
+    {
+      "recorded_id": "point_08",
+      "nearest_inferred_id": "a_5_1_1",
+      "translation_residual_m": 0.17593797938771907,
+      "rotation_residual_rad": 0.03065645439337993,
+      "correspondence": "Nearest exported XYZ only; not asserted same physical brick"
+    },
+    {
+      "recorded_id": "point_09",
+      "nearest_inferred_id": "a_5_1_1",
+      "translation_residual_m": 0.19178648708478818,
+      "rotation_residual_rad": 0.019982007836005355,
+      "correspondence": "Nearest exported XYZ only; not asserted same physical brick"
+    },
+    {
+      "recorded_id": "point_10",
+      "nearest_inferred_id": "a_5_0_1",
+      "translation_residual_m": 0.17666177637478217,
+      "rotation_residual_rad": 0.02992707928919705,
+      "correspondence": "Nearest exported XYZ only; not asserted same physical brick"
+    },
+    {
+      "recorded_id": "point_11",
+      "nearest_inferred_id": "a_5_0_1",
+      "translation_residual_m": 0.19248721355199955,
+      "rotation_residual_rad": 0.019503335407093866,
+      "correspondence": "Nearest exported XYZ only; not asserted same physical brick"
+    },
+    {
+      "recorded_id": "point_12",
+      "nearest_inferred_id": "a_5_0_1",
+      "translation_residual_m": 0.22445193257115956,
+      "rotation_residual_rad": 0.019331787486203594,
+      "correspondence": "Nearest exported XYZ only; not asserted same physical brick"
+    },
+    {
+      "recorded_id": "point_13",
+      "nearest_inferred_id": "a_5_0_3",
+      "translation_residual_m": 0.20824208999307767,
+      "rotation_residual_rad": 0.02931220949049667,
+      "correspondence": "Nearest exported XYZ only; not asserted same physical brick"
+    },
+    {
+      "recorded_id": "point_14",
+      "nearest_inferred_id": "a_5_4_1",
+      "translation_residual_m": 0.1989113971340229,
+      "rotation_residual_rad": 0.03552918748821884,
+      "correspondence": "Nearest exported XYZ only; not asserted same physical brick"
+    },
+    {
+      "recorded_id": "point_15",
+      "nearest_inferred_id": "a_5_4_1",
+      "translation_residual_m": 0.3874064992763985,
+      "rotation_residual_rad": 0.043186762923268895,
+      "correspondence": "Nearest exported XYZ only; not asserted same physical brick"
+    }
+  ],
+  "frame_bridges": {
+    "T01": {
+      "T_flange_hand_USD": [
+        [
+          0.7071067350592308,
+          0.7071068273138611,
+          0.0,
+          0.0
+        ],
+        [
+          -0.7071068273138611,
+          0.7071067350592308,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_hand_configured_EE": [
+        [
+          0.9999999828857268,
+          -6.523387346656674e-08,
+          0.0,
+          0.0
+        ],
+        [
+          6.523387357785229e-08,
+          0.999999982885727,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.10339999943971634
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_hand_current_MODEL_grip": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.11755756120085716
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_EE_current_MODEL_grip": [
+        [
+          1.0000000171142693,
+          6.523387569942718e-08,
+          0.0,
+          0.0
+        ],
+        [
+          -6.523387581071273e-08,
+          1.0000000171142691,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.014157561761140816
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  },
+  "width_comparison": {
+    "source": "Existing source-derived gap=q1+q2+offset; not physical calibration",
+    "custom_gap_intercept_m": 0.00281338,
+    "reported": {
+      "provenance": "User statement accompanying this attachment, relayed by root on 2026-10-25; separate from embedded export flags.",
+      "approach_display_width_m": 0.02,
+      "commanded_display_width_m": 0.014,
+      "loaded_display_readback_m": 0.0158,
+      "straight_up_extraction_tested": true,
+      "all_inferred_positions_tested": true,
+      "independently_instrumented": false,
+      "display_readback_equals_sdk_joint_sum": "UNVERIFIED"
+    },
+    "conditional_assumptions": [
+      "Desk displayed width equals SDK q1+q2",
+      "Same physical custom-pad mounting as current model"
+    ],
+    "if_display_equals_joint_sum": [
+      {
+        "display_width_m": 0.02,
+        "predicted_MODEL_pad_gap_m": 0.02281338
+      },
+      {
+        "display_width_m": 0.014,
+        "predicted_MODEL_pad_gap_m": 0.01681338
+      },
+      {
+        "display_width_m": 0.0158,
+        "predicted_MODEL_pad_gap_m": 0.018613380000000002
+      }
+    ],
+    "current_nominal14mm_MODEL_command_q_each_m": 0.005593310000000001,
+    "inferred_physical_gap_offset_m": null,
+    "inference": "Loaded15.8mm would imply18.61338mm MODEL gap under both assumptions; this challenges their joint validity, not a fitted correction."
+  },
+  "unknowns": {
+    "T_base_input_plate": null,
+    "T_base_referenced_brick": null,
+    "paired_upper_reference_to_physical_brick_top": null,
+    "actual_pad_gap_minus_sdk_width_m": null,
+    "loaded_display_to_sdk_joint_positions": null
+  },
+  "upper_reference_not_assumed_brick_top": true,
+  "offset_applied_again": false,
+  "physical_registration_verified": false,
+  "hardware_execution_authorized": false,
+  "simulation_or_grasp_success_claim": false,
+  "runtime_versions": {
+    "python": "3.11.15",
+    "numpy": "1.26.0",
+    "scipy": "1.15.3"
+  },
+  "wall_seconds": 0.023300927015952766
+}
