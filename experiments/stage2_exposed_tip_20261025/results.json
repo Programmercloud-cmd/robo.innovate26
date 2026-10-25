@@ -1,0 +1,53 @@
+{
+  "schema": "exposed-tip-sequence-results-v1",
+  "configuration_count": 1,
+  "G": {
+    "job_id": 1778,
+    "source_commit": "a5a9cb1",
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T080456.949852Z-exposed-tip-G",
+    "status": "FAILED_GLOBAL_GEOMETRY_100UM",
+    "proceed_gate_passed": false,
+    "integrity_checks_passed": 469,
+    "integrity_checks_count": 469,
+    "quality_checks": {
+      "left_all106parities": true,
+      "left_design_clear_100um": false,
+      "left_source_exposed_clear_100um": false,
+      "left_clear_grip_and_outward_taper": true,
+      "right_all106parities": true,
+      "right_design_clear_100um": false,
+      "right_source_exposed_clear_100um": false,
+      "right_clear_grip_and_outward_taper": true
+    },
+    "failed_clear_queries": {
+      "left": [
+        {
+          "id": "left_bbox_2_-1",
+          "error_m": 0.0001300755143165619,
+          "source_error_m": 0.0001300755143165619
+        }
+      ],
+      "right": [
+        {
+          "id": "right_bbox_2_-1",
+          "error_m": 0.00013013511896133728,
+          "source_error_m": 0.00013013511896133728
+        }
+      ]
+    },
+    "cooked_hashes": {
+      "left": "a370b1d937a6230319ff3fb4aa0b5c28d1538fbffba1220e3839b012289a4199",
+      "right": "147719157bddafdc2681d2016aa985d14b8f869b33b75f51d0146fa7f7aa0094"
+    },
+    "actual_capture_plus_audit_seconds": 16.54994369900669,
+    "audit_sha256": "9e3f623e8f198f730727159009d0238f37207984bebed4f918505f7d2a731c9c"
+  },
+  "D": {
+    "status": "NOT_EXECUTED"
+  },
+  "R": {
+    "status": "RESERVED_NOT_EXECUTED"
+  },
+  "reassessment": "Distinct lateral-qualified normal-contact authorization under source review. Original G remains failed. Same physical model/cook; add all-point flat gripping-plane and outward-normal cos>=.9 requirements, keep prior50um ownership/force/motion/native/source limits. No recook/new G/tuning or global fidelity claim.",
+  "scope": "Contact/control primitive only; no native grasp/extraction/placement or physical calibration validated."
+}

@@ -2,31 +2,33 @@
   "schema": "exposed-tip-independent-G-D-R-v1",
   "capture_protocol": {
     "schema": "stage2-exposed-tip-contact-v1",
-    "status": "frozen_plan_before_implementation",
+    "status": "limited_lateral_contact_reassessment_before_D",
     "stage": "User-authorized exposed-body simplification; old contact/native-query attempts remain closed",
     "maximum_improvement_rounds": 0,
     "baseline_improvement_round": 0,
     "execution_authorized_cases": [
-      "G"
+      "D",
+      "R"
     ],
     "cases": [
       {
         "id": "G",
         "split": "development",
         "maximum_attempts": 1,
-        "measured_contact_steps": 0
+        "measured_contact_steps": 0,
+        "execution": "CLOSED:1778 original global geometry FAIL preserved; no new G attempt"
       },
       {
         "id": "D",
         "split": "development",
         "maximum_attempts": 1,
-        "requires": "independent G PASS"
+        "requires": "Exact original failed1778 geometry audit plus separate side_authorization.json binding same model/cooked hashes; lateral-only point guards mandatory."
       },
       {
         "id": "R",
         "split": "reserved",
         "maximum_attempts": 1,
-        "requires": "independent D PASS",
+        "requires": "Same side authorization and original geometry audit, plus independent D PASS; fixed offset only.",
         "hand_x_offset_m": 0.002
       }
     ],
@@ -143,7 +145,7 @@
       "experiments/final_workcell_20261024/end_effector/fingertips.py": "e8535ea2f364cb1a94129144ed081ebcf5e521b9b858c4f360b3a712afd93919",
       ".deps/bricksim/assets/robots/fr3/robot.usda": "313c8720683a1311c67dbd6617db736bb36f1d6ecdaed02ec0fbbea9ca302306",
       ".deps/bricksim/core.cpython-311-x86_64-linux-gnu.so": "4e62dc33ee02270993c20e3cfd658e6d6ef0ea9780e53ad15cedde12f41b2455",
-      "experiments/stage2_contact_20261025/run_contact.py": "585b7791cddac193121cb36275ed1cf555e42106770dc0d39b68d6845df958d7"
+      "experiments/stage2_contact_20261025/run_contact.py": "5c2cacde261c5cafbe3984ab301c6ce43f1f528f1509a1eee08f605f411c809a"
     },
     "initial_geometry": {
       "surface": "Composed enabled Cube/Mesh colliders including instance proxies. Cube analytical exact8corners/12triangles; Mesh original convexHull/convexsurface path unchanged. Unsupported types STOP.",
@@ -245,9 +247,18 @@
       "white_points_bounds_m": 1e-09,
       "other_white_metadata": "exact",
       "physical_geometry_contact_tolerances": "unchanged"
+    },
+    "side_contact": {
+      "original_geometry_audit_sha256": "9e3f623e8f198f730727159009d0238f37207984bebed4f918505f7d2a731c9c",
+      "original_global_G_passed": false,
+      "authorization_artifact": "side_authorization.json",
+      "scope": "Separate lateral-qualified contact authorization only. Original1778 G remains failed. Same model/cooked hashes/one D then conditional R; no new G, geometry change or renewed attempt pool.",
+      "all_force_points": "Both reporting directions: retain body/white/head uniqueness, require flat inward-Y plane distance<=abs(separation)+existing50um and validated pad-outward dot expected grip normal>=existing0.9. No tip-Z exclusion; edge-near lateral anchors permitted.",
+      "normal_convention": "Finger: -sign(force)*raw_normal; coupon: +sign(force)*raw_normal; transform into actual finger frame. No fitted flip.",
+      "attempt_policy": "One D and conditional one R remain. Existing force/motion/graph/geometry-contact tolerances and budgets unchanged."
     }
   },
-  "capture_protocol_sha256": "48f192a017662265dc18955c3a21228c32e429ce949c1e081a4de68811ee2516",
+  "capture_protocol_sha256": "d700b7cc951951e189f214a7776e41c98e4edc64f41439c3355826e6c8895402",
   "model_config": {
     "schema": "exposed-tip-model-v1",
     "stl": "experiments/final_workcell_20261024/end_effector/assets/franka_research3_gripper.stl",
@@ -338,7 +349,7 @@
   "maximum_capture_plus_audit_seconds_per_phase": 180,
   "maximum_total_active_seconds": 540,
   "expected_query_count": 216,
-  "force_protocol_sha256": "af5978e9b610398655478fbed508a475560677da8ed90c69603e2f023095cbf5",
+  "force_protocol_sha256": "f47d8eb97a6291aa74bf45dfa698efcaf2ba6a31c5b04be846cc9d69dfc66442",
   "baseline_metadata_sha256": "a86cc9a735b0464b06f4503be5fb30dd895fa9f50a15dd394ef6e01a7ee02fc1",
   "baseline_geometry_sha256": "40081b54c140ab4cbb67b07e3ab3b077ccb7805ede2521f9f3ab61ce53b7e930",
   "reference_sha256": "cb46c2fab2833fa267a45980fa7e2adf27e0f8626edfd9f514ff1c7d6b7dddc6",
@@ -356,13 +367,29 @@
   "ray_edge_flag_barycentric": 1e-06,
   "head_round_reference": "AnalyticconfiguredCylinder vsfixed32-gon collider; sourceactualcookingreportedseparately",
   "fixture_frame_rule": "Fixed FINGER_Z=metal_distal+.0005+.0048. Transformthroughactualfinger_to_hand; X/Y prescribedHAND,notfinger. Bothfingerheightderivationsagree2um.\u22657mmpartialbodyoverlap. Notwholebrickcontainment.",
-  "scope": "AlloldFAILs/poolsremainclosed. No hidden-bore/formfit gate, no fresh3roundpool/tuning. SparseGfeaturechecks and boundedD/Rnormalfeedback are notgrasp/extraction/insertion/physicalmass/materialcalibration.",
+  "scope": "Distinct lateral-qualified D/R normal-contact diagnostic only.1778 G remainsFAILED and immutable; only theoriginalcookedmodel/config hashesareallowed. Everyloadedpoint retains oldbody/head/whiteownership plusflatYplane andfixednormalcos>=.9. Edgeanchorsallowed,noZcutoff;nozero-axial-force/globalfidelity/grasp/extractionclaim. No recook or freshattemptpool.",
   "helpers_sha256": {
     "query_checks.py": "513ca0a9e99a6992480d9b68d864f1818ba5329e7a3620e8ab0208be4e9fef52",
-    "base_contact.py": "b17ccaa236606f328e42d56fe23d4aea02626bc557ab8067baa27705425f5f44",
+    "authorize_side.py": "136768794234b79fe14f8c16a71fc5b5068e925123468ee29fb14db5aa12e69e",
+    "base_contact.py": "dc15c6a230a928fb4a2a29d0660c0e163d58ae603b4b209a7d37a93d66bc0bef",
     "geometry_reference.py": "ac01469020f6e0999e8cbc273482d74528c2a3f8f906a7f391bee1ff79b891e4",
     "union_reference.py": "19ce797328b641e61b087fbf27a4aff6d1c3a435005062b49cf55062644b2640",
     "query_reference.py": "041f63bb29dbb17790a992dcb596ebd9539dc63ba19d50a619dfbef00227fbfa",
     "mass_reference.py": "0c5e454125a8746638b06010f4481a5e367dc57203fd8da9ee1308ce19887675"
+  },
+  "side_contact": {
+    "geometry_audit_sha256": "9e3f623e8f198f730727159009d0238f37207984bebed4f918505f7d2a731c9c",
+    "authorization_sha256": "985a293bad0d02c12511f10ff11eac59ccb4f722c0a15ee83540a7278fe758ea",
+    "global_G_passed": false,
+    "point_contract": {
+      "flat_face_extra_slack_m": 5e-05,
+      "minimum_outward_dot_grip_normal": 0.9,
+      "finger_outward": "negative raw signed force coefficient times world normal",
+      "coupon_outward": "positive raw signed force coefficient times world normal",
+      "all_abs_force_above_N": 1e-08,
+      "Z_cutoff": null,
+      "normal_fitting_or_sign_selection": false
+    },
+    "attempts": "Original G closed/FAILED; one separately authorized side-only D and conditional R. No recook, retuning, replacement G or new improvement pool."
   }
 }

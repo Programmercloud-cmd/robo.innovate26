@@ -314,7 +314,7 @@ def main(adapter=None):
                             if abs(force)<=protocol['observation']['force_carrying_abs_floor_N']:continue
                             local=world_to_finger.Transform(Gf.Vec3d(*[float(v) for v in point]))
                             outward=None
-                            if args.proxy_stage:
+                            if args.proxy_stage or adapter:
                                 world_normal=(1 if sensor=='coupon' else -1)*np.sign(force)*normal
                                 outward=np.asarray(world_to_finger.TransformDir(Gf.Vec3d(*[float(v) for v in world_normal])))
                             own=own_point(np.asarray(local),sep,geometry_result['fingers'][label],protocol,outward)
@@ -379,7 +379,8 @@ def main(adapter=None):
         save(output/'contact_report.json',{'case':metadata['case'],'stage':args.proxy_stage,'captured':True,'online_positive_reopen_gate':success,'steps_executed':step,
             'first_failure':first_failure,'limit_without_confirmation':not success and first_failure is None,
             'abort_semantics':'Any unsafe/incomplete-data failure halts further physics; no recovered/released claim after abort',
-            'no_grasp_or_perception_pick_claim':True})
+            'no_grasp_or_perception_pick_claim':True,
+            **({key:metadata[key] for key in ('geometry_audit_sha256','side_authorization_sha256','global_G_passed','authorized_scope')} if adapter else {})})
         save(output/'contact_complete.json',{'capture_completed':True,'online_gate_passed':success,'independent_audit_required':True})
 
     final_scene.make_env_cfg=factory

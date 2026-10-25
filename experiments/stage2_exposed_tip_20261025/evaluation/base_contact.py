@@ -57,7 +57,7 @@ def surface_distance(point, vertices, indices):
     return float(np.min(np.concatenate(distances)))
 
 
-def classify_point(point_world, separation, pose, colliders, protocol, hulls=None, outward_world=None, proxy_config=None):
+def classify_point(point_world, separation, pose, colliders, protocol, hulls=None, outward_world=None, proxy_config=None, flat_face_y_m=None, expected_grip_normal_finger=None):
     point = rotation(pose[3:7]).T@(np.asarray(point_world)-np.asarray(pose[:3]))
     distances = [(c['role'],surface_distance(point,c['points_finger_m'],c['triangle_indices'])) for c in colliders if c['enabled']]
     pad = min((d for role,d in distances if role=='body'),default=float('inf'))
@@ -69,10 +69,18 @@ def classify_point(point_world, separation, pose, colliders, protocol, hulls=Non
         from union_geometry import hull_triangles,boundary_contact
         pad=min(surface_distance(point,h['vertices_m'],hull_triangles(h)[0]) for h in hulls)
         boundary=boundary_contact(point,rotation(pose[3:7]).T@np.asarray(outward_world),hulls,tolerance,proxy_config)
+    unique_body=bool(boundary and np.isfinite([pad,white,head]).all() and pad<=tolerance and min(white,head)>tolerance+protocol['geometry']['white_extra_clearance_m'])
+    outward=rotation(pose[3:7]).T@np.asarray(outward_world,float) if outward_world is not None else np.zeros(3)
+    length=np.linalg.norm(outward);normal=outward/length if np.isfinite(outward).all() and length>0 else None
+    flat_distance=abs(point[1]-flat_face_y_m) if flat_face_y_m is not None else float('inf')
+    dot=float(np.dot(normal,expected_grip_normal_finger)) if normal is not None and expected_grip_normal_finger is not None else None
+    lateral=bool(flat_distance<=tolerance and dot is not None and dot>=protocol['geometry']['side_contact']['minimum_outward_dot_grip_normal'])
     return {'point_finger_m':point.tolist(),'pad_distance_m':pad if np.isfinite(pad) else None,'white_distance_m':white if np.isfinite(white) else None,'head_distance_m':head if np.isfinite(head) else None,'tolerance_m':tolerance,
+        'unique_body_geometry':unique_body,'flat_face_distance_m':float(flat_distance) if np.isfinite(flat_distance) else None,'flat_face_compatible':bool(flat_distance<=tolerance),
+        'outward_normal_finger':normal.tolist() if normal is not None else None,'expected_grip_normal_finger':expected_grip_normal_finger,'outward_dot_grip_normal':dot,'lateral_qualified':lateral,
         'compatible_roles':[role for role,d in [('body',pad),('white',white),('head',head)] if d<=tolerance],
         'external_union_boundary_crossing':boundary,
-        'uniquely_pad_compatible':bool(boundary and np.isfinite([pad,white,head]).all() and pad<=tolerance and min(white,head)>tolerance+protocol['geometry']['white_extra_clearance_m'])}
+        'uniquely_pad_compatible':unique_body and lateral}
 
 
 def close(a,b,absolute,relative):
@@ -250,7 +258,10 @@ def audit(args):
             ownership[label]=[]
             for sensor,pair_value in [(label,pair),('coupon',reverse)]:
                 for index in pair_value['force_carrying_rows']:
-                    extra={}
+                    signed_force=data[sensor]['normal_forces_N'][index].item()*data[sensor]['normal_vectors_world'][index]
+                    extra={'outward_world':signed_force*(-1 if sensor==label else 1),
+                        'flat_face_y_m':geometry['fingers'][label]['inner_plane_y_m'],
+                        'expected_grip_normal_finger':[0.,-1. if label=='left' else 1.,0.]}
                     if proxy is not None:
                         force=data[sensor]['normal_forces_N'][index].item()*data[sensor]['normal_vectors_world'][index]
                         extra={'hulls':proxy['tips'][label]['cooked_hulls'],'outward_world':force*(-1 if sensor==label else 1),'proxy_config':proxy['config']}

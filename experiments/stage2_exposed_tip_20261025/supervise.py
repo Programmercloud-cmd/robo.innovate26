@@ -17,13 +17,14 @@ from experiments.partial_disassembly_20261024.render_supervisor import finish_ch
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     for name in ['output','python','phase']:p.add_argument('--'+name,required=True)
-    p.add_argument('--approved-G',type=Path);p.add_argument('--predecessor-D',type=Path)
+    p.add_argument('--geometry-audit',type=Path);p.add_argument('--side-authorization',type=Path);p.add_argument('--predecessor-D',type=Path)
     a=p.parse_args();out=Path(a.output)
+    if a.phase=='G':raise RuntimeError('Closed G cannot be rerun by the reassessed contact launcher')
     if os.environ.get('ROBO_PUEUE_JOB')!='1':raise RuntimeError('Default Pueue required')
     out.mkdir(parents=True,exist_ok=False)
     final=ROOT/'experiments/final_workcell_20261024'
     command=[a.python,str(HERE/'run_contact.py'),'--phase',a.phase,'--output',str(out),'--geometry',str(final/'geometry.json'),'--cameras',str(final/'cameras_realism.json'),'--appearance',str(final/'appearance_config.json'),'--views','all','--headless','--enable_cameras','--device','cpu']
-    for flag in ['approved_G','predecessor_D']:
+    for flag in ['geometry_audit','side_authorization','predecessor_D']:
         value=getattr(a,flag)
         if value is not None:command+=['--'+flag.replace('_','-'),str(value)]
     marker='exposed_G_complete.json' if a.phase=='G' else 'contact_complete.json'

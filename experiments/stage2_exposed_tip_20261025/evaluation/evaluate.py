@@ -82,7 +82,7 @@ def query_audit(args,p,cfg,before):
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--phase',choices=['G','D','R'],required=True)
     for name in ['input','output','stl','baseline-metadata','baseline-geometry']:parser.add_argument('--'+name,type=Path,required=True)
-    for name in ['approved-G','predecessor-D']:parser.add_argument('--'+name,type=Path)
+    for name in ['geometry-audit','side-authorization','predecessor-D']:parser.add_argument('--'+name,type=Path)
     args=parser.parse_args()
     if os.environ.get('ROBO_PUEUE_JOB')!='1':raise RuntimeError('Default Pueue required')
     p=read(HERE/'protocol.json');cfg=p['model_config'];supervisor=read(args.input/'supervisor.json');capture_wall=float(supervisor['capture_wall_seconds']);result={'schema':p['schema'],'phase':args.phase,'proceed_gate_passed':False,'protocol_sha256':sha(HERE/'protocol.json')}
@@ -92,6 +92,7 @@ def main():
     args.deadline=STARTED+180-capture_wall
     signal.setitimer(signal.ITIMER_REAL,remaining)
     try:
+        if args.phase=='G':raise ValueError('Original G is closed and failed; this protocol authorizes no replacement G')
         for path,digest in [(args.stl,cfg['stl_sha256']),(args.baseline_metadata,p['baseline_metadata_sha256']),(args.baseline_geometry,p['baseline_geometry_sha256']),(HERE.parent/'model_config.json',p['model_config_sha256']),(HERE.parent/'protocol.json',p['capture_protocol_sha256']),(HERE.parent/'head_reference.json',cfg['head_reference_sha256']),(HERE/'contact_protocol.json',p['force_protocol_sha256'])]:
             if sha(path)!=digest:raise ValueError('Frozen input changed: '+str(path))
         for name,digest in p['helpers_sha256'].items():
@@ -102,11 +103,15 @@ def main():
             if args.phase=='G':
                 body=query_audit(args,p,cfg,before);checks.update(body.pop('checks'));result.update(body);gate=result.pop('gate') and all(checks.values())
             else:
-                predecessor=read(args.approved_G);checks['approved_G_predecessor']=predecessor['phase']=='G' and predecessor['proceed_gate_passed'] and predecessor['protocol_sha256']==sha(HERE/'protocol.json')
+                predecessor=read(args.geometry_audit);authorization=read(args.side_authorization)
+                checks['original_failed_geometry_binding']=sha(args.geometry_audit)==p['side_contact']['geometry_audit_sha256']==authorization['geometry_audit_sha256'] and predecessor['phase']=='G' and predecessor['proceed_gate_passed'] is False
+                checks['distinct_lateral_authorization']=sha(args.side_authorization)==p['side_contact']['authorization_sha256'] and authorization['schema']=='exposed-tip-lateral-authorization-v1' and authorization['authorization']=='D_then_conditional_R_lateral_only' and authorization['global_G_passed'] is False and authorization['existing_attempts_only'] is True and authorization['model_config_sha256']==p['model_config_sha256'] and authorization['cooked_hashes']==predecessor['cooked_hashes'] and authorization['point_contract']==p['side_contact']['point_contract']
                 if args.phase=='R':
-                    d=read(args.predecessor_D);checks['approved_D_predecessor']=d['phase']=='D' and d['proceed_gate_passed'] and d['protocol_sha256']==sha(HERE/'protocol.json') and d['cooked_hashes']==predecessor['cooked_hashes']
+                    d=read(args.predecessor_D);checks['approved_D_predecessor']=d['phase']=='D' and d['proceed_gate_passed'] and d['protocol_sha256']==sha(HERE/'protocol.json') and d['cooked_hashes']==predecessor['cooked_hashes'] and d['side_authorization_sha256']==sha(args.side_authorization) and d['geometry_audit_sha256']==sha(args.geometry_audit)
                 geometry_checks,geometry,exposed,cooked=fixed_geometry(args.input,cfg);checks.update(geometry_checks);meta=read(args.input/'metadata.json');checks.update(fixture(meta,geometry,cfg,args.phase));checks['strict_B0_properties']=meta['initial_robot_properties']==meta['terminal_robot_properties']==before['initial_robot_properties'];checks['same_G_cooked_representation']=cooked['canonical_sha256']==predecessor['cooked_hashes']
-                base_contact.audit(args);contact=read(args.output/'evaluation.json');result.update(contact=contact,cooked_hashes=cooked['canonical_sha256']);gate=contact['contact_gate_passed'] and all(checks.values())
+                checks['capture_lateral_authorization_binding']=meta['side_authorization_sha256']==sha(args.side_authorization) and meta['geometry_audit_sha256']==sha(args.geometry_audit) and meta['global_G_passed'] is False
+                base_contact.audit(args);contact=read(args.output/'evaluation.json');online=read(args.input/'contact_report.json');checks['online_report_authorization_binding']=online['side_authorization_sha256']==sha(args.side_authorization) and online['geometry_audit_sha256']==sha(args.geometry_audit) and online['global_G_passed'] is False
+                result.update(contact=contact,cooked_hashes=cooked['canonical_sha256'],side_authorization_sha256=sha(args.side_authorization),geometry_audit_sha256=sha(args.geometry_audit),global_G_passed=False,authorized_scope='lateral-qualified normal contact only, including edge anchors; no full G or zero-axial-force claim');gate=contact['contact_gate_passed'] and all(checks.values())
             checks['capture_plus_audit_180s']=capture_wall+time.monotonic()-STARTED<=180
             result.update(status='independent_audit_complete',checks={k:bool(v) for k,v in checks.items()},proceed_gate_passed=bool(gate and all(checks.values())))
     except Exception as error:result.update(status='STOP',error=repr(error))

@@ -1,30 +1,32 @@
 {
   "schema": "stage2-exposed-tip-contact-v1",
-  "status": "frozen_plan_before_implementation",
+  "status": "limited_lateral_contact_reassessment_before_D",
   "stage": "User-authorized exposed-body simplification; old contact/native-query attempts remain closed",
   "maximum_improvement_rounds": 0,
   "baseline_improvement_round": 0,
   "execution_authorized_cases": [
-    "G"
+    "D",
+    "R"
   ],
   "cases": [
     {
       "id": "G",
       "split": "development",
       "maximum_attempts": 1,
-      "measured_contact_steps": 0
+      "measured_contact_steps": 0,
+      "execution": "CLOSED:1778 original global geometry FAIL preserved; no new G attempt"
     },
     {
       "id": "D",
       "split": "development",
       "maximum_attempts": 1,
-      "requires": "independent G PASS"
+      "requires": "Exact original failed1778 geometry audit plus separate side_authorization.json binding same model/cooked hashes; lateral-only point guards mandatory."
     },
     {
       "id": "R",
       "split": "reserved",
       "maximum_attempts": 1,
-      "requires": "independent D PASS",
+      "requires": "Same side authorization and original geometry audit, plus independent D PASS; fixed offset only.",
       "hand_x_offset_m": 0.002
     }
   ],
@@ -141,7 +143,7 @@
     "experiments/final_workcell_20261024/end_effector/fingertips.py": "e8535ea2f364cb1a94129144ed081ebcf5e521b9b858c4f360b3a712afd93919",
     ".deps/bricksim/assets/robots/fr3/robot.usda": "313c8720683a1311c67dbd6617db736bb36f1d6ecdaed02ec0fbbea9ca302306",
     ".deps/bricksim/core.cpython-311-x86_64-linux-gnu.so": "4e62dc33ee02270993c20e3cfd658e6d6ef0ea9780e53ad15cedde12f41b2455",
-    "experiments/stage2_contact_20261025/run_contact.py": "585b7791cddac193121cb36275ed1cf555e42106770dc0d39b68d6845df958d7"
+    "experiments/stage2_contact_20261025/run_contact.py": "5c2cacde261c5cafbe3984ab301c6ce43f1f528f1509a1eee08f605f411c809a"
   },
   "initial_geometry": {
     "surface": "Composed enabled Cube/Mesh colliders including instance proxies. Cube analytical exact8corners/12triangles; Mesh original convexHull/convexsurface path unchanged. Unsupported types STOP.",
@@ -243,5 +245,14 @@
     "white_points_bounds_m": 1e-09,
     "other_white_metadata": "exact",
     "physical_geometry_contact_tolerances": "unchanged"
+  },
+  "side_contact": {
+    "original_geometry_audit_sha256": "9e3f623e8f198f730727159009d0238f37207984bebed4f918505f7d2a731c9c",
+    "original_global_G_passed": false,
+    "authorization_artifact": "side_authorization.json",
+    "scope": "Separate lateral-qualified contact authorization only. Original1778 G remains failed. Same model/cooked hashes/one D then conditional R; no new G, geometry change or renewed attempt pool.",
+    "all_force_points": "Both reporting directions: retain body/white/head uniqueness, require flat inward-Y plane distance<=abs(separation)+existing50um and validated pad-outward dot expected grip normal>=existing0.9. No tip-Z exclusion; edge-near lateral anchors permitted.",
+    "normal_convention": "Finger: -sign(force)*raw_normal; coupon: +sign(force)*raw_normal; transform into actual finger frame. No fitted flip.",
+    "attempt_policy": "One D and conditional one R remain. Existing force/motion/graph/geometry-contact tolerances and budgets unchanged."
   }
 }

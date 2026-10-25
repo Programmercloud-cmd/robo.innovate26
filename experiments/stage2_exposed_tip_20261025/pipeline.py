@@ -12,14 +12,21 @@ HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[1]
 p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--phase',choices=['G','D','R'],required=True)
-p.add_argument('--approved-G',type=Path);p.add_argument('--predecessor-D',type=Path)
+p.add_argument('--geometry-audit',type=Path);p.add_argument('--side-authorization',type=Path);p.add_argument('--predecessor-D',type=Path)
 a=p.parse_args()
+if a.phase=='G':raise RuntimeError('G is closed as failed; reproduce only from the immutable1778 snapshot')
 if os.environ.get('ROBO_PUEUE_JOB')!='1':raise RuntimeError('Default Pueue required')
-for required,phase in [(a.approved_G,'G')]+([(a.predecessor_D,'D')] if a.phase=='R' else []):
-    if a.phase!='G':
-        if required is None:raise RuntimeError('Missing independent predecessor')
-        d=json.loads(required.read_text())
-        if d.get('phase')!=phase or d.get('proceed_gate_passed') is not True:raise RuntimeError('Predecessor phase/gate mismatch')
+if a.phase!='G':
+    import hashlib
+    if a.geometry_audit is None or a.side_authorization is None:raise RuntimeError('Missing geometry evidence/side authorization')
+    original=json.loads(a.geometry_audit.read_text());permission=json.loads(a.side_authorization.read_text())
+    digest=hashlib.sha256(a.geometry_audit.read_bytes()).hexdigest()
+    if original.get('phase')!='G' or original.get('proceed_gate_passed') is not False:raise RuntimeError('Original global G failure must remain explicit')
+    if permission.get('schema')!='exposed-tip-lateral-authorization-v1' or permission.get('authorization')!='D_then_conditional_R_lateral_only' or permission.get('global_G_passed') is not False or permission.get('geometry_audit_sha256')!=digest:raise RuntimeError('Invalid separate side-only permission')
+    if a.phase=='R':
+        if a.predecessor_D is None:raise RuntimeError('Missing reserved predecessor')
+        d=json.loads(a.predecessor_D.read_text())
+        if d.get('phase')!='D' or d.get('proceed_gate_passed') is not True:raise RuntimeError('Reserved requires independent lateral D pass')
 started=time.monotonic();limit=180.;records=[];child=None
 
 def stop_child():
@@ -49,7 +56,7 @@ try:
     capture=ROOT/'output';audit=ROOT/'audit';inputs=HERE/'inputs'
     command=[sys.executable,str(HERE/'supervise.py'),'--phase',a.phase,'--python',sys.executable,'--output',str(capture)]
     extra=[]
-    for flag in ['approved_G','predecessor_D']:
+    for flag in ['geometry_audit','side_authorization','predecessor_D']:
         value=getattr(a,flag)
         if value is not None:extra+=['--'+flag.replace('_','-'),str(value)]
     capture_code=execute(command+extra,'capture')

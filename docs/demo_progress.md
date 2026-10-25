@@ -518,3 +518,26 @@ Simple heads remain6mm diameter/2mm outward protrusion estimates. No threads,
 form-fit, custom collision/contact or manipulation claim follows. Current
 visual artifact pointers now reference1773; old images/results remain saved.
 The full end-to-end goal remains active/incomplete.
+
+
+## Exposed-tip model: small unloaded endcap residual, grip/taper probes pass
+
+The user-authorized simple exposed-body/head model uses the corrected1773
+mount. It omits buried boss/attachment void detail, with no full-STL form-fit
+claim. Frozen one-configuration G/D/reserved sequence reuses the signed B0
+force observer, targeted mass preservation and source PGS32/4. G1778
+(source`a5a9cb1`) completes216 fixed queries and469/469 integrity checks in
+16.550s supervised time. Allparities and clear gripping/taper/head probes
+pass. Two distal endcap-axis rays retreat130.075/130.135µm versus the frozen
+100µm limit, so original G remains FAILED and is not overwritten.
+
+Independent planner/evaluator/reviewer support a DISTINCT limited lateral
+normal-contact test of this same cook. Every loaded point must qualify at
+the flat inward gripping plane within|separation|+50µm, be uniquely body
+versus white/head compatible, and have signed outward-normal cosine>=.9.
+All prior force, reciprocal, source, state and motion bounds remain. This
+allows some off-axis normal component; it is not zero-axial-force proof.
+No tip-Z exclusion or tolerance change is proposed. Nominal fixture overlap
+is7.28mm; subtracting a sampled ray residual does not prove global support.
+A separate pinned authorization is under source review before one D and
+conditional reserved R; no new G, recook or improvement pool follows.

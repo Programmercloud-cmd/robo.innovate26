@@ -1,7 +1,7 @@
 {
   "schema": "exposed-body-contact-signed-audit-v1",
   "status": "declared_before_R2_B0_execution",
-  "scope": "One reassessed exposedbody/head model; buried formfit irrelevant by explicituserinstruction. Diagnosticfixture belowmetal, no grasp/extraction claim.",
+  "scope": "Separate lateral-qualified D/R only; full1778G remainsFAILED. Alloriginal signedforce/motion/nativebounds preserved; everyloadedpoint additionallyflatplane-compatible withfixednormalcos>=.9. Nozero-axialforce/grasp/extractionclaim.",
   "sequence": {
     "B0": "Centered stock pad/coupon positive-reporting and actual collider inventory test only",
     "proxy": "Conditional later reviewed pad-only collision proxy; no proxy implementation/execution authorized by B0 acceptance",
@@ -64,7 +64,16 @@
     "white_extra_clearance_m": 0.0001,
     "point_gate": "ALL abs(raw signed force)>1e-8N force-carrying finger-coupon points in a positive frame must have d_pad <= abs(reported_separation)+50um and d_white > abs(reported_separation)+50um+0.1mm. White-compatible or unmapped points block positive classification; no favorable subset selection.",
     "point_gate_meaning": "Conservative authored-surface compatibility, not measured cooked-collider accuracy or whole-STL fidelity. A visual STL and CollisionAPI/decomposition request alone do not prove functional concavities survive cooking.",
-    "proxy_later": "One fixed exposed body hull plushead; buriedboss omitted andvoidfilled, no fullSTL/boreclaim."
+    "proxy_later": "One fixed exposed body hull plushead; buriedboss omitted andvoidfilled, no fullSTL/boreclaim.",
+    "side_contact": {
+      "flat_face_extra_slack_m": 5e-05,
+      "minimum_outward_dot_grip_normal": 0.9,
+      "finger_outward": "negative raw signed force coefficient times world normal",
+      "coupon_outward": "positive raw signed force coefficient times world normal",
+      "all_abs_force_above_N": 1e-08,
+      "Z_cutoff": null,
+      "normal_fitting_or_sign_selection": false
+    }
   },
   "contact_reporting": {
     "API": "Existing direct PhysX tensor contact views; no convenience-wrapper stabilization mutation",

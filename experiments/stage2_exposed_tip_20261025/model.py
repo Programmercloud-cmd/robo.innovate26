@@ -46,12 +46,18 @@ def head_mesh(center,radius,height,sides):
 
 
 class Adapter:
-    def __init__(self,phase,approved=None):
+    def __init__(self,phase,approved=None,side_authorization=None):
         self.phase=phase;self.approved=approved;self.protocol_path=HERE/'protocol.json'
         self.protocol=json.loads(self.protocol_path.read_text());self.cfg=json.loads((HERE/'model_config.json').read_text())
         if sha(HERE/'model_config.json')!=self.protocol['model_config_sha256']:raise RuntimeError('Frozen model changed')
         self.reference=json.loads((ROOT/'experiments/stage2_contact_20261025/proxy_reference.json').read_text())
-        if phase!='G' and (approved is None or not json.loads(approved.read_text())['proceed_gate_passed']):raise RuntimeError('Contact requires passing predecessor audit')
+        self.side_authorization_path=side_authorization
+        if phase!='G':
+            if approved is None or side_authorization is None:raise RuntimeError('Contact requires original geometry audit and separate side authorization')
+            audit=json.loads(approved.read_text());authorization=json.loads(side_authorization.read_text())
+            if sha(approved)!=self.protocol['side_contact']['original_geometry_audit_sha256'] or audit['phase']!='G' or audit['proceed_gate_passed'] is not False:raise RuntimeError('Original failed G artifact must remain unchanged')
+            if authorization['schema']!='exposed-tip-lateral-authorization-v1' or authorization['authorization']!='D_then_conditional_R_lateral_only' or authorization['global_G_passed'] is not False or authorization['existing_attempts_only'] is not True:raise RuntimeError('Invalid lateral-only authorization scope')
+            if authorization['geometry_audit_sha256']!=sha(approved) or authorization['model_config_sha256']!=sha(HERE/'model_config.json') or authorization['cooked_hashes']!=audit['cooked_hashes']:raise RuntimeError('Side authorization does not bind the exact G/config/cook')
         self.records={};self.fixture={};self.output=None;self.cooked={}
         if sha(HERE/'head_reference.json')!=self.cfg['head_reference_sha256']:raise RuntimeError('Pinned1773 head report changed')
         self.head_reference=json.loads((HERE/'head_reference.json').read_text())
@@ -170,4 +176,5 @@ class Adapter:
             save(self.output/'exposed_G_complete.json',{'capture_completed':True,'independent_audit_required':True,'measured_contact_steps':0})
 
     def metadata(self):
-        return {'case':self.phase+'_exposed','stage':self.phase,'model':'one source-body hull plus32-sided outside head','fixture_frames':self.fixture,'exposed_geometry_file':'exposed_geometry.json','cooked_hashes':self.cooked['canonical_sha256'],'stock_collision_unchanged':False,'only_pad_and_head_collision_changed':True}
+        return {'case':self.phase+'_exposed','stage':self.phase,'model':'one source-body hull plus32-sided outside head','fixture_frames':self.fixture,'exposed_geometry_file':'exposed_geometry.json','cooked_hashes':self.cooked['canonical_sha256'],'stock_collision_unchanged':False,'only_pad_and_head_collision_changed':True,
+            'geometry_audit_sha256':sha(self.approved),'side_authorization_sha256':sha(self.side_authorization_path),'global_G_passed':False,'authorized_scope':'Lateral-qualified flat inward-face normal contact only; no global fidelity or grasp claim'}
