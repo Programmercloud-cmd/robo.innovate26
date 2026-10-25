@@ -1,0 +1,115 @@
+{
+  "schema": "eccentric-native-diagnostic-v1",
+  "status": "frozen_before_execution",
+  "maximum_steps": 8,
+  "wall_limit_s": 180,
+  "cleanup_grace_s": 5,
+  "first_failure_stops": true,
+  "retry_or_sweep": false,
+  "dt_s": 0.008333333333333333,
+  "gravity_m_s2": [
+    0,
+    0,
+    -9.81
+  ],
+  "solver": {
+    "type": "TGS",
+    "position_iterations": 32,
+    "velocity_iterations": 4,
+    "max_depenetration_velocity_m_s": 0.2
+  },
+  "OSQP_EPSILON": "1e-4",
+  "epsilon_coupling": "Solver tolerances AND inequality/interior margins; fixed baseline value, not a new precision trial.",
+  "native_core_sha256": "4e62dc33ee02270993c20e3cfd658e6d6ef0ea9780e53ad15cedde12f41b2455",
+  "native_package_version": "0.1.0.dev645+gcbd5de3",
+  "root_poses_wxyz": {
+    "lower": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "upper": [
+      -0.016,
+      0.016,
+      0.0096,
+      0.7071067811865476,
+      0,
+      0,
+      0.7071067811865476
+    ]
+  },
+  "geometry": {
+    "dimensions_studs_plates": [
+      4,
+      2,
+      3
+    ],
+    "lower_grid": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "upper_grid": [
+      -1,
+      1,
+      1,
+      1
+    ],
+    "native_offset": [
+      1,
+      1
+    ],
+    "native_quarter_turn": 1,
+    "overlap_studs": [
+      1,
+      1
+    ],
+    "lower_kinematic": true,
+    "upper_dynamic": true,
+    "additional_actors": false
+  },
+  "breakage_thresholds": {
+    "enabled": true,
+    "contact_regularization": 0.1,
+    "clutch_axial_compliance": 1.0,
+    "clutch_radial_compliance": 1.0,
+    "clutch_tangential_compliance": 1.0,
+    "friction_coefficient": 0.2,
+    "preloaded_force": 3.5,
+    "slack_fraction_warn": 0.1,
+    "slack_fraction_b_floor": 1e-09,
+    "debug_dump": true,
+    "breakage_cooldown_time": 0.05
+  },
+  "maximum_position_drift_m": 0.002,
+  "maximum_orientation_drift_rad": 0.03490658503988659,
+  "analytical_interpretation": {
+    "quantity": "Native inferred external J/H for the upper actor, not raw momentum change, anchor reaction, or weld torque.",
+    "linear_reference": "actual mass * actual gravity * dt",
+    "angular_reference": "Gravity torque about actual dynamic-upper COM is zero; damping, gyro and finite-step effects must be qualified.",
+    "residual_screen": "Descriptive only; no arbitrary residual threshold proves physics correctness.",
+    "one_fixture_limit": "Cannot distinguish every redundant-loop/full-lattice effect; full300 remains failed regardless."
+  },
+  "declared_differences_from_full300": [
+    "Only2nativebricks/1connection, no robot/baseplate/table/cameras",
+    "Lower2x4 explicitly kinematic anchor",
+    "Debug dumping enabled; unchanged physical capacities and break rules"
+  ],
+  "claims": {
+    "idle_validated": false,
+    "full300_validated": false,
+    "physical_capacity_validated": false,
+    "manipulation_validated": false
+  },
+  "frozen_helpers": {
+    "challenge2/layout.py": "0ccd77561d3339d0a85b73b919e67481b33c1bd82a0f4ff4d871e842761031bc",
+    ".deps/bricksim/core.pyi": "eaeb106bc91985b6215ba1bfc74a06dbf86d4e585802396e438c1ab7e4540987",
+    ".deps/bricksim/mdp/brick_part.py": "a6189101f61d73480ee2a6cad3192c67b4d9de7bdd896280c69543284fd31fb2",
+    ".deps/bricksim/mdp/connection_thresholds.py": "768a7eda2ae8c926af032c38fc19c7502f41a208ee40ae2206b49ae9d0bb37e8"
+  }
+}
