@@ -1,22 +1,21 @@
 # Challenge 2 simulation demo: measured progress
 
-Updated 2026-10-25. **Latest measured state:** BODY-only contact-margin
-sensitivity1824 verifies the intended100µm offset and passes a fresh1500-step
-stationary control. Its lift stops after38 samples on actual finger response
-2.043/2.078mm/s against the frozen2mm/s guard. This is a censored observation:
-retention and the prior later failures remain unresolved. The next explicit
-reassessment separates that diagnostic response cutoff from the unchanged
-1mm/s command ramp; no new criterion has passed. Native tower extraction,
-transfer, insertion and repeated sorting remain unproven. See the
-[closed margin comparison](../experiments/stage2_body_margin_20261025/README.md).
+Updated 2026-10-25. **Latest measured state:** the final free-brick retention
+trial (1825) is no longer censored by the old finger-speed guard, but fails
+relative retention (maximum 1.861 mm / 7.946°) before completing lift/hold.
+The three-improvement fixture comparison is closed. Native tower extraction,
+reject transfer, insertion and repeated sorting remain unproven. See the
+[final retention result](../experiments/stage2_finger_response_20261025/README.md).
 
-Local pregrasp RGB color classification now has a saved-image benchmark
-([Stage 1 color results](../experiments/stage1_color_20261025/results.json)); it is
-not yet integrated into the pick loop, and a source label cannot establish held
-identity. Challenge 1 is unrelated to this LEGO task. The measured Munich D435
-calibration is preserved in a passive registry and is not active workcell
-registration. Earlier dated sections below are historical results, not the
-current implementation summary.
+Local pregrasp RGB color classification has limited saved-render evidence.
+The current sensor-selected runner has an opt-in final-selection color hook;
+job 1826 verifies 116 unchanged prior outputs and all 10 invalidation controls.
+The actual Sensors helper is synthetic-tested; no fresh simulator/camera or
+manipulation run exercises that hook. A source label does not establish held
+identity. See the [handoff results](../experiments/stage1_handoff_20261025/README.md).
+Challenge 1 is unrelated to this LEGO task. The measured Munich D435 calibration
+is preserved in a passive registry and is not active workcell registration.
+Earlier dated sections below are historical results, not the current summary.
 
 The active objective is an incremental end-to-end **simulation**
 demo. No hardware motion, ROS deployment or physical readiness is authorized or
@@ -28,8 +27,9 @@ The user clarifies that Challenge 1 handles industrial bricks, not this LEGO
 color task. Older references below to waiting for that classifier are superseded;
 there is no external classifier dependency. Local RGB color classification is
 implemented and benchmarked on saved rendered segmentation candidates (job1806), with limited detection coverage and no
-real-image accuracy claim. Its integration into the runtime pick loop remains
-unfinished. The primary observation is the segmentation view before grasp; held
+real-image accuracy claim. An opt-in runtime hook is implemented and saved-data
+replay-tested (1826); fresh live perception-to-grasp execution remains unproven.
+The primary observation is the segmentation view before grasp; held
 C920 confirmation is optional pending visibility/sharpness/association evidence.
 A source-region label cannot confirm held identity.
 
@@ -51,9 +51,11 @@ Frozen R3 is reused with configured synthetic camera calibration and a translate
 source ROI. Online code receives RGB, axial depth, calibration and opaque frame
 IDs; actual brick poses/IDs/colors and reference metadata belong only to offline
 evaluation. Candidate XY/shared ridge yaw/body-top-band assumptions are not full
-poses or verified grasp access. Challenge 1 is not implemented here; the current
-four exact-ID classification fixtures are explicit mocks and abstain if no
-PRESENT candidate exists. An actual classification entry point is still needed.
+poses or verified grasp access. Challenge 1 is separate from this LEGO task.
+The historical four exact-ID classification fixtures were explicit mocks and abstained if no
+PRESENT candidate existed. Later jobs 1806/1826 add the actual local RGB color
+entry point and optional handoff; the original smoke results below remain
+historical interface evidence.
 
 The first integration smoke gate uses intact/interior-gap/endpoint states in
 both current wide diagnostic views, requiring at least one eligible PRESENT per

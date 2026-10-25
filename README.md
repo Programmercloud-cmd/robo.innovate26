@@ -1,8 +1,14 @@
 # Marmon Challenge 2: FR3 LEGO sorting
 
-The current perception baseline is the manually assisted, known-layout **v1**
-under `perception/`; see the [measured results and stopping decision](experiments/known_layout_20261024/REPORT.md).
-It is a working image-evidence baseline, not an accepted sorting demonstration.
+The current simulation demo uses the frozen depth-guided R3 candidate pipeline
+and an opt-in pregrasp LEGO color handoff. The [measured progress](docs/demo_progress.md)
+and [stage protocol](docs/demo_stage_protocol.md) describe the active work.
+The latest saved handoff replay (1826) passes; native extraction and free-brick
+retention still fail, and transfer/stacking remain unproven.
+
+The manually assisted, known-layout **v1** under `perception/` is a preserved
+real-image baseline; see its [results and stopping decision](experiments/known_layout_20261024/REPORT.md).
+It is not an accepted sorting demonstration.
 The [pretrained-detector comparison](experiments/detection_20261024/REPORT.md)
 is a closed historical experiment with separate execution and artifacts.
 The corrected simulation input has **300 bricks**: ten layers, each with six
@@ -41,13 +47,13 @@ Isaac Sim 5.1 / Isaac Lab workcell for the **Franka Research 3**, using native
 physics. The robot type follows the team's confirmed hardware. The supplied
 slides refer to a ViperX 300 S for the LEGO demo.
 
-The scene contains a fixed table, FR3 with its parallel gripper, a mixed input
-stack connected to an anchored studded baseplate, output baseplates and a scrap
-tray. The alternating lattice layers approximate the setup photos. Dimensions
-and layouts are configurable estimates, not a reconstruction calibrated from
+The legacy scaffold described below contains a fixed table, FR3 with its
+parallel gripper, a mixed input stack connected to an anchored studded baseplate,
+output baseplates and a scrap tray. The alternating lattice layers approximate
+the setup photos. Dimensions and layouts are configurable estimates, not a reconstruction calibrated from
 images. The default input contains 48 standard 2x4 bricks in three layers.
 
-## Use
+## Legacy scaffold use
 
 The existing workstation runtime is
 `/home/faps/miniforge3/envs/unitree_sim_env/bin/python`. No shared Conda packages
@@ -98,7 +104,7 @@ exception. Runs export `workcell.usda` and smoke/evaluation runs write
 on CPU for the native connection backend. Generated runtime files and the supplied resources are not
 automatically committed.
 
-## Task contract
+## Legacy scaffold task contract
 
 - Actions: seven values, `[dx, dy, dz, rx, ry, rz, gripper]`, normalized to
   `[-1, 1]`. Each control step requests at most 10 mm translation and 0.08 rad
@@ -130,8 +136,11 @@ it is not the sensor-driven color classifier for the current demo. Challenge 1
 concerns industrial bricks and is separate from this LEGO task. The current
 plan is local RGB color classification from the selected pre-grasp segmentation
 region, with optional C920 confirmation after visibility/focus checks. That LEGO
-classifier is not yet implemented or validated. In `configs/workcell.json`, the two
-reject categories preserve the element IDs stated in slide 24. Their RGB values
+classifier is implemented with limited saved-render evidence (1806), and its
+final-selection handoff is replay-tested (1826). It has no new real-image,
+held-object, or live manipulation validation; see the
+[handoff result and limitations](experiments/stage1_handoff_20261025/README.md).
+In `configs/workcell.json`, the two reject categories preserve the element IDs stated in slide 24. Their RGB values
 are placeholders; they are not verified LEGO element-to-color mappings. A real
 detector must provide a brick identity/pose and shade/quality estimate in the
 robot base frame, with timestamp and confidence. Keep its estimates separate
