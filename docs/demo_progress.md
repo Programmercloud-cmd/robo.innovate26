@@ -666,3 +666,23 @@ or authorize a pick. The same job checks an exact three-line audit cache change
 on fixed zero/positive records, preserving every value, check and sample; no
 full case reevaluation or performance search is included. No new camera or
 manipulation parameter is selected before that evidence is reviewed.
+
+
+Saved-data diagnostic 1803 (source `86381e9`) completes in 11.988 seconds with
+zero physics steps. It exactly reproduces all 274,320 first-candidate samples:
+85,162 outside the close image, 7,522 known-self samples, 181,616 measured free
+rays, and 20 unresolved behind-return samples. Alternate-view coverage is
+projection-only evidence; it does not prove clearance. The fixed 25-record audit
+cache comparison is exactly equal with unchanged arrays. Its 0.784/0.125-second
+old/cached timings are descriptive, not a general speed guarantee.
+
+Round 2 adds only the existing wide-overhead preset as a measured geometry-safety
+view. Close R3 detection and local height remain unchanged. Same-clock depth,
+intrinsics/pose readbacks, restored close pose and positive per-point witnesses
+are recorded and independently audited. Any sample without measured support
+still abstains. The physics, controller and numeric limits are unchanged; the
+accepted control is reused through an exact single-leaf protocol comparison.
+The full 829.309 seconds already spent remain charged, leaving 370.691 seconds
+for one retained I attempt and audit. This configured simulation view is not a
+calibrated physical-camera claim. H remains reserved pending an independent I
+pass. No extraction or transfer result follows from source approval.

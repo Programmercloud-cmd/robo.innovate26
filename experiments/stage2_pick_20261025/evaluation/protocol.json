@@ -1,7 +1,7 @@
 {
   "schema": "stage2-pick-independent-audit-v1",
   "scope": "One sensor-selected native extraction plus matched stationary control. Separate physics extraction, online held association and transition permission. No transfer/insertion/repeated-demo claim.",
-  "capture_protocol_sha256": "0d902e26bc4f11eda1d668b5e92fc97a11f360ef40f26423247f86681a764471",
+  "capture_protocol_sha256": "16ce8eb603e2d620c97b931c02dae43ed605060187d252a6873eb9d9a824d8ce",
   "case_budget_seconds": 1200,
   "cases": {
     "I": {
@@ -59,7 +59,8 @@
   "helpers_sha256": {
     "contact_helpers.py": "66822b8ee50400ea7905731d35499644a7bb16bb8ac81b135a14493c99d135e2",
     "mass_reference.py": "0c5e454125a8746638b06010f4481a5e367dc57203fd8da9ee1308ce19887675",
-    "contact_protocol.json": "f47d8eb97a6291aa74bf45dfa698efcaf2ba6a31c5b04be846cc9d69dfc66442"
+    "contact_protocol.json": "f47d8eb97a6291aa74bf45dfa698efcaf2ba6a31c5b04be846cc9d69dfc66442",
+    "safety_views.py": "20b9aeec9a2245a1f43e278eaf637987da1739f0aeff99ef7668fb52d54716e9"
   },
   "inputs_sha256": {
     "geometry_audit.json": "9e3f623e8f198f730727159009d0238f37207984bebed4f918505f7d2a731c9c",
@@ -69,7 +70,8 @@
     "baseline_metadata.json": "a86cc9a735b0464b06f4503be5fb30dd895fa9f50a15dd394ef6e01a7ee02fc1",
     "baseline_geometry.json": "40081b54c140ab4cbb67b07e3ab3b077ccb7805ede2521f9f3ab61ce53b7e930",
     "tip.stl": "30c3e47142dce9ba82ec46edf42f1dc2825d620d23bad0a95ce1e2de902b752d",
-    "frozen_geometry.json": "8a0266b2ccbf75f6d773fdd1e6309c70f9ab8828da96b563da133f383f83c897"
+    "frozen_geometry.json": "8a0266b2ccbf75f6d773fdd1e6309c70f9ab8828da96b563da133f383f83c897",
+    "prior_control_protocol.json": "0d902e26bc4f11eda1d668b5e92fc97a11f360ef40f26423247f86681a764471"
   },
   "budget_accounting": "1200s prospective cumulative per CASE before the first pick: original1800capture+failedaudit443.33917641901644s plus ONE corrected audit replay plus subsequent pick capture/audit. Replay charges original capture only within prior wall, never twice. Old600s result remains immutable. No physics/step/force/data gate change or new simulation retry.",
   "phase_boundaries": "At final-approach and lift transition, commanded waypoint interpolation begins at previous same-row actual TCP pose, as frozen controller specifies; lift stays straight TABLE+Z for5mm from that measured start. No target/body pose write or post-hoc target substitution.",
@@ -96,6 +98,28 @@
       "legacy": 600,
       "current": 1200
     },
-    "compatibility": "Only this pinned I/control capture may use the legacy capture protocol; parsed legacy JSON must equal current JSON after replacing only this single wall-budget leaf by600. All physics and data validation remains unchanged."
+    "compatibility": "Only this pinned I/control capture may use the legacy capture protocol; parsed legacy JSON must equal current JSON after replacing only this single wall-budget leaf by600. All physics and data validation remains unchanged.",
+    "closed": true,
+    "completed_job": 1801
+  },
+  "control_bridge": {
+    "case": "I",
+    "mode": "control",
+    "audit_sha256": "18888820badbc258ea1f2944d9c25c1574440ee05f541d24089308f095ad4f0f",
+    "science_sha256": "0d902e26bc4f11eda1d668b5e92fc97a11f360ef40f26423247f86681a764471",
+    "rule": "Exact passing1801I/control audit49/49 only. Current scientific JSON must equal pinned prior_control_protocol.json after removing ONLY perception.geometry_safety_view; no physics/source/tool/controller/numerical limit changes. H uses a fresh current-protocol control. No old600s replay reopened."
+  },
+  "retained_case_clock": {
+    "sha256": "734b8a03803c832553ee0d1d2b0876850b01fc15676cc7cda6aa5c477c548670",
+    "cumulative_case_seconds": 829.3087081270351,
+    "rule": "Retained I/pick must charge latest1803 actual cumulative, never reset to control673.089753872s."
+  },
+  "geometry_safety_acceptance": "Two actual same-clock RGB/depth captures and configured/actual camera readback; unchanged close R3 camera restored. Full numeric sampled-point/self/witness packet; independently recompute proprioceptive self mask and actual finite positive depth-gap witnesses, require all nonself points covered. Projection-only coverage and unresolved/unknown in both views never authorize clearance. Source sample generation/envelopes unchanged and provenance-reviewed, not global continuous-volume collision certification.",
+  "round2_safety_view": {
+    "RGBD_clock": "Close and one fixed existing wide configured view at identical physics time; close restored; no physics or state advance.",
+    "readbacks": "Existing frozen new-leaf guards K1e-3px/position2um/angle1e-4rad; no calibrated hardware accuracy claim.",
+    "predicate": "For every unchanged nonself sampled point, strict positive gap in at least one finite/front/inframe actually measured depth view. No interpolation, unknown fill, negative-gap solid inference or untested projection acceptance.",
+    "self_mask": "Independent current known-tool ConvexHull membership at frozen1e-8m predicate from saved initial actual finger proprioception; no source/body GT.",
+    "scope": "Point generator/envelopes/path source remain frozen and reviewed; exact sampled packet is not a global swept-volume certificate."
   }
 }

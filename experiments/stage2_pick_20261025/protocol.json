@@ -99,7 +99,60 @@
     "fresh_frame_id_and_candidate_id_required": true,
     "motion_sensor_rate_Hz": 10,
     "height": "Use locally supported upper depth surface from the selected opaque RGB-D neighborhood; coarse R3 band median alone is not a certified body-top. Account for known1.7mm stud/body difference when checking nominal body-side overlap. Unsupported/ambiguous depth abstains.",
-    "unknown_or_abstention": "Counts as failed coverage for this case, not a successful pick or permission to fill from simulator truth."
+    "unknown_or_abstention": "Counts as failed coverage for this case, not a successful pick or permission to fill from simulator truth.",
+    "geometry_safety_view": {
+      "id": "geometry_safety_wide",
+      "source_config": "experiments/final_workcell_20261024/cameras_realism.json",
+      "source_config_sha256": "aad98d4f63c3f754d7cdfcc62d70c2b3f4179233e84d2ba776042eb773c85dac",
+      "source_view_id": "diagnostic_table_top",
+      "view": {
+        "id": "geometry_safety_wide",
+        "eye_offset_m": [
+          0.15,
+          -0.055,
+          1.4
+        ],
+        "target_offset_m": [
+          0.15,
+          -0.055,
+          -0.1
+        ],
+        "up_world": [
+          0,
+          -1,
+          0
+        ]
+      },
+      "image_size": [
+        1280,
+        960
+      ],
+      "K": [
+        [
+          923.9097744360902,
+          0,
+          640.0
+        ],
+        [
+          0,
+          923.9097744360902,
+          480.0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "calibration_policy": "Fixed original full-design reference center and unchanged focal/aperture/resolution; no target or current-state camera recentering. Configured virtual view only.",
+      "capture_policy": "Close RGB-D first for unchanged R3. Wide RGB-D at identical physics time, then restore close pose. Geometry only.",
+      "clearance_policy": "Identical sampled points/envelopes/proprio self-skip. Each nonself sample requires strict positive measured depth gap in at least one valid view; otherwise abstain. Unknown remains unknown in each view.",
+      "readback_guards": {
+        "K_atol_px": 0.001,
+        "position_m": 2e-06,
+        "angle_rad": 0.0001
+      }
+    }
   },
   "engineering_envelopes": {
     "XY_m": 0.0015,

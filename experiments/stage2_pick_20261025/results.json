@@ -2,9 +2,9 @@
   "schema": "stage2-native-pick-results-v1",
   "goal_status": "INCOMPLETE",
   "baseline_source_commit": "efe9757",
-  "scientific_protocol_sha256": "0d902e26bc4f11eda1d668b5e92fc97a11f360ef40f26423247f86681a764471",
+  "scientific_protocol_sha256": "16ce8eb603e2d620c97b931c02dae43ed605060187d252a6873eb9d9a824d8ce",
   "maximum_improvement_rounds": 3,
-  "current_improvement_round": 1,
+  "current_improvement_round": 2,
   "rounds": [
     {
       "round": 1,
@@ -13,6 +13,16 @@
       "physics_or_manipulation_parameters_changed": false,
       "original_failure_preserved": true,
       "status": "CORRECTED_CONTROL_PASS"
+    },
+    {
+      "round": 2,
+      "failure": "Close segmentation camera omits85162 sampled tool-path points;20 near-edge samples are unresolved behind depth returns.",
+      "change": "One fixed existing wide-overhead measured RGB-D geometry view, unchanged closeR3; every nonself sample needs a positive actual depth witness in at least one view. Exact I/O cache equivalence already validated.",
+      "status": "SOURCE_APPROVED_ONE_PICK",
+      "physics_controller_or_numerical_limits_changed": false,
+      "original_failures_preserved": true,
+      "prior_case_wall_seconds": 829.3087081270351,
+      "remaining_case_seconds": 370.69129187296494
     }
   ],
   "I": {
@@ -129,10 +139,24 @@
     "status": "Recommended policy; not yet implemented or validated color accuracy."
   },
   "diagnostic": {
-    "status": "SOURCE_REVIEW",
+    "status": "PASS_COMPLETED",
     "attempt_limit": 1,
     "maximum_active_seconds": 30,
     "scope": "First candidate only: FOV/depth/unresolved clearance categories and projection-only alternate views; fixed exact cache-equivalence comparison.",
-    "new_physics_steps": 0
-  }
+    "new_physics_steps": 0,
+    "job_id": 1803,
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T102948.326898Z-stage2-pick-clearance-diagnostic-r2",
+    "actual_seconds": 11.987593902013032,
+    "cumulative_case_seconds": 829.3087081270351,
+    "cache_equivalence_passed": true,
+    "fixture_count": 25,
+    "exact_replay_counts": true,
+    "classification_counts": {
+      "out_of_image": 85162,
+      "self_known_proprio_skip": 7522,
+      "observed_ray_free": 181616,
+      "UNRESOLVED_OCCLUDED_OR_OBSTRUCTED": 20
+    }
+  },
+  "round1_scientific_protocol_sha256": "0d902e26bc4f11eda1d668b5e92fc97a11f360ef40f26423247f86681a764471"
 }

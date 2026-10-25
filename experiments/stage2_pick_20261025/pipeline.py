@@ -22,6 +22,7 @@ def main():
     parser.add_argument('--mode', choices=('control', 'pick'), required=True)
     parser.add_argument('--predecessor-control', type=Path)
     parser.add_argument('--predecessor-development', type=Path)
+    parser.add_argument('--prior-case-supervisor', type=Path)
     parser.add_argument('--prior-wall-seconds', type=float, default=0.)
     args = parser.parse_args()
     if os.environ.get('ROBO_PUEUE_JOB') != '1':
@@ -101,7 +102,7 @@ def main():
         command = [sys.executable, str(HERE/'evaluation/evaluate.py'),
                    '--case', args.case, '--mode', args.mode,
                    '--input', str(output), '--output', str(audit)]
-        for flag in ('predecessor_control', 'predecessor_development'):
+        for flag in ('predecessor_control', 'predecessor_development', 'prior_case_supervisor'):
             value = getattr(args, flag)
             if value is not None:
                 command += ['--'+flag.replace('_', '-'), str(value)]

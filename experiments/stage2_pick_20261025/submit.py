@@ -17,12 +17,26 @@ def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def prior_control_compatible(path, report):
+    """One camera-only extension may reuse the exact accepted I control."""
+    base = ROOT/'runs/20261025T095332.007786Z-stage2-pick-I-control-audit-correction/experiments/stage2_pick_20261025/protocol.json'
+    if (report.get('case') != 'I' or report.get('mode') != 'control'
+            or sha(path) != '18888820badbc258ea1f2944d9c25c1574440ee05f541d24089308f095ad4f0f'
+            or report.get('protocol_sha256') != sha(base)
+            or sha(base) != '0d902e26bc4f11eda1d668b5e92fc97a11f360ef40f26423247f86681a764471'):
+        return False
+    current = json.loads((HERE/'protocol.json').read_text())
+    extension = current['perception'].pop('geometry_safety_view', None)
+    return isinstance(extension, dict) and current == json.loads(base.read_text())
+
+
 def predecessor(path, case, mode, protocol_sha):
     report = json.loads(path.read_text())
     timing = json.loads((path.parent.parent/'pipeline_supervisor.json').read_text())
     if (report.get('case') != case or report.get('mode') != mode
             or report.get('proceed_gate_passed') is not True
-            or report.get('protocol_sha256') != protocol_sha
+            or not (report.get('protocol_sha256') == protocol_sha
+                    or prior_control_compatible(path, report))
             or timing.get('case') != case or timing.get('mode') != mode
             or timing.get('proceed_gate_passed') is not True
             or timing.get('within_budget') is not True
@@ -37,6 +51,8 @@ def main():
     parser.add_argument('--mode', choices=('control', 'pick'), required=True)
     parser.add_argument('--predecessor-control', type=Path)
     parser.add_argument('--predecessor-development', type=Path)
+    parser.add_argument('--prior-case-supervisor', type=Path,
+                        help='Charge failed attempts and diagnostics as well as the passing control')
     parser.add_argument('--replay-control-capture', type=Path,
                         help='One reviewed audit-only correction of the immutable 1800 capture')
     args = parser.parse_args()
@@ -62,6 +78,17 @@ def main():
         prior = predecessor(args.predecessor_control, args.case, 'control', protocol_sha)['cumulative_case_seconds']
     elif args.predecessor_control is not None:
         parser.error('Control mode has no same-case predecessor')
+    if args.prior_case_supervisor is not None:
+        latest = json.loads(args.prior_case_supervisor.read_text())
+        if (latest.get('case') != args.case or latest.get('within_budget') is not True
+                or latest.get('case_limit_seconds') != protocol['budget']['capture_plus_independent_audit_seconds_per_case']
+                or float(latest['cumulative_case_seconds']) < prior):
+            raise RuntimeError('Latest case clock cannot discard previous charged work')
+        prior = float(latest['cumulative_case_seconds'])
+    if (args.case == 'I' and args.mode == 'pick'
+            and 'geometry_safety_view' in protocol['perception']
+            and (args.prior_case_supervisor is None or prior < 829.3087081270351)):
+        raise RuntimeError('Round2 must include the failed pick and completed1803 diagnostic costs')
     if args.case == 'H':
         if args.predecessor_development is None:
             parser.error('Reserved H requires independent development I success')
@@ -108,6 +135,7 @@ def main():
         'frozen_geometry.json': ROOT/'experiments/final_workcell_20261024/geometry.json',
         'legacy_capture_protocol.json': ROOT/'runs/20261025T093331.984420Z-stage2-pick-I-control/experiments/stage2_pick_20261025/protocol.json',
         'legacy_failed_control_audit.json': ROOT/'runs/20261025T093331.984420Z-stage2-pick-I-control/audit/evaluation.json',
+        'prior_control_protocol.json': ROOT/'runs/20261025T095332.007786Z-stage2-pick-I-control-audit-correction/experiments/stage2_pick_20261025/protocol.json',
     }
     command = [PYTHON, str(snapshot/'experiments'/HERE.name/'pipeline.py'),
                '--case', args.case, '--mode', args.mode, '--prior-wall-seconds', repr(prior)]
@@ -123,6 +151,9 @@ def main():
             files[name] = value
             files[flag+'_pipeline_supervisor.json'] = value.parent.parent/'pipeline_supervisor.json'
             command += ['--'+flag.replace('_', '-'), str(inputs/name)]
+    if args.prior_case_supervisor is not None:
+        files['prior_case_pipeline_supervisor.json'] = args.prior_case_supervisor
+        command += ['--prior-case-supervisor', str(inputs/'prior_case_pipeline_supervisor.json')]
     for name, source in files.items():
         shutil.copy2(source, inputs/name)
     lines = ['#!/usr/bin/env bash', 'set -eo pipefail',

@@ -4,9 +4,15 @@ import math
 import numpy as np
 from evaluate import polygon_iou,relative_pose,initial_matches,expected_names,legacy_budget_only
 from contact_helpers import rotation,angle_between,classify_point
+from safety_views import project_free
 
 def main():
     square=[[0,0],[10,0],[10,10],[0,10]]
+    cal={'K':[[1,0,0],[0,1,0],[0,0,1]],'R':np.eye(3).tolist(),'t':[0,0,0]}
+    points=np.array([[0.,0.,1.],[0.,0.,3.],[100.,0.,1.],[0.,0.,-1.]])
+    a=project_free(points,np.array([[2.]]),cal);b=project_free(points,np.array([[4.]]),cal)
+    assert a.tolist()==[True,False,False,False] and b.tolist()==[True,True,False,False]
+    assert not project_free(points,np.array([[np.nan]]),cal).any() and (a|b).tolist()==[True,True,False,False]
     spec={'layers':2,'layer_yaws_quarter_turn':[0,1],'world_axis_counts_by_yaw_quarter_turn':{'0':[5,6],'1':[6,5]}}
     names=expected_names(spec,[])
     assert len(names)==61 and 'brick_0_4_5' in names and 'brick_0_5_4' not in names and 'brick_1_5_4' in names and 'brick_1_4_5' not in names

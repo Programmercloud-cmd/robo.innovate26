@@ -126,6 +126,7 @@ def main():
                 selected,upper,target=candidate,height,goal
                 selection={**frame,'candidate':candidate,'supported_upper_surface_m':height,'local_depth_support':support,'engineering_envelopes':protocol['engineering_envelopes'],'clearance':clearance,'nominal_body_side_overlap_m':float(overlap),'calibration':sensors.calibration,'rejected_candidates':rejected};break
             if selection is None:selection={**frame,'candidate':None,'local_depth_support':{'supported':False},'clearance':{'passed':False},'engineering_envelopes':protocol['engineering_envelopes'],'rejected_candidates':rejected};status='abstained'
+            selection['geometry_views']=sensors.geometry_views;selection['geometry_safety_config_sha256']=sensors.safety_config_sha256
             save(output/'online/selection.json',selection)
         else:save(output/'online/selection.json',None)
         recorder=Recorder(context,output,args.case,sensors,selection);recorder.stationary=args.mode=='control'
@@ -133,6 +134,9 @@ def main():
         proxies={label:SimpleNamespace(data=SimpleNamespace(root_com_pos_w=robot.data.body_com_pos_w[:,robot.body_names.index('fr3_'+label+'finger')])) for label in ('left','right')}
         observer=module.ContactObserver(sim,proxies,output);contacts.output=output
         metadata={'case':args.case,'mode':args.mode,'protocol_sha256':sha(HERE/'protocol.json'),'dt_s':dt,'OSQP_EPSILON':os.environ['OSQP_EPSILON'],'T_world_table':np.eye(4).tolist(),'table_pose_world_wxyz':[0,0,0,1,0,0,0],'settings_initial':settings(context,tool),'settings_terminal':None,'tool_geometry_file':'tool_geometry.json','cook_file':'cook_results.json','property_restoration_file':'property_restoration.json','online_trace':'online/trace.jsonl','truth_inventory':'evaluation_truth/initial_inventory.json','truth_trace':'evaluation_truth/trace.jsonl','observer_metadata':'contact_observations/metadata.json','evaluation_observer_metadata':'evaluation_truth/contact_observations/metadata.json' if recorder.source_observer else None,'initial_joint_positions':initial['q'],'finger_joint_indices':finger_ids,'arm_joint_indices':arm_ids,'joint_limits':robot.data.joint_pos_limits[0].cpu().numpy().tolist()}
+        metadata['initial_proprioception']=initial
+        metadata['geometry_safety_config_sha256']=sensors.safety_config_sha256 if sensors else None
+        metadata['geometry_views_file']='online/geometry_views.json' if sensors else None
         save(output/'capture_metadata.json',metadata)
         phase='control' if args.mode=='control' else 'approach';phase_start=np.asarray(initial['tcp_pose_table_wxyz']);phase_target=None;phase_time=0.;finger_command=float(q0[finger_ids].mean());positive=hold_steps=0;previous=initial;lift_start=None;last_sensor=0.;step=0
         if args.mode=='pick' and target is not None:phase_target=target.copy();phase_target[2]+=.010

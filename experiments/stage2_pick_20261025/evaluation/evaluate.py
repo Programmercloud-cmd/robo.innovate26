@@ -12,6 +12,7 @@ import cv2
 import numpy as np
 from contact_helpers import rotation,angle_between,view_summary,filter_paths,classify_point,close
 from mass_reference import restoration_checks,targeted_write_checks
+from safety_views import audit_safety
 HERE=Path(__file__).resolve().parent
 
 def read(p):return json.loads(Path(p).read_text())
@@ -50,6 +51,7 @@ def legacy_budget_only(legacy,current):
 
 def replay_setup(args,p,science,supervisor):
     rule=p['replay']
+    if rule.get('closed') is True:raise ValueError('Historical1800 audit-only replay is closed')
     if args.case!='I' or args.mode!='control' or args.predecessor_control is not None or args.predecessor_development is not None:raise ValueError('Replay only authorizes original I/control')
     if args.input.resolve()!=Path(rule['original_capture_directory']):raise ValueError('Replay must read original immutable1800 capture directory')
     pins=[(args.replay_prior_supervisor,rule['prior_supervisor_sha256']),(args.input/'supervisor.json',rule['capture_supervisor_sha256']),(args.input/'capture_metadata.json',rule['capture_metadata_sha256']),(args.input/'capture_complete.json',rule['control_marker_sha256'])]
@@ -62,6 +64,16 @@ def replay_setup(args,p,science,supervisor):
     if not (failure['case']=='I' and failure['mode']=='control' and failure['proceed_gate_passed'] is False and failure['protocol_sha256']==rule['legacy_capture_protocol_sha256'] and [k for k,v in failure['checks'].items() if not v]==['case_named_inventory']):raise ValueError('Replay failure is not the pinned inventory-only1800 audit')
     if not (prior['case']=='I' and prior['mode']=='control' and prior['proceed_gate_passed'] is False and prior['within_budget'] is True and prior['audit_sha256']==rule['original_failed_audit_sha256'] and prior['cumulative_case_seconds']==rule['prior_case_wall_seconds'] and supervisor['capture_wall_seconds']==rule['original_capture_wall_seconds']):raise ValueError('Replay prior/capture accounting mismatch')
     return float(prior['cumulative_case_seconds']),0.,rule['legacy_capture_protocol_sha256']
+
+def control_compatible(path,report,args,p,science):
+    if report['protocol_sha256']==sha(HERE.parent/'protocol.json'):return True
+    rule=p['control_bridge']
+    if not (args.case=='I' and args.mode=='pick' and sha(path)==rule['audit_sha256'] and report['case']=='I' and report['mode']=='control' and report['protocol_sha256']==rule['science_sha256'] and report['proceed_gate_passed'] is True and len(report['checks'])==49 and all(report['checks'].values())):return False
+    prior=HERE.parent/'inputs/prior_control_protocol.json'
+    if sha(prior)!=rule['science_sha256']:return False
+    comparison=json.loads(json.dumps(science))
+    if comparison['perception'].pop('geometry_safety_view',None) is None:return False
+    return comparison==read(prior)
 
 def relative_pose(tcp,body):
     rt,rb=rotation(tcp[3:7]),rotation(body[3:7])
@@ -189,6 +201,9 @@ def audit(args,p,science,deadline):
                 heights=[float((world_to_table@(state[:3]+rotation(state[3:7])@np.array([0,0,z])-np.asarray(table[:3])))[2]) for z in [.0096,.0113]]
                 depth=selected.get('supported_upper_surface_m');checks['selected_upper_depth_1mm']=depth is not None and math.isfinite(depth) and min(abs(depth-z) for z in heights)<=.001
             checks['sensor_supported_clearance']=selected['clearance']['passed'] is True and selected['local_depth_support']['supported'] is True and selected['engineering_envelopes']==science['engineering_envelopes']
+    safety_details=None
+    if args.mode=='pick':
+        view_checks,safety_details=audit_safety(folder,selected,meta,geometry,science);checks.update(view_checks)
     observer=read(folder/meta['observer_metadata']);source_metadata=folder/'evaluation_truth/contact_observations/metadata.json'
     if source_metadata.exists():
         source_observer=read(source_metadata)
@@ -200,7 +215,7 @@ def audit(args,p,science,deadline):
     checks['contact_SI_processing']=observer['stage_meters_per_unit']==1 and observer['observation_setting']['after'] is False
     if args.mode=='pick' and selected.get('candidate') is None and meta['steps_executed']==0:
         checks['nonempty_pick_coverage']=False
-        return {'checks':checks,'coverage_status':'ABSTAIN','steps':0,'target_binding':{'target_id':None,'eligible_matches':[],'evaluation_only':True},'metrics':{'measured_contact_steps':0,'force_peak_N':None},'reciprocal_contact_status':'UNTESTED_NO_SELECTED_TARGET','online_hold_status':{'status':'UNKNOWN','transfer_authorized':False}}
+        return {'checks':checks,'coverage_status':'ABSTAIN','geometry_safety':safety_details,'steps':0,'target_binding':{'target_id':None,'eligible_matches':[],'evaluation_only':True},'metrics':{'measured_contact_steps':0,'force_peak_N':None},'reciprocal_contact_status':'UNTESTED_NO_SELECTED_TARGET','online_hold_status':{'status':'UNKNOWN','transfer_authorized':False}}
     contact_protocol=read(HERE/'contact_protocol.json');maxsteps=3600;previous=None;first=None;seen=0;detached=None;reference=None;relative_max_m=relative_max_rad=0.;rise=None;non_target_pos=non_target_angle=0.;peaks={'left':0.,'right':0.};point_count=0;point_flat=0.;point_dot=1.;signs={1,-1};positive_count=0;positive_step=None;grasp_commands=None;lift_origin=None;lift_final=None;hold_start=None;hold_end=None;all_checks=True;failures={};last_edges=set(initial_edges);final=None
     q0=np.asarray(meta['initial_joint_positions']);finger_ids=meta['finger_joint_indices'];arm_ids=meta['arm_joint_indices'];limits=np.asarray(meta['joint_limits']);target_index=ids.index(target) if target is not None else None
     on=iter(rows(folder/meta['online_trace']));tr=iter(rows(folder/meta['truth_trace']));contact_trace=iter(rows(folder/'contact_observations/trace.jsonl'));source_trace=iter(rows(folder/'evaluation_truth/contact_observations/trace.jsonl')) if source_metadata.exists() else None
@@ -283,13 +298,13 @@ def audit(args,p,science,deadline):
         checks['held_relative_transform']=detached is not None and relative_max_m<=.001 and relative_max_rad<=math.radians(3)
         checks['final_hold_250ms']=hold_start is not None and hold_end-hold_start+meta['dt_s']>=.25-1e-7 and previous['phase']=='hold'
         checks['positive_force_trigger']=positive_step is not None
-    return {'checks':checks,'frame_failure_counts':failures,'steps':seen,'target_binding':{'target_id':target,'eligible_matches':[x for x in binding if x['iou']>=.5],'evaluation_only':True},'metrics':{'first_singleton_step':detached,'target_rise_m':rise,'held_translation_max_m':relative_max_m if detached else None,'held_angle_max_rad':relative_max_rad if detached else None,'non_target_translation_max_m':non_target_pos,'non_target_angle_max_rad':non_target_angle,'force_peak_N':peaks,'first_force_trigger_step':positive_step,'loaded_point_observations':point_count,'max_loaded_flat_distance_m':point_flat if point_count else None,'min_loaded_outward_dot':point_dot if point_count else None},'reciprocal_contact_status':'MEASURED' if target is not None and 'source' in resolved else 'UNMEASURED_ZERO_LOAD_CONTROL' if args.mode=='control' else 'UNMEASURED','online_hold_status':read(folder/'online/held_association.json') if (folder/'online/held_association.json').exists() else {'status':'UNKNOWN','transfer_authorized':False}}
+    return {'checks':checks,'geometry_safety':safety_details,'frame_failure_counts':failures,'steps':seen,'target_binding':{'target_id':target,'eligible_matches':[x for x in binding if x['iou']>=.5],'evaluation_only':True},'metrics':{'first_singleton_step':detached,'target_rise_m':rise,'held_translation_max_m':relative_max_m if detached else None,'held_angle_max_rad':relative_max_rad if detached else None,'non_target_translation_max_m':non_target_pos,'non_target_angle_max_rad':non_target_angle,'force_peak_N':peaks,'first_force_trigger_step':positive_step,'loaded_point_observations':point_count,'max_loaded_flat_distance_m':point_flat if point_count else None,'min_loaded_outward_dot':point_dot if point_count else None},'reciprocal_contact_status':'MEASURED' if target is not None and 'source' in resolved else 'UNMEASURED_ZERO_LOAD_CONTROL' if args.mode=='control' else 'UNMEASURED','online_hold_status':read(folder/'online/held_association.json') if (folder/'online/held_association.json').exists() else {'status':'UNKNOWN','transfer_authorized':False}}
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__,allow_abbrev=False)
     parser.add_argument('--case',choices=['I','H'],required=True);parser.add_argument('--mode',choices=['control','pick'],required=True)
     for key in ['input','output']:parser.add_argument('--'+key,type=Path,required=True)
-    for key in ['predecessor-control','predecessor-development','replay-prior-supervisor']:parser.add_argument('--'+key,type=Path)
+    for key in ['predecessor-control','predecessor-development','replay-prior-supervisor','prior-case-supervisor']:parser.add_argument('--'+key,type=Path)
     args=parser.parse_args();result={'case':args.case,'mode':args.mode,'proceed_gate_passed':False,'protocol_sha256':sha(HERE.parent/'protocol.json'),'evaluation_protocol_sha256':sha(HERE/'protocol.json')}
     if os.environ.get('ROBO_PUEUE_JOB')!='1':raise RuntimeError('Default Pueue required')
     p=read(HERE/'protocol.json');science=read(HERE.parent/'protocol.json');supervisor=read(args.input/'supervisor.json');prior=float(supervisor['prior_case_wall_seconds']);capture=float(supervisor['capture_wall_seconds']);limit=float(science['budget']['capture_plus_independent_audit_seconds_per_case']);args.accepted_capture_protocol_sha256=sha(HERE.parent/'protocol.json')
@@ -310,11 +325,16 @@ def main():
         for name,digest in p['helpers_sha256'].items():
             if sha(HERE/name)!=digest:raise ValueError('Frozen helper changed: '+name)
         predecessor_checks={}
+        if args.prior_case_supervisor is not None:
+            rule=p['retained_case_clock'];clock=read(args.prior_case_supervisor)
+            predecessor_checks['latest_case_clock_bound']=args.case=='I' and args.mode=='pick' and sha(args.prior_case_supervisor)==rule['sha256'] and clock['case']=='I' and clock['cumulative_case_seconds']==prior==rule['cumulative_case_seconds'] and clock['within_budget'] is True
+            result['prior_case_supervisor_sha256']=sha(args.prior_case_supervisor)
+        elif args.case=='I' and args.mode=='pick':predecessor_checks['latest_case_clock_bound']=False
         for flag,case,mode in [('predecessor_control',args.case,'control'),('predecessor_development','I','pick')]:
             path=getattr(args,flag);required=(flag=='predecessor_control' and args.mode=='pick') or (flag=='predecessor_development' and args.case=='H')
             if required:
                 prev=read(path);clock=read(path.parent/(flag+'_pipeline_supervisor.json'))
-                predecessor_checks[flag]=prev['case']==case and prev['mode']==mode and prev['proceed_gate_passed'] is True and prev['protocol_sha256']==result['protocol_sha256'] and clock['within_budget'] is True and clock['proceed_gate_passed'] is True and clock['audit_sha256']==sha(path)
+                predecessor_checks[flag]=prev['case']==case and prev['mode']==mode and prev['proceed_gate_passed'] is True and (control_compatible(path,prev,args,p,science) if flag=='predecessor_control' else prev['protocol_sha256']==result['protocol_sha256']) and clock['within_budget'] is True and clock['proceed_gate_passed'] is True and clock['audit_sha256']==sha(path)
                 if flag=='predecessor_control':predecessor_checks['control_budget_charged']=prior>=clock['cumulative_case_seconds']
                 result[flag+'_sha256']=sha(path)
         marker=read(args.input/'capture_complete.json') if (args.input/'capture_complete.json').exists() else {}
