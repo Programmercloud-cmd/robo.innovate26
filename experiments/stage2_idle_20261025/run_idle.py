@@ -39,12 +39,12 @@ def assess_state(initial, current, protocol, final=False):
     return result
 
 
-def run_idle(*, sim, scene, bricks, spec, output, robot):
+def run_idle(*, sim, scene, bricks, spec, output, robot, protocol_override=None):
     import hashlib
     import numpy as np
     from bricksim.core import (compute_connected_component, get_disassembled_connections,
         get_assembly_thresholds, get_breakage_thresholds)
-    protocol = json.loads(Path(__file__).with_name('protocol.json').read_text())
+    protocol = json.loads(Path(__file__).with_name('protocol.json').read_text()) if protocol_override is None else protocol_override
     output = Path(output)
     for relative, digest in protocol['frozen_input_hashes'].items():
         if hashlib.sha256((ROOT/relative).read_bytes()).hexdigest() != digest:

@@ -78,6 +78,7 @@ def run(args, protocol):
                     solver_velocity_iteration_count=4, max_depenetration_velocity=.2)),
             init_state=RigidObjectCfg.InitialStateCfg(pos=tuple(poses[name][:3]), rot=tuple(poses[name][3:]))))
     sim_cfg = SimulationCfg(device='cpu', dt=protocol['dt_s'], use_fabric=False, gravity=tuple(protocol['gravity_m_s2']))
+    sim_cfg.physx.solver_type = {'PGS':0, 'TGS':1}[protocol['solver']['type']]
     sim = SimulationContext(sim_cfg)
     sim.get_physics_context().set_physx_update_transformations_settings(update_to_usd=True)
     stage = get_current_stage()
@@ -158,6 +159,8 @@ def run(args, protocol):
             'usd_physics_attributes':{a.GetName():metadata_scalar(a.Get()) for a in prim.GetAttributes()
                 if a.GetName().startswith(('physics:', 'physxRigidBody:')) and isinstance(a.Get(), (float, int, bool, str))}}
     physics_scene = next(prim for prim in stage.Traverse() if prim.IsA(UsdPhysics.Scene))
+    if str(physics_scene.GetAttribute('physxScene:solverType').Get()).upper() != protocol['solver']['type']:
+        raise RuntimeError('Actual USD PhysicsScene solver differs from requested protocol')
     gravity_direction = UsdPhysics.Scene(physics_scene).GetGravityDirectionAttr().Get()
     metadata = {'protocol':protocol, 'actor_paths':paths, 'actor_order':names,
         'native_core_path':core.__file__, 'native_core_sha256':sha(core.__file__),
@@ -219,7 +222,7 @@ def run(args, protocol):
     write(args.output/'diagnostic_report.json', {'diagnostic_completed':True, 'idle_validated':False,
         'full300_validated':False, 'steps_executed':records[-1]['step'], 'maximum_steps':protocol['maximum_steps'],
         'first_failure':records[-1] if records[-1]['reasons'] else None,
-        'thresholds_terminal':threshold_snapshot(), 'protocol_sha256':sha(HERE/'protocol.json'),
+        'thresholds_terminal':threshold_snapshot(), 'protocol_sha256':sha(args.protocol),
         'interpretation':'Two-actor diagnostic only. Native external J/H, not raw momentum or weld reaction, are compared descriptively with gravity. Damping/discrete terms remain qualified; no physical-capacity or full-lattice validation.'})
     write(args.output/'diagnostic_complete.json', {'diagnostic_completed':True, 'idle_validated':False, 'full300_validated':False})
 
@@ -245,6 +248,7 @@ def main():
         return
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--protocol', type=Path, default=HERE/'protocol.json')
     # Importing AppLauncher is lightweight; constructing it is queue guarded.
     from isaaclab.app import AppLauncher
     AppLauncher.add_app_launcher_args(parser)
@@ -254,7 +258,7 @@ def main():
     args.output = args.output.resolve(); args.output.mkdir(parents=True, exist_ok=True)
     temporary = args.output/'native_debug_tmp'; temporary.mkdir()
     os.environ['TMPDIR'] = str(temporary)
-    protocol = json.loads((HERE/'protocol.json').read_text())
+    protocol = json.loads(args.protocol.read_text())
     app = None
     try:
         app = AppLauncher(args).app

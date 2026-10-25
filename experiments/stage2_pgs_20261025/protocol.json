@@ -1,0 +1,123 @@
+{
+  "schema": "stage2-round3-PGS-protocol-v1",
+  "status": "frozen_before_execution",
+  "improvement_round": 3,
+  "maximum_improvement_rounds": 3,
+  "last_round": true,
+  "only_numerical_change": "PhysX scene solver TGS1\u2192PGS0; source actor32/4 retained, no implicit promotion of failedround2velocity16.",
+  "configuration_count": 1,
+  "retry_or_sweep": false,
+  "maximum_total_measured_steps": 248,
+  "maximum_phase_wall_seconds": 180,
+  "maximum_total_phase_wall_seconds": 540,
+  "stop_any_failure": true,
+  "phases": {
+    "A": {
+      "config": "A_fixture.json",
+      "measured_steps": 8,
+      "expected_bricks": 2,
+      "expected_native_connections": 1,
+      "proceed": "Independent phaseA audit passes all8alignedvalidunbrokenrecords; each Jgravityresidual\u22641e-8Ns and Hnorm\u2264.01 frozen1743same-stepHnorm. \u03c9/\u0394L descriptiveonly; same2mm2deg pose stop.",
+      "gravity_residual_max_Ns": 1e-08,
+      "angular_artifact_fraction_max": 0.01
+    },
+    "B": {
+      "config": "B_full300.json",
+      "measured_steps": 120,
+      "expected_bricks": 300,
+      "expected_parts": 301,
+      "expected_native_connections": 930,
+      "requires": "A independently audited proceed_screen_pass true",
+      "proceed": "Original idle finite/native/drift2mm2deg/finalspeed.02m_s.2rad_s and settingsintegrity; surviving is idlecandidateonly."
+    },
+    "C": {
+      "config": "C_H_mix.json",
+      "measured_steps": 120,
+      "expected_bricks": 299,
+      "expected_parts": 300,
+      "expected_native_connections": 926,
+      "requires": "B independently audited idle_gate_pass true",
+      "reserved_case": "H_mix",
+      "removed_source_id": "brick_9_2_2",
+      "proceed": "Same idle criteria; reservedcheck notfull300replacement. No new tuning afterC."
+    }
+  },
+  "A_reference": {
+    "capture_job": 1743,
+    "evaluation_job": 1744,
+    "evaluation_path": "runs/20261025T022352.760544Z-stage2-eccentric-evaluation/output/evaluation.json",
+    "evaluation_sha256": "5445d7984bacc684e6ea70ccb52cefd2f5bc7bf0bbff1f4b489a335a864aa298",
+    "records": [
+      {
+        "step": 1,
+        "dump_sha256": "e0f03fb437b8a285d7bab18a2da3867a952cdfdc082fe8f64c003b34791a336a",
+        "H_norm_Nms": 7.991099328578112e-06,
+        "H_max_for_proceed_Nms": 7.991099328578112e-08
+      },
+      {
+        "step": 2,
+        "dump_sha256": "8db3cfd5fe25f4afc830176eb071f6fb94a673299b13bd65eefed1ca7c6e6706",
+        "H_norm_Nms": 7.991099328578112e-06,
+        "H_max_for_proceed_Nms": 7.991099328578112e-08
+      },
+      {
+        "step": 3,
+        "dump_sha256": "374699be88575d1c721fa6e19a9e9808a6f8078522e68e98db0abfbb798fb569",
+        "H_norm_Nms": 7.991099328578112e-06,
+        "H_max_for_proceed_Nms": 7.991099328578112e-08
+      },
+      {
+        "step": 4,
+        "dump_sha256": "0cd012690603ebf252d53a04baf067d452282dacab1c1b4a634d0aba2f9156b6",
+        "H_norm_Nms": 7.991099328578112e-06,
+        "H_max_for_proceed_Nms": 7.991099328578112e-08
+      },
+      {
+        "step": 5,
+        "dump_sha256": "814f96fbcf6f03361668196cb1a0cd3622e347715d3657f919dc380706993412",
+        "H_norm_Nms": 7.991099328578112e-06,
+        "H_max_for_proceed_Nms": 7.991099328578112e-08
+      },
+      {
+        "step": 6,
+        "dump_sha256": "6d09b75b5bcf231f4f21e085e108875783a06e90ce2c157c0d507a92e4dfb614",
+        "H_norm_Nms": 7.991099328578112e-06,
+        "H_max_for_proceed_Nms": 7.991099328578112e-08
+      },
+      {
+        "step": 7,
+        "dump_sha256": "8b832d45a4ab04537a215d462aa2aba2ef710b97c26706feb4085208d7dce05b",
+        "H_norm_Nms": 7.991099328578112e-06,
+        "H_max_for_proceed_Nms": 7.991099328578112e-08
+      },
+      {
+        "step": 8,
+        "dump_sha256": "1a3e2d88a14025c51473b2eb56f52c98cc000b6f55862653e6c6667f2388bd07",
+        "H_norm_Nms": 7.991099328578112e-06,
+        "H_max_for_proceed_Nms": 7.991099328578112e-08
+      }
+    ]
+  },
+  "reserved_manifest": "experiments/stage1_20261025/benchmark.json",
+  "reserved_manifest_sha256": "60cb7a32312c41131708082e2df776bb440a4fea6e0165af6b541811b04fbb12",
+  "limitations": [
+    "Operational numericalartifact-suppression proceed screen, not calibratedphysicalproof or proof ofexactinstalledSDKsource match.",
+    "PGS changes whole-scene numericalconstraintbehavior includingrobot; physicalparameters/q/materials/nativecapacities unchanged.",
+    "No grasp/contact/extraction/insertion/hardware claim.",
+    "Stop afterfinalroundidle/reserved report; no fourthround."
+  ],
+  "native_core_sha256": "4e62dc33ee02270993c20e3cfd658e6d6ef0ea9780e53ad15cedde12f41b2455",
+  "OSQP_EPSILON": "1e-4",
+  "frozen_inputs": {
+    "experiments/final_workcell_20261024/scene.py": "ebcd45e6fdcc6672b6a3dee1b5e35f828daf88afc710fdba124e814ebb911eb6",
+    "experiments/final_workcell_20261024/render_core.py": "c113531b35b8527871e60f6763666e08c054c6653f240d107051123563f8cf6b",
+    "experiments/final_workcell_20261024/scene_config.json": "77cb33b140c8449e9527437c1fc8a452d5f95a9680413dc05b66db07e27342e7",
+    "experiments/final_workcell_20261024/geometry.json": "8a0266b2ccbf75f6d773fdd1e6309c70f9ab8828da96b563da133f383f83c897",
+    "experiments/final_workcell_20261024/cameras_realism.json": "aad98d4f63c3f754d7cdfcc62d70c2b3f4179233e84d2ba776042eb773c85dac",
+    "experiments/final_workcell_20261024/appearance_config.json": "1087683dbc574f2b155f3ee23b2ae2612d0a216360655b008d46c7e588bc73fe",
+    "challenge2/env_cfg.py": "68e9c624f0ce26474c53e487ab1301002e7c6d329156d00f5e39a544ffc16246",
+    "experiments/stage2_idle_20261025/run_idle.py": "dadd9c75cfe631539e95bd052acc8cd0c0f6dec5ae17265f26ab5bc8f1c4ad80",
+    "experiments/stage2_eccentric_20261025/run_fixture.py": "00736a1dafe11067f6982999b569d09a98b75904359043811111ecce5800764d",
+    "experiments/partial_disassembly_20261024/render_adapter.py": "4d98370df7e7804af75b59657acccb11a4850fd7c60905c8adbc6c2eefcfbf9e"
+  }
+}
