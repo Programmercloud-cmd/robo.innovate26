@@ -16,38 +16,53 @@ viewing direction, camera intrinsics or FOV was measured. No physical C920
 image sensor is activated. The folded-contact placement is visual, not a fit or
 clearance measurement. The C920 has no added collision, rigid-body or mass API.
 
-The supplied `franka_research3_gripper.stl` contains one connected tip-sized
-solid: CAD bounds X[-11,0], Y[-23,-8], Z[2.05,27.60]. STL stores no units;
-**millimeters are assumed**. It is instantiated twice as mirrored pad visuals.
-The native finger mesh combines 362 white-finger faces and 262 dark-pad faces;
-only the pad faces are hidden using holeIndices. The white fingers and joints
-remain intact. CAD X=0 maps to each native pad's broad backplane, CAD Y is
-centered laterally, and CAD Z=27.60 aligns with the native distal end. This
-nominal registration extends the replacement 7.74 mm armward versus the stock
-pad. Physical attachment/orientation is not independently measured. Dark pad
-finish is illustrative; no material properties are inferred from STL.
+The user corrected the fingertip orientation: the tapered **low CAD Z** end
+points distally toward the bricks, the bosses point into the supporting metal
+fingers, and the broad CAD X=0 gripping faces oppose each other across the
+opening. A proper rotation, CAD Ry(180°) followed by finger Rz(±90°), reverses
+CAD X/Z without reflecting the mesh.
 
-**The stock pad collision geometry/friction is retained.** The new STL visual
-fit does not establish new-tip contact behavior. Any manipulation experiment
-using the new geometry must explicitly validate its contact representation.
-No grasping, camera visibility of an actual held brick or insertion is proved
-by these static renders.
+The supplied STL remains unchanged, with nominal CAD bounds X[−11,0],
+Y[−23,−8], Z[2.050005,27.600006]. STL has no units; millimeters remain assumed.
+The body mounting plane at CAD X=−9.5 is placed at the old stock-pad backplane;
+the boss front at X=−11 therefore extends nominally 1.5 mm into the support.
+Width centering and the previous visual distal endpoint are retained as
+**nominal visual anchors**. The saved-mesh seat inspection found only proximal
+circles unrelated to the distal mounting feature. Recess concentricity,
+clearances and physical fit have not been measured or established by this
+placement. The per-render `updated_fingertips.json` records the actual transform,
+axis probes, nominal boss center and depth, and these limitations.
 
-- [C920 fascia and updated fingertips](../../../runs/20261025T000918.719244Z-final-workcell-preview/output/images/diagnostic_c920_grasp_side.png)
-- [Profile showing both camera housings](../../../runs/20261025T000918.719244Z-final-workcell-preview/output/images/diagnostic_c920_profile.png)
-- [Updated USD](../../../runs/20261025T000918.719244Z-final-workcell-preview/output/final_workcell.usda)
-- [Independent invariant checks](../../../runs/20261025T001003.870890Z-end-effector-verification/output/verification.json)
-- [STL registration report](../../../runs/20261025T000918.719244Z-final-workcell-preview/output/updated_fingertips.json)
+A simple round screw head is a rigid visual child of each finger, on the
+nominal boss axis. Head diameter 6 mm and outward protrusion
+2 mm are configurable estimates. The head uses a nearby outer-metal visual
+bound at the boss height; its full envelope is reported for later clearance
+work. The through-metal connection is implicit; there are no shaft, threads,
+form-fit, fastener collision or added mass.
 
-Pueue default-queue jobs: **1718** corrected C920 and initial native-finger
-audit; **1719** pad face/material audit; **1720** final STL visuals; **1721**
-comparison/invariance checks. All capture jobs preserve 300 bricks, 930 native
-connections, source poses, arm joints, D435i transform, table layout, original
-camera poses/K, lighting and exposure. No post-connection physics steps are
-used. Prior results are retained. Source commits and hashes are in run manifests.
+Only the 262 old dark-pad faces are hidden; all 362 white-finger faces remain.
+**Stock collision geometry and friction remain unchanged.** This visual
+correction does not validate supplied-tip contact, grasping or insertion.
+Closed perception/contact experiments retain their original transforms and
+results; their old mounting is not silently updated by this correction.
 
-Reproduce with a fresh stable queued snapshot:
+Historical artifacts below show the **superseded fingertip mounting**. They
+remain useful for the earlier camera-holder and invariance work:
+
+- [Historical C920 fascia and fingertips](../../../runs/20261025T000918.719244Z-final-workcell-preview/output/images/diagnostic_c920_grasp_side.png)
+- [Historical camera-housing profile](../../../runs/20261025T000918.719244Z-final-workcell-preview/output/images/diagnostic_c920_profile.png)
+- [Historical USD](../../../runs/20261025T000918.719244Z-final-workcell-preview/output/final_workcell.usda)
+- [Historical invariance checks](../../../runs/20261025T001003.870890Z-end-effector-verification/output/verification.json)
+- [Superseded STL registration report](../../../runs/20261025T000918.719244Z-final-workcell-preview/output/updated_fingertips.json)
+
+Historical default-queue jobs were 1718 (C920/native-finger audit), 1719
+(native pad separation), 1720 (earlier STL visuals) and 1721 (verification).
+The current visual change preserves the source's 300 bricks, 930 native
+connections and 301 connected parts, robot configuration, table layout and
+both camera housings. New close-up views are diagnostic virtual cameras.
+
+Reproduce the corrected visual preview from a stable queued snapshot:
 
 ```bash
-python3 experiments/final_workcell_20261024/submit_preview.py --cameras experiments/final_workcell_20261024/end_effector/cameras.json --appearance experiments/final_workcell_20261024/appearance_config.json
+python3 experiments/final_workcell_20261024/submit_preview.py --cameras experiments/final_workcell_20261024/end_effector/mount_correction/cameras.json --appearance experiments/final_workcell_20261024/appearance_config.json
 ```

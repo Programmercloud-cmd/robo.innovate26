@@ -387,7 +387,24 @@
       "sha256": "30c3e47142dce9ba82ec46edf42f1dc2825d620d23bad0a95ce1e2de902b752d",
       "assumed_stl_unit_m": 0.001,
       "distal_tip_finger_z_m": 0.05389988,
-      "status": "Nominal visual registration from native pad bounds; STL units assumed millimeters. Mounting-face and distal-tip alignment plausible but physically unverified; new collision geometry pending validation."
+      "status": "User-confirmed orientation with nominal translation from stock pad backplane/widthcenter and prior visual distal endpoint. STL millimeters assumed. Distal recess concentricity and clearance are unmeasured; no physical-fit/contact claim.",
+      "width_center_cad_y_mm": -15.5,
+      "stock_pad_backplane_abs_finger_y_m": 0.01090669,
+      "body_mount_cad_x_mm": -9.5,
+      "boss_front_cad_x_mm": -11.0,
+      "boss_axis_center_cad_yz_mm": [
+        -15.5000023,
+        18.60000584
+      ],
+      "taper_distal_cad_z_mm": 2.0500054359436035,
+      "broad_end_cad_z_mm": 27.600006103515625,
+      "orientation": "User-confirmed: tapered lowCADZ distal; boss faces support; broadgripface inward. ProperRz(+/-90)*Ry180, no reflection.",
+      "outside_screw_visual": {
+        "head_radius_m": 0.003,
+        "outward_protrusion_m": 0.002,
+        "fallback_wall_thickness_m": 0.002,
+        "status": "Simple round visual screw head rigidly parented to each finger. Diameter6mm/protrusion2mm estimated; no shaft, threads, form-fit, collision or mass model."
+      }
     }
   }
 }
