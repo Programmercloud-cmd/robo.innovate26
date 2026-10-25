@@ -33,3 +33,31 @@ python3 experiments/stage1_handoff_20261025/submit.py
 Source-only grasp reassessment is separate. The completed fixture comparison
 remains closed, and physical Desk-to-custom-pad gap/depth mapping remains
 unverified. No source color can unblock a failed grasp or authorize transfer.
+
+
+## Result
+
+Pueue **1826**, source `2882ac3`, completed in **2.683540874 s**. All
+1,276 independent checks pass.
+
+| Check | Result |
+|---|---:|
+| Exact prior classifier outputs | 116 / 116 |
+| Raw known / UNKNOWN, including calibration examples | 41 / 75 |
+| Invalid/stale/abort/slip controls denied | 10 / 10 |
+| Zero-candidate frame processed | Yes |
+| Saved final Stage 2 selection | tan; then INVALIDATED on recorded abort |
+| Held identity / transfer permission | UNKNOWN / false |
+
+The selected tan brick was an original calibration-reference brick, excluded
+from the prior accuracy score. It demonstrates source association plumbing,
+not a new held-out correct classification. The original 35 correct non-reference
+observations / 98 visible observations remains unchanged. The optional live
+runner hook has only source/synthetic checks; no fresh simulator capture,
+grasp, extraction or transfer was executed.
+
+Artifacts: [full transactions](artifacts/replay.json),
+[independent audit](artifacts/evaluation.json),
+[selected source overlay](artifacts/selected_source_overlay.png), and
+[compact result/provenance](results.json). The overlay marks a source region;
+it does not show a held brick. No additional compute or tuning follows.

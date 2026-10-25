@@ -1158,3 +1158,26 @@ no fourth cutoff, offset, force or trajectory variant follows. Full Pueue cost
 88.718362536 s brings the retained total to 2682.945582478/2800 s.
 Source `9c8dbb4`, snapshot `runs/20261025T165816.000989Z-stage2-finger-response`.
 See [result and limitations](../experiments/stage2_finger_response_20261025/README.md).
+
+
+## Pregrasp color handoff — saved replay integration passes
+
+The current sensor-selected runner now has an opt-in source-color hook. It
+retains the exact close-view RGB-D/calibration, classifies the final selected
+candidate with unchanged job-1806 references/settings, and records frame/time/
+content binding. Abort, slip and capture exceptions invalidate the current
+attempt while preserving its source observation. Held identity remains UNKNOWN;
+no color result grants transfer permission. Selection and motion are unchanged.
+
+Job 1826 (source `2882ac3`) verifies 116 exact prior classifier outputs and all
+10 invalidation controls, including the actual saved 1819 final selection and
+its recorded abort. The selected tan brick was a calibration reference, so this
+adds no held-out accuracy evidence. The prior 35 non-reference correct / 98
+visible coverage remains unchanged. A tiny test exercises the actual Sensors
+helper without Isaac; no fresh live render, grasp or transfer was run.
+
+Full default-Pueue duration is 2.683540874 s within the separate 30 s saved-replay
+budget. The closed retention ledger remains 2682.945582478/2800 s. Source/model
+analysis still needs a physical bridge between Desk width, actual pad gap and
+gripping depth before more contact physics. See
+[handoff result and artifacts](../experiments/stage1_handoff_20261025/README.md).
