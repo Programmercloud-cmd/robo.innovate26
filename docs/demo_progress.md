@@ -445,3 +445,31 @@ This is under independent source review, not a fresh three-round pool or a
 retroactive pass. At most one targeted-route run is proposed (aggregate three
 native executions, cumulative180s including prior29.797s). Native cooked
 geometry/contact and physical tool mounting remain unvalidated.
+
+
+## Targeted restoration passes; native first-surface quality still fails
+
+Pueue1769 (source`c6b141b`) preserves the declared full B0 physical model
+using only two exact finger-body views. All42 observation-integrity checks
+and250 fixed probes complete, with full300/301/930, nominal joints, PGS32/4
+and zero measured postassembly steps unchanged. Each of96 cell colliders
+returns one valid SDK hull. The aggregate three native executions are closed
+at45.996s of180s; no automatic recook/contact/tuning follows.
+
+All192 binary ray parities and54 sparse no-overlap bore observations pass.
+However,7/42 left and5/42 right clear reference-hit depths exceed100µm;
+both worst rays reach a rear-body cell about5mm after the expected front
+surface. No CAD edge/grazing exclusions apply to these84 reference hits.
+The native tested-feature gate therefore FAILS. This does not demonstrate
+contact failure; no contact/grasp/extraction was tested.
+
+Saved SDK descriptors have6–9 vertices/cell versus up to133 input vertices,
+and descriptive bound deltas up to0.593mm. These observations motivate later
+source/contract reassessment of cooking/active-shape geometry versus compound
+query reporting; they do not establish the cause. The installed schema's
+1mm minThickness fallback was not logged at runtime and is only a hypothesis.
+The offline CAD pass and successful targeted property-preservation route remain
+separate reusable evidence. Physical mounting is still provisional. The full
+six-stage demonstration remains active and incomplete.
+
+[Native outcomes and retained failures](../experiments/compound_native_query_20261025/results.json).

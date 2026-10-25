@@ -18,7 +18,7 @@
       "pipeline_supervisor.json": "acd6fa34a531aaca1c3ddfb8c8a7bab955fc3477f11cd755d8983a5514e8ec6c"
     }
   },
-  "reviewed_reassessment": "Targeted per-finger RigidBodyView initialization contract under review, addressing observed collateral writes. No tolerance/order/geometry changes; no fresh three-round pool. Proposed aggregate max3 native executions/one targeted route,180s cumulative including29.796654914s.",
+  "reviewed_reassessment": "No further native run, recook, geometry/tolerance/order change in this closed gate. Future source/contract reassessment must distinguish active cooked-boundary changes from compound query reporting. No demonstrated contact failure; physical mounting remains provisional.",
   "tested_clear_features_passed": false,
   "contact_authorized": false,
   "physical_registration_validated": false,
@@ -63,5 +63,101 @@
       "pipeline_supervisor.json": "0809981498fce296da1b68df315715eccfdbd48abc69996866b236f138ac0f07"
     }
   },
-  "status": "Two full-articulation setup attempts closed/failed. Offline compound fidelity passed; native geometry untested."
+  "status": "All3native executions CLOSED. Offline candidate PASS; native tested-feature quality FAIL; contact/grasp/extraction UNTESTED.",
+  "attempt3_targeted_route": {
+    "job_id": 1769,
+    "source_commit": "c6b141b",
+    "snapshot": "runs/20261025T064519.962873Z-explicit-tip-native-query-targeted-mass",
+    "status": "INTEGRITY_PASS_TESTED_FEATURE_QUALITY_FAIL",
+    "observation_integrity_passed": true,
+    "integrity_pass_count": 42,
+    "integrity_check_count": 42,
+    "quality_checks": {
+      "left_96_parities": true,
+      "left_clear_firsthits_100um": false,
+      "left_27_no_target_overlaps": true,
+      "right_96_parities": true,
+      "right_clear_firsthits_100um": false,
+      "right_27_no_target_overlaps": true
+    },
+    "tips": {
+      "left": {
+        "target_rays_with_hits": 42,
+        "total_rays": 96,
+        "clear_reference_hit_count": 42,
+        "unresolved_distance_count": 0,
+        "missing_CAD_hits": [],
+        "unexpected_target_hits": [],
+        "sphere_target_overlap_ids": [],
+        "firsthit_failures_over100um": [
+          "left_grid_3_4",
+          "left_grid_4_0",
+          "left_grid_4_1",
+          "left_grid_4_6",
+          "left_grid_4_7",
+          "left_grid_6_0",
+          "left_bbox_2_1"
+        ],
+        "worst": {
+          "id": "left_grid_4_1",
+          "error_m": 0.0049999940991402175,
+          "reference_distance_m": 0.02149999999999995,
+          "actual_distance_m": 0.026499994099140167,
+          "actual_path": "/World/envs/env_0/Robot/fr3_leftfinger/collisions/mesh_3/part_rear_body_solid_13"
+        }
+      },
+      "right": {
+        "target_rays_with_hits": 42,
+        "total_rays": 96,
+        "clear_reference_hit_count": 42,
+        "unresolved_distance_count": 0,
+        "missing_CAD_hits": [],
+        "unexpected_target_hits": [],
+        "sphere_target_overlap_ids": [],
+        "firsthit_failures_over100um": [
+          "right_grid_3_4",
+          "right_grid_4_0",
+          "right_grid_4_1",
+          "right_grid_4_6",
+          "right_bbox_2_1"
+        ],
+        "worst": {
+          "id": "right_grid_4_1",
+          "error_m": 0.004999997824430544,
+          "reference_distance_m": 0.021499999999999922,
+          "actual_distance_m": 0.026499997824430466,
+          "actual_path": "/World/envs/env_0/Robot/fr3_rightfinger/collisions/mesh_3/part_rear_body_solid_11"
+        }
+      }
+    },
+    "actual_cumulative_process_seconds": 45.99649638500705,
+    "cook_summary_per_finger": {
+      "valid_single_hulls": 48,
+      "vertex_count_range": [
+        6,
+        9
+      ],
+      "polygon_count_range": [
+        5,
+        9
+      ],
+      "maximum_saved_descriptor_bounds_delta_m": 0.0005931876605803493
+    },
+    "sha256": {
+      "manifest.json": "bc461d3c0805b06055b5e29ff98d38aae10959a005d6342ac7967e8350580979",
+      "output/property_restoration.json": "7e311b23643a01ef19afe9397fb478729a7c6dd6744fbc9879ef376a7aff9a10",
+      "output/property_checks.json": "76fbcbc35dba1ee9604c6c60a2f9fab6e81b1b90811431d8098a3ef87bebe4fd",
+      "output/cook_results.json": "081bc52ad20deeb52577d7258804dd95e27c1049c1a80142243d20a74f06800e",
+      "output/queries.json": "2c1440b25438b4e967d7e1c29243f7e258a30efab8995ab0814c0a5885f1a2d4",
+      "output/query_report.json": "789a1e8618268efecba16801c34c2eff8f92a4755e1a4a2750cfcbea6ab2a47b",
+      "audit/evaluation.json": "85577a8ee409719d13976a4379b710de428d0abfa4ecf868e4985e3bb5e29e70",
+      "pipeline_supervisor.json": "8e284abeafb5592f91811e921da663a8655a46fd49520427f47c3e41abfadc6f"
+    }
+  },
+  "limitations": [
+    "Sparse negative overlap results do not certify an entire void.",
+    "Firsthit differences are ray-depth errors, not global Hausdorff/contact/grasp failure evidence.",
+    "Returned SDK descriptor bounds/counts do not prove identity with active collider surfaces.",
+    "Unlogged hull minThickness fallback is a source-supported hypothesis only, not an established cause."
+  ]
 }
