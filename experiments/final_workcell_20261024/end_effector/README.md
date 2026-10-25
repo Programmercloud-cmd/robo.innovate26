@@ -49,15 +49,19 @@ correction does not validate supplied-tip contact, grasping or insertion.
 Closed perception/contact experiments retain their original transforms and
 results; their old mounting is not silently updated by this correction.
 
-Earlier orientation/screw-head preview: **Pueue1771**, source`3afda2d`,
-verification **1772:52/52 passed**. Its distal-fixed **height is superseded**
+Earlier orientation/screw-head preview: **Pueue1773**, source`3cee3d7`,
+verification **1774:60/60 passed**. Its distal-fixed **height is superseded**
 by the user’s proximal-edge alignment above; these results remain archived.
 
-- [Superseded-height pads and outside screw head](../../../runs/20261025T071719.927577Z-final-workcell-preview/output/images/diagnostic_pad_support_side.png)
-- [Superseded-height opposed gripping faces](../../../runs/20261025T071719.927577Z-final-workcell-preview/output/images/diagnostic_pad_inner_faces.png)
-- [Superseded-height visual USD](../../../runs/20261025T071719.927577Z-final-workcell-preview/output/final_workcell.usda)
-- [Independent checks](../../../runs/20261025T071811.763056Z-pad-mount-verification/output/verification.json)
+- [Superseded-height pads and outside screw head](../../../runs/20261025T072956.568941Z-final-workcell-preview/output/images/diagnostic_pad_support_side.png)
+- [Superseded-height opposed gripping faces](../../../runs/20261025T072956.568941Z-final-workcell-preview/output/images/diagnostic_pad_inner_faces.png)
+- [Superseded-height visual USD](../../../runs/20261025T072956.568941Z-final-workcell-preview/output/final_workcell.usda)
+- [Independent checks](../../../runs/20261025T073123.815357Z-pad-mount-verification/output/verification.json)
 - [Dimensions, envelopes, jobs and hashes](mount_correction/results.json)
+
+The earlier1771 mounting had the right orientation but the wrong height: it
+matched the old distal endpoint. It is superseded by1773, which aligns the
+upper/proximal edges and leaves the extra length below the metal.
 
 Historical artifacts below show the **superseded fingertip mounting**. They
 remain useful for the earlier camera-holder and invariance work:

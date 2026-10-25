@@ -498,3 +498,23 @@ remains active/incomplete; future external-contact modeling should follow the
 user's simplified attachment scope instead of reopening hidden form-fit work.
 
 [Current visual assembly and evidence](../experiments/final_workcell_20261024/end_effector/README.md).
+
+
+## User-corrected proximal pad height
+
+The user clarifies that replacement and stock pad upper/proximal edges share
+height: added length belongs below the metal, with boss/screw axis setting
+the mounting height. This supersedes1771's incorrectly retained distal
+endpoint. Source`3cee3d7` changes only the Z anchor and derived head position.
+Render1773 and independent1774 pass60/60 visual/invariance checks. Native
+stock-pad upperZ36.09037mm remains aligned; supplied tip reaches61.64037mm
+versus metal end53.85756mm (~7.783mm beyond it). Boss/head axis is45.09037mm
+in finger coordinates. These are nominal asset dimensions, not robot-frame
+calibration. All five views, physical camera mounts, layout, joints, source
+300/930/301 and stock collision geometry are unchanged. Root/evaluator/reviewer
+accept the visibly extended pads; no more visual work is needed.
+
+Simple heads remain6mm diameter/2mm outward protrusion estimates. No threads,
+form-fit, custom collision/contact or manipulation claim follows. Current
+visual artifact pointers now reference1773; old images/results remain saved.
+The full end-to-end goal remains active/incomplete.
