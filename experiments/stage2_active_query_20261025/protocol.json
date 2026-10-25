@@ -1,6 +1,6 @@
 {
   "schema": "active-tip-query-observation-v1",
-  "maximum_runs": 1,
+  "maximum_runs": 2,
   "maximum_wall_s": 180,
   "maximum_postassembly_physics_steps": 0,
   "measured_motion_steps": 0,
@@ -122,5 +122,28 @@
   "proceed_gate_passed": false,
   "capture_plus_independent_audit_wall_s": 180,
   "audit_budget_policy": "Independent audit receives max(0,180-capture_wall_seconds); STOP on exhaustion, no automatic continuation or retry.",
-  "cleanup_budget": "Existing finish_child SIGTERM2s+SIGKILL5s is reserved inside total180s. No extra shutdown grace outside budget."
+  "cleanup_budget": "Existing finish_child SIGTERM2s+SIGKILL5s is reserved inside total180s. No extra shutdown grace outside budget.",
+  "maximum_remaining_attempts": 1,
+  "retry_after_corrected_attempt": false,
+  "scene_query_support_setup": {
+    "enable_scene_query_support": true,
+    "only_additional_sim_cfg_change": "enable_scene_query_support False -> True, alongside existing physx.solver_type TGS1 -> PGS0",
+    "verification": "Assert full SimulationCfg.to_dict equality against exactly these two changes; serialize selected flags, changed paths and before/after PhysX settings. Record SDKPhysicsContext getter and actual USDscene attribute before controls.",
+    "interpretation": "Required query-manager setup; controls must still establish observed query functionality. Not a contact-round reset."
+  },
+  "execution_history": [
+    {
+      "attempt": 1,
+      "pueue_job_id": 1759,
+      "snapshot": "runs/20261025T043724.980817Z-active-tip-shape-query",
+      "capture_protocol_sha256": "929922d4eb2f37279ad2c6ad03a5a21446eaac3893e6f069a73df28780f886a2",
+      "status": "FAILED preserved: four raw controls had zero hits; no tip queries; zero measured postassembly steps",
+      "capture_wall_seconds_approx": 15.984
+    },
+    {
+      "attempt": 2,
+      "status": "One final corrected observational setup authorized, subject to joint source review; no third attempt",
+      "change": "enable_scene_query_support=True only; all250 fixed probes and other settings unchanged"
+    }
+  ]
 }

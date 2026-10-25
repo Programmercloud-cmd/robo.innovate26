@@ -85,9 +85,17 @@ def main():
         from isaaclab import scene as module
         from isaacsim.core.utils.extensions import enable_extension
         if not enable_extension('omni.isaac.dynamic_control'):raise RuntimeError('Installed runtime getter unavailable')
-        env=original_factory(cfg,capture=capture);before=env.sim.physx.to_dict();env.sim.physx.solver_type=0
-        if env.sim.physx.to_dict()!={**before,'solver_type':0}:raise RuntimeError('Unexpected physical config change')
-        factory_record.update(before=before,after=env.sim.physx.to_dict(),nominal_joint_configuration=dict(env.scene.robot.init_state.joint_pos))
+        env=original_factory(cfg,capture=capture);full_before=env.sim.to_dict();before=env.sim.physx.to_dict()
+        if full_before['enable_scene_query_support'] is not False or before['solver_type']!=1:raise RuntimeError('Unexpected pinned baseline query/solver config')
+        env.sim.physx.solver_type=0;env.sim.enable_scene_query_support=True
+        expected={**full_before,'enable_scene_query_support':True,'physx':{**full_before['physx'],'solver_type':0}}
+        if env.sim.to_dict()!=expected:raise RuntimeError('Unexpected full SimulationCfg change')
+        factory_record.update(before=before,after=env.sim.physx.to_dict(),
+            enable_scene_query_support_configured_before=full_before['enable_scene_query_support'],
+            enable_scene_query_support_configured_after=env.sim.enable_scene_query_support,
+            full_sim_cfg_only_declared_changes_verified=True,
+            changed_paths=['physx.solver_type','enable_scene_query_support'],
+            nominal_joint_configuration=dict(env.scene.robot.init_state.joint_pos))
         original_init=module.InteractiveScene.__init__;module.InteractiveScene.__init__=construct
         return env
 
@@ -116,8 +124,13 @@ def main():
             p=dc.get_rigid_body_properties(dc.get_rigid_body('/World/envs/env_0/'+name))
             runtime[name]=[int(p.solver_position_iteration_count),int(p.solver_velocity_iteration_count)]
         if any(v!=[32,4] for v in runtime.values()):raise RuntimeError('Actor32/4 mismatch')
-        scenes=[{'path':str(p.GetPath()),'solver':p.GetAttribute('physxScene:solverType').Get()} for p in stage.Traverse() if p.IsA(UsdPhysics.Scene)]
+        scenes=[{'path':str(p.GetPath()),'solver':p.GetAttribute('physxScene:solverType').Get(),
+            'enable_scene_query_support':p.GetAttribute('physxScene:enableSceneQuerySupport').Get()} for p in stage.Traverse() if p.IsA(UsdPhysics.Scene)]
+        support=sim.get_physics_context().get_enable_scene_query_support()
+        save(output/'prequery_setup.json',{'factory':factory_record,'physics_scenes':scenes,
+            'scene_query_support_runtime':support,'readback_scope':'SDKPhysicsContext getter reads scene attribute; positive controls still required'})
         if not scenes or any(p['solver']!='PGS' for p in scenes):raise RuntimeError('Actual scene not PGS')
+        if support is not True or any(p['enable_scene_query_support'] is not True for p in scenes):raise RuntimeError('Scene query support not enabled')
         api=get_physx_scene_query_interface();records=[];control=protocol['query_control']
         def vec(v):return [float(v.x),float(v.y),float(v.z)]
         def hit_record(hit,ray):
@@ -180,7 +193,7 @@ def main():
         save(output/'query_report.json',{'schema':protocol['schema'],'observation_complete':True,'proceed_gate_passed':False,
             'R3_G_status':'FAILED and closed; this does not authorize D/R','old_bounds_failure_m':protocol['old_bounds_failure_m'],
             'initial':initial,'terminal':terminal,'frames':frames,'world_from_hand':list(map(list,hand)),'authored':'authored_proxy.json','queries':'queries.json',
-            'source_parts':sorted(parts),'native_connections':sorted(links),'runtime_source32_4':runtime,'physics_scenes':scenes,
+            'source_parts':sorted(parts),'native_connections':sorted(links),'runtime_source32_4':runtime,'physics_scenes':scenes,'scene_query_support_runtime':support,
             'factory':factory_record,'native_core_sha256':sha(core.__file__),'dt_s':sim.get_physics_dt(),
             'OSQP_EPSILON':os.environ['OSQP_EPSILON'],'preassembly_initialization_steps':1,'measured_postassembly_physics_steps':0,
             'queries_do_not_move_actors':initial==terminal,'graph_unchanged':set(parts)==set(terminal_parts) and set(links)==set(terminal_links)})

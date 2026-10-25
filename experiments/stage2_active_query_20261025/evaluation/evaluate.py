@@ -60,23 +60,54 @@ def ray_reference(origin,vector,length,vertices,triangles,protocol):
         'edge_sensitive':bool(min(u[index],v[index],1-u[index]-v[index])<=1e-6),'grazing':bool(abs(np.dot(normal,vector))<.05)}
 
 
+def failed_capture(args,supervisor,protocol,started):
+    path=args.capture_protocol or args.input/'capture_protocol.json'
+    historical=read(path);queries=read(args.input/'queries.json') if (args.input/'queries.json').exists() else []
+    first_attempt=sha(path)==protocol['execution_history']['attempt1']['capture_protocol_sha256']
+    if not first_attempt and historical!=protocol['capture_protocol']:raise ValueError('Staged failed-capture protocol is neither frozen1759 nor reviewed corrected protocol')
+    controls=[q for q in queries if q['id'].startswith('control_')]
+    target=[q for q in queries if 'tip' in q]
+    setup=read(args.input/'prequery_setup.json') if (args.input/'prequery_setup.json').exists() else None
+    result={'schema':'active-query-failed-capture-audit-v1','observation_integrity_passed':False,'proceed_gate_passed':False,
+        'auditor_protocol_sha256':sha(HERE/'protocol.json'),'historical_capture_protocol_sha256':sha(path),
+        'historical_capture_schema':historical['schema'],'corrected_protocol_applied_to_historical_capture':False,
+        'recognized_capture_protocol':'frozen1759 initial setup' if first_attempt else 'reviewed corrected setup; still incomplete',
+        'supervisor':supervisor,'failure':read(args.input/'failure.json') if (args.input/'failure.json').exists() else None,
+        'raw_controls':controls,'raw_control_count':len(controls),'raw_control_hit_counts':{q['id']:len(q['hits']) for q in controls},'raw_target_probe_count':len(target),
+        'target_observations':'NOT_EXECUTED' if not target else 'PARTIAL RAW DATA UNTESTED; capture incomplete',
+        'target_geometry_and_reference_checks':'UNTESTED','scene_query_support_runtime':setup['scene_query_support_runtime'] if setup else 'NOT_RECORDED in historical1759',
+        'prequery_setup_readbacks':setup if setup else 'NOT_RECORDED in historical1759',
+        'interpretation':'Incomplete capture does not support target geometry inference. For1759, failed positive controls and a documented query-manager setup omission are not evidence of unusable collision geometry. Old G/contact failures remain unchanged.',
+        'capture_wall_s':supervisor['capture_wall_seconds'],'audit_wall_s':time.monotonic()-started}
+    args.output.mkdir(parents=True,exist_ok=True);(args.output/'evaluation.json').write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')
+    (args.output/'run_complete.json').write_text(json.dumps({'evaluation_completed':True,'observation_integrity_passed':False,'proceed_gate_passed':False,'evaluation_sha256':sha(args.output/'evaluation.json')})+'\n')
+
+
 def main():
     started=time.monotonic();parser=argparse.ArgumentParser(description=__doc__)
-    for name in ['input','stl','config','reference','output']:parser.add_argument('--'+name,type=Path,required=True)
+    for name in ['input','output']:parser.add_argument('--'+name,type=Path,required=True)
+    for name in ['stl','config','reference','capture-protocol']:parser.add_argument('--'+name,type=Path)
     args=parser.parse_args()
     if os.environ.get('ROBO_PUEUE_JOB')!='1':raise RuntimeError('Actual query/reference batch requires default Pueue')
-    protocol=read(HERE/'protocol.json');capture=protocol['capture_protocol'];config=read(args.config);reference=read(args.reference)
+    supervisor=read(args.input/'supervisor.json');protocol=read(HERE/'protocol.json')
+    if supervisor['observation_completed'] is not True:
+        failed_capture(args,supervisor,protocol,started);return
+    if any(p is None for p in [args.stl,args.config,args.reference]):raise ValueError('Completed observation requires frozen STL/config/reference')
+    capture=protocol['capture_protocol'];config=read(args.config);reference=read(args.reference)
     for path,digest in [(args.stl,protocol['stl_sha256']),(args.config,protocol['proxy_config_sha256']),(args.reference,protocol['reference_sha256'])]:
         if sha(path)!=digest:raise ValueError('Frozen reference changed: '+str(path))
     for name,digest in protocol['helpers_sha256'].items():
         if sha(HERE/name)!=digest:raise ValueError('Frozen helper changed')
-    report=read(args.input/'query_report.json');authored=read(args.input/'authored_proxy.json');queries=read(args.input/'queries.json');supervisor=read(args.input/'supervisor.json')
+    report=read(args.input/'query_report.json');authored=read(args.input/'authored_proxy.json');queries=read(args.input/'queries.json')
     checks={};checks['complete_observation']=report['observation_complete'] and supervisor['observation_completed']
     checks['zero_motion']=report['measured_postassembly_physics_steps']==0 and report['queries_do_not_move_actors'] and report['initial']==report['terminal'] and report['graph_unchanged']
     checks['full_source_PGS32_4']=len(report['source_parts'])==301 and len(set(report['source_parts']))==301 and len(report['native_connections'])==930 and len(report['runtime_source32_4'])==300 and all(v==[32,4] for v in report['runtime_source32_4'].values()) and bool(report['physics_scenes']) and all(s['solver']=='PGS' for s in report['physics_scenes'])
     checks['binary_dt_epsilon']=report['native_core_sha256']==capture['input_sha256']['.deps/bricksim/core.cpython-311-x86_64-linux-gnu.so'] and report['dt_s']==capture['source']['dt_s'] and report['OSQP_EPSILON']==capture['source']['OSQP_EPSILON']
     checks['nominal_q']=bool(np.allclose(report['initial']['q'],[protocol['nominal_joint_positions']],atol=protocol['nominal_joint_tolerance'],rtol=0) and np.isfinite(report['initial']['qdot']).all())
     checks['same_authored_configuration']=authored['config']==config
+    checks['runtime_query_support_enabled']=report['scene_query_support_runtime'] is True and bool(report['physics_scenes']) and all(s['enable_scene_query_support'] is True for s in report['physics_scenes'])
+    factory=report['factory']
+    checks['only_declared_factory_changes']=factory['before']['solver_type']==1 and factory['after']=={**factory['before'],'solver_type':0} and factory['enable_scene_query_support_configured_before'] is False and factory['enable_scene_query_support_configured_after'] is True and factory['full_sim_cfg_only_declared_changes_verified'] is True and factory['changed_paths']==['physx.solver_type','enable_scene_query_support']
     by_id={q['id']:q for q in queries};checks['exact_unique_count']=len(queries)==protocol['expected_queries']==len(by_id)
     checks['callback_return_consistency']=all(q['callback_count']==len(q['hits']) and (q['api_return_bool']==bool(q['hits']) if q['kind']=='ray' else q['api_return_count']==len(q['hits'])) for q in queries)
     control=capture['query_control'];pos=by_id['control_hit'];neg=by_id['control_miss'];inside=by_id['control_inside'];outside=by_id['control_outside']
