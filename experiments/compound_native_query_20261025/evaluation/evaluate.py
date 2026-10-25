@@ -56,7 +56,7 @@ def main():
             checks['four_controls']=len(controlhits)==1 and abs(controlhits[0]['distance_m']-control['expected_hit_distance_m'])<=control['distance_tolerance_m'] and np.max(abs(np.asarray(controlhits[0]['normal_world'])-[0,0,1]))<=control['normal_component_tolerance'] and not neg['hits'] and len(inside['hits'])==1 and inside['hits'][0]['collision']==control['path'] and not outside['hits']
             checks['control_probe_contract']=all(np.allclose(q[field],expected,atol=1e-8,rtol=0) for q,field,expected in [(pos,'origin_world_m',control['ray_hit_origin_m']),(neg,'origin_world_m',np.asarray(control['ray_hit_origin_m'])+control['miss_offset_world_m']),(inside,'center_world_m',control['center_world_m']),(outside,'center_world_m',np.asarray(control['center_world_m'])+control['miss_offset_world_m'])]) and all(q['direction_world']==control['ray_direction'] and q['length_m']==control['ray_length_m'] for q in [pos,neg]) and all(q['radius_m']==control['overlap_radius_m'] for q in [inside,outside])
             checks.update(property_checks(props,read(args.baseline_metadata),read(args.baseline_geometry),protocol))
-            checks.update(restoration_checks(read(args.input/'property_restoration.json'),read(args.baseline_metadata),protocol))
+            restoration=read(args.input/'property_restoration.json');checks.update(restoration_checks(restoration,read(args.baseline_metadata),protocol));checks.update(targeted_write_checks(restoration))
             checks['source_property_inventory_matches_observed_actors']=set(props['initial']['source'])==set(report['initial']['source'])
             checks['authored_input_pins']=authored['candidate_sha256']==protocol['compound_sha256'] and authored['offline_audit_sha256']==protocol['offline_audit_sha256'] and authored['offline_manifest_sha256']==capture['offline_approval']['manifest_sha256'] and authored['registration_reference_sha256']==protocol['reference_sha256']
             allids={'control_hit','control_miss','control_inside','control_outside'};tips={};cookdiag={};quality={}
@@ -134,6 +134,20 @@ def restoration_checks(record,baseline,protocol):
         'restoration_exact_all6_B0_readback':after==expected,
         'restoration_no_q_or_qdot_change':record['q_before']==record['q_after'] and record['qdot_before']==record['qdot_after'] and bool(np.isfinite(record['q_after']).all() and np.isfinite(record['qdot_after']).all()),
         'restoration_no_physics_time_change':record['physics_time_before_s']==record['physics_time_after_s'] and math.isfinite(record['physics_time_before_s'])}
+
+
+def targeted_write_checks(record):
+    views=record['target_views'];expected=[];valid=set(views)=={'left','right'}
+    for label,index in [('left',10),('right',11)]:
+        path='/World/envs/env_0/Robot/fr3_'+label+'finger';v=views[label]
+        valid=valid and v['path']==path and v['resolved_paths']==[path] and v['count']==1 and v['articulation_link_index']==index
+        for state in ['before','after']:
+            valid=valid and set(v[state])=={'masses','coms','inertias'} and all(np.asarray(v[state][k]).shape==shape and np.isfinite(v[state][k]).all() for k,shape in [('masses',(1,1)),('coms',(1,7)),('inertias',(1,9))])
+    for setter,shape in [('set_masses',[1,1]),('set_coms',[1,7]),('set_inertias',[1,9])]:
+        for label in ['left','right']:
+            expected.append({'path':'/World/envs/env_0/Robot/fr3_'+label+'finger','setter':setter,'view_index':0,'shape':shape})
+    return {'only_two_exact_finger_views':record['route']=='two_exact_finger_rigid_body_views' and bool(valid),
+        'only_six_targeted_property_writes':record['targeted_writes']==expected}
 
 
 def authored_and_cooked(authored,cooks,label,candidate,config,baseline_geometry):

@@ -1,6 +1,6 @@
 {
   "schema": "one-explicit-compound-native-query-v1",
-  "maximum_runs": 2,
+  "maximum_runs": 3,
   "maximum_wall_s": 180,
   "maximum_postassembly_physics_steps": 0,
   "measured_motion_steps": 0,
@@ -122,7 +122,7 @@
   "old_bound_limit_m": 0.0001,
   "proceed_gate_passed": false,
   "capture_plus_independent_audit_wall_s": 180,
-  "audit_budget_policy": "Cumulative native capture+audit <=180s including14.699420149001526s failed1767. One final corrected attempt; STOP on exhaustion/failure, no third attempt.",
+  "audit_budget_policy": "Aggregate native capture+audit <=180s including29.796654913996463s fromclosed1767/1768. AtmostONE targeted-route attempt; no freshthree-round pool, order/tolerance fallback or additional route.",
   "cleanup_budget": "Existing finish_child SIGTERM2s+SIGKILL5s is reserved inside total180s. No extra shutdown grace outside budget.",
   "retry_after_corrected_attempt": false,
   "scene_query_support_setup": {
@@ -159,15 +159,20 @@
     "no_contact_or_physical_registration_claim": true
   },
   "maximum_remaining_native_attempts": 1,
-  "prior_native_attempt_wall_seconds": 14.699420149001526,
+  "prior_native_attempt_wall_seconds": 29.796654913996463,
   "native_attempt_history": [
     {
       "job_id": 1767,
-      "status": "FAILED before SDKcook/query: robot mass/inertia/COM do not match1754; no querybuffers",
+      "status": "CLOSED FAILED beforecook/query: collision-dependent robotmass/inertia/COM differ from1754",
       "geometry_changed": false
     },
     {
-      "status": "ONE final controlled-property initialization correction; no third attempt/contact/newshape",
+      "job_id": 1768,
+      "status": "CLOSED FAILED beforeexplicitinitstep/cook/query: full-articulation setter readback differs on untouched nonfingerinertias/principalquaternions; fingers restoredexactly",
+      "geometry_changed": false
+    },
+    {
+      "status": "AtmostONE targeted two-fingerRigidBodyView route attempt pending finalreview; no furtherfallback",
       "geometry_changed": false
     }
   ],
@@ -179,10 +184,29 @@
       "set_coms",
       "set_inertias"
     ],
-    "tensor_convention": "Frozen1754 raw float32 arrays; COM localXYZ+quaternionXYZW, inertiasaboutCOM/bodyprimframe/column-major9; no coordinate transformation.",
-    "preconditions": "Actualbody_names10/11 mustbe left/rightfinger labels; allnonfingerphysicalentries and entirestiffness/damping/effortarrays alreadyexactB0. Original1754 link-name array wasnotrecorded; mapping inferredfromsamepinnedasset/currentorder and disclosed.",
+    "tensor_convention": "Frozen1754finger-slices only: masses(1,1),COM(1,7)localXYZ+quaternionXYZW,I(1,9)aboutCOM/bodyprimframe/column-major9. No otheractor orArticulationView setter calls.",
+    "preconditions": "Two exact targetpaths/count1, bodyname/index10/11 mapping asbefore; eachview rawbuffers EXACT correspondingArticulationView fingerentry. Allnonfingers+actuators alreadyexactB0.",
     "postconditions": "ALL6 propertyarrays EXACT1754; q/qdot/time unchanged across setters. No alternateorder/tolerancefallback/iterativetry.",
-    "scope": "Declared simulation stock mass model preserved forcontrolledcollision comparison, not measured mass/inertia ofsuppliedSTL."
+    "scope": "Declared simulation stock mass model preserved forcontrolledcollision comparison, not measured mass/inertia ofsuppliedSTL.",
+    "route": "two_exact_finger_rigid_body_views",
+    "target_view_paths": [
+      "/World/envs/env_0/Robot/fr3_leftfinger",
+      "/World/envs/env_0/Robot/fr3_rightfinger"
+    ],
+    "target_view_count_each": 1,
+    "local_setter_indices_each": [
+      0
+    ],
+    "write_sequence": [
+      "set_masses:left",
+      "set_masses:right",
+      "set_coms:left",
+      "set_coms:right",
+      "set_inertias:left",
+      "set_inertias:right"
+    ]
   },
-  "prior_consumed_active_seconds": 14.699420149001526
+  "prior_consumed_active_seconds": 29.796654913996463,
+  "maximum_targeted_route_attempts": 1,
+  "full_articulation_restore_route_closed": true
 }

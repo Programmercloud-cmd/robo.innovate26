@@ -93,10 +93,31 @@ def main():
             for key in ('masses','coms','inertias'):
                 if np.asarray(before[key]).shape!=np.asarray(target[key]).shape or not np.array_equal(np.asarray(before[key])[:,mask],np.asarray(target[key])[:,mask]):raise RuntimeError('Nonfinger physical properties already differ')
             if any(before[key]!=target[key] for key in ('stiffnesses','dampings','effort_limits')):raise RuntimeError('Actuator properties differ before preservation')
-            indices=torch.tensor([0],dtype=torch.int64,device='cpu')
+            indices=torch.tensor([0],dtype=torch.int64,device='cpu');target_views={};slices={}
+            record.update(route='two_exact_finger_rigid_body_views',target_views={},targeted_writes=[])
+            def read_target(rb):return {key:getattr(rb,method)().cpu().numpy().tolist() for key,method in (
+                ('masses','get_masses'),('coms','get_coms'),('inertias','get_inertias'))}
+            for label,index in (('left',10),('right',11)):
+                path=BODIES[label];rb=sim.physics_sim_view.create_rigid_body_view(path)
+                paths=list(map(str,rb.prim_paths));target_views[label]=rb
+                slices[label]={'masses':np.asarray(target['masses'])[:,index:index+1],
+                    'coms':np.asarray(target['coms'])[:,index,:],'inertias':np.asarray(target['inertias'])[:,index,:]}
+                buffers=read_target(rb)
+                record['target_views'][label]={'path':path,'resolved_paths':paths,'count':int(rb.count),
+                    'articulation_link_index':index,'before':buffers,'after':None,'setter_indices':[0]}
+                save(output/'property_restoration.json',record)
+                if rb.count!=1 or paths!=[path]:raise RuntimeError('Exact one-finger RigidBodyView not resolved')
+                for key in slices[label]:
+                    expected=np.asarray(before[key])[:,index:index+1] if key=='masses' else np.asarray(before[key])[:,index,:]
+                    if np.asarray(buffers[key]).shape!=expected.shape or not np.array_equal(buffers[key],expected):raise RuntimeError('Target view differs from articulation finger entry')
             for setter,key in (('set_masses','masses'),('set_coms','coms'),('set_inertias','inertias')):
-                getattr(view,setter)(torch.tensor(target[key],dtype=torch.float32,device='cpu'),indices)
+                for label in ('left','right'):
+                    data=torch.tensor(slices[label][key],dtype=torch.float32,device='cpu')
+                    getattr(target_views[label],setter)(data,indices)
+                    record['targeted_writes'].append({'path':BODIES[label],'setter':setter,'view_index':0,'shape':list(data.shape)})
+                    save(output/'property_restoration.json',record)
                 record['completed_setters'].append(setter);save(output/'property_restoration.json',record)
+            for label,rb in target_views.items():record['target_views'][label]['after']=read_target(rb)
             record.update(after=read(),q_after=view.get_dof_positions().cpu().numpy().tolist(),
                 qdot_after=view.get_dof_velocities().cpu().numpy().tolist(),physics_time_after_s=float(sim.current_time))
             save(output/'property_restoration.json',record)

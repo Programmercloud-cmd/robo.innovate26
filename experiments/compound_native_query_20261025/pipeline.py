@@ -60,5 +60,5 @@ try:
         raise RuntimeError('Native capture or audit incomplete; saved evidence only, no retry')
 finally:
     elapsed=time.monotonic()-started
-    (ROOT/'pipeline_supervisor.json').write_text(json.dumps({'phases':records,'current_process_seconds':elapsed,'prior_consumed_active_seconds':prior,'actual_cumulative_process_seconds':prior+elapsed,'limit_seconds':limit,'within_budget':prior+elapsed<=limit,'maximum_attempts':2,'contact_authorized':False,'physical_registration_validated':False})+'\n')
+    (ROOT/'pipeline_supervisor.json').write_text(json.dumps({'phases':records,'current_process_seconds':elapsed,'prior_consumed_active_seconds':prior,'actual_cumulative_process_seconds':prior+elapsed,'limit_seconds':limit,'within_budget':prior+elapsed<=limit,'aggregate_maximum_native_executions':3,'contact_authorized':False,'physical_registration_validated':False})+'\n')
 if prior+elapsed>limit:raise SystemExit(1)
