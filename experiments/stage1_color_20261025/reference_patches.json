@@ -1,0 +1,7 @@
+[
+  {"frame_id": "f000", "label": "tan", "pixel_xyxy": [444, 300, 470, 360]},
+  {"frame_id": "f000", "label": "brown", "pixel_xyxy": [516, 595, 543, 655]},
+  {"frame_id": "f000", "label": "dark_red", "pixel_xyxy": [663, 302, 690, 360]},
+  {"frame_id": "f000", "label": "bright_red", "pixel_xyxy": [444, 448, 470, 505]},
+  {"frame_id": "f000", "label": "ochre", "pixel_xyxy": [444, 377, 470, 432]}
+]
