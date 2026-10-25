@@ -11,7 +11,11 @@
     "stop_reason": "Kinematic target readback differs UNKNOWN",
     "position_error_m": 0.0,
     "original_angle_error_rad": 0.0002722371862198518,
-    "sampled_forces_N": {"left": 0.0, "right": 0.0, "coupon": 0.0},
+    "sampled_forces_N": {
+      "left": 0.0,
+      "right": 0.0,
+      "coupon": 0.0
+    },
     "role_controls_completed": [],
     "native_report_callback_count": 0,
     "source_parts": 301,
@@ -26,11 +30,54 @@
   "actual_pueue_seconds": 16.199330879,
   "supervised_capture_plus_audit_seconds": 15.796132840012433,
   "prior_case_seconds": 1452.9025644630237,
-  "cumulative_case_seconds": 1469.1018953420237,
+  "cumulative_case_seconds": 1469.6268372210236,
   "case_limit_seconds": 1800,
   "reporting_contract_established": false,
   "old_grasp_failure_preserved": true,
   "grasp_retry_authorized": false,
-  "saved_audit": "Pending separately reviewed audit-only replay; no simulation.",
+  "saved_audit": {
+    "job_id": 1813,
+    "source_commit": "9076e91",
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T134222.437126Z-stage2-collider-saved-audit",
+    "audit_status": "UNKNOWN",
+    "observation_contract_passed": false,
+    "physics_steps": 0,
+    "audit_sha256": "a16c992dc8d083ad788c3983d0abb01edbe695ae33070ac8f69f31da7b98f645",
+    "failed_checks": [
+      "capture_completed",
+      "role_sequence_completed",
+      "terminal_source_graph",
+      "all_frame_checks",
+      "three_role_controls",
+      "independent_unloaded_release"
+    ],
+    "failed_frame_checks": {
+      "1": [
+        "kinematic_readback"
+      ]
+    },
+    "actual_pueue_seconds": 0.524941879,
+    "roles": {
+      "BODY": {
+        "loaded_frames": 0,
+        "mapped_points": 0,
+        "peak_force_N": 0.0,
+        "threshold_frames": 0
+      },
+      "WHITE": {
+        "loaded_frames": 0,
+        "mapped_points": 0,
+        "peak_force_N": 0.0,
+        "threshold_frames": 0
+      },
+      "HEAD": {
+        "loaded_frames": 0,
+        "mapped_points": 0,
+        "peak_force_N": 0.0,
+        "threshold_frames": 0
+      }
+    },
+    "interpretation": "Audit completed; sensing benchmark remains UNKNOWN with no loaded evidence. terminal_source_graph conjunction fails because completion watchdog flag is false afterabort; native counts remain301/930."
+  },
   "goal_status": "INCOMPLETE: native extraction and subsequent transfer/placement/stacking/repeated sorting remain unproven."
 }

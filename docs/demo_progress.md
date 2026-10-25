@@ -916,3 +916,12 @@ the failure record; no physical probe retry is authorized by these repairs.
 Authoritative 1812 Pueue start/end charges 16.199330879 seconds, including launch
 overhead; the inner supervisor reports 15.796132840 seconds. Both are preserved.
 The upward-corrected cumulative contact clock is 1469.101895342/1800 seconds.
+
+Saved-audit job 1813 (source `9076e91`) completes successfully as an audit and
+reports `UNKNOWN`, observation contract false. It measures zero loaded frames
+for all three roles. The single-frame failure remains kinematic readback; the
+capture/role/release completion checks also fail. The terminal-source conjunction
+fails because its completion watchdog flag is false after the abort, not because
+the measured 301 parts or 930 links were lost. No physics was run by this audit.
+Its 0.524941879-second full Pueue duration is charged above the prior cost,
+yielding 1469.626837221/1800 seconds. No repeated capture or grasp is implied.

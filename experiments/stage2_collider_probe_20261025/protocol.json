@@ -3,12 +3,12 @@
   "execution_authorized": true,
   "scope": "One sensor API fixture probe, not a grasp, extraction retry or acceptance-policy change",
   "source_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick",
-  "prior_supervisor": "/home/faps/dev/github/robo.innovate26/runs/20261025T124546.786370Z-stage2-contact-point-diagnostic/pipeline_supervisor.json",
-  "prior_case_seconds": 1452.9025644630237,
+  "prior_supervisor": "/home/faps/dev/github/robo.innovate26/runs/20261025T134222.437126Z-stage2-collider-saved-audit/pipeline_supervisor.json",
+  "prior_case_seconds": 1469.6268372210236,
   "aggregate_case_ceiling_seconds": 1800,
   "maximum_active_seconds": 240,
   "capture_cutoff_seconds": 190,
-  "maximum_jobs": 1,
+  "maximum_jobs": 2,
   "maximum_physics_steps": 480,
   "physics_dt_s": 0.008333333333333333,
   "probe_size_m": 0.002,
@@ -96,8 +96,8 @@
     "Adaptive fixture relocation",
     "Hardware or ROS control"
   ],
-  "independent_review": "Planner/implementer and independent evaluator consider the compact method sufficient; independent reviewer approves completed runtime/observer/auditor for one <=240s default-Pueue observation probe. Global parameters frozen before any data. No grasp retry, ownership-policy replacement or model/force/tolerance changes authorized by this result.",
-  "prior_supervisor_sha256": "233027cee46c7ab570f7da2ad5b0bf21389ac20e46d45486a260878298864744",
+  "independent_review": "Planner arithmetic repair plus independent evaluator/reviewer exact amendment approved for ONE instrumentation-corrected <=240s observation capture. Only float64 quaternion normalization and NumPy JSON conversion differ from failed1812; no physical/matching constants changed, original+corrected maximum2, no further retry or grasp/ownership-policy authorization.",
+  "prior_supervisor_sha256": "8317f8dc35b620bfb9c1ef6983c57e8f10b368a144795950619bfc1941125a4e",
   "source_api_evidence": [
     {
       "path": "/home/faps/miniforge3/envs/unitree_sim_env/lib/python3.11/site-packages/isaacsim/extscache/omni.physx-107.3.26+107.3.3.lx64.r.cp311.u353/omni/physx/bindings/_physx.pyi",
@@ -117,5 +117,20 @@
   "source_metadata": {
     "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick/output/capture_metadata.json",
     "sha256": "3115ed79d7d87c27c3a4a75d830d575e18608ebc7e00476ffd895f15c931c61b"
+  },
+  "capture_attempt_history": {
+    "original_job": 1812,
+    "original_source_commit": "3887f8e",
+    "original_status": "FAILED_FIRST_QUIET_STEP_BEFORE_ANY_CONTACT_CONTROL",
+    "saved_audit_job": 1813,
+    "saved_audit": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T134222.437126Z-stage2-collider-saved-audit/audit/evaluation.json",
+      "sha256": "a16c992dc8d083ad788c3983d0abb01edbe695ae33070ac8f69f31da7b98f645"
+    },
+    "maximum_original_plus_corrected_captures": 2,
+    "maximum_instrumentation_corrected_captures": 1,
+    "remaining_corrected_captures_before_submission": 1,
+    "changes_permitted": "Only float64 normalized quaternion arithmetic and value-preserving NumPy JSON serialization. Same physical settings, fixtures, thresholds, matching and480step/240s bound. Not a new pool or grasp retry.",
+    "additional_retry_after_corrected_capture": false
   }
 }

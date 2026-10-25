@@ -1,5 +1,6 @@
 """One immutable default-queue observation probe; no automatic retries."""
 from datetime import datetime, timezone
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -17,14 +18,27 @@ def sha(path):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__, allow_abbrev=False)
+    parser.add_argument('--instrumentation-repair', action='store_true')
+    args = parser.parse_args()
     protocol = json.loads((HERE/'protocol.json').read_text())
     if protocol['execution_authorized'] is not True:
         raise RuntimeError('Independent source review required before submission')
     if subprocess.check_output(['git', 'status', '--porcelain', '--', str(HERE)], cwd=ROOT):
         raise RuntimeError('Commit the reviewed probe before snapshotting')
-    for old in (ROOT/'runs').glob('*-stage2-collider-probe'):
-        if (old/'submission.txt').exists():
-            raise RuntimeError('One fixed job only; no automatic retry')
+    previous = [p for p in (ROOT/'runs').glob('*-stage2-collider-probe') if (p/'submission.txt').exists()]
+    history = protocol['capture_attempt_history']
+    if not args.instrumentation_repair or len(previous) != 1 or protocol['maximum_jobs'] != 2:
+        raise RuntimeError('Original phase closed. Only one explicitly reviewed instrumentation repair is available, with no further retry')
+    evidence = history['saved_audit']
+    if sha(evidence['path']) != evidence['sha256']:
+        raise RuntimeError('Saved original failure audit changed')
+    failure = json.loads(Path(evidence['path']).read_text())
+    if (failure.get('status') != 'UNKNOWN' or failure.get('steps') != 1
+            or failure.get('observation_contract_passed') is not False
+            or set(failure.get('roles', {})) != {'BODY', 'WHITE', 'HEAD'}
+            or any(v['loaded_frames'] != 0 for v in failure['roles'].values())):
+        raise RuntimeError('Correction is bound to the fixed pre-contact instrumentation failure only')
     clock_path = Path(protocol['prior_supervisor'])
     if sha(clock_path) != protocol['prior_supervisor_sha256']:
         raise RuntimeError('Authoritative prior clock changed')
@@ -69,6 +83,9 @@ def main():
         'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
         'immutable_source_snapshot': str(source), 'protocol_sha256': sha(code/'protocol.json'),
         'maximum_active_seconds': protocol['maximum_active_seconds'], 'maximum_jobs': 1,
+        'phase': 'one_instrumentation_corrected_capture',
+        'previous_capture_jobs': [1812], 'saved_failure_audit_job': 1813,
+        'maximum_original_plus_corrected_captures': 2, 'additional_retry': False,
         'prior_case_seconds': prior, 'aggregate_case_ceiling_seconds': 1800,
         'prior_supervisor_sha256': sha(clock_path),
         'sha256': {str(p.relative_to(snapshot)): sha(p) for p in sorted(snapshot.rglob('*')) if p.is_file()}

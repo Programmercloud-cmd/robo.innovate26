@@ -29,12 +29,18 @@ point gate, establish whole-arm collision safety, or authorize a grasp retry.
 After independent source review and a clean commit of this directory:
 
 ```bash
-python3 experiments/stage2_collider_probe_20261025/submit.py
+python3 experiments/stage2_collider_probe_20261025/submit.py --instrumentation-repair
 ```
 
 The submitter copies the immutable 1809 source scene plus this experiment into
 a new `runs/*-stage2-collider-probe` snapshot, then submits one foreground launch
-using `pueue add` in the default queue. It refuses a second submission. The
+using `pueue add` in the default queue. Original 1812 stopped at the first quiet
+step, before any contact case; 1813 completed its saved audit as UNKNOWN. One
+prospectively reviewed instrumentation correction uses float64 normalized
+quaternion arithmetic and value-preserving JSON conversion. The amended history
+permits original plus one corrected capture, then refuses further submission.
+It preserves all physical/matching parameters, failed results and prior costs.
+The explicit repair flag and pinned original audit are required. The
 snapshot manifest records source hashes, exact commands and the preserved prior
 contact clock. The current Python environment is reused without installation.
 
