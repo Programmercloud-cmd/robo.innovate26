@@ -52,7 +52,7 @@ def main(proxy_author=None,protocol_path=None,observation_hook=None):
         original_init(scene,cfg);stage=get_current_stage()
         if scene['robot'].is_initialized:raise RuntimeError('Proxy must be authored before play')
         if proxy_author is not None:
-            authored.update(proxy_author(stage,ROOT,config,output))
+            authored.update(proxy_author(stage,ROOT,config,output,scene))
         else:
             for label in ('left','right'):
                 vertices,triangles,_=registered_vertices(config,label)

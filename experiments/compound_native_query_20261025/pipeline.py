@@ -11,7 +11,7 @@ HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[1]
 if os.environ.get('ROBO_PUEUE_JOB')!='1':
     raise RuntimeError('Default Pueue required')
-started=time.monotonic();limit=180.;records=[]
+started=time.monotonic();limit=180.;prior=float(json.loads((HERE/'protocol.json').read_text())['prior_consumed_active_seconds']);records=[]
 capture=ROOT/'output';audit=ROOT/'audit'
 child=None
 def cancelled(number,_frame):
@@ -27,7 +27,7 @@ try:
     before=time.monotonic()
     child=subprocess.Popen([sys.executable,str(HERE/'supervise.py'),'--python',sys.executable,'--output',str(capture)],start_new_session=True)
     try:
-        code=child.wait(timeout=limit-7.)
+        code=child.wait(timeout=limit-prior-7.)
     except subprocess.TimeoutExpired:
         os.killpg(child.pid,signal.SIGTERM)
         try: child.wait(timeout=2.)
@@ -35,7 +35,7 @@ try:
             os.killpg(child.pid,signal.SIGKILL);child.wait(timeout=5.)
         raise RuntimeError('Outer capture budget exhausted; no retry')
     records.append({'phase':'capture','returncode':code,'actual_process_wall_seconds':time.monotonic()-before})
-    remaining=limit-(time.monotonic()-started)
+    remaining=limit-prior-(time.monotonic()-started)
     if remaining<=7. or not (capture/'supervisor.json').exists():
         raise RuntimeError('No independent audit budget/capture record remains')
     inputs=HERE/'inputs'
@@ -60,5 +60,5 @@ try:
         raise RuntimeError('Native capture or audit incomplete; saved evidence only, no retry')
 finally:
     elapsed=time.monotonic()-started
-    (ROOT/'pipeline_supervisor.json').write_text(json.dumps({'phases':records,'actual_cumulative_process_seconds':elapsed,'limit_seconds':limit,'within_budget':elapsed<=limit,'maximum_attempts':1,'contact_authorized':False,'physical_registration_validated':False})+'\n')
-if elapsed>limit:raise SystemExit(1)
+    (ROOT/'pipeline_supervisor.json').write_text(json.dumps({'phases':records,'current_process_seconds':elapsed,'prior_consumed_active_seconds':prior,'actual_cumulative_process_seconds':prior+elapsed,'limit_seconds':limit,'within_budget':prior+elapsed<=limit,'maximum_attempts':2,'contact_authorized':False,'physical_registration_validated':False})+'\n')
+if prior+elapsed>limit:raise SystemExit(1)

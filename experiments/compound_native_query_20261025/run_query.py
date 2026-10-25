@@ -28,7 +28,7 @@ def main():
     reference=json.loads((base.CONTACT/'proxy_reference.json').read_text())
     authoring={};properties={};cook={'tips':{}}
 
-    def author(stage,root,config,output):
+    def author(stage,root,config,output,scene):
         import numpy as np
         from pxr import UsdGeom,UsdPhysics,UsdShade,PhysxSchema
         from geometry import BODIES
@@ -70,6 +70,40 @@ def main():
             reference_records[label]={'path':parent,'vertices_finger_m':v.tolist(),'triangles':t.tolist(),'material':material_path,
                 'reference_only':True,'target_paths':tip['target_paths'],'cook_readback':{'approximation':'48 separate convexHull','hullVertexLimit':255},'transform_finger':list(map(list,UsdGeom.Xformable(prim).GetLocalTransformation()))}
         save(output/'compound_authoring.json',authoring)
+        original_reset=scene.reset;restores={'count':0}
+        def reset_once(*args,**kwargs):
+            import torch
+            from isaaclab.sim import SimulationContext
+            if restores['count']!=0:raise RuntimeError('Only one physical-property restore authorized')
+            returned=original_reset(*args,**kwargs);restores['count']+=1
+            robot=scene['robot'];view=robot.root_physx_view;sim=SimulationContext.instance()
+            methods={'masses':'get_masses','inertias':'get_inertias','coms':'get_coms','stiffnesses':'get_dof_stiffnesses','dampings':'get_dof_dampings','effort_limits':'get_dof_max_forces'}
+            def read():return {key:getattr(view,method)().cpu().numpy().tolist() for key,method in methods.items()}
+            before=read();target=reference['robot_properties'];names=list(robot.body_names);link_paths=[list(map(str,paths)) for paths in view.link_paths]
+            record={'count':restores['count'],'order':protocol['physical_property_initialization']['fixed_setter_order'],
+                'completed_setters':[],'body_names':names,'link_paths':link_paths,
+                'before':before,'after':None,'q_before':view.get_dof_positions().cpu().numpy().tolist(),
+                'qdot_before':view.get_dof_velocities().cpu().numpy().tolist(),'physics_time_before_s':float(sim.current_time),
+                'timing':'after_scene_reset_before_explicit_preassembly_step','sim_reset_internal_initialization_precedes_restore':True,
+                'reference_sha256':sha(base.CONTACT/'proxy_reference.json'),
+                'historical_link_mapping':'1754didnotrecordbody_names; unchangedpinnedasset/currentorder, exact10/11fingerlabels required'}
+            save(output/'property_restoration.json',record)
+            if len(names)!=len(target['masses'][0]) or names[10:12]!=['fr3_leftfinger','fr3_rightfinger'] or link_paths!=[['/World/envs/env_0/Robot/'+name for name in names]]:raise RuntimeError('Finger link order/path not verified')
+            mask=[i for i in range(len(names)) if i not in (10,11)]
+            for key in ('masses','coms','inertias'):
+                if np.asarray(before[key]).shape!=np.asarray(target[key]).shape or not np.array_equal(np.asarray(before[key])[:,mask],np.asarray(target[key])[:,mask]):raise RuntimeError('Nonfinger physical properties already differ')
+            if any(before[key]!=target[key] for key in ('stiffnesses','dampings','effort_limits')):raise RuntimeError('Actuator properties differ before preservation')
+            indices=torch.tensor([0],dtype=torch.int64,device='cpu')
+            for setter,key in (('set_masses','masses'),('set_coms','coms'),('set_inertias','inertias')):
+                getattr(view,setter)(torch.tensor(target[key],dtype=torch.float32,device='cpu'),indices)
+                record['completed_setters'].append(setter);save(output/'property_restoration.json',record)
+            record.update(after=read(),q_after=view.get_dof_positions().cpu().numpy().tolist(),
+                qdot_after=view.get_dof_velocities().cpu().numpy().tolist(),physics_time_after_s=float(sim.current_time))
+            save(output/'property_restoration.json',record)
+            if record['after']!=target:raise RuntimeError('Strict1754 property readback failed; no alternateorder/tolerancefallback')
+            if record['q_before']!=record['q_after'] or record['qdot_before']!=record['qdot_after'] or record['physics_time_before_s']!=record['physics_time_after_s']:raise RuntimeError('Propertypreservation changedq/qdot/time')
+            return returned
+        scene.reset=reset_once
         return reference_records
 
     def observe(phase,context):

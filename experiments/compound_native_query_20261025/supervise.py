@@ -19,7 +19,7 @@ def main():
     parser.add_argument('--python',required=True);parser.add_argument('--output',type=Path,required=True)
     args=parser.parse_args()
     if os.environ.get('ROBO_PUEUE_JOB')!='1':raise RuntimeError('Default Pueue required')
-    protocol=json.loads((HERE/'protocol.json').read_text());limit=protocol['capture_plus_independent_audit_wall_s']
+    protocol=json.loads((HERE/'protocol.json').read_text());limit=protocol['capture_plus_independent_audit_wall_s']-protocol['prior_consumed_active_seconds']
     args.output.mkdir(parents=True,exist_ok=False);final=ROOT/'experiments/final_workcell_20261024'
     command=[args.python,str(HERE/'run_query.py'),'--output',str(args.output),
         '--candidate',str(HERE/'inputs/compound.json'),'--offline-audit',str(HERE/'inputs/offline_audit.json'),

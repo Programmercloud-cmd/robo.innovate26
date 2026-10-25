@@ -1,6 +1,6 @@
 {
   "schema": "one-explicit-compound-native-query-v1",
-  "maximum_runs": 1,
+  "maximum_runs": 2,
   "maximum_wall_s": 180,
   "maximum_postassembly_physics_steps": 0,
   "measured_motion_steps": 0,
@@ -44,7 +44,7 @@
     "experiments/stage2_contact_20261025/proxy_reference.json": "cb46c2fab2833fa267a45980fa7e2adf27e0f8626edfd9f514ff1c7d6b7dddc6",
     "experiments/stage2_contact_20261025/protocol.json": "aa037dfb8dba58df50c09590a15eda21163c0df273d704bd07439cb3b5e3aa77",
     "experiments/stage2_contact_20261025/geometry.py": "56622b490fc018a46333d8a856ad2b9735c8dfc14841cb732cdd1622c638db83",
-    "experiments/stage2_active_query_20261025/run_query.py": "32c40b5ca67f0595d68f89d872bf9ed87c853b8b333a70ddfc69af75cd29a9f6"
+    "experiments/stage2_active_query_20261025/run_query.py": "0417a352273fbe15c190289ae576482084568cc201667b748c92946b22f36705"
   },
   "proxy": "Exactoffline-approved48cells only, bakedunchanged nominalCADregistration. No geometryregeneration or automaticdecomposition. OldG/VHACD failures remainfailed.",
   "contact_ray_grid": {
@@ -122,7 +122,7 @@
   "old_bound_limit_m": 0.0001,
   "proceed_gate_passed": false,
   "capture_plus_independent_audit_wall_s": 180,
-  "audit_budget_policy": "Independent audit receives max(0,180-capture_wall_seconds); STOP on exhaustion, no automatic continuation or retry.",
+  "audit_budget_policy": "Cumulative native capture+audit <=180s including14.699420149001526s failed1767. One final corrected attempt; STOP on exhaustion/failure, no third attempt.",
   "cleanup_budget": "Existing finish_child SIGTERM2s+SIGKILL5s is reserved inside total180s. No extra shutdown grace outside budget.",
   "retry_after_corrected_attempt": false,
   "scene_query_support_setup": {
@@ -157,5 +157,32 @@
     "all54reference_free_spheres_zero_actual_target_hits": true,
     "edge_grazing_cases": "Report unresolved distance, never selectpassingedge/ray",
     "no_contact_or_physical_registration_claim": true
-  }
+  },
+  "maximum_remaining_native_attempts": 1,
+  "prior_native_attempt_wall_seconds": 14.699420149001526,
+  "native_attempt_history": [
+    {
+      "job_id": 1767,
+      "status": "FAILED before SDKcook/query: robot mass/inertia/COM do not match1754; no querybuffers",
+      "geometry_changed": false
+    },
+    {
+      "status": "ONE final controlled-property initialization correction; no third attempt/contact/newshape",
+      "geometry_changed": false
+    }
+  ],
+  "physical_property_initialization": {
+    "restore_count": 1,
+    "timing": "After original bound scene.reset, before explicit nominal-q initialization step. sim.reset internal initialization already occurred.",
+    "fixed_setter_order": [
+      "set_masses",
+      "set_coms",
+      "set_inertias"
+    ],
+    "tensor_convention": "Frozen1754 raw float32 arrays; COM localXYZ+quaternionXYZW, inertiasaboutCOM/bodyprimframe/column-major9; no coordinate transformation.",
+    "preconditions": "Actualbody_names10/11 mustbe left/rightfinger labels; allnonfingerphysicalentries and entirestiffness/damping/effortarrays alreadyexactB0. Original1754 link-name array wasnotrecorded; mapping inferredfromsamepinnedasset/currentorder and disclosed.",
+    "postconditions": "ALL6 propertyarrays EXACT1754; q/qdot/time unchanged across setters. No alternateorder/tolerancefallback/iterativetry.",
+    "scope": "Declared simulation stock mass model preserved forcontrolledcollision comparison, not measured mass/inertia ofsuppliedSTL."
+  },
+  "prior_consumed_active_seconds": 14.699420149001526
 }

@@ -31,7 +31,7 @@ def main():
     result={'schema':protocol['schema'],'tested_clear_features_passed':False,'contact_authorized':False,'proceed_gate_passed':False,'protocol_sha256':sha(HERE/'protocol.json')}
     def stop(*_):raise TimeoutError('Fixed capture-plus-audit180s exhausted; no retry')
     signal.signal(signal.SIGALRM,stop)
-    capture_wall=float(supervisor['capture_wall_seconds']);remaining=protocol['capture_plus_audit_wall_s']-capture_wall-(time.monotonic()-STARTED)
+    capture_wall=float(supervisor['capture_wall_seconds']);prior_wall=protocol['charged_prior_active_seconds'];remaining=protocol['capture_plus_audit_wall_s']-prior_wall-capture_wall-(time.monotonic()-STARTED)
     if not math.isfinite(capture_wall) or capture_wall<0 or remaining<=0:raise ValueError('Invalid actual capture budget')
     signal.setitimer(signal.ITIMER_REAL,remaining)
     try:
@@ -40,7 +40,7 @@ def main():
         for name,digest in protocol['helpers_sha256'].items():
             if sha(HERE/name)!=digest:raise ValueError('Frozen reference helper changed')
         if not supervisor['observation_completed']:
-            result.update(status='INCOMPLETE_CAPTURE',raw_queries=read(args.input/'queries.json') if (args.input/'queries.json').exists() else [],target_geometry='UNTESTED',supervisor=supervisor)
+            result.update(status='INCOMPLETE_CAPTURE',raw_queries=read(args.input/'queries.json') if (args.input/'queries.json').exists() else [],target_geometry='UNTESTED',supervisor=supervisor,restoration_raw=read(args.input/'property_restoration.json') if (args.input/'property_restoration.json').exists() else 'NOT_RECORDED')
         else:
             config=read(args.config);reference=read(args.reference);capture=read(args.capture_protocol);report=read(args.input/'query_report.json');authored=read(args.input/'compound_authoring.json');queries=read(args.input/'queries.json');props=read(args.input/'property_checks.json');cooks=read(args.input/'cook_results.json')
             checks={'offline_candidate_pin_passed':read(args.offline_audit)['offline_candidate_passed'] is True}
@@ -56,6 +56,7 @@ def main():
             checks['four_controls']=len(controlhits)==1 and abs(controlhits[0]['distance_m']-control['expected_hit_distance_m'])<=control['distance_tolerance_m'] and np.max(abs(np.asarray(controlhits[0]['normal_world'])-[0,0,1]))<=control['normal_component_tolerance'] and not neg['hits'] and len(inside['hits'])==1 and inside['hits'][0]['collision']==control['path'] and not outside['hits']
             checks['control_probe_contract']=all(np.allclose(q[field],expected,atol=1e-8,rtol=0) for q,field,expected in [(pos,'origin_world_m',control['ray_hit_origin_m']),(neg,'origin_world_m',np.asarray(control['ray_hit_origin_m'])+control['miss_offset_world_m']),(inside,'center_world_m',control['center_world_m']),(outside,'center_world_m',np.asarray(control['center_world_m'])+control['miss_offset_world_m'])]) and all(q['direction_world']==control['ray_direction'] and q['length_m']==control['ray_length_m'] for q in [pos,neg]) and all(q['radius_m']==control['overlap_radius_m'] for q in [inside,outside])
             checks.update(property_checks(props,read(args.baseline_metadata),read(args.baseline_geometry),protocol))
+            checks.update(restoration_checks(read(args.input/'property_restoration.json'),read(args.baseline_metadata),protocol))
             checks['source_property_inventory_matches_observed_actors']=set(props['initial']['source'])==set(report['initial']['source'])
             checks['authored_input_pins']=authored['candidate_sha256']==protocol['compound_sha256'] and authored['offline_audit_sha256']==protocol['offline_audit_sha256'] and authored['offline_manifest_sha256']==capture['offline_approval']['manifest_sha256'] and authored['registration_reference_sha256']==protocol['reference_sha256']
             allids={'control_hit','control_miss','control_inside','control_outside'};tips={};cookdiag={};quality={}
@@ -96,11 +97,11 @@ def main():
                 quality[label+'_clear_firsthits_100um']=len(clear)>=1 and all(r['firsthit_error_m'] is not None and abs(r['firsthit_error_m'])<=protocol['maximum_clear_firsthit_error_m'] for r in clear)
                 quality[label+'_27_no_target_overlaps']=len(overlaps)==27 and all(not o['target_hit_paths'] for o in overlaps)
                 tips[label]={'rays':rays,'overlaps':overlaps,'clear_reference_hit_ids':[r['id'] for r in clear],'unresolved_distance_ids':flagged,'target_rays_with_hits':sum(r['target_hit_count']>0 for r in rays),'missing_CAD_hits':[r['id'] for r in rays if r['reference']['hit'] and not r['target_hit_count']],'unexpected_target_hits':[r['id'] for r in rays if not r['reference']['hit'] and r['target_hit_count']],'sphere_target_overlap_ids':[o['id'] for o in overlaps if o['target_hit_paths']]}
-            checks['exact250_probe_ids']=set(byid)==allids;elapsed=time.monotonic()-STARTED;checks['total180s']=capture_wall+elapsed<=180
+            checks['exact250_probe_ids']=set(byid)==allids;elapsed=time.monotonic()-STARTED;checks['total180s']=prior_wall+capture_wall+elapsed<=180
             result.update(status='query_audit_complete',integrity_checks={k:bool(v) for k,v in checks.items()},quality_checks={k:bool(v) for k,v in quality.items()},observation_integrity_passed=bool(all(checks.values())),tested_clear_features_passed=bool(all(checks.values()) and all(quality.values())),tips=tips,cooked_representation_diagnostics=cookdiag)
     except Exception as error:result.update(status='STOP',error=repr(error))
     finally:
-        signal.setitimer(signal.ITIMER_REAL,0);result.update(capture_wall_seconds=capture_wall,audit_wall_seconds=time.monotonic()-STARTED,scope=protocol['scope']);args.output.mkdir(parents=True,exist_ok=True)
+        signal.setitimer(signal.ITIMER_REAL,0);elapsed=time.monotonic()-STARTED;result.update(prior_charged_active_seconds=prior_wall,capture_wall_seconds=capture_wall,audit_wall_seconds=elapsed,cumulative_active_wall_seconds=prior_wall+capture_wall+elapsed,scope=protocol['scope']);args.output.mkdir(parents=True,exist_ok=True)
         (args.output/'evaluation.json').write_text(json.dumps(result,indent=2,allow_nan=False)+'\n');(args.output/'run_complete.json').write_text(json.dumps({'evaluation_completed':True,'tested_clear_features_passed':result['tested_clear_features_passed'],'contact_authorized':False,'evaluation_sha256':sha(args.output/'evaluation.json')})+'\n')
 
 
@@ -116,6 +117,23 @@ def property_checks(props,baseline,geometry,protocol):
         'robot_properties_match_B0':first['robot_matches_B0'] is True and first['robot']==baseline['initial_robot_properties'],
         'white_colliders_match_B0':first['white_matches_B0'] is True and bool(whiteok),
         'all301_source_properties':len(first['source'])==301 and all(set(actor)=={'masses','inertias','coms'} and all(np.isfinite(value).all() for value in actor.values()) for actor in first['source'].values())}
+
+
+def restoration_checks(record,baseline,protocol):
+    expected=baseline['initial_robot_properties'];names=record['body_names'];paths=record['link_paths'];before=record['before'];after=record['after'];n=len(names)
+    mapping=n==len(expected['masses'][0]) and n>11 and names[10:12]==['fr3_leftfinger','fr3_rightfinger'] and paths==[['/World/envs/env_0/Robot/'+name for name in names]]
+    nonfinger=[i for i in range(n) if i not in (10,11)]
+    physical=['masses','coms','inertias'];actuators=['stiffnesses','dampings','effort_limits']
+    compatible=set(before)==set(after)==set(expected) and all(np.asarray(before[k]).shape==np.asarray(expected[k]).shape for k in expected)
+    unchanged_nonfingers=compatible and all(np.array_equal(np.asarray(before[k])[:,nonfinger],np.asarray(expected[k])[:,nonfinger]) for k in physical)
+    unchanged_actuators=compatible and all(before[k]==expected[k] for k in actuators)
+    return {'restoration_one_frozen_order':record['count']==1 and record['order']==record['completed_setters']==['set_masses','set_coms','set_inertias'],
+        'restoration_reference_pin':record['reference_sha256']==protocol['reference_sha256'],
+        'restoration_timing':record['timing']=='after_scene_reset_before_explicit_preassembly_step' and record['sim_reset_internal_initialization_precedes_restore'] is True,
+        'restoration_finger_mapping':bool(mapping),'restoration_only_finger_properties_prechanged':bool(unchanged_nonfingers and unchanged_actuators),
+        'restoration_exact_all6_B0_readback':after==expected,
+        'restoration_no_q_or_qdot_change':record['q_before']==record['q_after'] and record['qdot_before']==record['qdot_after'] and bool(np.isfinite(record['q_after']).all() and np.isfinite(record['qdot_after']).all()),
+        'restoration_no_physics_time_change':record['physics_time_before_s']==record['physics_time_after_s'] and math.isfinite(record['physics_time_before_s'])}
 
 
 def authored_and_cooked(authored,cooks,label,candidate,config,baseline_geometry):
