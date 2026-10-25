@@ -37,3 +37,23 @@ Only syntax and tiny numerical contract fixtures run outside the queue:
 ```sh
 python experiments/stage2_idle_20261025/run_idle.py --self-test
 ```
+
+## One unchanged-physics breakage diagnostic
+
+The initial smoke failed at step7: two connections to brick_9_0_3 broke, reducing
+930 links to928 while position drift was only.171mm. `diagnose_breakage.py` reuses
+the same native initializer and runs at most8 steps, stopping at the first failed
+invariant. Only `BreakageThresholds.debug_dump` changes to true; every other public
+threshold is snapshotted and compared exactly. Gravity, preload, friction,
+compliance, cooldown, dt and breakage enablement remain unchanged.
+
+The diagnostic records public per-link utilization for all930 original links,
+the top values, connections836/837, native ID mappings and solver debug dumps.
+`TMPDIR` points to the owned output/native_debug_tmp directory before native code
+loads. A missing/unmapped utilization is−1, not zero. Cooldown delays break
+selection; its timing is not evidence of the failure's cause.
+
+`diagnostic_complete.json` means observations were collected, including an
+expected first failure; it explicitly does not mean idle stability passed.
+Use the same frozen default-queue workflow, replacing supervise_idle.py with
+supervise_diagnostic.py. No physics tuning, solver rebuild or recovery is tried.
