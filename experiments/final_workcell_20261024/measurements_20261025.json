@@ -167,5 +167,63 @@
     ],
     "reference": "Approximate center of front camera housing fromhandmeasurements, not calibrated optical center.",
     "orientation": "Unmeasured; no calibrated extrinsic transform or C920depthstream established."
+  },
+  "munich_operator_frame_bridge": {
+    "source_report": "resources/alignment_export_munich_20261025_measured/alignment_report.md",
+    "input_tabletop_reference_origin": "Whiteplate near/reject-facing outercorner (TABLE -X,+Y corner), tabletop projection",
+    "local_axis_in_TABLE": {
+      "X": [
+        0,
+        -1,
+        0
+      ],
+      "Y": [
+        1,
+        0,
+        0
+      ],
+      "Z": [
+        0,
+        0,
+        1
+      ]
+    },
+    "T_TABLE_input_tabletop_reference_nominal_32stud": [
+      [
+        0,
+        1,
+        0,
+        -0.128
+      ],
+      [
+        -1,
+        0,
+        0,
+        0.128
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "housing_position_in_input_tabletop_reference_m": [
+      0.17,
+      -0.19,
+      0.44
+    ],
+    "result_TABLE_housing_m": [
+      -0.318,
+      -0.042,
+      0.44
+    ],
+    "status": "Nominal frame-convention conversion using32x8mm plate; not a surveyed plate/base transform or camera opticalextrinsic."
   }
 }

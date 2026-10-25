@@ -1,0 +1,193 @@
+{
+  "schema": "munich-measured-optical-frame-bridge-v1",
+  "execution_authorized": true,
+  "maximum_active_seconds": 10,
+  "maximum_jobs": 1,
+  "expected_observations": 12,
+  "input_bundle_sha256": "649b8d72ca76867a1f5d8f41656bbc4ae4cdedec69976806168b2db42fee9354",
+  "file_checksum_validation": "All119 SHA256SUMS files verified before import; no exported software executed.",
+  "files": {
+    "frames": {
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/calibration/frames_and_transforms.json",
+      "sha256": "d0aa661eb757898093af62971881df9bc980d3af5ba7add1d3b62dbbb215fc63"
+    },
+    "camera": {
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/cameras/realsense.json",
+      "sha256": "3cfd618d1b6a4701413acf8b6bf95885de5b6f0bd53576b68df65cff92dbcfb1"
+    },
+    "board_points": {
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/calibration/board_object_points.json",
+      "sha256": "bbf66948fa41c4bcf9d5b7cd391941209fde2a631cc54edfebeb0e18ebe5a3f9"
+    },
+    "validation": {
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/calibration/validation_results.json",
+      "sha256": "96ec9ad1b9e63e7f013cdc1ee330262cac41f0fb20942f5f59cf538eb4314805"
+    },
+    "index": {
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/index.json",
+      "sha256": "7f0f601b67481d6bc7c7a06afbdaae426221aaf4f53ae5f44437685713b560f0"
+    },
+    "result": {
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/calibration/realsense_30mm_result.yaml",
+      "sha256": "47e594f6b7dab8851d7528de714487a29b28b102e6375a2f344ad8645096b383"
+    },
+    "urdf": {
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/robot/fr3_fk_reference.urdf",
+      "sha256": "9f395c1dd0bd97779534b14e09777b183c0b5ddb6f0ae306a106fe6a0c8e4c0a"
+    },
+    "usd_chain": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T115521.846258Z-stage2-initialization-r3/output/kinematic_chain.json",
+      "sha256": "56740a748b3885b3789f1fe3731cffb0586e3a615cde02110566b82987ece1d0"
+    },
+    "grip_science": {
+      "path": "/home/faps/dev/github/robo.innovate26/experiments/stage2_pick_20261025/protocol.json",
+      "sha256": "16ce8eb603e2d620c97b931c02dae43ed605060187d252a6873eb9d9a824d8ce"
+    }
+  },
+  "pairings": [
+    {
+      "id": "00_sample_1792922690051980112",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/00_sample_1792922690051980112_pairing.json",
+      "sha256": "43e4c1d4fb8ee31df7c4f58112f4e1f62a1ea40f8e710015373e74317f225770"
+    },
+    {
+      "id": "01_sample_1792922817859681857",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/01_sample_1792922817859681857_pairing.json",
+      "sha256": "8a3e9392f5708d9e378713f2d6e7a233b97fffeb0f49986f318d1095974b2229"
+    },
+    {
+      "id": "02_sample_1792922910364715476",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/02_sample_1792922910364715476_pairing.json",
+      "sha256": "08821e6282ffb803c0328ee471242f3f69dc65863b6c346ac0d715c4664c7752"
+    },
+    {
+      "id": "03_sample_1792922980404017411",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/03_sample_1792922980404017411_pairing.json",
+      "sha256": "154292e596c40e7bf833b3b7afa96c2e55a2ecb55763f9d5e90e38fcd9a33e39"
+    },
+    {
+      "id": "04_sample_1792923075472338107",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/04_sample_1792923075472338107_pairing.json",
+      "sha256": "2aa27bfb242ae9cb209150bdf4fab37179fbd40cf5cda35e994fcb9ede6c928f"
+    },
+    {
+      "id": "05_sample_1792923140871208906",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/05_sample_1792923140871208906_pairing.json",
+      "sha256": "bf1e5127e79275d37e39b98ea3d1caaf52a208a08c84e7ce4c3e7cdc25c9eb7f"
+    },
+    {
+      "id": "06_sample_1792923242254997714",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/06_sample_1792923242254997714_pairing.json",
+      "sha256": "d96f51c544e9879a956c5a506b10ea0cd019edc4b78247c138b223f98e4d65dc"
+    },
+    {
+      "id": "07_sample_1792923302810912302",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/07_sample_1792923302810912302_pairing.json",
+      "sha256": "6d91530fa84430f651811cf8e9cc8627b136b49c6a58d1dfc9d70d7b60e8d410"
+    },
+    {
+      "id": "08_sample_1792923443410579016",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/08_sample_1792923443410579016_pairing.json",
+      "sha256": "893277f59261483434fa3e31c84dee7bf7a4a6e7738b0d152133f196cdceb8cf"
+    },
+    {
+      "id": "09_sample_1792923533226772912",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/09_sample_1792923533226772912_pairing.json",
+      "sha256": "0312203ea66a3ddb2513357e4367210ed21b0e036f8b4412d34ad5cc6a6a2040"
+    },
+    {
+      "id": "10_sample_1792923587571311973",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/10_sample_1792923587571311973_pairing.json",
+      "sha256": "87d2e8ec24f2fff01f39c4cb7c5f541801cbf084a1bdcc290899a4a8dac4b845"
+    },
+    {
+      "id": "11_sample_1792923679250109469",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/11_sample_1792923679250109469_pairing.json",
+      "sha256": "e94af763ebe8691638b99834dc694beff0de3715ff0e03b08e501cb7eedc1abd"
+    }
+  ],
+  "acquisitions": [
+    {
+      "id": "00_sample_1792922690051980112",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/00_sample_1792922690051980112_acquisition_original.json",
+      "sha256": "6c26fd028af2264da82c93ae12e302c5af62e9217a950d0e3ebbe397a4f34ab6"
+    },
+    {
+      "id": "01_sample_1792922817859681857",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/01_sample_1792922817859681857_acquisition_original.json",
+      "sha256": "2c4c00eac0ba3760b2f5c51bf2a310bebf1c8ea345aa638eff411dad4b48bf54"
+    },
+    {
+      "id": "02_sample_1792922910364715476",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/02_sample_1792922910364715476_acquisition_original.json",
+      "sha256": "caab36e196c3bc09b226d7d0e20151e6d2d337d51f27e7433fd061ccee7c2343"
+    },
+    {
+      "id": "03_sample_1792922980404017411",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/03_sample_1792922980404017411_acquisition_original.json",
+      "sha256": "2271ed2a10f4d141ca02a20c3923432ad22248f9408c718a9c6d9b30f10be82c"
+    },
+    {
+      "id": "04_sample_1792923075472338107",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/04_sample_1792923075472338107_acquisition_original.json",
+      "sha256": "1203e7a754961b98d933f73467da85303e526d9db8d4a61c3a839b80469afde2"
+    },
+    {
+      "id": "05_sample_1792923140871208906",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/05_sample_1792923140871208906_acquisition_original.json",
+      "sha256": "164d40664a4eb5d3f32fe32ae540aeed9819ec46618b1b20a254921478312959"
+    },
+    {
+      "id": "06_sample_1792923242254997714",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/06_sample_1792923242254997714_acquisition_original.json",
+      "sha256": "615e43c6528a661d9b097518a3368373ec87093eac35651f80c1af7a74292c45"
+    },
+    {
+      "id": "07_sample_1792923302810912302",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/07_sample_1792923302810912302_acquisition_original.json",
+      "sha256": "7bcb76524a4ab763bbb0bcf2780e1f05fdf7eed73947f8288ae31fc6c800ae58"
+    },
+    {
+      "id": "08_sample_1792923443410579016",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/08_sample_1792923443410579016_acquisition_original.json",
+      "sha256": "d15fc073e613986943a6d5d4110861628fbb4e66e12434911fc9b5f924167a69"
+    },
+    {
+      "id": "09_sample_1792923533226772912",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/09_sample_1792923533226772912_acquisition_original.json",
+      "sha256": "7ea50c558f63222b45d97b9800ad22127c91971502cb4b1b5f4c14915602961c"
+    },
+    {
+      "id": "10_sample_1792923587571311973",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/10_sample_1792923587571311973_acquisition_original.json",
+      "sha256": "85c4a14b2bff1827b87ba0e7bca836774c4a1adf8df45693ef25fed24baacc05"
+    },
+    {
+      "id": "11_sample_1792923679250109469",
+      "path": "/home/faps/dev/github/robo.innovate26/resources/alignment_export_munich_20261025_measured/observations/11_sample_1792923679250109469_acquisition_original.json",
+      "sha256": "93b42c2f958cd47137072936abea4961446cb683fcfff344a8c05daeb0c4d2e3"
+    }
+  ],
+  "tolerances": {
+    "fk_translation_m": 0.002,
+    "fk_rotation_rad": 0.01,
+    "algebra_atol": 1e-05,
+    "rotation_orthogonality_atol": 1e-05,
+    "board_translation_rms_m": 0.003,
+    "board_translation_max_m": 0.006,
+    "board_rotation_rms_deg": 0.8,
+    "board_rotation_max_deg": 1.5
+  },
+  "scope": "JSON/XML/YAML/NumPy-only metadata frame/model compatibility. No refit, corrections, pose exclusion, images, NPZ, hardware/ROS/network/robot actions or simulation.",
+  "actual_pairing": "Use12namedactualq/T_base_tcp/T_base_flange/F_T_EE; compare against originalrobot_after actualfields. Decode rawlibfrankacolumnmajoronce, exported4x4 alreadycolumn. Neverdesiredfields.",
+  "frame_rules": [
+    "ModelROOTidentity only means computeBASE-relativeFK; do not fill unsurveyed world/base identity.",
+    "USDflange->hand fixed transform and URDFhand->configuredTCP103.4mm are explicit. Modifiedgrip117.56mm is separate.",
+    "UseacceptedT_flange_color/T_tcp_color andRGBalignedfloat32meterdepth0invalid, notT_tcp_depth foralignedpixels.",
+    "Preserve acceptedT_base_board andexportedobject-pointaxes/origin, notcenteredtexture orcurrentOpenCVdefaults.",
+    "Keep unsurveyedIsaacworld/base,plate,bowl,C920 registrations NULL; rejectedwebcamfits excluded."
+  ],
+  "interpretation": "Engineering model compatibility and repeated calibration consistency only, not independent physical alignment or contact/held-offset validation.",
+  "resource_scope": "One metadata import/check job; separate from the CLOSED contact feasibility experiment and does not authorize new contact trials or erase1452.903s contact cost.",
+  "independent_source_review": "Planner, independent evaluator and reviewer agree one<=10s frozen metadata-only check. No refit/exclusion/threshold tuning, renderer application or hardware permission."
+}
