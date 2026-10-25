@@ -47,3 +47,30 @@ Same installed unitree_sim_env/Isaac5.1/BrickSim, no new dependencies. Existing
 validated reset/targeted mass restoration remains initialization, while this
 new offset opinion is explicit and frozen before measurement. All physical
 simulation and captured-array evaluation use the foreground default queue.
+
+## Result — Pueue1824: early-motion censored
+
+Source `4d257f3`; snapshot `runs/20261025T163329.924990Z-stage2-body-margin`.
+The fresh1500-step control and initial/terminal configuration proofs pass. The
+new authored offset and prescribed unordered runtime multisets are verified;
+no other physical-property change is accepted. Pick admission450 is the same
+30-command position candidate.
+
+At488, only38 lift samples later, the actual-finger-speed guard stops the run.
+Fingers open at2.042803/2.077678mm/s against2mm/s while commanded targets stay
+frozen. TCP actual speed0.855mm/s, tracking error0.153mm and peak loads1.364/
+1.360N stay within their bounds. No plane/native/mapping violation occurs in
+this SHORT prefix. Relative coupon error is0.197mm/0.938°, final rise0.077mm;
+there is no completed5mm lift,30hold or terminal support-clearance verdict.
+
+This is CENSORED, not a passed retention test or a demonstrated mechanical
+retention failure. The prior later failures cannot be called fixed merely
+because this run stopped earlier. Independent reviews close improvement2of2
+without retry/offset/threshold tuning. The next reassessment is source-only:
+what should the actual passive finger-response cutoff mean separately from the
+unchanged1mm/s command limit and implicit drive dynamics? A revised criterion
+would need an independent engineering justification;2.1mm/s fitted to this
+crossing is not proposed.
+
+Full Pueue190.508734634s is retained, yielding2594.227219942/2800s total;
+205.7728s remains. Machine-readable result/provenance: `results.json`.

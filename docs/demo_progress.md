@@ -1,14 +1,14 @@
 # Challenge 2 simulation demo: measured progress
 
-Updated 2026-10-25. **Latest measured state:** a free-coupon retention
-fixture fails with both the original early-force admission (1821) and a correctly
-executed position-only 14 mm / 30-endpoint-sample policy (1822). A matched
-1500-step stationary control passes. Neither trial completes the bounded lift
-and hold. Startup readback1823 now records1.3625mm contact/zero rest offsets in all
-returned finger/coupon slots and a coupon authored/runtime material mismatch.
-Shape-to-component mapping and actual traction remain unknown. No contact
-parameter change or more complex controller is justified as an established fix. Native tower extraction, transfer, insertion and repeated
-sorting remain unproven. See the [closed timing comparison](../experiments/stage2_free_position_20261025/README.md).
+Updated 2026-10-25. **Latest measured state:** BODY-only contact-margin
+sensitivity1824 verifies the intended100µm offset and passes a fresh1500-step
+stationary control. Its lift stops after38 samples on actual finger response
+2.043/2.078mm/s against the frozen2mm/s guard. This is a censored observation:
+retention and the prior later failures remain unresolved. The next explicit
+reassessment separates that diagnostic response cutoff from the unchanged
+1mm/s command ramp; no new criterion has passed. Native tower extraction,
+transfer, insertion and repeated sorting remain unproven. See the
+[closed margin comparison](../experiments/stage2_body_margin_20261025/README.md).
 
 Local pregrasp RGB color classification now has a saved-image benchmark
 ([Stage 1 color results](../experiments/stage1_color_20261025/results.json)); it is
@@ -1118,3 +1118,21 @@ would remain about1.4625mm. No physical retry follows this readback.
 
 Full1823Pueue cost15.679833137s brings the retained total to2403.718485308/2500s.
 See [raw configuration result and limits](../experiments/stage2_contact_readback_20261025/README.md).
+
+
+## BODY-margin sensitivity — control/configuration pass, early-motion censored
+
+1824 authors only the two known BODY contact offsets to100µm. Initial/terminal
+readbacks corroborate one changed slot per finger, with coupon/rest/materials
+unchanged and no row-to-component inference. A fresh1500control passes; the
+position-only pick admits at450/30, then stops at488 solely on actual finger
+speed. Relative error is0.197mm/0.938° and final rise0.077mm in the short prefix.
+There is no5mm lift/30hold or full retention verdict. No claim that the old
+normal-contact issue is fixed is supported.
+
+Improvement2of2 closes without retry or offset tuning. Static review finds no
+qdot units/index bug: the2mm/s actual cutoff came from an earlier slow-contact
+diagnostic, independently of the1mm/s commanded ramp and implicit-drive asset
+limits. Any revised criterion is a separately frozen engineering reassessment;
+1824 remains FAIL/CENSORED. Full190.508734634s charges the retained aggregate
+to2594.227219942/2800s.
