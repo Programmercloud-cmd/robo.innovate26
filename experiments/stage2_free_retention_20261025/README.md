@@ -46,3 +46,27 @@ The same installed `unitree_sim_env`/Isaac5.1/BrickSim runtime is reused without
 dependency changes. Source/configuration/helper hashes are snapshotted before
 queueing. Tiny source/synthetic tests can run with that environment's Python;
 all physical simulation and captured-array evaluation use Pueue.
+
+## Result — Pueue1821
+
+Source `bdd3880`; snapshot `runs/20261025T154448.823497Z-stage2-free-retention`.
+The matched1500-step control passes with zero finger load, stable coupon and
+intact301/930 source. The fresh pick lifts after a real1.5N force confirmation
+at step424, only4 completed endpoint commands; position fallback is not used.
+At step795 it aborts on finger speed and left lateral-contact qualification.
+Final coupon rise is0.230mm, maximum admission-relative drift2.673mm/4.145°;
+retention violates its bounds for232 frames. No completed5mm lift/hold. Peak
+loads1.631/1.624N stay below2N. Tower state and private contact mapping pass.
+
+This is a free-body retention failure: tower clutch resistance is not necessary
+for the failure, but identical causes in the two tests are not established.
+One separate audit-schema bug makes `candidate_record` false: the runtime's
+force-confirmation record includes both commanded finger targets, while the
+inherited expected record omitted that field. A two-file source/synthetic repair
+now reconstructs the exact command vector; original1821 is not rescored or
+relabeled. Independent reviewers accept the distinct physical failures.
+
+Full Pueue232.401402697s is charged, yielding2287.506864115/2500s retained.
+The one control/pick diagnostic is closed. A separately reviewed timing-only
+comparison may wait through30 endpoint commands at the same14mm target; no
+material, force, depth or trajectory tuning is implied by that hypothesis.

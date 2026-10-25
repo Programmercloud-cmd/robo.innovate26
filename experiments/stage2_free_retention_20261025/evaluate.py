@@ -35,6 +35,16 @@ def holding_error(tcp, state, reference, helper):
         float(np.arccos(np.clip((np.trace(reference[1].T@orient)-1)/2, -1, 1))))
 
 
+def force_confirmation_record(confirmation, row, finger_indices):
+    """Reconstruct the full record from the independently detected raw-force step."""
+    if confirmation is None: return None
+    if row['step'] != confirmation['step']: raise ValueError('Force record requires its admission-step commands')
+    commands = np.asarray(row['joint_commands'])[finger_indices]
+    if commands.shape != (2,) or not np.isfinite(commands).all(): raise ValueError('Invalid finger command vector')
+    return {'step': confirmation['step'], 'command_q_m': confirmation['command_q_m'],
+        'at_endpoint': confirmation['at_endpoint'], 'commanded_finger_q_m': commands.tolist()}
+
+
 def raw_arrays(path):
     with np.load(path, allow_pickle=False) as raw:
         return {key: raw[key].copy() for key in raw.files}
@@ -172,7 +182,7 @@ def audit(folder, mode, predecessor, started):
     previous = None; failures = Counter(); retired_reference = Counter(); loaded_counts = Counter(); support_observations = 0; peak = {'left': 0., 'right': 0.}
     reference = None; max_relative_m = max_relative_rad = max_source_m = max_source_rad = 0.
     hold_count = support_frames = 0; min_hold_clearance = None; first_lift = lift_origin = lift_final = None
-    source_final = source_initial; last_state = state0; total = 0; raw_ids = {}
+    source_final = source_initial; last_state = state0; total = 0; raw_ids = {}; expected_confirmation = None
     for row in legacy.rows(folder/meta['online_trace']):
         legacy.check_time(deadline); total += 1
         gt, fr, ix = next(truth, None), next(fixtures, None), next(native_index, None)
@@ -271,6 +281,8 @@ def audit(folder, mode, predecessor, started):
             local['stable_coupon'] = np.linalg.norm(state[:3]-state0[:3]) <= plan['control_max_coupon_translation_m'] and helper.angle_between(state[3:7], state0[3:7]) <= plan['control_max_coupon_angle_rad']
         else:
             adapter.closure(row, geometry, detail, local)
+            if adapter.confirmation is not None and expected_confirmation is None:
+                expected_confirmation = force_confirmation_record(adapter.confirmation, row, fi)
             if adapter.admission and reference is None: reference = legacy.relative_pose(row['tcp_pose_world_wxyz'], state)
             if reference:
                 relative_m, relative_rad = holding_error(row['tcp_pose_world_wxyz'], state, reference, legacy)
@@ -295,7 +307,7 @@ def audit(folder, mode, predecessor, started):
         checks['full_stationary_control'] = total == plan['control_steps'] and marker['controller_status'] == 'control_completed'
     else:
         checks['positive_admission'] = adapter.admission is not None
-        checks['candidate_record'] = meta['position_candidate'] == adapter.position_candidate and meta['lift_admission'] == adapter.admission and meta['grasp_confirmation'] == adapter.confirmation
+        checks['candidate_record'] = meta['position_candidate'] == adapter.position_candidate and meta['lift_admission'] == adapter.admission and meta['grasp_confirmation'] == expected_confirmation
         checks['completed_pick'] = marker['controller_status'] == 'bounded_sequence_completed' and previous['phase'] == 'hold'
         checks['coupon_rise'] = rise >= plan['minimum_coupon_rise_m']
         checks['lift_5mm'] = lift_origin is not None and bool(np.allclose(lift_final-lift_origin, [0, 0, .005], atol=1e-8, rtol=0))
