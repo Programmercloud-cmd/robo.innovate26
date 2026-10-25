@@ -818,3 +818,19 @@ I pick under unchanged source/science. Authoritative aggregate time is1298.525
 of1800seconds, leaving501.475. Child termination after the complete marker is
 bounded cleanup, not graceful shutdown; scientific capture/audit are complete.
 This is source stability at the new q, not grasping or a ray-clearance pass.
+
+
+The one-off exploratory pick1809 (source`e2ec2c9`) completes1711 measuredsteps:
+783approach,620finaldescent,308closing. It stops on `unqualified_contact_right`
+before the1.5N grasp trigger. Peak sampled loads are0.07895/0.02062N, far below
+the2N abort ceiling. No detachment/lift/hold occurs;930edges and the301-part
+source component remain. Both finger and reciprocal-source finite-body ownership
+checks fail for one final-step event; flatness/normal/target association alone
+do not establish BODY ownership. The original failure is retained.
+
+This closes the one-off physical attempt with no retry authorized. Aggregate
+time is1452.449/1800seconds. A single reviewed<=10s queued saved-data diagnostic
+will compare fixed right/source points at1710/1711 (1709poseonly), exact authored
+BODY/white/head distances and returned-cook representation distances. It cannot
+rescale geometry, infer runtime offsets from None, loosen tolerances, promote
+1809 to success or establish a new manipulation result.

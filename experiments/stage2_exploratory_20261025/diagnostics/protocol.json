@@ -1,0 +1,86 @@
+{
+  "schema": "first-contact-ownership-diagnostic-v1",
+  "execution_authorized": true,
+  "source_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick",
+  "steps": [
+    1710,
+    1711
+  ],
+  "pose_only_predecessor_step": 1709,
+  "maximum_active_seconds": 10,
+  "maximum_jobs": 1,
+  "prior_case_seconds": 1452.4487734630238,
+  "aggregate_case_ceiling_seconds": 1800,
+  "prior_supervisor": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick/pipeline_supervisor.json",
+    "sha256": "5cdb11802a8853694917cae96c68605368f465c4e0fc0bde5987be6b84849c97"
+  },
+  "files": {
+    "online_trace": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick/output/online/trace.jsonl",
+      "sha256": "40648b4c023e6a2bb1e116137cc443476205e807223fd27565a23cd3b9f3c55e"
+    },
+    "truth_trace": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick/output/evaluation_truth/trace.jsonl",
+      "sha256": "739651dc9ddf357d1bf5ab7b51fbf84aad58c7cb2a3befa74f9cd906c912af9f"
+    },
+    "tool_geometry": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick/output/tool_geometry.json",
+      "sha256": "807ddbd9f4d1c163c0e12c58051727f2e4eee0a73994eeb5069ed95fc13c4146"
+    },
+    "cook_results": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick/output/cook_results.json",
+      "sha256": "01d3f2cc03c99657146fb8fa8453c909cc0dd33d175b26ff58b0517b79692722"
+    },
+    "observer_metadata": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick/output/contact_observations/metadata.json",
+      "sha256": "b9f70be574020082aadb6ad6b7afb702a0e51fe0a46725d8de2191fbc320dcca"
+    },
+    "evaluation_observer_metadata": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick/output/evaluation_truth/contact_observations/metadata.json",
+      "sha256": "ceae81a41999390074d84187dd50da813ad797646c02d6968d3e053ba47438be"
+    },
+    "capture_metadata": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick/output/capture_metadata.json",
+      "sha256": "3115ed79d7d87c27c3a4a75d830d575e18608ebc7e00476ffd895f15c931c61b"
+    },
+    "science": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick/experiments/stage2_exploratory_20261025/protocol.json",
+      "sha256": "9382013075e97767cc67daf8e29cdef2432d658d2a3cad2c8947ca07b70f765d"
+    },
+    "contact_protocol": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick/experiments/stage2_exploratory_20261025/evaluation/contact_protocol.json",
+      "sha256": "f47d8eb97a6291aa74bf45dfa698efcaf2ba6a31c5b04be846cc9d69dfc66442"
+    }
+  },
+  "contacts": {
+    "1710": {
+      "right": {
+        "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick/output/contact_observations/step_1710/right.npz",
+        "sha256": "83c58a083b7c35aff3a7aa7c00acc4a840c930947b555c591741cae697443a1f"
+      },
+      "source": {
+        "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick/output/evaluation_truth/contact_observations/step_1710/source.npz",
+        "sha256": "896d70bdcde17be5d5bda2ce2b0046b6b6c9cc7c20883eeb28489316cdfc9fd6"
+      }
+    },
+    "1711": {
+      "right": {
+        "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick/output/contact_observations/step_1711/right.npz",
+        "sha256": "0db52da7e56485908b8e28d6176395a0f2768fdb3078d0c792a2bbe0c06ef05a"
+      },
+      "source": {
+        "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick/output/evaluation_truth/contact_observations/step_1711/source.npz",
+        "sha256": "e9b5f76f9e0deba19248198e1eba2cb495339b1277b63ab0fa05ca8fc543f8c2"
+      }
+    }
+  },
+  "purpose": "First failing right loaded point and preceding frame, reciprocal source-right only. Unchanged helper decisions and exact finite authored/cooked-representation distances, no simulation/recook/thresholdchange/retry.",
+  "scope_limits": [
+    "Returned cooked geometry is a representation comparison, not asserted exact native contact boundary.",
+    "Absent authored contact/rest offsets leave effective runtime offsets UNMEASURED.",
+    "Previous-pose sensitivity is descriptive; no fitted transform correction.",
+    "All1809failures remain; no contact retry authorized."
+  ],
+  "independent_review": "Planner/evaluator/reviewer agree fixed two-step data scope; final guards and10-second defaultqueue wrapper reviewed. No new physics, geometry, force/point threshold or retry."
+}

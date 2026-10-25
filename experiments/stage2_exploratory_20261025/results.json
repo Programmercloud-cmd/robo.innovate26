@@ -36,10 +36,69 @@
     "cleanup": "Child forciblyterminated after complete marker; rawcapture and independent audit valid, not gracefulshutdown."
   },
   "pick": {
-    "status": "ONE_CONDITIONAL_ATTEMPT_APPROVED_NOT_YET_SUBMITTED"
+    "job_id": 1809,
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T122214.133793Z-stage2-exploratory-I-pick",
+    "source_commit": "e2ec2c9",
+    "status": "FAILED_CLOSING_BODY_OWNERSHIP_GUARD",
+    "measured_steps": 1711,
+    "phase_counts": {
+      "approach": 783,
+      "final_approach": 620,
+      "close": 308
+    },
+    "stop_reasons": [
+      "unqualified_contact_right"
+    ],
+    "audit_sha256": "2cc79a8a7971e63d9508feaa8e7651e6ac9661b8f4c5b23a6a0c9af2d4287868",
+    "checks_passed": 74,
+    "check_count": 83,
+    "frame_failure_counts": {
+      "all_loaded_points_body_flat_lateral": 1,
+      "all_reciprocal_loaded_points_body_flat_lateral": 1,
+      "no_capture_abort": 1
+    },
+    "failed_checks": [
+      "all_measured_frame_guards",
+      "controller_record_complete",
+      "target_detached_singleton",
+      "detachment_after_grasp_trigger",
+      "commanded_straight_5mm_lift",
+      "target_rise_4mm",
+      "held_relative_transform",
+      "final_hold_250ms",
+      "positive_force_trigger"
+    ],
+    "metrics": {
+      "first_singleton_step": null,
+      "target_rise_m": -8.923560380935669e-05,
+      "held_translation_max_m": null,
+      "held_angle_max_rad": null,
+      "non_target_translation_max_m": 0.00020829330605920404,
+      "non_target_angle_max_rad": 0.002183660166338086,
+      "force_peak_N": {
+        "left": 0.07894569314521505,
+        "right": 0.020622691954486072
+      },
+      "first_force_trigger_step": null,
+      "loaded_point_observations": 208,
+      "max_loaded_flat_distance_m": 8.155008413831839e-06,
+      "min_loaded_outward_dot": 0.9999997943661942
+    },
+    "native_breaks": 0,
+    "target_detached": false,
+    "visual_ray_certificate_passed": false,
+    "actual_capture_plus_audit_seconds": 153.92397746699862,
+    "cumulative_case_seconds": 1452.4487734630238,
+    "remaining_case_seconds": 347.5512265369762
   },
   "no_H_retries_or_improvement_pool": true,
   "whole_arm_contact_coverage": "UNMEASURED",
   "online_held_verification": "UNKNOWN blocks transfer",
-  "independent_review": "Evaluator and reviewer accept58/58 currentqcontrol and one unchanged conditionalIattempt with501.475s remaining."
+  "independent_review": "Evaluator and reviewer accept58/58 currentqcontrol and one unchanged conditionalIattempt with501.475s remaining.",
+  "baseline_status": "CLOSED_FAILED_ONE_OFF_ATTEMPT_NO_RETRY",
+  "next_diagnostic": {
+    "scope": "Fixed1710/1711right+source reciprocal, no physics or changes",
+    "maximum_active_seconds": 10,
+    "status": "SOURCE_REVIEW_PENDING"
+  }
 }
