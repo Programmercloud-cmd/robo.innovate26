@@ -1,0 +1,85 @@
+{
+  "schema": "pose-reader-case-results-v1",
+  "status": "CLOSED_STARTUP_READER_RESOLVED",
+  "jobs": [
+    {
+      "job_id": 1838,
+      "snapshot": "runs/20261026T080242.039903Z-pose-reader-capture",
+      "source_commit": "c1e6805ec88b4e03f988a28bdd3801f0e0c70a9a",
+      "pueue_result": {
+        "Failed": 124
+      },
+      "start": "2026-10-26T09:02:42.817281130+01:00",
+      "end": "2026-10-26T09:04:02.859574441+01:00",
+      "full_scheduler_seconds": "80.042293311",
+      "normal_shutdown_marker": false,
+      "manifest_sha256": "f8ec3ab14031f1ca2a8ee069607489317c4d3bfacaa1df74585220dd9513dec2",
+      "stage": "capture"
+    },
+    {
+      "job_id": 1839,
+      "snapshot": "runs/20261026T080531.349802Z-pose-reader-audit",
+      "source_commit": "c1e6805ec88b4e03f988a28bdd3801f0e0c70a9a",
+      "pueue_result": "Success",
+      "start": "2026-10-26T09:05:32.923424032+01:00",
+      "end": "2026-10-26T09:05:34.239570816+01:00",
+      "full_scheduler_seconds": "1.316146784",
+      "normal_shutdown_marker": null,
+      "manifest_sha256": "213f9ed53fa3f82f76114f00190db7af3e609c9c55b88530d4af82fdc4ca7308",
+      "stage": "saved-data audit"
+    },
+    {
+      "job_id": 1840,
+      "snapshot": "runs/20261026T081119.596157Z-pose-reader-confirm",
+      "source_commit": "edd0642a78a0cf62fa1df8d1c8f314c8f368c631",
+      "pueue_result": {
+        "Failed": 124
+      },
+      "start": "2026-10-26T09:11:20.437724071+01:00",
+      "end": "2026-10-26T09:12:25.724189319+01:00",
+      "full_scheduler_seconds": "65.286465248",
+      "normal_shutdown_marker": false,
+      "manifest_sha256": "1e0a75b0f289bc459285693a10b426fe717cb3167b3d53fd32cd3d33740db69e",
+      "stage": "corrected-class confirmation"
+    }
+  ],
+  "aggregate_scheduler_seconds": "146.644905343",
+  "ceiling_seconds": 180,
+  "reader_confirmation_independently_verified": true,
+  "fresh_direct_batch_position_error_m": 0.0,
+  "fresh_direct_batch_angle_error_rad": 0.0,
+  "maximum_cached_fresh_position_discrepancy_m": 3.725290298461914e-09,
+  "thresholds_changed": false,
+  "task_control_commands": 0,
+  "physics_or_geometry_changed": false,
+  "normal_isaac_shutdown_verified": false,
+  "physical_control_alignment_verified": false,
+  "full_motion_grasp_or_hardware_parity_verified": false,
+  "prior_case_result_unchanged": true,
+  "additional_jobs_planned": false,
+  "artifacts": {
+    "capture_1838.json.gz": {
+      "source_file": "runs/20261026T080242.039903Z-pose-reader-capture/output/capture.json",
+      "uncompressed_sha256": "02cb583b8b4d560d14f9a0e98f826aec4ecbd23ae481fc6f94cce373a8cf87d8",
+      "compressed_sha256": "a4bd37c2b17aaba86f0cd693578b45f5e4b31cd3642479dbad1fce0393a05acd"
+    },
+    "capture_1840.json.gz": {
+      "source_file": "runs/20261026T081119.596157Z-pose-reader-confirm/output/capture.json",
+      "uncompressed_sha256": "6f589dc37c0a0fa3c77d463e757961977772168d75a57393e93bf6d631d80244",
+      "compressed_sha256": "6290ee9012f51f574e2007c5788cc19f4bcae70d6ef29315aa39e373226983f7"
+    },
+    "reader_confirmation_1840.json.gz": {
+      "source_file": "runs/20261026T081119.596157Z-pose-reader-confirm/output/reader_confirmation.json",
+      "uncompressed_sha256": "0bf5aa29bd5466885e72b06c91088ab6dcccf7aea17d9e5dce25b365343cb779",
+      "compressed_sha256": "86f10a52e44a38651f241d06b4468667c205b9e0a8defe3cbabb697dc97d02cd"
+    },
+    "audit_1839.json": {
+      "source_file": "runs/20261026T080531.349802Z-pose-reader-audit/audit/evaluation.json",
+      "sha256": "1dd7e20b28182741a9322033aadc8be4403985d394c319451c3b0dabd46671e6"
+    },
+    "audit_1840.json": {
+      "source_file": "runs/20261026T081119.596157Z-pose-reader-confirm/audit/evaluation.json",
+      "sha256": "12cd591057df66291a6b66fb46b9b1a2d3ab01228415a3de29330a11a27af9ae"
+    }
+  }
+}

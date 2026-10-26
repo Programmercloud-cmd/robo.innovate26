@@ -5,7 +5,10 @@ Updated 2026-10-26. **Current priority:** align simulation with the real
 The exact real Python planner/catalog/policy is shared through a simulation-only
 backend. Independent offline replay passes (Pueue 1835); Isaac validation does
 not pass yet (1836 timed out; 1837 failed its source-pose recorder startup check
-before control). Full grasp parity remains incomplete because the SDK held
+before control). The later [reader-only case](../experiments/pose_reader_20261026/REPORT.md)
+resolves that startup mismatch: fresh per-actor/batch poses agree exactly for all
+300 bricks; cached poses differ by up to 3.725 nm. Actual corrected-class audit
+1840 passes, while shutdown still times out. Full grasp parity remains incomplete because the SDK held
 flag and loaded gripper completion are unsupported. See the
 [alignment report](../experiments/control_alignment_20261026/REPORT.md).
 No physical robot was commanded, and previous results remain unchanged.

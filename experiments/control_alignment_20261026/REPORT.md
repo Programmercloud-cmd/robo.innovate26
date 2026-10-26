@@ -1,5 +1,10 @@
 # Real-stack control alignment: implementation and validation status
 
+Follow-up: the [startup reader-only case](../pose_reader_20261026/REPORT.md)
+resolved the cached-versus-fresh reference mismatch and independently confirmed
+the corrected class. Shutdown and full control validation remain incomplete.
+The original four-job results below are unchanged.
+
 The real Python teaching planner, canonical targets and motion policy are now
 reused unchanged by a simulation adapter. **Execution alignment is incomplete:**
 the independent ideal-backend replay passes, but neither Isaac run completed

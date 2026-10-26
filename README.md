@@ -2,9 +2,10 @@
 
 The current priority is [alignment with the real `task2/jacob` control stack](experiments/control_alignment_20261026/REPORT.md),
 pinned at `13f37da`. The unchanged real Python planner, canonical targets and
-motion policy now have an Isaac backend. Offline parity checks pass; Isaac
-execution validation is incomplete after a timeout and a startup recorder
-consistency failure. This backend is separate from the legacy DLS/RL scaffold.
+motion policy now have an Isaac backend. Offline parity checks pass. The
+[startup pose-reader mismatch is resolved](experiments/pose_reader_20261026/REPORT.md)
+and independently confirmed on all 300 bricks. Isaac shutdown and full-motion
+execution validation remain incomplete. This backend is separate from the legacy DLS/RL scaffold.
 Loaded gripper behavior and the full grasp sequence are not yet aligned or validated.
 
 The current simulation demo uses the frozen depth-guided R3 candidate pipeline

@@ -1,5 +1,9 @@
 # Startup pose-reader diagnosis
 
+**Closed:** actual corrected-class startup proof passes; clean shutdown remains
+unverified. See [results, artifacts and limits](REPORT.md). Commands below
+document the frozen procedure; the submitter rejects repeated stages.
+
 User-authorized continuation after the previous control-alignment case closed.
 Brev remains paused. This case diagnoses the evaluation reader only; it does
 not run the task controller, gripper commands, a new trajectory or training.
