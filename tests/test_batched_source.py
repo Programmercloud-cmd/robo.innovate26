@@ -75,5 +75,17 @@ class BatchedTests(unittest.TestCase):
         q=np.array([[1.,0.,0.,0.],[0.,1.,0.,0.]])
         np.testing.assert_allclose(module.quaternion_angles(q,-q),0,atol=0)
 
+    def test_failed_equivalence_preserves_independent_proof(self):
+        names,scene,raw,view,calls,modules=fixture();raw[1,0]+=.001
+        with patch.dict(sys.modules,modules):
+            with self.assertRaises(module.SourcePoseEquivalenceError) as captured:
+                module.BatchedSourcePoses(scene,names)
+        proof=captured.exception.proof
+        self.assertFalse(proof['equivalence_passed']);self.assertGreater(proof['maximum_position_error_m'],1e-9)
+        self.assertEqual(proof['names'],names);self.assertEqual(proof['row_indices_in_name_order'],[1,2,0])
+        self.assertEqual(len(proof['old_poses_world_wxyz']),3);self.assertEqual(len(proof['new_poses_world_wxyz']),3)
+        before=proof['new_poses_world_wxyz'][0][0];raw[:]=99
+        self.assertEqual(proof['new_poses_world_wxyz'][0][0],before)
+
 
 if __name__=='__main__':unittest.main()

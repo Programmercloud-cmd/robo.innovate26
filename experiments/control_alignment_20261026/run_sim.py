@@ -75,8 +75,13 @@ def main():
         if len(parts)!=301 or len(connections)!=930:raise RuntimeError('Full300 native preassembly missing')
         names=sorted(name for name in scene.rigid_objects if name.startswith('brick_'))
         if len(names)!=300:raise RuntimeError('Full300 source required')
-        from experiments.control_alignment_20261026.batched_source import BatchedSourcePoses
-        proof_clock=float(sim.current_time);reader=BatchedSourcePoses(scene,names)
+        from experiments.control_alignment_20261026.batched_source import BatchedSourcePoses,SourcePoseEquivalenceError
+        proof_clock=float(sim.current_time)
+        try:reader=BatchedSourcePoses(scene,names)
+        except SourcePoseEquivalenceError as error:
+            write(out/'source_pose_getter_failure.json',{'reason':str(error),'control_started':False,
+                'proof':{**error.proof,'clock_before_s':proof_clock,'clock_after_s':float(sim.current_time)}})
+            raise
         reader.proof.update(clock_before_s=proof_clock,clock_after_s=float(sim.current_time))
         source_poses=reader.read
         initial=source_poses();write(out/'source_initial.json',{'names':names,'poses_world_wxyz':initial.tolist(),'native_parts':list(map(str,parts)),'native_connections':list(map(str,connections))})

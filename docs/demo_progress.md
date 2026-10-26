@@ -1,6 +1,16 @@
 # Challenge 2 simulation demo: measured progress
 
-Updated 2026-10-25. **Latest measured state:** the corrected-material regression
+Updated 2026-10-26. **Current priority:** align simulation with the real
+`task2/jacob` branch, pinned at `13f37da`, before further demo development.
+The exact real Python planner/catalog/policy is shared through a simulation-only
+backend. Independent offline replay passes (Pueue 1835); Isaac validation does
+not pass yet (1836 timed out; 1837 failed its source-pose recorder startup check
+before control). Full grasp parity remains incomplete because the SDK held
+flag and loaded gripper completion are unsupported. See the
+[alignment report](../experiments/control_alignment_20261026/REPORT.md).
+No physical robot was commanded, and previous results remain unchanged.
+
+**Earlier manipulation state:** the corrected-material regression
 (1830) passes its fresh 1500-step stationary control and configuration checks,
 but fails retention: 1.687 mm / 6.80° maximum relative error, 0.766 mm final
 rise, abort at step 716, no completed lift/hold. The original three-improvement

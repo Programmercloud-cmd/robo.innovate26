@@ -1,5 +1,10 @@
 # Align simulation with the current real teaching stack
 
+**Current result:** shared-source implementation and ideal-backend audit pass;
+Isaac validation is incomplete. The four-job case is closed at 255.736105687 s.
+See [the result report](REPORT.md) for failures, supported behavior and remaining
+work. Submission examples below record the historical procedure.
+
 Authoritative real source: `task2/jacob` at **13f37dad1980bcbc4491b7f27d8962602e49fea0**.
 The selected source, motion policy, exported robot model and canonical catalog
 are preserved byte-for-byte under `vendor/jacob_teaching`, with file hashes.

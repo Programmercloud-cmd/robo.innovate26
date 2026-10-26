@@ -1,5 +1,13 @@
 """Read-only world-pose batching with explicit name/path/row correspondence."""
+import copy
 import numpy as np
+
+
+class SourcePoseEquivalenceError(RuntimeError):
+    """Preserve the failed comparison without weakening its acceptance gate."""
+    def __init__(self,proof):
+        super().__init__('Batched/per-asset startup source poses differ')
+        self.proof=copy.deepcopy(proof)
 
 
 def _array(value):
@@ -56,7 +64,7 @@ class BatchedSourcePoses:
             'old_poses_world_wxyz':old.tolist(),'new_poses_world_wxyz':new.tolist(),
             'maximum_position_error_m':float(np.max(position_error)),'maximum_angle_error_rad':float(np.max(angle_error)),
             'position_tolerance_m':1e-9,'angle_tolerance_rad':1e-7,'equivalence_passed':passed}
-        if not passed:raise RuntimeError('Batched/per-asset startup source poses differ')
+        if not passed:raise SourcePoseEquivalenceError(self.proof)
 
     def read(self):
         raw=_array(self.view.get_transforms())
