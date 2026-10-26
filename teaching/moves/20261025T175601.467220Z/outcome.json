@@ -1,0 +1,8 @@
+{
+  "requested_point": 6,
+  "completed": false,
+  "motion_sent": false,
+  "reason": "Read-only preflight failed",
+  "mode": "User stopped",
+  "current_errors": []
+}

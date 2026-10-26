@@ -1,0 +1,671 @@
+SEQUENCE_DIRECTORY /home/nshenoy/lean_franka_research_lego_manipulation/teaching/sequences/20261025T202254_layer9
+VISIT 1/30 a_0_0_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202255.632431Z/execution.log
+RUN_LOG /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202255.632431Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 7.3 s; equivalent yaw 0 deg; target XYZ mm [474.64385629   2.19795853  97.42671251]
+START_STATE XYZ_m [0.47412896156311035, 0.0021943729370832443, 0.09706847369670868] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 7.2884872961716685
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+JOINT_METRICS min_full_sigma 0.29704154929747961 min_fixed_sigma 0.25148756151624202 min_abs_joint2_rad 1.3203811022322043e-06 max_callback_period_ms 12 max_tracking_mm 0.92930206772117618 min_command_success_rate 0.87000000476837158
+STOP Callback gap exceeded bound
+LAST_STATE XYZ_m [0.47423094511032104, 0.002195302164182067, 0.09776835143566132] mode Move errors []
+SEQUENCE_STOP a_0_0_9
+SEQUENCE_DIRECTORY teaching/sequences/20261025T202254_layer9
+VISIT 1/30 a_0_0_9
+REACHED initial verified pose
+VISIT 2/30 a_0_1_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202431.943352Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 8.6 s; equivalent yaw 0 deg; target XYZ mm [442.84835626   1.66300223  97.42671251]
+START_STATE XYZ_m [0.4741557240486145, 0.0021905461326241493, 0.09758846461772919] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 8.6375500013280231
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.24892193809476199 min_fixed_sigma 0.21763732347772849 min_abs_joint2_rad 2.3529330064775422e-05 max_callback_period_ms 6 max_tracking_mm 0.66999915966220014 min_command_success_rate 0.9100000262260437
+ENDPOINT position_error_mm 0.44212687399535361 orientation_error_deg 0.058713597184541021
+FINAL_STATE XYZ_m [0.44247546792030334, 0.001641692128032446, 0.09719011932611465] mode Idle errors []
+PASS certified joint arc
+REACHED 2/30 a_0_1_9
+VISIT 3/30 a_0_2_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202443.768387Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 8.6 s; equivalent yaw 0 deg; target XYZ mm [411.05285624   1.12804592  97.42671251]
+START_STATE XYZ_m [0.4424636960029602, 0.0016396853607147932, 0.09718471020460129] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 8.5735901580041158
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.24894251901958173 min_fixed_sigma 0.21765563035743829 min_abs_joint2_rad 2.9534421628341079e-06 max_callback_period_ms 5 max_tracking_mm 0.8137529273408487 min_command_success_rate 0.87000000476837158
+ENDPOINT position_error_mm 0.47586590392085359 orientation_error_deg 0.059905876087512348
+FINAL_STATE XYZ_m [0.410646915435791, 0.0010892022401094437, 0.09718145430088043] mode Idle errors []
+PASS certified joint arc
+REACHED 3/30 a_0_2_9
+VISIT 4/30 a_0_3_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202456.547607Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.8 s; equivalent yaw 0 deg; target XYZ mm [379.25735622   0.59308962  97.42671251]
+START_STATE XYZ_m [0.41061702370643616, 0.0010928258998319507, 0.09716573357582092] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.7749363727893446
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.22987246960222726 min_fixed_sigma 0.2289812967625581 min_abs_joint2_rad 3.9770962757756934e-05 max_callback_period_ms 4 max_tracking_mm 1.0194133359635706 min_command_success_rate 0.92000001668930054
+ENDPOINT position_error_mm 0.41920221798158375 orientation_error_deg 0.056566383100142781
+FINAL_STATE XYZ_m [0.3788975775241852, 0.0006066045025363564, 0.09721198678016663] mode Idle errors []
+PASS certified joint arc
+REACHED 4/30 a_0_3_9
+VISIT 5/30 a_0_4_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202504.328376Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 5.1 s; equivalent yaw 0 deg; target XYZ mm [3.47461856e+02 5.81333150e-02 9.74267125e+01]
+START_STATE XYZ_m [0.378875195980072, 0.0006107171648181975, 0.09720117598772049] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 5.0699360037660579
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.21179466871169675 min_fixed_sigma 0.21081831623463876 min_abs_joint2_rad 3.4754357329802588e-05 max_callback_period_ms 4 max_tracking_mm 0.97403013761122037 min_command_success_rate 0.89999997615814209
+ENDPOINT position_error_mm 0.51101904185633673 orientation_error_deg 0.06542031874428629
+FINAL_STATE XYZ_m [0.3470171391963959, 7.089302380336449e-05, 0.09717530757188797] mode Idle errors []
+PASS certified joint arc
+REACHED 5/30 a_0_4_9
+VISIT 6/30 a_1_0_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202512.432727Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 5.1 s; equivalent yaw 0 deg; target XYZ mm [475.17881259 -29.59754149  97.42671251]
+START_STATE XYZ_m [0.3469449579715729, 7.175555947469547e-05, 0.09713979810476303] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 5.0708327370403925
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.21182318153412386 min_fixed_sigma 0.2108469115902466 min_abs_joint2_rad 6.2078106566332281e-05 max_callback_period_ms 7 max_tracking_mm 1.1321466203345778 min_command_success_rate 0.86000001430511475
+ENDPOINT position_error_mm 0.13392345544399997 orientation_error_deg 0.018068763685460527
+FINAL_STATE XYZ_m [0.47505617141723633, -0.029621880501508713, 0.09747469425201416] mode Idle errors []
+PASS certified joint arc
+REACHED 6/30 a_1_0_9
+VISIT 7/30 a_1_1_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202520.429007Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.3 s; equivalent yaw 0 deg; target XYZ mm [443.38331257 -30.1324978   97.42671251]
+START_STATE XYZ_m [0.4750475585460663, -0.029619337990880013, 0.09747794270515442] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.3133324308467555
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.28825526749426073 min_fixed_sigma 0.27364105859588445 min_abs_joint2_rad 3.7199468351900578e-05 max_callback_period_ms 5 max_tracking_mm 1.1709212625128023 min_command_success_rate 0.88999998569488525
+ENDPOINT position_error_mm 0.52113431542411826 orientation_error_deg 0.068748957040400419
+FINAL_STATE XYZ_m [0.4429488182067871, -0.0301846694201231, 0.0971437394618988] mode Idle errors []
+PASS certified joint arc
+REACHED 7/30 a_1_1_9
+VISIT 8/30 a_1_2_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202527.642527Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.5 s; equivalent yaw 0 deg; target XYZ mm [411.58781254 -30.6674541   97.42671251]
+START_STATE XYZ_m [0.44292911887168884, -0.030185727402567863, 0.09713470935821533] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.5178450480339389
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.25752812185150581 min_fixed_sigma 0.25090269632316736 min_abs_joint2_rad 1.9160759620717727e-05 max_callback_period_ms 5 max_tracking_mm 1.0831270384533516 min_command_success_rate 0.9100000262260437
+ENDPOINT position_error_mm 0.44175576179045933 orientation_error_deg 0.061449737688665053
+FINAL_STATE XYZ_m [0.41121628880500793, -0.030722495168447495, 0.097194142639637] mode Idle errors []
+PASS certified joint arc
+REACHED 8/30 a_1_2_9
+VISIT 9/30 a_1_3_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202535.120436Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.8 s; equivalent yaw 0 deg; target XYZ mm [379.79231252 -31.20241041  97.42671251]
+START_STATE XYZ_m [0.4112060070037842, -0.03071952797472477, 0.09718947857618332] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.7594430853612568
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.23122647648056863 min_fixed_sigma 0.23014013121493407 min_abs_joint2_rad 2.8392469175742008e-06 max_callback_period_ms 11 max_tracking_mm 1.001119946888583 min_command_success_rate 0.79000002145767212
+ENDPOINT position_error_mm 0.52146607327000694 orientation_error_deg 0.069962730359967001
+FINAL_STATE XYZ_m [0.37934252619743347, -0.03123757615685463, 0.09716521203517914] mode Idle errors []
+PASS certified joint arc
+REACHED 9/30 a_1_3_9
+VISIT 10/30 a_1_4_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202542.885113Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 5.0 s; equivalent yaw 0 deg; target XYZ mm [347.9968125  -31.73736671  97.42671251]
+START_STATE XYZ_m [0.37929660081863403, -0.031232111155986786, 0.0971413105726242] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 5.0498563771649216
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.21257560043957321 min_fixed_sigma 0.21184173362756781 min_abs_joint2_rad 5.4673782869940624e-05 max_callback_period_ms 6 max_tracking_mm 0.95709093973595416 min_command_success_rate 0.88999998569488525
+ENDPOINT position_error_mm 0.45947807837730575 orientation_error_deg 0.061532202520528448
+FINAL_STATE XYZ_m [0.3475963771343231, -0.03179582953453064, 0.09720910340547562] mode Idle errors []
+PASS certified joint arc
+REACHED 10/30 a_1_4_9
+VISIT 11/30 a_2_0_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202550.963589Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 5.1 s; equivalent yaw 0 deg; target XYZ mm [475.71376889 -61.39304152  97.42671251]
+START_STATE XYZ_m [0.34758371114730835, -0.03179559484124184, 0.09720389544963837] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 5.0503215939540729
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+JOINT_METRICS min_full_sigma 0.21260170993879099 min_fixed_sigma 0.21186768541016035 min_abs_joint2_rad 0.034177854657173157 max_callback_period_ms 15 max_tracking_mm 1.1319759741866355 min_command_success_rate 0.73000001907348633
+STOP Stop requested, robot fault or arm not Idle
+LAST_STATE XYZ_m [0.42513495683670044, -0.049692198634147644, 0.18984857201576233] mode Move errors ['communication_constraints_violation']
+SEQUENCE_STOP a_2_0_9
+SEQUENCE_DIRECTORY teaching/sequences/20261025T202254_layer9
+VISIT 11/30 a_2_0_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202650.087103Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.5 s; equivalent yaw 0 deg; target XYZ mm [475.71376889 -61.39304152  97.42671251]
+START_STATE XYZ_m [0.4272426962852478, -0.05032415688037872, 0.18941007554531097] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.5293269738615969
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.32532966676774494 min_fixed_sigma 0.30073071074037544 min_abs_joint2_rad 0.00011629521031863987 max_callback_period_ms 7 max_tracking_mm 1.239337044947481 min_command_success_rate 0.87999999523162842
+ENDPOINT position_error_mm 0.31654679126908125 orientation_error_deg 0.040324985567508548
+FINAL_STATE XYZ_m [0.4754665791988373, -0.06158294528722763, 0.09737161546945572] mode Idle errors []
+PASS certified joint arc
+REACHED 11/30 a_2_0_9
+VISIT 12/30 a_2_1_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202657.614552Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.3 s; equivalent yaw 0 deg; target XYZ mm [443.91826887 -61.92799782  97.42671251]
+START_STATE XYZ_m [0.47546038031578064, -0.06158597767353058, 0.09737180173397064] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.2923343188514815
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.29207116534703781 min_fixed_sigma 0.27639084789278529 min_abs_joint2_rad 1.7889610717247706e-06 max_callback_period_ms 2 max_tracking_mm 1.2023221755128368 min_command_success_rate 0.92000001668930054
+ENDPOINT position_error_mm 0.48296836407456306 orientation_error_deg 0.063130307145193743
+FINAL_STATE XYZ_m [0.4435112476348877, -0.061987828463315964, 0.09717370569705963] mode Idle errors []
+PASS certified joint arc
+REACHED 12/30 a_2_1_9
+VISIT 13/30 a_2_2_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202704.764148Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.5 s; equivalent yaw 0 deg; target XYZ mm [412.12276885 -62.46295413  97.42671251]
+START_STATE XYZ_m [0.4434562623500824, -0.06198827922344208, 0.09714403748512268] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.4917071781912732
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.26117107573979276 min_fixed_sigma 0.25359007318618876 min_abs_joint2_rad 3.7162106309551746e-05 max_callback_period_ms 4 max_tracking_mm 1.1011041970901163 min_command_success_rate 0.87000000476837158
+ENDPOINT position_error_mm 0.44370613281316051 orientation_error_deg 0.060147872400406595
+FINAL_STATE XYZ_m [0.411744087934494, -0.06250926107168198, 0.09720014780759811] mode Idle errors []
+PASS certified joint arc
+REACHED 13/30 a_2_2_9
+VISIT 14/30 a_2_3_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202712.172973Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.7 s; equivalent yaw 0 deg; target XYZ mm [380.32726882 -62.99791043  97.42671251]
+START_STATE XYZ_m [0.411709725856781, -0.06250821799039841, 0.09718365967273712] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.7261734428199897
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.23432362491425923 min_fixed_sigma 0.2326850445420586 min_abs_joint2_rad 1.3528047020372469e-05 max_callback_period_ms 10 max_tracking_mm 1.0279553829571419 min_command_success_rate 0.8399999737739563
+ENDPOINT position_error_mm 0.5229481504688972 orientation_error_deg 0.072340758056614343
+FINAL_STATE XYZ_m [0.37986987829208374, -0.06303770840167999, 0.09717634320259094] mode Idle errors []
+PASS certified joint arc
+REACHED 14/30 a_2_3_9
+VISIT 15/30 a_2_4_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202719.953822Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 5.0 s; equivalent yaw 0 deg; target XYZ mm [348.5317688  -63.53286673  97.42671251]
+START_STATE XYZ_m [0.37984827160835266, -0.06303659081459045, 0.0971669852733612] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 5.0060711194467737
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.21438209674695224 min_fixed_sigma 0.21409564570776327 min_abs_joint2_rad 9.9640683401958086e-06 max_callback_period_ms 12 max_tracking_mm 0.99532342338291357 min_command_success_rate 0.8399999737739563
+ENDPOINT position_error_mm 0.45499702000836983 orientation_error_deg 0.061013281272736863
+FINAL_STATE XYZ_m [0.3481353521347046, -0.06355936825275421, 0.09720496088266373] mode Idle errors []
+PASS certified joint arc
+REACHED 15/30 a_2_4_9
+VISIT 16/30 a_3_0_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202728.032722Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 5.0 s; equivalent yaw 0 deg; target XYZ mm [476.2487252  -93.18854154  97.42671251]
+START_STATE XYZ_m [0.3481295108795166, -0.06355921924114227, 0.09720345586538315] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 5.0062962278822063
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.21440515848367589 min_fixed_sigma 0.2141185558356066 min_abs_joint2_rad 2.1919207938481122e-05 max_callback_period_ms 3 max_tracking_mm 1.1362964629144936 min_command_success_rate 0.88999998569488525
+ENDPOINT position_error_mm 0.32456774050170745 orientation_error_deg 0.04420510852876796
+FINAL_STATE XYZ_m [0.47601115703582764, -0.09340331703424454, 0.09737401455640793] mode Idle errors []
+PASS certified joint arc
+REACHED 16/30 a_3_0_9
+VISIT 17/30 a_3_1_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202736.057579Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.3 s; equivalent yaw 0 deg; target XYZ mm [444.45322517 -93.72349785  97.42671251]
+START_STATE XYZ_m [0.4760104715824127, -0.09341062605381012, 0.0973765030503273] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.2617162269575335
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.29810341234495324 min_fixed_sigma 0.2806645891549186 min_abs_joint2_rad 1.6836891518323682e-05 max_callback_period_ms 3 max_tracking_mm 1.1799180389000417 min_command_success_rate 0.89999997615814209
+ENDPOINT position_error_mm 0.48145011653594411 orientation_error_deg 0.0682843395164794
+FINAL_STATE XYZ_m [0.4440508484840393, -0.09380524605512619, 0.09717530757188797] mode Idle errors []
+PASS certified joint arc
+REACHED 17/30 a_3_1_9
+VISIT 18/30 a_3_2_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202743.210301Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.5 s; equivalent yaw 0 deg; target XYZ mm [412.65772515 -94.25845415  97.42671251]
+START_STATE XYZ_m [0.4440299868583679, -0.09380898624658585, 0.0971652939915657] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.4538365533487294
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.26690718010103437 min_fixed_sigma 0.25771554683738346 min_abs_joint2_rad 3.6441455449676141e-05 max_callback_period_ms 6 max_tracking_mm 1.0764658559935936 min_command_success_rate 0.87999999523162842
+ENDPOINT position_error_mm 0.53092126499794612 orientation_error_deg 0.069844964809748597
+FINAL_STATE XYZ_m [0.41220057010650635, -0.0942707285284996, 0.09715701639652252] mode Idle errors []
+PASS certified joint arc
+REACHED 18/30 a_3_2_9
+VISIT 19/30 a_3_3_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202750.596607Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.7 s; equivalent yaw 0 deg; target XYZ mm [380.86222513 -94.79341045  97.42671251]
+START_STATE XYZ_m [0.41216179728507996, -0.09426353871822357, 0.0971374660730362] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.6782758179177515
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.23923642342544837 min_fixed_sigma 0.23652368857506406 min_abs_joint2_rad 8.9984150690725073e-06 max_callback_period_ms 4 max_tracking_mm 1.0735442336961603 min_command_success_rate 0.87000000476837158
+ENDPOINT position_error_mm 0.42170496557804554 orientation_error_deg 0.057074689853202069
+FINAL_STATE XYZ_m [0.380496621131897, -0.0948064923286438, 0.09721695631742477] mode Idle errors []
+PASS certified joint arc
+REACHED 19/30 a_3_3_9
+VISIT 20/30 a_3_4_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202758.291746Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.9 s; equivalent yaw 0 deg; target XYZ mm [349.0667251  -95.32836676  97.42671251]
+START_STATE XYZ_m [0.3804769515991211, -0.09480451047420502, 0.09720698744058609] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.943575887153119
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.21758303936692472 min_fixed_sigma 0.21758058212756157 min_abs_joint2_rad 6.7224485974293202e-05 max_callback_period_ms 6 max_tracking_mm 0.98455663467392884 min_command_success_rate 0.87000000476837158
+ENDPOINT position_error_mm 0.49190014817395572 orientation_error_deg 0.068971039272399282
+FINAL_STATE XYZ_m [0.3486327528953552, -0.09533844888210297, 0.0971953421831131] mode Idle errors []
+PASS certified joint arc
+REACHED 20/30 a_3_4_9
+VISIT 21/30 a_4_0_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202806.296136Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.9 s; equivalent yaw 0 deg; target XYZ mm [ 476.7836815  -124.98404157   97.42671251]
+START_STATE XYZ_m [0.34860920906066895, -0.09534244239330292, 0.09718543291091919] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.9441574924180651
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.21764233747873543 min_fixed_sigma 0.21763984082843937 min_abs_joint2_rad 0.00012147373490734026 max_callback_period_ms 4 max_tracking_mm 1.1380487941331976 min_command_success_rate 0.87999999523162842
+ENDPOINT position_error_mm 0.3816256473607646 orientation_error_deg 0.049930051554459037
+FINAL_STATE XYZ_m [0.476476788520813, -0.1251809149980545, 0.09731403738260269] mode Idle errors []
+PASS certified joint arc
+REACHED 21/30 a_4_0_9
+VISIT 22/30 a_4_1_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202814.205143Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.2 s; equivalent yaw 0 deg; target XYZ mm [ 444.98818148 -125.51899787   97.42671251]
+START_STATE XYZ_m [0.4764721691608429, -0.12518267333507538, 0.09731307625770569] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.2222423366177058
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.30631919856988038 min_fixed_sigma 0.2864462423906281 min_abs_joint2_rad 1.1680060197249986e-05 max_callback_period_ms 3 max_tracking_mm 1.181023531725512 min_command_success_rate 0.88999998569488525
+ENDPOINT position_error_mm 0.49481393554182723 orientation_error_deg 0.06581628020851478
+FINAL_STATE XYZ_m [0.44456779956817627, -0.1256016194820404, 0.09717913717031479] mode Idle errors []
+PASS certified joint arc
+REACHED 22/30 a_4_1_9
+VISIT 23/30 a_4_2_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202821.333648Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.4 s; equivalent yaw 0 deg; target XYZ mm [ 413.19268145 -126.05395417   97.42671251]
+START_STATE XYZ_m [0.4445529282093048, -0.1256139725446701, 0.09717385470867157] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.4053197450314823
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+JOINT_METRICS min_full_sigma 0.27498282256247653 min_fixed_sigma 0.26353775949051339 min_abs_joint2_rad 5.8675967011367902e-05 max_callback_period_ms 6 max_tracking_mm 1.0824020004516024 min_command_success_rate 0.81000000238418579
+STOP Stop requested, robot fault or arm not Idle
+LAST_STATE XYZ_m [0.41275539994239807, -0.12605415284633636, 0.0972663015127182] mode Move errors ['joint_motion_generator_velocity_discontinuity', 'joint_motion_generator_acceleration_discontinuity']
+SEQUENCE_STOP a_4_2_9
+SEQUENCE_DIRECTORY teaching/sequences/20261025T202254_layer9
+VISIT 23/30 a_4_2_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202942.748147Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.4 s; equivalent yaw 0 deg; target XYZ mm [ 413.19268145 -126.05395417   97.42671251]
+START_STATE XYZ_m [0.41268062591552734, -0.12603256106376648, 0.0972830280661583] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.4067335981923783
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.27488301178388552 min_fixed_sigma 0.26335537248923907 min_abs_joint2_rad 4.5368877181317657e-05 max_callback_period_ms 6 max_tracking_mm 1.1203599969870808 min_command_success_rate 0.81999999284744263
+ENDPOINT position_error_mm 0.58702841209600143 orientation_error_deg 0.077903355795192836
+FINAL_STATE XYZ_m [0.41269826889038086, -0.1260942667722702, 0.09711281210184097] mode Idle errors []
+PASS certified joint arc
+REACHED 23/30 a_4_2_9
+VISIT 24/30 a_4_3_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202950.073815Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.6 s; equivalent yaw 0 deg; target XYZ mm [ 381.39718143 -126.58891048   97.42671251]
+START_STATE XYZ_m [0.41267308592796326, -0.126081645488739, 0.09709368646144867] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.6175841534601849
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.24640775777599241 min_fixed_sigma 0.24191815412931084 min_abs_joint2_rad 3.7610650906572118e-05 max_callback_period_ms 7 max_tracking_mm 1.0838027709818154 min_command_success_rate 0.87000000476837158
+ENDPOINT position_error_mm 0.53924951461804271 orientation_error_deg 0.07637699692783334
+FINAL_STATE XYZ_m [0.38093361258506775, -0.126595139503479, 0.09715129435062408] mode Idle errors []
+PASS certified joint arc
+REACHED 24/30 a_4_3_9
+VISIT 25/30 a_4_4_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202957.723358Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.9 s; equivalent yaw 0 deg; target XYZ mm [ 349.60168141 -127.12386678   97.42671251]
+START_STATE XYZ_m [0.38092032074928284, -0.12659326195716858, 0.09714630246162415] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.8662578177567575
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.22268035010768988 min_fixed_sigma 0.22235491495641327 min_abs_joint2_rad 1.1780378372350242e-05 max_callback_period_ms 8 max_tracking_mm 0.97149654000087426 min_command_success_rate 0.81000000238418579
+ENDPOINT position_error_mm 0.4409161181694855 orientation_error_deg 0.062401744085491762
+FINAL_STATE XYZ_m [0.3492175340652466, -0.1271040141582489, 0.09721120446920395] mode Idle errors []
+PASS certified joint arc
+REACHED 25/30 a_4_4_9
+VISIT 26/30 a_5_0_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T203005.671466Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.9 s; equivalent yaw 0 deg; target XYZ mm [ 477.3186378  -156.77954159   97.42671251]
+START_STATE XYZ_m [0.3492017686367035, -0.12710705399513245, 0.09720616042613983] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.8890970808541825
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.22270688360909596 min_fixed_sigma 0.22238164975319261 min_abs_joint2_rad 8.1445972455185256e-07 max_callback_period_ms 9 max_tracking_mm 1.1574178325873199 min_command_success_rate 0.87999999523162842
+ENDPOINT position_error_mm 0.64133470584425112 orientation_error_deg 0.078463944227462085
+FINAL_STATE XYZ_m [0.47678643465042114, -0.15686684846878052, 0.09707965701818466] mode Idle errors []
+PASS certified joint arc
+REACHED 26/30 a_5_0_9
+VISIT 27/30 a_5_1_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T203013.494478Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.2 s; equivalent yaw 0 deg; target XYZ mm [ 445.52313778 -157.31449789   97.42671251]
+START_STATE XYZ_m [0.4766990840435028, -0.15686441957950592, 0.09702886641025543] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.1753245396299672
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.31685274353837251 min_fixed_sigma 0.29385530504426399 min_abs_joint2_rad 0.022716127336025238 max_callback_period_ms 3 max_tracking_mm 1.2480078171966063 min_command_success_rate 0.93000000715255737
+ENDPOINT position_error_mm 0.4926620421079177 orientation_error_deg 0.064477198057404705
+FINAL_STATE XYZ_m [0.44510534405708313, -0.15734903514385223, 0.09716792404651642] mode Idle errors []
+PASS certified joint arc
+REACHED 27/30 a_5_1_9
+VISIT 28/30 a_5_2_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T203020.521862Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.3 s; equivalent yaw 0 deg; target XYZ mm [ 413.72763776 -157.8494542    97.42671251]
+START_STATE XYZ_m [0.4450857937335968, -0.1573486626148224, 0.09715896844863892] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.3481249083866791
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.2851753879900798 min_fixed_sigma 0.27059107949345862 min_abs_joint2_rad 1.607842932571657e-05 max_callback_period_ms 2 max_tracking_mm 1.1417315585787282 min_command_success_rate 0.89999997615814209
+ENDPOINT position_error_mm 0.51535485464210451 orientation_error_deg 0.068502828268064767
+FINAL_STATE XYZ_m [0.41328880190849304, -0.1578175276517868, 0.09715839475393295] mode Idle errors []
+PASS certified joint arc
+REACHED 28/30 a_5_2_9
+VISIT 29/30 a_5_3_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T203027.756149Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 4.5 s; equivalent yaw 0 deg; target XYZ mm [ 381.93213773 -158.3844105    97.42671251]
+START_STATE XYZ_m [0.41327235102653503, -0.15781384706497192, 0.09714975953102112] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 4.5470303092046702
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.25592402121783109 min_fixed_sigma 0.24881211964471034 min_abs_joint2_rad 7.2806797106750309e-05 max_callback_period_ms 7 max_tracking_mm 1.0367170639462198 min_command_success_rate 0.9100000262260437
+ENDPOINT position_error_mm 0.45469505541176058 orientation_error_deg 0.06371643750975016
+FINAL_STATE XYZ_m [0.3815484941005707, -0.15835069119930267, 0.09718499332666397] mode Idle errors []
+PASS certified joint arc
+REACHED 29/30 a_5_3_9
+VISIT 30/30 a_5_4_9
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T203035.343107Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 5.1 s; equivalent yaw 0 deg; target XYZ mm [ 350.13663771 -158.9193668    97.42671251]
+START_STATE XYZ_m [0.38153424859046936, -0.15834808349609375, 0.09717664122581482] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 5.1272119087837442
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.23053353336453339 min_fixed_sigma 0.22888791911817979 min_abs_joint2_rad 8.4351822806638665e-06 max_callback_period_ms 4 max_tracking_mm 0.99082941939693614 min_command_success_rate 0.93000000715255737
+ENDPOINT position_error_mm 0.46408270771866306 orientation_error_deg 0.068020068584090446
+FINAL_STATE XYZ_m [0.349734902381897, -0.15887142717838287, 0.09719937294721603] mode Idle errors []
+PASS certified joint arc
+REACHED 30/30 a_5_4_9
+SEQUENCE_PASS 30/30 layer 9 positions visited

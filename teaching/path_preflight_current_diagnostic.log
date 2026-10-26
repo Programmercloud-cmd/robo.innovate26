@@ -1,0 +1,43 @@
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; detour=(0, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; detour=(0, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=True; detour=(0, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=True; detour=(0, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; detour=(0, 0.5235987756, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; detour=(0, 0.5235987756, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=True; detour=(0, 0.5235987756, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=True; detour=(0, 0.5235987756, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; detour=(0, -0.5235987756, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; detour=(0, -0.5235987756, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=True; detour=(0, -0.5235987756, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=True; detour=(0, -0.5235987756, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; detour=(0.5235987756, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; detour=(0.5235987756, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=True; detour=(0.5235987756, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=True; detour=(0.5235987756, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; detour=(-0.5235987756, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; detour=(-0.5235987756, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=True; detour=(-0.5235987756, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=True; detour=(-0.5235987756, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=180; long_rotation=False; detour=(0, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=180; long_rotation=False; detour=(0, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=180; long_rotation=True; detour=(0, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=180; long_rotation=True; detour=(0, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=180; long_rotation=False; detour=(0, 0.5235987756, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=180; long_rotation=False; detour=(0, 0.5235987756, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=180; long_rotation=True; detour=(0, 0.5235987756, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=180; long_rotation=True; detour=(0, 0.5235987756, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=180; long_rotation=False; detour=(0, -0.5235987756, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=180; long_rotation=False; detour=(0, -0.5235987756, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=180; long_rotation=True; detour=(0, -0.5235987756, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=180; long_rotation=True; detour=(0, -0.5235987756, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=180; long_rotation=False; detour=(0.5235987756, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=180; long_rotation=False; detour=(0.5235987756, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=180; long_rotation=True; detour=(0.5235987756, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=180; long_rotation=True; detour=(0.5235987756, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=180; long_rotation=False; detour=(-0.5235987756, 0, 0); checking complete path
+/usr/lib/python3/dist-packages/scipy/optimize/_optimize.py:284: RuntimeWarning: Values in x were outside bounds during a minimize step, clipping to bounds
+  warnings.warn("Values in x were outside bounds during a "
+KINEMATIC_PREFLIGHT yaw=180; long_rotation=False; detour=(-0.5235987756, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=180; long_rotation=True; detour=(-0.5235987756, 0, 0); checking complete path
+KINEMATIC_PREFLIGHT yaw=180; long_rotation=True; detour=(-0.5235987756, 0, 0); checking complete path
+BLOCKED RuntimeError No singularity-margin-certified path. yaw 0: No margin-valid IK solution at arc fraction 0.920; yaw 0: No margin-valid IK solution at arc fraction 0.920; yaw 0: No margin-valid IK solution at arc fraction 0.260; yaw 0: Joint branch changes abruptly at arc fraction 0.230; yaw 0: Joint branch changes abruptly at arc fraction 0.620; yaw 0: No margin-valid IK solution at arc fraction 0.920; yaw 0: No margin-valid IK solution at arc fraction 0.320; yaw 0: Joint branch changes abruptly at arc fraction 0.270; yaw 0: No margin-valid IK solution at arc fraction 0.920; yaw 0: No margin-valid IK solution at arc fraction 0.920; yaw 0: Joint branch changes abruptly at arc fraction 0.210; yaw 0: Joint branch changes abruptly at arc fraction 0.200; yaw 0: No margin-valid IK solution at arc fraction 0.920; yaw 0: No margin-valid IK solution at arc fraction 0.920; yaw 0: Joint branch changes abruptly at arc fraction 0.230; yaw 0: Joint branch changes abruptly at arc fraction 0.220; yaw 0: No margin-valid IK solution at arc fraction 0.920; yaw 0: Joint branch changes abruptly at arc fraction 0.620; yaw 0: No margin-valid IK solution at arc fraction 0.260; yaw 0: Joint branch changes abruptly at arc fraction 0.230; yaw 180: No margin-valid IK solution at arc fraction 0.900; yaw 180: No margin-valid IK solution at arc fraction 0.900; yaw 180: No margin-valid IK solution at arc fraction 0.850; yaw 180: No margin-valid IK solution at arc fraction 0.910; yaw 180: No margin-valid IK solution at arc fraction 0.880; yaw 180: Joint branch changes abruptly at arc fraction 0.510; yaw 180: No margin-valid IK solution at arc fraction 0.860; yaw 180: No margin-valid IK solution at arc fraction 0.910; yaw 180: No margin-valid IK solution at arc fraction 0.900; yaw 180: Joint branch changes abruptly at arc fraction 0.500; yaw 180: No margin-valid IK solution at arc fraction 0.830; yaw 180: No margin-valid IK solution at arc fraction 0.910; yaw 180: No margin-valid IK solution at arc fraction 0.890; yaw 180: No margin-valid IK solution at arc fraction 0.890; yaw 180: No margin-valid IK solution at arc fraction 0.870; yaw 180: Joint branch changes abruptly at arc fraction 0.340; yaw 180: No margin-valid IK solution at arc fraction 0.900; yaw 180: Joint branch changes abruptly at arc fraction 0.400; yaw 180: Joint branch changes abruptly at arc fraction 0.550; yaw 180: No margin-valid IK solution at arc fraction 0.910

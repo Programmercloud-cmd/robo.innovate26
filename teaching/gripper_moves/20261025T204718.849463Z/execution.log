@@ -1,0 +1,5 @@
+START_GRIPPER {"width": 0.019999636337161064, "max_width": 0.079258352518081665, "is_grasped": 0, "temperature": 60, "time": 0.001}
+FINAL_GRIPPER {"width": 0.015144375152885914, "max_width": 0.079258352518081665, "is_grasped": 0, "temperature": 60, "time": 0.042000000000000003}
+POSITION_CLOSE_CONTACT_RANGE max_m 0.016799999999999999; object presence is not inferred from finger width
+WIDTH_VERIFIED target_m 0.014 actual_m 0.015144375152885914 moved 1
+PASS gripper width

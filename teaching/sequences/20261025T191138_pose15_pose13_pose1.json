@@ -1,0 +1,53 @@
+{
+  "recorded_utc": "2026-10-25T19:14:53.439685+00:00",
+  "requested_sequence": [
+    15,
+    13,
+    1
+  ],
+  "completed": true,
+  "steps": [
+    {
+      "point": 15,
+      "completed": true,
+      "position_error_mm": 0.513027965535026,
+      "orientation_error_deg": 0.057356955467795345,
+      "duration_s": 10.208174408170526,
+      "time_scale": 1.5,
+      "timing_guard_s": 0.01,
+      "outcome_file": "teaching/moves/20261025T191333.472234Z/outcome.json"
+    },
+    {
+      "point": 13,
+      "completed": true,
+      "position_error_mm": 0.19953177569547567,
+      "orientation_error_deg": 0.02955531226786116,
+      "duration_s": 9.383380007670855,
+      "time_scale": 1.5,
+      "timing_guard_s": 0.01,
+      "outcome_file": "teaching/moves/20261025T191345.866589Z/outcome.json"
+    },
+    {
+      "point": 1,
+      "completed": true,
+      "position_error_mm": 0.6710809351318819,
+      "orientation_error_deg": 0.07997892767497164,
+      "duration_s": 10.992160650417595,
+      "time_scale": 1.5,
+      "timing_guard_s": 0.01,
+      "outcome_file": "teaching/moves/20261025T191357.371183Z/outcome.json"
+    }
+  ],
+  "initial_stopped_attempt": "teaching/moves/20261025T191138.842357Z/outcome.json",
+  "after_settling": {
+    "xyz_m": [
+      0.7090252637863159,
+      -0.060119081288576126,
+      0.1328440010547638
+    ],
+    "mode": "Idle",
+    "errors": []
+  },
+  "grasp_offset_executed": false,
+  "saved_pose_catalog_modified_by_sequence": false
+}

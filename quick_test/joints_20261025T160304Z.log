@@ -1,0 +1,31 @@
+TCP_start_m 0.679318428 -0.0797311068 0.0997962505 tool_mass_kg 0.730000019 payload_kg 0
+Q_start_rad -0.636833489 0.803861618 0.610823214 -1.65621579 -0.580065131 2.29742885 1.01787281
+PLAN joint 1 delta_rad 0.1 predicted_peak_mm 68.3884444 endpoint_dz_mm 0
+PLAN joint 2 delta_rad -0.1 predicted_peak_mm 63.757807 endpoint_dz_mm 60.4409276
+PLAN joint 3 delta_rad 0.1 predicted_peak_mm 67.1822906 endpoint_dz_mm 26.5196898
+PLAN joint 4 delta_rad 0.1 predicted_peak_mm 58.9311694 endpoint_dz_mm 39.6457813
+PLAN joint 5 delta_rad -0.1 predicted_peak_mm 9.87432387 endpoint_dz_mm 0.436673312
+PLAN joint 6 delta_rad 0.1 predicted_peak_mm 22.7966732 endpoint_dz_mm 10.3178638
+PLAN joint 7 delta_rad -0.1 predicted_peak_mm 0 endpoint_dz_mm 0
+START joint 1 out_6s back_6s settle_0.5s
+RESULT joint 1 peak_tcp_mm 68.3515059 peak_joint_rad 0.100026369 return_tcp_mm 0.11606414 return_joint_max_rad 0.000233054161 min_command_success_rate 0.949999988
+PASS joint 1
+START joint 2 out_6s back_6s settle_0.5s
+RESULT joint 2 peak_tcp_mm 63.570696 peak_joint_rad 0.0997450948 return_tcp_mm 0.0602782941 return_joint_max_rad 0.000117182732 min_command_success_rate 0.839999974
+PASS joint 2
+START joint 3 out_6s back_6s settle_0.5s
+RESULT joint 3 peak_tcp_mm 67.057791 peak_joint_rad 0.0998743176 return_tcp_mm 0.215097728 return_joint_max_rad 0.000224769115 min_command_success_rate 0.889999986
+PASS joint 3
+START joint 4 out_6s back_6s settle_0.5s
+RESULT joint 4 peak_tcp_mm 58.5549145 peak_joint_rad 0.0997980833 return_tcp_mm 0.353929483 return_joint_max_rad 0.000305831432 min_command_success_rate 0.879999995
+PASS joint 4
+START joint 5 out_6s back_6s settle_0.5s
+RESULT joint 5 peak_tcp_mm 9.87719811 peak_joint_rad 0.0998719335 return_tcp_mm 0.492045221 return_joint_max_rad 0.000390768051 min_command_success_rate 0.870000005
+PASS joint 5
+START joint 6 out_6s back_6s settle_0.5s
+RESULT joint 6 peak_tcp_mm 22.2531951 peak_joint_rad 0.0999138355 return_tcp_mm 0.615399565 return_joint_max_rad 0.000468552113 min_command_success_rate 0.910000026
+PASS joint 6
+START joint 7 out_6s back_6s settle_0.5s
+RESULT joint 7 peak_tcp_mm 0.741885279 peak_joint_rad 0.0999641418 return_tcp_mm 0.738451784 return_joint_max_rad 0.000544905663 min_command_success_rate 0.920000017
+PASS joint 7
+PASS all 7 joints; returned to initial pose.

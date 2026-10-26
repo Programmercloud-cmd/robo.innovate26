@@ -1,0 +1,54 @@
+{
+  "source": "a_5_4_9",
+  "destination": "1",
+  "close_mode": "position",
+  "approach_width_m": 0.02,
+  "close_width_m": 0.014,
+  "grasp_offset_below_upper_m": 0.012,
+  "stages": [
+    {
+      "name": "approach",
+      "returncode": 0,
+      "log": "/home/nshenoy/lean_franka_research_lego_manipulation/teaching/picks/20261025T204605_a_5_4_9_pick/approach.log"
+    },
+    {
+      "name": "close_position_14mm",
+      "returncode": 0,
+      "log": "/home/nshenoy/lean_franka_research_lego_manipulation/teaching/picks/20261025T204605_a_5_4_9_pick/close.log"
+    },
+    {
+      "name": "pickup_lift_15mm",
+      "returncode": 0
+    },
+    {
+      "name": "transfer_to_1",
+      "returncode": 0,
+      "log": "/home/nshenoy/lean_franka_research_lego_manipulation/teaching/picks/20261025T204605_a_5_4_9_pick/transfer_to_1.log"
+    },
+    {
+      "name": "release_20mm",
+      "returncode": 0,
+      "log": "/home/nshenoy/lean_franka_research_lego_manipulation/teaching/picks/20261025T204605_a_5_4_9_pick/release_20mm.log"
+    }
+  ],
+  "picked_verified": true,
+  "completed": true,
+  "release_width_m": 0.02,
+  "pickup_visual_verification": {
+    "wrist_image": "/home/nshenoy/lean_franka_research_lego_manipulation/teaching/picks/20261025T204605_a_5_4_9_pick/wrist_lifted.jpg",
+    "external_image": "/home/nshenoy/lean_franka_research_lego_manipulation/teaching/picks/20261025T204605_a_5_4_9_pick/external_lifted.jpg",
+    "observation": "One 2x4 brick visible between the pads after the 15 mm lift; remaining tower seated on the input plate"
+  },
+  "close_control_mode": "position",
+  "force_grasp_command_sent": false,
+  "transfer_to_1_completed": true,
+  "release_width_verified": true,
+  "released_verified": true,
+  "verified_bricks_delivered": 1,
+  "held_object_after_release": false,
+  "release_visual_verification": {
+    "external_image": "/home/nshenoy/lean_franka_research_lego_manipulation/teaching/picks/20261025T204605_a_5_4_9_pick/external_released.jpg",
+    "wrist_image": "/home/nshenoy/lean_franka_research_lego_manipulation/teaching/picks/20261025T204605_a_5_4_9_pick/wrist_released.jpg",
+    "observation": "A second 2x4 brick is visible in the pose-1 tray alongside the first transferred brick; fingertip pads are empty after opening to 20 mm."
+  }
+}
