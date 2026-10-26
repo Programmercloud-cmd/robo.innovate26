@@ -17,8 +17,11 @@ def resolve_pose(catalog,identifier):
         key=f'point_{number:02d}'
         if key not in catalog['points']:raise ValueError('Unknown numbered pose: '+text)
         return number,catalog['points'][key],False
+    if text.startswith(('b_','c_','d_')):
+        from output_stacks import resolve_output_pose
+        return text,resolve_output_pose(catalog,text),False
     if text not in catalog.get('input_bricks',{}):
-        raise ValueError('Unknown pose; use a numbered point or a_n_m_k (n=0..5, m=0..4, k=0..9)')
+        raise ValueError('Unknown pose; use a numbered point, a_n_m_k input ID, or b/c/d_n_m_k output ID')
     from generate_stack import source_signature
     model=catalog['input_stack']
     if source_signature(catalog,model['config'])!=model['report']['source_signature']:
@@ -28,7 +31,7 @@ def resolve_pose(catalog,identifier):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('point',help='Numbered pose 1..15, or a_n_m_k input-brick ID')
+    parser.add_argument('point',help='Numbered pose 1..15, a_n_m_k input, or b/c/d_n_m_k output pose (k>=0)')
     parser.add_argument('--lift-mm',type=float,default=10,help='Legacy segmented-path lift; normal arc moves use motion_config.json')
     parser.add_argument('--clearance-z-mm',type=float,help='Explicit existing clearance height for a reviewed continuation')
     parser.add_argument('--execute',action='store_true')
