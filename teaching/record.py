@@ -15,7 +15,7 @@ CATALOG = HERE / 'positions.json'
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('point', type=int, choices=range(1, 16))
+    parser.add_argument('point', type=int, help='Positive factory image/pose ID; source anchors 1..6, conveyor 7..12')
     parser.add_argument('--label', default='')
     parser.add_argument('--note', default='')
     parser.add_argument('--above-grasp-mm', type=float, help='Override catalog default grasp offset')
@@ -23,13 +23,14 @@ def main():
     parser.add_argument('--capture-file', type=Path, help='Import an existing read_pose capture instead of rereading the arm')
     parser.add_argument('--replace', action='store_true', help='Explicitly replace an existing point; old catalog is archived')
     args = parser.parse_args()
+    if args.point < 1:parser.error('Pose IDs must be positive integers')
     name = f'point_{args.point:02d}'
-    image = ROOT / 'resources/saved_positions.jpeg'
-    catalog = json.loads(CATALOG.read_text()) if CATALOG.exists() else dict(
-        schema_version=1, robot_ip='172.16.0.2', reference_frame='robot_base_O',
-        pose_frame='configured_end_effector_EE', position_units='m', joint_units='rad',
-        matrix_storage='column_major', reference_image='resources/saved_positions.jpeg',
-        reference_image_sha256=hashlib.sha256(image.read_bytes()).hexdigest(), points={})
+    if not CATALOG.exists():parser.error('Factory pose catalog is missing')
+    catalog=json.loads(CATALOG.read_text())
+    if catalog.get('task_id')!='factory_columns_of_four':parser.error('Not the isolated factory pose catalog')
+    image=ROOT/catalog['reference_image']
+    if hashlib.sha256(image.read_bytes()).hexdigest()!=catalog['reference_image_sha256']:
+        parser.error('Factory reference image changed; update its configuration before recording')
     if name in catalog['points'] and not args.replace:
         parser.error(f'{name} already exists; use --replace only when intentionally reteaching it')
     if args.above_grasp_mm is not None and (not math.isfinite(args.above_grasp_mm) or args.above_grasp_mm < 0):
@@ -76,6 +77,8 @@ def main():
     point['grasp_reference'] = dict(source='operator-provided vertical offset; derived, not physically taught',
                                     offset_from_recorded_pose_base_m=offset,
                                     xyz_m=derived[12:15], O_T_EE=derived, motion_validated=False)
+    point['task_id']=catalog['task_id']
+    point['role']=catalog['layout']['reference_roles'].get(str(args.point),'additional_taught_pose')
     catalog['points'][name] = point
     if CATALOG.exists():
         backup_stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S.%fZ')

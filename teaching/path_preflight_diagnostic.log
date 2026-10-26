@@ -1,7 +1,0 @@
-KINEMATIC_PREFLIGHT yaw=180; checking complete path
-BLOCKED RuntimeError No singularity-margin-certified path. yaw 180: No margin-valid IK solution at arc fraction 0.560
-Traceback (most recent call last):
-  File "<stdin>", line 7, in <module>
-  File "/home/nshenoy/lean_franka_research_lego_manipulation/teaching/safe_motion.py", line 159, in build_joint_plan
-    raise RuntimeError('No singularity-margin-certified path. '+('; '.join(failures) or 'No endpoint candidate in the current shoulder family'))
-RuntimeError: No singularity-margin-certified path. yaw 180: No margin-valid IK solution at arc fraction 0.560

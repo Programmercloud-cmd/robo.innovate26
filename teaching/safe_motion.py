@@ -130,11 +130,11 @@ def build_joint_plan(point_id,target,state,control,catalog_bytes,config,direct=F
         for b in (-1,1):
             mirrored=np.array(taught['q_rad']);mirrored[0]+=a*math.pi;mirrored[1]*=-1;mirrored[2]+=b*math.pi
             if np.all(mirrored>=model.lower) and np.all(mirrored<=model.upper):seeds.append(mirrored)
-    seeds.extend(np.array(catalog['points'][f'point_{i:02d}']['q_rad']) for i in (3,15,1))
+    seeds.extend(np.array(p['q_rad']) for p in catalog['points'].values())
     for elbow in (-1.8,-.8,.8,1.8):
         for wrist in (-2,2):
             seed=q0.copy();seed[0]=-.5 if elbow>0 else .5;seed[2]=elbow;seed[4]=wrist;seed[5]=3.9;seeds.append(seed)
-    variants=[0] if direct or str(point_id)=='1' or not policy['allow_yaw180_for_bricks'] else [0,180]
+    variants=[0] if direct or not policy['allow_yaw180_for_bricks'] else [0,180]
     failures=[];plans=[]
     for yaw in variants:
         effective=yaw_variant(target,yaw)

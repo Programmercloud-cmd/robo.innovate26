@@ -1,4 +1,0 @@
-Gripper log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/gripper_moves/20261025T204234.260607Z/execution.log
-START_GRIPPER {"width": 0.024999665096402168, "max_width": 0.079258352518081665, "is_grasped": 0, "temperature": 60, "time": 0.001}
-FINAL_GRIPPER {"width": 0.022050917148590088, "max_width": 0.079258352518081665, "is_grasped": 0, "temperature": 60, "time": 0.032000000000000001}
-STOP Gripper opening verification failed

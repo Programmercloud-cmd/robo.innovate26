@@ -1,4 +1,0 @@
-START_GRIPPER {"width": 0.019999636337161064, "max_width": 0.079258352518081665, "is_grasped": 0, "temperature": 60, "time": 0.001}
-FINAL_GRIPPER {"width": 0.019999636337161064, "max_width": 0.079258352518081665, "is_grasped": 0, "temperature": 60, "time": 0.0050000000000000001}
-WIDTH_VERIFIED target_m 0.02 actual_m 0.019999636337161064 moved 0
-PASS gripper width

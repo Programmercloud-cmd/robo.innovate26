@@ -1,6 +1,0 @@
-{
-  "completed": false,
-  "preflight_blocked": true,
-  "motion_sent": false,
-  "reason": "No singularity-margin-certified path. yaw 0: Joint branch changes abruptly at arc fraction 0.260; yaw 0: No margin-valid IK solution at arc fraction 0.590; yaw 0: No margin-valid IK solution at arc fraction 0.590; yaw 0: No margin-valid IK solution at arc fraction 0.730; yaw 180: No margin-valid IK solution at arc fraction 0.300; yaw 180: No margin-valid IK solution at arc fraction 0.280; yaw 180: No margin-valid IK solution at arc fraction 0.300; yaw 180: No margin-valid IK solution at arc fraction 0.280; yaw 180: No margin-valid IK solution at arc fraction 0.680; yaw 180: No margin-valid IK solution at arc fraction 0.630; yaw 180: No margin-valid IK solution at arc fraction 0.570; yaw 180: No margin-valid IK solution at arc fraction 0.560; yaw 180: No margin-valid IK solution at arc fraction 0.600; yaw 180: No margin-valid IK solution at arc fraction 0.600; yaw 180: No margin-valid IK solution at arc fraction 0.600; yaw 180: No margin-valid IK solution at arc fraction 0.600; yaw 180: No margin-valid IK solution at arc fraction 0.720; yaw 180: No margin-valid IK solution at arc fraction 0.720; yaw 180: No margin-valid IK solution at arc fraction 0.600; yaw 180: No margin-valid IK solution at arc fraction 0.600"
-}

@@ -1,9 +1,0 @@
-{
-  "completed": false,
-  "requested_point": 1,
-  "trajectory": "continuous_arc",
-  "returncode": 1,
-  "saved_catalog_unchanged": true,
-  "grasp_offset_executed": false,
-  "execution_log": "/home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T185859.671120Z/execution.log"
-}

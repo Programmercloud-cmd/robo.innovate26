@@ -88,6 +88,8 @@ def write_joint_input(directory,plan,start,target,tool,control,config,seconds):
 def run_arc(point_id,target,capture,catalog_bytes,point,execute,overrides):
     from safe_motion import build_joint_plan
     config=json.loads((HERE/'motion_config.json').read_text())
+    if not config.get('workspace_bounds_m') or not config.get('workspace_reference_distance_m'):
+        raise RuntimeError('Factory workspace is unconfigured; record new poses and configure its bounds first')
     state=capture['state'];start=state['O_T_EE'];height=config['vertical_standoff_m']
     direct=overrides.get('relative_z_mm') is not None or overrides.get('direct_saved_grasp',False) or overrides.get('direct_vertical',False)
     grasp_requested=overrides.get('target_kind')=='grasp_reference'

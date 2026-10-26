@@ -1,7 +1,0 @@
-Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T201056.413897Z/execution.log
-KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; checking complete path
-Certified arc: 1.0 s; equivalent yaw 0 deg; target XYZ mm [366.01436138 -78.45316827 300.44202304]
-START_STATE XYZ_m [0.36601221561431885, -0.07845468819141388, 0.2994399666786194] mode Idle errors []
-PLAN certified joint realization of continuous arc; duration_s 1
-PREVIEW_ONLY no motion sent
-PREVIEW_STATUS 0
