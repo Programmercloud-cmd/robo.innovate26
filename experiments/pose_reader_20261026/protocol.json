@@ -1,0 +1,48 @@
+{
+  "scope": "Resolve source-pose reader startup mismatch only; no task control",
+  "user_authorization": "2026-10-26: No more Brev setup; proceed with resolving pose-reader mismatch",
+  "initializer_source_snapshot": "runs/20261026T010941.404058Z-control-alignment-b",
+  "upstream_real_commit": "13f37dad1980bcbc4491b7f27d8962602e49fea0",
+  "prior_case": {
+    "status": "CLOSED_INCOMPLETE",
+    "spent_seconds": 255.736105687,
+    "ceiling_seconds": 270
+  },
+  "new_case_ceiling_seconds": 180,
+  "stage_maximum_seconds": {
+    "capture": 90,
+    "audit": 15,
+    "confirm": 75
+  },
+  "maximum_jobs_per_stage": 1,
+  "automatic_retries": false,
+  "confirmation_admission": "Independent saved capture audit completes and supports a reviewed minimal reader correction; no direct/batch mismatch",
+  "comparison_limits": {
+    "position_m": 1e-09,
+    "angle_rad": 1e-07
+  },
+  "workcell": {
+    "bricks": 300,
+    "native_parts": 301,
+    "native_connections": 930
+  },
+  "changes_forbidden": [
+    "controller",
+    "gripper",
+    "joint configuration",
+    "physics settings",
+    "native connections",
+    "cache invalidation",
+    "extra physics step",
+    "post-initialization pose writes",
+    "acceptance tolerances"
+  ],
+  "allowed_new_work": "Three-reader startup observation, independent saved-data audit, one evidence-supported reader correction and startup-only check",
+  "hardware_control": false,
+  "brev_work": false,
+  "training": false,
+  "installed_cache_implementation_sha256": {
+    "/home/faps/dev/resources/IsaacLab/source/isaaclab/isaaclab/assets/rigid_object/rigid_object.py": "0aa371d43fae2f9dbfccc98bdb1d14f75860973afb68d3832e83b815d52fb546",
+    "/home/faps/dev/resources/IsaacLab/source/isaaclab/isaaclab/assets/rigid_object/rigid_object_data.py": "5cc9e908106694d6fe0a4e2f56bf124874bac0b7e09810c308a6b321a60b0093"
+  }
+}

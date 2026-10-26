@@ -24,6 +24,11 @@ def fixture(paths=None):
     names=['brick_a','brick_b','brick_c'];expected=['/World/'+n for n in names]
     old=np.array([[1.,2.,3.,1.,0.,0.,0.],[4.,5.,6.,1.,0.,0.,0.],[7.,8.,9.,1.,0.,0.,0.]],np.float32)
     scene={name:SimpleNamespace(root_physx_view=SimpleNamespace(prim_paths=[path]),data=SimpleNamespace(root_link_pose_w=Tensor(old[i:i+1]))) for i,(name,path) in enumerate(zip(names,expected))}
+    for i,name in enumerate(names):
+        actor=old[i:i+1][:,[0,1,2,4,5,6,3]].copy()
+        scene[name].root_physx_view.get_transforms=lambda actor=actor:Tensor(actor)
+        scene[name].data._root_link_pose_w=SimpleNamespace(timestamp=.001,data=scene[name].data.root_link_pose_w)
+        scene[name].data._sim_timestamp=.001
     actual=[expected[2],expected[0],expected[1]] if paths is None else paths
     raw=np.array([[7.,8.,9.,0.,0.,0.,-1.],[1.,2.,3.,0.,0.,0.,1.],[4.,5.,6.,0.,0.,0.,1.]],np.float32)
     view=SimpleNamespace(prim_paths=actual,count=len(actual),get_transforms=lambda:Tensor(raw))
@@ -36,6 +41,61 @@ def fixture(paths=None):
 
 
 class BatchedTests(unittest.TestCase):
+    def test_three_channel_capture_keeps_mismatches_and_raw_order(self):
+        names,scene,raw,view,calls,modules=fixture()
+        scene[names[0]].data.root_link_pose_w.array[0,0]+=.001
+        with patch.dict(sys.modules,modules):proof=module.capture_startup_comparison(scene,names,lambda:.001)
+        self.assertEqual(proof['schema'],'pose-reader-startup-v1')
+        self.assertFalse(proof['comparisons']['cached_direct']['passed'])
+        self.assertFalse(proof['comparisons']['cached_batch']['passed'])
+        self.assertTrue(proof['comparisons']['direct_batch']['passed'])
+        self.assertEqual(proof['channels']['batch']['raw_poses'][0][0],7.)
+        self.assertEqual(proof['channels']['batch']['poses_world_wxyz'][0][0],1.)
+        self.assertEqual(proof['channels']['cached']['cache_timestamp_before'],[.001]*3)
+        for channel in proof['channels'].values():
+            self.assertEqual(channel['clock_before_s'],.001);self.assertEqual(channel['clock_after_s'],.001)
+            self.assertEqual(channel['raw_dtype'],'float32')
+        old=proof['channels']['batch']['raw_poses'][0][0];raw[:]=99
+        self.assertEqual(proof['channels']['batch']['raw_poses'][0][0],old)
+
+    def test_three_channel_capture_detects_direct_batch_disagreement(self):
+        names,scene,raw,view,calls,modules=fixture();raw[1,0]+=.002
+        with patch.dict(sys.modules,modules):proof=module.capture_startup_comparison(scene,names,lambda:4.)
+        self.assertTrue(proof['comparisons']['cached_direct']['passed'])
+        self.assertFalse(proof['comparisons']['direct_batch']['passed'])
+        self.assertEqual(len(proof['channels']['direct']['raw_poses']),3)
+
+    def test_partial_sink_precedes_path_guard_and_is_copied(self):
+        names,scene,raw,view,calls,modules=fixture(['/World/brick_a','/World/brick_a','/World/brick_c'])
+        evidence=[]
+        with patch.dict(sys.modules,modules):
+            with self.assertRaises(RuntimeError):module.capture_startup_comparison(scene,names,lambda:.001,evidence.append)
+        self.assertEqual([p['capture_stage'] for p in evidence],['cached_raw','direct_raw','batch_raw_before_path_validation'])
+        final=evidence[-1];self.assertEqual(final['actual_view_prim_paths'],view.prim_paths)
+        self.assertEqual(final['channels']['batch']['raw_poses'][0][0],7.)
+        raw[:]=123;self.assertEqual(final['channels']['batch']['raw_poses'][0][0],7.)
+        self.assertEqual(set(evidence[0]['channels']),{'cached'})
+
+    def test_cache_metadata_before_after_read_and_nonfinite_partial(self):
+        names,scene,raw,view,calls,modules=fixture()
+        value=scene[names[0]].data.root_link_pose_w
+        class LazyData:
+            def __init__(self):self._sim_timestamp=.001;self._root_link_pose_w=SimpleNamespace(timestamp=-1.,data=None)
+            @property
+            def root_link_pose_w(self):
+                self._root_link_pose_w.timestamp=self._sim_timestamp;self._root_link_pose_w.data=value
+                return value
+        scene[names[0]].data=LazyData()
+        with patch.dict(sys.modules,modules):proof=module.capture_startup_comparison(scene,names,lambda:.001)
+        cached=proof['channels']['cached']
+        self.assertEqual(cached['cache_buffer_present_before'],[False,True,True])
+        self.assertEqual(cached['cache_timestamp_before'],[-1.,.001,.001])
+        self.assertEqual(cached['cache_timestamp_after'],[.001]*3)
+        raw[0,0]=float('nan');evidence=[]
+        with patch.dict(sys.modules,modules):
+            with self.assertRaises(RuntimeError):module.capture_startup_comparison(scene,names,lambda:.001,evidence.append)
+        self.assertEqual(evidence[-1]['channels']['batch']['raw_poses'][0][0],{'nonfinite_scalar':'nan'})
+
     def test_actual_path_permutation_world_frame_and_sign(self):
         names,scene,raw,view,calls,modules=fixture()
         with patch.dict(sys.modules,modules):reader=module.BatchedSourcePoses(scene,list(reversed(names)))
