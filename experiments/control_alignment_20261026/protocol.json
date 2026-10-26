@@ -1,0 +1,19 @@
+{
+  "scope": "Align current real task2/jacob control policy and planner with an Isaac-only backend",
+  "upstream_commit": "13f37dad1980bcbc4491b7f27d8962602e49fea0",
+  "phase_A_maximum_seconds": 90,
+  "phase_B_maximum_seconds": 180,
+  "aggregate_maximum_seconds": 270,
+  "maximum_baseline_jobs": 2,
+  "automatic_retries": false,
+  "phase_B_admission": "Passing independently audited phase A; fresh actual Isaac FK/frame check before any commands",
+  "phase_B_commands": ["SDK width20mm release verification, expected NOOP", "Pinned move_xyz relative base-Z +1mm from measured stationary start"],
+  "initialization": "Recorded point03 q_rad; configuredEE from real F_T_EE; finger joints .01 each; no post-initialization pose or joint-state writes",
+  "physics": {"dt_s": 0.001, "solver": "PGS", "full_source_bricks": 300, "native_connected_parts": 301, "native_connections": 930},
+  "frame_limits": {"model_actual_position_m": 0.0001, "model_actual_angle_rad": 0.001},
+  "source_limits": {"maximum_position_drift_m": 0.0005, "maximum_angle_drift_rad": 0.005, "native_graph_changes": 0, "external_robot_contact_points": 0},
+  "completion": "Unchanged real policy: >=0.5s startup timing, full planned duration plus0.8s settle, endpoint <=1mm/1degree",
+  "limitations": ["Not identical hardware impedance/firmware or contact physics", "No FCI networking, dropped packets, CPU-affinity or host performance-profile emulation", "Hardware libfranka SONAME0.20 known; exact patch unknown, pure limiter source pinned0.20.0", "Hardware is_grasped unavailable; approach abstains, no loaded grasp tested", "Real positions.json upper poses and separate -15mm grasp references replace the older Markdown grasp-only catalog for this backend", "Source physical/base-to-table registration and actual pad gap remain uncalibrated"],
+  "hardware_execution": false,
+  "training": false
+}

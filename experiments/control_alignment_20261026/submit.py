@@ -1,0 +1,73 @@
+"""Freeze and queue the two bounded control-alignment stages in default Pueue."""
+import argparse
+from datetime import datetime,timezone
+import hashlib
+import json
+import re
+from pathlib import Path
+import shlex
+import shutil
+import subprocess
+
+HERE=Path(__file__).resolve().parent;ROOT=HERE.parents[1]
+PYTHON='/home/faps/miniforge3/envs/unitree_sim_env/bin/python'
+
+
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+
+
+def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--phase',choices=['A','B'],required=True);parser.add_argument('--predecessor',type=Path);args=parser.parse_args()
+    source_paths=[HERE,ROOT/'challenge2/jacob_control',ROOT/'vendor',ROOT/'tests/test_jacob_control.py',ROOT/'tests/test_control_alignment_audit.py']
+    if subprocess.check_output(['git','status','--porcelain','--',*map(str,source_paths)],cwd=ROOT):raise RuntimeError('Commit reviewed source first')
+    previous=None
+    if args.phase=='B':
+        if args.predecessor is None:raise RuntimeError('Phase B requires the passing phase-A snapshot')
+        previous=args.predecessor.resolve();audit=json.loads((previous/'audit/evaluation.json').read_text())
+        if not audit['control_alignment_passed'] or audit['phase']!='A':raise RuntimeError('Expected passing phase-A audit')
+        if not (previous/'output/run_complete.json').exists():raise RuntimeError('Phase-A completion marker missing')
+        old_manifest=json.loads((previous/'manifest.json').read_text())
+        if old_manifest['phase']!='A':raise RuntimeError('Wrong predecessor snapshot phase')
+        for relative,digest in old_manifest['sha256'].items():
+            if Path(relative).parts[0] in ('challenge2','configs','vendor','tests','experiments') and sha(ROOT/relative)!=digest:
+                raise RuntimeError('Source differs from audited phase A: '+relative)
+        native=json.loads((previous/'native/build.json').read_text())
+        for name,digest in native['sha256'].items():
+            if sha(previous/'native'/name)!=digest:raise RuntimeError('Audited native artifact changed: '+name)
+        if audit.get('native_build_sha256')!=sha(previous/'native/build.json'):
+            raise RuntimeError('Phase-A audit is not bound to this native build')
+        match=re.search(r'id (\d+)',(previous/'submission.txt').read_text())
+        tasks=json.loads(subprocess.check_output(['pueue','status','--json'],text=True))['tasks']
+        terminal=tasks[match.group(1)]['status'].get('Done') if match else None
+        if not terminal or terminal['result']!='Success':raise RuntimeError('Phase-A scheduler job is not successful')
+        spent=(datetime.fromisoformat(terminal['end'])-datetime.fromisoformat(terminal['start'])).total_seconds()
+        if spent+180>270:raise RuntimeError('Insufficient aggregate budget for phase B')
+    if any((p/'submission.txt').exists() for p in (ROOT/'runs').glob('*-control-alignment-'+args.phase.lower())):raise RuntimeError('One baseline per phase; no automatic retry')
+    snapshot=ROOT/'runs'/(datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S.%fZ')+'-control-alignment-'+args.phase.lower());snapshot.mkdir()
+    for name in ('challenge2','configs','vendor','tests','experiments'):
+        shutil.copytree(ROOT/name,snapshot/name,ignore=shutil.ignore_patterns('__pycache__','*.pyc','.git'))
+    if args.phase=='B':shutil.copytree(ROOT/'.deps',snapshot/'.deps',ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
+    code=snapshot/HERE.relative_to(ROOT);output=snapshot/'output';commands=[]
+    if args.phase=='A':
+        commands.append(shlex.join([PYTHON,str(code/'build_native.py'),'--output',str(snapshot/'native')]))
+        commands.append(shlex.join([PYTHON,str(code/'phase_a.py'),'--output',str(output)]))
+    else:
+        shutil.copytree(previous/'native',snapshot/'native');shutil.copyfile(previous/'audit/evaluation.json',snapshot/'phase_A_evaluation.json')
+        commands.append(shlex.join([PYTHON,str(code/'run_sim.py'),'--output',str(output),'--headless','--enable_cameras']))
+    evaluation=[PYTHON,str(code/'evaluate.py'),'--phase',args.phase,'--input',str(output),'--output',str(snapshot/'audit')]
+    if args.phase=='B':evaluation+=['--predecessor-A',str(snapshot/'phase_A_evaluation.json')]
+    commands.append(shlex.join(evaluation))
+    (snapshot/'pipeline.sh').write_text('#!/usr/bin/env bash\nset -euo pipefail\n'+'\n'.join(commands)+'\n')
+    limit=85 if args.phase=='A' else 175
+    lines=['#!/usr/bin/env bash','set -eo pipefail','source /home/faps/miniforge3/etc/profile.d/conda.sh','conda activate /home/faps/miniforge3/envs/unitree_sim_env','set -u','cd '+shlex.quote(str(snapshot)),
+           'export ROBO_PUEUE_JOB=1 PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 OSQP_EPSILON=1e-4',
+           'export PYTHONPATH='+shlex.quote(str(snapshot/'.deps')+':'+str(snapshot)),
+           'exec timeout --signal=TERM --kill-after=5s '+str(limit)+'s bash '+shlex.quote(str(snapshot/'pipeline.sh'))]
+    (snapshot/'launch.sh').write_text('\n'.join(lines)+'\n')
+    manifest={'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'phase':args.phase,'maximum_active_seconds':limit+5,'aggregate_case_ceiling_seconds':270,'queue':'default','predecessor':str(previous) if previous else None,'upstream_commit':'13f37dad1980bcbc4491b7f27d8962602e49fea0','predecessor_audit_sha256':sha(previous/'audit/evaluation.json') if previous else None,'sha256':{str(p.relative_to(snapshot)):sha(p) for p in sorted(snapshot.rglob('*')) if p.is_file()}}
+    (snapshot/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+    result=subprocess.run(['pueue','add','--label','robo26-control-alignment-'+args.phase.lower(),shlex.join(['bash',str(snapshot/'launch.sh')])],capture_output=True,text=True,check=True)
+    (snapshot/'submission.txt').write_text(result.stdout);print(snapshot);print(result.stdout.strip())
+
+
+if __name__=='__main__':main()
