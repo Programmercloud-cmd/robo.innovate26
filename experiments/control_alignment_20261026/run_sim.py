@@ -95,7 +95,7 @@ def main():
             values=np.asarray(recorded);g=np.asarray(graph)
             np.savez(out/'source_evaluation.npz',positions_world_m=values[:,:,:3],quaternions_wxyz=values[:,:,3:],native_parts_count=g[:,0],native_connections_count=g[:,1],native_graph_unchanged=g[:,2],robot_external_contact_points=np.asarray(point_counts),time_s=np.asarray(times))
             common_metadata(ROOT,out,executor,io,'B',{'move_returncode':move,'width_returncode':width,'model_fidelity':fidelity,
-                'joint_names':[robot.joint_names[i] for i in io.arm],'root_world_transform':state['T_world_root'],
+                'api_compatibility':shared.compatibility,'joint_names':[robot.joint_names[i] for i in io.arm],'root_world_transform':state['T_world_root'],
                 'io_provenance':io.provenance,'actual_asset_chain':chain,'actual_hand_joint':hand,
                 'actual_joint_position_limits_rad':robot.data.joint_pos_limits[0,io.arm].cpu().numpy().tolist(),
                 'source_trace_file':'source_evaluation.npz','source_initial_file':'source_initial.json','contact_callback_errors':contact['errors'],

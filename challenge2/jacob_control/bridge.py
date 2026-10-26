@@ -9,6 +9,23 @@ import sys
 MODULES=('kinematics','audit_kinematics','generate_stack','safe_motion','arc_motion','gripper_width','move_xyz')
 
 
+def frame_parent_joint_compat(pin):
+    """Expose the newer accessor on Pin2, without changing any joint value."""
+    frame=pin.Frame
+    applied=not hasattr(frame,'parentJoint')
+    metadata={'applied':applied,'pinocchio_version':str(getattr(pin,'__version__','UNKNOWN')),
+        'accessor':'Frame.parentJoint','source_attribute':'Frame.parent','scope':'process_local_SharedStack_context',
+        'pinocchio3_runtime_equivalence_claim':False}
+    alias=None
+    if applied:
+        if not hasattr(frame,'parent'):raise RuntimeError('Pinocchio Frame lacks both parent-joint accessors')
+        alias=property(lambda value:value.parent)
+        frame.parentJoint=alias
+    def restore():
+        if applied and frame.__dict__.get('parentJoint') is alias:delattr(frame,'parentJoint')
+    return restore,metadata
+
+
 class ProcessFacade:
     PIPE=subprocess.PIPE
     STDOUT=subprocess.STDOUT
@@ -43,7 +60,7 @@ class SharedStack:
     """
     def __init__(self,vendor_dir,executor,*,source_manifest):
         self.directory=Path(vendor_dir).resolve();self.executor=executor
-        self.manifest=Path(source_manifest);self.modules={};self.active=False
+        self.manifest=Path(source_manifest);self.modules={};self.active=False;self.compatibility={};self._frame_restore=None
 
     def __enter__(self):
         record=json.loads(self.manifest.read_text())
@@ -57,6 +74,8 @@ class SharedStack:
         self.old_modules={name:sys.modules.get(name) for name in MODULES}
         self.active=True;sys.path.insert(0,str(self.directory))
         try:
+            import pinocchio
+            self._frame_restore,self.compatibility['Frame.parentJoint']=frame_parent_joint_compat(pinocchio)
             for name in MODULES:
                 spec=importlib.util.spec_from_file_location(name,self.directory/(name+'.py'))
                 module=importlib.util.module_from_spec(spec);sys.modules[name]=module;spec.loader.exec_module(module);self.modules[name]=module
@@ -68,6 +87,7 @@ class SharedStack:
 
     def __exit__(self,*args):
         if self.active:
+            if self._frame_restore is not None:self._frame_restore();self._frame_restore=None
             for name,previous in self.old_modules.items():
                 if previous is None:sys.modules.pop(name,None)
                 else:sys.modules[name]=previous

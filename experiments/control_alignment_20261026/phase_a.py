@@ -93,7 +93,7 @@ def main():
             cases.append({'parameters':limiter.parameters.tolist(),'command':command.tolist(),'q_d':q.tolist(),'dq_d':v.tolist(),'ddq_d':acc.tolist(),'limited':limited.tolist()})
         write(out/'limiter_cases.json',cases)
         common_metadata(ROOT,out,executor,io,'A',{'move_returncode':move,'width_returncode':width,'model_fidelity':fidelity,
-            'joint_names':[f'joint{i}' for i in range(1,8)],'root_world_transform':np.eye(4).tolist(),
+            'api_compatibility':shared.compatibility,'joint_names':[f'joint{i}' for i in range(1,8)],'root_world_transform':np.eye(4).tolist(),
             'io_provenance':{'plant':'IDEAL OFFLINE REPLAY ONLY','q_d':'explicit ideal target, not measured hardware/Isaac'},
             'limiter_cases_file':'limiter_cases.json','guard_cases_file':'guard_cases.json'})
     write(out/'run_complete.json',{'completed':True,'phase':'A','physics_steps':0,'hardware_commands':0})

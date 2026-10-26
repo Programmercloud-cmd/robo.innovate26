@@ -83,3 +83,29 @@ Pinocchio 2.7.0, NumPy 1.26.0, SciPy 1.15.3, Isaac Sim 5.1 / Isaac Lab.
 process facade. Unknown commands and native robot helpers are rejected. A
 simulation-only C++ checker has no libfranka transport link. SDK math source
 retains its Apache-2.0 license and pinned provenance.
+
+## Preserved setup failure and bounded repair
+
+Offline job **1834**, source `0c4890b`, compiled both network-free native helpers,
+then stopped before planning because Pinocchio 2.7 exposes a frame's parent-joint
+index as `Frame.parent`, while the source uses `Frame.parentJoint`. Full Pueue
+cost was **4.537392625 s**. No simulation or hardware command ran.
+
+One reviewed setup correction adds that accessor alias only inside `SharedStack`
+and restores it on normal exit or failure. It does not use `previousFrame`, edit
+vendor code, install packages or change FK/IK/planner mathematics. Metadata
+records the API compatibility step without claiming Pinocchio 3 runtime identity.
+
+The failed attempt remains counted. Exactly one explicitly submitted corrected
+phase A is allowed **≤85 s**, followed conditionally by phase B **≤180 s**:
+4.537392625 + 85 + 180 = **269.537392625 s**, within the unchanged 270 s ceiling.
+There is no automatic retry loop. On this checkout, submit the reviewed repair as:
+
+```bash
+python3 experiments/control_alignment_20261026/submit.py --phase A --corrected-from runs/20261026T004924.746380Z-control-alignment-a
+```
+
+The installed simulation clock accumulates physics callback `step_size`; its
+float32 representation may differ slightly from the requested 1 ms tick. The
+independent audit accounts prospectively for that numerical clock representation;
+controller phases, periods and all physical bounds remain unchanged.

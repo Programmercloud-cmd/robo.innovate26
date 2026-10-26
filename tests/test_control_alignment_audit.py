@@ -56,6 +56,24 @@ class ControlAuditTests(unittest.TestCase):
         wrong = dict(state, joint_target_readback=(accepted+.0001).tolist())
         self.assertFalse(audit.target_channels(wrong, command)['accepted_limited_command'])
 
+    def test_callback_result_serializes_without_normalizer(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory)/'joint_input.txt'; path.write_text('\n'.join(map(str, tokens())))
+            plan = audit.parse_plan(path); q = plan['q0'].tolist(); pose = audit.model_fk(plan, q)[0].reshape(-1, order='F').tolist()
+            state = {'q': q, 'dq': [0.]*7, 'q_d': q, 'dq_d': [0.]*7, 'ddq_d': [0.]*7,
+                'joint_target_readback': q, 'F_T_EE': plan['tool'].tolist(), 'O_T_EE': pose, 'O_dP_EE_c': [0.]*6, 'time': 0.}
+            after = dict(state, time=.001)
+            row = {'step': 1, 'period_s': 0., 'elapsed_s': 0., 'startup_s': 0., 'warmed': False, 'u': 0.,
+                'state_before': state, 'state_after': after, 'guard_status': 'PASS', 'hardware_network_feedback': 'UNAVAILABLE',
+                'raw_spline_q': q, 'rebased_command_q': q, 'limited_command_q': q,
+                'expected_O_T_EE': audit.expected_pose(plan, 0.).reshape(-1, order='F').tolist()}
+            trace = Path(directory)/'trace.jsonl'; trace.write_text(json.dumps(row)+'\n')
+            parameters = np.array([[2.6, 0., 6., 3., -3.]]*7)
+            checks, metrics = audit.callback_audit(trace, plan, parameters, 'A')
+            self.assertFalse(checks['all_callback_checks'])  # Invented singular/short fixture is deliberately invalid.
+            self.assertIs(type(checks['end_stationary']), bool)
+            self.assertTrue(json.dumps({'checks': checks, 'metrics': metrics}, allow_nan=False))
+
     def test_column_major_FK_and_independent_jacobian(self):
         origins = []
         for i in range(7):
@@ -70,6 +88,17 @@ class ControlAuditTests(unittest.TestCase):
             np.testing.assert_allclose(jacobian[:3, i], derivative, atol=2e-9, rtol=0)
         np.testing.assert_array_equal(audit.matrix(pose.reshape(-1, order='F')), pose)
         with self.assertRaises(ValueError): audit.matrix([0.]*15)
+
+    def test_derived_clock_serialization_only(self):
+        n = 3000; initial = .001
+        times = initial+np.arange(1, n+1)*float(np.float32(.001))
+        self.assertEqual(audit.clock_serialization_budget(n), n*abs(float(np.float32(.001))-.001)+1e-9)
+        self.assertTrue(audit.source_clock_coverage(times, initial, float(times[-1]), n))
+        bad = times.copy(); bad[-1] += 1e-6
+        self.assertFalse(audit.source_clock_coverage(bad, initial, float(bad[-1]), n))
+        missing = times[:-1]
+        self.assertFalse(audit.source_clock_coverage(missing, initial, float(times[-1]), n))
+        with self.assertRaises(ValueError): audit.clock_serialization_budget(-1)
 
 
 if __name__ == '__main__': unittest.main()

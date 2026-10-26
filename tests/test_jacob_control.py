@@ -8,7 +8,7 @@ import tempfile
 from types import SimpleNamespace
 import unittest
 import numpy as np
-from challenge2.jacob_control.bridge import SharedStack,ProcessFacade,MODULES
+from challenge2.jacob_control.bridge import SharedStack,ProcessFacade,MODULES,frame_parent_joint_compat
 from challenge2.jacob_control.executor import JointExecutor,JointPlan,blend,sample_command
 
 
@@ -32,6 +32,24 @@ class FakeIO:
 
 
 class ControlTests(unittest.TestCase):
+    def test_frame_accessor_compatibility_is_scoped(self):
+        class Frame:
+            parent=1
+            previousFrame=2
+        restore,record=frame_parent_joint_compat(SimpleNamespace(Frame=Frame,__version__='synthetic2.7'))
+        self.assertTrue(record['applied']);self.assertFalse(record['pinocchio3_runtime_equivalence_claim'])
+        try:
+            self.assertEqual(Frame().parentJoint,1);self.assertNotEqual(Frame().parentJoint,Frame().previousFrame)
+            nested,nested_record=frame_parent_joint_compat(SimpleNamespace(Frame=Frame))
+            self.assertFalse(nested_record['applied']);nested();self.assertEqual(Frame().parentJoint,1)
+        finally:restore()
+        self.assertFalse(hasattr(Frame,'parentJoint'));restore()
+        class NewFrame:
+            parentJoint=7
+        original=NewFrame.parentJoint
+        restore,record=frame_parent_joint_compat(SimpleNamespace(Frame=NewFrame))
+        self.assertFalse(record['applied']);restore();self.assertIs(NewFrame.parentJoint,original)
+
     def test_spline_nested_time_and_initial_reference(self):
         with tempfile.TemporaryDirectory() as directory:
             path=Path(directory)/'joint_input';frozen(path);p=JointPlan(path)

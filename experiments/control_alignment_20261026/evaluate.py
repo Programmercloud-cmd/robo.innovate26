@@ -165,6 +165,19 @@ def sdk_limit(parameters, command, q, velocity, acceleration):
     return q+accepted_velocity*DT
 
 
+def clock_serialization_budget(steps):
+    if type(steps) is not int or steps < 0: raise ValueError('Nonnegative observed step count required')
+    return steps*abs(float(np.float32(DT))-DT)+1e-9
+
+
+def source_clock_coverage(times, initial, final, steps):
+    times = np.asarray(times, float); budget = clock_serialization_budget(steps)
+    if steps <= 0 or times.shape != (steps,) or not np.isfinite(times).all(): return False
+    return bool(near(np.diff(np.r_[initial, times]), np.full(steps, DT), 1e-8)
+        and near(times, initial+np.arange(1, steps+1)*DT, budget)
+        and abs(final-initial-steps*DT) <= budget)
+
+
 def callback_audit(path, plan, parameters, phase):
     failures = Counter(); n = 0; reference = None; warmed = False; startup = stable = elapsed = 0.; previous = None
     maximum_position = maximum_angle = maximum_tracking = 0.; first_motion = None; final = None
@@ -341,8 +354,7 @@ def evaluate(phase, folder, predecessor):
             'native_connections_count': (n,), 'native_graph_unchanged': (n,), 'robot_external_contact_points': (n,), 'time_s': (n,)}
         checks['all_observed_source_steps'] = (n > 0 and set(data) == set(expected_shapes)
             and all(data[k].shape == shape and np.isfinite(data[k]).all() for k, shape in expected_shapes.items()))
-        checks['source_clock_coverage'] = (near(times, meta['initial_time_s']+np.arange(1, n+1)*DT, 1e-7)
-            and abs(meta['final_time_s']-meta['initial_time_s']-n*DT) <= 1e-7)
+        checks['source_clock_coverage'] = source_clock_coverage(times, meta['initial_time_s'], meta['final_time_s'], n)
         drift = float(np.max(np.linalg.norm(data['positions_world_m']-initial_poses[None, :, :3], axis=2)))
         q = data['quaternions_wxyz']; q0 = initial_poses[:, 3:]
         norms = np.linalg.norm(q, axis=2); norms0 = np.linalg.norm(q0, axis=1)
@@ -351,8 +363,8 @@ def evaluate(phase, folder, predecessor):
         checks['stationary_full_source'] = drift <= .0005 and source_angle <= .005
         checks['unchanged_native_graph_all_steps'] = bool(np.all(data['native_parts_count'] == 301) and np.all(data['native_connections_count'] == 930) and np.all(data['native_graph_unchanged'] == 1))
         checks['no_external_robot_contact_all_steps'] = bool(np.all(data['robot_external_contact_points'] == 0))
-        source_metrics = {'source_samples': n, 'maximum_translation_m': drift, 'maximum_rotation_rad': source_angle}
-    checks = {name: bool(value) for name, value in checks.items()}
+        source_metrics = {'source_samples': n, 'maximum_translation_m': drift, 'maximum_rotation_rad': source_angle,
+            'clock_serialization_budget_s': clock_serialization_budget(n), 'per_step_clock_tolerance_s': 1e-8}
     passed = bool(all(checks.values()))
     return {'phase': phase, 'control_alignment_passed': passed, 'passed': passed, 'checks': checks,
         'failed_checks': [k for k, v in checks.items() if not v], 'upstream_commit': COMMIT,
