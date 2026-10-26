@@ -1,6 +1,7 @@
 """Independent no-step pose-reader diagnostic. No simulator or reader imports."""
 import argparse
 import hashlib
+import importlib.util
 import json
 import os
 from pathlib import Path
@@ -113,6 +114,26 @@ def evaluate(data):
         'grasp_or_hardware_parity_verified': False, 'corrected_check_automatically_authorized': False}
 
 
+def confirmation_checks(data, confirmation, startup_verifier):
+    proof = confirmation['proof']; initial = confirmation['initial']; scene = data['scene_after']
+    channels = data['pose_readers']['channels']
+    return {
+        'confirmation_no_step_control': confirmation['control_commands'] == 0
+            and confirmation['physics_time_before_s'] == confirmation['physics_time_after_s'] == scene['physics_time_s']
+            and type(confirmation['physics_step_before']) is int and type(confirmation['physics_step_after']) is int
+            and confirmation['physics_step_before'] == confirmation['physics_step_after'] == scene['physics_step_index'],
+        'confirmation_actual_v2_class_proof': proof.get('proof_version') == 2
+            and startup_verifier(proof, initial, confirmation['physics_time_before_s']),
+        'confirmation_initial_matches_capture_batch': initial['names'] == data['pose_readers']['names']
+            and close(initial['poses_world_wxyz'], channels['batch']['poses_world_wxyz']),
+        'confirmation_class_bound_to_all_three_channels': proof['names'] == data['pose_readers']['names']
+            and close(proof['direct_raw_poses_world_xyzw'], channels['direct']['raw_poses'])
+            and close(proof['direct_poses_world_wxyz'], channels['direct']['poses_world_wxyz'])
+            and close(proof['cached_poses_world_wxyz'], channels['cached']['poses_world_wxyz'])
+            and close(proof['new_poses_world_wxyz'], channels['batch']['poses_world_wxyz']),
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(allow_abbrev=False)
     parser.add_argument('--input', type=Path, required=True); parser.add_argument('--output', type=Path, required=True)
@@ -130,6 +151,19 @@ def main():
     checks['copied_source_hashes'] = copied_sources_match(snapshot, manifest['source_sha256'])
     base_manifest = snapshot.parent.parent/INITIALIZER/'manifest.json'
     checks['initializer_base_manifest_binding'] = digest(base_manifest) == manifest['base_snapshot_manifest_sha256']
+    if manifest['stage'] == 'confirm':
+        confirmation_path = args.input.parent/'reader_confirmation.json'
+        checks['reader_confirmation_present'] = confirmation_path.is_file()
+        if confirmation_path.is_file():
+            old_auditor = Path(__file__).resolve().parent.parent/'control_alignment_20261026/evaluate.py'
+            spec = importlib.util.spec_from_file_location('confirmed_startup_audit', old_auditor)
+            module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+            confirmation = json.loads(confirmation_path.read_text())
+            checks.update(confirmation_checks(data, confirmation, module.startup_getter_proof))
+            result['reader_confirmation_sha256'] = digest(confirmation_path)
+            result['startup_proof_auditor_sha256'] = digest(old_auditor)
+        result['reader_confirmation_verified'] = bool(all(value for key, value in checks.items()
+            if key == 'reader_confirmation_present' or key.startswith('confirmation_')))
     result['diagnostic_complete'] = bool(all(checks.values()))
     result['failed_checks'] = [key for key, value in checks.items() if not value]
     if not result['diagnostic_complete']:

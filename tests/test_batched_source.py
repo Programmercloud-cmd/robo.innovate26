@@ -102,6 +102,9 @@ class BatchedTests(unittest.TestCase):
         self.assertEqual(reader.proof['names'],names);self.assertEqual(reader.proof['row_indices_in_name_order'],[1,2,0])
         self.assertEqual(calls,[('frontend','torch'),('roots','/'),('paths',['/World/'+n for n in names])])
         self.assertTrue(reader.proof['equivalence_passed']);self.assertEqual(reader.proof['maximum_angle_error_rad'],0.)
+        self.assertEqual(reader.proof['proof_version'],2)
+        self.assertEqual(reader.proof['reference_reader'],'fresh_per_asset_PhysX_get_transforms')
+        self.assertNotIn('old_reader',reader.proof);self.assertNotIn('old_poses_world_wxyz',reader.proof)
         np.testing.assert_array_equal(reader.read()[:,0],[1,4,7])
         np.testing.assert_array_equal(reader.read()[2,3:],[-1,0,0,0])  # Preserve raw quaternion sign.
 
@@ -143,9 +146,35 @@ class BatchedTests(unittest.TestCase):
         proof=captured.exception.proof
         self.assertFalse(proof['equivalence_passed']);self.assertGreater(proof['maximum_position_error_m'],1e-9)
         self.assertEqual(proof['names'],names);self.assertEqual(proof['row_indices_in_name_order'],[1,2,0])
-        self.assertEqual(len(proof['old_poses_world_wxyz']),3);self.assertEqual(len(proof['new_poses_world_wxyz']),3)
+        self.assertEqual(len(proof['direct_poses_world_wxyz']),3);self.assertEqual(len(proof['cached_poses_world_wxyz']),3)
+        self.assertEqual(len(proof['direct_raw_poses_world_xyzw']),3);self.assertEqual(len(proof['batch_raw_poses_world_xyzw']),3)
+        self.assertEqual(len(proof['new_poses_world_wxyz']),3)
         before=proof['new_poses_world_wxyz'][0][0];raw[:]=99
         self.assertEqual(proof['new_poses_world_wxyz'][0][0],before)
+
+    def test_cache_only_float32_ulp_discrepancy_is_retained_not_gating(self):
+        names,scene,raw,view,calls,modules=fixture()
+        fresh=np.float32(.032);cached=np.nextafter(fresh,np.float32(np.inf))
+        scene[names[0]].data.root_link_pose_w.array[0,0]=cached
+        scene[names[0]].root_physx_view.get_transforms().array[0,0]=fresh
+        raw[1,0]=fresh
+        with patch.dict(sys.modules,modules):reader=module.BatchedSourcePoses(scene,names)
+        proof=reader.proof
+        self.assertTrue(proof['equivalence_passed']);self.assertEqual(proof['maximum_position_error_m'],0.)
+        self.assertEqual(proof['maximum_angle_error_rad'],0.)
+        self.assertFalse(proof['cached_direct_comparison']['passed']);self.assertFalse(proof['cached_batch_comparison']['passed'])
+        self.assertEqual(proof['cached_direct_comparison']['maximum_position_error_m'],float(cached)-float(fresh))
+        self.assertEqual(proof['cached_poses_world_wxyz'][0][0],float(cached))
+        self.assertEqual(proof['direct_poses_world_wxyz'][0][0],float(fresh))
+        np.testing.assert_array_equal(reader.read()[:,0],[fresh,4,7])
+        raw[1,0]=cached  # The SAME nanometer difference between fresh APIs must fail.
+        with patch.dict(sys.modules,modules):
+            with self.assertRaises(module.SourcePoseEquivalenceError) as captured:
+                module.BatchedSourcePoses(scene,names)
+        failed=captured.exception.proof
+        self.assertFalse(failed['equivalence_passed'])
+        self.assertEqual(failed['maximum_position_error_m'],float(cached)-float(fresh))
+        self.assertTrue(failed['cached_batch_comparison']['passed'])
 
 
 if __name__=='__main__':unittest.main()

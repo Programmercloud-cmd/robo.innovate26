@@ -129,17 +129,29 @@ class BatchedSourcePoses:
             raise RuntimeError('Batched source actor paths differ from the exact requested set')
         lookup={path:i for i,path in enumerate(actual)}
         self.indices=np.asarray([lookup[path] for path in expected],dtype=np.int64)
-        # Both readers execute now, with no simulation step or actor writes.
-        old=_poses(np.stack([_array(scene[name].data.root_link_pose_w[0]) for name in self.names]),count)
-        new=self.read();position_error=np.linalg.norm(old[:,:3]-new[:,:3],axis=1)
-        angle_error=quaternion_angles(old[:,3:],new[:,3:])
-        passed=bool(np.max(position_error)<=1e-9 and np.max(angle_error)<=1e-7)
+        # The property may retain requested poses after initialization writes.
+        # Compare two fresh PhysX readers; retain cache differences separately.
+        cached=_poses(np.stack([np.array(_array(scene[name].data.root_link_pose_w[0]),copy=True) for name in self.names]),count)
+        direct_raw=np.stack([np.array(_array(scene[name].root_physx_view.get_transforms()[0]),copy=True) for name in self.names])
+        direct=_poses(direct_raw[:,[0,1,2,6,3,4,5]],count)
+        batch_raw=np.array(_array(self.view.get_transforms()),copy=True)
+        if batch_raw.shape!=(count,7):raise RuntimeError('Unexpected batched transform shape')
+        new=_poses(batch_raw[self.indices][:,[0,1,2,6,3,4,5]],count)
+        def comparison(a,b):
+            position=float(np.max(np.linalg.norm(a[:,:3]-b[:,:3],axis=1)))
+            angle=float(np.max(quaternion_angles(a[:,3:],b[:,3:])))
+            return {'maximum_position_error_m':position,'maximum_angle_error_rad':angle,
+                    'passed':bool(position<=1e-9 and angle<=1e-7)}
+        fresh=comparison(direct,new);passed=fresh['passed']
         self.proof={'names':self.names.copy(),'expected_root_paths':expected,'actual_view_prim_paths':actual,
             'row_indices_in_name_order':self.indices.tolist(),'count':count,'subspace_roots':'/','frame':'world',
             'getter_layout':'xyz_xyzw','returned_layout':'xyz_wxyz','snapshot_copy':True,
-            'no_step_called_by_reader':True,'old_reader':'scene[name].data.root_link_pose_w[0]',
-            'old_poses_world_wxyz':old.tolist(),'new_poses_world_wxyz':new.tolist(),
-            'maximum_position_error_m':float(np.max(position_error)),'maximum_angle_error_rad':float(np.max(angle_error)),
+            'no_step_called_by_reader':True,'proof_version':2,'reference_reader':'fresh_per_asset_PhysX_get_transforms',
+            'direct_raw_poses_world_xyzw':direct_raw.tolist(),'direct_poses_world_wxyz':direct.tolist(),
+            'batch_raw_poses_world_xyzw':batch_raw.tolist(),'cached_poses_world_wxyz':cached.tolist(),
+            'cached_direct_comparison':comparison(cached,direct),'cached_batch_comparison':comparison(cached,new),
+            'new_poses_world_wxyz':new.tolist(),
+            'maximum_position_error_m':fresh['maximum_position_error_m'],'maximum_angle_error_rad':fresh['maximum_angle_error_rad'],
             'position_tolerance_m':1e-9,'angle_tolerance_rad':1e-7,'equivalence_passed':passed}
         if not passed:raise SourcePoseEquivalenceError(self.proof)
 

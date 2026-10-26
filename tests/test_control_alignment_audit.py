@@ -127,5 +127,33 @@ class ControlAuditTests(unittest.TestCase):
         self.assertTrue(audit.startup_getter_proof(proof, initial, .001))
         self.assertTrue(json.dumps({'check': audit.startup_getter_proof(proof, initial, .001)}, allow_nan=False))
 
+    def test_v2_fresh_source_reference_preserves_cache_discrepancy(self):
+        names = [f'brick_{i:03d}' for i in range(300)]; paths = ['/World/envs/env_0/'+n for n in names]
+        poses = np.zeros((300, 7)); poses[:, 0] = np.arange(300)*.01; poses[:, 3] = 1.
+        cached = poses.copy(); cached[0, 0] += 4e-9
+        discrepancy = float(abs(cached[0, 0]-poses[0, 0]))
+        summary = {'maximum_position_error_m': discrepancy, 'maximum_angle_error_rad': 0., 'passed': False}
+        proof = {'proof_version': 2, 'names': names, 'expected_root_paths': paths,
+            'actual_view_prim_paths': paths[::-1], 'row_indices_in_name_order': list(range(299, -1, -1)),
+            'count': 300, 'subspace_roots': '/', 'frame': 'world', 'getter_layout': 'xyz_xyzw', 'returned_layout': 'xyz_wxyz',
+            'snapshot_copy': True, 'no_step_called_by_reader': True, 'clock_before_s': .001, 'clock_after_s': .001,
+            'reference_reader': 'fresh_per_asset_PhysX_get_transforms',
+            'direct_raw_poses_world_xyzw': poses[:, [0, 1, 2, 4, 5, 6, 3]].tolist(),
+            'direct_poses_world_wxyz': poses.tolist(), 'new_poses_world_wxyz': poses.tolist(),
+            'batch_raw_poses_world_xyzw': poses[::-1][:, [0, 1, 2, 4, 5, 6, 3]].tolist(),
+            'cached_poses_world_wxyz': cached.tolist(), 'cached_direct_comparison': summary,
+            'cached_batch_comparison': copy.deepcopy(summary), 'maximum_position_error_m': 0.,
+            'maximum_angle_error_rad': 0., 'position_tolerance_m': 1e-9, 'angle_tolerance_rad': 1e-7,
+            'equivalence_passed': True}
+        initial = {'names': names, 'poses_world_wxyz': poses.tolist()}
+        self.assertTrue(audit.startup_getter_proof(proof, initial, .001))
+        for mutate in [lambda p: p['direct_raw_poses_world_xyzw'][0].__setitem__(0, .0002),
+                lambda p: p.update(row_indices_in_name_order=list(range(300))),
+                lambda p: p['cached_direct_comparison'].update(passed=True),
+                lambda p: p.update(proof_version=3),
+                lambda p: p.update(old_reader='scene[name].data.root_link_pose_w[0]')]:
+            bad = copy.deepcopy(proof); mutate(bad)
+            self.assertFalse(audit.startup_getter_proof(bad, initial, .001))
+
 
 if __name__ == '__main__': unittest.main()

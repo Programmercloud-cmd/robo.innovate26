@@ -3,6 +3,7 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -62,13 +63,21 @@ def main():
                 write(out/'reader_failure.json', {'type': type(error).__name__, 'reason': str(error),
                     'proof': getattr(error, 'proof', None), 'control_commands': 0})
                 raise
-            write(out/'reader_confirmation.json', {'proof': reader.proof,
+            reader.proof.update(clock_before_s=after['physics_time_s'], clock_after_s=float(sim.current_time))
+            initial = {'names': reader.names, 'poses_world_wxyz': reader.read().tolist()}
+            write(out/'reader_confirmation.json', {'proof': reader.proof, 'initial': initial,
                 'physics_time_before_s': after['physics_time_s'],
                 'physics_time_after_s': float(sim.current_time),
                 'physics_step_before': after['physics_step_index'],
                 'physics_step_after': int(sim.current_time_step_index), 'control_commands': 0})
         write(out/'capture_complete.json', {'captured': True, 'reader_verified': args.verify_reader,
             'control_commands': 0, 'scope': 'Same-step reader compatibility only'})
+        if args.verify_reader:
+            # Audit saved evidence before teardown, which timed out in capture1838.
+            # This foreground child remains within the SAME finite Pueue job.
+            subprocess.run([sys.executable, str(ROOT/'experiments/pose_reader_20261026/evaluate.py'),
+                '--input', str(out/'capture.json'), '--output', str(ROOT/'audit')], check=True)
+            print('POSE_READER_CLASS_AUDIT_SAVED_BEFORE_SHUTDOWN', flush=True)
         raise initializer.ControlOnlyComplete()
 
     readers.BatchedSourcePoses = capture

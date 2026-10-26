@@ -32,7 +32,8 @@ def main():
         if sha(Path(path)) != digest:
             raise RuntimeError('Installed cache implementation changed: '+path)
     paths = [HERE, ROOT/'experiments/control_alignment_20261026/batched_source.py',
-        ROOT/'tests/test_batched_source.py']
+        ROOT/'tests/test_batched_source.py', ROOT/'experiments/control_alignment_20261026/evaluate.py',
+        ROOT/'tests/test_control_alignment_audit.py']
     if subprocess.check_output(['git', 'status', '--porcelain', '--', *map(str, paths)], cwd=ROOT):
         raise RuntimeError('Commit reviewed diagnostic source first')
     base = ROOT/protocol['initializer_source_snapshot']
@@ -76,7 +77,8 @@ def main():
             raise RuntimeError('Historical source changed: '+relative)
     shutil.copytree(HERE, snapshot/HERE.relative_to(ROOT), dirs_exist_ok=True,
         ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
-    for relative in ('experiments/control_alignment_20261026/batched_source.py', 'tests/test_batched_source.py'):
+    for relative in ('experiments/control_alignment_20261026/batched_source.py', 'tests/test_batched_source.py',
+            'experiments/control_alignment_20261026/evaluate.py', 'tests/test_control_alignment_audit.py'):
         shutil.copyfile(ROOT/relative, snapshot/relative)
     code = snapshot/HERE.relative_to(ROOT)
     output = snapshot/'output'
@@ -88,9 +90,6 @@ def main():
         if args.stage == 'confirm':
             command += ['--verify-reader']
         commands = [command]
-        if args.stage == 'confirm':
-            commands.append([PYTHON, str(code/'evaluate.py'), '--input', str(output/'capture.json'),
-                '--output', str(snapshot/'audit')])
     source = {str(p.relative_to(snapshot)): sha(p) for p in sorted(snapshot.rglob('*')) if p.is_file()}
     write(snapshot/'manifest.json', {'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
         'initializer_source_snapshot': protocol['initializer_source_snapshot'],

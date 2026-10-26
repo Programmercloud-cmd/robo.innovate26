@@ -9,6 +9,9 @@ import numpy as np
 
 SPEC = importlib.util.spec_from_file_location('pose_reader_audit', Path(__file__).with_name('evaluate.py'))
 audit = importlib.util.module_from_spec(SPEC); SPEC.loader.exec_module(audit)
+OLD_SPEC = importlib.util.spec_from_file_location('startup_proof_audit',
+    Path(__file__).resolve().parent.parent/'control_alignment_20261026/evaluate.py')
+old_audit = importlib.util.module_from_spec(OLD_SPEC); OLD_SPEC.loader.exec_module(old_audit)
 
 
 def fixture():
@@ -42,6 +45,35 @@ def summaries(data):
 
 
 class DiagnosticAuditTests(unittest.TestCase):
+    def test_actual_v2_confirmation_bound_to_three_channels(self):
+        data = fixture(); capture = data['pose_readers']; channels = capture['channels']
+        cached = channels['cached']; cached['raw_poses'][0][2] = cached['poses_world_wxyz'][0][2] = 4e-9
+        summaries(data)
+        proof = {key: copy.deepcopy(capture[key]) for key in ['names', 'expected_root_paths',
+            'actual_view_prim_paths', 'row_indices_in_name_order', 'count', 'subspace_roots', 'frame']}
+        proof.update(proof_version=2, reference_reader='fresh_per_asset_PhysX_get_transforms',
+            getter_layout='xyz_xyzw', returned_layout='xyz_wxyz', snapshot_copy=True,
+            no_step_called_by_reader=True, clock_before_s=.001, clock_after_s=.001,
+            position_tolerance_m=1e-9, angle_tolerance_rad=1e-7, equivalence_passed=True,
+            maximum_position_error_m=0., maximum_angle_error_rad=0.,
+            direct_raw_poses_world_xyzw=channels['direct']['raw_poses'],
+            direct_poses_world_wxyz=channels['direct']['poses_world_wxyz'],
+            batch_raw_poses_world_xyzw=channels['batch']['raw_poses'],
+            cached_poses_world_wxyz=cached['poses_world_wxyz'],
+            cached_direct_comparison=capture['comparisons']['cached_direct'],
+            cached_batch_comparison=capture['comparisons']['cached_batch'],
+            new_poses_world_wxyz=channels['batch']['poses_world_wxyz'])
+        record = {'proof': proof, 'initial': {'names': capture['names'],
+            'poses_world_wxyz': channels['batch']['poses_world_wxyz']},
+            'physics_time_before_s': .001, 'physics_time_after_s': .001,
+            'physics_step_before': 1, 'physics_step_after': 1, 'control_commands': 0}
+        self.assertTrue(all(audit.confirmation_checks(data, record, old_audit.startup_getter_proof).values()))
+        for mutate in [lambda r: r.update(physics_step_after=2),
+                lambda r: r['initial']['poses_world_wxyz'][0].__setitem__(0, .001),
+                lambda r: r['proof']['direct_raw_poses_world_xyzw'][0].__setitem__(0, .001)]:
+            wrong = copy.deepcopy(record); mutate(wrong)
+            self.assertFalse(all(audit.confirmation_checks(data, wrong, old_audit.startup_getter_proof).values()))
+
     def test_copied_file_pins(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory); source = root/'reader.py'; source.write_text('# invented source\n')

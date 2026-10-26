@@ -187,7 +187,35 @@ def startup_getter_proof(proof, initial, initial_time):
         and proof['count'] == len(actual) == len(set(actual)) == 300 and set(actual) == set(expected)
         and len(indices) == 300 and all(type(i) is int and 0 <= i < 300 for i in indices)
         and len(set(indices)) == 300 and [actual[i] for i in indices] == expected)
-    old = np.asarray(proof['old_poses_world_wxyz'], float); new = np.asarray(proof['new_poses_world_wxyz'], float)
+    version = proof.get('proof_version', 1)
+    if type(version) is not int or version not in (1, 2): return False
+    reference_ok = proof.get('old_reader') == 'scene[name].data.root_link_pose_w[0]'
+    diagnostic_ok = True
+    new = np.asarray(proof['new_poses_world_wxyz'], float)
+    if version == 1:
+        old = np.asarray(proof['old_poses_world_wxyz'], float)
+    else:
+        if not mapping: return False
+        old = np.asarray(proof['direct_poses_world_wxyz'], float)
+        direct_raw = np.asarray(proof['direct_raw_poses_world_xyzw'], float)
+        batch_raw = np.asarray(proof['batch_raw_poses_world_xyzw'], float)
+        cached = np.asarray(proof['cached_poses_world_wxyz'], float)
+        arrays = (old, new, direct_raw, batch_raw, cached)
+        if not all(a.shape == (300, 7) and np.isfinite(a).all()
+                and np.all(np.linalg.norm(a[:, 3:], axis=1) > 0) for a in arrays): return False
+        reference_ok = (proof['reference_reader'] == 'fresh_per_asset_PhysX_get_transforms'
+            and 'old_reader' not in proof and 'old_poses_world_wxyz' not in proof
+            and near(direct_raw[:, [0, 1, 2, 6, 3, 4, 5]], old, 0.)
+            and near(batch_raw[indices][:, [0, 1, 2, 6, 3, 4, 5]], new, 0.))
+        for right, key in [(old, 'cached_direct_comparison'), (new, 'cached_batch_comparison')]:
+            cp = float(np.max(np.linalg.norm(cached[:, :3]-right[:, :3], axis=1)))
+            ca = float(np.max((Rotation.from_quat(cached[:, [4, 5, 6, 3]]).inv()
+                *Rotation.from_quat(right[:, [4, 5, 6, 3]])).magnitude()))
+            recorded = proof[key]
+            diagnostic_ok = diagnostic_ok and type(recorded['passed']) is bool \
+                and recorded['passed'] == (cp <= 1e-9 and ca <= 1e-7) \
+                and near(recorded['maximum_position_error_m'], cp, 1e-15) \
+                and near(recorded['maximum_angle_error_rad'], ca, 1e-12)
     if old.shape != (300, 7) or new.shape != (300, 7) or not np.isfinite(old).all() or not np.isfinite(new).all(): return False
     norms_old = np.linalg.norm(old[:, 3:], axis=1); norms_new = np.linalg.norm(new[:, 3:], axis=1)
     if np.any(norms_old == 0) or np.any(norms_new == 0): return False
@@ -198,12 +226,14 @@ def startup_getter_proof(proof, initial, initial_time):
     return bool(mapping and proof['subspace_roots'] == '/' and proof['frame'] == 'world'
         and proof['getter_layout'] == 'xyz_xyzw' and proof['returned_layout'] == 'xyz_wxyz'
         and proof['snapshot_copy'] is True and proof['no_step_called_by_reader'] is True
-        and proof['old_reader'] == 'scene[name].data.root_link_pose_w[0]'
+        and reference_ok and diagnostic_ok
         and proof['clock_before_s'] == proof['clock_after_s'] == initial_time
         and proof['position_tolerance_m'] == 1e-9 and proof['angle_tolerance_rad'] == 1e-7
         and position <= 1e-9 and angle <= 1e-7 and proof['equivalence_passed'] is True
         and 0 <= proof['maximum_position_error_m'] <= 1e-9
         and 0 <= proof['maximum_angle_error_rad'] <= 1e-7
+        and (version == 1 or (near(proof['maximum_position_error_m'], position, 1e-15)
+            and near(proof['maximum_angle_error_rad'], angle, 1e-12)))
         and near(new, initial['poses_world_wxyz'], 0.))
 
 
