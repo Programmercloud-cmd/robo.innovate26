@@ -1,5 +1,6 @@
 """Small invented protocol/model cases only; no robot, source dataset or Isaac."""
 import importlib.util
+import copy
 import json
 from pathlib import Path
 import tempfile
@@ -99,6 +100,32 @@ class ControlAuditTests(unittest.TestCase):
         missing = times[:-1]
         self.assertFalse(audit.source_clock_coverage(missing, initial, float(times[-1]), n))
         with self.assertRaises(ValueError): audit.clock_serialization_budget(-1)
+
+    def test_batched_source_startup_mapping_and_equivalence(self):
+        names = [f'brick_{i:03d}' for i in range(300)]
+        expected = ['/World/envs/env_0/'+name for name in names]
+        poses = np.zeros((300, 7)); poses[:, 0] = np.arange(300)*.01; poses[:, 3] = 1.
+        initial = {'names': names, 'poses_world_wxyz': poses.tolist()}
+        proof = {'names': names, 'expected_root_paths': expected, 'actual_view_prim_paths': expected[::-1],
+            'row_indices_in_name_order': list(range(299, -1, -1)), 'count': 300,
+            'subspace_roots': '/', 'frame': 'world', 'getter_layout': 'xyz_xyzw', 'returned_layout': 'xyz_wxyz',
+            'snapshot_copy': True, 'no_step_called_by_reader': True, 'old_reader': 'scene[name].data.root_link_pose_w[0]',
+            'old_poses_world_wxyz': poses.tolist(), 'new_poses_world_wxyz': poses.tolist(),
+            'clock_before_s': .001, 'clock_after_s': .001, 'position_tolerance_m': 1e-9, 'angle_tolerance_rad': 1e-7,
+            'maximum_position_error_m': 0., 'maximum_angle_error_rad': 0., 'equivalence_passed': True}
+        self.assertTrue(audit.startup_getter_proof(proof, initial, .001))
+        for field, value in [('row_indices_in_name_order', list(range(300))), ('snapshot_copy', False),
+                ('frame', 'environment'), ('clock_after_s', .002)]:
+            bad = copy.deepcopy(proof); bad[field] = value
+            self.assertFalse(audit.startup_getter_proof(bad, initial, .001))
+        bad = copy.deepcopy(proof); bad['new_poses_world_wxyz'][0][0] += 1e-6
+        self.assertFalse(audit.startup_getter_proof(bad, initial, .001))
+        bad = copy.deepcopy(proof); bad['actual_view_prim_paths'][0] = bad['actual_view_prim_paths'][1]
+        self.assertFalse(audit.startup_getter_proof(bad, initial, .001))
+        # Quaternion sign equivalence is valid; initial recording still binds exact new rows.
+        proof['old_poses_world_wxyz'] = (poses*np.array([1, 1, 1, -1, -1, -1, -1])).tolist()
+        self.assertTrue(audit.startup_getter_proof(proof, initial, .001))
+        self.assertTrue(json.dumps({'check': audit.startup_getter_proof(proof, initial, .001)}, allow_nan=False))
 
 
 if __name__ == '__main__': unittest.main()

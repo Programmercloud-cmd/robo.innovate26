@@ -75,7 +75,10 @@ def main():
         if len(parts)!=301 or len(connections)!=930:raise RuntimeError('Full300 native preassembly missing')
         names=sorted(name for name in scene.rigid_objects if name.startswith('brick_'))
         if len(names)!=300:raise RuntimeError('Full300 source required')
-        def source_poses():return np.stack([scene[name].data.root_link_pose_w[0].cpu().numpy() for name in names])
+        from experiments.control_alignment_20261026.batched_source import BatchedSourcePoses
+        proof_clock=float(sim.current_time);reader=BatchedSourcePoses(scene,names)
+        reader.proof.update(clock_before_s=proof_clock,clock_after_s=float(sim.current_time))
+        source_poses=reader.read
         initial=source_poses();write(out/'source_initial.json',{'names':names,'poses_world_wxyz':initial.tolist(),'native_parts':list(map(str,parts)),'native_connections':list(map(str,connections))})
         recorded=[];graph=[];point_counts=[];times=[];initial_time=float(sim.current_time)
         def observe():
@@ -98,7 +101,7 @@ def main():
                 'api_compatibility':shared.compatibility,'joint_names':[robot.joint_names[i] for i in io.arm],'root_world_transform':state['T_world_root'],
                 'io_provenance':io.provenance,'actual_asset_chain':chain,'actual_hand_joint':hand,
                 'actual_joint_position_limits_rad':robot.data.joint_pos_limits[0,io.arm].cpu().numpy().tolist(),
-                'source_trace_file':'source_evaluation.npz','source_initial_file':'source_initial.json','contact_callback_errors':contact['errors'],
+                'source_pose_getter_proof':reader.proof,'source_trace_file':'source_evaluation.npz','source_initial_file':'source_initial.json','contact_callback_errors':contact['errors'],
                 'simulation_steps_observed':len(recorded),'initial_time_s':initial_time,'final_time_s':float(sim.current_time),'gripper_move_calls':io.width_commands,
                 'post_initialization_pose_writes':0,'native_initial_parts':301,'native_initial_connections':930,
                 'full_geometry':'300 bricks,10 layers,6 ridgesx5 per layer; unchanged native preassembly',

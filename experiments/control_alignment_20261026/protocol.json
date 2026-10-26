@@ -4,7 +4,7 @@
   "phase_A_maximum_seconds": 90,
   "phase_B_maximum_seconds": 180,
   "aggregate_maximum_seconds": 270,
-  "maximum_baseline_jobs": 3,
+  "maximum_baseline_jobs": 4,
   "automatic_retries": false,
   "phase_B_admission": "Passing independently audited phase A; fresh actual Isaac FK/frame check before any commands",
   "phase_B_commands": [
@@ -50,5 +50,32 @@
     "maximum_additional_phase_A_jobs": 1,
     "aggregate_ceiling_unchanged_seconds": 270,
     "failed_source_commit": "0c4890bc3391aab073e054dde070e3e711e7bf68"
+  },
+  "recording_correction": {
+    "failed_job_id": 1836,
+    "failed_snapshot": "runs/20261026T005933.268008Z-control-alignment-b",
+    "failed_source_commit": "c98254889b149db5c0baa445b5109c4afd3a877a",
+    "failed_full_seconds": 175.262344722,
+    "prior_spent_seconds": 190.055350904,
+    "maximum_corrected_seconds": 70,
+    "maximum_additional_jobs": 1,
+    "scope": "Only evaluation source-pose reader batching and no-step startup equivalence proof; controller/policy/physics/commands unchanged",
+    "original_result": "Wall-time censored; no endpoint/complete-audit credit",
+    "allowed_existing_source_changes": [
+      "experiments/control_alignment_20261026/run_sim.py",
+      "experiments/control_alignment_20261026/evaluate.py",
+      "experiments/control_alignment_20261026/submit.py",
+      "experiments/control_alignment_20261026/protocol.json",
+      "experiments/control_alignment_20261026/README.md",
+      "tests/test_control_alignment_audit.py"
+    ],
+    "reviewed_sha256": {
+      "experiments/control_alignment_20261026/run_sim.py": "1bbbb2292d4c6c130afedd76d1e6e19e5b929de20aa751c85ef8f1c8cc49365e",
+      "experiments/control_alignment_20261026/batched_source.py": "c7745102e1755d82013dcd4ae50755745d3509574118d4741b7015d3d02bb913",
+      "experiments/control_alignment_20261026/evaluate.py": "2df1b0f8852e896fb949ab89cc1957677155f5934cfab2a873b8054bacd32a8d",
+      "experiments/control_alignment_20261026/submit.py": "8d4b52c723c9f8b95bc8bea6ced41f30027c0f473264d828a33083bdee4b528e",
+      "tests/test_batched_source.py": "cc5804eb9e291f8fa6dfc0eb37a13564bb7b6eb5d1a769cf17b61ba7dc50cd18",
+      "tests/test_control_alignment_audit.py": "af81db85f6da8be1ed044a355cb1fd4680160b751576dea643619c72862db5b4"
+    }
   }
 }

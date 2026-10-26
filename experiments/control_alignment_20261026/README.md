@@ -109,3 +109,31 @@ The installed simulation clock accumulates physics callback `step_size`; its
 float32 representation may differ slightly from the requested 1 ms tick. The
 independent audit accounts prospectively for that numerical clock representation;
 controller phases, periods and all physical bounds remain unchanged.
+
+## Preserved wall-time censoring and recording-only repair
+
+Isaac job **1836**, source `c982548`, was stopped by its 175 s process timeout
+(exit 124; **175.262344722 s** full Pueue cost), before completion metadata or a
+complete independent audit. Its full data remains preserved; no endpoint,
+terminal-source or controller-success credit is inferred from the prefix.
+
+The evaluation recorder originally fetched all 300 actors individually on every
+step. One reviewed instrumentation repair replaces only those reads with a
+public batched rigid-body view. It verifies the exact 300 actor paths and row
+permutation, world frame, XYZW→WXYZ conversion, copied buffers, and a no-step
+startup comparison against the old reader. The auditor recomputes that proof.
+Every-tick 300-pose, native301/930, contact and clock coverage stays unchanged.
+No controller, SDK flag, command, physics, native threshold or acceptance limit
+changes; the source-admission bridge permits only the reviewed recorder/audit
+and administrative deltas from the passing offline snapshot.
+
+Retained full cost is **190.055350904 s**. Exactly one explicitly submitted
+recording-corrected Isaac run is allowed **≤70 s**, for a maximum
+**260.055350904 / 270 s** across all four jobs. Completion in that allowance is
+unproven. It does not create another retry or tuning pool.
+
+```bash
+python3 experiments/control_alignment_20261026/submit.py --phase B \
+  --predecessor runs/20261026T005722.162481Z-control-alignment-a \
+  --corrected-from runs/20261026T005933.268008Z-control-alignment-b
+```

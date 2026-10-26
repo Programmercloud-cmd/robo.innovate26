@@ -178,6 +178,35 @@ def source_clock_coverage(times, initial, final, steps):
         and abs(final-initial-steps*DT) <= budget)
 
 
+def startup_getter_proof(proof, initial, initial_time):
+    """Check raw startup equivalence and path permutation without importing the reader."""
+    names = initial['names']; expected = ['/World/envs/env_0/'+name for name in names]
+    actual = proof['actual_view_prim_paths']; indices = proof['row_indices_in_name_order']
+    mapping = (len(names) == len(set(names)) == 300 and names == sorted(names)
+        and proof['names'] == names and proof['expected_root_paths'] == expected
+        and proof['count'] == len(actual) == len(set(actual)) == 300 and set(actual) == set(expected)
+        and len(indices) == 300 and all(type(i) is int and 0 <= i < 300 for i in indices)
+        and len(set(indices)) == 300 and [actual[i] for i in indices] == expected)
+    old = np.asarray(proof['old_poses_world_wxyz'], float); new = np.asarray(proof['new_poses_world_wxyz'], float)
+    if old.shape != (300, 7) or new.shape != (300, 7) or not np.isfinite(old).all() or not np.isfinite(new).all(): return False
+    norms_old = np.linalg.norm(old[:, 3:], axis=1); norms_new = np.linalg.norm(new[:, 3:], axis=1)
+    if np.any(norms_old == 0) or np.any(norms_new == 0): return False
+    position = float(np.max(np.linalg.norm(old[:, :3]-new[:, :3], axis=1)))
+    rotations_old = Rotation.from_quat(old[:, [4, 5, 6, 3]])
+    rotations_new = Rotation.from_quat(new[:, [4, 5, 6, 3]])
+    angle = float(np.max((rotations_old.inv()*rotations_new).magnitude()))
+    return bool(mapping and proof['subspace_roots'] == '/' and proof['frame'] == 'world'
+        and proof['getter_layout'] == 'xyz_xyzw' and proof['returned_layout'] == 'xyz_wxyz'
+        and proof['snapshot_copy'] is True and proof['no_step_called_by_reader'] is True
+        and proof['old_reader'] == 'scene[name].data.root_link_pose_w[0]'
+        and proof['clock_before_s'] == proof['clock_after_s'] == initial_time
+        and proof['position_tolerance_m'] == 1e-9 and proof['angle_tolerance_rad'] == 1e-7
+        and position <= 1e-9 and angle <= 1e-7 and proof['equivalence_passed'] is True
+        and 0 <= proof['maximum_position_error_m'] <= 1e-9
+        and 0 <= proof['maximum_angle_error_rad'] <= 1e-7
+        and near(new, initial['poses_world_wxyz'], 0.))
+
+
 def callback_audit(path, plan, parameters, phase):
     failures = Counter(); n = 0; reference = None; warmed = False; startup = stable = elapsed = 0.; previous = None
     maximum_position = maximum_angle = maximum_tracking = 0.; first_motion = None; final = None
@@ -348,6 +377,7 @@ def evaluate(phase, folder, predecessor):
         checks['source_initial_inventory'] = (len(initial['names']) == len(set(initial['names'])) == 300 and initial_poses.shape == (300, 7)
             and len(initial['native_parts']) == len(set(initial['native_parts'])) == meta['native_initial_parts'] == 301
             and len(initial['native_connections']) == len(set(initial['native_connections'])) == meta['native_initial_connections'] == 930)
+        checks['batched_source_getter_startup_equivalence'] = startup_getter_proof(meta['source_pose_getter_proof'], initial, meta['initial_time_s'])
         with np.load(folder/meta['source_trace_file'], allow_pickle=False) as raw: data = {k: raw[k].copy() for k in raw.files}
         n = meta['simulation_steps_observed']; times = data['time_s']
         expected_shapes = {'positions_world_m': (n, 300, 3), 'quaternions_wxyz': (n, 300, 4), 'native_parts_count': (n,),
