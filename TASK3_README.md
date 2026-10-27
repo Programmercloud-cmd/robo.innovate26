@@ -18,6 +18,12 @@ self-contained; no server, GPU VM or Python packages are needed to play it.
 The compressed original HTML and both replay caches are preserved in
 `task3_checkpoint/greenfield_36/`. Allow 200 MB for extraction.
 
+The existing revision 36 audit is preserved in
+`task3_checkpoint/greenfield_36/audit/report.md`, together with images and
+audit scripts. It reports known geometry, mixing and occupancy issues;
+preserving the demo does not establish that those issues are resolved.
+Some historical audit scripts retain their original local paths.
+
 ## Latest source: revision 37, in progress
 
 `greenfield/cart_model.js`, `logistics.js`, `viewer_cart.js` and
