@@ -71,6 +71,23 @@ The release includes checksums for both parts and the reconstructed master.
 images; `simulation_handoff_provenance.json` identifies the source commit and
 uncommitted files included in this snapshot.
 
+## Reproduce the preserved native comparison
+
+`task3_checkpoint/unreal_reference_30/` preserves the immutable replay caches,
+native outputs and original JavaScript pose model. Compare numeric results:
+
+```bash
+python3 scripts/open_unreal_reference.py
+python3 tests_native/compare_reference.py \
+  --native-dir task3_checkpoint/unreal_reference_30 \
+  --reference-dir artifacts/greenfield_30 \
+  --output artifacts/native-comparison.json
+```
+
+This checks preserved outputs; rebuilding/rerunning Unreal requires the documented
+engine and VM environment. Legacy SimPy tests need `simpy==4.1.2` from
+`plant_sim/requirements.txt`.
+
 ## Evidence limits
 
 Inputs and production assumptions are synthetic; recipes are team heuristics,

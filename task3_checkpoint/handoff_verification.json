@@ -4,6 +4,8 @@
   "native_runtime_test": "passed (C++20)",
   "native_film_clock_test": "passed (C++20)",
   "cloud_shell_scripts": "bash -n passed",
-  "greenfield_suite": "not run to completion; initial invocation waited behind stalled MiniRacer parse",
-  "vm_status": "not queried; preserved reports are historical checkpoint evidence"
+  "greenfield_suite": "105 tests OK, 18 skipped; PYTHONPATH pointed to existing simpy==4.1.2 installation; skipped audits are not passed collision checks",
+  "vm_status": "not queried; preserved reports are historical checkpoint evidence",
+  "preserved_native_comparison": "passed for mixed and single against immutable revision 30 replay caches; this compares preserved outputs, not a freshly rebuilt Unreal binary",
+  "python_syntax": "compileall passed for simulation, integration, cinematic and tooling modules"
 }
