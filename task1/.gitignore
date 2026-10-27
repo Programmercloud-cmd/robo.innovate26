@@ -1,11 +1,8 @@
-# Generated locally: logs, calibrations, datasets built for YOLO, downloaded models.
+# Weights, datasets and generated data stay out of git (see README "Weights").
+*.pt
+*.pth
+*.onnx
+*.engine
 outputs2/
-models/
+jetson/bundle/
 __pycache__/
-*.py[cod]
-
-# Datasets are shared on Google Drive (see README).
-Initial_Dataset_Bricks_LEGO/
-Second_Dataset_Bricks/
-Third_Dataset_Bricks/
-Top_View_Dataset/

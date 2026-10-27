@@ -1,25 +1,56 @@
-# Task 1 - Good/bad brick classification by color
+# Task 1 - Brick Classifier: good/bad reclaimed bricks by color
 
 Classify reclaimed clay bricks as **good** or **bad** from their color only, live
-with a camera. The labeled sample (4 good, 6 bad bricks) is photographed once in
-the test scene (calibration); every new view is then compared against it.
+with a camera, in a browser demo (**Brick Classifier**). It runs on a laptop or on a
+Jetson Orin Nano with an Orbbec Gemini 2 camera. **Facts and numbers for the pitch
+slides are in [PITCH_NOTES.md](PITCH_NOTES.md).**
 
 ```
-camera frame -> YOLO11n-seg brick detector (box + mask, ~17 ms on RTX 3050)
-             -> color features in CIELAB (L* lightness, C* chroma; holes, lit edge and stains removed)
-             -> classifier: lightness band (good if LOW <= L* <= HIGH) or 1-NN against the calibration
-             -> GOOD / BAD / UNKNOWN (stained or perforated face: show another face)
+camera frame -> YOLO11n-seg brick detector (box + mask)         [detector v3]
+             -> ByteTrack (one id per brick across frames)
+             -> classifier on each brick: neural network YOLO11n-cls on the masked crop (default),
+                1-NN on a calibration, or a relative lightness band
+             -> vote: mean of the last 15 classifications -> GOOD / BAD
 ```
 
 The YOLO detector was distilled from a slower zero-shot pipeline
 (Grounding DINO -> row split -> MobileSAM, ~1.2 s per frame), which is still
 available with `--detector grounding_dino` and was used to auto-label the training data.
 
-## Quick start
+## Weights (not in git)
+
+Weights are kept out of the repository from now on (they make every clone heavy). Ask
+the team for the files and place them at:
+
+| File | Place it at |
+|---|---|
+| Detector v3 (YOLO11n-seg, 6 MB) | `outputs2/yolo_runs/brick_seg_v3/weights/best.pt` |
+| Demo network (YOLO11n-cls, 3 MB) | `outputs2/classifier_runs/web_20261026_172444/weights/best.pt` |
+
+Or pass them explicitly: `web_demo.py --weights <detector.pt> --nn-weights <network.pt>`.
+The older detectors in `weights/` (v1, v2) were committed before this rule and still work.
+
+## Web demo (main entry point)
 
 ```bash
 pip install -r requirements.txt      # install torch for your CUDA first
+python scripts/web_demo.py --classifier nn --reference examples/calibration_20261026_171541_demo.json
+# open http://localhost:8000   (p = presentation mode, o = operator panel)
+```
 
+- **Presentation mode** (button Present, key `p`, or `http://localhost:8000/#present`):
+  full screen, dark, big counters, verdict pop-up per brick, the last 12 bricks; no
+  technical details. Best for the jury.
+- **Operator panel** (key `o`): classifier choice, calibration in the browser (capture,
+  label g/b per brick, finish; the network retrains in the background), detection area,
+  camera settings, light and clipping indicators.
+- Bricks are numbered #1, #2, ... per session; "reset" starts again at #1.
+- Jetson Orin Nano (WendyOS) deployment: [jetson/README.md](jetson/README.md).
+- Every script and option: [scripts/README.md](scripts/README.md).
+
+## Command-line classifier (earlier stage)
+
+```bash
 # 1. Calibrate in the test scene: photograph the labeled sample bricks (g/b per brick).
 python scripts/live_brick_classifier.py --calibrate --method band --band-feature L_med
 
@@ -49,6 +80,10 @@ result images, `log.csv`) go to `outputs2/live/<session>/`.
 | Live, calibrated 1-NN, same bricks | 40/43 (93 %); band diagnosis and feature separability | `results/06_live_knn_same_bricks_20261025_192146/` |
 | Live, lightness band (L* median 31.1-34.4) with a light change of 4-5 L* | 17/32 (53 %): narrow bands need stable light | `results/07_live_band_light_change_20261025_204353/` |
 | YOLO detector v2 (standing + top view) | 126/126 standing and 48/48 top-view bricks, 0 false, mask IoU 0.95-0.96; v1 (standing only) failed on top view (37/48, 52 false) | `results/08_yolo_detector/` |
+| YOLO detector v3 (+ carpet, wood, empty table) | 190/190 validation bricks, 1 false, mask IoU 0.95-0.98; overexposed wood 40/40 photos right (v2: 6/40); empty table 0 false (v2: 3) | `results/09_yolo_detector_v3/` |
+| Top view: color rules on 127 clean faces | lightness band 77 % (balanced 83 %), chroma band 82 % leave-one-photo-out | `results/10_top_view_color_analysis/` |
+| Neural network (YOLO11n-cls) | same bricks, light not seen: 114/133 (86 %); bricks never seen: 40/74 (54 %) | `results/11_neural_network_classifier/` |
+| Web demo | reference run: every brick right (network + calibration 20261026_171541); interface screenshots | `results/12_web_demo/` |
 
 What we learned:
 
@@ -64,7 +99,13 @@ What we learned:
 
 ## Folder map
 
-- `scripts/live_brick_classifier.py`: live / photo classifier and calibration (main entry point).
+- `scripts/web_demo.py`: browser demo (main entry point); `v4l2_camera.py`: Linux / Jetson camera.
+- `scripts/build_classifier_dataset.py`, `train_brick_classifier.py`: neural-network crops and training.
+- `scripts/build_yolo_dataset_v3.py`, `compare_detector_versions.py`: detector v3 data and comparison.
+- `scripts/capture_brick_faces.py`, `capture_four_faces.py`, `label_brick_faces.py`, `top_view_marks.py`,
+  `evaluate_top_view.py`, `build_top_view_reference.py`, `analyze_calibration_separation.py`: top-view data and analysis.
+- `scripts/stage_jetson_app.py` + `jetson/`: Docker image and WendyOS deployment for the Jetson Orin Nano.
+- `scripts/live_brick_classifier.py`: command-line live / photo classifier and calibration (earlier stage).
 - `scripts/capture_bricks.py`, `capture_top_view.py`: dataset capture with fixed camera settings.
 - `scripts/run_grounding_dino.py`, `clean_grounding_dino_*.py`, `split_brick_row.py`,
   `run_mobile_sam.py`: zero-shot detection and segmentation pipeline.
@@ -75,7 +116,8 @@ What we learned:
 - `scripts/predict_good_prototype.py`, `evaluate_prototype_first_dataset.py`,
   `experiment_svm_*.py`: early experiments on the first datasets.
 - `weights/brick_seg_v2.pt`: final detector (default). `weights/brick_seg_v1_standing.pt`: standing-only v1.
-- `examples/`: a calibration file, the combined YOLO dataset yaml and the photo exclusion lists.
+- `examples/`: calibrations (the demo reference `calibration_20261026_171541_demo.json`, the
+  top-view reference, an older one), the combined YOLO dataset yaml and the photo exclusion lists.
 
 MobileSAM, the YOLO11n-seg base weights and Grounding DINO download automatically on first use.
 

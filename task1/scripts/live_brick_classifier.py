@@ -92,7 +92,10 @@ PREFERENCE_MARGIN = 0.05
 LOGGED_FEATURES = ["L_med", "L_mode", "dL_wood", "rel_L", "C_med", "C_mode", "stain_share", "holes_share"]
 METHOD = "knn"
 DETECTOR = "yolo"
-YOLO_WEIGHTS = PROJECT_ROOT / "weights" / "brick_seg_v2.pt"
+# Detector v3 when its weights are placed in outputs2 (not in git), else v2 from weights/.
+YOLO_WEIGHTS = next((p for p in (PROJECT_ROOT / "outputs2" / "yolo_runs" / "brick_seg_v3" / "weights" / "best.pt",
+                                 PROJECT_ROOT / "weights" / "brick_seg_v2.pt") if p.exists()),
+                    PROJECT_ROOT / "weights" / "brick_seg_v2.pt")
 YOLO_CONFIDENCE = 0.5
 BAND_OVERRIDE: tuple[float, float] | None = None
 # Fitted on calibration 20261024_202203 (scene L* ~53); only used without a calibration.
