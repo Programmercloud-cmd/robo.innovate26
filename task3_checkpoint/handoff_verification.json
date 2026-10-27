@@ -1,0 +1,9 @@
+{
+  "checkpoint36": "HTML extracted byte-identical; both replay caches parse as JSON",
+  "revision37": "HTML packaging succeeds; model runtime check interrupted because MiniRacer initialization hung",
+  "native_runtime_test": "passed (C++20)",
+  "native_film_clock_test": "passed (C++20)",
+  "cloud_shell_scripts": "bash -n passed",
+  "greenfield_suite": "not run to completion; initial invocation waited behind stalled MiniRacer parse",
+  "vm_status": "not queried; preserved reports are historical checkpoint evidence"
+}

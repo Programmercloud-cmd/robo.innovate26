@@ -1,0 +1,9 @@
+{
+  "verified": true,
+  "backend": "Unreal native C++20",
+  "mode": "single",
+  "pallets": 36,
+  "shippedIdentities": 20160,
+  "maximumDispatchTimeErrorSeconds": 9.094947017729282e-13,
+  "evidence": "Numerical agreement with synthetic reference; not physical validation."
+}

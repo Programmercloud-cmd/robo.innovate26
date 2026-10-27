@@ -1,74 +1,74 @@
-# Task 3 — autonomous brick handling simulation
+# Task 3 — production simulation and Unreal handoff
 
-This branch shares the complete Task 3 source and the latest offline 3D checkpoint (revision 14). Tasks 1 and 2 are independent and are not imported here. No ROS, GPU, Node.js or Isaac Sim is required.
+Current handoff: revision 36 offline demo, revision 37 source work in progress,
+native Unreal project and NVIDIA Brev VM tooling. The earlier revision 14
+checkpoint remains in `task3_checkpoint/`; its guide is preserved in
+`docs/task3_revision14_handoff.md`.
 
-## Open the existing demo first
+## Open the latest recorded demo
 
-From the repository root, using Python 3.10 or newer:
-
-```bash
-python3 scripts/open_task3_checkpoint.py
-```
-
-On Windows, use `python` if `python3` is unavailable. Open `artifacts/task3_checkpoint/index.html` in Edge, Chrome or Firefox with WebGL enabled. The page includes Three.js, equipment images and the recorded simulation; no server or network connection is needed. Use the playback controls, drag to orbit, scroll to zoom and hover/click equipment for its specifications. The inspection panel can be expanded.
-
-The compressed checkpoint is included in Git. Extraction also provides `run.json` for audits or visual-only changes. Allow approximately 450 MB of free disk space. Existing output directories are never overwritten.
-
-## Install and run a new simulation
-
-Run all commands from the repository root:
+From the repository root, Python 3.10 or newer:
 
 ```bash
-python3 -m pip install --target .deps/plant_sim -r plant_sim/requirements.txt
-python3 scripts/greenfield_demo.py --config config/greenfield_dual.json --output-dir artifacts/my_task3_run
+python3 scripts/open_cart_checkpoint.py
 ```
 
-Open `artifacts/my_task3_run/index.html`. Choose a different output directory for each run. SimPy 4.1.2 is the only external Python dependency; Three.js and its license are bundled in `third_party/three`.
+Open `artifacts/greenfield_36/index.html` in a WebGL browser. The HTML is
+self-contained; no server, GPU VM or Python packages are needed to play it.
+The compressed original HTML and both replay caches are preserved in
+`task3_checkpoint/greenfield_36/`. Allow 200 MB for extraction.
 
-## Change only the visualization
+## Latest source: revision 37, in progress
+
+`greenfield/cart_model.js`, `logistics.js`, `viewer_cart.js` and
+`viewer_cart.html` contain the latest local work. `scripts/cart_demo.py`
+packages them into `artifacts/greenfield_37/index.html`:
 
 ```bash
-python3 scripts/greenfield_refresh_view.py artifacts/task3_checkpoint --output-dir artifacts/my_task3_view
+python3 scripts/cart_demo.py
 ```
 
-This reuses the recorded material trajectories and KPIs. It does not rerun SimPy. Mechanical or scheduling changes require a new simulation.
+There is no recorded revision 37 replay in this handoff. Without a replay
+cache, that page runs the current JavaScript model in the browser; it is not
+the validated revision 36 checkpoint. The packaging script is Python; the
+current cart simulation itself runs in JavaScript. The earlier SimPy models
+remain available in `greenfield/` and `plant_sim/`.
 
-## Verify the shared checkpoint
+## Unreal and NVIDIA VM
 
-After installing SimPy and extracting the checkpoint, on Linux/WSL/macOS:
+Start with `unreal/README.md`, `docs/unreal_native_goal.md`,
+`docs/unreal_continuous_film.md` and `docs/unreal_four_gpu_vm.md`.
+`unreal/Brickflow/` contains the editable Unreal 5.8.4 project, C++ simulation,
+materials and geometry. `unreal/tools/` contains build, package, render,
+collection, replication and restored-workspace verification scripts.
+`cinematic/` retains the Blender/cloud workflow.
+
+The native Unreal reference is pinned to revision 30, independently of the
+newer browser revisions. VM names and paths are documented for the owner;
+credentials, engine installation and billing access are not included.
+The four-GPU smoke test establishes adapter assignment, not full-render speedup.
+Migration notes describe a checkpoint, not a new live VM status check.
+
+Large deliverables are attached to the
+[simulation handoff release](https://github.com/Programmercloud-cmd/robo.innovate26/releases/tag/simulation-handoff-20261027):
+Linux native build, historical pitch, continuous 1080p film and split 4K master.
+Download both `brickflow-continuous-4k.mp4.part-*` files into one directory and
+join them in order:
 
 ```bash
-GREENFIELD_MECHANICS_REPORT=artifacts/task3_checkpoint/run.json \
-GREENFIELD_FIXED_REPORT=artifacts/task3_checkpoint/run.json \
-GREENFIELD_SCENE_REPORT=artifacts/task3_checkpoint/run.json \
-GREENFIELD_SCENE_GEOMETRY=artifacts/task3_checkpoint/scene.json \
-PYTHONPATH=.deps/plant_sim \
-python3 -m unittest discover -s tests_greenfield -v
+cat brickflow-continuous-4k.mp4.part-00 brickflow-continuous-4k.mp4.part-01 > brickflow-continuous-4k.mp4
+sha256sum -c SHA256SUMS
 ```
 
-The geometry audit additionally requires a browser-exported scene file and `GREENFIELD_SCENE_GEOMETRY`. Without that file its scene test is skipped; do not describe a skipped audit as a passed collision check. Review `scripts/greenfield_scene_audit.py --help` for the audit interface.
+The release includes checksums for both parts and the reconstructed master.
+`task3_checkpoint/unreal_evidence/` preserves local reports, traces and review
+images; `simulation_handoff_provenance.json` identifies the source commit and
+uncommitted files included in this snapshot.
 
-## What this checkpoint demonstrates
+## Evidence limits
 
-Two dehacking lines, eight cells, inspection/rejection, three accepted shade queues, incremental mixed-row formation, same-height reversible surge belts and guided output palletizing. Discard bins are stationary. Reference results are approximately 2,218 conforming shipped bricks/hour for the synthetic finite batch. Partial pallets and work in progress are not counted as shipped.
-
-Fixed challenge inputs: a kiln cart has 28,800 bricks in 36 stacks of 800; each stack is 10 × 4 × 20 and each layer contains 40 bricks. Output pallets contain 10 × 4 × 14 = 560 bricks. **The shared reference run processes only four input stacks (3,200 bricks), not a full kiln cart.** Product weights, defect distributions, timing assumptions and equal-shade recipe are explicitly modeled assumptions, not verified factory measurements.
-
-This is a discrete-event and kinematic proof of concept, not a commissioned plant or rigid-body physics validation. Existing audits do not establish all moving-tool collisions, friction, gripping forces or physical vision accuracy. Higher-capacity continuous transport and alternative mixing mechanisms are under research; 10,000–20,000 bricks/hour are design scenarios, not achieved results.
-
-## Where to contribute
-
-| Area | Files |
-| --- | --- |
-| Scheduling, queues and mixing | `greenfield/model.py`, `twin.py`, `surge.py` |
-| Motion timing | `greenfield/motion.py` |
-| 3D geometry and interaction | `greenfield/viewer_dual.js`, `viewer_dual.html` |
-| Equipment references and images | `greenfield/catalog.json`, `greenfield/assets/SOURCES.md` |
-| Reports and audits | `greenfield/report.py`, `clearance.py`, `interference.py` |
-| Current parameters | `config/greenfield_dual.json` |
-| Regression tests | `tests_greenfield/` |
-| Earlier prototype | `plant_sim/`, `config/plant_demo.json`, `tests_plant/` |
-
-Keep visible demo text in English. Preserve baseline evidence and make small, verified commits. Document whether each change affects only rendering or also simulated behavior and KPIs. Do not remove acceleration, change material accounting or increase declared speeds solely to improve the throughput number.
-
-Historical engineering notes remain in Spanish under `docs/`; start with `docs/flow_optimization_14.md` and `docs/engineering_revision_12.md`. Earlier notes contain superseded checkpoints. `task3_checkpoint/provenance.json` identifies the original source commit. The team repository history is preserved; unrelated work is not replaced.
+Inputs and production assumptions are synthetic; recipes are team heuristics,
+not official factory requirements. Kinematic motion and synthetic acknowledgements
+do not establish independent physical or visual validation. Preserve producer
+groups and scores at the perception intake; no manual reclassification workflow
+or extra integration score filter is introduced.
