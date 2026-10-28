@@ -1,3 +1,5 @@
+> **Current Greenfield 37 update:** use [the functional-layout handoff](greenfield37_layout_handoff.md). The revision-36 notes below are retained as historical context.
+
 # Task 3 — production simulation and Unreal handoff
 
 Current handoff: revision 36 offline demo, revision 37 source work in progress,

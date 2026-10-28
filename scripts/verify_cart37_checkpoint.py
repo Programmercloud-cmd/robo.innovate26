@@ -6,7 +6,7 @@ m=json.load(gzip.open(args.replay));rs={r['id']:r for r in m['records']};bs=[b f
 assert len(bs)==m['totalInput']==m['inspected']==57600 and m['completeInput']
 assert m['rejected']==len(bad) and len(out)==len(set(out)) and set(out)<=good
 assert m['produced']==m['delivered']==m['stored']==len(m['pallets'])
-assert math.isclose(m['bph'],len(out)*3600/m['productionEnd']) and math.isclose(m['pph'],len(m['pallets'])*3600/m['productionEnd'])
+assert math.isclose(m['bph'],len(out)*3600/m.get('productionWindow',m['productionEnd'])) and math.isclose(m['pph'],len(m['pallets'])*3600/m.get('productionWindow',m['productionEnd']))
 for p0 in m['pallets']:
  assert len(p0['ids'])==560
  c=[rs[i]['shade'] for i in p0['ids']]
@@ -31,7 +31,11 @@ for lane in range(6):
  for a,b in zip(seq,seq[1:]):
   if a.get('ejectionCycle'):
    assert b['rejectZoneEntry']+1e-6>=a['ejectionCycle']['home'];interlocks+=1
- assert sum(b['c']==lane and not b['good'] for b in bs)<=1280
+
+if 'discardLedger' in m:
+ assert m['disposed']==len(bad)
+ assert {v['id'] for v in m['discardLedger']}==bad
+ assert len(m['discardLedger'])==len(bad)
 def tracks(r):
  for v in r['tracks']:
   if isinstance(v,list):yield {'t0':v[0],'t1':v[1],'kind':m['kinds'][v[6]]}

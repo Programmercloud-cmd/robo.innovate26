@@ -1,25 +1,22 @@
 {
   "source_repository": "Comentario/robo.innovate-hackathon-TUM",
   "source_branch": "persona2/planning",
-  "source_commit": "f437afb397ed0d128d7bda30a78d6a9d54b09bbd",
-  "working_tree_files": [
-    "greenfield/cart_model.js",
-    "greenfield/viewer_cart.js",
-    "greenfield/warehouse_view.js"
-  ],
+  "source_commit": "00bdd38371a0f2ddc08706e641778b36bb0a8b98",
   "packaged_checkpoint": "greenfield_37",
-  "packaged_model_fingerprint": "ccaf03c52e40aaca",
-  "current_source_fingerprint": "532023a4c518e92d",
-  "packaged_html_sha256": "3763a2fe9c7263b54400d45f4b5bb20ab5c25d80d217cc46710aee90cacacc25",
-  "replay_cache": "combined-ccaf03c52e40aaca.json.gz",
-  "source_matches_recorded_replay": false,
-  "limits": "Root source includes later local changes. Packaged source is extracted from the frozen HTML. Unreal 37 exploration is not a completed native port. VM reports are historical evidence, not a new live access test. Local source was changing during collection; hashes above identify the exact frozen files delivered, which are not claimed as a fully validated run.",
+  "packaged_model_fingerprint": "dae71e17e51973bc",
+  "current_source_fingerprint": "dae71e17e51973bc",
+  "packaged_html_sha256": "e30595e8d5f450eb3cbe14217a5ce5a35ffe53d747f177e6134c4cfe743ee780",
+  "replay_cache": "combined-dae71e17e51973bc.json.gz",
+  "replay_sha256": "fb295a88341ab7d3e2c6c92cf11f4479e38583f72399627b65fb7dad2fdc810f",
+  "source_matches_recorded_replay": true,
   "snapshot_source_sha256": {
-    "greenfield/cart_model.js": "9dea2b6dbbc10ed5d53dafbe5e6861c081a4cfe17b4f37f539b3f7bc95627b09",
-    "greenfield/logistics.js": "d1d86a089d20037cadfe55402e492a7f69091453cc9b934b02c35e5da84f0d65",
-    "greenfield/viewer_cart.js": "16e416b041e38f38f5212b5905b9bc53c6f3d2eeda62e1374ddc7eaefc6a285e",
-    "greenfield/warehouse_view.js": "68be7d475549cd99c75ef702e418a39a9d5f2d61336603719490c99c163ca08b",
-    "greenfield/viewer_cart.html": "c8e229a5a10b4ca4f272d839d7d691848e14f607e5cb09c078c6cd06debd22b2",
-    "scripts/cart_demo.py": "632d03fc7255dbac2ff0a4bc968c4a8855c240eb04e3b9cf97bc55c8644962a1"
-  }
+    "greenfield/layout.js": "a11dee5e45cfcdca3c6bacec03f5fcc46fdfeffb1c2554add5efb09b4330d3d5",
+    "greenfield/cart_model.js": "8f64c7db9c5de61a04faa4e86350ecfb4cb44b1e25cff24f056535847803d759",
+    "greenfield/logistics.js": "75360da7ac6728ec44c5faf51744153cbdfc5d2c12f5988268c5a7d7db9b7e5b",
+    "greenfield/viewer_cart.js": "a2cacb5603fcd1193f1d5662e85b94b4724ffbe0f68c78f18421c57c8ebfe98d",
+    "greenfield/warehouse_view.js": "ec83f958323ea736c04b5f140f81eb177cffc12e131f471b7884b7b85464b237",
+    "greenfield/viewer_cart.html": "6bc6b1d66b74f5570feefa6afc3939c298d90ad762c8a077e49e083fb6bdbe1b",
+    "scripts/cart_demo.py": "bd8d181cd22973c1630a3ab73d18ba02c0c0905382110a026eefe768a96996ee"
+  },
+  "scope": "Functional full-cart engine with adapted through-cart, common discard and direct-access warehouse layout. Full 57,600-brick replay verified; measured recipe cases include one blocked variant, explicitly reported. Existing Unreal projects and task3/jacob1 remain unchanged."
 }

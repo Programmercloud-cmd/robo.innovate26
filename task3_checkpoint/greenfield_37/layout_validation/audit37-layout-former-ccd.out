@@ -1,0 +1,2 @@
+PREPARED 460626 {'clear-inspection-tail': 50664, 'routing-entry': 50664, 'direct-row-routing': 50664, 'roller-row-accumulation': 50664}
+{"scope": "Exact continuous linear accepted-brick inlet, polyline routing, forward roller accumulation and stationary waits until whole-layer release; contacts allowed, penetration forbidden.", "pieces": 460626, "candidate_pairs": 942021, "collisions": 0, "examples": [], "status": "PASS"}

@@ -2,35 +2,29 @@
   "recorded_replay": {
     "complete": true,
     "bricks": 57600,
+    "approved": 50664,
     "rejected": 6936,
-    "pallets": 82,
+    "disposed": 6936,
+    "pallets": 84,
     "products": {
-      "2": 13,
-      "0": 45,
-      "1": 12,
-      "3": 12
+      "Mixed": 41,
+      "Warm": 15,
+      "Copper": 14,
+      "Russet": 14
     },
-    "bricks_h": 8491.305755858988,
-    "pallets_h": 15.163045992605337,
-    "production_seconds": 19468.383868515743,
-    "replay_seconds": 20824.472537276753,
-    "warehouse": {
-      "0": 5,
-      "1": 4,
-      "2": 5,
-      "3": 4
-    },
+    "bricks_h": 8019.04986811265,
+    "pallets_h": 14.319731907344018,
     "loaded": 64,
     "shipped": 64,
-    "interlock_checks": 6934,
-    "mixed_cart_pallets": 18,
-    "approved_WIP": 4744,
-    "fleet_tasks": 146
+    "approved_WIP": 3624
   },
-  "extraction": "HTML sha256 matches frozen original",
-  "source_integrity": "All editable source hashes match snapshot provenance",
-  "python_syntax": "compileall passed",
-  "unreal_shell_syntax": "bash -n passed",
-  "javascript_runtime": "MiniRacer initialization exceeded 45 seconds; runtime check not completed",
-  "scope": "Replay checks validate recorded package only. Later local source has no matching full replay in this snapshot. Browser evidence was preserved from earlier review, not rerun."
+  "checks": [
+    "Original dual-cart distributions identical",
+    "Rigid load transforms",
+    "942021 accepted-brick trajectory pairs without penetrations",
+    "278377 continuously separated vehicle/truck intervals",
+    "Fork/floor/trailer contact datums",
+    "11 browser views reviewed; V merge geometry corrected"
+  ],
+  "scope": "Kinematic proof of concept; not OEM structural/load certification."
 }
