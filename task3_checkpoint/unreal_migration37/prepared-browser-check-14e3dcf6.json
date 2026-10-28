@@ -1,0 +1,15 @@
+{
+  "ready": true,
+  "error": null,
+  "browserVersion": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
+  "counters": {
+    "totalInput": 57600,
+    "inspected": 57600,
+    "rejected": 7020,
+    "produced": 90,
+    "stored": 90,
+    "loaded": 64,
+    "shipped": 64,
+    "total": 37197.92120568291
+  }
+}

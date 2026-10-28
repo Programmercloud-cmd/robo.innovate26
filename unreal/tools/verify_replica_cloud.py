@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Verify the complete restored workspace before retiring its source VM."""
 import hashlib
+import csv
 import json
 import os
 from pathlib import Path
@@ -42,6 +43,12 @@ def main():
         assert (part / 'render.status').read_text().strip() == '0'
         assert (part / 'encoder.status').read_text().strip() == '0'
         assert f'Using device at index {adapter} of 4' in (part / 'engine.log').read_text()
+        codec_part = project / f'Saved/Films/four-gpu-codec-smoke-v2-part{adapter}'
+        assert (codec_part / 'render.status').read_text().strip() == '0'
+        assert (codec_part / 'encoder.status').read_text().strip() == '0'
+        assert int(json.loads((codec_part / 'video-probe.json').read_text())['streams'][0]['nb_frames']) == 12
+    codec_rows = csv.reader((state / 'gpu-codec-processes.csv').read_text().splitlines())
+    assert len({row[1].strip() for row in codec_rows}) == 4
     delivery = project / 'Saved/Films/continuous-4k-v4-delivery'
     subprocess.run(['sha256sum', '-c', str(delivery / 'review.sha256')], check=True)
     repo = root / 'robo.innovate-hackathon-TUM'
@@ -55,6 +62,7 @@ def main():
               'restoredArchiveEntries': len(members), 'gpuCount': 4,
               'projectChecksumsVerified': True, 'renderedTraceVerified': True,
               'videoChecksumVerified': True, 'videoTimestampsVerified': True,
+              'distributedEncodingVerified': True,
               'limitation': 'Synthetic simulation checks; not physical validation.'}
     (state / 'final-verification.json').write_text(json.dumps(result, indent=2))
     print(json.dumps(result, indent=2))

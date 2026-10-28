@@ -1,0 +1,25 @@
+{
+  "source_repository": "Comentario/robo.innovate-hackathon-TUM",
+  "source_branch": "persona2/planning",
+  "source_commit": "f437afb397ed0d128d7bda30a78d6a9d54b09bbd",
+  "working_tree_files": [
+    "greenfield/cart_model.js",
+    "greenfield/viewer_cart.js",
+    "greenfield/warehouse_view.js"
+  ],
+  "packaged_checkpoint": "greenfield_37",
+  "packaged_model_fingerprint": "ccaf03c52e40aaca",
+  "current_source_fingerprint": "532023a4c518e92d",
+  "packaged_html_sha256": "3763a2fe9c7263b54400d45f4b5bb20ab5c25d80d217cc46710aee90cacacc25",
+  "replay_cache": "combined-ccaf03c52e40aaca.json.gz",
+  "source_matches_recorded_replay": false,
+  "limits": "Root source includes later local changes. Packaged source is extracted from the frozen HTML. Unreal 37 exploration is not a completed native port. VM reports are historical evidence, not a new live access test. Local source was changing during collection; hashes above identify the exact frozen files delivered, which are not claimed as a fully validated run.",
+  "snapshot_source_sha256": {
+    "greenfield/cart_model.js": "9dea2b6dbbc10ed5d53dafbe5e6861c081a4cfe17b4f37f539b3f7bc95627b09",
+    "greenfield/logistics.js": "d1d86a089d20037cadfe55402e492a7f69091453cc9b934b02c35e5da84f0d65",
+    "greenfield/viewer_cart.js": "16e416b041e38f38f5212b5905b9bc53c6f3d2eeda62e1374ddc7eaefc6a285e",
+    "greenfield/warehouse_view.js": "68be7d475549cd99c75ef702e418a39a9d5f2d61336603719490c99c163ca08b",
+    "greenfield/viewer_cart.html": "c8e229a5a10b4ca4f272d839d7d691848e14f607e5cb09c078c6cd06debd22b2",
+    "scripts/cart_demo.py": "632d03fc7255dbac2ff0a4bc968c4a8855c240eb04e3b9cf97bc55c8644962a1"
+  }
+}

@@ -1,0 +1,8498 @@
+{
+  "total": 37197.92120568291,
+  "totalInput": 57600,
+  "inspected": 57600,
+  "rejected": 7020,
+  "produced": 90,
+  "delivered": 90,
+  "stored": 90,
+  "loaded": 64,
+  "shipped": 64,
+  "completeInput": true,
+  "actorKinds": {
+    "inputCart": 2,
+    "cartShuttle": 1,
+    "dispatch": 1,
+    "layerHead": 42,
+    "brick": 57600,
+    "rowHead": 36,
+    "rejectPusher": 6,
+    "layerStop": 18,
+    "packZ": 36,
+    "packX": 36,
+    "wellDeck": 18,
+    "guideGate": 18,
+    "centeringJaw": 36,
+    "dockLift": 4,
+    "truck": 12,
+    "amr": 4,
+    "amrFork": 4,
+    "pallet": 108
+  },
+  "actors": [
+    {
+      "id": "input-cart-0",
+      "kind": "inputCart",
+      "initial": [
+        -16.75,
+        0.2,
+        0,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 15640.962548835274,
+      "trackKinds": [
+        "cart-delivery",
+        "empty-cart-cross-transfer",
+        "empty-cart-return-track"
+      ]
+    },
+    {
+      "id": "input-cart-1",
+      "kind": "inputCart",
+      "initial": [
+        -29.75,
+        0.2,
+        0,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "cart-delivery"
+      ]
+    },
+    {
+      "id": "cart-cross-shuttle",
+      "kind": "cartShuttle",
+      "initial": [
+        -6.75,
+        -0.03,
+        0,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-cart-cross-transfer",
+        "cart-transfer-table-return"
+      ]
+    },
+    {
+      "id": "dispatch",
+      "kind": "dispatch",
+      "initial": [
+        56.4,
+        4,
+        0,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "finished-frame-approach",
+        "lower-pallet-lifting-frame",
+        "insert-supported-pallet-forks",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "withdraw-supported-pallet-forks",
+        "raise-empty-finished-frame"
+      ]
+    },
+    {
+      "id": "head-0-0",
+      "kind": "layerHead",
+      "initial": [
+        -10,
+        3.1,
+        -3,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-0-1",
+      "kind": "layerHead",
+      "initial": [
+        -8.7,
+        3.1,
+        -3,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-0-2",
+      "kind": "layerHead",
+      "initial": [
+        -7.4,
+        3.1,
+        -3,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-0-3",
+      "kind": "layerHead",
+      "initial": [
+        -6.1,
+        3.1,
+        -3,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-0-4",
+      "kind": "layerHead",
+      "initial": [
+        -4.8,
+        3.1,
+        -3,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-0-5",
+      "kind": "layerHead",
+      "initial": [
+        -3.5,
+        3.1,
+        -3,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-1-0",
+      "kind": "layerHead",
+      "initial": [
+        -10,
+        3.1,
+        -1.7999999999999998,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-1-1",
+      "kind": "layerHead",
+      "initial": [
+        -8.7,
+        3.1,
+        -1.7999999999999998,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-1-2",
+      "kind": "layerHead",
+      "initial": [
+        -7.4,
+        3.1,
+        -1.7999999999999998,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-1-3",
+      "kind": "layerHead",
+      "initial": [
+        -6.1,
+        3.1,
+        -1.7999999999999998,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-1-4",
+      "kind": "layerHead",
+      "initial": [
+        -4.8,
+        3.1,
+        -1.7999999999999998,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-1-5",
+      "kind": "layerHead",
+      "initial": [
+        -3.5,
+        3.1,
+        -1.7999999999999998,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-2-0",
+      "kind": "layerHead",
+      "initial": [
+        -10,
+        3.1,
+        -0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-2-1",
+      "kind": "layerHead",
+      "initial": [
+        -8.7,
+        3.1,
+        -0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-2-2",
+      "kind": "layerHead",
+      "initial": [
+        -7.4,
+        3.1,
+        -0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-2-3",
+      "kind": "layerHead",
+      "initial": [
+        -6.1,
+        3.1,
+        -0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-2-4",
+      "kind": "layerHead",
+      "initial": [
+        -4.8,
+        3.1,
+        -0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-2-5",
+      "kind": "layerHead",
+      "initial": [
+        -3.5,
+        3.1,
+        -0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-3-0",
+      "kind": "layerHead",
+      "initial": [
+        -10,
+        3.1,
+        0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-3-1",
+      "kind": "layerHead",
+      "initial": [
+        -8.7,
+        3.1,
+        0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-3-2",
+      "kind": "layerHead",
+      "initial": [
+        -7.4,
+        3.1,
+        0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-3-3",
+      "kind": "layerHead",
+      "initial": [
+        -6.1,
+        3.1,
+        0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-3-4",
+      "kind": "layerHead",
+      "initial": [
+        -4.8,
+        3.1,
+        0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-3-5",
+      "kind": "layerHead",
+      "initial": [
+        -3.5,
+        3.1,
+        0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-4-0",
+      "kind": "layerHead",
+      "initial": [
+        -10,
+        3.1,
+        1.7999999999999998,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-4-1",
+      "kind": "layerHead",
+      "initial": [
+        -8.7,
+        3.1,
+        1.7999999999999998,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-4-2",
+      "kind": "layerHead",
+      "initial": [
+        -7.4,
+        3.1,
+        1.7999999999999998,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-4-3",
+      "kind": "layerHead",
+      "initial": [
+        -6.1,
+        3.1,
+        1.7999999999999998,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-4-4",
+      "kind": "layerHead",
+      "initial": [
+        -4.8,
+        3.1,
+        1.7999999999999998,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-4-5",
+      "kind": "layerHead",
+      "initial": [
+        -3.5,
+        3.1,
+        1.7999999999999998,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-5-0",
+      "kind": "layerHead",
+      "initial": [
+        -10,
+        3.1,
+        3,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-5-1",
+      "kind": "layerHead",
+      "initial": [
+        -8.7,
+        3.1,
+        3,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-5-2",
+      "kind": "layerHead",
+      "initial": [
+        -7.4,
+        3.1,
+        3,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-5-3",
+      "kind": "layerHead",
+      "initial": [
+        -6.1,
+        3.1,
+        3,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-5-4",
+      "kind": "layerHead",
+      "initial": [
+        -4.8,
+        3.1,
+        3,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "head-5-5",
+      "kind": "layerHead",
+      "initial": [
+        -3.5,
+        3.1,
+        3,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-head",
+        "lift-36-top-layers",
+        "distribute-2x6-layers",
+        "place-on-loading-belts",
+        "raise-empty-layer-heads",
+        "return-empty-layer-heads"
+      ]
+    },
+    {
+      "id": "row-0-0",
+      "kind": "rowHead",
+      "initial": [
+        14,
+        2.6,
+        -10.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-0-1",
+      "kind": "rowHead",
+      "initial": [
+        15.5,
+        2.6,
+        -10.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-0-2",
+      "kind": "rowHead",
+      "initial": [
+        17,
+        2.6,
+        -10.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-0-3",
+      "kind": "rowHead",
+      "initial": [
+        18.5,
+        2.6,
+        -10.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-0-4",
+      "kind": "rowHead",
+      "initial": [
+        20,
+        2.6,
+        -10.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-0-5",
+      "kind": "rowHead",
+      "initial": [
+        21.5,
+        2.6,
+        -10.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "reject-0",
+      "kind": "rejectPusher",
+      "initial": [
+        28.44,
+        1.28,
+        -13.33,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "reject-contact",
+        "reject-stroke",
+        "reject-retract"
+      ]
+    },
+    {
+      "id": "stacker-0",
+      "kind": "layerHead",
+      "initial": [
+        49,
+        1.85,
+        -13,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "stacker-empty-traverse",
+        "stacker-pickup",
+        "lift-complete-layer",
+        "transfer-complete-layer",
+        "place-guided-layer",
+        "raise-empty-stacker"
+      ]
+    },
+    {
+      "id": "layerstop-0-0",
+      "kind": "layerStop",
+      "initial": [
+        46.85,
+        1.305,
+        -14.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-retention-stop",
+        "raise-layer-retention-stop"
+      ]
+    },
+    {
+      "id": "pack-z-0-0--1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        -14.76,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-0-0--1",
+      "kind": "packX",
+      "initial": [
+        45.24,
+        1.295,
+        -14.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-z-0-0-1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        -13.639999999999999,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-0-0-1",
+      "kind": "packX",
+      "initial": [
+        46.839999999999996,
+        1.295,
+        -14.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "deck-0-0",
+      "kind": "wellDeck",
+      "initial": [
+        53,
+        0.164,
+        -14.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-pallet-well",
+        "guided-one-layer-lowering"
+      ]
+    },
+    {
+      "id": "gate-0-0",
+      "kind": "guideGate",
+      "initial": [
+        53.65,
+        1.3,
+        -14.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-outfeed-gate",
+        "close-outfeed-gate"
+      ]
+    },
+    {
+      "id": "jaw-0-0--1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        -14.68,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "jaw-0-0-1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        -13.719999999999999,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "layerstop-0-1",
+      "kind": "layerStop",
+      "initial": [
+        46.85,
+        1.305,
+        -13,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-retention-stop",
+        "raise-layer-retention-stop"
+      ]
+    },
+    {
+      "id": "pack-z-0-1--1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        -13.56,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-0-1--1",
+      "kind": "packX",
+      "initial": [
+        45.24,
+        1.295,
+        -13,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-z-0-1-1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        -12.44,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-0-1-1",
+      "kind": "packX",
+      "initial": [
+        46.839999999999996,
+        1.295,
+        -13,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "deck-0-1",
+      "kind": "wellDeck",
+      "initial": [
+        53,
+        0.164,
+        -13,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-pallet-well",
+        "guided-one-layer-lowering"
+      ]
+    },
+    {
+      "id": "gate-0-1",
+      "kind": "guideGate",
+      "initial": [
+        53.65,
+        1.3,
+        -13,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-outfeed-gate",
+        "close-outfeed-gate"
+      ]
+    },
+    {
+      "id": "jaw-0-1--1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        -13.48,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "jaw-0-1-1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        -12.52,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "layerstop-0-2",
+      "kind": "layerStop",
+      "initial": [
+        46.85,
+        1.305,
+        -11.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-retention-stop",
+        "raise-layer-retention-stop"
+      ]
+    },
+    {
+      "id": "pack-z-0-2--1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        -12.360000000000001,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-0-2--1",
+      "kind": "packX",
+      "initial": [
+        45.24,
+        1.295,
+        -11.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-z-0-2-1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        -11.24,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-0-2-1",
+      "kind": "packX",
+      "initial": [
+        46.839999999999996,
+        1.295,
+        -11.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "deck-0-2",
+      "kind": "wellDeck",
+      "initial": [
+        53,
+        0.164,
+        -11.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-pallet-well",
+        "guided-one-layer-lowering"
+      ]
+    },
+    {
+      "id": "gate-0-2",
+      "kind": "guideGate",
+      "initial": [
+        53.65,
+        1.3,
+        -11.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-outfeed-gate",
+        "close-outfeed-gate"
+      ]
+    },
+    {
+      "id": "jaw-0-2--1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        -12.280000000000001,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "jaw-0-2-1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        -11.32,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "row-1-0",
+      "kind": "rowHead",
+      "initial": [
+        14,
+        2.6,
+        -9.4,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-1-1",
+      "kind": "rowHead",
+      "initial": [
+        15.5,
+        2.6,
+        -9.4,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-1-2",
+      "kind": "rowHead",
+      "initial": [
+        17,
+        2.6,
+        -9.4,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-1-3",
+      "kind": "rowHead",
+      "initial": [
+        18.5,
+        2.6,
+        -9.4,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-1-4",
+      "kind": "rowHead",
+      "initial": [
+        20,
+        2.6,
+        -9.4,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-1-5",
+      "kind": "rowHead",
+      "initial": [
+        21.5,
+        2.6,
+        -9.4,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "reject-1",
+      "kind": "rejectPusher",
+      "initial": [
+        28.44,
+        1.28,
+        -7.33,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "reject-contact",
+        "reject-stroke",
+        "reject-retract"
+      ]
+    },
+    {
+      "id": "stacker-1",
+      "kind": "layerHead",
+      "initial": [
+        49,
+        1.85,
+        -7,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "stacker-empty-traverse",
+        "stacker-pickup",
+        "lift-complete-layer",
+        "transfer-complete-layer",
+        "place-guided-layer",
+        "raise-empty-stacker"
+      ]
+    },
+    {
+      "id": "layerstop-1-0",
+      "kind": "layerStop",
+      "initial": [
+        46.85,
+        1.305,
+        -8.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-retention-stop",
+        "raise-layer-retention-stop"
+      ]
+    },
+    {
+      "id": "pack-z-1-0--1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        -8.76,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-1-0--1",
+      "kind": "packX",
+      "initial": [
+        45.24,
+        1.295,
+        -8.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-z-1-0-1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        -7.639999999999999,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-1-0-1",
+      "kind": "packX",
+      "initial": [
+        46.839999999999996,
+        1.295,
+        -8.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "deck-1-0",
+      "kind": "wellDeck",
+      "initial": [
+        53,
+        0.164,
+        -8.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-pallet-well",
+        "guided-one-layer-lowering"
+      ]
+    },
+    {
+      "id": "gate-1-0",
+      "kind": "guideGate",
+      "initial": [
+        53.65,
+        1.3,
+        -8.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-outfeed-gate",
+        "close-outfeed-gate"
+      ]
+    },
+    {
+      "id": "jaw-1-0--1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        -8.68,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "jaw-1-0-1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        -7.719999999999999,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "layerstop-1-1",
+      "kind": "layerStop",
+      "initial": [
+        46.85,
+        1.305,
+        -7,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-retention-stop",
+        "raise-layer-retention-stop"
+      ]
+    },
+    {
+      "id": "pack-z-1-1--1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        -7.5600000000000005,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-1-1--1",
+      "kind": "packX",
+      "initial": [
+        45.24,
+        1.295,
+        -7,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-z-1-1-1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        -6.4399999999999995,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-1-1-1",
+      "kind": "packX",
+      "initial": [
+        46.839999999999996,
+        1.295,
+        -7,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "deck-1-1",
+      "kind": "wellDeck",
+      "initial": [
+        53,
+        0.164,
+        -7,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-pallet-well",
+        "guided-one-layer-lowering"
+      ]
+    },
+    {
+      "id": "gate-1-1",
+      "kind": "guideGate",
+      "initial": [
+        53.65,
+        1.3,
+        -7,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-outfeed-gate",
+        "close-outfeed-gate"
+      ]
+    },
+    {
+      "id": "jaw-1-1--1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        -7.48,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "jaw-1-1-1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        -6.52,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "layerstop-1-2",
+      "kind": "layerStop",
+      "initial": [
+        46.85,
+        1.305,
+        -5.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-retention-stop",
+        "raise-layer-retention-stop"
+      ]
+    },
+    {
+      "id": "pack-z-1-2--1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        -6.359999999999999,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-1-2--1",
+      "kind": "packX",
+      "initial": [
+        45.24,
+        1.295,
+        -5.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-z-1-2-1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        -5.24,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-1-2-1",
+      "kind": "packX",
+      "initial": [
+        46.839999999999996,
+        1.295,
+        -5.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "deck-1-2",
+      "kind": "wellDeck",
+      "initial": [
+        53,
+        0.164,
+        -5.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-pallet-well",
+        "guided-one-layer-lowering"
+      ]
+    },
+    {
+      "id": "gate-1-2",
+      "kind": "guideGate",
+      "initial": [
+        53.65,
+        1.3,
+        -5.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-outfeed-gate",
+        "close-outfeed-gate"
+      ]
+    },
+    {
+      "id": "jaw-1-2--1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        -6.279999999999999,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "jaw-1-2-1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        -5.32,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "row-2-0",
+      "kind": "rowHead",
+      "initial": [
+        14,
+        2.6,
+        -0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-2-1",
+      "kind": "rowHead",
+      "initial": [
+        15.5,
+        2.6,
+        -0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-2-2",
+      "kind": "rowHead",
+      "initial": [
+        17,
+        2.6,
+        -0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-2-3",
+      "kind": "rowHead",
+      "initial": [
+        18.5,
+        2.6,
+        -0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-2-4",
+      "kind": "rowHead",
+      "initial": [
+        20,
+        2.6,
+        -0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-2-5",
+      "kind": "rowHead",
+      "initial": [
+        21.5,
+        2.6,
+        -0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "reject-2",
+      "kind": "rejectPusher",
+      "initial": [
+        28.44,
+        1.28,
+        -3.33,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "reject-contact",
+        "reject-stroke",
+        "reject-retract"
+      ]
+    },
+    {
+      "id": "stacker-2",
+      "kind": "layerHead",
+      "initial": [
+        49,
+        1.85,
+        -3,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "stacker-empty-traverse",
+        "stacker-pickup",
+        "lift-complete-layer",
+        "transfer-complete-layer",
+        "place-guided-layer",
+        "raise-empty-stacker"
+      ]
+    },
+    {
+      "id": "layerstop-2-0",
+      "kind": "layerStop",
+      "initial": [
+        46.85,
+        1.305,
+        -4.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-retention-stop",
+        "raise-layer-retention-stop"
+      ]
+    },
+    {
+      "id": "pack-z-2-0--1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        -4.76,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-2-0--1",
+      "kind": "packX",
+      "initial": [
+        45.24,
+        1.295,
+        -4.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-z-2-0-1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        -3.64,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-2-0-1",
+      "kind": "packX",
+      "initial": [
+        46.839999999999996,
+        1.295,
+        -4.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "deck-2-0",
+      "kind": "wellDeck",
+      "initial": [
+        53,
+        0.164,
+        -4.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-pallet-well",
+        "guided-one-layer-lowering"
+      ]
+    },
+    {
+      "id": "gate-2-0",
+      "kind": "guideGate",
+      "initial": [
+        53.65,
+        1.3,
+        -4.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-outfeed-gate",
+        "close-outfeed-gate"
+      ]
+    },
+    {
+      "id": "jaw-2-0--1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        -4.68,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "jaw-2-0-1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        -3.72,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "layerstop-2-1",
+      "kind": "layerStop",
+      "initial": [
+        46.85,
+        1.305,
+        -3,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-retention-stop",
+        "raise-layer-retention-stop"
+      ]
+    },
+    {
+      "id": "pack-z-2-1--1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        -3.56,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-2-1--1",
+      "kind": "packX",
+      "initial": [
+        45.24,
+        1.295,
+        -3,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-z-2-1-1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        -2.44,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-2-1-1",
+      "kind": "packX",
+      "initial": [
+        46.839999999999996,
+        1.295,
+        -3,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "deck-2-1",
+      "kind": "wellDeck",
+      "initial": [
+        53,
+        0.164,
+        -3,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-pallet-well",
+        "guided-one-layer-lowering"
+      ]
+    },
+    {
+      "id": "gate-2-1",
+      "kind": "guideGate",
+      "initial": [
+        53.65,
+        1.3,
+        -3,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-outfeed-gate",
+        "close-outfeed-gate"
+      ]
+    },
+    {
+      "id": "jaw-2-1--1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        -3.48,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "jaw-2-1-1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        -2.52,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "layerstop-2-2",
+      "kind": "layerStop",
+      "initial": [
+        46.85,
+        1.305,
+        -1.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-retention-stop",
+        "raise-layer-retention-stop"
+      ]
+    },
+    {
+      "id": "pack-z-2-2--1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        -2.3600000000000003,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-2-2--1",
+      "kind": "packX",
+      "initial": [
+        45.24,
+        1.295,
+        -1.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-z-2-2-1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        -1.24,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-2-2-1",
+      "kind": "packX",
+      "initial": [
+        46.839999999999996,
+        1.295,
+        -1.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "deck-2-2",
+      "kind": "wellDeck",
+      "initial": [
+        53,
+        0.164,
+        -1.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-pallet-well",
+        "guided-one-layer-lowering"
+      ]
+    },
+    {
+      "id": "gate-2-2",
+      "kind": "guideGate",
+      "initial": [
+        53.65,
+        1.3,
+        -1.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-outfeed-gate",
+        "close-outfeed-gate"
+      ]
+    },
+    {
+      "id": "jaw-2-2--1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        -2.2800000000000002,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "jaw-2-2-1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        -1.32,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "row-3-0",
+      "kind": "rowHead",
+      "initial": [
+        14,
+        2.6,
+        0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-3-1",
+      "kind": "rowHead",
+      "initial": [
+        15.5,
+        2.6,
+        0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-3-2",
+      "kind": "rowHead",
+      "initial": [
+        17,
+        2.6,
+        0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-3-3",
+      "kind": "rowHead",
+      "initial": [
+        18.5,
+        2.6,
+        0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-3-4",
+      "kind": "rowHead",
+      "initial": [
+        20,
+        2.6,
+        0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-3-5",
+      "kind": "rowHead",
+      "initial": [
+        21.5,
+        2.6,
+        0.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "reject-3",
+      "kind": "rejectPusher",
+      "initial": [
+        28.44,
+        1.28,
+        2.67,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "reject-contact",
+        "reject-stroke",
+        "reject-retract"
+      ]
+    },
+    {
+      "id": "stacker-3",
+      "kind": "layerHead",
+      "initial": [
+        49,
+        1.85,
+        3,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "stacker-empty-traverse",
+        "stacker-pickup",
+        "lift-complete-layer",
+        "transfer-complete-layer",
+        "place-guided-layer",
+        "raise-empty-stacker"
+      ]
+    },
+    {
+      "id": "layerstop-3-0",
+      "kind": "layerStop",
+      "initial": [
+        46.85,
+        1.305,
+        1.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-retention-stop",
+        "raise-layer-retention-stop"
+      ]
+    },
+    {
+      "id": "pack-z-3-0--1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        1.24,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-3-0--1",
+      "kind": "packX",
+      "initial": [
+        45.24,
+        1.295,
+        1.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-z-3-0-1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        2.3600000000000003,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-3-0-1",
+      "kind": "packX",
+      "initial": [
+        46.839999999999996,
+        1.295,
+        1.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "deck-3-0",
+      "kind": "wellDeck",
+      "initial": [
+        53,
+        0.164,
+        1.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-pallet-well",
+        "guided-one-layer-lowering"
+      ]
+    },
+    {
+      "id": "gate-3-0",
+      "kind": "guideGate",
+      "initial": [
+        53.65,
+        1.3,
+        1.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-outfeed-gate",
+        "close-outfeed-gate"
+      ]
+    },
+    {
+      "id": "jaw-3-0--1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        1.32,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "jaw-3-0-1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        2.2800000000000002,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "layerstop-3-1",
+      "kind": "layerStop",
+      "initial": [
+        46.85,
+        1.305,
+        3,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-retention-stop",
+        "raise-layer-retention-stop"
+      ]
+    },
+    {
+      "id": "pack-z-3-1--1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        2.44,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-3-1--1",
+      "kind": "packX",
+      "initial": [
+        45.24,
+        1.295,
+        3,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-z-3-1-1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        3.56,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-3-1-1",
+      "kind": "packX",
+      "initial": [
+        46.839999999999996,
+        1.295,
+        3,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "deck-3-1",
+      "kind": "wellDeck",
+      "initial": [
+        53,
+        0.164,
+        3,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-pallet-well",
+        "guided-one-layer-lowering"
+      ]
+    },
+    {
+      "id": "gate-3-1",
+      "kind": "guideGate",
+      "initial": [
+        53.65,
+        1.3,
+        3,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-outfeed-gate",
+        "close-outfeed-gate"
+      ]
+    },
+    {
+      "id": "jaw-3-1--1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        2.52,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "jaw-3-1-1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        3.48,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "layerstop-3-2",
+      "kind": "layerStop",
+      "initial": [
+        46.85,
+        1.305,
+        4.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-retention-stop",
+        "raise-layer-retention-stop"
+      ]
+    },
+    {
+      "id": "pack-z-3-2--1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        3.64,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-3-2--1",
+      "kind": "packX",
+      "initial": [
+        45.24,
+        1.295,
+        4.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-z-3-2-1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        4.76,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-3-2-1",
+      "kind": "packX",
+      "initial": [
+        46.839999999999996,
+        1.295,
+        4.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "deck-3-2",
+      "kind": "wellDeck",
+      "initial": [
+        53,
+        0.164,
+        4.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-pallet-well",
+        "guided-one-layer-lowering"
+      ]
+    },
+    {
+      "id": "gate-3-2",
+      "kind": "guideGate",
+      "initial": [
+        53.65,
+        1.3,
+        4.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-outfeed-gate",
+        "close-outfeed-gate"
+      ]
+    },
+    {
+      "id": "jaw-3-2--1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        3.72,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "jaw-3-2-1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        4.68,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "row-4-0",
+      "kind": "rowHead",
+      "initial": [
+        14,
+        2.6,
+        9.4,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-4-1",
+      "kind": "rowHead",
+      "initial": [
+        15.5,
+        2.6,
+        9.4,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-4-2",
+      "kind": "rowHead",
+      "initial": [
+        17,
+        2.6,
+        9.4,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-4-3",
+      "kind": "rowHead",
+      "initial": [
+        18.5,
+        2.6,
+        9.4,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-4-4",
+      "kind": "rowHead",
+      "initial": [
+        20,
+        2.6,
+        9.4,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-4-5",
+      "kind": "rowHead",
+      "initial": [
+        21.5,
+        2.6,
+        9.4,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "reject-4",
+      "kind": "rejectPusher",
+      "initial": [
+        28.44,
+        1.28,
+        6.67,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "reject-contact",
+        "reject-stroke",
+        "reject-retract"
+      ]
+    },
+    {
+      "id": "stacker-4",
+      "kind": "layerHead",
+      "initial": [
+        49,
+        1.85,
+        7,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "stacker-empty-traverse",
+        "stacker-pickup",
+        "lift-complete-layer",
+        "transfer-complete-layer",
+        "place-guided-layer",
+        "raise-empty-stacker"
+      ]
+    },
+    {
+      "id": "layerstop-4-0",
+      "kind": "layerStop",
+      "initial": [
+        46.85,
+        1.305,
+        5.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-retention-stop",
+        "raise-layer-retention-stop"
+      ]
+    },
+    {
+      "id": "pack-z-4-0--1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        5.24,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-4-0--1",
+      "kind": "packX",
+      "initial": [
+        45.24,
+        1.295,
+        5.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-z-4-0-1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        6.359999999999999,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-4-0-1",
+      "kind": "packX",
+      "initial": [
+        46.839999999999996,
+        1.295,
+        5.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "deck-4-0",
+      "kind": "wellDeck",
+      "initial": [
+        53,
+        0.164,
+        5.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-pallet-well",
+        "guided-one-layer-lowering"
+      ]
+    },
+    {
+      "id": "gate-4-0",
+      "kind": "guideGate",
+      "initial": [
+        53.65,
+        1.3,
+        5.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-outfeed-gate",
+        "close-outfeed-gate"
+      ]
+    },
+    {
+      "id": "jaw-4-0--1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        5.32,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "jaw-4-0-1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        6.279999999999999,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "layerstop-4-1",
+      "kind": "layerStop",
+      "initial": [
+        46.85,
+        1.305,
+        7,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-retention-stop",
+        "raise-layer-retention-stop"
+      ]
+    },
+    {
+      "id": "pack-z-4-1--1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        6.4399999999999995,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-4-1--1",
+      "kind": "packX",
+      "initial": [
+        45.24,
+        1.295,
+        7,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-z-4-1-1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        7.5600000000000005,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-4-1-1",
+      "kind": "packX",
+      "initial": [
+        46.839999999999996,
+        1.295,
+        7,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "deck-4-1",
+      "kind": "wellDeck",
+      "initial": [
+        53,
+        0.164,
+        7,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-pallet-well",
+        "guided-one-layer-lowering"
+      ]
+    },
+    {
+      "id": "gate-4-1",
+      "kind": "guideGate",
+      "initial": [
+        53.65,
+        1.3,
+        7,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-outfeed-gate",
+        "close-outfeed-gate"
+      ]
+    },
+    {
+      "id": "jaw-4-1--1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        6.52,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "jaw-4-1-1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        7.48,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "layerstop-4-2",
+      "kind": "layerStop",
+      "initial": [
+        46.85,
+        1.305,
+        8.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-retention-stop",
+        "raise-layer-retention-stop"
+      ]
+    },
+    {
+      "id": "pack-z-4-2--1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        7.639999999999999,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-4-2--1",
+      "kind": "packX",
+      "initial": [
+        45.24,
+        1.295,
+        8.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-z-4-2-1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        8.76,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-4-2-1",
+      "kind": "packX",
+      "initial": [
+        46.839999999999996,
+        1.295,
+        8.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "deck-4-2",
+      "kind": "wellDeck",
+      "initial": [
+        53,
+        0.164,
+        8.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-pallet-well",
+        "guided-one-layer-lowering"
+      ]
+    },
+    {
+      "id": "gate-4-2",
+      "kind": "guideGate",
+      "initial": [
+        53.65,
+        1.3,
+        8.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-outfeed-gate",
+        "close-outfeed-gate"
+      ]
+    },
+    {
+      "id": "jaw-4-2--1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        7.719999999999999,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "jaw-4-2-1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        8.68,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "row-5-0",
+      "kind": "rowHead",
+      "initial": [
+        14,
+        2.6,
+        10.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-5-1",
+      "kind": "rowHead",
+      "initial": [
+        15.5,
+        2.6,
+        10.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-5-2",
+      "kind": "rowHead",
+      "initial": [
+        17,
+        2.6,
+        10.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-5-3",
+      "kind": "rowHead",
+      "initial": [
+        18.5,
+        2.6,
+        10.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-5-4",
+      "kind": "rowHead",
+      "initial": [
+        20,
+        2.6,
+        10.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "row-5-5",
+      "kind": "rowHead",
+      "initial": [
+        21.5,
+        2.6,
+        10.6,
+        1.5707963267948966
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-row-grippers",
+        "raise-six-rows-each-side",
+        "side-pick-and-transfer-rows",
+        "place-six-rows-on-v1",
+        "raise-row-grippers-clear"
+      ]
+    },
+    {
+      "id": "reject-5",
+      "kind": "rejectPusher",
+      "initial": [
+        28.44,
+        1.28,
+        12.67,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "reject-contact",
+        "reject-stroke",
+        "reject-retract"
+      ]
+    },
+    {
+      "id": "stacker-5",
+      "kind": "layerHead",
+      "initial": [
+        49,
+        1.85,
+        13,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "stacker-empty-traverse",
+        "stacker-pickup",
+        "lift-complete-layer",
+        "transfer-complete-layer",
+        "place-guided-layer",
+        "raise-empty-stacker"
+      ]
+    },
+    {
+      "id": "layerstop-5-0",
+      "kind": "layerStop",
+      "initial": [
+        46.85,
+        1.305,
+        11.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-retention-stop",
+        "raise-layer-retention-stop"
+      ]
+    },
+    {
+      "id": "pack-z-5-0--1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        11.24,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-5-0--1",
+      "kind": "packX",
+      "initial": [
+        45.24,
+        1.295,
+        11.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-z-5-0-1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        12.360000000000001,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-5-0-1",
+      "kind": "packX",
+      "initial": [
+        46.839999999999996,
+        1.295,
+        11.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "deck-5-0",
+      "kind": "wellDeck",
+      "initial": [
+        53,
+        0.164,
+        11.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-pallet-well",
+        "guided-one-layer-lowering"
+      ]
+    },
+    {
+      "id": "gate-5-0",
+      "kind": "guideGate",
+      "initial": [
+        53.65,
+        1.3,
+        11.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-outfeed-gate",
+        "close-outfeed-gate"
+      ]
+    },
+    {
+      "id": "jaw-5-0--1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        11.32,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "jaw-5-0-1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        12.280000000000001,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "layerstop-5-1",
+      "kind": "layerStop",
+      "initial": [
+        46.85,
+        1.305,
+        13,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-retention-stop",
+        "raise-layer-retention-stop"
+      ]
+    },
+    {
+      "id": "pack-z-5-1--1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        12.44,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-5-1--1",
+      "kind": "packX",
+      "initial": [
+        45.24,
+        1.295,
+        13,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-z-5-1-1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        13.56,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-5-1-1",
+      "kind": "packX",
+      "initial": [
+        46.839999999999996,
+        1.295,
+        13,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "deck-5-1",
+      "kind": "wellDeck",
+      "initial": [
+        53,
+        0.164,
+        13,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-pallet-well",
+        "guided-one-layer-lowering"
+      ]
+    },
+    {
+      "id": "gate-5-1",
+      "kind": "guideGate",
+      "initial": [
+        53.65,
+        1.3,
+        13,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-outfeed-gate",
+        "close-outfeed-gate"
+      ]
+    },
+    {
+      "id": "jaw-5-1--1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        12.52,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "jaw-5-1-1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        13.48,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "layerstop-5-2",
+      "kind": "layerStop",
+      "initial": [
+        46.85,
+        1.305,
+        14.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "lower-layer-retention-stop",
+        "raise-layer-retention-stop"
+      ]
+    },
+    {
+      "id": "pack-z-5-2--1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        13.639999999999999,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-5-2--1",
+      "kind": "packX",
+      "initial": [
+        45.24,
+        1.295,
+        14.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-z-5-2-1",
+      "kind": "packZ",
+      "initial": [
+        46.04,
+        1.295,
+        14.76,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "pack-x-5-2-1",
+      "kind": "packX",
+      "initial": [
+        46.839999999999996,
+        1.295,
+        14.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "mechanical-layer-compaction",
+        "release-layer-compaction"
+      ]
+    },
+    {
+      "id": "deck-5-2",
+      "kind": "wellDeck",
+      "initial": [
+        53,
+        0.164,
+        14.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-pallet-well",
+        "guided-one-layer-lowering"
+      ]
+    },
+    {
+      "id": "gate-5-2",
+      "kind": "guideGate",
+      "initial": [
+        53.65,
+        1.3,
+        14.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "raise-outfeed-gate",
+        "close-outfeed-gate"
+      ]
+    },
+    {
+      "id": "jaw-5-2--1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        13.719999999999999,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "jaw-5-2-1",
+      "kind": "centeringJaw",
+      "initial": [
+        53,
+        1.295,
+        14.68,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "center-placed-layer",
+        "release-layer-centering"
+      ]
+    },
+    {
+      "id": "dock-lift-0",
+      "kind": "dockLift",
+      "initial": [
+        98,
+        0.164,
+        26,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "shipping-lift-to-truck-height",
+        "shipping-lift-return"
+      ]
+    },
+    {
+      "id": "truck-0-1",
+      "kind": "truck",
+      "initial": [
+        54,
+        0,
+        26,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 9633.393367985442,
+      "trackKinds": [
+        "truck-reverse-to-dock",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "dock-lift-1",
+      "kind": "dockLift",
+      "initial": [
+        98,
+        0.164,
+        34,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "shipping-lift-to-truck-height",
+        "shipping-lift-return"
+      ]
+    },
+    {
+      "id": "truck-1-1",
+      "kind": "truck",
+      "initial": [
+        54,
+        0,
+        34,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 24275.908461709536,
+      "trackKinds": [
+        "truck-reverse-to-dock",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "dock-lift-2",
+      "kind": "dockLift",
+      "initial": [
+        98,
+        0.164,
+        42,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "shipping-lift-to-truck-height",
+        "shipping-lift-return"
+      ]
+    },
+    {
+      "id": "truck-2-1",
+      "kind": "truck",
+      "initial": [
+        54,
+        0,
+        42,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 24157.535346430173,
+      "trackKinds": [
+        "truck-reverse-to-dock",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "dock-lift-3",
+      "kind": "dockLift",
+      "initial": [
+        98,
+        0.164,
+        50,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "shipping-lift-to-truck-height",
+        "shipping-lift-return"
+      ]
+    },
+    {
+      "id": "truck-3-1",
+      "kind": "truck",
+      "initial": [
+        54,
+        0,
+        50,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 23876.096049902975,
+      "trackKinds": [
+        "truck-reverse-to-dock",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "amr-0",
+      "kind": "amr",
+      "initial": [
+        65,
+        0,
+        -21,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "amr-empty-approach",
+        "amr-fork-insertion",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-fork-withdrawal",
+        "amr-return-home",
+        "amr-empty-to-stock",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-clear-dock"
+      ]
+    },
+    {
+      "id": "amr-fork-0",
+      "kind": "amrFork",
+      "initial": [
+        63.6,
+        0.224,
+        -21,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "amr-empty-approach",
+        "amr-fork-insertion",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-fork-withdrawal",
+        "amr-return-home",
+        "amr-empty-to-stock",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "amr-clear-dock"
+      ]
+    },
+    {
+      "id": "amr-1",
+      "kind": "amr",
+      "initial": [
+        70,
+        0,
+        -21,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "amr-empty-approach",
+        "amr-fork-insertion",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-fork-withdrawal",
+        "amr-return-home",
+        "amr-empty-to-stock",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-clear-dock"
+      ]
+    },
+    {
+      "id": "amr-fork-1",
+      "kind": "amrFork",
+      "initial": [
+        68.6,
+        0.224,
+        -21,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "amr-empty-approach",
+        "amr-fork-insertion",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-fork-withdrawal",
+        "amr-return-home",
+        "amr-empty-to-stock",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "amr-clear-dock"
+      ]
+    },
+    {
+      "id": "amr-2",
+      "kind": "amr",
+      "initial": [
+        75,
+        0,
+        -21,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "amr-empty-approach",
+        "amr-fork-insertion",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-fork-withdrawal",
+        "amr-return-home",
+        "amr-empty-to-stock",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-clear-dock"
+      ]
+    },
+    {
+      "id": "amr-fork-2",
+      "kind": "amrFork",
+      "initial": [
+        73.6,
+        0.224,
+        -21,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "amr-empty-approach",
+        "amr-fork-insertion",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-fork-withdrawal",
+        "amr-return-home",
+        "amr-empty-to-stock",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "amr-clear-dock"
+      ]
+    },
+    {
+      "id": "amr-3",
+      "kind": "amr",
+      "initial": [
+        80,
+        0,
+        -21,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "amr-empty-approach",
+        "amr-fork-insertion",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-fork-withdrawal",
+        "amr-return-home",
+        "amr-empty-to-stock",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-clear-dock"
+      ]
+    },
+    {
+      "id": "amr-fork-3",
+      "kind": "amrFork",
+      "initial": [
+        78.6,
+        0.224,
+        -21,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "amr-empty-approach",
+        "amr-fork-insertion",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-fork-withdrawal",
+        "amr-return-home",
+        "amr-empty-to-stock",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "amr-clear-dock"
+      ]
+    },
+    {
+      "id": "wood-0",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -14.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 9633.393367985442,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-1",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -13,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 9633.393367985442,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-2",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -11.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 9633.393367985442,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-3",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -8.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 24275.908461709536,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-4",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -7,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 24157.535346430173,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-5",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -5.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 23876.096049902975,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-6",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -4.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 9633.393367985442,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-7",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -3,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 16646.429336304976,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-8",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -1.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 9633.393367985442,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-9",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        1.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 24275.908461709536,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-10",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        3,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 24157.535346430173,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-11",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        4.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 23876.096049902975,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-12",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        5.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 9633.393367985442,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-13",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        7,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 9633.393367985442,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-14",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        8.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 9633.393367985442,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-15",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        11.8,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 24275.908461709536,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-16",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        13,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 24157.535346430173,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-17",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        14.2,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 23876.096049902975,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-18",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        13,
+        0
+      ],
+      "visible": 6910.318313339212,
+      "hiddenAt": 24157.535346430173,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-19",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        7,
+        0
+      ],
+      "visible": 6914.7213271301525,
+      "hiddenAt": 16646.429336304976,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-20",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        11.8,
+        0
+      ],
+      "visible": 6939.728563395858,
+      "hiddenAt": 24275.908461709536,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-21",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -8.2,
+        0
+      ],
+      "visible": 6942.485298094044,
+      "hiddenAt": 24275.908461709536,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-22",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        5.8,
+        0
+      ],
+      "visible": 6944.1315771867985,
+      "hiddenAt": 16646.429336304976,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-23",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -14.2,
+        0
+      ],
+      "visible": 6951.813311884985,
+      "hiddenAt": 24381.90066244489,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-24",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        14.2,
+        0
+      ],
+      "visible": 6969.725180147279,
+      "hiddenAt": 23876.096049902975,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-25",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -5.8,
+        0
+      ],
+      "visible": 6972.481914845465,
+      "hiddenAt": 23876.096049902975,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-26",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        8.2,
+        0
+      ],
+      "visible": 6974.12819393822,
+      "hiddenAt": 16646.429336304976,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-27",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -13,
+        0
+      ],
+      "visible": 6981.223561941631,
+      "hiddenAt": 16646.429336304976,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-28",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -7,
+        0
+      ],
+      "visible": 7001.892164902111,
+      "hiddenAt": 24157.535346430173,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-29",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -11.8,
+        0
+      ],
+      "visible": 7010.6338119982765,
+      "hiddenAt": 16646.429336304976,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-30",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        4.2,
+        0
+      ],
+      "visible": 7017.421256586004,
+      "hiddenAt": 23876.096049902975,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-31",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -4.2,
+        0
+      ],
+      "visible": 7020.2953924983885,
+      "hiddenAt": 16646.429336304976,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-32",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        3,
+        0
+      ],
+      "visible": 7046.83150664265,
+      "hiddenAt": 24157.535346430173,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-33",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -1.8,
+        0
+      ],
+      "visible": 7050.29200924981,
+      "hiddenAt": 16646.429336304976,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-34",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        1.8,
+        0
+      ],
+      "visible": 7076.241756699296,
+      "hiddenAt": 24275.908461709536,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-35",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -3,
+        0
+      ],
+      "visible": 7079.702259306456,
+      "hiddenAt": 24381.90066244489,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "truck-0-2",
+      "kind": "truck",
+      "initial": [
+        54,
+        0,
+        26,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 16646.429336304976,
+      "trackKinds": [
+        "truck-reverse-to-dock",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-36",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        11.8,
+        0
+      ],
+      "visible": 13761.34505088407,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-37",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        8.2,
+        0
+      ],
+      "visible": 13764.706534485978,
+      "hiddenAt": 30257.087091212565,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-38",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        13,
+        0
+      ],
+      "visible": 13790.755300940718,
+      "hiddenAt": 24157.535346430173,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-39",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        5.8,
+        0
+      ],
+      "visible": 13794.703151237401,
+      "hiddenAt": 24381.90066244489,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-40",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        14.2,
+        0
+      ],
+      "visible": 13820.165550997366,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-41",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        7,
+        0
+      ],
+      "visible": 13824.11340129405,
+      "hiddenAt": 24381.90066244489,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-42",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -5.8,
+        0
+      ],
+      "visible": 13845.347010630307,
+      "hiddenAt": 23876.096049902975,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-43",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -11.8,
+        0
+      ],
+      "visible": 13852.322010630322,
+      "hiddenAt": 24381.90066244489,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-44",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -8.2,
+        0
+      ],
+      "visible": 13875.34362738173,
+      "hiddenAt": 24275.908461709536,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-45",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -13,
+        0
+      ],
+      "visible": 13881.73226068697,
+      "hiddenAt": 24381.90066244489,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-46",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -7,
+        0
+      ],
+      "visible": 13904.753877438377,
+      "hiddenAt": 24157.535346430173,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-47",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -14.2,
+        0
+      ],
+      "visible": 13911.142510743617,
+      "hiddenAt": 24381.90066244489,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-48",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        3,
+        0
+      ],
+      "visible": 14022.141976371799,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-49",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -4.2,
+        0
+      ],
+      "visible": 14024.305212168714,
+      "hiddenAt": 30257.087091212565,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-50",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        4.2,
+        0
+      ],
+      "visible": 14051.552226428446,
+      "hiddenAt": 23876.096049902975,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-51",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -1.8,
+        0
+      ],
+      "visible": 14054.301828920137,
+      "hiddenAt": 30257.087091212565,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-52",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        1.8,
+        0
+      ],
+      "visible": 14081.54884317987,
+      "hiddenAt": 24275.908461709536,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-53",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -3,
+        0
+      ],
+      "visible": 14083.712078976785,
+      "hiddenAt": 24381.90066244489,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "truck-0-3",
+      "kind": "truck",
+      "initial": [
+        54,
+        0,
+        26,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 24381.90066244489,
+      "trackKinds": [
+        "truck-reverse-to-dock",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-54",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -5.8,
+        0
+      ],
+      "visible": 20727.694550098615,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-55",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -13,
+        0
+      ],
+      "visible": 20731.07300053886,
+      "hiddenAt": 30257.087091212565,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-56",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -8.2,
+        0
+      ],
+      "visible": 20757.691166850036,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-57",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -11.8,
+        0
+      ],
+      "visible": 20760.48325059551,
+      "hiddenAt": 37139.79620568291,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-58",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -7,
+        0
+      ],
+      "visible": 20787.101416906684,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-59",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -14.2,
+        0
+      ],
+      "visible": 20790.47986734693,
+      "hiddenAt": 30257.087091212565,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-60",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        4.2,
+        0
+      ],
+      "visible": 20904.236948504225,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-61",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        13,
+        0
+      ],
+      "visible": 20907.74867235849,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-62",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        5.8,
+        0
+      ],
+      "visible": 20909.005724525403,
+      "hiddenAt": 30257.087091212565,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-63",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -3,
+        0
+      ],
+      "visible": 20910.21841273542,
+      "hiddenAt": 30257.087091212565,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-64",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        1.8,
+        0
+      ],
+      "visible": 20934.233565255647,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-65",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        14.2,
+        0
+      ],
+      "visible": 20937.15892241514,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-66",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        7,
+        0
+      ],
+      "visible": 20938.41597458205,
+      "hiddenAt": 37139.79620568291,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-67",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -4.2,
+        0
+      ],
+      "visible": 20939.628662792067,
+      "hiddenAt": 30257.087091212565,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-68",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        3,
+        0
+      ],
+      "visible": 20963.643815312294,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-69",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        11.8,
+        0
+      ],
+      "visible": 20967.15553916656,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-70",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        8.2,
+        0
+      ],
+      "visible": 20967.8262246387,
+      "hiddenAt": 37139.79620568291,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-71",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -1.8,
+        0
+      ],
+      "visible": 20969.62527954349,
+      "hiddenAt": 37139.79620568291,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "truck-3-2",
+      "kind": "truck",
+      "initial": [
+        54,
+        0,
+        50,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "truck-reverse-to-dock"
+      ]
+    },
+    {
+      "id": "truck-2-2",
+      "kind": "truck",
+      "initial": [
+        54,
+        0,
+        42,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "truck-reverse-to-dock"
+      ]
+    },
+    {
+      "id": "truck-1-2",
+      "kind": "truck",
+      "initial": [
+        54,
+        0,
+        34,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "truck-reverse-to-dock"
+      ]
+    },
+    {
+      "id": "truck-0-4",
+      "kind": "truck",
+      "initial": [
+        54,
+        0,
+        26,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 30257.087091212565,
+      "trackKinds": [
+        "truck-reverse-to-dock",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-72",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -5.8,
+        0
+      ],
+      "visible": 27741.430224003645,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-73",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -14.2,
+        0
+      ],
+      "visible": 27742.469604489357,
+      "hiddenAt": 37139.79620568291,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-74",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -8.2,
+        0
+      ],
+      "visible": 27771.426840755066,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-75",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -13,
+        0
+      ],
+      "visible": 27771.879854546005,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-76",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -7,
+        0
+      ],
+      "visible": 27800.837090811714,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-77",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -11.8,
+        0
+      ],
+      "visible": 27801.290104602653,
+      "hiddenAt": 37139.79620568291,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-78",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        3,
+        0
+      ],
+      "visible": 27860.806083264244,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-79",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -4.2,
+        0
+      ],
+      "visible": 27865.244182583538,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-80",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        14.2,
+        0
+      ],
+      "visible": 27866.522001868943,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-81",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        5.8,
+        0
+      ],
+      "visible": 27867.63275201243,
+      "hiddenAt": 37139.79620568291,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-82",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        1.8,
+        0
+      ],
+      "visible": 27890.216333320892,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-83",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -3,
+        0
+      ],
+      "visible": 27894.654432640185,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-84",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        13,
+        0
+      ],
+      "visible": 27895.93225192559,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-85",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        7,
+        0
+      ],
+      "visible": 27897.043002069076,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-86",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        4.2,
+        0
+      ],
+      "visible": 27920.212950072313,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-87",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -1.8,
+        0
+      ],
+      "visible": 27924.064682696833,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-88",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        11.8,
+        0
+      ],
+      "visible": 27925.34250198224,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage"
+      ]
+    },
+    {
+      "id": "wood-89",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        8.2,
+        0
+      ],
+      "visible": 27926.453252125724,
+      "hiddenAt": 37139.79620568291,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well",
+        "guided-one-layer-lowering",
+        "finished-pallet-outfeed",
+        "lift-supported-output-pallet",
+        "finished-pallet-bridge",
+        "lower-pallet-on-handoff",
+        "amr-lift-pallet",
+        "amr-clear-handoff",
+        "amr-loaded-to-storage",
+        "amr-place-in-storage",
+        "amr-clear-storage",
+        "amr-loaded-to-shipping",
+        "amr-place-on-dock",
+        "shipping-lift-to-truck-height",
+        "powered-dock-and-trailer-transfer",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "truck-0-5",
+      "kind": "truck",
+      "initial": [
+        54,
+        0,
+        26,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": 37139.79620568291,
+      "trackKinds": [
+        "truck-reverse-to-dock",
+        "truck-order-departure"
+      ]
+    },
+    {
+      "id": "wood-90",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        11.8,
+        0
+      ],
+      "visible": 34701.46740004819,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well"
+      ]
+    },
+    {
+      "id": "wood-91",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        5.8,
+        0
+      ],
+      "visible": 34702.68662000263,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well"
+      ]
+    },
+    {
+      "id": "wood-92",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        14.2,
+        0
+      ],
+      "visible": 34731.464016799604,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well"
+      ]
+    },
+    {
+      "id": "wood-93",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        8.2,
+        0
+      ],
+      "visible": 34732.68323675404,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well"
+      ]
+    },
+    {
+      "id": "wood-94",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        13,
+        0
+      ],
+      "visible": 34760.87426685625,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well"
+      ]
+    },
+    {
+      "id": "wood-95",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        7,
+        0
+      ],
+      "visible": 34762.093486810685,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well"
+      ]
+    },
+    {
+      "id": "wood-96",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -7,
+        0
+      ],
+      "visible": 34763.39745544971,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well"
+      ]
+    },
+    {
+      "id": "wood-97",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -14.2,
+        0
+      ],
+      "visible": 34771.22420764467,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well"
+      ]
+    },
+    {
+      "id": "wood-98",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -8.2,
+        0
+      ],
+      "visible": 34792.807705506355,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well"
+      ]
+    },
+    {
+      "id": "wood-99",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -11.8,
+        0
+      ],
+      "visible": 34801.220824396085,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well"
+      ]
+    },
+    {
+      "id": "wood-100",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        4.2,
+        0
+      ],
+      "visible": 34807.553505318145,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well"
+      ]
+    },
+    {
+      "id": "wood-101",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -4.2,
+        0
+      ],
+      "visible": 34813.40640220193,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well"
+      ]
+    },
+    {
+      "id": "wood-102",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -5.8,
+        0
+      ],
+      "visible": 34822.80432225777,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well"
+      ]
+    },
+    {
+      "id": "wood-103",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -13,
+        0
+      ],
+      "visible": 34830.63107445273,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well"
+      ]
+    },
+    {
+      "id": "wood-104",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        1.8,
+        0
+      ],
+      "visible": 34837.55012206956,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well"
+      ]
+    },
+    {
+      "id": "wood-105",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -1.8,
+        0
+      ],
+      "visible": 34843.403018953344,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well"
+      ]
+    },
+    {
+      "id": "wood-106",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        3,
+        0
+      ],
+      "visible": 34866.9603721262,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well"
+      ]
+    },
+    {
+      "id": "wood-107",
+      "kind": "pallet",
+      "initial": [
+        51.1,
+        0.224,
+        -3,
+        0
+      ],
+      "visible": 34872.81326900999,
+      "hiddenAt": null,
+      "trackKinds": [
+        "empty-pallet-feed",
+        "raise-pallet-well"
+      ]
+    },
+    {
+      "id": "truck-0-6",
+      "kind": "truck",
+      "initial": [
+        54,
+        0,
+        26,
+        0
+      ],
+      "visible": 0,
+      "hiddenAt": null,
+      "trackKinds": [
+        "truck-reverse-to-dock"
+      ]
+    }
+  ],
+  "trackKinds": {
+    "cart-delivery": {
+      "count": 57602,
+      "first": 0,
+      "last": 15736.962548835274
+    },
+    "empty-cart-cross-transfer": {
+      "count": 2,
+      "first": 15581.462548835274,
+      "last": 15608.462548835274
+    },
+    "empty-cart-return-track": {
+      "count": 1,
+      "first": 15608.462548835274,
+      "last": 15640.962548835274
+    },
+    "cart-transfer-table-return": {
+      "count": 1,
+      "first": 15640.962548835274,
+      "last": 15667.962548835274
+    },
+    "finished-frame-approach": {
+      "count": 90,
+      "first": 6907.318313339212,
+      "last": 36218.04327217863
+    },
+    "lower-pallet-lifting-frame": {
+      "count": 90,
+      "first": 6922.918313339213,
+      "last": 36225.08327217863
+    },
+    "insert-supported-pallet-forks": {
+      "count": 90,
+      "first": 6929.9583133392125,
+      "last": 36231.08327217863
+    },
+    "lift-supported-output-pallet": {
+      "count": 50580,
+      "first": 6936.2083133392125,
+      "last": 36238.37327217863
+    },
+    "finished-pallet-bridge": {
+      "count": 50580,
+      "first": 6943.2483133392125,
+      "last": 36242.573272178626
+    },
+    "lower-pallet-on-handoff": {
+      "count": 50580,
+      "first": 6947.448313339212,
+      "last": 36249.61327217863
+    },
+    "withdraw-supported-pallet-forks": {
+      "count": 90,
+      "first": 6954.738313339212,
+      "last": 36255.86327217863
+    },
+    "raise-empty-finished-frame": {
+      "count": 90,
+      "first": 6960.738313339212,
+      "last": 36262.90327217863
+    },
+    "lower-layer-head": {
+      "count": 1440,
+      "first": 30,
+      "last": 32920.982622955984
+    },
+    "lift-36-top-layers": {
+      "count": 59040,
+      "first": 33.37392857142857,
+      "last": 32927.1658372417
+    },
+    "distribute-2x6-layers": {
+      "count": 59040,
+      "first": 36.447857142857146,
+      "last": 32944.210906910084
+    },
+    "place-on-loading-belts": {
+      "count": 59040,
+      "first": 53.492926811239265,
+      "last": 32948.101264052944
+    },
+    "raise-empty-layer-heads": {
+      "count": 1440,
+      "first": 57.58328395409641,
+      "last": 32952.1916211958
+    },
+    "return-empty-layer-heads": {
+      "count": 1440,
+      "first": 61.47364109695355,
+      "last": 32969.236690864185
+    },
+    "common-main-belt": {
+      "count": 57600,
+      "first": 61.47364109695355,
+      "last": 33791.05484068075
+    },
+    "raise-six-rows-each-side": {
+      "count": 63360,
+      "first": 90.55050196498544,
+      "last": 34636.56330083703
+    },
+    "side-pick-and-transfer-rows": {
+      "count": 63360,
+      "first": 92.94085910784258,
+      "last": 34639.88430083703
+    },
+    "place-six-rows-on-v1": {
+      "count": 63360,
+      "first": 95.41017075281573,
+      "last": 34642.27465797989
+    },
+    "v1-common-drive": {
+      "count": 1756800,
+      "first": 100.76945646710145,
+      "last": 34809.06424078088
+    },
+    "v2": {
+      "count": 527651,
+      "first": 110.75695646710145,
+      "last": 34825.24629286405
+    },
+    "inspection-entry": {
+      "count": 57600,
+      "first": 115.75695646710166,
+      "last": 34830.062959530675
+    },
+    "inspection-zpa": {
+      "count": 395101,
+      "first": 116.09028980043499,
+      "last": 34849.68498647116
+    },
+    "clear-inspection-tail": {
+      "count": 50580,
+      "first": 119.82362313376831,
+      "last": 34854.33498647112
+    },
+    "routing-entry": {
+      "count": 50580,
+      "first": 120.29028980043498,
+      "last": 34854.80998647112
+    },
+    "direct-row-routing": {
+      "count": 50580,
+      "first": 120.76528980043499,
+      "last": 34867.46999357336
+    },
+    "mechanical-layer-compaction": {
+      "count": 55440,
+      "first": 573.5597736886627,
+      "last": 34780.817750062284
+    },
+    "layer-buffer-zone-one": {
+      "count": 50400,
+      "first": 578.5572569099503,
+      "last": 34787.95273328357
+    },
+    "layer-buffer-zone-two": {
+      "count": 50400,
+      "first": 583.0572569099503,
+      "last": 34792.45273328357
+    },
+    "lift-complete-layer": {
+      "count": 51660,
+      "first": 590.9571211068169,
+      "last": 34851.21936127915
+    },
+    "transfer-complete-layer": {
+      "count": 51660,
+      "first": 592.2596187075824,
+      "last": 34856.019361279155
+    },
+    "place-guided-layer": {
+      "count": 51660,
+      "first": 597.0596187075823,
+      "last": 34857.32185887992
+    },
+    "guided-one-layer-lowering": {
+      "count": 380520,
+      "first": 601.163526438421,
+      "last": 34860.81326900999
+    },
+    "finished-pallet-outfeed": {
+      "count": 50490,
+      "first": 6901.318313339212,
+      "last": 34869.81326900999
+    },
+    "amr-lift-pallet": {
+      "count": 86548,
+      "first": 7022.373450642775,
+      "last": 36968.45065440746
+    },
+    "amr-clear-handoff": {
+      "count": 50670,
+      "first": 7023.873450642775,
+      "last": 36307.790563212955
+    },
+    "amr-loaded-to-storage": {
+      "count": 202680,
+      "first": 7028.596556268393,
+      "last": 36375.871114488415
+    },
+    "amr-place-in-storage": {
+      "count": 50580,
+      "first": 7101.618306030952,
+      "last": 36377.371114488415
+    },
+    "amr-clear-storage": {
+      "count": 36032,
+      "first": 8171.151404893846,
+      "last": 36972.05620568292
+    },
+    "amr-loaded-to-shipping": {
+      "count": 144128,
+      "first": 8175.35695616931,
+      "last": 37042.03120568292
+    },
+    "amr-place-on-dock": {
+      "count": 35968,
+      "first": 8267.231956169311,
+      "last": 37043.53120568292
+    },
+    "shipping-lift-to-truck-height": {
+      "count": 35968,
+      "first": 8273.331956169312,
+      "last": 37052.901205682916
+    },
+    "powered-dock-and-trailer-transfer": {
+      "count": 35904,
+      "first": 8278.101956169312,
+      "last": 37076.901205682916
+    },
+    "truck-order-departure": {
+      "count": 35912,
+      "first": 9575.268367985442,
+      "last": 37139.79620568291
+    },
+    "reject-stroke": {
+      "count": 14040,
+      "first": 120.1116335502466,
+      "last": 34848.169303280345
+    },
+    "supported-reject-decline": {
+      "count": 7020,
+      "first": 120.5466335502466,
+      "last": 34850.39752451299
+    },
+    "bin-settling": {
+      "count": 7020,
+      "first": 122.77485478289209,
+      "last": 34853.272813281095
+    },
+    "lower-row-grippers": {
+      "count": 5760,
+      "first": 87.47364109695356,
+      "last": 34634.022943694166
+    },
+    "raise-row-grippers-clear": {
+      "count": 5760,
+      "first": 97.95052789567288,
+      "last": 34645.24358655132
+    },
+    "reject-contact": {
+      "count": 7020,
+      "first": 119.82362313376831,
+      "last": 34847.73430328035
+    },
+    "reject-retract": {
+      "count": 7020,
+      "first": 120.5466335502466,
+      "last": 34848.81167828035
+    },
+    "stacker-empty-traverse": {
+      "count": 1260,
+      "first": 587.5572569099503,
+      "last": 34848.414366077624
+    },
+    "stacker-pickup": {
+      "count": 1260,
+      "first": 589.4546235060513,
+      "last": 34849.71686367839
+    },
+    "raise-empty-stacker": {
+      "count": 1260,
+      "first": 598.5621163083479,
+      "last": 34858.82435648068
+    },
+    "lower-layer-retention-stop": {
+      "count": 1260,
+      "first": 577.8122736886627,
+      "last": 34783.45273328357
+    },
+    "raise-layer-retention-stop": {
+      "count": 1260,
+      "first": 583.0572569099503,
+      "last": 34788.69771650486
+    },
+    "release-layer-compaction": {
+      "count": 5040,
+      "first": 575.9222736886627,
+      "last": 34782.70775006228
+    },
+    "raise-pallet-well": {
+      "count": 216,
+      "first": 5.699999999999996,
+      "last": 34888.17326900999
+    },
+    "raise-outfeed-gate": {
+      "count": 90,
+      "first": 6898.318313339212,
+      "last": 34863.81326900999
+    },
+    "close-outfeed-gate": {
+      "count": 90,
+      "first": 6907.318313339212,
+      "last": 34872.81326900999
+    },
+    "center-placed-layer": {
+      "count": 2520,
+      "first": 599.8646139091134,
+      "last": 34859.398812745334
+    },
+    "release-layer-centering": {
+      "count": 2520,
+      "first": 600.5890701737671,
+      "last": 34860.123269009986
+    },
+    "shipping-lift-return": {
+      "count": 64,
+      "first": 8329.101956169312,
+      "last": 37081.67120568291
+    },
+    "truck-reverse-to-dock": {
+      "count": 12,
+      "first": 0,
+      "last": 37197.92120568291
+    },
+    "amr-empty-approach": {
+      "count": 540,
+      "first": 6967.778313339212,
+      "last": 36297.44435196173
+    },
+    "amr-fork-insertion": {
+      "count": 180,
+      "first": 7017.650345017158,
+      "last": 36301.56745758734
+    },
+    "amr-fork-withdrawal": {
+      "count": 180,
+      "first": 7103.118306030952,
+      "last": 36380.976665763876
+    },
+    "amr-return-home": {
+      "count": 924,
+      "first": 7107.323857306416,
+      "last": 37147.17228546602
+    },
+    "amr-empty-to-stock": {
+      "count": 512,
+      "first": 8146.030812817889,
+      "last": 36966.35065440746
+    },
+    "amr-clear-dock": {
+      "count": 128,
+      "first": 8268.731956169311,
+      "last": 37047.53120568292
+    },
+    "empty-pallet-feed": {
+      "count": 108,
+      "first": 0,
+      "last": 34878.513269009985
+    }
+  },
+  "storage": [
+    {
+      "id": "0-0",
+      "category": 0,
+      "x": 66,
+      "z": -12,
+      "state": "free"
+    },
+    {
+      "id": "0-1",
+      "category": 0,
+      "x": 66,
+      "z": -9,
+      "state": "free"
+    },
+    {
+      "id": "0-2",
+      "category": 0,
+      "x": 66,
+      "z": -6,
+      "state": "stored"
+    },
+    {
+      "id": "0-3",
+      "category": 0,
+      "x": 66,
+      "z": -3,
+      "state": "stored"
+    },
+    {
+      "id": "0-4",
+      "category": 0,
+      "x": 66,
+      "z": 0,
+      "state": "free"
+    },
+    {
+      "id": "0-5",
+      "category": 0,
+      "x": 66,
+      "z": 3,
+      "state": "stored"
+    },
+    {
+      "id": "0-6",
+      "category": 0,
+      "x": 66,
+      "z": 6,
+      "state": "free"
+    },
+    {
+      "id": "0-7",
+      "category": 0,
+      "x": 66,
+      "z": 9,
+      "state": "stored"
+    },
+    {
+      "id": "0-8",
+      "category": 0,
+      "x": 66,
+      "z": 12,
+      "state": "stored"
+    },
+    {
+      "id": "1-0",
+      "category": 1,
+      "x": 72,
+      "z": -12,
+      "state": "stored"
+    },
+    {
+      "id": "1-1",
+      "category": 1,
+      "x": 72,
+      "z": -9,
+      "state": "stored"
+    },
+    {
+      "id": "1-2",
+      "category": 1,
+      "x": 72,
+      "z": -6,
+      "state": "stored"
+    },
+    {
+      "id": "1-3",
+      "category": 1,
+      "x": 72,
+      "z": -3,
+      "state": "stored"
+    },
+    {
+      "id": "1-4",
+      "category": 1,
+      "x": 72,
+      "z": 0,
+      "state": "stored"
+    },
+    {
+      "id": "1-5",
+      "category": 1,
+      "x": 72,
+      "z": 3,
+      "state": "stored"
+    },
+    {
+      "id": "1-6",
+      "category": 1,
+      "x": 72,
+      "z": 6,
+      "state": "free"
+    },
+    {
+      "id": "1-7",
+      "category": 1,
+      "x": 72,
+      "z": 9,
+      "state": "free"
+    },
+    {
+      "id": "1-8",
+      "category": 1,
+      "x": 72,
+      "z": 12,
+      "state": "stored"
+    },
+    {
+      "id": "2-0",
+      "category": 2,
+      "x": 78,
+      "z": -12,
+      "state": "stored"
+    },
+    {
+      "id": "2-1",
+      "category": 2,
+      "x": 78,
+      "z": -9,
+      "state": "stored"
+    },
+    {
+      "id": "2-2",
+      "category": 2,
+      "x": 78,
+      "z": -6,
+      "state": "stored"
+    },
+    {
+      "id": "2-3",
+      "category": 2,
+      "x": 78,
+      "z": -3,
+      "state": "stored"
+    },
+    {
+      "id": "2-4",
+      "category": 2,
+      "x": 78,
+      "z": 0,
+      "state": "stored"
+    },
+    {
+      "id": "2-5",
+      "category": 2,
+      "x": 78,
+      "z": 3,
+      "state": "stored"
+    },
+    {
+      "id": "2-6",
+      "category": 2,
+      "x": 78,
+      "z": 6,
+      "state": "free"
+    },
+    {
+      "id": "2-7",
+      "category": 2,
+      "x": 78,
+      "z": 9,
+      "state": "free"
+    },
+    {
+      "id": "2-8",
+      "category": 2,
+      "x": 78,
+      "z": 12,
+      "state": "stored"
+    },
+    {
+      "id": "3-0",
+      "category": 3,
+      "x": 84,
+      "z": -12,
+      "state": "stored"
+    },
+    {
+      "id": "3-1",
+      "category": 3,
+      "x": 84,
+      "z": -9,
+      "state": "stored"
+    },
+    {
+      "id": "3-2",
+      "category": 3,
+      "x": 84,
+      "z": -6,
+      "state": "stored"
+    },
+    {
+      "id": "3-3",
+      "category": 3,
+      "x": 84,
+      "z": -3,
+      "state": "stored"
+    },
+    {
+      "id": "3-4",
+      "category": 3,
+      "x": 84,
+      "z": 0,
+      "state": "stored"
+    },
+    {
+      "id": "3-5",
+      "category": 3,
+      "x": 84,
+      "z": 3,
+      "state": "stored"
+    },
+    {
+      "id": "3-6",
+      "category": 3,
+      "x": 84,
+      "z": 6,
+      "state": "free"
+    },
+    {
+      "id": "3-7",
+      "category": 3,
+      "x": 84,
+      "z": 9,
+      "state": "free"
+    },
+    {
+      "id": "3-8",
+      "category": 3,
+      "x": 84,
+      "z": 12,
+      "state": "stored"
+    }
+  ],
+  "fleet": [
+    {
+      "id": 0,
+      "home": [
+        65,
+        0,
+        -21,
+        0
+      ],
+      "actor": "amr-0",
+      "fork": "amr-fork-0"
+    },
+    {
+      "id": 1,
+      "home": [
+        70,
+        0,
+        -21,
+        0
+      ],
+      "actor": "amr-1",
+      "fork": "amr-fork-1"
+    },
+    {
+      "id": 2,
+      "home": [
+        75,
+        0,
+        -21,
+        0
+      ],
+      "actor": "amr-2",
+      "fork": "amr-fork-2"
+    },
+    {
+      "id": 3,
+      "home": [
+        80,
+        0,
+        -21,
+        0
+      ],
+      "actor": "amr-3",
+      "fork": "amr-fork-3"
+    }
+  ],
+  "docks": [
+    {
+      "category": 0,
+      "z": 26
+    },
+    {
+      "category": 1,
+      "z": 34
+    },
+    {
+      "category": 2,
+      "z": 42
+    },
+    {
+      "category": 3,
+      "z": 50
+    }
+  ],
+  "orders": [
+    {
+      "id": "truck-0-1",
+      "category": 0,
+      "capacity": 8,
+      "loaded": 8,
+      "status": "shipped"
+    },
+    {
+      "id": "truck-1-1",
+      "category": 1,
+      "capacity": 8,
+      "loaded": 8,
+      "status": "shipped"
+    },
+    {
+      "id": "truck-2-1",
+      "category": 2,
+      "capacity": 8,
+      "loaded": 8,
+      "status": "shipped"
+    },
+    {
+      "id": "truck-3-1",
+      "category": 3,
+      "capacity": 8,
+      "loaded": 8,
+      "status": "shipped"
+    },
+    {
+      "id": "truck-0-2",
+      "category": 0,
+      "capacity": 8,
+      "loaded": 8,
+      "status": "shipped"
+    },
+    {
+      "id": "truck-0-3",
+      "category": 0,
+      "capacity": 8,
+      "loaded": 8,
+      "status": "shipped"
+    },
+    {
+      "id": "truck-3-2",
+      "category": 3,
+      "capacity": 8,
+      "loaded": 0,
+      "status": "awaiting stock"
+    },
+    {
+      "id": "truck-2-2",
+      "category": 2,
+      "capacity": 8,
+      "loaded": 0,
+      "status": "awaiting stock"
+    },
+    {
+      "id": "truck-1-2",
+      "category": 1,
+      "capacity": 8,
+      "loaded": 0,
+      "status": "awaiting stock"
+    },
+    {
+      "id": "truck-0-4",
+      "category": 0,
+      "capacity": 8,
+      "loaded": 8,
+      "status": "shipped"
+    },
+    {
+      "id": "truck-0-5",
+      "category": 0,
+      "capacity": 8,
+      "loaded": 8,
+      "status": "shipped"
+    },
+    {
+      "id": "truck-0-6",
+      "category": 0,
+      "capacity": 8,
+      "loaded": 0,
+      "status": "awaiting stock"
+    }
+  ],
+  "fleetReservations": 154,
+  "moduleControl": {
+    "pitchX": 0.08,
+    "pitchZ": 0.025,
+    "originX": 0.04,
+    "tick": 0.2,
+    "exclusive": true,
+    "requests": 50580,
+    "deferred": 19568,
+    "totalDelay": 40769.913888953524
+  },
+  "milestones": {
+    "firstProduced": 6898.318313339212,
+    "firstDelivered": 6954.738313339212,
+    "firstStored": 7107.323857306416,
+    "firstLoaded": 8329.101956169312,
+    "firstShipped": 9633.393367985442
+  },
+  "reference": "greenfield_37",
+  "referenceSha256": "699975328736402c8da79fce60c6423bbea461d52371ee17be9c58fa7bfacb6f",
+  "validationStatus": "unvalidated",
+  "evidenceKind": "source-model observations, not independent validation"
+}

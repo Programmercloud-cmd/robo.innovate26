@@ -1,0 +1,5 @@
+{
+  "ready": false,
+  "error": "SyntaxError: Unexpected end of JSON input\n    at JSON.parse (<anonymous>)\n    at Object.cached (file:///home/shadeform/workspace/greenfield37-prepared-1e3f8012.html:251:287)\n    at async rebuild (file:///home/shadeform/workspace/greenfield37-prepared-1e3f8012.html:485:359)",
+  "browserVersion": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+}
