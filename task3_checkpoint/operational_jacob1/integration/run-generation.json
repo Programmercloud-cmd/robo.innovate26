@@ -1,0 +1,13 @@
+{
+  "generated_from": "engine/operational-engine.js",
+  "geometrySha": "74a93f84df620df69fc66ba5ce95f8243554bb41fa3d8095fb3ad920b45e4249",
+  "engineSha": "157acac42aadc593b05896ebc09d9eb8382e892e0c654552d8ee0cdd645fb280",
+  "runSha": "aafacff6e73cba4f38bd815b1f0e7eabc240298ddeeaef60c2ba4d321a336284",
+  "duration": 203239.28112341504,
+  "recordCount": 28872,
+  "eventCount": 2251,
+  "palletCount": 18,
+  "layerCount": 252,
+  "elapsedSeconds": 3.439,
+  "bytes": 165709461
+}

@@ -1,0 +1,53 @@
+{
+  "version": "brickflow-operational-v1",
+  "url": "http://127.0.0.1:18745/viewer/",
+  "vm_url": "http://127.0.0.1:8745/viewer/",
+  "vm_project": "/home/shadeform/workspace/brickflow-live-simulation-20261028-v1",
+  "manifestSha256": "74a93f84df620df69fc66ba5ce95f8243554bb41fa3d8095fb3ad920b45e4249",
+  "engineSha256": "157acac42aadc593b05896ebc09d9eb8382e892e0c654552d8ee0cdd645fb280",
+  "auditedRunSha256": "aafacff6e73cba4f38bd815b1f0e7eabc240298ddeeaef60c2ba4d321a336284",
+  "new_generated_process": true,
+  "old_replay_loaded": false,
+  "original_replay_unchanged": true,
+  "old_replay_sha256": "f5cf831107f4909b249f8b073531309746c1604f20755b1167731d55b756df79",
+  "frozen_accepted_fields_unchanged": true,
+  "authorized_upstream_extension": "North-south kiln cart route,90degree loaded claw turn,explicit support tray",
+  "independent_run_checks": 30,
+  "geometry_checks": 15,
+  "negative_controls": 4,
+  "all_passed": true,
+  "browser_review": {
+    "startup_worker_generation": true,
+    "formation_39_of_40": true,
+    "both_buffers_40_plus_40": true,
+    "portal_event_playback_clock_advanced": true,
+    "completed_14_layers_560_bricks": true,
+    "finished_outfeed_pallet_visible": true,
+    "skip_stowed_upstream_stopped_belts_empty": true,
+    "loaded_claw_rotation_close_view": true,
+    "timeline_home_end_conservation": true,
+    "gantry_store_560_bricks_one_slot": true,
+    "portal_gantry_labels_use_actual_resource_owners": true
+  },
+  "scenario": {
+    "source_bricks": 28800,
+    "layers": 252,
+    "completed_pallets": 18,
+    "neighbor_transfers": 3366,
+    "skip_exchanges": 4,
+    "unreleased_on_cart": 17200,
+    "upstream_staged": 103,
+    "shipped_good": 10080,
+    "reject_removed": 1200,
+    "reject_in_skip": 217
+  },
+  "assumptions_document": "engine/ENGINE-NOTES.txt",
+  "not_validated": [
+    "rigid-body/contact dynamics",
+    "hardware load charts and drive forces",
+    "vehicle/hooklift swept paths",
+    "industrial safety qualification",
+    "production throughput"
+  ],
+  "compute": "Full integration/audit runs on dedicated Brev VM; lightweight development and scene checks on workstation."
+}

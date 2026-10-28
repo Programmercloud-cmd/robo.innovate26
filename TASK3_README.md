@@ -5,6 +5,23 @@ its recorded replay, frozen packaged source, review evidence, the latest local
 source, Unreal 37 exploration assets and updated NVIDIA VM handoff tools.
 Earlier checkpoints and the October 27 guide remain available.
 
+## Jacob operational simulation (`task3/jacob1`)
+
+The updated operational model is in [`task3_checkpoint/operational_jacob1`](task3_checkpoint/operational_jacob1/README.txt).
+It uses the accepted shared geometry, north–south kiln-cart track and loaded
+90° claw turn, revised routing/rejection, 40-brick layers, two-position buffers,
+560-brick pallet wells, frozen shared storage and dispatch Option A. It computes
+new process trajectories; the Greenfield 37 replay below remains unchanged.
+
+```bash
+python3 task3_checkpoint/operational_jacob1/server.py --port 8745
+```
+
+Open <http://127.0.0.1:8745/viewer/>. Playback, scrubbing, camera presets, event
+jumps and station/material counts are included. The package contains independent
+validation results and reproducible checks. It is a kinematic commissioning
+model with explicit hardware and timing assumptions, not validated throughput.
+
 ## Open the completed revision 37 package
 
 From the repository root with Python 3.10 or newer:

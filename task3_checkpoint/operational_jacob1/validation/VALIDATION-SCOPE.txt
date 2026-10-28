@@ -1,0 +1,40 @@
+INDEPENDENT VALIDATION SCOPE — UPDATED OPERATIONAL MODEL
+
+The accepted geometry manifest is immutable. The audit derives product membership,
+resource occupancy, temporal order and supported routes from the newly generated
+run. The old revision37 replay is a read-only reference and is not a data source
+for the new timeline.
+
+Tests target the requested chain: receiving/routing, forty-brick compact layer,
+two explicit roller-buffer positions, one portal per lane, fourteen ordered
+layers per pallet, descending pallet support, completed-pallet outfeed, one
+reserved gantry transfer into a canonical shared-storage slot. Resource conflicts
+are checked from intervals, and buffers are also reconstructed from layer times.
+
+Material conservation is identity-based. Every brick begins in finite source
+inventory and stays in exactly one ledger state, including rejected material in
+the skip and rejected material removed during exchange. Complete pallets have
+exactly560 unique good IDs and fourteen forty-ID layers, with no reuse across
+layers or pallets. Pure-colour packs and mixed three-dimensional no-three-equal
+recipes are checked from actual record colours.
+
+Supported route checks sample full horizontal brick footprint against the union
+of the continuous upstream bridge and the lane decks. Cross-module motion must
+use the supported upstream datum. This is a geometric support screen, not proof
+of contact/friction/acceleration, cell actuation, structural capacity or industrial
+safety qualification. Stationary gap handling and support datums need explicit
+motion assumptions; the pallet contact top is wood actor origin +0.060m.
+
+Skip exchange must stop upstream admission, drain material to the receiving body,
+raise and stow the discharge head, then exchange the body. Full-body counts remain
+in removed-reject accounting. The demonstration skip threshold is an explicit
+simulation parameter rather than a claim of the actual10m3 body's capacity.
+
+The warehouse slots, four access aisles, three cross aisles, gantry and adopted
+OptionA geometry stay frozen. Warehouse/forklift motion needs route and resource
+reservations; a path reservation is not qualification of a selected vehicle's
+real swept path, load centre, traction or payload.
+
+Negative controls intentionally duplicate a layer brick, overlap exclusive zone
+owners, reverse pallet layer order and duplicate ledger material. Each injected
+fault must be rejected by the independent auditor while the original run passes.

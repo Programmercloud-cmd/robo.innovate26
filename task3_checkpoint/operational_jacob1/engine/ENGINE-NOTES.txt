@@ -1,0 +1,115 @@
+BRICKFLOW OPERATIONAL ENGINE — V1
+28 October 2026
+
+API
+engine/operational-engine.js exports OperationalEngine in a browser and the same
+object through CommonJS. createRun(geometryManifest, options) computes a NEW,
+serializable deterministic event trace. sample(run, time) reconstructs entities,
+station counts, active resource owners, skip state and material accounting at
+any time. The old replay is neither loaded nor translated.
+
+The authoritative shared manifest is ../geometry-manifest.json. Pass its actual
+SHA256 as options.manifestSha. Current manifest SHA256:
+74a93f84df620df69fc66ba5ce95f8243554bb41fa3d8095fb3ad920b45e4249
+Frozen routing, layer beds, wells, shared storage, aisles and dispatch are used
+at their accepted coordinates. The only later source change is the authorized
+north/south kiln-cart track and 90-degree loaded-claw turn, including the
+7.2m planning support tray for the rotated 6.98m stack footprint.
+
+DEFAULT BOUNDED COMMISSIONING RUN
+Seed8; one pallet per each of eighteen stations; 28,800 physical source bricks.
+11,497 bricks reach inspection; 10,080 good bricks form252 layers and18 pallets.
+1,417 rejects travel through the new channels, collector, incline and head.
+Four isolated skip exchanges remove1,200 rejects;217 remain in the final skip.
+3,366 good bricks transfer between the declared paired neighboring modules.
+All18 completed pallets reach shared storage, handoff, both sides of one active
+Option-A truck and the secured departure. The reserve bay remains unused.
+At the run end17,200 bricks remain on the partly loaded kiln cart and103 remain
+in physical upstream staging. The cart is consequently NOT sent to an empty
+exit. All28,800 IDs remain in the material ledger.
+
+Simulated duration is approximately203,240seconds in a deliberately conservative review
+schedule, not measured production throughput. Browser playback/event jumps are
+intended for inspection. Generation takes roughly0.4seconds in the local
+lightweight correctness check; use browser generation rather than downloading
+the159MiB uncompressed audit trace when possible.
+
+The explicit lane1 commissioning portal hold lasts until9000seconds. Both
+40-brick layer-buffer positions are genuinely occupied at4426.147786seconds;
+portal release at9000 permits transfer. The next completed layer waits on its
+formation bed while buffer A is occupied. Admission to the routing field is
+inhibited by that former reservation: the router never becomes a storage bank.
+Events buffers-full, formation-blocked and downstream-hold-release expose this
+backpressure scenario. It is a controller test, not production downtime data.
+
+PROCESS IMPLEMENTATION
+- Finite cart arrives from north on Z, retaining every source ID. A serialized
+ 40-brick claw lifts the top available layer, rotates the LOADED layer90degrees
+ during its high transfer, and places it on the unchanged loading station.
+ Main-belt travel and ten-brick row extraction precede single-brick feed and
+ supported rotation into inspection. This simplifies36 simultaneous heads to
+ one source claw and one row head per lane; simultaneous tooling clearance is
+ not claimed. Rigid interpolation preserves layer geometry during rotation.
+- Dual-view inspection is followed by reserved supported routes. Neighbor
+ crossing occurs only at the intact upstream bridge X23.5125. The downstream
+ fanout stays in the selected lane, outside the lower reject opening and cap.
+ One brick owns each paired routing resource conservatively. A receiving slot
+ and former capacity exist before release. There is no in-field waiting bank.
+- Formation receives four rows of ten, closes the gaps on the powered field,
+ then transfers a complete40-brick layer into positions36.835 and38.335.
+ FIFO capacities and one shared portal per lane enforce occupied-zone holds.
+ Retention gates remain lowered while the first layer position intersects them.
+- The portal grips, raises and carries the complete layer to its descending
+ well. Each placement is followed by an indexed0.069m lowering. Fourteen layers
+ make exactly560 unique good bricks; completed wood datum0.224 finishes with
+ runner bottom0.164 on the outfeed rollers. Pallet deck top is wood datum+0.060. Storage/handoff wood datum is0.060 on the floor.
+- A single supported gantry transfer reserves a canonical shared-storage slot.
+ The warehouse forklift follows the accepted working and cross aisles, with
+ explicit loaded turns. One dedicated loader uses both exposed truck sides,
+ placing each near row with a constant1.4m chassis-to-load-center offset.
+ It crosses around the truck via the north connection before eastern loading.
+ Cargo never jumps laterally from a stationary loader across a far truck row.
+- Reject movement follows the chamfer, lower branch, common collector, incline
+ and discharge head. Conservative pair/collector reservations prevent a second
+ reject occupying a waiting branch. Dropped IDs become tracked bulk inventory
+ in the installed skip, rather than fake whole-brick trajectories inside rubble.
+ The300-brick exchange threshold is a SMALL DEMO LIMIT, not nominal10m3 capacity.
+ Upstream release stops, admitted material clears, the head lifts0.5m before
+ swinging west, body inventory is removed into a retained ledger, an empty body
+ is positioned, then the raised head returns and lowers before release resumes.
+
+PRESERVED COLOR RULES
+Mixed lane recipes use (row+column+layer)%3, a valid version of the original
+no-three-identical-neighbors requirement in all three grid directions.
+The paired pure-color lane has Warm, Copper and Russet formers. Source inventory
+colors are chosen by the deterministic commissioning request schedule, with
+seeded reject decisions; this is an explicit demand-paced inventory assumption,
+not a claim to reproduce old random-source yield or old output brick IDs.
+
+ENTITY CONVENTIONS
+Brick pose is geometric center [X,Y,Z,yaw]. Pallet pose is a wood datum with
+support top+0.060 and runner bottom-0.060. WellDeck poseY is its support top.
+Layer tool body bottom contacts the top of its held layer. Forklift pose is the
+chassis center; load center is+1.4 localX. sample returns cargoPalletId and
+forkTopY=wood datum+0.025 for fork contact under the deck in the two runner
+channels. Fork top at0.085 on a ground-supported pallet clears the floor;
+it does not treat the runner bottom as the fork-bearing interface. Truck-active starts at the accepted
+bay1 pose and moves south only after loaders clear and timed stationary securing.
+
+VALIDATION AND LIMITS
+Root's independent validation/audit-run.cjs reconstructs material ownership,
+layer/pallet grouping, recipe constraints, transfer support and temporal zone
+reservations. The current VM run passes30 check groups and four mutation-based
+negative controls (see ../validation/). This is stronger than the engine's own
+internal guards and was performed by a separate validation agent.
+
+The engine does not solve rigid-body contact, friction, acceleration, claw force,
+impact, dust, actual forklift load charts, steering/turning radius, hooklift
+vehicle trajectories, structural spans or actuator drive design. Packs are
+assumed unitized before handling. Fork/gantry representations are planning
+interfaces. Storage/handoff resting support uses the factory floor atY0, with wood datum
+0.060 and runner bottom0. This operational support-height assumption resolves
+canonical support_y_m=null without changing any frozen slot or aisle geometry.
+Outfeed retains wood datum0.224 on the0.164m rollers.
+The source serialized schedule and initial portal hold are review scenarios.
+The skip exchange is a logical isolated sequence, not simulated hooklift dynamics.

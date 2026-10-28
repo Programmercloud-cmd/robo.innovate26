@@ -1,0 +1,10 @@
+{
+  "method": "Actual authored scene constructors with no-op WebGL renderer; lightweight no-GPU check",
+  "passed": true,
+  "storageSlots": 128,
+  "inspectionCameras": 12,
+  "staticProductMeshes": 0,
+  "defaultProcessCoversHidden": true,
+  "defaultOverheadHidden": true,
+  "canonicalSha256": "74a93f84df620df69fc66ba5ce95f8243554bb41fa3d8095fb3ad920b45e4249"
+}

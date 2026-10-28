@@ -1,0 +1,97 @@
+{
+  "method": "Independent exact frozen geometry and scalar support checks; not contact or vehicle qualification",
+  "canonical_sha256": "74a93f84df620df69fc66ba5ce95f8243554bb41fa3d8095fb3ad920b45e4249",
+  "prior_accepted_sha256": "9f02d80f5de07d4e17d20fa9f4c21220ce3c0e27a498156b11a4134d137491de",
+  "check_count": 15,
+  "passed": true,
+  "checks": [
+    {
+      "name": "frozen subset exact: routing",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "frozen subset exact: formation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "frozen subset exact: reject_system",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "frozen subset exact: storage",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "frozen subset exact: gantry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "frozen subset exact: adopted_dispatch",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "frozen subset exact: clear_dispatch_spine",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "two compact layers fit two-position bed",
+      "passed": true,
+      "detail": {
+        "centres": [
+          36.835,
+          38.335
+        ],
+        "layer_length_m": 0.98
+      }
+    },
+    {
+      "name": "compact layer fits formation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "finished pallet fits pickup rollers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fourteen descending steps reach outfeed pallet datum",
+      "passed": true,
+      "detail": {
+        "pallet_origin_initial_m": 1.19,
+        "origin_final_m": 0.224,
+        "support_top_offset_m": 0.06
+      }
+    },
+    {
+      "name": "cross-module path clears upstream cap",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "outermost receiving column clears lane deck",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "128 unique frozen storage positions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rotated kiln-cart layers fit effective support width",
+      "passed": true,
+      "detail": {
+        "required_x_m": 6.98,
+        "effective_support_x_m": 7.2
+      }
+    }
+  ]
+}

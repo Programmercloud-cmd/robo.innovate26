@@ -1,0 +1,21 @@
+{
+  "status": "loaded-claw rotation jump frames the actual midpoint pose; broad cart preset expanded",
+  "files": {
+    "reject-meshes.js": "3e7d881ee6ccbf293700d9ece333d793bf5c158381e10b92957f15294a9395a1",
+    "operational-viewer.js": "f8fdf97413613002051e124ad91ed2d670a5088129c69f855357a49b7c1ac995",
+    "layout-config.js": "6634ee2eebf45f63a3f819be4e34a66b3d920c3fc6bf4d6082e9b59431aab662",
+    "README.txt": "ed262afc8f7db903ae894fbd54215f702c71eba2edd4308bdeccf60fdffaf679",
+    "verify_shell.cjs": "cbcf3823cc2718fd910760ae3a317e35f7c34a7fa02f2e12ac60f15d8c259fd6",
+    "dispatch-geometry.js": "0505ba2ab3c2a68f7ed66bf8104c0ff9286097d4dc1022ac395e03d435e88878",
+    "baseline-config.json": "d0a0c0bd78856c30491d1e3181b70df4dcfa30f275ca8f0abc5dd7fd6bb19c12",
+    "simulation-worker.js": "6eb58e71e326d2e1675a3c1095333cee078e14f155d7b78bbbadbdbfc5bfb109",
+    "build_config.py": "6014c9ae4d4177b02b6eb6b8f32fb56cb096619d570c4e446d58e41d02cd6e24",
+    "viewer.css": "e78731fdcfeea63eba0fb55d54a0993fbb9e9515e0d17adf7d946cce463c51f2",
+    "shell-verification.json": "568c4378520fbe21404369a1285e38bd8b665667fbd56da0d3b5e8d1c23a5f03",
+    "static-shell.js": "8d5b8970b9798bb306a9becc33b5cc677a9f0cd52fd123c386ddb10ff14fff43",
+    "reject-service-geometry.js": "2cca56b0e2f1a044ca428158cdbb17d80798205d06e633b04704395b5c2fbf4a",
+    "index.html": "e80868bad2282339257f4850b7006b851ff889e396a638248232cde834535788",
+    "vendor/three.min.js": "170c6789f43217c96b3170f4b42fafe135de7f7cd48497a4218f9757ee1d49fa",
+    "vendor/THREE-LICENSE": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d"
+  }
+}
