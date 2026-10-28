@@ -51,6 +51,14 @@ and known issues remain under `task3_checkpoint/greenfield_36/audit/`.
 See `docs/task3_handoff_20261027.md` for the prior guide and
 `docs/task3_revision14_handoff.md` for the original SimPy checkpoint.
 
+## Jacob VM: current model installed
+
+The completed revision 37 package and editable source snapshot from commit
+`5661f11` are installed at `~/workspace/brickflow-final-model/` on
+`brickflow-cinematic-jacob-4gpu`. See `docs/jacob_final_model.md` for the
+Brev tunnel command, local demo URL and verification scope. This is the
+browser model deployment; it does not complete a native Unreal 37 port.
+
 ## Unreal and NVIDIA VM
 
 Start with `unreal/README.md`, `docs/unreal_native_goal.md`,

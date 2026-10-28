@@ -1,0 +1,30 @@
+{
+  "verified": true,
+  "instance": "brickflow-cinematic-jacob-4gpu",
+  "instanceId": "f9firmbdt",
+  "handoffCommit": "5661f111d3b1895db16972cf8ed2cf520e9db0a1",
+  "path": "/home/shadeform/workspace/brickflow-final-model-5661f11",
+  "stablePath": "/home/shadeform/workspace/brickflow-final-model",
+  "fileHashesVerified": 483,
+  "browserStartup": {
+    "ready": true,
+    "error": null,
+    "counters": {
+      "totalInput": 57600,
+      "inspected": 57600,
+      "rejected": 6936,
+      "produced": 82,
+      "stored": 82,
+      "loaded": 64,
+      "shipped": 64,
+      "total": 20824.472537276753
+    }
+  },
+  "localUrl": "http://127.0.0.1:8737/index.html",
+  "serverPid": 120782,
+  "recordedReplayFingerprint": "ccaf03c52e40aaca",
+  "editableSourceMatchesReplay": false,
+  "nativePortComplete": false,
+  "visualValidationPerformed": false,
+  "scope": "Copied frozen handoff, checked all file hashes and JavaScript syntax, extracted HTML and confirmed recorded replay initialization in Chromium. Browser animation disabled for startup test. Existing native Unreal builds and camera projects were preserved. No new full run of later editable source and no native 37 port."
+}
