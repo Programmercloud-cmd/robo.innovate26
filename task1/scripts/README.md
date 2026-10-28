@@ -166,10 +166,10 @@ Hackathon dataset annotation:
   crops and relative lightness) and network retraining after each calibration. Opens in
   presentation view (video, counters, one card per brick with its classifier crop, P(good)
   against the 50 % threshold and votes x/15, the last 12 decided bricks, the pipeline with
-  timings); bricks are numbered #1, #2, ... per session (reset starts again at 1), a big
-  verdict pops up when a brick is decided and a 3-step guide shows while the table is
-  empty. The Present button, key `p` or `/#present` hides the technical details (full
-  screen, dark); the Operator button, key `o` or `/#operator` shows the controls.
+  timings, a status panel with the newest verdict and the session totals); bricks are
+  numbered #1, #2, ... per session (reset starts again at 1) and a 3-step guide shows while
+  the table is empty. The Present button, key `p` or `/#present` goes full screen without
+  the operator controls; the Operator button, key `o` or `/#operator` shows the controls.
   "Set area" there keeps only the bricks whose center is inside a rectangle drawn over
   the table and zooms the video to it (saved in `outputs2/demo_roi.json`, `--no-roi`
   ignores it); detection still runs on the whole frame, so the area does not change the

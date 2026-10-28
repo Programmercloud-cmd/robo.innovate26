@@ -149,74 +149,98 @@ PAGE = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Brick Classifier</title>
 <style>
-:root { --bg:#f4f3ef; --panel:#ffffff; --raised:#faf9f6; --ink:#1d1c1a; --muted:#6b6a65; --line:#e3e1db;
-        --good:#2a78d6; --bad:#eb6834; --pending:#8f8d86; --ok:#2f9e6a; --warn:#c99a2e; --accent:#1d1c1a; }
-@media (prefers-color-scheme: dark) {
-  :root { --bg:#0f0f0e; --panel:#1a1918; --raised:#22211f; --ink:#f1efe9; --muted:#a3a19a; --line:#2f2d2a;
-          --good:#4a90e2; --bad:#f07a4a; --accent:#f1efe9; } }
+:root { --bg:#121417; --panel:#1a1d21; --raised:#20242a; --ink:#e6e8eb; --muted:#8b929b; --line:#2b3037;
+        --good:#4a8fe7; --bad:#e8733f; --pending:#6b737d; --ok:#3fb47a; --warn:#d9a53a; --accent:#e6e8eb; color-scheme:dark; }
 * { box-sizing:border-box; }
-body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
-header { display:flex; align-items:center; gap:16px; flex-wrap:wrap; padding:14px 24px; border-bottom:1px solid var(--line); }
+body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.45 "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+       font-variant-numeric:tabular-nums; }
+header { display:flex; align-items:center; gap:20px; flex-wrap:wrap; padding:14px 24px; border-bottom:1px solid var(--line); }
 .brand { display:flex; align-items:center; gap:12px; margin-right:auto; }
-.mark { width:34px; height:22px; border-radius:4px; background:linear-gradient(90deg, var(--bad) 0 50%, var(--good) 50% 100%); }
-.brand h1 { margin:0; font-size:21px; letter-spacing:-.01em; } .brand p { margin:0; color:var(--muted); font-size:13px; }
-.pills { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
-.pill { display:inline-flex; align-items:center; gap:6px; padding:5px 11px; border-radius:999px; border:1px solid var(--line);
-        background:var(--panel); font-size:13px; font-variant-numeric:tabular-nums; white-space:nowrap; }
-.pill .dot { width:8px; height:8px; border-radius:50%; background:var(--pending); }
-.pill.live .dot { background:#e5484d; animation:blink 1.6s infinite; } .pill.ok .dot { background:var(--ok); }
-.pill.warn .dot { background:var(--warn); } .pill.bad { color:var(--bad); border-color:var(--bad); } .pill.bad .dot { background:var(--bad); }
-@keyframes blink { 50% { opacity:.25; } }
+.mark { width:14px; height:28px; border-radius:2px; background:#b4532a; }
+.brand h1 { margin:0; font-size:19px; font-weight:600; }
+.brand p { margin:0; color:var(--muted); font-size:13px; }
+.status { display:flex; align-items:center; flex-wrap:wrap; color:var(--muted); font-size:13px; }
+.stat { display:inline-flex; align-items:center; gap:7px; padding:0 14px; border-left:1px solid var(--line); white-space:nowrap; }
+.stat:first-child { border-left:0; }
+.stat i { width:7px; height:7px; border-radius:50%; background:var(--pending); }
+.stat.live i, .stat.ok i { background:var(--ok); } .stat.warn i { background:var(--warn); }
+.stat.bad i { background:var(--bad); } .stat.bad { color:var(--bad); }
+.actions { display:flex; gap:8px; }
 main { display:grid; grid-template-columns:minmax(0,1fr) 360px; gap:20px; padding:20px 24px; }
-@media (max-width:1000px) { main { grid-template-columns:1fr; } }
-.stage { min-width:0; }
-.video { position:relative; background:#000; border-radius:12px; overflow:hidden; }
-.video img { width:100%; max-height:calc(100vh - 200px); object-fit:contain; display:block; }
+@media (max-width:1100px) { main { grid-template-columns:1fr; } }
+.stage { min-width:0; display:flex; flex-direction:column; gap:14px; }
+.side { display:flex; flex-direction:column; gap:16px; min-width:0; }
+.panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:16px; }
+h2 { margin:0 0 12px; font-size:12px; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; }
+.video { position:relative; background:#000; border-radius:8px; overflow:hidden; border:1px solid var(--line); }
+.video img { width:100%; max-height:max(320px, calc(100vh - 380px)); object-fit:contain; display:block; }
 #roilayer { position:absolute; inset:0; cursor:crosshair; display:none; }
 body.roiedit #roilayer { display:block; }
 #roibox { position:absolute; border:2px dashed #fff; background:rgba(255,255,255,.12); display:none; }
 #roihint { position:absolute; left:12px; bottom:12px; background:rgba(20,20,20,.85); color:#fff; padding:6px 10px;
-           border-radius:6px; font-size:13px; }
-.flow { display:flex; gap:6px; flex-wrap:wrap; align-items:stretch; margin-top:14px; }
-.step { flex:1 1 120px; background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:8px 10px; min-width:0; }
-.step b { display:block; font-size:13px; } .step span { color:var(--muted); font-size:12px; font-variant-numeric:tabular-nums; }
-.arrow { align-self:center; color:var(--muted); }
-.side { display:flex; flex-direction:column; gap:16px; min-width:0; }
-.panel { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px; }
-.panel h2 { margin:0 0 12px; font-size:13px; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
-.counts { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-.count { border-radius:10px; padding:14px 16px; background:var(--raised); border:1px solid var(--line); border-top:4px solid; }
-.count.good { border-top-color:var(--good); } .count.bad { border-top-color:var(--bad); }
-.count small { font-size:13px; font-weight:600; letter-spacing:.06em; }
-.count.good small { color:var(--good); } .count.bad small { color:var(--bad); }
-.count b { display:block; font-size:64px; line-height:1; margin-top:6px; font-variant-numeric:tabular-nums; }
-.totals { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-top:12px; color:var(--muted); font-size:13px; }
-.totals b { color:var(--ink); font-variant-numeric:tabular-nums; }
-.bricks { display:flex; flex-direction:column; gap:8px; max-height:52vh; overflow:auto; }
-.empty { color:var(--muted); font-size:14px; padding:6px 0; }
-.card { display:grid; grid-template-columns:112px 1fr; gap:12px; align-items:center; padding:8px; border-radius:8px;
-        background:var(--raised); border:1px solid var(--line); border-left:4px solid var(--pending); }
+           border-radius:4px; font-size:13px; }
+#guide { position:absolute; left:0; right:0; bottom:0; display:none; justify-content:center; gap:28px; flex-wrap:wrap;
+         padding:12px 16px; background:rgba(18,20,23,.82); color:#e6e8eb; font-size:15px; pointer-events:none; }
+body.idle:not(.roiedit) #guide { display:flex; }
+#guide b { color:var(--muted); font-weight:600; margin-right:6px; }
+#guide .g { color:var(--good); font-weight:600; } #guide .b { color:var(--bad); font-weight:600; }
+.flow { display:flex; flex-wrap:wrap; gap:6px 0; color:var(--muted); font-size:13px; }
+.step { padding:0 14px; border-left:1px solid var(--line); min-width:0; }
+.step:first-child { padding-left:0; border-left:0; }
+.step b { color:var(--ink); font-weight:600; margin-right:6px; }
+.sechead { display:flex; justify-content:space-between; align-items:baseline; }
+.sechead h2 { margin:0; } .sechead small { font-size:12px; }
+.history { display:flex; gap:8px; overflow-x:auto; padding:2px 0 4px; min-height:40px; margin-top:10px; }
+.hist { flex:0 0 auto; width:100px; border-radius:6px; overflow:hidden; background:var(--panel); border:1px solid var(--line); font-size:12px; }
+.hist img, .hist .noimg { width:100%; height:58px; object-fit:cover; display:block; background:#4a525b; }
+.hist div { padding:5px 8px 6px; border-top:3px solid var(--pending); }
+.hist.good div { border-top-color:var(--good); } .hist.bad div { border-top-color:var(--bad); }
+.hist b { display:flex; justify-content:space-between; font-weight:600; } .hist.good b { color:var(--good); } .hist.bad b { color:var(--bad); }
+.hist b em { font-style:normal; font-weight:400; color:var(--muted); }
+.hist span { color:var(--muted); display:block; }
+.hist.live { border-color:var(--muted); }
+.verdict { background:var(--panel); border:1px solid var(--line); border-left:5px solid var(--pending); border-radius:8px; padding:16px 18px; }
+.verdict.good { border-left-color:var(--good); } .verdict.bad { border-left-color:var(--bad); }
+.verdict .big { font-size:52px; font-weight:700; line-height:1.05; }
+.verdict.good .big { color:var(--good); } .verdict.bad .big { color:var(--bad); } .verdict.ready .big { color:var(--muted); font-size:36px; }
+.verdict .what { font-size:16px; font-weight:600; margin-top:4px; }
+.verdict .sub { color:var(--muted); font-size:13px; margin-top:2px; }
+.kpis { display:grid; grid-template-columns:repeat(4, 1fr); border:1px solid var(--line); border-radius:6px; }
+.kpi { padding:10px 12px; border-left:1px solid var(--line); min-width:0; }
+.kpi:first-child { border-left:0; }
+.kpi small { display:block; font-size:12px; color:var(--muted); }
+.kpi b { display:block; font-size:28px; font-weight:600; line-height:1.2; }
+.kpi.good b { color:var(--good); } .kpi.bad b { color:var(--bad); }
+.totals { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-top:10px; color:var(--muted); font-size:13px; }
+.totals b { color:var(--ink); font-weight:600; }
+.bricks { display:flex; flex-direction:column; gap:8px; max-height:40vh; overflow:auto; }
+.empty { color:var(--muted); font-size:13.5px; padding:4px 0; }
+.card { display:grid; grid-template-columns:96px 1fr; gap:12px; align-items:center; padding:8px; border-radius:6px;
+        background:var(--raised); border:1px solid var(--line); border-left:3px solid var(--pending); }
 .card.good { border-left-color:var(--good); } .card.bad { border-left-color:var(--bad); }
-.card img, .card .noimg { width:112px; height:56px; border-radius:6px; background:#727272; object-fit:cover; display:block; }
+.card img, .card .noimg { width:96px; height:54px; border-radius:4px; background:#4a525b; object-fit:cover; display:block; }
 .card .top { display:flex; justify-content:space-between; align-items:baseline; gap:8px; }
-.tag { font-weight:700; letter-spacing:.04em; } .tag.good { color:var(--good); } .tag.bad { color:var(--bad); } .tag.pending { color:var(--muted); }
-.card .id { color:var(--muted); font-size:13px; font-variant-numeric:tabular-nums; }
-.bar { position:relative; height:6px; border-radius:3px; background:var(--line); margin:7px 0 4px; overflow:hidden; }
-.bar i { position:absolute; inset:0 auto 0 0; background:var(--good); border-radius:3px; }
-.bar.bad i { background:var(--bad); }
-.card .meta { color:var(--muted); font-size:12px; font-variant-numeric:tabular-nums; }
-button, select { background:transparent; color:var(--ink); border:1px solid var(--line); border-radius:6px;
-                 padding:6px 10px; cursor:pointer; font:inherit; font-size:14px; }
+.tag { font-weight:700; font-size:14px; } .tag.good { color:var(--good); } .tag.bad { color:var(--bad); } .tag.pending { color:var(--muted); }
+.card .id { color:var(--muted); font-size:12.5px; }
+.bar { position:relative; height:5px; border-radius:3px; background:var(--line); margin:7px 0 5px; overflow:hidden; }
+.bar i { position:absolute; inset:0 auto 0 0; background:var(--good); }
+.bar u { position:absolute; left:50%; top:0; bottom:0; width:2px; margin-left:-1px; background:var(--ink); opacity:.6; }
+.bar.p { background:rgba(232,115,63,.45); } .bar.p i { background:var(--good); }
+.card .meta { color:var(--muted); font-size:12px; }
+.vbar { height:2px; background:var(--line); margin-top:5px; overflow:hidden; }
+.vbar i { display:block; height:100%; background:var(--muted); }
+button, select { background:var(--raised); color:var(--ink); border:1px solid var(--line); border-radius:6px;
+                 padding:6px 12px; cursor:pointer; font:inherit; font-size:13.5px; }
 button:hover { border-color:var(--muted); }
-button.primary { background:var(--accent); color:var(--bg); border-color:var(--accent); }
+button.primary { background:var(--ink); color:var(--bg); border-color:var(--ink); }
 button:disabled { opacity:.45; cursor:default; }
 button.on-good { background:var(--good); color:#fff; border-color:var(--good); }
 button.on-bad { background:var(--bad); color:#fff; border-color:var(--bad); }
 button.on-skip { background:var(--muted); color:var(--bg); border-color:var(--muted); }
-button.link { border:none; padding:2px 4px; color:var(--muted); text-decoration:underline; font-size:13px; }
+button.link { border:none; background:none; padding:2px 4px; color:var(--muted); text-decoration:underline; font-size:12.5px; }
 #operator { display:none; grid-template-columns:repeat(3, minmax(0,1fr)); gap:20px; padding:0 24px 24px; }
 body.operator #operator { display:grid; }
-@media (max-width:1000px) { #operator { grid-template-columns:1fr; } }
+@media (max-width:1100px) { #operator { grid-template-columns:1fr; } }
 .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:8px 0; }
 select { flex:1; min-width:0; }
 #snap { width:100%; border-radius:6px; margin:8px 0; display:block; }
@@ -226,104 +250,74 @@ small, .muted { color:var(--muted); } #ref { overflow-wrap:anywhere; }
 .ctls { display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:12px 24px; margin:12px 0; }
 .ctl { display:grid; grid-template-columns:1fr auto; gap:4px 8px; align-items:center; }
 .ctl label { font-size:13px; text-transform:capitalize; } .ctl input[type=range], .ctl small { grid-column:1 / -1; }
-.ctl input[type=range] { width:100%; } .ctl.off { opacity:.5; } .ctl select { min-width:0; }
-.num { font-size:13px; color:var(--muted); font-variant-numeric:tabular-nums; }
+.ctl input[type=range] { width:100%; accent-color:var(--good); } .ctl.off { opacity:.5; } .ctl select { min-width:0; }
+.num { font-size:12.5px; color:var(--muted); }
 .msg { margin:8px 0 0; min-height:1.4em; } .msg.warn { color:var(--bad); }
-.light { padding:8px 10px; border-radius:6px; border:1px solid var(--line); margin-top:10px; }
-.light b { font-variant-numeric:tabular-nums; } .light.warn { border-color:var(--warn); } .light.bad { border-color:var(--bad); color:var(--bad); }
-kbd { font:12px ui-monospace, monospace; border:1px solid var(--line); border-radius:4px; padding:0 4px; }
-.vbar { height:3px; border-radius:2px; background:var(--line); margin-top:5px; overflow:hidden; }
-.vbar i { display:block; height:100%; background:var(--muted); }
-.bar u { position:absolute; left:50%; top:-2px; bottom:-2px; width:2px; margin-left:-1px; background:var(--ink); opacity:.55; }
-.bar.p { background:color-mix(in srgb, var(--bad) 35%, var(--line)); } .bar.p i { background:var(--good); }
-#guide { position:absolute; left:50%; bottom:22px; transform:translateX(-50%); display:none; gap:10px;
-         width:max-content; max-width:calc(100% - 32px); flex-wrap:wrap; justify-content:center; pointer-events:none; }
-body.idle:not(.roiedit) #guide { display:flex; }
-.gstep { display:flex; align-items:center; gap:10px; padding:10px 16px 10px 10px; border-radius:12px;
-         background:rgba(15,15,14,.82); color:#fff; font-size:16px; backdrop-filter:blur(4px); }
-.gstep b { display:grid; place-items:center; width:30px; height:30px; border-radius:50%; background:#fff; color:#111; font-size:15px; }
-.gstep .g { color:#7fb2ee; font-weight:700; } .gstep .b { color:#f5a07c; font-weight:700; }
-#toast { position:absolute; top:16px; right:16px; display:flex; gap:14px; align-items:center; padding:12px 18px 12px 12px;
-         border-radius:14px; background:rgba(15,15,14,.9); color:#fff; border:3px solid var(--pending);
-         transform:translateY(-12px) scale(.92); opacity:0; transition:opacity .25s, transform .25s; pointer-events:none; }
-#toast.show { opacity:1; transform:none; }
-#toast.good { border-color:var(--good); box-shadow:0 0 0 6px color-mix(in srgb, var(--good) 35%, transparent); }
-#toast.bad { border-color:var(--bad); box-shadow:0 0 0 6px color-mix(in srgb, var(--bad) 35%, transparent); }
-#toast img { width:84px; height:84px; border-radius:8px; object-fit:cover; background:#727272; }
-#toast .verdict { font-size:44px; font-weight:800; line-height:1; letter-spacing:.02em; }
-#toast.good .verdict { color:#7fb2ee; } #toast.bad .verdict { color:#f5a07c; }
-#toast .sub { font-size:15px; opacity:.85; margin-top:4px; font-variant-numeric:tabular-nums; }
-.history { display:flex; gap:8px; overflow-x:auto; padding:2px 0 4px; margin-top:14px; min-height:40px; }
-.hist { flex:0 0 auto; width:84px; border-radius:8px; overflow:hidden; background:var(--panel); border:1px solid var(--line);
-        border-bottom:4px solid var(--pending); font-size:12px; text-align:center; font-variant-numeric:tabular-nums; }
-.hist.good { border-bottom-color:var(--good); } .hist.bad { border-bottom-color:var(--bad); }
-.hist img, .hist .noimg { width:100%; height:56px; object-fit:cover; display:block; background:#727272; }
-.hist b { display:block; padding-top:3px; } .hist.good b { color:var(--good); } .hist.bad b { color:var(--bad); }
-.hist span { color:var(--muted); display:block; padding-bottom:3px; }
-.hist.live { box-shadow:0 0 0 2px var(--ink) inset; }
-.sechead { display:flex; justify-content:space-between; align-items:baseline; margin-top:14px; }
-.sechead h2 { margin:0; font-size:13px; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
-.split { display:flex; height:8px; border-radius:4px; overflow:hidden; background:var(--line); margin-top:10px; }
-.split i { background:var(--good); } .split u { background:var(--bad); }
-/* Presentation mode (key p): big video and counts, no technical details, dark for projectors. */
-body.present { --bg:#0b0b0a; --panel:#171615; --raised:#1f1e1c; --ink:#f4f2ec; --muted:#a3a19a; --line:#2f2d2a;
-               --good:#4a90e2; --bad:#f07a4a; --accent:#f4f2ec; font-size:17px; }
-body.present .pills > :not(#livepill):not(#presentbtn), body.present .flow, body.present #operator,
-body.present .totals .link { display:none !important; }
-body.present .brand h1 { font-size:30px; } body.present .brand p { font-size:15px; }
+.light { padding:8px 10px; border-radius:6px; border:1px solid var(--line); margin-top:10px; background:var(--raised); }
+.light.warn { border-color:var(--warn); } .light.bad { border-color:var(--bad); color:var(--bad); }
+kbd { font:12px ui-monospace, Consolas, monospace; border:1px solid var(--line); border-radius:4px; padding:0 4px; }
+/* Presentation mode (key p): full screen, larger, no operator controls. */
+body.present #hwpill, body.present #opbtn, body.present #operator, body.present .totals .link { display:none !important; }
 body.present main { grid-template-columns:minmax(0,1fr) 400px; }
-body.present .video img { max-height:calc(100vh - 250px); }
-body.present .count b { font-size:104px; }
-body.present .gstep { font-size:20px; }
-@media (max-width:1000px) { body.present main { grid-template-columns:1fr; } }
+body.present .verdict .big { font-size:68px; }
+@media (max-width:1100px) { body.present main { grid-template-columns:1fr; } }
 </style></head><body>
 <header>
-  <div class="brand"><div class="mark"></div>
-    <div><h1>Brick Classifier</h1><p>Reclaimed clay bricks sorted good / bad by color · TUM Robo.Innovate Hackathon</p></div></div>
-  <div class="pills">
-    <span class="pill live" id="livepill"><span class="dot"></span><span id="fps">connecting...</span></span>
-    <span class="pill" id="hwpill" hidden>-</span>
-    <span class="pill" id="methodpill">-</span>
-    <span class="pill" id="lightpill"><span class="dot"></span><span id="lighttext">Light -</span></span>
-    <button id="presentbtn" onclick="togglePresent()" title="Presentation mode (key p)">Present</button>
-    <button onclick="toggleOperator()" title="Operator panel (key o)">Operator</button>
+  <div class="brand"><span class="mark"></span>
+    <div><h1>Brick Classifier</h1><p>Color-based quality inspection of reclaimed clay bricks · TUM Robo.Innovate Hackathon</p></div></div>
+  <div class="status">
+    <span class="stat live" id="livepill"><i></i><span id="fps">connecting...</span></span>
+    <span class="stat" id="hwpill" hidden><span id="hwtext">-</span></span>
+    <span class="stat">Model <span id="methodpill">-</span></span>
+    <span class="stat" id="lightpill"><i></i>Light <span id="lighttext">-</span></span>
+  </div>
+  <div class="actions">
+    <button id="presentbtn" onclick="togglePresent()" title="Presentation mode (key p)"><span id="presentlabel">Present</span></button>
+    <button id="opbtn" onclick="toggleOperator()" title="Operator panel (key o)">Operator</button>
   </div>
 </header>
 <main>
   <div class="stage">
     <div class="video"><img id="video" src="/stream" alt="live camera with detected bricks">
       <div id="guide">
-        <div class="gstep"><b>1</b>Place a brick on the table</div>
-        <div class="gstep"><b>2</b>Hold it still ~1 s while it votes</div>
-        <div class="gstep"><b>3</b><span><span class="g">GOOD</span> reuse · <span class="b">BAD</span> reject</span></div>
+        <span><b>1</b>Place a brick on the table</span>
+        <span><b>2</b>Wait about 1 s</span>
+        <span><b>3</b><span class="g">GOOD</span> reuse, <span class="b">BAD</span> reject</span>
       </div>
-      <div id="toast"><img id="toastimg" alt=""><div><div class="verdict" id="toastverdict">GOOD</div>
-        <div class="sub" id="toastsub">-</div></div></div>
       <div id="roilayer"><div id="roibox"></div>
         <div id="roihint">Drag a rectangle over the table area (Esc cancels)</div></div></div>
-    <div class="sechead"><h2>Last bricks</h2><small id="histnote"></small></div>
-    <div class="history" id="history"><div class="empty">Decided bricks appear here.</div></div>
     <div class="flow">
-      <div class="step"><b>Camera</b><span id="fcam">-</span></div><div class="arrow">&rsaquo;</div>
-      <div class="step"><b>Detect + segment</b><span id="fdet">-</span></div><div class="arrow">&rsaquo;</div>
-      <div class="step"><b>Track</b><span id="ftrack">ByteTrack, one id per brick</span></div><div class="arrow">&rsaquo;</div>
-      <div class="step"><b>Classify</b><span id="fcls">-</span></div><div class="arrow">&rsaquo;</div>
-      <div class="step"><b>Vote</b><span id="fvote">-</span></div>
+      <div class="step"><b>Camera</b><span id="fcam">-</span></div>
+      <div class="step"><b>Detection</b><span id="fdet">-</span></div>
+      <div class="step"><b>Tracking</b><span id="ftrack">ByteTrack</span></div>
+      <div class="step"><b>Classification</b><span id="fcls">-</span></div>
+      <div class="step"><b>Decision</b><span id="fvote">-</span></div>
+    </div>
+    <div>
+      <div class="sechead"><h2>Inspection log</h2><small id="histnote"></small></div>
+      <div class="history" id="history"><div class="empty">Decided bricks appear here.</div></div>
     </div>
   </div>
   <div class="side">
-    <div class="panel">
-      <h2>In view now</h2>
-      <div class="counts">
-        <div class="count good"><small>GOOD</small><b id="good">0</b></div>
-        <div class="count bad"><small>BAD</small><b id="bad">0</b></div>
-      </div>
-      <div class="split" title="Session: good / bad"><i id="splitgood" style="width:0"></i><u id="splitbad" style="width:0"></u></div>
-      <div class="totals"><span>Session: <b id="tgood">0</b> good · <b id="tbad">0</b> bad<span id="trate"></span></span>
-        <button class="link" onclick="post('/reset')">reset</button></div>
+    <div class="verdict ready" id="verdict">
+      <h2 id="vlabel">Status</h2>
+      <div class="big" id="vtext">Ready</div>
+      <div class="what" id="vwhat">Waiting for a brick</div>
+      <div class="sub" id="vsub">Place a brick under the camera.</div>
     </div>
     <div class="panel">
-      <h2>Bricks</h2>
+      <h2>Session</h2>
+      <div class="kpis">
+        <div class="kpi"><small>Inspected</small><b id="ttotal">0</b></div>
+        <div class="kpi good"><small>Good</small><b id="tgood">0</b></div>
+        <div class="kpi bad"><small>Bad</small><b id="tbad">0</b></div>
+        <div class="kpi"><small>Yield</small><b id="trate">–</b></div>
+      </div>
+      <div class="totals"><span>In view: <b id="good">0</b> good, <b id="bad">0</b> bad</span>
+        <button class="link" onclick="post('/reset')">Reset</button></div>
+    </div>
+    <div class="panel">
+      <h2>In view</h2>
       <div class="bricks" id="tracks"><div class="empty">Place bricks under the camera.</div></div>
     </div>
   </div>
@@ -403,7 +397,7 @@ if (location.hash === '#operator') document.body.classList.add('operator');
 function togglePresent(on) {
   const show = on === undefined ? !document.body.classList.contains('present') : on;
   document.body.classList.toggle('present', show);
-  $('presentbtn').textContent = show ? 'Exit presentation' : 'Present';
+  $('presentlabel').textContent = show ? 'Exit' : 'Present';
   try { localStorage.setItem('present', show ? '1' : '0'); } catch (e) {}
   try {
     if (show && !document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
@@ -428,26 +422,24 @@ function card(t) {
 function histItem(h, live) {
   const d = h.decision || 'pending';
   const img = h.crop ? `<img src="/history/${h.n}?v=${h.crop}" alt="brick ${h.n}">` : '<div class="noimg"></div>';
-  return `<div class="hist ${d}${live ? ' live' : ''}" title="brick #${h.n} · ${h.votes} votes">${img}<b>#${h.n} ${d.toUpperCase()}</b>` +
-    `<span>${h.p_good === null ? '-' : confidence(h.p_good)}</span></div>`;
+  const time = h.t ? new Date(h.t * 1000).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false}) : '';
+  return `<div class="hist ${d}${live ? ' live' : ''}" title="brick #${h.n} · ${h.votes} votes">${img}` +
+    `<div><b>${d.toUpperCase()}<em>#${h.n}</em></b><span>${h.p_good === null ? '-' : confidence(h.p_good)}</span><span>${time}</span></div></div>`;
 }
-// Big verdict when a brick is decided; it follows the brick's votes while shown.
-let toastN = null, toastUntil = 0, toastTimer = null, seenN = null;
-function showToast(history) {
-  const newest = history[0];
-  if (seenN === null) { seenN = newest ? newest.n : 0; return; }  // no verdict for bricks decided before the page opened
-  if (newest && newest.n > seenN) {
-    seenN = newest.n;
-    toastN = newest.n; toastUntil = Date.now() + 2800;
-    clearTimeout(toastTimer); toastTimer = setTimeout(() => $('toast').classList.remove('show'), 2800);
-  } else if (!newest) seenN = 0;
-  const h = history.find(x => x.n === toastN);
-  if (!h || Date.now() > toastUntil) return;
-  $('toast').className = `show ${h.decision}`;
-  $('toastverdict').textContent = h.decision.toUpperCase();
-  $('toastsub').textContent = `Brick #${h.n} · ${confidence(h.p_good)}`;
-  const src = h.crop ? `/history/${h.n}?v=${h.crop}` : '';
-  if ($('toastimg').getAttribute('src') !== src) $('toastimg').setAttribute('src', src);
+// Status panel: the newest decided brick (in view or the last one seen).
+function verdict(history, active) {
+  const h = history[0];
+  if (!h) {
+    $('verdict').className = 'verdict ready'; $('vlabel').textContent = 'Status'; $('vtext').textContent = 'Ready';
+    $('vwhat').textContent = 'Waiting for a brick'; $('vsub').textContent = 'Place a brick under the camera.';
+    return;
+  }
+  const inView = active.some(t => t.n === h.n);
+  $('verdict').className = `verdict ${h.decision}`;
+  $('vlabel').textContent = inView ? `Brick #${h.n} · in view` : `Last brick · #${h.n}`;
+  $('vtext').textContent = h.decision.toUpperCase();
+  $('vwhat').textContent = h.decision === 'good' ? 'Reusable' : 'Reject';
+  $('vsub').textContent = `Confidence ${confidence(h.p_good)} · ${h.votes}/${maxVotes} votes`;
 }
 async function poll() {
   try {
@@ -455,23 +447,22 @@ async function poll() {
     $('good').textContent = s.good; $('bad').textContent = s.bad;
     $('tgood').textContent = s.total_good; $('tbad').textContent = s.total_bad;
     const total = s.total_good + s.total_bad;
-    $('splitgood').style.width = total ? `${100 * s.total_good / total}%` : '0';
-    $('splitbad').style.width = total ? `${100 * s.total_bad / total}%` : '0';
-    $('trate').textContent = total ? ` · ${Math.round(100 * s.total_good / total)}% reusable` : '';
+    $('ttotal').textContent = total;
+    $('trate').textContent = total ? `${Math.round(100 * s.total_good / total)}%` : '–';
+    verdict(s.history, s.active);
     maxVotes = s.votes;
     document.body.classList.toggle('idle', !s.active.length);
     const live = new Set(s.active.map(t => t.n));
     $('history').innerHTML = s.history.length ? s.history.map(h => histItem(h, live.has(h.n))).join('')
       : '<div class="empty">Decided bricks appear here.</div>';
-    $('histnote').textContent = s.history.length ? 'newest first · outlined = still in view' : '';
-    showToast(s.history);
-    $('fps').textContent = `LIVE · ${s.fps.toFixed(0)} fps`;
-    $('methodpill').textContent = s.classifier === 'nn' ? `Neural network · ${s.nn.model || ''}` : s.classifier_name;
+    $('histnote').textContent = s.history.length ? 'Newest first' : '';
+    $('fps').textContent = `Live · ${s.fps.toFixed(0)} fps`;
+    $('methodpill').textContent = s.classifier === 'nn' ? (s.nn.model || 'Neural network') : s.classifier_name;
     const T = s.timing;
     $('fcam').textContent = `${s.frame_size || '-'} · ${s.camera_fps.toFixed(0)} fps`;
-    $('fdet').textContent = `${s.detector} · ${s.runtime} · ${T.detect.toFixed(0)} ms`;
-    $('fcls').textContent = `${s.classifier_name} · ${T.classify.toFixed(0)} ms / frame`;
-    $('fvote').textContent = `decided after ${s.min_votes} votes, up to ${s.votes}`;
+    $('fdet').textContent = `${s.detector} · ${T.detect.toFixed(0)} ms`;
+    $('fcls').textContent = `${s.classifier === 'nn' ? 'YOLO11n-cls' : s.classifier_name} · ${T.classify.toFixed(0)} ms`;
+    $('fvote').textContent = `mean of up to ${s.votes} votes`;
     const opts = Object.entries(s.methods).map(([k, v]) => `<option value="${k}" ${k === s.classifier ? 'selected' : ''}>${v}</option>`).join('');
     if ($('method').dataset.opts !== opts && document.activeElement !== $('method')) { $('method').innerHTML = opts; $('method').dataset.opts = opts; }
     $('methodinfo').textContent = s.classifier === 'relative' && s.relative_band
@@ -479,12 +470,12 @@ async function poll() {
     $('ref').textContent = s.reference || '-';
     const L = s.light;
     if (L.scene !== null) {
-      let text = `Light (table L*): <b>${L.scene.toFixed(1)}</b>`, cls = 'light', pill = 'ok', short = 'Light OK';
+      let text = `Light (table L*): <b>${L.scene.toFixed(1)}</b>`, cls = 'light', pill = 'ok', short = 'OK';
       if (L.reference !== null) {
         const d = L.scene - L.reference;
         text += ` · calibration <b>${L.reference.toFixed(1)}</b> · difference <b>${d > 0 ? '+' : ''}${d.toFixed(1)}</b>`;
-        if (Math.abs(d) > L.recalibrate) { text += ' · light changed: recalibrate'; cls += ' bad'; pill = 'bad'; short = 'Light changed'; }
-        else if (Math.abs(d) > L.warn) { text += ' · light is drifting'; cls += ' warn'; pill = 'warn'; short = 'Light drifting'; }
+        if (Math.abs(d) > L.recalibrate) { text += ' · light changed: recalibrate'; cls += ' bad'; pill = 'bad'; short = 'Changed'; }
+        else if (Math.abs(d) > L.warn) { text += ' · light is drifting'; cls += ' warn'; pill = 'warn'; short = 'Drifting'; }
         else text += ' · OK';
       }
       if (L.clipped !== null) {
@@ -493,7 +484,7 @@ async function poll() {
         else text += `<br>Bricks clipped (pure white): <b>${pct}%</b> · OK`;
       }
       $('light').innerHTML = text; $('light').className = cls;
-      $('lightpill').className = 'pill ' + pill; $('lighttext').textContent = short;
+      $('lightpill').className = 'stat ' + pill; $('lighttext').textContent = short;
     }
     $('tracks').innerHTML = s.active.length ? s.active.map(card).join('') : '<div class="empty">Place bricks under the camera.</div>';
     const n = s.nn;
@@ -504,15 +495,15 @@ async function poll() {
     const c = s.calibration;
     $('calwork').hidden = !c.active; $('newcal').disabled = c.active;
     if (c.active) $('calstatus').textContent = `${c.captures} captures, ${c.good} good and ${c.bad} bad faces (need ${c.min_per_class} of each)`;
-    $('livepill').className = 'pill live';
+    $('livepill').className = 'stat live';
     fullSize = s.full_size;
-    $('hwpill').hidden = !s.hardware; $('hwpill').textContent = s.hardware || '';
+    $('hwpill').hidden = !s.hardware; $('hwtext').textContent = (s.hardware || '').replace(/^NVIDIA (GeForce )?/, '');
     const cam = s.camera;
     $('cambox').hidden = !cam; $('campanel').hidden = !cam;
     if (cam) renderCamera(cam);
     document.body.classList.toggle('roiedit', s.roi_editing);
     $('roitext').textContent = s.roi ? `${Math.round((s.roi[2] - s.roi[0]) * 100)}% x ${Math.round((s.roi[3] - s.roi[1]) * 100)}% of the frame` : 'whole frame';
-  } catch (e) { $('fps').textContent = 'no connection'; $('livepill').className = 'pill bad'; }
+  } catch (e) { $('fps').textContent = 'No connection'; $('livepill').className = 'stat bad'; }
   setTimeout(poll, 500);
 }
 async function loadList() {
@@ -1201,8 +1192,10 @@ class Sorter:
             # History entries follow their brick while it is in view, then stay as last seen.
             for t, _, _, d, p, _, n, number in bricks:
                 if number is not None:
-                    crop = self.crops.get(t) or (self.history.get(number) or {}).get("jpeg", (None, 0))
-                    self.history[number] = {"n": number, "decision": d, "p_good": p, "votes": n, "jpeg": crop}
+                    previous = self.history.get(number) or {}
+                    crop = self.crops.get(t) or previous.get("jpeg", (None, 0))
+                    self.history[number] = {"n": number, "decision": d, "p_good": p, "votes": n, "jpeg": crop,
+                                            "t": previous.get("t", time.time())}
             while len(self.history) > HISTORY:
                 del self.history[min(self.history)]
             for key, seconds in (("detect", detected - start), ("classify", classified - detected)):

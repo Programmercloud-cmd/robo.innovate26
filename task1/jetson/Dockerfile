@@ -43,10 +43,23 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     pip3 install --index-url https://pypi.org/simple/ -c /tmp/constraints.txt "onnx>=1.12.0,<2.0.0" \
     && python3 -c "import onnx; print('onnx', onnx.__version__)"
 
+# Kiosk browser for a monitor attached to the Jetson (kiosk.sh): Firefox ESR from Mozilla's
+# APT repository (arm64 builds; Ubuntu 24.04 only ships Firefox as a snap). Late layer, so
+# the large layers above stay cached.
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates wget gnupg \
+    && install -d -m 0755 /etc/apt/keyrings \
+    && wget -qO /etc/apt/keyrings/packages.mozilla.org.asc https://packages.mozilla.org/apt/repo-signing-key.gpg \
+    && echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" \
+        > /etc/apt/sources.list.d/mozilla.list \
+    && printf 'Package: *\nPin: origin packages.mozilla.org\nPin-Priority: 1000\n' > /etc/apt/preferences.d/mozilla \
+    && apt-get update && apt-get install -y --no-install-recommends firefox-esr fonts-dejavu-core fonts-liberation \
+    && rm -rf /var/lib/apt/lists/* \
+    && test -x "$(command -v firefox-esr)"
+
 WORKDIR /app
 # Built by scripts/stage_jetson_app.py: scripts/, models/ and seed/outputs2/ (weights, crops, calibrations).
 COPY bundle/ /app/
-COPY start.sh /app/start.sh
+COPY start.sh kiosk.sh /app/
 # Fail the build, not the deploy, when an import is missing.
 RUN cd /app && python3 -c "import scripts.web_demo, scripts.v4l2_camera, scripts.train_brick_classifier"
 

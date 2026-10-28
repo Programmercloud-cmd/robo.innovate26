@@ -7,6 +7,7 @@
     { "type": "camera" },
     { "type": "usb" },
     { "type": "gpu" },
+    { "type": "display" },
     { "type": "persist", "name": "brick-sorter", "path": "/data" }
   ],
   "readiness": {
@@ -16,6 +17,7 @@
   "env": {
     "CLASSIFIER": "nn",
     "REFERENCE": "latest",
-    "CAMERA_MAX_HEIGHT": "720"
+    "CAMERA_MAX_HEIGHT": "720",
+    "KIOSK": "1"
   }
 }

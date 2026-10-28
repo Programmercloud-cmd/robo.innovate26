@@ -7,6 +7,11 @@ cp -r --update=none /app/seed/outputs2/. /data/outputs2/
 rm -rf /app/outputs2
 ln -s /data/outputs2 /app/outputs2
 
+# Full-screen page on a monitor attached to the Jetson (KIOSK=0 turns it off).
+if [ "${KIOSK:-1}" = "1" ]; then
+    sh /app/kiosk.sh &
+fi
+
 exec python3 /app/scripts/web_demo.py --classifier "${CLASSIFIER:-nn}" --reference "${REFERENCE:-latest}" \
     --host :: --port "${PORT:-8000}" --half --camera-max-height "${CAMERA_MAX_HEIGHT:-720}" \
     --detect-imgsz "${DETECT_IMGSZ:-640}" ${DEMO_ARGS:-}

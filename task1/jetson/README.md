@@ -51,6 +51,25 @@ and redeploys. The bundled files only fill it the first time (never overwrite).
 Open http://localhost:8000. Browsers cannot open IPv6 link-local addresses, which is
 one more reason the laptop serves the page and forwards to the Jetson.
 
+## Standalone with a monitor (no laptop)
+
+`kiosk.sh` opens the page full screen (presentation mode) on a monitor plugged into the
+Jetson: Firefox ESR in kiosk mode, drawn through the WendyOS compositor (`display`
+entitlement). Deploy once with a restart policy, then the laptop can be unplugged:
+
+```powershell
+cd jetson
+wendy run --device "fe80::5741:1%56" --chunking off --detach --restart-unless-stopped
+```
+
+- Plug the monitor (HDMI / DisplayPort) in before deploying; a keyboard and mouse on the
+  Jetson work in the page (`p` leaves presentation mode, `o` shows the operator panel).
+- Logs: `wendy device logs --device ...`; lines starting with `kiosk:` tell whether a
+  display was found. Without a Wayland display (headless WendyOS image) the page is
+  still served on port 8000 and the kiosk keeps checking every 30 s.
+- `KIOSK=0` (`wendy run --env KIOSK=0`) turns the monitor page off.
+- Stop it: `wendy device apps stop brick-sorter --device ...`.
+
 ## 4. First run with the Gemini 2 (required)
 
 The network and the calibrations were made with the C920; the Gemini 2 sees colors

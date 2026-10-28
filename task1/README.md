@@ -39,13 +39,16 @@ python scripts/web_demo.py --classifier nn --reference examples/calibration_2026
 ```
 
 - **Presentation mode** (button Present, key `p`, or `http://localhost:8000/#present`):
-  full screen, dark, big counters, verdict pop-up per brick, the last 12 bricks; no
-  technical details. Best for the jury.
+  full screen, status panel with the newest verdict, session totals and yield, inspection
+  log of the last 12 bricks; no operator controls. Best for the jury.
 - **Operator panel** (key `o`): classifier choice, calibration in the browser (capture,
   label g/b per brick, finish; the network retrains in the background), detection area,
   camera settings, light and clipping indicators.
 - Bricks are numbered #1, #2, ... per session; "reset" starts again at #1.
-- Jetson Orin Nano (WendyOS) deployment: [jetson/README.md](jetson/README.md).
+- Jetson Orin Nano (WendyOS) deployment: [jetson/README.md](jetson/README.md). The image also
+  carries a kiosk (`jetson/kiosk.sh`, Firefox ESR) for a monitor on the Jetson; it needs a
+  WendyOS image with a display compositor (0.20.0 on our device is headless, so the page is
+  shown on a laptop through `web_demo.py --remote`).
 - Every script and option: [scripts/README.md](scripts/README.md).
 
 ## Command-line classifier (earlier stage)
