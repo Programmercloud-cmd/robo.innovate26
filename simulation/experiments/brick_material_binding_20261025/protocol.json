@@ -1,0 +1,52 @@
+{
+  "schema": "brick-declared-material-authoring-v1",
+  "execution_authorized": true,
+  "maximum_jobs": 1,
+  "maximum_active_seconds": 10,
+  "maximum_improvement_rounds": 0,
+  "automatic_retry": false,
+  "application": "Opt-in helper only on one explicit named brick before physics initialization. No active workcell hook or native/shared code change.",
+  "test_scope": "Pure installed USD authoring and resolution, two source-representative Cube colliders plus unrelated sentinel. No Kit, physics, rendering, runtime coefficient or retention claim.",
+  "existing_declared_coefficients": {
+    "BodyCollider": {
+      "static_friction": 0.5,
+      "dynamic_friction": 0.4,
+      "restitution": 0.1
+    },
+    "TopCollider": {
+      "static_friction": 1.0,
+      "dynamic_friction": 0.8,
+      "restitution": 0.2
+    }
+  },
+  "float_semantics": "Validate/copy existing typed float32 values, not fitted coefficients.",
+  "acceptance": [
+    "Two actual UsdShade.Material prims with UsdPhysics.MaterialAPI and resolved physics-purpose bindings on exactly the declared Body/Top colliders.",
+    "Existing collider coefficients copied unchanged; original raw fields retained. No combine, density or physical calibration claims.",
+    "Geometry/transforms/visual bindings/mass/inertia/COM/collision/rigid APIs and unrelated prims preserved.",
+    "Missing/unexpected/disabled/conflicting inputs reject without stage mutation.",
+    "Saved/reopened USD stage retains the same resolved material values and bindings."
+  ],
+  "negative_cases": [
+    "missing initialization flag",
+    "missing collider",
+    "disabled collider",
+    "missing declared attribute",
+    "unexpected coefficient",
+    "conflicting direct physics binding",
+    "conflicting inherited physics binding",
+    "conflicting reserved material path"
+  ],
+  "independent_review": "Planner, independent evaluator and reviewer approve final narrow source. Exact declared coefficient/property-order oracle, computed physics-purpose MaterialAPI resolution, unchanged geometry/visual/mass/other-brick metadata, save/reopen and eight atomic negative cases reviewed. One <=10 s default-Pueue standalone USD test only. No Kit, physics, active-workcell/native edit, coefficient tuning, retention cure or automatic retry.",
+  "primary_contract": "https://openusd.org/release/api/usd_physics_page_front.html#Physics_Materials",
+  "runtime_python": "/home/faps/miniforge3/envs/unitree_sim_env/bin/python",
+  "usd_extension": "/home/faps/miniforge3/envs/unitree_sim_env/lib/python3.11/site-packages/isaacsim/extscache/omni.usd.libs-1.0.1+69cbf6ad.lx64.r.cp311",
+  "source_pins": {
+    "/home/faps/dev/resources/BrickSim/native/modules/bricksim/usd/author.cppm": "ae996a1a2d4bf459cdfee224b8cbf2fb87e1ffd3572c794eda9dc3b7db5eafac",
+    "/home/faps/dev/resources/BrickSim/native/modules/bricksim/usd/material.cppm": "f33fe0e9d12ade20beab71347ff5ed5882a933e5dfad47513bedacef3ca659f0",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T161523.798508Z-stage2-contact-readback/output/readback.json": "986dc66cdd780fb4ea0ae9e0db8d6b1960af32bf419e279c9bab9eaf82e53a99",
+    "/home/faps/dev/github/robo.innovate26/experiments/stage2_contact_readback_20261025/results.json": "1a87d6364e9416b4227e09425d8b1023060e4318630d463bead08e4d844eab24"
+  },
+  "retention_fixture_ledger_unchanged_seconds": 2682.9455824780234,
+  "retention_fixture_status": "Three improvement rounds closed. This schema test is not another fixture parameter trial."
+}

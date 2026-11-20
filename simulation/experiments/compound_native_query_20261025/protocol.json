@@ -1,0 +1,212 @@
+{
+  "schema": "one-explicit-compound-native-query-v1",
+  "maximum_runs": 3,
+  "maximum_wall_s": 180,
+  "maximum_postassembly_physics_steps": 0,
+  "measured_motion_steps": 0,
+  "nominal_all_joint_configuration_unchanged": true,
+  "source": {
+    "bricks": 300,
+    "parts": 301,
+    "native_connections": 930,
+    "solver": "PGS",
+    "source_actor_position_iterations": 32,
+    "source_actor_velocity_iterations": 4,
+    "dt_s": 0.008333333333333333,
+    "OSQP_EPSILON": "1e-4"
+  },
+  "native_breakage": {
+    "enabled": true,
+    "contact_regularization": 0.1,
+    "clutch_axial_compliance": 1.0,
+    "clutch_radial_compliance": 1.0,
+    "clutch_tangential_compliance": 1.0,
+    "friction_coefficient": 0.2,
+    "preloaded_force": 3.5,
+    "slack_fraction_warn": 0.1,
+    "slack_fraction_b_floor": 1e-09,
+    "debug_dump": false,
+    "breakage_cooldown_time": 0.05
+  },
+  "native_assembly": {
+    "enabled": false,
+    "required_force": 1.0
+  },
+  "input_sha256": {
+    "experiments/final_workcell_20261024/scene_config.json": "77cb33b140c8449e9527437c1fc8a452d5f95a9680413dc05b66db07e27342e7",
+    "experiments/final_workcell_20261024/geometry.json": "8a0266b2ccbf75f6d773fdd1e6309c70f9ab8828da96b563da133f383f83c897",
+    "experiments/final_workcell_20261024/render_core.py": "c113531b35b8527871e60f6763666e08c054c6653f240d107051123563f8cf6b",
+    "experiments/final_workcell_20261024/scene.py": "ebcd45e6fdcc6672b6a3dee1b5e35f828daf88afc710fdba124e814ebb911eb6",
+    "experiments/final_workcell_20261024/end_effector/fingertips.py": "c5ab9f8278e82670ab4c3b7206c1bc75ec1082e16bcb7581fab31d9e7eb9eef1",
+    ".deps/bricksim/assets/robots/fr3/robot.usda": "313c8720683a1311c67dbd6617db736bb36f1d6ecdaed02ec0fbbea9ca302306",
+    ".deps/bricksim/core.cpython-311-x86_64-linux-gnu.so": "4e62dc33ee02270993c20e3cfd658e6d6ef0ea9780e53ad15cedde12f41b2455",
+    "experiments/stage2_contact_20261025/proxy_config.json": "1c760e4971d0765b3e142e770584c65078d43a1c2504d897aa182031fd941e62",
+    "experiments/stage2_contact_20261025/proxy_reference.json": "cb46c2fab2833fa267a45980fa7e2adf27e0f8626edfd9f514ff1c7d6b7dddc6",
+    "experiments/stage2_contact_20261025/protocol.json": "aa037dfb8dba58df50c09590a15eda21163c0df273d704bd07439cb3b5e3aa77",
+    "experiments/stage2_contact_20261025/geometry.py": "56622b490fc018a46333d8a856ad2b9735c8dfc14841cb732cdd1622c638db83",
+    "experiments/stage2_active_query_20261025/run_query.py": "0417a352273fbe15c190289ae576482084568cc201667b748c92946b22f36705"
+  },
+  "proxy": "Exactoffline-approved48cells only, bakedunchanged nominalCADregistration. No geometryregeneration or automaticdecomposition. OldG/VHACD failures remainfailed.",
+  "contact_ray_grid": {
+    "hand_x_offsets_m": [
+      -0.016,
+      -0.012222222222222223,
+      -0.008444444444444445,
+      -0.004666666666666666,
+      -0.0008888888888888887,
+      0.0028888888888888888,
+      0.006666666666666668,
+      0.010444444444444447,
+      0.014222222222222223,
+      0.018000000000000002
+    ],
+    "hand_z_offsets_m": [
+      -0.0048,
+      -0.0033875,
+      -0.0019749999999999998,
+      -0.0005624999999999996,
+      0.0008500000000000001,
+      0.0022624999999999998,
+      0.0036750000000000003,
+      0.005087499999999999,
+      0.0065
+    ],
+    "reference": "Frozen1754coupon_center_hand_m in proxy_reference.json; X/Z only, no coupon actor or q adjustment",
+    "y_origin": "left registeredSTLminY-0.020;right maxY+0.020",
+    "direction": "left+localY,right-localY",
+    "range": "registeredSTLspanY+0.040",
+    "axis_bbox_rays_per_tip": 6,
+    "maximum_rays_per_tip": 96
+  },
+  "bore_overlaps": {
+    "count_per_tip": 27,
+    "radius_m": 5e-05,
+    "centers": "Exact27CADborewitnesses in frozen proxy_config.json mapped by unchanged visual registration"
+  },
+  "query_control": {
+    "path": "/World/ActiveQueryControl",
+    "center_world_m": [
+      3.0,
+      3.0,
+      0.5
+    ],
+    "size_m": 0.02,
+    "ray_hit_origin_m": [
+      3.0,
+      3.0,
+      0.55
+    ],
+    "ray_direction": [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    "ray_length_m": 0.1,
+    "expected_hit_distance_m": 0.04,
+    "miss_offset_world_m": [
+      0.1,
+      0.0,
+      0.0
+    ],
+    "distance_tolerance_m": 1e-05,
+    "normal_component_tolerance": 1e-05,
+    "overlap_radius_m": 5e-05
+  },
+  "frame_verification": {
+    "physics_vs_USD_position_m": 2e-06,
+    "physics_vs_USD_orientation_rad": 0.0001
+  },
+  "queries": "Public raycast_all returns bool;overlap_sphere returns count. All callbacks returnTrue, every hit retained in callback order. No adaptive/repeated query.",
+  "meaning": "One nativecook/query gate only; never contact/D/R/grasp authorization. Current registration is unverified physically. All counts use actual96childpaths and actualSDKcookbuffers; sparsequeries are conditional evidence.",
+  "old_bounds_failure_m": 0.00010288106108188519,
+  "old_bound_limit_m": 0.0001,
+  "proceed_gate_passed": false,
+  "capture_plus_independent_audit_wall_s": 180,
+  "audit_budget_policy": "Aggregate native capture+audit <=180s including29.796654913996463s fromclosed1767/1768. AtmostONE targeted-route attempt; no freshthree-round pool, order/tolerance fallback or additional route.",
+  "cleanup_budget": "Existing finish_child SIGTERM2s+SIGKILL5s is reserved inside total180s. No extra shutdown grace outside budget.",
+  "retry_after_corrected_attempt": false,
+  "scene_query_support_setup": {
+    "enable_scene_query_support": true,
+    "only_additional_sim_cfg_change": "enable_scene_query_support False -> True, alongside existing physx.solver_type TGS1 -> PGS0",
+    "verification": "Assert full SimulationCfg.to_dict equality against exactly these two changes; serialize selected flags, changed paths and before/after PhysX settings. Record SDKPhysicsContext getter and actual USDscene attribute before controls.",
+    "interpretation": "Required query-manager setup; controls must still establish observed query functionality. Not a contact-round reset."
+  },
+  "native_proxy": {
+    "method": "48 independent convexHull Mesh colliders per finger, no convexDecomposition/VHACD",
+    "hullVertexLimit": 255,
+    "CPU_only": true,
+    "one_hull_per_cell_required": true,
+    "vertex_limit": 255,
+    "polygon_limit": 255,
+    "no_simplification_fallback_split_or_truncation": true
+  },
+  "offline_approval": {
+    "candidate_sha256": "5752e14f71cbffc34490945ca735a919ed4d260409e494e8c5254fac18db8f65",
+    "audit_sha256": "28f1924a7a88f6ed55d07683b3a9e8b1d1a6b12cc08d069a89af9f7f88735ec9",
+    "manifest_sha256": "a969ef3f7482e1450566b1e4f370cf6956276c0bb96cd141a4366a7408c31c87"
+  },
+  "physical_property_guards": {
+    "robot_matches_frozen1754_reference": true,
+    "robot_and_all301source_mass_inertia_COM_initial_terminal_equal": true,
+    "white_colliders_match_frozen1754_reference": true,
+    "unchanged_pad_material_binding": true
+  },
+  "operational_query_criteria": {
+    "maximum_clear_first_hit_difference_m": 0.0001,
+    "all192CADhit_miss_parities": true,
+    "all54reference_free_spheres_zero_actual_target_hits": true,
+    "edge_grazing_cases": "Report unresolved distance, never selectpassingedge/ray",
+    "no_contact_or_physical_registration_claim": true
+  },
+  "maximum_remaining_native_attempts": 1,
+  "prior_native_attempt_wall_seconds": 29.796654913996463,
+  "native_attempt_history": [
+    {
+      "job_id": 1767,
+      "status": "CLOSED FAILED beforecook/query: collision-dependent robotmass/inertia/COM differ from1754",
+      "geometry_changed": false
+    },
+    {
+      "job_id": 1768,
+      "status": "CLOSED FAILED beforeexplicitinitstep/cook/query: full-articulation setter readback differs on untouched nonfingerinertias/principalquaternions; fingers restoredexactly",
+      "geometry_changed": false
+    },
+    {
+      "status": "AtmostONE targeted two-fingerRigidBodyView route attempt pending finalreview; no furtherfallback",
+      "geometry_changed": false
+    }
+  ],
+  "physical_property_initialization": {
+    "restore_count": 1,
+    "timing": "After original bound scene.reset, before explicit nominal-q initialization step. sim.reset internal initialization already occurred.",
+    "fixed_setter_order": [
+      "set_masses",
+      "set_coms",
+      "set_inertias"
+    ],
+    "tensor_convention": "Frozen1754finger-slices only: masses(1,1),COM(1,7)localXYZ+quaternionXYZW,I(1,9)aboutCOM/bodyprimframe/column-major9. No otheractor orArticulationView setter calls.",
+    "preconditions": "Two exact targetpaths/count1, bodyname/index10/11 mapping asbefore; eachview rawbuffers EXACT correspondingArticulationView fingerentry. Allnonfingers+actuators alreadyexactB0.",
+    "postconditions": "ALL6 propertyarrays EXACT1754; q/qdot/time unchanged across setters. No alternateorder/tolerancefallback/iterativetry.",
+    "scope": "Declared simulation stock mass model preserved forcontrolledcollision comparison, not measured mass/inertia ofsuppliedSTL.",
+    "route": "two_exact_finger_rigid_body_views",
+    "target_view_paths": [
+      "/World/envs/env_0/Robot/fr3_leftfinger",
+      "/World/envs/env_0/Robot/fr3_rightfinger"
+    ],
+    "target_view_count_each": 1,
+    "local_setter_indices_each": [
+      0
+    ],
+    "write_sequence": [
+      "set_masses:left",
+      "set_masses:right",
+      "set_coms:left",
+      "set_coms:right",
+      "set_inertias:left",
+      "set_inertias:right"
+    ]
+  },
+  "prior_consumed_active_seconds": 29.796654913996463,
+  "maximum_targeted_route_attempts": 1,
+  "full_articulation_restore_route_closed": true
+}

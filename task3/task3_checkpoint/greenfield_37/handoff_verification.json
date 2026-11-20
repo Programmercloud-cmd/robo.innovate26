@@ -1,0 +1,30 @@
+{
+  "recorded_replay": {
+    "complete": true,
+    "bricks": 57600,
+    "approved": 50664,
+    "rejected": 6936,
+    "disposed": 6936,
+    "pallets": 84,
+    "products": {
+      "Mixed": 41,
+      "Warm": 15,
+      "Copper": 14,
+      "Russet": 14
+    },
+    "bricks_h": 8019.04986811265,
+    "pallets_h": 14.319731907344018,
+    "loaded": 64,
+    "shipped": 64,
+    "approved_WIP": 3624
+  },
+  "checks": [
+    "Original dual-cart distributions identical",
+    "Rigid load transforms",
+    "942021 accepted-brick trajectory pairs without penetrations",
+    "278377 continuously separated vehicle/truck intervals",
+    "Fork/floor/trailer contact datums",
+    "11 browser views reviewed; V merge geometry corrected"
+  ],
+  "scope": "Kinematic proof of concept; not OEM structural/load certification."
+}

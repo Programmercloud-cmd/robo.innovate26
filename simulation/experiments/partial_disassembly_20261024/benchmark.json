@@ -1,0 +1,286 @@
+{
+  "schema": "partial-disassembly-benchmark-v1",
+  "status": "frozen_before_implementation",
+  "design": "confirmed300bricks10layers6ridges5bricks",
+  "geometry_source": "experiments/sim_views_20261024/geometry.json",
+  "views": [
+    "top",
+    "oblique_side"
+  ],
+  "camera_light_policy": "Fixedworldposes/lightscomputedfrominitialfulldesign;neverrecenterfromremainingtruth",
+  "capture_mode": "static_initialized_no_postconnectionphysics",
+  "native_connections": "Allremainingoverlappingpairsandbaseplatelinks,strictgraph/posechecks;nostabilityclaim",
+  "top_layer_removed_only": 9,
+  "lower_layers_unchanged": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "indices": "(ridge,long-axisbrick),0-based; layer9 native(i,j)=(r,b); countsdesignonlyneverperceptioninput",
+  "palettes": {
+    "mixed": "Original300 RNG26 palette/order assignedBEFOREfiltering removals",
+    "single_tan": "Alloriginal300 tan",
+    "repeated": {
+      "colors": [
+        "dark_red",
+        "tan"
+      ],
+      "rule": "(ridge+long_index)%2 ineachlayer; assignedbeforeremoval"
+    }
+  },
+  "cases": [
+    {
+      "id": "I_mix",
+      "split": "development",
+      "palette": "mixed",
+      "remove_top_ridge_brick": [],
+      "keep_only_top_ridge_brick": null,
+      "expected": {
+        "active_bricks": 300,
+        "native_connections": 930,
+        "connected_parts": 301
+      }
+    },
+    {
+      "id": "I_tan",
+      "split": "development",
+      "palette": "single_tan",
+      "remove_top_ridge_brick": [],
+      "keep_only_top_ridge_brick": null,
+      "expected": {
+        "active_bricks": 300,
+        "native_connections": 930,
+        "connected_parts": 301
+      }
+    },
+    {
+      "id": "H_mix",
+      "split": "development",
+      "palette": "mixed",
+      "remove_top_ridge_brick": [
+        [
+          2,
+          2
+        ]
+      ],
+      "keep_only_top_ridge_brick": null,
+      "expected": {
+        "active_bricks": 299,
+        "native_connections": 926,
+        "connected_parts": 300
+      }
+    },
+    {
+      "id": "E_mix",
+      "split": "development",
+      "palette": "mixed",
+      "remove_top_ridge_brick": [
+        [
+          4,
+          0
+        ]
+      ],
+      "keep_only_top_ridge_brick": null,
+      "expected": {
+        "active_bricks": 299,
+        "native_connections": 926,
+        "connected_parts": 300
+      }
+    },
+    {
+      "id": "A_mix",
+      "split": "development",
+      "palette": "mixed",
+      "remove_top_ridge_brick": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "keep_only_top_ridge_brick": null,
+      "expected": {
+        "active_bricks": 298,
+        "native_connections": 922,
+        "connected_parts": 299
+      }
+    },
+    {
+      "id": "A_repeat",
+      "split": "development",
+      "palette": "repeated",
+      "remove_top_ridge_brick": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "keep_only_top_ridge_brick": null,
+      "expected": {
+        "active_bricks": 298,
+        "native_connections": 922,
+        "connected_parts": 299
+      }
+    },
+    {
+      "id": "U_tan",
+      "split": "development",
+      "palette": "single_tan",
+      "remove_top_ridge_brick": null,
+      "keep_only_top_ridge_brick": [
+        [
+          2,
+          2
+        ]
+      ],
+      "expected": {
+        "active_bricks": 271,
+        "native_connections": 834,
+        "connected_parts": 272
+      }
+    },
+    {
+      "id": "T_mix",
+      "split": "development",
+      "palette": "mixed",
+      "remove_top_ridge_brick": null,
+      "keep_only_top_ridge_brick": [],
+      "expected": {
+        "active_bricks": 270,
+        "native_connections": 830,
+        "connected_parts": 271
+      }
+    },
+    {
+      "id": "S_repeat",
+      "split": "reserved",
+      "palette": "repeated",
+      "remove_top_ridge_brick": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "keep_only_top_ridge_brick": null,
+      "expected": {
+        "active_bricks": 294,
+        "native_connections": 912,
+        "connected_parts": 295
+      }
+    },
+    {
+      "id": "P_mix",
+      "split": "reserved",
+      "palette": "mixed",
+      "remove_top_ridge_brick": null,
+      "keep_only_top_ridge_brick": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          4
+        ]
+      ],
+      "expected": {
+        "active_bricks": 273,
+        "native_connections": 838,
+        "connected_parts": 274
+      }
+    }
+  ],
+  "development_controls": [
+    {
+      "id": "invalid_top",
+      "source": "I_mix/top",
+      "operation": "all_depth_NaN"
+    },
+    {
+      "id": "invalid_side",
+      "source": "I_mix/oblique_side",
+      "operation": "all_depth_NaN"
+    },
+    {
+      "id": "flat_top",
+      "source": "I_mix/top",
+      "operation": "flat_world_plane",
+      "height_m": 0.03
+    },
+    {
+      "id": "flat_side",
+      "source": "I_mix/oblique_side",
+      "operation": "flat_world_plane",
+      "height_m": 0.03
+    },
+    {
+      "id": "no_return_patch",
+      "source": "I_mix/top",
+      "operation": "depth_patch_NaN",
+      "pixel_xyxy": [
+        600,
+        280,
+        680,
+        360
+      ],
+      "RGB": "unchanged",
+      "truth": "Physicalbricksstillpresent;unknownsensorevidencenotabsence"
+    }
+  ],
+  "split_policy": "Allviews/colorvariants ofreservedgeometrygroupswithheldfromimplementationandrounddecisions;reservedpredictionsandscoresreleasedonlyafterfinalmethodfreeze",
+  "modes": {
+    "single_view": "evaluated independently",
+    "combined_view": "notimplemented/notmeasured",
+    "temporal": "notimplemented;freshsensorstateperobservation,nohistory/GTinitialization"
+  },
+  "maximum_improvement_rounds": 3,
+  "round_rule": "Unchangeddetectorfirst;oneobservedfailuremechanism/minimalreviewedchangeperround,frozencommit/settings,explicitrecoveries/losses. Retainonlyiftargetmetricimproveswithoutnewconfident-presentERRORS,wrongmissing,lower/controlerror;otherwisepreserveresultandrevertorstop. Noresult-driventuningafterreservedrelease.",
+  "reserved_final_policy": "Afterdevselectionfreeze,evaluatebaselineandallretainedversionsonreservedonce;reportseparately,nofurtherimplementation",
+  "frozen_sources_sha256": {
+    "experiments/sim_views_20261024/geometry.json": "f69d3e2766ab191103bd8b8da8400f61ee93fba003eb052be355834a1b3410b5",
+    "experiments/sim_views_20261024/cameras.json": "cb428178ae4237fb8a5321d1699b3e003432166b9adec1cc3ca3cc8ba277d47e",
+    "experiments/depth_bricks_20261024/batch.py": "bc4ef2de9c22406ce039bd8c19c657e7bd861d259cfb78fa4b7cd9fb77029bb1",
+    "experiments/depth_bricks_20261024/config.json": "e640a29070da4d7e093ca30a5dc669ed5ffa34eb902dc064f4fc2978b2befb3a",
+    "experiments/depth_ridges_20261024/depth_ridges.py": "b013ae80e9266bb825897f4aff4fccbbaef94f861a1e4e56f33278c47062ed51",
+    "experiments/depth_ridges_20261024/config.json": "127f04e168b2621d4e7a9b4ff43a77b67a8b2710f6979bf3aebc468eaef48b8e",
+    "perception/algorithm.py": "97e53a1aa65c7393ffcf8226ee4d612521c610e262ef5f19e6d9f5d3c334986e"
+  },
+  "round_target_policy": "Beforeeachroundimplementation: declareoneobservedfailure,onechange,targetmetric,expectedretention/regressionguard. Safetyabstentionisnotcoveragegain. Reportrecovered/lostGTfaceIDs independentlyofhypothesisIDs."
+}

@@ -1,0 +1,24 @@
+{
+  "referenceSha256": "7573180b519dfa27f1b97b6cd682659b5235f129f1ad7d4f9b73f25db808805b",
+  "verified": true,
+  "modes": {
+    "mixed": {
+      "verified": true,
+      "pallets": 42,
+      "shippedIdentities": 23520,
+      "maxDispatchTimeErrorSeconds": 4.547473508864641e-13,
+      "batchTimeErrorSeconds": 1.8189894035458565e-12,
+      "bricksPerHour": 9384.823099110412,
+      "palletsPerHour": 16.758612676982878
+    },
+    "single": {
+      "verified": true,
+      "pallets": 36,
+      "shippedIdentities": 20160,
+      "maxDispatchTimeErrorSeconds": 9.094947017729282e-13,
+      "batchTimeErrorSeconds": 0.0,
+      "bricksPerHour": 7964.481181510014,
+      "palletsPerHour": 14.222287824125024
+    }
+  }
+}

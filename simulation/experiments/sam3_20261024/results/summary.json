@@ -1,0 +1,128 @@
+{
+  "by_prompt": {
+    "stack": {
+      "positive_references": 166,
+      "ambiguous_references_excluded": 14,
+      "lower_fragments": 23,
+      "raw_detections": 5,
+      "matched": 0,
+      "missed_individual_faces": 166,
+      "merge": 5,
+      "duplicate": 0,
+      "lower_layer_target": 0,
+      "ambiguous_ignored": 0,
+      "other_spurious_or_unresolved": 0,
+      "outside_roi": 0,
+      "annotated_images": 6,
+      "individual_face_recall": 0.0,
+      "scored_roi_instance_precision": 0.0,
+      "coarse_stack_localized_views": 5,
+      "multiple_face_masks": 5,
+      "all18_raw_detections": 14,
+      "matched_mask_polygon_overlap": {
+        "matched_pairs": 0,
+        "polygon_iou_median": null,
+        "reference_coverage_median": null,
+        "prediction_coverage_median": null
+      },
+      "mask_half_lower_fragment_flags": 5
+    },
+    "brick": {
+      "positive_references": 166,
+      "ambiguous_references_excluded": 14,
+      "lower_fragments": 23,
+      "raw_detections": 353,
+      "matched": 124,
+      "missed_individual_faces": 42,
+      "merge": 26,
+      "duplicate": 0,
+      "lower_layer_target": 19,
+      "ambiguous_ignored": 12,
+      "other_spurious_or_unresolved": 171,
+      "outside_roi": 1,
+      "annotated_images": 6,
+      "individual_face_recall": 0.7469879518072289,
+      "scored_roi_instance_precision": 0.36470588235294116,
+      "coarse_stack_localized_views": 5,
+      "multiple_face_masks": 26,
+      "all18_raw_detections": 1062,
+      "matched_mask_polygon_overlap": {
+        "matched_pairs": 124,
+        "polygon_iou_median": 0.8670080852925195,
+        "reference_coverage_median": 0.9164703167704962,
+        "prediction_coverage_median": 0.9449760594026457
+      },
+      "mask_half_lower_fragment_flags": 24
+    },
+    "brick_2x4": {
+      "positive_references": 166,
+      "ambiguous_references_excluded": 14,
+      "lower_fragments": 23,
+      "raw_detections": 3,
+      "matched": 1,
+      "missed_individual_faces": 165,
+      "merge": 2,
+      "duplicate": 0,
+      "lower_layer_target": 0,
+      "ambiguous_ignored": 0,
+      "other_spurious_or_unresolved": 0,
+      "outside_roi": 0,
+      "annotated_images": 6,
+      "individual_face_recall": 0.006024096385542169,
+      "scored_roi_instance_precision": 0.3333333333333333,
+      "coarse_stack_localized_views": 0,
+      "multiple_face_masks": 2,
+      "all18_raw_detections": 11,
+      "matched_mask_polygon_overlap": {
+        "matched_pairs": 1,
+        "polygon_iou_median": 0.9159935379644588,
+        "reference_coverage_median": 0.9593908629441624,
+        "prediction_coverage_median": 0.9529411764705882
+      },
+      "mask_half_lower_fragment_flags": 0
+    },
+    "top_surface": {
+      "positive_references": 166,
+      "ambiguous_references_excluded": 14,
+      "lower_fragments": 23,
+      "raw_detections": 2,
+      "matched": 0,
+      "missed_individual_faces": 166,
+      "merge": 2,
+      "duplicate": 0,
+      "lower_layer_target": 0,
+      "ambiguous_ignored": 0,
+      "other_spurious_or_unresolved": 0,
+      "outside_roi": 0,
+      "annotated_images": 6,
+      "individual_face_recall": 0.0,
+      "scored_roi_instance_precision": 0.0,
+      "coarse_stack_localized_views": 0,
+      "multiple_face_masks": 2,
+      "all18_raw_detections": 3,
+      "matched_mask_polygon_overlap": {
+        "matched_pairs": 0,
+        "polygon_iou_median": null,
+        "reference_coverage_median": null,
+        "prediction_coverage_median": null
+      },
+      "mask_half_lower_fragment_flags": 0
+    }
+  },
+  "interpretation": [
+    "All prompts independent and unchanged; no best-prompt pooling or threshold tuning.",
+    "Primary box matches are individual visual-face localization, not actual physical exposure.",
+    "Stack ROI is approximate, not segmentation truth.",
+    "Unmatched surfaces include unannotated lower fragments and other scales, not all asserted background hallucinations.",
+    "Mask overlaps are supplementary comparisons to approximate face polygons, not exact full-object masks.",
+    "19 box-center lower-fragment flags and24 mask-half-fragment flags for LEGO brick differ by definition and may include nested multi-face masks.",
+    "Zero duplicates excludes nested whole-stack/strip masks because those are classified as merges.",
+    "No orientation, stud localization, metric pose, gripper accessibility or simulation equivalence measured.",
+    "18 images are correlated observations; only six views annotated, no independent-stack generalization."
+  ],
+  "visual_audit": [
+    "img10 LEGO brick overlay shows long same-color strips merged across multiple brick faces, plus lower-gap surfaces and a nested whole-stack mask.",
+    "img1 LEGO brick q01_038 mask localizes a small lower-fragment surface; q01_045 is a nested whole-stack mask covering many positive faces.",
+    "These raw masks were inspected without filtering, mask repair or parameter changes."
+  ]
+}

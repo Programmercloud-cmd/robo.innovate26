@@ -1,0 +1,13 @@
+{
+  "verified": true,
+  "modes": {
+    "mixed": {
+      "samples": 612,
+      "maxPoseComponentError": 1.1368683772161603e-12
+    },
+    "single": {
+      "samples": 606,
+      "maxPoseComponentError": 1.1368683772161603e-12
+    }
+  }
+}

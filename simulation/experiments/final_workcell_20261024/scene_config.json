@@ -1,0 +1,435 @@
+{
+  "robot": "fr3",
+  "source_xy": [
+    0.0,
+    0.0
+  ],
+  "source_cells": 6,
+  "source_layers": 10,
+  "output_xy": [
+    0.42,
+    -0.06
+  ],
+  "output_cells": 3,
+  "baseplate_studs": 32,
+  "scrap_xy": [
+    0.3,
+    0.0
+  ],
+  "scrap_size": [
+    0.12,
+    0.12
+  ],
+  "recipe": "mixed",
+  "seed": 26,
+  "colors": {
+    "dark_red": [
+      114,
+      14,
+      15
+    ],
+    "brown": [
+      88,
+      42,
+      18
+    ],
+    "tan": [
+      190,
+      140,
+      80
+    ],
+    "reject_4211201": [
+      220,
+      25,
+      15
+    ],
+    "reject_6135191": [
+      155,
+      95,
+      30
+    ]
+  },
+  "reject_colors": [
+    "reject_4211201",
+    "reject_6135191"
+  ],
+  "physics": {
+    "dt": 0.008333333333333333,
+    "decimation": 4,
+    "clutch_preload_n": 3.5,
+    "clutch_friction": 0.2,
+    "assembly_force_n": 1.0
+  },
+  "episode_seconds": 180.0,
+  "tool": {
+    "kind": "parallel",
+    "tcp_offset_m": [
+      0.0,
+      0.0,
+      0.1034
+    ],
+    "cad_path": null
+  },
+  "final_layout": {
+    "status": "approximate visual twin, not calibrated robot workcell",
+    "frame": {
+      "origin": "white plate center on tabletop",
+      "axes": [
+        "+X toward gray plate",
+        "+Y away robot toward bowl",
+        "+Z up"
+      ]
+    },
+    "measurement_source": "Corrected photo audit1697: white uncovered span .25x.218m after two taped rows at each Y edge; rounded approximate poses",
+    "scale_ambiguity": "User outer sizes .25/.38m differ from native32/48 at8mm by6/4mm; native geometry is not stretched. Corrected1697 ruler18.68 vs20cm (-6.61%); inferred gray outerX40.75-40.85 vs38cm (+7.2-7.5%), Y38.42-38.99 vs38cm (+1.1-2.6%). Approximate planar reconstruction with systematic lens/anchor/parallax uncertainty, not calibrated metrology.",
+    "table": {
+      "size_m": [
+        1.2,
+        1.05,
+        0.05
+      ],
+      "center_table_m": [
+        0.15,
+        -0.055,
+        -0.025
+      ],
+      "status": "provisional local tabletop extent"
+    },
+    "robot": {
+      "base_table_m": [
+        -0.09,
+        -0.4,
+        0.0
+      ],
+      "yaw_table_deg": 45.0,
+      "status": "Base orientation estimated from photographs using fixed lower connector housing; base position remains estimated and nominal joint configuration unchanged. No calibrated robot-frame alignment.",
+      "orientation_evidence": {
+        "method": "Match fixed lower socket-bearing white flank and asymmetric mounting outline to composed FR3 asset axes; do not use arm bend.",
+        "asset_connector_face_direction": "approximately asset -Y",
+        "photo_table_connector_direction": "approximately table +X/-Y",
+        "rounded_yaw_table_deg": 45,
+        "previous_assumed_yaw_table_deg": 90,
+        "qualitative_uncertainty": "Coarse photograph-supported diagonal; perspective and partial occlusion limit visual precision. No numerical error bar or calibrated transform is claimed.",
+        "reference": "base_orientation/reference.json",
+        "canonical_probe_job": 1703
+      }
+    },
+    "source": {
+      "studs": 32,
+      "center_table_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "status": "User-reported outer size; native32/48 geometry at8mm pitch left unstretched; tape/placement clearances unvalidated",
+      "measured_outer_size_m": [
+        0.25,
+        0.25
+      ],
+      "measurement_provenance": "User reported25x25cm white /38x38cm gray; not a calibrated metrology result",
+      "native_nominal_size_m": [
+        0.256,
+        0.256
+      ],
+      "native_minus_reported_size_m": [
+        0.006,
+        0.006
+      ],
+      "black_tape_covered_rows_each_y_edge": 1.75,
+      "black_tape_width_m": 0.035,
+      "black_tape_inner_stud_bounds_xyxy": [
+        0,
+        2,
+        32,
+        30
+      ],
+      "black_tape_intrusion_note": "Approximate hand measurement (2026-10-25): 14 mm, or 1.75 nominal 8 mm pitches. Whole-stud working bounds still exclude two rows. Opposite sides assumed symmetric."
+    },
+    "target": {
+      "studs": 48,
+      "center_table_m": [
+        0.42,
+        -0.06,
+        0.0
+      ],
+      "status": "User-reported outer size; native32/48 geometry at8mm pitch left unstretched; tape/placement clearances unvalidated",
+      "tape_width_m": 0.02,
+      "zone_cut_studs": [
+        24,
+        24
+      ],
+      "zones": [
+        {
+          "id": "main_sorted",
+          "bounds_studs_xyxy": [
+            0,
+            24,
+            48,
+            48
+          ]
+        },
+        {
+          "id": "buffer_a",
+          "bounds_studs_xyxy": [
+            0,
+            0,
+            24,
+            24
+          ]
+        },
+        {
+          "id": "buffer_b",
+          "bounds_studs_xyxy": [
+            24,
+            0,
+            48,
+            24
+          ]
+        }
+      ],
+      "measured_outer_size_m": [
+        0.38,
+        0.38
+      ],
+      "measurement_provenance": "User reported25x25cm white /38x38cm gray; not a calibrated metrology result",
+      "native_nominal_size_m": [
+        0.384,
+        0.384
+      ],
+      "native_minus_reported_size_m": [
+        0.004,
+        0.004
+      ],
+      "black_tape_covered_rows_each_y_edge": 1.75,
+      "black_tape_width_m": 0.035,
+      "black_tape_inner_stud_bounds_xyxy": [
+        0,
+        2,
+        48,
+        46
+      ],
+      "zone_fit_note": "Whole-stud working bounds conservatively exclude two Y rows; visual black overlap is 14 mm and yellow divider width is 20 mm from hand measurements. Fit of the repeating 22-stud lattice in a half-zone remains unvalidated; target remains empty.",
+      "black_tape_intrusion_note": "Approximate hand measurement (2026-10-25): 14 mm, or 1.75 nominal 8 mm pitches. Whole-stud working bounds still exclude two rows. Opposite sides assumed symmetric."
+    },
+    "reject_bowl": {
+      "center_table_m": [
+        0.01,
+        0.27,
+        0.0
+      ],
+      "outer_radius_m": 0.08,
+      "bottom_radius_m": 0.055,
+      "height_m": 0.06,
+      "wall_m": 0.003,
+      "segments": 32,
+      "status": "approximate open bowl; rim parallax and size unresolved; collision/drop behavior unvalidated"
+    },
+    "marker_board": {
+      "center_table_m": [
+        0.4,
+        -0.42,
+        0.0002
+      ],
+      "size_m": [
+        0.297,
+        0.21
+      ],
+      "status": "Specified ChArUco pattern with ordered-ID-verified nominal orientation on assumed A4 backing; actual print scale unverified, no camera calibration",
+      "board_spec_file": "board_spec.json",
+      "texture_file": "charuco_board.png",
+      "provenance_file": "charuco_board.json",
+      "pattern_size_m": [
+        0.21,
+        0.15
+      ],
+      "squares_xy": [
+        7,
+        5
+      ],
+      "square_length_m": 0.03,
+      "marker_length_m": 0.022,
+      "dictionary": "DICT_4X4_50",
+      "expected_default_marker_count": 17,
+      "expected_inner_corner_count": 24,
+      "pattern_rotation_table_deg": 0.0,
+      "pattern_rotation_status": "Verified nominal quarter-turn0 from ordered decoded IDs in photo9 with approximate tabletop homography (job1701); not calibrated camera geometry",
+      "physical_print_scale_status": "Nominal specification dimensions only; photo fit similarity1.05666 is not proof of physical print scale and does not rescale the board",
+      "photo_ordered_id_fit_yaw_deg": 0.0603086,
+      "photo_ordered_id_fit_nearest_quarter_turn_deg": 0.0,
+      "photo_ordered_id_fit_max_marker_disagreement_deg": 2.1417,
+      "photo_ordered_id_fit_similarity_scale": 1.05666
+    },
+    "wrist_camera": {
+      "id": "wrist_d435i",
+      "type": "RealSense D435i",
+      "parent_prim": "/World/envs/env_0/Robot/fr3_hand",
+      "intended_view": "vertical downward as physically reported",
+      "T_hand_optical": null,
+      "intrinsics": null,
+      "housing_measurements_m": {
+        "toward_fingers": 0.063,
+        "additional_on_top": 0.02
+      },
+      "status": "calibration_required; housing measurements do not define optical axes/center; no optical prim activated",
+      "mount_side_correction": {
+        "rotation_about_hand_z_deg": 180,
+        "status": "Opposite side requested by user; approximate visual correction of inherited camera and bracket together, not optical calibration",
+        "original_camera_center_hand_m": [
+          -0.0375,
+          0,
+          0.0526
+        ],
+        "corrected_camera_center_hand_m": [
+          0.0375,
+          0,
+          0.0526
+        ]
+      }
+    },
+    "physical_external_cameras": [],
+    "recipes_declarative_only": [
+      {
+        "id": "one_selected",
+        "selected_good_label_ids": [
+          "dark_red"
+        ],
+        "main_selected_labels": [
+          "dark_red"
+        ],
+        "buffer_a": [
+          "brown"
+        ],
+        "buffer_b": [
+          "tan"
+        ],
+        "faulty_destination": "reject_bowl",
+        "arrangement": "repeat input lattice in the main zone",
+        "validated": false
+      },
+      {
+        "id": "two_selected",
+        "selected_good_label_ids": [
+          "dark_red",
+          "brown"
+        ],
+        "main_selected_labels": [
+          "dark_red",
+          "brown"
+        ],
+        "buffer_a": [
+          "tan"
+        ],
+        "buffer_b": [],
+        "faulty_destination": "reject_bowl",
+        "arrangement": "repeat input lattice in the main zone",
+        "validated": false
+      },
+      {
+        "id": "three_selected",
+        "selected_good_label_ids": [
+          "dark_red",
+          "brown",
+          "tan"
+        ],
+        "main_selected_labels": [
+          "dark_red",
+          "brown",
+          "tan"
+        ],
+        "buffer_a": [],
+        "buffer_b": [],
+        "faulty_destination": "reject_bowl",
+        "arrangement": "repeat input lattice in the main zone",
+        "validated": false
+      }
+    ],
+    "label_note": "Existing good palette keys are provisional recipe IDs; Challenge1 owns actual quality/shade classification. No routing/controller is implemented.",
+    "additional_wrist_camera": {
+      "id": "wrist_c920",
+      "type": "Logitech C920",
+      "status": "Corrected from user folded-holder reference: underside against hand, rear tail at wrist face, lens fascia tilts toward fingers/nominal held-object region. Unmeasured dimensions/stop/optics; visual only.",
+      "parent_prim": "/World/envs/env_0/Robot/fr3_hand",
+      "stand_center_hand_x_m": -0.035,
+      "stand_size_depth_width_length_m": [
+        0.006,
+        0.045,
+        0.05
+      ],
+      "hinge_position_hand_m": [
+        -0.047,
+        0,
+        0.043
+      ],
+      "body_size_depth_width_height_m": [
+        0.024,
+        0.094,
+        0.029
+      ],
+      "body_center_from_hinge_local_m": [
+        -0.016,
+        0,
+        -0.003
+      ],
+      "illustrative_forward_hinge_deg": 50.0,
+      "tape_centers_hand_z_m": [
+        0.013,
+        0.031
+      ],
+      "mount_constraints": [
+        "Folded foot underside against hand -X flank; not long vertical strap",
+        "Rear tail reaches nominal handZ0 circular wrist-face stop",
+        "Housing overlaps folded clip footprint",
+        "Fascia initially faces fingers +Z; housing-only pitch toward hand +X/grasp region",
+        "Illustrative angle is not measured mechanical hard stop or calibrated optical direction"
+      ],
+      "reference_asset": "end_effector/assets/c920_folded_reference.jpg"
+    },
+    "fingertip_visual": {
+      "asset": "assets/franka_research3_gripper.stl",
+      "sha256": "30c3e47142dce9ba82ec46edf42f1dc2825d620d23bad0a95ce1e2de902b752d",
+      "assumed_stl_unit_m": 0.001,
+      "distal_tip_finger_z_m": 0.06164037066757202,
+      "status": "User-confirmed orientation and proximal-edge alignment. Nominal backplane/width placement; STL millimeters assumed. Simple rigid visual screw attachment, no form-fit/contact certification.",
+      "width_center_cad_y_mm": -15.5,
+      "stock_pad_backplane_abs_finger_y_m": 0.01090669,
+      "body_mount_cad_x_mm": -9.5,
+      "boss_front_cad_x_mm": -11.0,
+      "boss_axis_center_cad_yz_mm": [
+        -15.5000023,
+        18.60000584
+      ],
+      "taper_distal_cad_z_mm": 2.0500054359436035,
+      "broad_end_cad_z_mm": 27.600006103515625,
+      "orientation": "User-confirmed: tapered lowCADZ distal; boss faces support; broadgripface inward. ProperRz(+/-90)*Ry180, no reflection.",
+      "outside_screw_visual": {
+        "head_radius_m": 0.003,
+        "outward_protrusion_m": 0.002,
+        "fallback_wall_thickness_m": 0.002,
+        "status": "Simple round visual screw head rigidly parented to each finger. Diameter6mm/protrusion2mm estimated; no shaft, threads, form-fit, collision or mass model."
+      },
+      "stock_pad_proximal_finger_z_m": 0.03609037,
+      "height_anchor": "User-confirmed same proximal/top edge as stock pads; longer body extends distally below metal. Boss and outside head share the resulting axis height."
+    },
+    "measurement_update_20261025": {
+      "source": "experiments/final_workcell_20261024/measurements_20261025.json",
+      "status": "Tapevisuals updated; third fixed C920 housing position recorded. Base housing feature-to-axis mapping and C920orientation/optics stillapproximate/unmeasured."
+    },
+    "additional_fixed_camera": {
+      "model": "Logitech C920",
+      "camera_count_role": "Third physical camera; independent of wristD435i and wristC920",
+      "position_table_m": [
+        -0.318,
+        -0.042,
+        0.44
+      ],
+      "position_status": "Approximate front housing center from userhandmeasurements2026-10-25; native32studplate reference. Reportrounded(-.32,-.04,.44)m.",
+      "position_derivation": "X=-(.256/2+.19),Y=.256/2-.17,Z=.44; alternate250mm reportedouterplate gives(-.315,-.045,.44).",
+      "orientation_table_wxyz": null,
+      "optical_transform_available": false,
+      "intrinsics_available": false,
+      "sensor_kind": "RGB only; no physical depth stream",
+      "activation_status": "Position metadata recorded; no new rendered/online sensor instantiated yet.",
+      "measurement_source": "experiments/final_workcell_20261024/measurements_20261025.json"
+    }
+  }
+}

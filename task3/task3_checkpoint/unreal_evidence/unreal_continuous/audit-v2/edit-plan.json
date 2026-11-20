@@ -1,0 +1,250 @@
+{
+	"schema": "brickflow.continuous-film.v2",
+	"cameraAuditOnly": true,
+	"referenceSha256": "7573180b519dfa27f1b97b6cd682659b5235f129f1ad7d4f9b73f25db808805b",
+	"fps": 30,
+	"frames": 11867,
+	"durationSeconds": 395.56666666666666,
+	"nativeEnd": 3177.0666666666666,
+	"acceptedId": "9568",
+	"rejectedId": "9567",
+	"motion": "Continuous native clock from input delivery; no skips. Smooth speed ramps, assembly 16x, bridge 1x, final 40x.",
+	"limitations": "Original synthetic classifier and kinematic mechanisms. Profile aligned to the reference viewing plane, not calibrated to measured physical-camera intrinsics.",
+	"shots": [
+		{
+			"name": "Input pallets, dehacking and row transfer",
+			"camera": "continuous",
+			"firstFrame": 0,
+			"frames": 2941,
+			"nativeStart": 0,
+			"nativeEnd": 98.033333333333331,
+			"rateStart": 1,
+			"rateEnd": 1,
+			"freeze": false
+		},
+		{
+			"name": "Ease to Franka comparison",
+			"camera": "continuous",
+			"firstFrame": 2941,
+			"frames": 60,
+			"nativeStart": 98.033333333333331,
+			"nativeEnd": 99.033333333333331,
+			"rateStart": 1,
+			"rateEnd": 0,
+			"freeze": false
+		},
+		{
+			"name": "Franka profile insertion handle",
+			"camera": "row-hold",
+			"firstFrame": 3001,
+			"frames": 150,
+			"nativeStart": 99.033333333333331,
+			"nativeEnd": 99.033333333333331,
+			"rateStart": 0,
+			"rateEnd": 0,
+			"freeze": true
+		},
+		{
+			"name": "Ease back to production",
+			"camera": "continuous",
+			"firstFrame": 3151,
+			"frames": 60,
+			"nativeStart": 99.033333333333331,
+			"nativeEnd": 100.03333333333333,
+			"rateStart": 0,
+			"rateEnd": 1,
+			"freeze": false
+		},
+		{
+			"name": "Follow to inspection",
+			"camera": "continuous",
+			"firstFrame": 3211,
+			"frames": 618,
+			"nativeStart": 100.03333333333333,
+			"nativeEnd": 120.63333333333333,
+			"rateStart": 1,
+			"rateEnd": 1,
+			"freeze": false
+		},
+		{
+			"name": "Ease to inspection comparison",
+			"camera": "continuous",
+			"firstFrame": 3829,
+			"frames": 60,
+			"nativeStart": 120.63333333333333,
+			"nativeEnd": 121.63333333333333,
+			"rateStart": 1,
+			"rateEnd": 0,
+			"freeze": false
+		},
+		{
+			"name": "Detection algorithm insertion handle",
+			"camera": "sensor",
+			"firstFrame": 3889,
+			"frames": 210,
+			"nativeStart": 121.63333333333333,
+			"nativeEnd": 121.63333333333333,
+			"rateStart": 0,
+			"rateEnd": 0,
+			"freeze": true
+		},
+		{
+			"name": "Ease back to inspection",
+			"camera": "continuous",
+			"firstFrame": 4099,
+			"frames": 60,
+			"nativeStart": 121.63333333333333,
+			"nativeEnd": 122.63333333333333,
+			"rateStart": 0,
+			"rateEnd": 1,
+			"freeze": false
+		},
+		{
+			"name": "Rejection, routing and row formation",
+			"camera": "continuous",
+			"firstFrame": 4159,
+			"frames": 2343,
+			"nativeStart": 122.63333333333333,
+			"nativeEnd": 200.73333333333332,
+			"rateStart": 1,
+			"rateEnd": 1,
+			"freeze": false
+		},
+		{
+			"name": "Smooth assembly acceleration",
+			"camera": "continuous",
+			"firstFrame": 6502,
+			"frames": 120,
+			"nativeStart": 200.73333333333332,
+			"nativeEnd": 234.73333333333332,
+			"rateStart": 1,
+			"rateEnd": 16,
+			"freeze": false
+		},
+		{
+			"name": "Continuous pallet reconstruction",
+			"camera": "continuous",
+			"firstFrame": 6622,
+			"frames": 2043,
+			"nativeStart": 234.73333333333332,
+			"nativeEnd": 1324.3333333333333,
+			"rateStart": 16,
+			"rateEnd": 16,
+			"freeze": false
+		},
+		{
+			"name": "Smooth return to transport speed",
+			"camera": "continuous",
+			"firstFrame": 8665,
+			"frames": 120,
+			"nativeStart": 1324.3333333333333,
+			"nativeEnd": 1358.3333333333333,
+			"rateStart": 16,
+			"rateEnd": 1,
+			"freeze": false
+		},
+		{
+			"name": "Output outfeed, lift, bridge and deposit at real speed",
+			"camera": "continuous",
+			"firstFrame": 8785,
+			"frames": 1642,
+			"nativeStart": 1358.3333333333333,
+			"nativeEnd": 1413.0666666666666,
+			"rateStart": 1,
+			"rateEnd": 1,
+			"freeze": false
+		},
+		{
+			"name": "Pullback with smooth timelapse acceleration",
+			"camera": "reveal",
+			"firstFrame": 10427,
+			"frames": 240,
+			"nativeStart": 1413.0666666666666,
+			"nativeEnd": 1577.0666666666666,
+			"rateStart": 1,
+			"rateEnd": 40,
+			"freeze": false
+		},
+		{
+			"name": "Wide continuous factory timelapse",
+			"camera": "reveal",
+			"firstFrame": 10667,
+			"frames": 1200,
+			"nativeStart": 1577.0666666666666,
+			"nativeEnd": 3177.0666666666666,
+			"rateStart": 40,
+			"rateEnd": 40,
+			"freeze": false
+		}
+	],
+	"cameraCues": [
+		{
+			"view": "input",
+			"atSeconds": 0,
+			"blendSeconds": 0
+		},
+		{
+			"view": "dehack",
+			"atSeconds": 29,
+			"blendSeconds": 4
+		},
+		{
+			"view": "follow",
+			"atSeconds": 57.383283954096399,
+			"blendSeconds": 6
+		},
+		{
+			"view": "row-profile",
+			"atSeconds": 84.550501964985415,
+			"blendSeconds": 6
+		},
+		{
+			"view": "follow",
+			"atSeconds": 105.03333333333333,
+			"blendSeconds": 6
+		},
+		{
+			"view": "inspection",
+			"atSeconds": 118.62362313376829,
+			"blendSeconds": 5
+		},
+		{
+			"view": "sensor",
+			"atSeconds": 125.63333333333333,
+			"blendSeconds": 4
+		},
+		{
+			"view": "reject",
+			"atSeconds": 136.63333333333333,
+			"blendSeconds": 3
+		},
+		{
+			"view": "follow",
+			"atSeconds": 144.78365305600471,
+			"blendSeconds": 3
+		},
+		{
+			"view": "formation",
+			"atSeconds": 149.14043860402768,
+			"blendSeconds": 5
+		},
+		{
+			"view": "stacking",
+			"atSeconds": 213.73333333333332,
+			"blendSeconds": 8
+		},
+		{
+			"view": "dispatch",
+			"atSeconds": 291.79700759169918,
+			"blendSeconds": 6
+		},
+		{
+			"view": "reveal",
+			"atSeconds": 347.56666666666666,
+			"blendSeconds": 6
+		}
+	],
+	"timelapseAdditionalInspections": 5727,
+	"rowHoldSeconds": 100.03333333333333,
+	"sensorHoldSeconds": 129.63333333333333
+}

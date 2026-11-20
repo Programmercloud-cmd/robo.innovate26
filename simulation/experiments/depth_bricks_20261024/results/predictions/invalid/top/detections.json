@@ -1,0 +1,56 @@
+{
+  "view": "top",
+  "condition": "invalid",
+  "direction_status": "uncertain",
+  "depth_direction": {
+    "view": "top",
+    "condition": "invalid",
+    "status": "uncertain",
+    "frame": "world_xy",
+    "direction_world_deg_mod180": null,
+    "height_band_world_m": null,
+    "estimated_surface_height_world_m": null,
+    "reasons": [
+      "no_sufficiently_supported_horizontal_height_band"
+    ],
+    "support": {
+      "sampled_depth_pixels": 230400,
+      "valid_sampled_depth_pixels": 0,
+      "horizontal_roi_points": 0
+    },
+    "band_search": [],
+    "components": [],
+    "pca_consensus": null,
+    "hough_consensus": null,
+    "raster": {
+      "resolution_m": 0.001,
+      "roi_world_xy_m": {
+        "x": [
+          0.322,
+          0.578
+        ],
+        "y": [
+          -0.288,
+          -0.032
+        ]
+      },
+      "columns_axis": "+worldX",
+      "rows_axis": "+worldY"
+    },
+    "depth_semantics": "axial optical Z in meters, not Euclidean range",
+    "limitations": [
+      "Highest supported horizontal surface is an image/depth hypothesis, not a semantic brick-layer proof.",
+      "Nominal camera calibration; no physical D435i calibration or dynamics claim.",
+      "Component PCA and Hough are complementary checks sharing one sensor-derived mask."
+    ]
+  },
+  "ridges": [],
+  "candidates": [],
+  "rejected_fragments": [],
+  "limitations": [
+    "Known2x4 footprint/type and nominal camera calibration assist hypotheses.",
+    "Measured dominant horizontal band is treated as body-top plane; not a calibrated per-brick root pose.",
+    "Equal metric divisions are inferred, not automatically observed brick seams.",
+    "Current full-stack views do not validate missing runs, removed ends or physical gripper accessibility."
+  ]
+}

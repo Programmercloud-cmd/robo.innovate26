@@ -1,0 +1,9 @@
+[
+  {
+    "id": "f000",
+    "camera": "camera_0",
+    "rgb_source": "/frozen/capture/images/diagnostic_table_top.png",
+    "depth_source": "/frozen/capture/evaluation_truth/diagnostic_table_top_depth.npy",
+    "operation": null
+  }
+]

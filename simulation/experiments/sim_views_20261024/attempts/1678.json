@@ -1,0 +1,17 @@
+{
+  "job_id": 1678,
+  "group": "default",
+  "status": {
+    "Done": {
+      "enqueued_at": "2026-10-24T12:08:50.803842955+02:00",
+      "start": "2026-10-24T12:08:51.094312737+02:00",
+      "end": "2026-10-24T12:18:22.475304679+02:00",
+      "result": "Killed"
+    }
+  },
+  "source_commit": "9bb67be",
+  "snapshot": "runs/20261024T100850.629116Z-sim-views",
+  "outcome": "Stopped after native connection-add warning and no validated render output; initialization cause under investigation.",
+  "observed_warning": "UsdLegoGraph: failed to add connection for prim /World/envs/env_0/managed/Conns/Conn_28",
+  "native_graph_and_images_validated": false
+}

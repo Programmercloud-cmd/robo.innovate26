@@ -1,0 +1,24 @@
+UTC: 2026-10-25T15:57:28.482860+00:00
+Scope: initial hardware access check only; no motion or gripper commands.
+Robot TCP 172.16.0.2:1337: PermissionError: [Errno 1] Operation not permitted
+libfranka read-only state: exit=1
+libfranka: I/O error
+V4L camera enumeration: exit=1
+Cannot open device /dev/video0, exiting.
+RealSense enumeration: exit=1
+25/10 16:57:28,744 ERROR [139707744464896] (rs.cpp:305) [rs2_create_context_ex( api_version:25901, json_settings:{ ) UNKNOWN] could not initialize udev monitor
+ 25/10 16:57:28,745 ERROR [139707744464896] (rs.cpp:305) [rs2_delete_context( context:nullptr ) UNKNOWN] null pointer passed for argument "context"
+RealSense error calling rs2_create_context_ex(api_version:25901, json_settings:{):
+    could not initialize udev monitor
+Exposed camera nodes: []
+Exposed USB bus: False
+Host sysfs camera names (device metadata only; feeds unverified):
+  video0: HP Wide Vision HD Camera: HP Wi
+  video1: HP Wide Vision HD Camera: HP Wi
+  video10: HD Pro Webcam C920
+  video11: HD Pro Webcam C920
+  video2: HD Pro Webcam C920: HD Pro Webc
+  video3: HD Pro Webcam C920: HD Pro Webc
+Motion tests completed: 0/7 joints; 0 Cartesian axes.
+Camera feeds verified: 0/3.
+Blocked by session network/device access; RealSense not listed in available video metadata.

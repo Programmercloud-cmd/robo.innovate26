@@ -1,0 +1,6 @@
+'use strict';
+const fs=require('fs'),path=require('path'),crypto=require('crypto'),zlib=require('zlib');
+const root=path.resolve(__dirname,'..'),raw=fs.readFileSync(path.join(root,'geometry-manifest.json'));
+const geometrySha=crypto.createHash('sha256').update(raw).digest('hex');
+const engine=require(path.join(root,'engine/operational-engine.js'));
+(async()=>{const options={manifestSha:geometrySha};const start=Date.now();const run=await engine.createRun(JSON.parse(raw),options);if(run.manifestSha!==geometrySha)throw Error('Run manifest mismatch');const json=JSON.stringify(run);fs.writeFileSync(path.join(root,'run.json'),json);fs.writeFileSync(path.join(root,'run.json.gz'),zlib.gzipSync(json,{level:6}));const result={generated_from:'engine/operational-engine.js',geometrySha,engineSha:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'engine/operational-engine.js'))).digest('hex'),runSha:crypto.createHash('sha256').update(json).digest('hex'),duration:run.duration,recordCount:run.records.length,eventCount:run.events.length,palletCount:run.pallets.length,layerCount:run.layers.length,elapsedSeconds:(Date.now()-start)/1000,bytes:Buffer.byteLength(json)};fs.writeFileSync(path.join(root,'integration/run-generation.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));})().catch(e=>{console.error(e.stack);process.exit(1)});

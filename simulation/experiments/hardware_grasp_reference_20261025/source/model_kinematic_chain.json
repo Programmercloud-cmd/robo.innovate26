@@ -1,0 +1,970 @@
+{
+  "root": "/World/envs/env_0/Robot/fr3_link0",
+  "hand": "/World/envs/env_0/Robot/fr3_hand",
+  "T_world_root": [
+    [
+      0.7071066765757053,
+      -0.7071068857973744,
+      0.0,
+      -0.09000000357627869
+    ],
+    [
+      0.7071068857973744,
+      0.7071066765757053,
+      0.0,
+      -0.4000000059604645
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "T_hand_grip": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.11755756120085716
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "joints": [
+    {
+      "path": "/World/envs/env_0/Robot/fr3_link0/fr3_joint1",
+      "name": "fr3_joint1",
+      "parent": "/World/envs/env_0/Robot/fr3_link0",
+      "child": "/World/envs/env_0/Robot/fr3_link1",
+      "local0": {
+        "position_m": [
+          0.0,
+          0.0,
+          0.3330000042915344
+        ],
+        "quaternion_wxyz": [
+          0.7071067690849304,
+          0.0,
+          -0.7071067690849304,
+          0.0
+        ]
+      },
+      "T_parent_joint": [
+        [
+          0.0,
+          -0.0,
+          -0.9999999999999998,
+          0.0
+        ],
+        [
+          0.0,
+          0.9999999999999998,
+          -0.0,
+          0.0
+        ],
+        [
+          0.9999999999999998,
+          0.0,
+          0.0,
+          0.3330000042915344
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "local1": {
+        "position_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "quaternion_wxyz": [
+          0.7071067690849304,
+          0.0,
+          -0.7071067690849304,
+          0.0
+        ]
+      },
+      "T_child_joint": [
+        [
+          0.0,
+          -0.0,
+          -0.9999999999999998,
+          0.0
+        ],
+        [
+          0.0,
+          0.9999999999999998,
+          -0.0,
+          0.0
+        ],
+        [
+          0.9999999999999998,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "type": "revolute",
+      "axis": "X",
+      "axis_vector": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits_rad": [
+        -2.7436998751331965,
+        2.7436998751331965
+      ]
+    },
+    {
+      "path": "/World/envs/env_0/Robot/fr3_link1/fr3_joint2",
+      "name": "fr3_joint2",
+      "parent": "/World/envs/env_0/Robot/fr3_link1",
+      "child": "/World/envs/env_0/Robot/fr3_link2",
+      "local0": {
+        "position_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "quaternion_wxyz": [
+          0.4999999701976776,
+          -0.4999999701976776,
+          -0.4999999701976776,
+          0.4999999701976776
+        ]
+      },
+      "T_parent_joint": [
+        [
+          0.0,
+          0.0,
+          -1.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "local1": {
+        "position_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "quaternion_wxyz": [
+          0.7071067690849304,
+          0.0,
+          -0.7071067690849304,
+          0.0
+        ]
+      },
+      "T_child_joint": [
+        [
+          0.0,
+          -0.0,
+          -0.9999999999999998,
+          0.0
+        ],
+        [
+          0.0,
+          0.9999999999999998,
+          -0.0,
+          0.0
+        ],
+        [
+          0.9999999999999998,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "type": "revolute",
+      "axis": "X",
+      "axis_vector": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits_rad": [
+        -1.7836999438221368,
+        1.7836999438221368
+      ]
+    },
+    {
+      "path": "/World/envs/env_0/Robot/fr3_link2/fr3_joint3",
+      "name": "fr3_joint3",
+      "parent": "/World/envs/env_0/Robot/fr3_link2",
+      "child": "/World/envs/env_0/Robot/fr3_link3",
+      "local0": {
+        "position_m": [
+          0.0,
+          -0.3160000145435333,
+          0.0
+        ],
+        "quaternion_wxyz": [
+          0.4999999701976776,
+          0.4999999701976776,
+          -0.4999999701976776,
+          -0.4999999701976776
+        ]
+      },
+      "T_parent_joint": [
+        [
+          0.0,
+          0.0,
+          -1.0,
+          0.0
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          -0.3160000145435333
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "local1": {
+        "position_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "quaternion_wxyz": [
+          0.7071067690849304,
+          0.0,
+          -0.7071067690849304,
+          0.0
+        ]
+      },
+      "T_child_joint": [
+        [
+          0.0,
+          -0.0,
+          -0.9999999999999998,
+          0.0
+        ],
+        [
+          0.0,
+          0.9999999999999998,
+          -0.0,
+          0.0
+        ],
+        [
+          0.9999999999999998,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "type": "revolute",
+      "axis": "X",
+      "axis_vector": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits_rad": [
+        -2.9006998792960927,
+        2.9006998792960927
+      ]
+    },
+    {
+      "path": "/World/envs/env_0/Robot/fr3_link3/fr3_joint4",
+      "name": "fr3_joint4",
+      "parent": "/World/envs/env_0/Robot/fr3_link3",
+      "child": "/World/envs/env_0/Robot/fr3_link4",
+      "local0": {
+        "position_m": [
+          0.08250000327825546,
+          0.0,
+          0.0
+        ],
+        "quaternion_wxyz": [
+          0.4999999701976776,
+          0.4999999701976776,
+          -0.4999999701976776,
+          -0.4999999701976776
+        ]
+      },
+      "T_parent_joint": [
+        [
+          0.0,
+          0.0,
+          -1.0,
+          0.08250000327825546
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "local1": {
+        "position_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "quaternion_wxyz": [
+          0.7071067690849304,
+          0.0,
+          -0.7071067690849304,
+          0.0
+        ]
+      },
+      "T_child_joint": [
+        [
+          0.0,
+          -0.0,
+          -0.9999999999999998,
+          0.0
+        ],
+        [
+          0.0,
+          0.9999999999999998,
+          -0.0,
+          0.0
+        ],
+        [
+          0.9999999999999998,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "type": "revolute",
+      "axis": "X",
+      "axis_vector": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits_rad": [
+        -3.042099884741632,
+        -0.15179999904219163
+      ]
+    },
+    {
+      "path": "/World/envs/env_0/Robot/fr3_link4/fr3_joint5",
+      "name": "fr3_joint5",
+      "parent": "/World/envs/env_0/Robot/fr3_link4",
+      "child": "/World/envs/env_0/Robot/fr3_link5",
+      "local0": {
+        "position_m": [
+          -0.08250000327825546,
+          0.3840000033378601,
+          0.0
+        ],
+        "quaternion_wxyz": [
+          0.4999999701976776,
+          -0.4999999701976776,
+          -0.4999999701976776,
+          0.4999999701976776
+        ]
+      },
+      "T_parent_joint": [
+        [
+          0.0,
+          0.0,
+          -1.0,
+          -0.08250000327825546
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.3840000033378601
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "local1": {
+        "position_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "quaternion_wxyz": [
+          0.7071067690849304,
+          0.0,
+          -0.7071067690849304,
+          0.0
+        ]
+      },
+      "T_child_joint": [
+        [
+          0.0,
+          -0.0,
+          -0.9999999999999998,
+          0.0
+        ],
+        [
+          0.0,
+          0.9999999999999998,
+          -0.0,
+          0.0
+        ],
+        [
+          0.9999999999999998,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "type": "revolute",
+      "axis": "X",
+      "axis_vector": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits_rad": [
+        -2.806499876798355,
+        2.806499876798355
+      ]
+    },
+    {
+      "path": "/World/envs/env_0/Robot/fr3_link5/fr3_joint6",
+      "name": "fr3_joint6",
+      "parent": "/World/envs/env_0/Robot/fr3_link5",
+      "child": "/World/envs/env_0/Robot/fr3_link6",
+      "local0": {
+        "position_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "quaternion_wxyz": [
+          0.4999999701976776,
+          0.4999999701976776,
+          -0.4999999701976776,
+          -0.4999999701976776
+        ]
+      },
+      "T_parent_joint": [
+        [
+          0.0,
+          0.0,
+          -1.0,
+          0.0
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "local1": {
+        "position_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "quaternion_wxyz": [
+          0.7071067690849304,
+          0.0,
+          -0.7071067690849304,
+          0.0
+        ]
+      },
+      "T_child_joint": [
+        [
+          0.0,
+          -0.0,
+          -0.9999999999999998,
+          0.0
+        ],
+        [
+          0.0,
+          0.9999999999999998,
+          -0.0,
+          0.0
+        ],
+        [
+          0.9999999999999998,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "type": "revolute",
+      "axis": "X",
+      "axis_vector": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits_rad": [
+        0.5444999629130268,
+        4.5168996405674235
+      ]
+    },
+    {
+      "path": "/World/envs/env_0/Robot/fr3_link6/fr3_joint7",
+      "name": "fr3_joint7",
+      "parent": "/World/envs/env_0/Robot/fr3_link6",
+      "child": "/World/envs/env_0/Robot/fr3_link7",
+      "local0": {
+        "position_m": [
+          0.08799999952316284,
+          0.0,
+          0.0
+        ],
+        "quaternion_wxyz": [
+          0.4999999701976776,
+          0.4999999701976776,
+          -0.4999999701976776,
+          -0.4999999701976776
+        ]
+      },
+      "T_parent_joint": [
+        [
+          0.0,
+          0.0,
+          -1.0,
+          0.08799999952316284
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "local1": {
+        "position_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "quaternion_wxyz": [
+          0.7071067690849304,
+          0.0,
+          -0.7071067690849304,
+          0.0
+        ]
+      },
+      "T_child_joint": [
+        [
+          0.0,
+          -0.0,
+          -0.9999999999999998,
+          0.0
+        ],
+        [
+          0.0,
+          0.9999999999999998,
+          -0.0,
+          0.0
+        ],
+        [
+          0.9999999999999998,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "type": "revolute",
+      "axis": "X",
+      "axis_vector": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits_rad": [
+        -3.015899705937432,
+        3.015899705937432
+      ]
+    },
+    {
+      "path": "/World/envs/env_0/Robot/fr3_link7/fr3_joint8",
+      "name": "fr3_joint8",
+      "parent": "/World/envs/env_0/Robot/fr3_link7",
+      "child": "/World/envs/env_0/Robot/fr3_link8",
+      "local0": {
+        "position_m": [
+          0.0,
+          0.0,
+          0.10700000077486038
+        ],
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "T_parent_joint": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.10700000077486038
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "local1": {
+        "position_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "T_child_joint": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "type": "fixed"
+    },
+    {
+      "path": "/World/envs/env_0/Robot/fr3_link8/fr3_hand_joint",
+      "name": "fr3_hand_joint",
+      "parent": "/World/envs/env_0/Robot/fr3_link8",
+      "child": "/World/envs/env_0/Robot/fr3_hand",
+      "local0": {
+        "position_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "quaternion_wxyz": [
+          0.9238795042037964,
+          0.0,
+          0.0,
+          -0.3826834559440613
+        ]
+      },
+      "T_parent_joint": [
+        [
+          0.7071067350592308,
+          0.7071068273138611,
+          0.0,
+          0.0
+        ],
+        [
+          -0.7071068273138611,
+          0.7071067350592308,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "local1": {
+        "position_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "quaternion_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "T_child_joint": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "type": "fixed"
+    }
+  ],
+  "limits_rad": [
+    [
+      -2.7436998751331965,
+      2.7436998751331965
+    ],
+    [
+      -1.7836999438221368,
+      1.7836999438221368
+    ],
+    [
+      -2.9006998792960927,
+      2.9006998792960927
+    ],
+    [
+      -3.042099884741632,
+      -0.15179999904219163
+    ],
+    [
+      -2.806499876798355,
+      2.806499876798355
+    ],
+    [
+      0.5444999629130268,
+      4.5168996405674235
+    ],
+    [
+      -3.015899705937432,
+      3.015899705937432
+    ]
+  ],
+  "joint_names": [
+    "fr3_joint1",
+    "fr3_joint2",
+    "fr3_joint3",
+    "fr3_joint4",
+    "fr3_joint5",
+    "fr3_joint6",
+    "fr3_joint7"
+  ],
+  "joint_prim_stacks": {
+    "/World/envs/env_0/Robot/fr3_link0/fr3_joint1": [
+      "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/FrankaRobotics/FrankaFR3/fr3.usd",
+      "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/FrankaRobotics/FrankaFR3/configuration/fr3_robot_schema.usd"
+    ],
+    "/World/envs/env_0/Robot/fr3_link1/fr3_joint2": [
+      "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/FrankaRobotics/FrankaFR3/fr3.usd",
+      "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/FrankaRobotics/FrankaFR3/configuration/fr3_robot_schema.usd"
+    ],
+    "/World/envs/env_0/Robot/fr3_link2/fr3_joint3": [
+      "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/FrankaRobotics/FrankaFR3/fr3.usd",
+      "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/FrankaRobotics/FrankaFR3/configuration/fr3_robot_schema.usd"
+    ],
+    "/World/envs/env_0/Robot/fr3_link3/fr3_joint4": [
+      "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/FrankaRobotics/FrankaFR3/fr3.usd",
+      "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/FrankaRobotics/FrankaFR3/configuration/fr3_robot_schema.usd"
+    ],
+    "/World/envs/env_0/Robot/fr3_link4/fr3_joint5": [
+      "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/FrankaRobotics/FrankaFR3/fr3.usd",
+      "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/FrankaRobotics/FrankaFR3/configuration/fr3_robot_schema.usd"
+    ],
+    "/World/envs/env_0/Robot/fr3_link5/fr3_joint6": [
+      "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/FrankaRobotics/FrankaFR3/fr3.usd",
+      "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/FrankaRobotics/FrankaFR3/configuration/fr3_robot_schema.usd"
+    ],
+    "/World/envs/env_0/Robot/fr3_link6/fr3_joint7": [
+      "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/FrankaRobotics/FrankaFR3/fr3.usd",
+      "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/FrankaRobotics/FrankaFR3/configuration/fr3_robot_schema.usd"
+    ],
+    "/World/envs/env_0/Robot/fr3_link7/fr3_joint8": [
+      "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/FrankaRobotics/FrankaFR3/fr3.usd",
+      "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/FrankaRobotics/FrankaFR3/configuration/fr3_robot_schema.usd"
+    ],
+    "/World/envs/env_0/Robot/fr3_link8/fr3_hand_joint": [
+      "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/FrankaRobotics/FrankaFR3/fr3.usd",
+      "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Robots/FrankaRobotics/FrankaFR3/configuration/fr3_robot_schema.usd"
+    ]
+  }
+}

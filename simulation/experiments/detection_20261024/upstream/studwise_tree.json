@@ -1,0 +1,2152 @@
+{
+  "sha": "3aef8aade8cb74a04780d5e809e49dfa1fc57a47",
+  "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/3aef8aade8cb74a04780d5e809e49dfa1fc57a47",
+  "tree": [
+    {
+      "path": ".devcontainer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ec57a856054ed7b9227a21ca61c2a70d4a46e693",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/ec57a856054ed7b9227a21ca61c2a70d4a46e693"
+    },
+    {
+      "path": ".devcontainer/devcontainer.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8491816397fe82d64f64475d98865defbb361005",
+      "size": 1014,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/8491816397fe82d64f64475d98865defbb361005"
+    },
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7258803cc8989dd22395c58cb4f761b225bb624b",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/7258803cc8989dd22395c58cb4f761b225bb624b"
+    },
+    {
+      "path": ".github/copilot-instructions.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "636a7a4bc970701949e33bfff2686d34fd8e30c1",
+      "size": 1862,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/636a7a4bc970701949e33bfff2686d34fd8e30c1"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "464467ef19869071d79dfdf79d4c8a184643ca43",
+      "size": 978,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/464467ef19869071d79dfdf79d4c8a184643ca43"
+    },
+    {
+      "path": ".streamlit",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "09434501e079ae28d1471f418947c6dda9900786",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/09434501e079ae28d1471f418947c6dda9900786"
+    },
+    {
+      "path": ".streamlit/config.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c0ccf0de7eaf16197be11fc3ec4d7947b550405f",
+      "size": 241,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/c0ccf0de7eaf16197be11fc3ec4d7947b550405f"
+    },
+    {
+      "path": "Antecedentes_Reporte.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cfd1b87d16de9bc309f36f98adf6ca4ff80d2c8d",
+      "size": 43668,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/cfd1b87d16de9bc309f36f98adf6ca4ff80d2c8d"
+    },
+    {
+      "path": "FolderStructure.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d227e76abf3fc081d0a544fadefae80aadeb1224",
+      "size": 17998,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/d227e76abf3fc081d0a544fadefae80aadeb1224"
+    },
+    {
+      "path": "GenerateStructure.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9902d3b5500291784dc6cc3f7af67dca5c0ec6c6",
+      "size": 4138,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/9902d3b5500291784dc6cc3f7af67dca5c0ec6c6"
+    },
+    {
+      "path": "LEEME.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e65a8b9b01c56431dfcfce987c92ff0cdd43f55",
+      "size": 9716,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/4e65a8b9b01c56431dfcfce987c92ff0cdd43f55"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "553d7d3b3d37f599c8a0693155c01c589e130cb9",
+      "size": 823,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/553d7d3b3d37f599c8a0693155c01c589e130cb9"
+    },
+    {
+      "path": "LogoComposition.psd",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "28a63817fa43517b69258d6d5b2ca0bf44495664",
+      "size": 11446302,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/28a63817fa43517b69258d6d5b2ca0bf44495664"
+    },
+    {
+      "path": "Project_Logo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "876fa52e662b03e318e0c2c13c8bfa860cd478fc",
+      "size": 16517,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/876fa52e662b03e318e0c2c13c8bfa860cd478fc"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c339c6f015a0008d16c0065b25c01b63745060c",
+      "size": 8002,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/4c339c6f015a0008d16c0065b25c01b63745060c"
+    },
+    {
+      "path": "README_old.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "992afde9dc1491866f028e166b68e44e4bd64ce9",
+      "size": 8509,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/992afde9dc1491866f028e166b68e44e4bd64ce9"
+    },
+    {
+      "path": "app.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fcdf01202773c6f96fb4163c9a8ccf051aac69e7",
+      "size": 33085,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/fcdf01202773c6f96fb4163c9a8ccf051aac69e7"
+    },
+    {
+      "path": "augmentation.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8fdd6e8eee41bea125d5de9e8cf37bfd1654ca64",
+      "size": 1514,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/8fdd6e8eee41bea125d5de9e8cf37bfd1654ca64"
+    },
+    {
+      "path": "configs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bc6210b2ecb5fc31f7a4883e0afff81cdf0464e2",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/bc6210b2ecb5fc31f7a4883e0afff81cdf0464e2"
+    },
+    {
+      "path": "configs/train_config.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5df3a621278730cd0b8ed569ba6b3f97d2401e6b",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/5df3a621278730cd0b8ed569ba6b3f97d2401e6b"
+    },
+    {
+      "path": "docs/Brickssifier_limitation_and_pipeline.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f6df24692a1a0df4b1efbd67d5c64f4efc85388",
+      "size": 4761,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/4f6df24692a1a0df4b1efbd67d5c64f4efc85388"
+    },
+    {
+      "path": "docs/Lego_CLI_Guide.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7dced8f1b50afbc13a7ad3b89644531973233e12",
+      "size": 6945,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/7dced8f1b50afbc13a7ad3b89644531973233e12"
+    },
+    {
+      "path": "docs/Multiclass_Training_Guide.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9b43b4abc7b0d78ef026d261a081be5bdb89f20c",
+      "size": 8783,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/9b43b4abc7b0d78ef026d261a081be5bdb89f20c"
+    },
+    {
+      "path": "docs/Singleclass_Training_Guide.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e49523624e1ad6c5b257b2200872b2e45c3aa56",
+      "size": 5776,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/1e49523624e1ad6c5b257b2200872b2e45c3aa56"
+    },
+    {
+      "path": "docs/Storyline_Project_Storytell.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1e89aec487b511b0597354d94b5e8587fa1356f",
+      "size": 15086,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/b1e89aec487b511b0597354d94b5e8587fa1356f"
+    },
+    {
+      "path": "docs/Technical_CLI_Guide.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5c7cafa99e9a343475ce6840335d7a24755fb709",
+      "size": 11911,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/5c7cafa99e9a343475ce6840335d7a24755fb709"
+    },
+    {
+      "path": "docs/TextBlocksPortfolioMiguel.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18a20172504b0dfbec50855cc81618aecf451364",
+      "size": 3519,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/18a20172504b0dfbec50855cc81618aecf451364"
+    },
+    {
+      "path": "docs/Util_API_guide.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fcf1410f96c4e3fa79f8cc6232eb66f36c47f3ee",
+      "size": 6062,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/fcf1410f96c4e3fa79f8cc6232eb66f36c47f3ee"
+    },
+    {
+      "path": "docs/bricks_model_fichaTecnica.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b04a46555466194cb54b95329a049398690e2999",
+      "size": 5654,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/b04a46555466194cb54b95329a049398690e2999"
+    },
+    {
+      "path": "docs/bricks_model_fichaTecnica_noEmojis.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "89d3e39b6272a2d0943b892361ab953169407329",
+      "size": 2705,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/89d3e39b6272a2d0943b892361ab953169407329"
+    },
+    {
+      "path": "docs/kaggle_bio.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0167d9ed835527f659b450d29bd8a32b70afab05",
+      "size": 2842,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/0167d9ed835527f659b450d29bd8a32b70afab05"
+    },
+    {
+      "path": "lego_cli.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "338cbde50b91b5c996c992b90577a25c5522f7ae",
+      "size": 52691,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/338cbde50b91b5c996c992b90577a25c5522f7ae"
+    },
+    {
+      "path": "model_utils_draft.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3929c0f0d2bcdb24732d0898f13ce23dd38f5cd1",
+      "size": 1025308,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/3929c0f0d2bcdb24732d0898f13ce23dd38f5cd1"
+    },
+    {
+      "path": "models",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3f3c19d9f909187ccacd55f19d001ec404d1d789",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/3f3c19d9f909187ccacd55f19d001ec404d1d789"
+    },
+    {
+      "path": "models/Brick_Model_best20250123_192838t.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "81f0b964c5fce4a6bd7dceedc3e714ff8a326e53",
+      "size": 6242467,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/81f0b964c5fce4a6bd7dceedc3e714ff8a326e53"
+    },
+    {
+      "path": "models/Stud_Model_best20250124_170824.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1d5fe6a0f610d31a211217cff3016074cf2046f",
+      "size": 6210147,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/b1d5fe6a0f610d31a211217cff3016074cf2046f"
+    },
+    {
+      "path": "models/bricks_model_kaggle50epoch_10032025.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b881e96608adeefcd77a845877c396a956f01000",
+      "size": 6245667,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/b881e96608adeefcd77a845877c396a956f01000"
+    },
+    {
+      "path": "models/studs_model_kaggle50epoch_10032025.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2cf58930a1a78c96520abb1872cb81b27f039d98",
+      "size": 6212835,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/2cf58930a1a78c96520abb1872cb81b27f039d98"
+    },
+    {
+      "path": "notebooks",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f673d55025648252b977c3a73981be49b5e0fb62",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/f673d55025648252b977c3a73981be49b5e0fb62"
+    },
+    {
+      "path": "notebooks/GenerateModelsNotebook.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "638d839bdd9e5f0544a50a2155fc60d3c25f59ca",
+      "size": 5725,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/638d839bdd9e5f0544a50a2155fc60d3c25f59ca"
+    },
+    {
+      "path": "notebooks/Inference_Pipeline.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f6a7f06210480e935b4d38ba21b2ed4d9820f7f3",
+      "size": 18928701,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/f6a7f06210480e935b4d38ba21b2ed4d9820f7f3"
+    },
+    {
+      "path": "notebooks/Inference_Pipeline_RECHARGED.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5bfc0108d37823e028d43e62a94bef4e92f64f65",
+      "size": 18938052,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/5bfc0108d37823e028d43e62a94bef4e92f64f65"
+    },
+    {
+      "path": "notebooks/Multiclass_trining_example.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "431f9e0cbf39e68bbd188e35d989373f01072eb0",
+      "size": 2315,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/431f9e0cbf39e68bbd188e35d989373f01072eb0"
+    },
+    {
+      "path": "notebooks/Train_Pipeline.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b4d45971dea5101bf1cbdd4756f9d1de609f50b",
+      "size": 7304613,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/7b4d45971dea5101bf1cbdd4756f9d1de609f50b"
+    },
+    {
+      "path": "notebooks/Train_Pipeline.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18b3dc6a9e0a7362916029b391e3b346e7ca0779",
+      "size": 40817,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/18b3dc6a9e0a7362916029b391e3b346e7ca0779"
+    },
+    {
+      "path": "notebooks/Train_Pipeline_EXECUTED.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d5631dabda42da4adcfc6be23eb8e1fb8d42404",
+      "size": 1618370,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/5d5631dabda42da4adcfc6be23eb8e1fb8d42404"
+    },
+    {
+      "path": "notebooks/Train_Pipeline_POLISH.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "201775686b6a4e3313e663444404a65afbb80bff",
+      "size": 27609,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/201775686b6a4e3313e663444404a65afbb80bff"
+    },
+    {
+      "path": "notebooks/UtilsShowcases.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c55a2876b3f9fe618e8a389f23025ab5d164be5b",
+      "size": 119,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/c55a2876b3f9fe618e8a389f23025ab5d164be5b"
+    },
+    {
+      "path": "notebooks/multiclass_train_experiment.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a35d30f5e5199630838126da50e3d9cab952cd00",
+      "size": 5927,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/a35d30f5e5199630838126da50e3d9cab952cd00"
+    },
+    {
+      "path": "presentation",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e1f597af9b8b8ab64aa92e1adb20e4483b272447",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/e1f597af9b8b8ab64aa92e1adb20e4483b272447"
+    },
+    {
+      "path": "presentation/Datasets_Compress",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ee302a32649162bdef1613b760c12f492e7c5fa9",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/ee302a32649162bdef1613b760c12f492e7c5fa9"
+    },
+    {
+      "path": "presentation/Datasets_Compress/bricks_dataset.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9609dab0d7639947659ed357f149197ce85c7e4b",
+      "size": 97701045,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/9609dab0d7639947659ed357f149197ce85c7e4b"
+    },
+    {
+      "path": "presentation/Datasets_Compress/multiclass_dataset.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bd0a5d68a95ed9c4a230f9f224be9e496860dc75",
+      "size": 102537023,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/bd0a5d68a95ed9c4a230f9f224be9e496860dc75"
+    },
+    {
+      "path": "presentation/Datasets_Compress/studs_dataset.zip",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a4cb24fc2fc6a9810edcf999a979ed4f88decef7",
+      "size": 5392974,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/a4cb24fc2fc6a9810edcf999a979ed4f88decef7"
+    },
+    {
+      "path": "presentation/HeroBanner.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6be34cec2eacacc0e0630c632081510bb96ce6bc",
+      "size": 300567,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/6be34cec2eacacc0e0630c632081510bb96ce6bc"
+    },
+    {
+      "path": "presentation/Logo.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "72e7850f052790a3e2e81e3db4de6fdbe324adf1",
+      "size": 314036,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/72e7850f052790a3e2e81e3db4de6fdbe324adf1"
+    },
+    {
+      "path": "presentation/Models_DEMO",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "770ac6fd35bea62fc22faa57ea767b7b96fe64a0",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/770ac6fd35bea62fc22faa57ea767b7b96fe64a0"
+    },
+    {
+      "path": "presentation/Models_DEMO/Brick_Model_best20250123_192838t.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "81f0b964c5fce4a6bd7dceedc3e714ff8a326e53",
+      "size": 6242467,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/81f0b964c5fce4a6bd7dceedc3e714ff8a326e53"
+    },
+    {
+      "path": "presentation/Models_DEMO/Multiclass_Model_best20250318.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "639a3ded047afb0ff2b76b61936e21bd1d254c37",
+      "size": 6252003,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/639a3ded047afb0ff2b76b61936e21bd1d254c37"
+    },
+    {
+      "path": "presentation/Models_DEMO/Stud_Model_best20250124_170824.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1d5fe6a0f610d31a211217cff3016074cf2046f",
+      "size": 6210147,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/b1d5fe6a0f610d31a211217cff3016074cf2046f"
+    },
+    {
+      "path": "presentation/Models_DEMO/bricks_model_kaggle50epoch_10032025.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b881e96608adeefcd77a845877c396a956f01000",
+      "size": 6245667,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/b881e96608adeefcd77a845877c396a956f01000"
+    },
+    {
+      "path": "presentation/Models_DEMO/studs_model_kaggle50epoch_10032025.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2cf58930a1a78c96520abb1872cb81b27f039d98",
+      "size": 6212835,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/2cf58930a1a78c96520abb1872cb81b27f039d98"
+    },
+    {
+      "path": "presentation/MulticlassResults",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "aae5c492891d03540bcbaebf8e3a803828fcf897",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/aae5c492891d03540bcbaebf8e3a803828fcf897"
+    },
+    {
+      "path": "presentation/MulticlassResults/F1_curve.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "84598c9bb5ef793afa55d787cc3cca6c320a5da3",
+      "size": 461372,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/84598c9bb5ef793afa55d787cc3cca6c320a5da3"
+    },
+    {
+      "path": "presentation/MulticlassResults/PR_curve.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e3a4b3007fb1704f5e0c3be1ec3118ec5a0f857",
+      "size": 238686,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/4e3a4b3007fb1704f5e0c3be1ec3118ec5a0f857"
+    },
+    {
+      "path": "presentation/MulticlassResults/P_curve.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7ee570b0b7f8ce874b4684b5d2cf882a2c3d90f",
+      "size": 396830,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/b7ee570b0b7f8ce874b4684b5d2cf882a2c3d90f"
+    },
+    {
+      "path": "presentation/MulticlassResults/R_curve.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "efe870a49276916ab7dddf8199eb76d8cb43b428",
+      "size": 353215,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/efe870a49276916ab7dddf8199eb76d8cb43b428"
+    },
+    {
+      "path": "presentation/MulticlassResults/Reporte.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fbc57674078561f2cb90f3511b4f592478995582",
+      "size": 3243,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/fbc57674078561f2cb90f3511b4f592478995582"
+    },
+    {
+      "path": "presentation/MulticlassResults/args.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1dc3156f007f2895a1618dd548383126dc7c7792",
+      "size": 1702,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/1dc3156f007f2895a1618dd548383126dc7c7792"
+    },
+    {
+      "path": "presentation/MulticlassResults/confusion_matrix.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e692ee50faf207c4b74d31ce4ee65cf0c5b038bc",
+      "size": 163894,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/e692ee50faf207c4b74d31ce4ee65cf0c5b038bc"
+    },
+    {
+      "path": "presentation/MulticlassResults/confusion_matrix_normalized.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f4991350d16748e2bf0a5c8eaaa5d54561062b4",
+      "size": 238887,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/6f4991350d16748e2bf0a5c8eaaa5d54561062b4"
+    },
+    {
+      "path": "presentation/MulticlassResults/events.out.tfevents.1742322844.4041322a98e9.1301.0",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d0a1a7dfb6f3053e5662ea37059bc8b71754f3f8",
+      "size": 206828,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/d0a1a7dfb6f3053e5662ea37059bc8b71754f3f8"
+    },
+    {
+      "path": "presentation/MulticlassResults/labels.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a16a97714d5f0ef5a1d07f5c1e188fc6707b0556",
+      "size": 201663,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/a16a97714d5f0ef5a1d07f5c1e188fc6707b0556"
+    },
+    {
+      "path": "presentation/MulticlassResults/labels_correlogram.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d63195098e794f66d349aa80f751a9d8c928f1c",
+      "size": 219631,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/7d63195098e794f66d349aa80f751a9d8c928f1c"
+    },
+    {
+      "path": "presentation/MulticlassResults/results.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0fb9ae9654d4e4ef27402024798c23f8c1d368b4",
+      "size": 4827,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/0fb9ae9654d4e4ef27402024798c23f8c1d368b4"
+    },
+    {
+      "path": "presentation/MulticlassResults/results.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "34cc662709fe00edbb79212a36ce83adbd8f0b0b",
+      "size": 306805,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/34cc662709fe00edbb79212a36ce83adbd8f0b0b"
+    },
+    {
+      "path": "presentation/MulticlassResults/train_batch0.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "66b75f89327249cd7fa83d4ac3cda477ec75d0a6",
+      "size": 480541,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/66b75f89327249cd7fa83d4ac3cda477ec75d0a6"
+    },
+    {
+      "path": "presentation/MulticlassResults/train_batch1.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0b97b0a1ef43606921452ca106af582c13e2161f",
+      "size": 394293,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/0b97b0a1ef43606921452ca106af582c13e2161f"
+    },
+    {
+      "path": "presentation/MulticlassResults/train_batch2.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "65f435cd777659615362c7c3374503aa82a9bf07",
+      "size": 511640,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/65f435cd777659615362c7c3374503aa82a9bf07"
+    },
+    {
+      "path": "presentation/MulticlassResults/val_batch0_labels.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c1765b5f99f5c0eb33f8efad22ad47060030eba4",
+      "size": 386785,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/c1765b5f99f5c0eb33f8efad22ad47060030eba4"
+    },
+    {
+      "path": "presentation/MulticlassResults/val_batch0_pred.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ffb1178c686d3ae5b6f14a0e39c6ce8f18d8a585",
+      "size": 405220,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/ffb1178c686d3ae5b6f14a0e39c6ce8f18d8a585"
+    },
+    {
+      "path": "presentation/MulticlassResults/val_batch1_labels.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9435cc2b324b91e86028afcfc41f61933c67cf1d",
+      "size": 452156,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/9435cc2b324b91e86028afcfc41f61933c67cf1d"
+    },
+    {
+      "path": "presentation/MulticlassResults/val_batch1_pred.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0cbefe86451e88b8a26134439b0eebd18e2c6489",
+      "size": 469422,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/0cbefe86451e88b8a26134439b0eebd18e2c6489"
+    },
+    {
+      "path": "presentation/MulticlassResults/val_batch2_labels.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "65128997548df2b7a600b52cd6474133fbbc5d4f",
+      "size": 410517,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/65128997548df2b7a600b52cd6474133fbbc5d4f"
+    },
+    {
+      "path": "presentation/MulticlassResults/val_batch2_pred.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fc18d125a44c6973fd2bb76b53a24aa63a36bcb7",
+      "size": 441793,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/fc18d125a44c6973fd2bb76b53a24aa63a36bcb7"
+    },
+    {
+      "path": "presentation/MulticlassResults/weights",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d4f5978c51f8cc5d7a542564f3dd611676c35966",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/d4f5978c51f8cc5d7a542564f3dd611676c35966"
+    },
+    {
+      "path": "presentation/MulticlassResults/weights/best.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "639a3ded047afb0ff2b76b61936e21bd1d254c37",
+      "size": 6252003,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/639a3ded047afb0ff2b76b61936e21bd1d254c37"
+    },
+    {
+      "path": "presentation/MulticlassResults/weights/last.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2579ac23b2bdaf48e44fcf806dde54852735f5fd",
+      "size": 6252003,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/2579ac23b2bdaf48e44fcf806dde54852735f5fd"
+    },
+    {
+      "path": "presentation/StreamlitApp_Resources",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "641f0c88f15c2691f6897b8a0f06d8230e58530a",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/641f0c88f15c2691f6897b8a0f06d8230e58530a"
+    },
+    {
+      "path": "presentation/StreamlitApp_Resources/LegoFigurinesHeader.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eac8f99bb0bd8fbb54beb4831d7388e71ca99d11",
+      "size": 645657,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/eac8f99bb0bd8fbb54beb4831d7388e71ca99d11"
+    },
+    {
+      "path": "presentation/Test_Labels",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "db1ec4b781c88d9de1ad443391efd9618a818bde",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/db1ec4b781c88d9de1ad443391efd9618a818bde"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_jsons",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fc0316faf18683ca278a7af056f302f7faa408e8",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/fc0316faf18683ca278a7af056f302f7faa408e8"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_jsons/image_103.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2855b64e6169c57c60ebcbdf302e8df61c3f7b3e",
+      "size": 72740,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/2855b64e6169c57c60ebcbdf302e8df61c3f7b3e"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_jsons/image_1197.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1adbbe00fe0cefa100617a62a01182edc3fd9ab0",
+      "size": 94655,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/1adbbe00fe0cefa100617a62a01182edc3fd9ab0"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_jsons/image_1205.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "33af8f4240f3d0c9544e3086830002351978f278",
+      "size": 77944,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/33af8f4240f3d0c9544e3086830002351978f278"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_jsons/image_1208.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc62829e243d673c8a8bc291198b95aac77d6fa7",
+      "size": 52404,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/bc62829e243d673c8a8bc291198b95aac77d6fa7"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_jsons/image_136.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cbb61fbec519e4c2ad9fe7064f84184515c1f4d9",
+      "size": 59511,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/cbb61fbec519e4c2ad9fe7064f84184515c1f4d9"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_jsons/image_1543.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9958534440e50c57f70c27f7cee6ad4180816b40",
+      "size": 107822,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/9958534440e50c57f70c27f7cee6ad4180816b40"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_jsons/image_1552.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b71da73ccdbb6c27ddb50219a7f4ad7cf0c4dce1",
+      "size": 49969,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/b71da73ccdbb6c27ddb50219a7f4ad7cf0c4dce1"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_jsons/image_1556.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f89f227782848dafc5c761afb7af34100ea39e76",
+      "size": 107647,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/f89f227782848dafc5c761afb7af34100ea39e76"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_jsons/image_1729.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18e0d69ff8d768a5caa719004127b328ab91f49c",
+      "size": 138426,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/18e0d69ff8d768a5caa719004127b328ab91f49c"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_jsons/image_1734.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e8076e886d2d3efa1ede69d8b37c7e8c18565751",
+      "size": 37829,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/e8076e886d2d3efa1ede69d8b37c7e8c18565751"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_jsons/image_196.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c548672fb12f33f9ddb14aa31ba8dd09ddd95e3d",
+      "size": 36773,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/c548672fb12f33f9ddb14aa31ba8dd09ddd95e3d"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_jsons/image_286.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d7be4b77007d42bb83dd6619d73bed7bcec6cb19",
+      "size": 73735,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/d7be4b77007d42bb83dd6619d73bed7bcec6cb19"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_jsons/image_504.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60ce6611cc83a06fcaf3b1a5bd140e36d017b045",
+      "size": 87538,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/60ce6611cc83a06fcaf3b1a5bd140e36d017b045"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_jsons/image_512.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e359480602d98ebe66004a07d5c4a5a5bbcf302",
+      "size": 106552,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/9e359480602d98ebe66004a07d5c4a5a5bbcf302"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_jsons/image_834.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f23391ad78f4a65306a1dc45c3286db6e72add73",
+      "size": 146388,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/f23391ad78f4a65306a1dc45c3286db6e72add73"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_jsons/image_841.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1883f24b4fa064aeb550a2817b9ce74e221aff3f",
+      "size": 24493,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/1883f24b4fa064aeb550a2817b9ce74e221aff3f"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_jsons/image_93.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9f0cccb73953aefed037fb62b054144ad06412b0",
+      "size": 106567,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/9f0cccb73953aefed037fb62b054144ad06412b0"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_keypoints",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "14125e9758beb965eba0e17e2736678ac3f40226",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/14125e9758beb965eba0e17e2736678ac3f40226"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_keypoints/image_10_LegoBrick_0_c87.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "055ab62e3ee98c6e8c83187a96bd390733e9bea3",
+      "size": 6122,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/055ab62e3ee98c6e8c83187a96bd390733e9bea3"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_keypoints/image_180_LegoBrick_2_c82.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e773f12d8a971c2473f83038851c3ab0ed6b7c68",
+      "size": 640,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/e773f12d8a971c2473f83038851c3ab0ed6b7c68"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_keypoints/image_181_LegoBrick_2_c75.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "769b19c532492aa06c2f9060f3920bc84095bae7",
+      "size": 405,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/769b19c532492aa06c2f9060f3920bc84095bae7"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_keypoints/image_1_LegoBrick_6_c66.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a79681513785969d344e77630e76cd2a62cd035",
+      "size": 1867,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/5a79681513785969d344e77630e76cd2a62cd035"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_keypoints/image_641_LegoBrick_0_c85.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3094460c7b4b8028287730f707934cd99715583c",
+      "size": 2059,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/3094460c7b4b8028287730f707934cd99715583c"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_keypoints/image_641_LegoBrick_1_c84.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "83ee92f30154f765e6b135e2af03dfd2ec70edd9",
+      "size": 2066,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/83ee92f30154f765e6b135e2af03dfd2ec70edd9"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_keypoints/image_643_LegoBrick_2_c84.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2124dd6b6103801ae92d3c48dbd71e554082dfcd",
+      "size": 2061,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/2124dd6b6103801ae92d3c48dbd71e554082dfcd"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_keypoints/image_87_LegoBrick_4_c72.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dabd5d231df9cf01a063e539459e603c8a091a22",
+      "size": 2040,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/dabd5d231df9cf01a063e539459e603c8a091a22"
+    },
+    {
+      "path": "presentation/Test_Labels/LabelMe_keypoints/image_89_LegoBrick_1_c81.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a9b172b32a95d58614661ced9bd2d7972f8c66b8",
+      "size": 3956,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/a9b172b32a95d58614661ced9bd2d7972f8c66b8"
+    },
+    {
+      "path": "presentation/Test_images",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b6cbe2eab3c23c90440d7a413168d57acb4b6a89",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/b6cbe2eab3c23c90440d7a413168d57acb4b6a89"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d77649776fb4c22dbf4505eb090b9ccb69bc7eac",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/d77649776fb4c22dbf4505eb090b9ccb69bc7eac"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/crop_bricks_script.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0cc1320e3c0f2ff5e1d58929ece955cd32daff0",
+      "size": 5482,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/a0cc1320e3c0f2ff5e1d58929ece955cd32daff0"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "784ecc4276e68f9ac3cea4ad20fddd55369e6e5d",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/784ecc4276e68f9ac3cea4ad20fddd55369e6e5d"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_10_image_02.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9c082061fab89d5321575c49c11a3e096ea15bbc",
+      "size": 12558,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/9c082061fab89d5321575c49c11a3e096ea15bbc"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_10_image_04.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b2411467b0089a659333958ec12f7269abd90c3",
+      "size": 33742,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/3b2411467b0089a659333958ec12f7269abd90c3"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_10_image_05.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "123159220f67f9a20a8a8799f56b224b218d49f7",
+      "size": 76296,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/123159220f67f9a20a8a8799f56b224b218d49f7"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_11_image_01.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de5a7b1a1419ee0d255fdfe57a3253d8ddc31229",
+      "size": 13749,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/de5a7b1a1419ee0d255fdfe57a3253d8ddc31229"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_12_image_01.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e4c259d2eb2c6baa22d101e57c848e582b46e638",
+      "size": 14650,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/e4c259d2eb2c6baa22d101e57c848e582b46e638"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_13_image_04.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "763a6d97c6547455636baebc294fe65282e4974c",
+      "size": 36377,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/763a6d97c6547455636baebc294fe65282e4974c"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_13_image_07.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2bc539195accadf8f93aa674897d5963baef9dca",
+      "size": 18569,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/2bc539195accadf8f93aa674897d5963baef9dca"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_14_image_07.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "846c2226d11d5e2a7355f38abe48c487d712b658",
+      "size": 29556,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/846c2226d11d5e2a7355f38abe48c487d712b658"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_16_image_07.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0d0b611a6de7e51b89e4bac8198d2a0ee61f32e",
+      "size": 13778,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/a0d0b611a6de7e51b89e4bac8198d2a0ee61f32e"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_1_image_02.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "57349f966ec06699e485c7e9928463d4175b6db3",
+      "size": 69560,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/57349f966ec06699e485c7e9928463d4175b6db3"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_1_image_03.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5bc1a23b66aa4244b12ee7e4ec062ebe70c22d29",
+      "size": 104051,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/5bc1a23b66aa4244b12ee7e4ec062ebe70c22d29"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_1_image_04.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51cfba2aebcb7877fbd2b5175345998e97e812a8",
+      "size": 120252,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/51cfba2aebcb7877fbd2b5175345998e97e812a8"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_1_image_05.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0250e3b2de0fb26b90930227da487b2d76d30f78",
+      "size": 147871,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/0250e3b2de0fb26b90930227da487b2d76d30f78"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_1_image_06.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2255674a5f4b38cc683f04879aca14f074c0f737",
+      "size": 156662,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/2255674a5f4b38cc683f04879aca14f074c0f737"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_1_image_07.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2debcc15f8733dc0b6ad92be2fad462a175c84cf",
+      "size": 42106,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/2debcc15f8733dc0b6ad92be2fad462a175c84cf"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_1_image_08.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "35deb688500bb5dab31e5b3cb75a1012b6997c65",
+      "size": 56296,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/35deb688500bb5dab31e5b3cb75a1012b6997c65"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_2_image_01.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3926e76bec865695191edfbdcc80e034e5b829f0",
+      "size": 41823,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/3926e76bec865695191edfbdcc80e034e5b829f0"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_2_image_02.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0062ba1eea69654873ec05f903e750b441629256",
+      "size": 53353,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/0062ba1eea69654873ec05f903e750b441629256"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_2_image_05.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "63c72cb7e83681385e60898d2347f4d8dbafd299",
+      "size": 212701,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/63c72cb7e83681385e60898d2347f4d8dbafd299"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_2_image_06.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a6b7ee6378c23e0ba5b867a2e9a3885df4d554f",
+      "size": 62563,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/6a6b7ee6378c23e0ba5b867a2e9a3885df4d554f"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_3_image_01.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0aed7df1d94390a37812790ba31332bb5c12d64a",
+      "size": 24296,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/0aed7df1d94390a37812790ba31332bb5c12d64a"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_3_image_03.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bdb4dae1316def3ab96b71867764e0b348de9c8d",
+      "size": 69432,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/bdb4dae1316def3ab96b71867764e0b348de9c8d"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_3_image_04.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "03406a0316a462ac18165b2d732bad0432345f32",
+      "size": 166056,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/03406a0316a462ac18165b2d732bad0432345f32"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_3_image_06.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad42ccb0b9b2d9cd7154778e9542b3b1fe0e0328",
+      "size": 122477,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/ad42ccb0b9b2d9cd7154778e9542b3b1fe0e0328"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_4_image_06.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "434049e8dd4927dccc6e36a8caa661ed6374b735",
+      "size": 57185,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/434049e8dd4927dccc6e36a8caa661ed6374b735"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_5_image_02.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "030c57e38b0e28f8209f6fadb2f352b024610946",
+      "size": 43857,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/030c57e38b0e28f8209f6fadb2f352b024610946"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_5_image_03.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "373ec31ae760bd0cf34892c4412dd91266973741",
+      "size": 140433,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/373ec31ae760bd0cf34892c4412dd91266973741"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_5_image_05.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "39b4bf80a671ad13a20e969dd9c0105bbd9d94e8",
+      "size": 57071,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/39b4bf80a671ad13a20e969dd9c0105bbd9d94e8"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_6_image_02.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e9f5bf3586eb0a4e1675a32302f34132105d02d1",
+      "size": 38718,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/e9f5bf3586eb0a4e1675a32302f34132105d02d1"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_6_image_05.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "58ad43482b4f22f9ff3fb1335bf51b6838ca926e",
+      "size": 29558,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/58ad43482b4f22f9ff3fb1335bf51b6838ca926e"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_7_image_04.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1aaee2fd2fc519b2fb74156c2fd92ed2346901fb",
+      "size": 12642,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/1aaee2fd2fc519b2fb74156c2fd92ed2346901fb"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_7_image_05.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "252cc7370e786e2099ae9bc38439298adc14f212",
+      "size": 28814,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/252cc7370e786e2099ae9bc38439298adc14f212"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_7_image_07.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a696438b57b2a9560818b076b1cf1dbeb9d28736",
+      "size": 31658,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/a696438b57b2a9560818b076b1cf1dbeb9d28736"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_8_image_01.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "77698c9c28e527b1fa6e2ca7fc58b74164f5a656",
+      "size": 35964,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/77698c9c28e527b1fa6e2ca7fc58b74164f5a656"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_8_image_02.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e2fd2d2801027f194af5ff3d439019547f166a05",
+      "size": 24870,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/e2fd2d2801027f194af5ff3d439019547f166a05"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_8_image_03.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c2124e673534a76acc31c6e21559acc896779c9a",
+      "size": 30069,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/c2124e673534a76acc31c6e21559acc896779c9a"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_8_image_04.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "770922a69ba267cbe6fd1c57bedf3e7770d0906f",
+      "size": 35150,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/770922a69ba267cbe6fd1c57bedf3e7770d0906f"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_8_image_05.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c964ee900a5054e3c2b0f5d895769fbe788ba7d6",
+      "size": 23095,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/c964ee900a5054e3c2b0f5d895769fbe788ba7d6"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_9_image_02.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b70d9d17089961cec8058d853a88ece0ab7c2839",
+      "size": 28195,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/b70d9d17089961cec8058d853a88ece0ab7c2839"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/cropped/brick_9_image_05.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c78c53023dca02e722cc904ec3b8df1355a0cc7f",
+      "size": 16194,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/c78c53023dca02e722cc904ec3b8df1355a0cc7f"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/image_01.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b194c3d35b7bb3eaadf50faf9d592ae31e024471",
+      "size": 96137,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/b194c3d35b7bb3eaadf50faf9d592ae31e024471"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/image_02.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59913733a9152f0d562b36c1ce2a11bad0319370",
+      "size": 111193,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/59913733a9152f0d562b36c1ce2a11bad0319370"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/image_03.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e9f6e3a0a69b2b4c23ed58800982155f61aa7df",
+      "size": 84328,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/1e9f6e3a0a69b2b4c23ed58800982155f61aa7df"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/image_04.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "528fe91fa8aa50ec478a054f70e378619b1db859",
+      "size": 112080,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/528fe91fa8aa50ec478a054f70e378619b1db859"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/image_05.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e775dc5d3af3514ce6f1fbf6932f996df835df7e",
+      "size": 115441,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/e775dc5d3af3514ce6f1fbf6932f996df835df7e"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/image_06.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8af2e7905f8206a41870213eada566769489d0c4",
+      "size": 279947,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/8af2e7905f8206a41870213eada566769489d0c4"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/image_07.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "12d8854daba5f4947c88d82ebc20e6d307e7f74a",
+      "size": 98274,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/12d8854daba5f4947c88d82ebc20e6d307e7f74a"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/image_08.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3036e8e1c396ee50ca485c3e461a205847cf8676",
+      "size": 63065,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/3036e8e1c396ee50ca485c3e461a205847cf8676"
+    },
+    {
+      "path": "presentation/Test_images/BricksPics/resize_images_script.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e5223d7b290ab0042227722c315cce66c20e28c",
+      "size": 2391,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/7e5223d7b290ab0042227722c315cce66c20e28c"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0942eb58916eb25b7e53e851156c7103d8c69943",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/0942eb58916eb25b7e53e851156c7103d8c69943"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_10.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db1ed962d61481a234a9739c9c33ae757e77fb07",
+      "size": 74727,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/db1ed962d61481a234a9739c9c33ae757e77fb07"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_10_LegoBrick_0_c87.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0444e340ddf87d2a729931c44ee68011c93a1bd4",
+      "size": 3100,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/0444e340ddf87d2a729931c44ee68011c93a1bd4"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_113_LegoBrick_2_c82.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3be8fffc0dce387af724d90d8fdfc3e92fb74707",
+      "size": 1806,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/3be8fffc0dce387af724d90d8fdfc3e92fb74707"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_119_LegoBrick_1_c77.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b0ee2f6fd08d4305094e34d85879d7746c125736",
+      "size": 2027,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/b0ee2f6fd08d4305094e34d85879d7746c125736"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_139_LegoBrick_0_c86.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47e02393fa19293baa103d86fd933d2de3132732",
+      "size": 2241,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/47e02393fa19293baa103d86fd933d2de3132732"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_14.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "45860dee3ec752c7b17c57c68599c707cd294299",
+      "size": 71163,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/45860dee3ec752c7b17c57c68599c707cd294299"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_200_LegoBrick_0_c83.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69c954cf48e7beb4a5e6c9367439cda507012c8",
+      "size": 3914,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/e69c954cf48e7beb4a5e6c9367439cda507012c8"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_223_LegoBrick_1_c81.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54aea0ab8eadf1cd808537de967d54831122e8e6",
+      "size": 1410,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/54aea0ab8eadf1cd808537de967d54831122e8e6"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_223_LegoBrick_2_c78.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3641d8db6528711becd61ff6f3c7e3672903ede4",
+      "size": 1173,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/3641d8db6528711becd61ff6f3c7e3672903ede4"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_224_LegoBrick_0_c83.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b0cff5058d8ff9f20567a3ceb8266ff08a6184df",
+      "size": 1081,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/b0cff5058d8ff9f20567a3ceb8266ff08a6184df"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_226_LegoBrick_2_c77.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc154f13212b1f0c13da1c1746be7376049503e6",
+      "size": 1038,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/bc154f13212b1f0c13da1c1746be7376049503e6"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_228_LegoBrick_0_c82.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9debe5f7200e5dcfa0bb4b5d1a896ee6db8dc853",
+      "size": 3010,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/9debe5f7200e5dcfa0bb4b5d1a896ee6db8dc853"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_23_LegoBrick_0_c81.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d0314cee31b5abb3540c9a19aac2d0e5dfc69eb",
+      "size": 1470,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/2d0314cee31b5abb3540c9a19aac2d0e5dfc69eb"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_253_LegoBrick_0_c82.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9353055465ea7e64371838e78a64e7f6fc69dbf",
+      "size": 2635,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/f9353055465ea7e64371838e78a64e7f6fc69dbf"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_259_LegoBrick_1_c86.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a55c2dcfbc5123920f2aa16d2d740cdf3f7ed7a",
+      "size": 4077,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/7a55c2dcfbc5123920f2aa16d2d740cdf3f7ed7a"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_277.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59a0cd48de90969247948766c9c87d3f9c38f421",
+      "size": 59235,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/59a0cd48de90969247948766c9c87d3f9c38f421"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_28_LegoBrick_0_c88.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c552221f11243d62b4d0a5339316467eb11ffec",
+      "size": 4257,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/4c552221f11243d62b4d0a5339316467eb11ffec"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_315_LegoBrick_0_c81.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c3b550536e6620232973605fb49baca1ce23127",
+      "size": 2274,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/3c3b550536e6620232973605fb49baca1ce23127"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_319_LegoBrick_0_c78.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be2971a6e946c70da29a2a0f2dccdbbb22028663",
+      "size": 1556,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/be2971a6e946c70da29a2a0f2dccdbbb22028663"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_361_LegoBrick_3_c80.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9faf2d758ab1539d488fc95d2a5736d6c34f37fc",
+      "size": 1360,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/9faf2d758ab1539d488fc95d2a5736d6c34f37fc"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_605.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "843022e3e882681fc1eb1c8e7e2425500870abf8",
+      "size": 38844,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/843022e3e882681fc1eb1c8e7e2425500870abf8"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_62_LegoBrick_1_c84.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "08069111694d0049a4d69b75f900434400e1614e",
+      "size": 1592,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/08069111694d0049a4d69b75f900434400e1614e"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_668.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d0186a4456413df3e398450dd8b5a31f2d8e7ef9",
+      "size": 40789,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/d0186a4456413df3e398450dd8b5a31f2d8e7ef9"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_696.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "90e1736326decc1249dc0cf40de76205ec96c935",
+      "size": 31306,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/90e1736326decc1249dc0cf40de76205ec96c935"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_699.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c4ce8233e02f5d7833b7b6d5a8c005b0f23c401d",
+      "size": 114092,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/c4ce8233e02f5d7833b7b6d5a8c005b0f23c401d"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_701.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c1378895ec56e867bd0fc5624940e17def05f2f1",
+      "size": 87644,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/c1378895ec56e867bd0fc5624940e17def05f2f1"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_73_LegoBrick_1_c85.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8dd17ca825cbd33da52e40d6184d9cd0b94a52c7",
+      "size": 2102,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/8dd17ca825cbd33da52e40d6184d9cd0b94a52c7"
+    },
+    {
+      "path": "presentation/Test_images/LegacyTestImages/image_7_LegoBrick_1_c87.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "864a478575b5963cb2abde41cd4997dc838a96e2",
+      "size": 2339,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/864a478575b5963cb2abde41cd4997dc838a96e2"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b10285e5f05bf8a4cf8aa01b851ad15670b88fde",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/b10285e5f05bf8a4cf8aa01b851ad15670b88fde"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_10_image_04.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b2411467b0089a659333958ec12f7269abd90c3",
+      "size": 33742,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/3b2411467b0089a659333958ec12f7269abd90c3"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_10_image_05.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "123159220f67f9a20a8a8799f56b224b218d49f7",
+      "size": 76296,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/123159220f67f9a20a8a8799f56b224b218d49f7"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_11_image_01.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de5a7b1a1419ee0d255fdfe57a3253d8ddc31229",
+      "size": 13749,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/de5a7b1a1419ee0d255fdfe57a3253d8ddc31229"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_12_image_01.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e4c259d2eb2c6baa22d101e57c848e582b46e638",
+      "size": 14650,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/e4c259d2eb2c6baa22d101e57c848e582b46e638"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_13_image_04.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "763a6d97c6547455636baebc294fe65282e4974c",
+      "size": 36377,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/763a6d97c6547455636baebc294fe65282e4974c"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_13_image_07.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2bc539195accadf8f93aa674897d5963baef9dca",
+      "size": 18569,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/2bc539195accadf8f93aa674897d5963baef9dca"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_14_image_07.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "846c2226d11d5e2a7355f38abe48c487d712b658",
+      "size": 29556,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/846c2226d11d5e2a7355f38abe48c487d712b658"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_16_image_07.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0d0b611a6de7e51b89e4bac8198d2a0ee61f32e",
+      "size": 13778,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/a0d0b611a6de7e51b89e4bac8198d2a0ee61f32e"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_1_image_02.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9880e3726d4359f2afc173ecef0d1fd3a4811364",
+      "size": 29281,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/9880e3726d4359f2afc173ecef0d1fd3a4811364"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_1_image_03.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4fee4aafd28570bc8f1fa0f4d9d70dc9f6deab86",
+      "size": 36985,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/4fee4aafd28570bc8f1fa0f4d9d70dc9f6deab86"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_1_image_04.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51cfba2aebcb7877fbd2b5175345998e97e812a8",
+      "size": 120252,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/51cfba2aebcb7877fbd2b5175345998e97e812a8"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_1_image_05.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "176422d42756a568710c8b478abba34e4140db40",
+      "size": 53941,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/176422d42756a568710c8b478abba34e4140db40"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_1_image_06.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13ac31a4495d8adb1b4c0fa243f26bcfcbd8bbf0",
+      "size": 55314,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/13ac31a4495d8adb1b4c0fa243f26bcfcbd8bbf0"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_1_image_07.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2debcc15f8733dc0b6ad92be2fad462a175c84cf",
+      "size": 42106,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/2debcc15f8733dc0b6ad92be2fad462a175c84cf"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_1_image_08.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "35deb688500bb5dab31e5b3cb75a1012b6997c65",
+      "size": 56296,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/35deb688500bb5dab31e5b3cb75a1012b6997c65"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_2_image_01.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3926e76bec865695191edfbdcc80e034e5b829f0",
+      "size": 41823,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/3926e76bec865695191edfbdcc80e034e5b829f0"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_2_image_02.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0062ba1eea69654873ec05f903e750b441629256",
+      "size": 53353,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/0062ba1eea69654873ec05f903e750b441629256"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_2_image_05.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "63c72cb7e83681385e60898d2347f4d8dbafd299",
+      "size": 212701,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/63c72cb7e83681385e60898d2347f4d8dbafd299"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_2_image_06.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fa42a766ab387a9c3ec28c4d04aa5e6d80bd891f",
+      "size": 26106,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/fa42a766ab387a9c3ec28c4d04aa5e6d80bd891f"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_3_image_01.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0aed7df1d94390a37812790ba31332bb5c12d64a",
+      "size": 24296,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/0aed7df1d94390a37812790ba31332bb5c12d64a"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_3_image_03.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bdb4dae1316def3ab96b71867764e0b348de9c8d",
+      "size": 69432,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/bdb4dae1316def3ab96b71867764e0b348de9c8d"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_3_image_04.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "03406a0316a462ac18165b2d732bad0432345f32",
+      "size": 166056,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/03406a0316a462ac18165b2d732bad0432345f32"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_3_image_06.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad42ccb0b9b2d9cd7154778e9542b3b1fe0e0328",
+      "size": 122477,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/ad42ccb0b9b2d9cd7154778e9542b3b1fe0e0328"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_4_image_06.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "434049e8dd4927dccc6e36a8caa661ed6374b735",
+      "size": 57185,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/434049e8dd4927dccc6e36a8caa661ed6374b735"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_5_image_02.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "030c57e38b0e28f8209f6fadb2f352b024610946",
+      "size": 43857,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/030c57e38b0e28f8209f6fadb2f352b024610946"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_5_image_03.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "373ec31ae760bd0cf34892c4412dd91266973741",
+      "size": 140433,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/373ec31ae760bd0cf34892c4412dd91266973741"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_5_image_05.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "39b4bf80a671ad13a20e969dd9c0105bbd9d94e8",
+      "size": 57071,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/39b4bf80a671ad13a20e969dd9c0105bbd9d94e8"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_6_image_02.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e9f5bf3586eb0a4e1675a32302f34132105d02d1",
+      "size": 38718,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/e9f5bf3586eb0a4e1675a32302f34132105d02d1"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_6_image_05.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "58ad43482b4f22f9ff3fb1335bf51b6838ca926e",
+      "size": 29558,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/58ad43482b4f22f9ff3fb1335bf51b6838ca926e"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_7_image_04.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1aaee2fd2fc519b2fb74156c2fd92ed2346901fb",
+      "size": 12642,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/1aaee2fd2fc519b2fb74156c2fd92ed2346901fb"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_7_image_05.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "252cc7370e786e2099ae9bc38439298adc14f212",
+      "size": 28814,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/252cc7370e786e2099ae9bc38439298adc14f212"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_7_image_07.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a696438b57b2a9560818b076b1cf1dbeb9d28736",
+      "size": 31658,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/a696438b57b2a9560818b076b1cf1dbeb9d28736"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_8_image_01.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "77698c9c28e527b1fa6e2ca7fc58b74164f5a656",
+      "size": 35964,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/77698c9c28e527b1fa6e2ca7fc58b74164f5a656"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_8_image_02.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e2fd2d2801027f194af5ff3d439019547f166a05",
+      "size": 24870,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/e2fd2d2801027f194af5ff3d439019547f166a05"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_8_image_03.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c2124e673534a76acc31c6e21559acc896779c9a",
+      "size": 30069,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/c2124e673534a76acc31c6e21559acc896779c9a"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_8_image_04.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "770922a69ba267cbe6fd1c57bedf3e7770d0906f",
+      "size": 35150,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/770922a69ba267cbe6fd1c57bedf3e7770d0906f"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_8_image_05.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c964ee900a5054e3c2b0f5d895769fbe788ba7d6",
+      "size": 23095,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/c964ee900a5054e3c2b0f5d895769fbe788ba7d6"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_9_image_02.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b70d9d17089961cec8058d853a88ece0ab7c2839",
+      "size": 28195,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/b70d9d17089961cec8058d853a88ece0ab7c2839"
+    },
+    {
+      "path": "presentation/Test_images/StudsPics/brick_9_image_05.jpg.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c78c53023dca02e722cc904ec3b8df1355a0cc7f",
+      "size": 16194,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/c78c53023dca02e722cc904ec3b8df1355a0cc7f"
+    },
+    {
+      "path": "presentation/logo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0ece0925a29fcbfe5e40070c26816fd7e01ec5a3",
+      "size": 5398,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/0ece0925a29fcbfe5e40070c26816fd7e01ec5a3"
+    },
+    {
+      "path": "pytest.ini",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b462b0cb36d16911c29e3ba21574fc79204a6db1",
+      "size": 121,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/b462b0cb36d16911c29e3ba21574fc79204a6db1"
+    },
+    {
+      "path": "render_metadate_func_draft.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "55db4c17d85aa3a9328e5395aa904d5583b74d1e",
+      "size": 653826,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/55db4c17d85aa3a9328e5395aa904d5583b74d1e"
+    },
+    {
+      "path": "requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae1c72c86ad338216138e199a2cf0b1799f21c0f",
+      "size": 557,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/ae1c72c86ad338216138e199a2cf0b1799f21c0f"
+    },
+    {
+      "path": "scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2055887bb2a2532b72e261b6c828fa34353d2943",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/2055887bb2a2532b72e261b6c828fa34353d2943"
+    },
+    {
+      "path": "scripts/AlgorithmicClassificationUI.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8c27b858b661251ebbfe38ea37e9ca8f5f690dfe",
+      "size": 9149,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/8c27b858b661251ebbfe38ea37e9ca8f5f690dfe"
+    },
+    {
+      "path": "scripts/Exif_UserComment_renderer.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ebdce17bca484836d90d4c6969cb40ce7e2b8f1",
+      "size": 11895,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/7ebdce17bca484836d90d4c6969cb40ce7e2b8f1"
+    },
+    {
+      "path": "scripts/Export_notebook.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e51920237a5a94ff1ce839405fccedad0ee661ef",
+      "size": 7438,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/e51920237a5a94ff1ce839405fccedad0ee661ef"
+    },
+    {
+      "path": "scripts/ModelFastInference.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "38a6d81607c73d38e038faccfceb5c917e89e89e",
+      "size": 14177,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/38a6d81607c73d38e038faccfceb5c917e89e89e"
+    },
+    {
+      "path": "scripts/ModelFastInferenceUI_LAYOUT.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3f896920e6133ff4fc3e4292e8ac71727e1e8752",
+      "size": 3544,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/3f896920e6133ff4fc3e4292e8ac71727e1e8752"
+    },
+    {
+      "path": "scripts/labels_viz_gridCreator.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf62189e9d1d69640db7d71796ba34f5962864c6",
+      "size": 15211,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/cf62189e9d1d69640db7d71796ba34f5962864c6"
+    },
+    {
+      "path": "train.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7be861a37f675296fb49700c5781fc4ba6c477c",
+      "size": 47463,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/b7be861a37f675296fb49700c5781fc4ba6c477c"
+    },
+    {
+      "path": "train_multiclass.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4227a406a4c1814d5372982b0044982b3805290b",
+      "size": 14273,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/4227a406a4c1814d5372982b0044982b3805290b"
+    },
+    {
+      "path": "train_singleclass.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b040626e87b83c4c2b464b9ccc1118caa55a4011",
+      "size": 15061,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/b040626e87b83c4c2b464b9ccc1118caa55a4011"
+    },
+    {
+      "path": "utils",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "609d553bdacd829552a098c9921a046ee7d11e76",
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/trees/609d553bdacd829552a098c9921a046ee7d11e76"
+    },
+    {
+      "path": "utils/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "edc5fab17918a820479747a546f3b67585dac8b0",
+      "size": 2614,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/edc5fab17918a820479747a546f3b67585dac8b0"
+    },
+    {
+      "path": "utils/batch_utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c6726a8849ffe2308a157b4bf60af7d1ea2f79e7",
+      "size": 13025,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/c6726a8849ffe2308a157b4bf60af7d1ea2f79e7"
+    },
+    {
+      "path": "utils/classification_utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8ffcd7b2299acaebae1d2f5497cc5aa3fe62b7c1",
+      "size": 14226,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/8ffcd7b2299acaebae1d2f5497cc5aa3fe62b7c1"
+    },
+    {
+      "path": "utils/config_utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d364fae2ad052d4ec96e4241da37216058259570",
+      "size": 11453,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/d364fae2ad052d4ec96e4241da37216058259570"
+    },
+    {
+      "path": "utils/data_utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c08f7c375c62a2414df08fb24aa49792d929485d",
+      "size": 23668,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/c08f7c375c62a2414df08fb24aa49792d929485d"
+    },
+    {
+      "path": "utils/detection_utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca7eddd2481d18abbcb35cabcae633f4b3b3ed55",
+      "size": 26005,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/ca7eddd2481d18abbcb35cabcae633f4b3b3ed55"
+    },
+    {
+      "path": "utils/exif_utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7630a29cdc590863420be1a2b51ee63b8b4bd4f2",
+      "size": 8159,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/7630a29cdc590863420be1a2b51ee63b8b4bd4f2"
+    },
+    {
+      "path": "utils/metadata_utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "058fea09bce4f011450186e015a8a6e42c5df4ce",
+      "size": 8283,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/058fea09bce4f011450186e015a8a6e42c5df4ce"
+    },
+    {
+      "path": "utils/multiclass_training.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca6a9ca970fc341ffaf1f361f042fd1ca8fbc0b2",
+      "size": 10435,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/ca6a9ca970fc341ffaf1f361f042fd1ca8fbc0b2"
+    },
+    {
+      "path": "utils/pipeline_utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29b54e7ec1106883f8383b443045bfd0b574e767",
+      "size": 13059,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/29b54e7ec1106883f8383b443045bfd0b574e767"
+    },
+    {
+      "path": "utils/rich_utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3989b20fe74725b50a4808476342a99447403e66",
+      "size": 1608,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/3989b20fe74725b50a4808476342a99447403e66"
+    },
+    {
+      "path": "utils/text_utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "028d278ea5216f6b7dde79e1ddcaab63bb20736e",
+      "size": 1514,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/028d278ea5216f6b7dde79e1ddcaab63bb20736e"
+    },
+    {
+      "path": "utils/visualization_utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d1c8f2483168676350007422f2757780eb6a6441",
+      "size": 20465,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/d1c8f2483168676350007422f2757780eb6a6441"
+    },
+    {
+      "path": "yolov8n.pt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0db4ca4b4d25d68a4497220353592645ca4f71bf",
+      "size": 6549796,
+      "url": "https://api.github.com/repos/MiguelDiLalla/Brickssifier_Studwise/git/blobs/0db4ca4b4d25d68a4497220353592645ca4f71bf"
+    }
+  ],
+  "truncated": false
+}

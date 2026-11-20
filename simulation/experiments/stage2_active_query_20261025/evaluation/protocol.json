@@ -1,0 +1,206 @@
+{
+  "schema": "active-tip-query-independent-observation-v2-enabled-setup",
+  "maximum_runs": 2,
+  "capture_plus_audit_wall_s": 180,
+  "maximum_postassembly_physics_steps": 0,
+  "expected_queries": 250,
+  "expected_per_tip": {
+    "contact_rays": 90,
+    "bounds_rays": 6,
+    "bore_overlaps": 27
+  },
+  "source": "Full300 native301parts930links, actualPGS/source32/4, fixednominalq. No modeled force/contact success or full property equivalence claimed.",
+  "capture_protocol": {
+    "schema": "active-tip-query-observation-v1",
+    "maximum_runs": 2,
+    "maximum_wall_s": 180,
+    "maximum_postassembly_physics_steps": 0,
+    "measured_motion_steps": 0,
+    "nominal_all_joint_configuration_unchanged": true,
+    "source": {
+      "bricks": 300,
+      "parts": 301,
+      "native_connections": 930,
+      "solver": "PGS",
+      "source_actor_position_iterations": 32,
+      "source_actor_velocity_iterations": 4,
+      "dt_s": 0.008333333333333333,
+      "OSQP_EPSILON": "1e-4"
+    },
+    "native_breakage": {
+      "enabled": true,
+      "contact_regularization": 0.1,
+      "clutch_axial_compliance": 1.0,
+      "clutch_radial_compliance": 1.0,
+      "clutch_tangential_compliance": 1.0,
+      "friction_coefficient": 0.2,
+      "preloaded_force": 3.5,
+      "slack_fraction_warn": 0.1,
+      "slack_fraction_b_floor": 1e-09,
+      "debug_dump": false,
+      "breakage_cooldown_time": 0.05
+    },
+    "native_assembly": {
+      "enabled": false,
+      "required_force": 1.0
+    },
+    "input_sha256": {
+      "experiments/final_workcell_20261024/scene_config.json": "77cb33b140c8449e9527437c1fc8a452d5f95a9680413dc05b66db07e27342e7",
+      "experiments/final_workcell_20261024/geometry.json": "8a0266b2ccbf75f6d773fdd1e6309c70f9ab8828da96b563da133f383f83c897",
+      "experiments/final_workcell_20261024/render_core.py": "c113531b35b8527871e60f6763666e08c054c6653f240d107051123563f8cf6b",
+      "experiments/final_workcell_20261024/scene.py": "ebcd45e6fdcc6672b6a3dee1b5e35f828daf88afc710fdba124e814ebb911eb6",
+      "experiments/final_workcell_20261024/end_effector/fingertips.py": "c5ab9f8278e82670ab4c3b7206c1bc75ec1082e16bcb7581fab31d9e7eb9eef1",
+      ".deps/bricksim/assets/robots/fr3/robot.usda": "313c8720683a1311c67dbd6617db736bb36f1d6ecdaed02ec0fbbea9ca302306",
+      ".deps/bricksim/core.cpython-311-x86_64-linux-gnu.so": "4e62dc33ee02270993c20e3cfd658e6d6ef0ea9780e53ad15cedde12f41b2455",
+      "experiments/stage2_contact_20261025/proxy_config.json": "1c760e4971d0765b3e142e770584c65078d43a1c2504d897aa182031fd941e62",
+      "experiments/stage2_contact_20261025/proxy_reference.json": "cb46c2fab2833fa267a45980fa7e2adf27e0f8626edfd9f514ff1c7d6b7dddc6",
+      "experiments/stage2_contact_20261025/protocol.json": "aa037dfb8dba58df50c09590a15eda21163c0df273d704bd07439cb3b5e3aa77",
+      "experiments/stage2_contact_20261025/geometry.py": "56622b490fc018a46333d8a856ad2b9735c8dfc14841cb732cdd1622c638db83"
+    },
+    "proxy": "Exact1756STL,registration,VHACDconfiguration. Author only; do not rerun failed descriptor guard or treat this as a repaired G. Active scene cooking is acknowledged.",
+    "contact_ray_grid": {
+      "hand_x_offsets_m": [
+        -0.016,
+        -0.012222222222222223,
+        -0.008444444444444445,
+        -0.004666666666666666,
+        -0.0008888888888888887,
+        0.0028888888888888888,
+        0.006666666666666668,
+        0.010444444444444447,
+        0.014222222222222223,
+        0.018000000000000002
+      ],
+      "hand_z_offsets_m": [
+        -0.0048,
+        -0.0033875,
+        -0.0019749999999999998,
+        -0.0005624999999999996,
+        0.0008500000000000001,
+        0.0022624999999999998,
+        0.0036750000000000003,
+        0.005087499999999999,
+        0.0065
+      ],
+      "reference": "Frozen1754coupon_center_hand_m in proxy_reference.json; X/Z only, no coupon actor or q adjustment",
+      "y_origin": "left registeredSTLminY-0.020;right maxY+0.020",
+      "direction": "left+localY,right-localY",
+      "range": "registeredSTLspanY+0.040",
+      "axis_bbox_rays_per_tip": 6,
+      "maximum_rays_per_tip": 96
+    },
+    "bore_overlaps": {
+      "count_per_tip": 27,
+      "radius_m": 5e-05,
+      "centers": "Exact27CADborewitnesses in frozen proxy_config.json mapped by unchanged visual registration"
+    },
+    "query_control": {
+      "path": "/World/ActiveQueryControl",
+      "center_world_m": [
+        3.0,
+        3.0,
+        0.5
+      ],
+      "size_m": 0.02,
+      "ray_hit_origin_m": [
+        3.0,
+        3.0,
+        0.55
+      ],
+      "ray_direction": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "ray_length_m": 0.1,
+      "expected_hit_distance_m": 0.04,
+      "miss_offset_world_m": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "distance_tolerance_m": 1e-05,
+      "normal_component_tolerance": 1e-05,
+      "overlap_radius_m": 5e-05
+    },
+    "frame_verification": {
+      "physics_vs_USD_position_m": 2e-06,
+      "physics_vs_USD_orientation_rad": 0.0001
+    },
+    "queries": "Public raycast_all returns bool;overlap_sphere returns count. All callbacks returnTrue, every hit retained in callback order. No adaptive/repeated query.",
+    "meaning": "Observation only. Cube positive/miss controls establish basic query function, not mesh coverage. No target hits=>UNKNOWN. R3/G/bounds remain FAILED; no D/R eligibility.",
+    "old_bounds_failure_m": 0.00010288106108188519,
+    "old_bound_limit_m": 0.0001,
+    "proceed_gate_passed": false,
+    "capture_plus_independent_audit_wall_s": 180,
+    "audit_budget_policy": "Independent audit receives max(0,180-capture_wall_seconds); STOP on exhaustion, no automatic continuation or retry.",
+    "cleanup_budget": "Existing finish_child SIGTERM2s+SIGKILL5s is reserved inside total180s. No extra shutdown grace outside budget.",
+    "maximum_remaining_attempts": 1,
+    "retry_after_corrected_attempt": false,
+    "scene_query_support_setup": {
+      "enable_scene_query_support": true,
+      "only_additional_sim_cfg_change": "enable_scene_query_support False -> True, alongside existing physx.solver_type TGS1 -> PGS0",
+      "verification": "Assert full SimulationCfg.to_dict equality against exactly these two changes; serialize selected flags, changed paths and before/after PhysX settings. Record SDKPhysicsContext getter and actual USDscene attribute before controls.",
+      "interpretation": "Required query-manager setup; controls must still establish observed query functionality. Not a contact-round reset."
+    },
+    "execution_history": [
+      {
+        "attempt": 1,
+        "pueue_job_id": 1759,
+        "snapshot": "runs/20261025T043724.980817Z-active-tip-shape-query",
+        "capture_protocol_sha256": "929922d4eb2f37279ad2c6ad03a5a21446eaac3893e6f069a73df28780f886a2",
+        "status": "FAILED preserved: four raw controls had zero hits; no tip queries; zero measured postassembly steps",
+        "capture_wall_seconds_approx": 15.984
+      },
+      {
+        "attempt": 2,
+        "status": "One final corrected observational setup authorized, subject to joint source review; no third attempt",
+        "change": "enable_scene_query_support=True only; all250 fixed probes and other settings unchanged"
+      }
+    ]
+  },
+  "proxy_config_sha256": "1c760e4971d0765b3e142e770584c65078d43a1c2504d897aa182031fd941e62",
+  "reference_sha256": "cb46c2fab2833fa267a45980fa7e2adf27e0f8626edfd9f514ff1c7d6b7dddc6",
+  "stl_sha256": "30c3e47142dce9ba82ec46edf42f1dc2825d620d23bad0a95ce1e2de902b752d",
+  "helpers_sha256": {
+    "geometry_reference.py": "ac01469020f6e0999e8cbc273482d74528c2a3f8f906a7f391bee1ff79b891e4",
+    "union_reference.py": "19ce797328b641e61b087fbf27a4aff6d1c3a435005062b49cf55062644b2640"
+  },
+  "probe_position_tolerance_m": 2e-06,
+  "probe_direction_tolerance": 1e-06,
+  "ray_hit_position_and_distance_tolerance_m": 1e-05,
+  "unit_normal_tolerance": 0.001,
+  "ray_triangle_parallel_determinant_floor_m2": 1e-14,
+  "ray_barycentric_allowance": 1e-09,
+  "reference_winding_allowance": 0.1,
+  "reference_nonzero_volume_floor_m3": 1e-24,
+  "reference_degenerate_cross_norm_floor_m2": 1e-20,
+  "nominal_joint_positions": [
+    0,
+    -0.4,
+    0,
+    -2.5,
+    0,
+    2.1,
+    0.7854,
+    0.04,
+    0.04
+  ],
+  "nominal_joint_tolerance": 1e-06,
+  "coordinate_convention": "USD matrices stored in Gf row-vector convention; [XYZ,1] @ world_from_frame. Independently compare against PhysX body-link WXYZ poses; never use COM as link frame.",
+  "reference": "Parse frozenoriginalSTL and applyregisteredCADtransformindependently. Compare rays descriptively with first positive triangle intersection; edge/grazing flags retained. Sphere center must be independently outside closedSTL with >.25mm clearance, safely beyond50um radius.",
+  "controls": "Positive and miss controls required separately for ray and overlap; validate targetpath,count,distance,normal,all-callback consistency. Controls establish basic operation, not complete coverage on decomposed target meshes.",
+  "interpretation": "Alwaysproceed_gate_passed=false. A targetPADoverlap at a verifiedCAD-free sphere is local intrusion evidence conditional on integrity; nohit is only observed nohit, with mesh-overlap coverage unverified. Closest all-hit versus closest PAD-hit reported separately, no accessibility claim. OriginalG/bounds fail and right-tip priorabsence remain historical failures; no contact/D/R promotion.",
+  "physical_properties": "Fullrobotmass/inertia/COM/material equivalence UNTESTED in this motion-free geometric observation.",
+  "execution_history": {
+    "attempt1": {
+      "job": 1759,
+      "snapshot": "runs/20261025T043724.980817Z-active-tip-shape-query",
+      "capture_protocol_sha256": "929922d4eb2f37279ad2c6ad03a5a21446eaac3893e6f069a73df28780f886a2",
+      "result": "Positive controls failed:4rawcontrols allzero,no tipprobes,no query_report. Preservefailedcapture.",
+      "runtime_query_support_getter": "Not recorded; source inherited documented False default with no headless GUI override."
+    },
+    "attempt2": "ONE separately reviewed correction enable_scene_query_support=True; same250probes/STL/registration/VHACD/q/solver/native physics/0postassemblysteps/180s total. Require SDKgetterTrue, actualUSDsceneTrue and factory-only-declared-change evidence before interpretation. ThenSTOP; no third attempt or closed contact-budget reset."
+  },
+  "failed_capture_branch": "Read supervisor FIRST; if incomplete, report rawcontrols with original staged capture_protocol.json hash, no query_report/reference/geometry assumptions, alltargetchecksUNTESTED, proceedfalse. Never apply corrected protocol retrospectively."
+}

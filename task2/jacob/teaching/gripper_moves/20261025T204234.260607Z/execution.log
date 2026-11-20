@@ -1,0 +1,3 @@
+START_GRIPPER {"width": 0.024999665096402168, "max_width": 0.079258352518081665, "is_grasped": 0, "temperature": 60, "time": 0.001}
+FINAL_GRIPPER {"width": 0.022050917148590088, "max_width": 0.079258352518081665, "is_grasped": 0, "temperature": 60, "time": 0.032000000000000001}
+STOP Gripper opening verification failed

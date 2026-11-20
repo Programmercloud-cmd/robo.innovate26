@@ -1,0 +1,123 @@
+{
+  "schema": "eccentric-two-actor-load-audit-v1",
+  "status": "frozen_before_fixture_execution",
+  "scope": "One isolated native-weld bookkeeping diagnostic; not the required full300 benchmark or an idle/extraction acceptance test",
+  "budget": {
+    "runs": 1,
+    "maximum_steps": 8,
+    "maximum_wall_time_s": 180,
+    "stop_first_native_nonfinite_or_pose_failure": true,
+    "sweeps": false
+  },
+  "fixture": {
+    "actors": 2,
+    "initial_native_parts": 2,
+    "initial_native_links": 1,
+    "lower": {
+      "brick": "2x4",
+      "root_position_m": [
+        0,
+        0,
+        0
+      ],
+      "yaw_rad": 0,
+      "kinematic": true,
+      "gravity_enabled": false
+    },
+    "upper": {
+      "brick": "2x4",
+      "root_position_m": [
+        -0.016,
+        0.016,
+        0.0096
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "kinematic": false,
+      "gravity_enabled": true
+    },
+    "interface": {
+      "stud_overlap_area": 1,
+      "connection_offset": [
+        [
+          1,
+          1
+        ],
+        1
+      ],
+      "verification": "Native compute_connection_transform must verify actual local interface frames before stepping"
+    },
+    "other_actors_colliders": "None: no table, ground, plate, robot or additional rigid/static collider. Record inventory and connected-component collision suppression. Construction alone does not verify reporting completeness."
+  },
+  "unchanged": {
+    "physics_dt_s": 0.008333333333333333,
+    "actor_position_iterations": 32,
+    "actor_velocity_iterations": 4,
+    "OSQP_EPSILON": 0.0001,
+    "native": "Same installed binary, public physical thresholds, native connection construction, gravity, material and collision assets. Record hashes and all public threshold values; debug dumps are reporting only.",
+    "disallowed": [
+      "preload/friction/compliance/slack/cooldown/break-rule changes",
+      "solver/dt/substep tuning",
+      "poststep pose restoration",
+      "added contacts or counterloads",
+      "further fixtures selected from observed outcomes"
+    ]
+  },
+  "required_evidence": {
+    "actor": "Actual mass, local COM, inertia tensor and inertia-frame orientation, body pose, world linear/angular velocities, damping values, gravity vector/flags, solver properties. Mark authored versus runtime provenance and unavailable fields.",
+    "frames": "Root is body-bottom reference, not necessarily COM. Compare moments only in a documented common world frame about actual same-step COM.",
+    "timing": "Steps 0..N consecutive, per-step time before/after, dt, pre/post state and COM, explicit native dump-to-step mapping and callback ordering. No ambiguous filename-order association.",
+    "native": "Preserve native debug dumps, installed binary and reader hashes, matrix/solution units and body mapping. Native J/H are external estimates after internal weld-impulse subtraction, not an independent contact sensor.",
+    "weld": "Raw weld impulse/couple only if independently exposed. If unavailable, record unavailable. Do not infer weld impulse from delta momentum minus native J/H and present the identity as independent validation."
+  },
+  "analysis": {
+    "gravity_linear_reference": "Jg = actual_mass * actual_world_gravity * actual_dt, SI N s",
+    "external_angular_reference": "Zero angular gravity impulse about actual upper COM. Conditional on no other external torque; observed damping, gyroscopic/finite-step and frame/time conventions remain explicit, not guessed away.",
+    "residuals": "Report vector and norm of native_J-Jg and native_H in N s and N m s on every valid aligned prebreak step. Break-step results remain separate with event-time caveat.",
+    "linear_scale": "S_J = norm(Jg)",
+    "characteristic_length_m": 0.017888543819998316,
+    "characteristic_length_definition": "Fixed half diagonal of nominal 32x16 mm 2x4 body footprint; a dimensional reporting reference, not a calibrated moment arm",
+    "angular_scale": "S_H = S_J * characteristic_length_m",
+    "normalized_residuals": "Report residual norms / S_J and / S_H where nonzero; no arbitrary percentage is a physical correctness or overload criterion.",
+    "momentum": "Report delta(m*v_world); angular delta(R_world_inertia * I_principal * R_world_inertia^T * omega_world) only if inertia convention and world velocities are known. Raw changes include weld reactions and cannot be compared to gravity alone as total-load validation.",
+    "eccentric_reaction": "A nonzero raw weld reaction couple is physically legitimate under eccentric support. It is not expected to be zero. The hypothesis concerns transport/subtraction about COM, not removal of legitimate support moment."
+  },
+  "serialization_tolerances": {
+    "gravity_vector_absolute_m_s2": 1e-06,
+    "native_dump_dt_absolute_s": 1e-09,
+    "meaning": "Float32-versus-configured-double serialization comparison only; not a physical parameter, uncertainty or residual acceptance threshold. Trace clock association remains 1e-7 s."
+  },
+  "integrity_gates": [
+    "Exactly two fixture actors and one initial native link, transform/one-stud overlap verified",
+    "Installed binary/thresholds/default32/4/epsilon/dt match frozen capture protocol",
+    "Actual state, mass, COM and inertia finite and explicitly mapped to native body IDs",
+    "Consecutive step clocks, raw state/native dump association and units/frame conventions valid",
+    "No poststep reset, extra actor/collider, omitted failure event or unreported retry"
+  ],
+  "unknown_categories": [
+    "inertia_or_COM_frame_unknown",
+    "damping_semantics_unknown",
+    "native_time_alignment_unknown",
+    "native_load_units_or_frame_unknown",
+    "raw_weld_load_unavailable",
+    "unmeasured_external_torque",
+    "break_frame_event_order_unknown",
+    "fixture_inventory_or_runtime_settings_unverified"
+  ],
+  "interpretation": {
+    "if_mismatch": "A descriptive load-accounting inconsistency conditional on recorded assumptions; not proof of a lever-arm bug or physical overload until frame, damping and timing alternatives are excluded.",
+    "if_agreement": "This eccentric fixture does not expose the hypothesized inconsistency; it does not validate redundant full300 lattice stability or all native load accounting.",
+    "if_break": "One-stud capacity may legitimately be exceeded under eccentric support. Breakage alone is not proof of bookkeeping error.",
+    "promotion": "None. Full300 idle remains failed; extraction, insertion and repeated sorting remain unvalidated. Stop after one frozen diagnostic and report evidence/unknowns."
+  },
+  "execution_history": {
+    "original_capture": {
+      "pueue_job_id": 1742,
+      "snapshot": "runs/20261025T022049.810033Z-stage2-eccentric-diagnostic",
+      "measured_steps": 0,
+      "result": "Failed before measured step0/trace: nonfinite SDK USD scalar metadata rejected by strict JSON exporter."
+    },
+    "approved_adapter_repair": "Tag nonfinite scalar values only in actor/scene USD attribute metadata. State/mass/inertia/COM arrays remain strict; geometry, physics, analysis parameters and scientific budget unchanged.",
+    "remaining_budget": "One final same-case capture attempt, at most8measured steps/180s, stopping first failure. No third launch, physics retry, sweep or result-dependent adaptation.",
+    "prepared_unsubmitted_audit": "runs/20261025T022119.745139Z-stage2-eccentric-evaluation"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "job_id": 1836,
+  "source_commit": "c98254889b149db5c0baa445b5109c4afd3a877a",
+  "snapshot": "runs/20261026T005933.268008Z-control-alignment-b",
+  "result": "Failed124 timeout",
+  "full_scheduler_seconds": 175.262344722,
+  "endpoint_or_terminal_source_credit": false,
+  "complete_audit": false,
+  "physics_started": true,
+  "hardware_commands": 0,
+  "original_data_preserved": true,
+  "next_change_scope": "Evaluation pose-read batching only; no controller or physics change"
+}

@@ -1,0 +1,59 @@
+{
+  "scope": "estimated fixed-base housing yaw only",
+  "photos": [
+    {
+      "id": 1,
+      "path": "resources/setup_images/final_workcell_20261024/base_orientation/photo_01.jpg",
+      "sha256": "58495abae04c8ac5354b02f78cbf7467f4552110c321f9f917c48e44604f6493",
+      "role": "final_layout_housing_direction"
+    },
+    {
+      "id": 2,
+      "path": "resources/setup_images/final_workcell_20261024/base_orientation/photo_02.jpg",
+      "sha256": "0ca6d70e7ab4fa6f8a8f8162507c277aadd273ccd7dbcc03f28b78e0ec72d3e6",
+      "role": "fixed_feature_identification_only_different_brick_layout"
+    }
+  ],
+  "user_table_direction_cue": {
+    "photo1": "connector side faces upper-left",
+    "table_quadrant": "+X/-Y",
+    "qualitative_uncertainty": "Approximate diagonal from photograph; no calibrated angle or robot/camera transform."
+  },
+  "baseline_robot": {
+    "base_table_m": [
+      -0.09,
+      -0.4,
+      0.0
+    ],
+    "yaw_table_deg": 90.0,
+    "status": "estimated base center; yaw assumed, not robot calibration; joint pose remains nominal"
+  },
+  "unchanged_fields": [
+    "base position",
+    "table layout",
+    "plate dimensions",
+    "source tower geometry",
+    "nominal joint configuration"
+  ],
+  "asset_direction_status": "verified visually against queued fixed-link0 diagnostic with actual asset axes",
+  "locked_source_sha256": {
+    "experiments/final_workcell_20261024/base_orientation/baseline_scene_config.json": "59d7bc1f57e3d48168d011389a8fc2fcb7b3d25b1c6d6ff5f5af909211589233",
+    "experiments/final_workcell_20261024/geometry.json": "8a0266b2ccbf75f6d773fdd1e6309c70f9ab8828da96b563da133f383f83c897",
+    "challenge2/env_cfg.py": "68e9c624f0ce26474c53e487ab1301002e7c6d329156d00f5e39a544ffc16246"
+  },
+  "probe": {
+    "job_id": 1703,
+    "snapshot": "runs/20261024T213858.289323Z-final-workcell-preview",
+    "feature": "Two low circular sockets in white housing adjacent to asymmetrical flanged mounting slots; red upper fixtures excluded.",
+    "matching_views": [
+      "base_top",
+      "base_opposite"
+    ],
+    "asset_fixed_connector_face": "approximately -Y",
+    "asset_long_mount_extension": "approximately -X",
+    "basis_check": "At yaw90, projected +assetY points right in top diagnostic; lower socket flank protrudes left.",
+    "yaw_estimate_table_deg": 45,
+    "reason": "Rz(45deg) maps asset -Y into table +X/-Y quadrant.",
+    "precision": "Rounded visual estimate only; no calibrated alignment."
+  }
+}

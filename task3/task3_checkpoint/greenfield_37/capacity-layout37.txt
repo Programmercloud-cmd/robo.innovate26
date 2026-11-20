@@ -1,0 +1,65 @@
+FUNCTIONAL37 WITH JACOB LAYOUT — ORDER CAPACITY
+
+Backend fingerprint: dae71e17e51973bc.
+These are new headless event-model calculations using the functional full-cart engine
+with the adopted layout. They are not projections from an older rate and do not use
+Jacob's bounded commissioning schedule, demand-prepared colours, or test holds.
+
+FIXED INPUT AND MECHANISMS
+Two identical kiln carts: 57,600 distinct IDs, seed 8. Quality/shade labels are fixed before processing.
+50,664 approved (87.958333% of input), 6,936 rejected (12.041667%).
+Approved shades: Warm 16,906; Copper 16,928; Russet 16,830. Rejected dark 3,340; pale 3,596.
+All four cases preserve the same inventory, 36 parallel layer heads, 6 lines, 3 formers per line,
+initial brick rotation, native routing/accumulation, actuator speeds, 128 shared storage slots,
+16 handoff positions, 2 dynamically assigned truck bays, 2 warehouse vehicles and 2 loaders.
+Customer truck orders contain 8 pallets; trailers have 20 physical positions.
+
+CALCULATED COMPARABLE FACTORY OUTPUT
+T=max(productionEnd,lastInspection);bricks/h=completed pallets x 560 x 3600/T.
+Every complete pallet contains 560 unique approved bricks. Products are [Mixed,Warm,Copper,Russet].
+
+Case                                  Products          Pallets  Bricks/h  Pallets/h  Approved WIP
+-----------------------------------------------------------------------------------------------------
+Current Mixed + pure portfolio        [41, 15, 14, 14]       84    8019.05    14.3197          3624
+All Mixed (18 Mixed wells)            [88, 0, 0, 0]          88    9137.10    16.3162          1384
+Two Mixed + one Warm (partial)        [60, 6, 0, 0]          66    BLOCKED    BLOCKED  see note below
+All pure (Warm/Copper/Russet)         [0, 28, 28, 27]        83    7670.93    13.6981          4184
+
+TIMING AND DISPATCH (SEPARATE SHIPPING WINDOW)
+Case                                  Last pallet(s) Last inspection(s) T(s)       Replay(s)  Shipped  Shipped pallets/h
+--------------------------------------------------------------------------------------------------------------------------
+Current Mixed + pure portfolio             21114.717         21117.714  21117.714   23675.657       64             9.7315
+All Mixed (18 Mixed wells)                 19410.511         19416.227  19416.227   22984.789       88            13.7830
+Two Mixed + one Warm (partial)             14664.014         16516.756  16516.756   17098.694       56        partial only
+All pure (Warm/Copper/Russet)              21757.281         21813.274  21813.274   22410.326       72            11.5661
+
+Shipping rate=departed full-order pallets x 3600/full replay duration. It includes logistics drain;
+it must not be substituted for, or combined with, the factory-output denominator.
+
+INTERPRETATION
+The current portfolio retains its demonstrated well change from Mixed to Warm after the first pallet.
+Other cases only change the requested pallet recipes in memory; all physical scheduling remains native.
+Two Mixed wells and one Warm well express available recipe destinations, not a guaranteed 67/33 order ratio.
+Actual completed product counts are shown. Mixed may consume Warm too; it enforces no three equal
+neighbours in any grid axis rather than a fixed one-third quota. Incomplete pallets/layers remain WIP,
+not losses or shipped output. Rates are finite-batch kinematic event-model results, not physical benchmarks.
+
+CHECKS AND REPRODUCTION
+The current, All Mixed and All Pure calculations completed all 57,600 inspections, routed all approved IDs,
+disposed all 6,936 unique rejected IDs and conserved material. Completed jobs, membership and seeded input agree.
+The two-Mixed/one-Warm case stopped after 48,105 inspections with no future events: the current allocator
+could not place waiting colours in line 5 (zero-based lane 4). Two Mixed layers were at 38/40 and 39/40; the common input waits
+for that group. This is an unsupported recipe workload with the present controller, not a valid full-lot rate.
+Its 66 pallets [60 Mixed,6 Warm] are partial-run counts. There are 5,350 inspected approved bricks not in complete
+pallets and 8,354 uninspected known-good fixture bricks. Do NOT label all 13,704 as physical in-process WIP.
+The diagnostic 8,055.82/h computed over its partial clock is deliberately withheld from the comparison table.
+The pruned baseline exactly matched the independently generated full replay:84 pallets,8019.049868 bricks/h,
+productionEnd21114.716635s and total23675.656923s. No older timings were substituted.
+The original model checks Mixed adjacency, single-colour purity, duplicate material and truck product/count.
+No separate demo or replay was generated and no project source was edited by these calculations.
+Every case used the same 128 slots and native dynamic two-bay dispatch; no study-only logistics expansion.
+Input fixture SHA256: 209f629195d00c38b672029c02c89cfe923c67010a4e9930b94b9955b5b0f7ef.
+Frozen source folder: /tmp/layout37-capacity/frozen-dae71e17e51973bc
+Runner: /tmp/layout37-capacity/calculate.py
+Full per-case details: /tmp/layout37-capacity/{current,all_mixed,mixed_warm,pure_three}.json
+Combined results: /tmp/layout37-capacity/results.json

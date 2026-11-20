@@ -1,0 +1,5 @@
+/models/
+/upstream/*.ipynb
+/upstream/*.jpg
+/reference/img_*_reference.png
+/results/real_predictions/*/overlays/

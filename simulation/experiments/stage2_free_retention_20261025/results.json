@@ -1,0 +1,121 @@
+{
+  "schema": "free-retention-result-v1",
+  "job_id": 1821,
+  "source_commit": "bdd3880",
+  "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T154448.823497Z-stage2-free-retention",
+  "control_passed": true,
+  "control_steps": 1500,
+  "retention_fixture_passed": false,
+  "physics_extraction_passed": false,
+  "physics_extraction_credit": false,
+  "automatic_retry": false,
+  "control_audit_sha256": "d9c0c0a6a77f82fff9be5bc46cf179b2556cd25ef5b14fe01a884c01deef1f53",
+  "pick_audit_sha256": "1c9428b3f55151d0241b26d91398597a5a8b6881dca6e11948ff77e36f49c3e9",
+  "steps": 795,
+  "failed_checks": [
+    "all_frames",
+    "candidate_record",
+    "completed_pick",
+    "coupon_rise",
+    "lift_5mm",
+    "held_30"
+  ],
+  "frame_failure_counts": {
+    "coupon_relative_retention": 232,
+    "no_capture_abort": 1,
+    "actual_joint_speeds": 1,
+    "plane_compatible": 1
+  },
+  "metrics": {
+    "coupon_rise_m": 0.00022967159748077393,
+    "relative_translation_max_m": 0.0026734721520865743,
+    "relative_angle_max_rad": 0.07233772816011694,
+    "minimum_hold_support_clearance_m": null,
+    "source_drift_max_m": 0.00020829330605920404,
+    "source_angle_max_rad": 0.002178899707942024,
+    "force_peak_N": {
+      "left": 1.630920797935687,
+      "right": 1.6241879190783948
+    }
+  },
+  "lift_admission": {
+    "kind": "force_confirmation",
+    "step": 424,
+    "command_q_m": 0.005593305453658104
+  },
+  "force_confirmation": {
+    "step": 424,
+    "command_q_m": 0.005593305453658104,
+    "at_endpoint": true,
+    "commanded_finger_q_m": [
+      0.005593305453658104,
+      0.005593305453658104
+    ]
+  },
+  "endpoint_settle_completed_commands": 4,
+  "position_candidate": null,
+  "audit_schema_defect": "Original candidate_record exact-equality wrongly compares forceconfirmation without commanded_finger_q_m against producer record includingit. Source-onlyworktree repair+synthetic tests independently reconstructbothcommandentries; NOsavedrescore. Physicalretention/speed/planefailures remain.",
+  "scope": "Knowncentered freecoupon, notperception/nativeextraction/hardware. Clutchresistance isnotnecessary for thisfailure; friction/geometry/controllercause notisolated.",
+  "independent_result_reviews": {
+    "evaluator": "Acceptedlimitedphysicalnegative,separatebookkeepingdefect.",
+    "reviewer": "Acceptedlimitedphysicalnegative,separatebookkeepingdefect. No hardware14mmcontradiction."
+  },
+  "timing": {
+    "schema": "free-coupon-retention-supervisor-v1",
+    "phases": [
+      {
+        "phase": "capture",
+        "mode": "control",
+        "wall_seconds": 104.07752323499881,
+        "returncode": 0,
+        "cleanup": "complete_marker_cleanup",
+        "capture_completed": true
+      },
+      {
+        "phase": "audit",
+        "mode": "control",
+        "wall_seconds": 30.353484876977745,
+        "returncode": 0
+      },
+      {
+        "phase": "capture",
+        "mode": "pick",
+        "wall_seconds": 69.65584608298377,
+        "returncode": 0,
+        "cleanup": "complete_marker_cleanup",
+        "capture_completed": true
+      },
+      {
+        "phase": "audit",
+        "mode": "pick",
+        "wall_seconds": 28.15026457500062,
+        "returncode": 0
+      }
+    ],
+    "actual_capture_plus_audit_seconds": 232.2403292270028,
+    "prior_case_seconds": 2055.1054614180234,
+    "cumulative_case_seconds": 2287.5068641150233,
+    "previous_case_limit_seconds": 2200,
+    "case_limit_seconds": 2500,
+    "maximum_active_seconds": 400,
+    "within_budget": true,
+    "control_passed": true,
+    "pick_attempted": true,
+    "retention_fixture_passed": false,
+    "proceed_gate_passed": false,
+    "physics_extraction_passed": false,
+    "perception_credit": false,
+    "transfer_authorized": false,
+    "automatic_retry": false,
+    "control_audit_sha256": "d9c0c0a6a77f82fff9be5bc46cf179b2556cd25ef5b14fe01a884c01deef1f53",
+    "pick_audit_sha256": "1c9428b3f55151d0241b26d91398597a5a8b6881dca6e11948ff77e36f49c3e9",
+    "supervised_cumulative_case_seconds": 2287.345790645026,
+    "full_pueue_job_seconds": 232.401402697,
+    "pueue_job_id": 1821,
+    "pueue_start": "2026-10-25T16:44:49.324824898+01:00",
+    "pueue_end": "2026-10-25T16:48:41.726227595+01:00",
+    "remaining_case_seconds": 212.4931358849766,
+    "full_pueue_timing_authoritative": true
+  },
+  "prospective_next_hypothesis": "Atmostone separatelyreviewed position-only30-endpointdwell comparison; originalearlyforcebranch liftedafteronly4endpointcommands. No causeclaim orautomaticretry."
+}

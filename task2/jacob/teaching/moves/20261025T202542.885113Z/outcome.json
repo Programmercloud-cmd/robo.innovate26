@@ -1,0 +1,26 @@
+{
+  "completed": true,
+  "preview_only": false,
+  "requested_point": "a_1_4_9",
+  "trajectory": "certified_joint_arc",
+  "returncode": 0,
+  "launcher_returncode": 0,
+  "controller_pass_verified": true,
+  "yaw_variant_deg": 0,
+  "saved_catalog_unchanged": true,
+  "grasp_offset_executed": false,
+  "execution_log": "/home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T202542.885113Z/execution.log",
+  "actual_xyz_m": [
+    0.3475963771343231,
+    -0.03179582953453064,
+    0.09720910340547562
+  ],
+  "target_xyz_m": [
+    0.34799681249594405,
+    -0.031737366708663894,
+    0.09742671251296997
+  ],
+  "position_error_mm": 0.45947807837730575,
+  "orientation_error_deg": 0.06245041975962968,
+  "completion_errors": []
+}

@@ -1,0 +1,8 @@
+{
+  "pueue_job_id": 1676,
+  "purpose": "saved-overlay composition only; no new perception",
+  "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T093227.814548Z-ridge-comparison-gallery",
+  "manifest": "/home/faps/dev/github/robo.innovate26/runs/20261024T093227.814548Z-ridge-comparison-gallery/manifest.json",
+  "manifest_sha256": "96414d94074d46332260b11423ce04ae3e54d1bbe1c59f0d44dcf35bc8b5867d",
+  "image_sha256": "91161107df493a7cc05b5fe9cf0e05a8d8ba377a7ab3aaa3f15721e794627af8"
+}

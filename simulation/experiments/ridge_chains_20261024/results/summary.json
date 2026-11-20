@@ -1,0 +1,539 @@
+{
+  "primary_present": {
+    "positive_references": 166,
+    "ambiguous_references_excluded": 14,
+    "lower_fragments": 23,
+    "raw_detections": 39,
+    "matched": 35,
+    "missed_individual_faces": 131,
+    "merge": 0,
+    "duplicate": 0,
+    "lower_layer_target": 0,
+    "ambiguous_ignored": 1,
+    "other_spurious_or_unresolved": 3,
+    "outside_roi": 0,
+    "annotated_images": 6,
+    "individual_face_recall": 0.21084337349397592,
+    "scored_roi_instance_precision": 0.9210526315789473
+  },
+  "joint_three_way_slots": {
+    "positive_decisions": {
+      "present": 35,
+      "missing": 0,
+      "uncertain": 32,
+      "no_match": 99
+    },
+    "missing_decisions": {
+      "present": 1,
+      "missing": 0,
+      "uncertain": 0,
+      "no_match": 5
+    },
+    "positive_decisive_coverage": 0.21084337349397592,
+    "positive_correct_present_coverage": 0.21084337349397592,
+    "absence_decisive_coverage": 0.16666666666666666,
+    "absence_correct_missing_coverage": 0.0,
+    "known_reference_missing_precision": null,
+    "unverified_missing_claims": 0
+  },
+  "all18_totals": {
+    "uncertain": 148,
+    "present": 116,
+    "phase_selected": 43,
+    "phase_ambiguous": 21,
+    "boundaries_inferred": 170,
+    "boundaries_observed": 158,
+    "chains": 64,
+    "slots": 264,
+    "source_segments": 3027,
+    "merged_lines": 2015,
+    "geometric_proposals": 749,
+    "rejected_proposals": 685,
+    "missing": 0
+  },
+  "all18_rejected_proposal_reason_tags_nonexclusive": {
+    "weak_periodicity": 631,
+    "half_pitch_alias": 436,
+    "ambiguous_period_peak": 90,
+    "duplicate_geometric_ridge_proposal": 7
+  },
+  "all18_slot_reason_tags_nonexclusive": {
+    "insufficient_same_ridge_footprint_evidence": 43,
+    "no_bilateral_present_anchors_for_missing": 145,
+    "distributed_caps_and_same_ridge_sides": 116,
+    "partial_observed_window": 39,
+    "ambiguous_chain_phase": 66,
+    "lower_perpendicular_compatible": 16
+  },
+  "all18_chain_extent_status": {
+    "partial_open_window": 51,
+    "bounded_current_window": 13
+  },
+  "accepted_chain_pitch_px_range": [
+    6,
+    25
+  ],
+  "global_reference_changes_vs_baselines": {
+    "sam_raw": {
+      "recovered_reference_ids": 11,
+      "lost_reference_ids": 100
+    },
+    "dimensions_only": {
+      "recovered_reference_ids": 13,
+      "lost_reference_ids": 91
+    },
+    "dimensions_split": {
+      "recovered_reference_ids": 9,
+      "lost_reference_ids": 91
+    }
+  },
+  "conditional_proxy_summary": {
+    "slot_phase_reference_lengths": {
+      "count": 67,
+      "median": 0.040979286861699646,
+      "p90": 0.07782597742800372,
+      "max": 0.11466303190766144
+    },
+    "boundary_by_provenance": {
+      "observed": {
+        "midpoint_error_px": {
+          "count": 83,
+          "median": 4.1996729590084,
+          "p90": 6.145452437349301,
+          "max": 11.872774027309086
+        },
+        "long_axis_offset_px": {
+          "count": 83,
+          "median": 3.006608475894861,
+          "p90": 5.912520637287629,
+          "max": 11.180389404296875
+        },
+        "angle_error_deg": {
+          "count": 83,
+          "median": 0.843303942637852,
+          "p90": 1.9830384048188507,
+          "max": 2.709550737289747
+        }
+      },
+      "inferred": {
+        "midpoint_error_px": {
+          "count": 51,
+          "median": 5.978137566298026,
+          "p90": 9.768332902535198,
+          "max": 14.302050360253865
+        },
+        "long_axis_offset_px": {
+          "count": 51,
+          "median": 5.184926320238809,
+          "p90": 8.633181910246673,
+          "max": 12.226653789884674
+        },
+        "angle_error_deg": {
+          "count": 51,
+          "median": 0.8101767819031783,
+          "p90": 1.400718425993062,
+          "max": 2.169847216292451
+        }
+      }
+    }
+  },
+  "conditional_strip_proxy": {
+    "reference_strip_groups": 36,
+    "uncovered_reference_strip_groups": 19,
+    "fragmented_reference_strip_groups": 0,
+    "mixed_reference_strip_chains": 0
+  },
+  "by_image": [
+    {
+      "image": "img_1.jpg",
+      "chains": 3,
+      "slots": 10,
+      "present": 3,
+      "missing": 0,
+      "uncertain": 7,
+      "selected_phase_chains": 2,
+      "ambiguous_phase_chains": 1,
+      "observed_boundaries": 6,
+      "inferred_boundaries": 7,
+      "geometric_proposals": 43,
+      "rejected_proposals": 40,
+      "rejection_reasons": {
+        "weak_periodicity": 37,
+        "half_pitch_alias": 28,
+        "ambiguous_period_peak": 3
+      }
+    },
+    {
+      "image": "img_2.jpg",
+      "chains": 2,
+      "slots": 8,
+      "present": 4,
+      "missing": 0,
+      "uncertain": 4,
+      "selected_phase_chains": 1,
+      "ambiguous_phase_chains": 1,
+      "observed_boundaries": 3,
+      "inferred_boundaries": 7,
+      "geometric_proposals": 35,
+      "rejected_proposals": 33,
+      "rejection_reasons": {
+        "weak_periodicity": 31,
+        "half_pitch_alias": 21,
+        "ambiguous_period_peak": 3
+      }
+    },
+    {
+      "image": "img_3.jpg",
+      "chains": 5,
+      "slots": 12,
+      "present": 2,
+      "missing": 0,
+      "uncertain": 10,
+      "selected_phase_chains": 1,
+      "ambiguous_phase_chains": 4,
+      "observed_boundaries": 4,
+      "inferred_boundaries": 13,
+      "geometric_proposals": 36,
+      "rejected_proposals": 31,
+      "rejection_reasons": {
+        "weak_periodicity": 28,
+        "half_pitch_alias": 18
+      }
+    },
+    {
+      "image": "img_4.jpg",
+      "chains": 2,
+      "slots": 8,
+      "present": 4,
+      "missing": 0,
+      "uncertain": 4,
+      "selected_phase_chains": 2,
+      "ambiguous_phase_chains": 0,
+      "observed_boundaries": 4,
+      "inferred_boundaries": 6,
+      "geometric_proposals": 47,
+      "rejected_proposals": 45,
+      "rejection_reasons": {
+        "weak_periodicity": 42,
+        "half_pitch_alias": 24,
+        "ambiguous_period_peak": 4
+      }
+    },
+    {
+      "image": "img_5.jpg",
+      "chains": 2,
+      "slots": 8,
+      "present": 5,
+      "missing": 0,
+      "uncertain": 3,
+      "selected_phase_chains": 2,
+      "ambiguous_phase_chains": 0,
+      "observed_boundaries": 6,
+      "inferred_boundaries": 4,
+      "geometric_proposals": 25,
+      "rejected_proposals": 23,
+      "rejection_reasons": {
+        "weak_periodicity": 21,
+        "ambiguous_period_peak": 5,
+        "half_pitch_alias": 16
+      }
+    },
+    {
+      "image": "img_6.jpg",
+      "chains": 3,
+      "slots": 13,
+      "present": 6,
+      "missing": 0,
+      "uncertain": 7,
+      "selected_phase_chains": 3,
+      "ambiguous_phase_chains": 0,
+      "observed_boundaries": 9,
+      "inferred_boundaries": 7,
+      "geometric_proposals": 42,
+      "rejected_proposals": 39,
+      "rejection_reasons": {
+        "weak_periodicity": 36,
+        "ambiguous_period_peak": 7,
+        "half_pitch_alias": 26
+      }
+    },
+    {
+      "image": "img_7.jpg",
+      "chains": 4,
+      "slots": 15,
+      "present": 1,
+      "missing": 0,
+      "uncertain": 14,
+      "selected_phase_chains": 1,
+      "ambiguous_phase_chains": 3,
+      "observed_boundaries": 9,
+      "inferred_boundaries": 10,
+      "geometric_proposals": 66,
+      "rejected_proposals": 62,
+      "rejection_reasons": {
+        "weak_periodicity": 55,
+        "half_pitch_alias": 40,
+        "ambiguous_period_peak": 6,
+        "duplicate_geometric_ridge_proposal": 1
+      }
+    },
+    {
+      "image": "img_8.jpg",
+      "chains": 1,
+      "slots": 4,
+      "present": 0,
+      "missing": 0,
+      "uncertain": 4,
+      "selected_phase_chains": 0,
+      "ambiguous_phase_chains": 1,
+      "observed_boundaries": 3,
+      "inferred_boundaries": 2,
+      "geometric_proposals": 50,
+      "rejected_proposals": 49,
+      "rejection_reasons": {
+        "weak_periodicity": 47,
+        "half_pitch_alias": 32,
+        "ambiguous_period_peak": 7
+      }
+    },
+    {
+      "image": "img_9.jpg",
+      "chains": 0,
+      "slots": 0,
+      "present": 0,
+      "missing": 0,
+      "uncertain": 0,
+      "selected_phase_chains": 0,
+      "ambiguous_phase_chains": 0,
+      "observed_boundaries": 0,
+      "inferred_boundaries": 0,
+      "geometric_proposals": 49,
+      "rejected_proposals": 49,
+      "rejection_reasons": {
+        "weak_periodicity": 47,
+        "half_pitch_alias": 29,
+        "ambiguous_period_peak": 7
+      }
+    },
+    {
+      "image": "img_10.jpg",
+      "chains": 4,
+      "slots": 16,
+      "present": 6,
+      "missing": 0,
+      "uncertain": 10,
+      "selected_phase_chains": 3,
+      "ambiguous_phase_chains": 1,
+      "observed_boundaries": 7,
+      "inferred_boundaries": 13,
+      "geometric_proposals": 56,
+      "rejected_proposals": 52,
+      "rejection_reasons": {
+        "weak_periodicity": 48,
+        "half_pitch_alias": 38,
+        "duplicate_geometric_ridge_proposal": 1,
+        "ambiguous_period_peak": 7
+      }
+    },
+    {
+      "image": "img_11.jpg",
+      "chains": 6,
+      "slots": 25,
+      "present": 5,
+      "missing": 0,
+      "uncertain": 20,
+      "selected_phase_chains": 2,
+      "ambiguous_phase_chains": 4,
+      "observed_boundaries": 14,
+      "inferred_boundaries": 17,
+      "geometric_proposals": 48,
+      "rejected_proposals": 42,
+      "rejection_reasons": {
+        "weak_periodicity": 41,
+        "half_pitch_alias": 25,
+        "duplicate_geometric_ridge_proposal": 1,
+        "ambiguous_period_peak": 5
+      }
+    },
+    {
+      "image": "img_12.jpg",
+      "chains": 4,
+      "slots": 19,
+      "present": 9,
+      "missing": 0,
+      "uncertain": 10,
+      "selected_phase_chains": 4,
+      "ambiguous_phase_chains": 0,
+      "observed_boundaries": 10,
+      "inferred_boundaries": 13,
+      "geometric_proposals": 40,
+      "rejected_proposals": 36,
+      "rejection_reasons": {
+        "weak_periodicity": 35,
+        "half_pitch_alias": 21,
+        "duplicate_geometric_ridge_proposal": 1,
+        "ambiguous_period_peak": 4
+      }
+    },
+    {
+      "image": "img_13.jpg",
+      "chains": 6,
+      "slots": 29,
+      "present": 18,
+      "missing": 0,
+      "uncertain": 11,
+      "selected_phase_chains": 5,
+      "ambiguous_phase_chains": 1,
+      "observed_boundaries": 20,
+      "inferred_boundaries": 15,
+      "geometric_proposals": 42,
+      "rejected_proposals": 36,
+      "rejection_reasons": {
+        "weak_periodicity": 31,
+        "half_pitch_alias": 24,
+        "duplicate_geometric_ridge_proposal": 1,
+        "ambiguous_period_peak": 8
+      }
+    },
+    {
+      "image": "img_14.jpg",
+      "chains": 4,
+      "slots": 20,
+      "present": 11,
+      "missing": 0,
+      "uncertain": 9,
+      "selected_phase_chains": 4,
+      "ambiguous_phase_chains": 0,
+      "observed_boundaries": 13,
+      "inferred_boundaries": 11,
+      "geometric_proposals": 36,
+      "rejected_proposals": 32,
+      "rejection_reasons": {
+        "weak_periodicity": 30,
+        "half_pitch_alias": 14,
+        "duplicate_geometric_ridge_proposal": 1,
+        "ambiguous_period_peak": 7
+      }
+    },
+    {
+      "image": "img_15.jpg",
+      "chains": 6,
+      "slots": 27,
+      "present": 14,
+      "missing": 0,
+      "uncertain": 13,
+      "selected_phase_chains": 4,
+      "ambiguous_phase_chains": 2,
+      "observed_boundaries": 16,
+      "inferred_boundaries": 17,
+      "geometric_proposals": 38,
+      "rejected_proposals": 32,
+      "rejection_reasons": {
+        "weak_periodicity": 30,
+        "half_pitch_alias": 24,
+        "ambiguous_period_peak": 5
+      }
+    },
+    {
+      "image": "img_16.jpg",
+      "chains": 5,
+      "slots": 17,
+      "present": 9,
+      "missing": 0,
+      "uncertain": 8,
+      "selected_phase_chains": 3,
+      "ambiguous_phase_chains": 2,
+      "observed_boundaries": 12,
+      "inferred_boundaries": 10,
+      "geometric_proposals": 37,
+      "rejected_proposals": 32,
+      "rejection_reasons": {
+        "weak_periodicity": 28,
+        "half_pitch_alias": 19,
+        "duplicate_geometric_ridge_proposal": 1,
+        "ambiguous_period_peak": 5
+      }
+    },
+    {
+      "image": "img_17.jpg",
+      "chains": 2,
+      "slots": 10,
+      "present": 9,
+      "missing": 0,
+      "uncertain": 1,
+      "selected_phase_chains": 2,
+      "ambiguous_phase_chains": 0,
+      "observed_boundaries": 5,
+      "inferred_boundaries": 7,
+      "geometric_proposals": 24,
+      "rejected_proposals": 22,
+      "rejection_reasons": {
+        "weak_periodicity": 17,
+        "half_pitch_alias": 18,
+        "ambiguous_period_peak": 5
+      }
+    },
+    {
+      "image": "img_18.jpg",
+      "chains": 5,
+      "slots": 23,
+      "present": 10,
+      "missing": 0,
+      "uncertain": 13,
+      "selected_phase_chains": 4,
+      "ambiguous_phase_chains": 1,
+      "observed_boundaries": 17,
+      "inferred_boundaries": 11,
+      "geometric_proposals": 35,
+      "rejected_proposals": 30,
+      "rejection_reasons": {
+        "weak_periodicity": 27,
+        "half_pitch_alias": 19,
+        "ambiguous_period_peak": 2
+      }
+    }
+  ],
+  "examples": {
+    "partial_success_inferred_boundary": {
+      "image": "img_13.jpg",
+      "primary_TP": 18,
+      "reference_faces": 28,
+      "chain_ids": [
+        "ridge_line0001_line0008",
+        "ridge_line0000_line0016"
+      ],
+      "inferred_boundary_ids": [
+        "ridge_line0001_line0008_b4",
+        "ridge_line0000_line0016_b3"
+      ]
+    },
+    "supplemental_absence_false_present": {
+      "image": "img_1.jpg",
+      "slot_id": "ridge_line0063_line0014_s02",
+      "reference_id": "c5r1",
+      "iou": 0.5396669481059696
+    },
+    "phase_ambiguity": {
+      "image": "img_7.jpg",
+      "ambiguous_phase_chains": 3,
+      "total_chains": 4,
+      "primary_TP": 1
+    },
+    "scale_alias_rejection": {
+      "image": "img_9.jpg",
+      "geometric_proposals": 49,
+      "rejected_proposals": 49,
+      "chains": 0
+    }
+  },
+  "conclusion": "Negative for reliable individual exposed-face/absence selection: 35/166 confirmed faces, zero missing declarations, one false-present on six supplemental image-plane absence references. No tuning or second perception batch.",
+  "limitations": [
+    "Present-only primary and joint-allslot assignment are separate tracks; here both yield35positivepresent assignments.",
+    "Primaryprecision35/38 excludes1historicallyambiguouspresent; supplementalabsence track separately marks that claim falsepresent.",
+    "Known-reference missingprecision N/A because no missingcalls; no_match5/6 is not correctabsence.",
+    "Boundary83observed+51inferred enderrors and67phaseerrors condition on67/166geometricallymatched positivefaces, including uncertain slots; repeatedsharedendscountperface.",
+    "Observed/inferred are implementation provenance declarations, not independently labeled seamtypes.",
+    "Uncovered19/36visualstripgroups make zero fragmented/mixed counts weak evidence, not verifiedfullchains.",
+    "No physicaltoplayer, actualhiddenbrickabsence, gripperaccessibility, true studcenter or metricpose accuracy measured."
+  ]
+}

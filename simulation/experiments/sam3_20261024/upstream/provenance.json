@@ -1,0 +1,13 @@
+{
+  "repository": "/home/faps/dev/github/AimAssist",
+  "repository_commit": "e0ab240e549c4780980dd868cf135f045e45ae5d",
+  "copied_adapter": "track_2a/src/sam3_candidates.py",
+  "sha256": {
+    "checkpoint.json": "1350ed056a4d5124248ca4b869e6d3295ab878551e8c3baba0d928fe7adad0ae",
+    "sam3_candidates.py": "9b86cc6c223ab934a6c37cf8b7a5dc626370a3d61464a2749caec080045c25a1",
+    "requirements-a1.txt": "1c66ad9ad9480fad7406f8263b585412ce50a87697e7ed893c832ebe525521fd"
+  },
+  "aimassist_initial_git_status": "?? track_2a/docs/m1-harness-development/\n",
+  "container_image": "sha256:ae4ae0cfc9d41eadf32bf9ac689252fccd3a1f804bb69d088b65e47d91cad317",
+  "changes_to_AimAssist": false
+}

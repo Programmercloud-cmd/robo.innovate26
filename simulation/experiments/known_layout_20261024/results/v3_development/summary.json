@@ -1,0 +1,234 @@
+{
+  "source_commit": "e8ab714f7494f22c3022270a04eca4bb3ea5d2f7",
+  "pueue_job_id": 1671,
+  "snapshot": "runs/20261024T000755.717569Z-known-layout-v3-development",
+  "decision": "reject_v3_keep_v1",
+  "reason": "One new confidently present misregistered face versus v1 under fixed initial_x_p04 perturbation, same c1r4 failure as rejected v2.",
+  "nominal": {
+    "positive_reference_count": 112,
+    "original_ambiguous_excluded": 8,
+    "missing_reference_count": 6,
+    "lower_fragment_reference_count": 15,
+    "candidate_count": 120,
+    "correct_present": 52,
+    "missed_individual_faces": 60,
+    "scored_confirmed_present": 52,
+    "incorrect_confirmed_present": 0,
+    "merged_candidates": 0,
+    "merged_confirmed_present": 0,
+    "duplicate_candidates": 0,
+    "duplicate_confirmed_present": 0,
+    "labeled_lower_fragment_top_selections": 0,
+    "ambiguous_present_ignored": 0,
+    "manual_stud_reference_count": 32,
+    "positive_decisions": {
+      "present": 52,
+      "missing": 0,
+      "uncertain": 54,
+      "no_match": 6
+    },
+    "missing_decisions": {
+      "present": 0,
+      "missing": 0,
+      "uncertain": 6,
+      "no_match": 0
+    },
+    "image_observations": 4,
+    "present_instance_precision": 1.0,
+    "positive_decisive_coverage": 0.4642857142857143,
+    "positive_correct_present_coverage": 0.4642857142857143,
+    "missing_decisive_coverage": 0.0,
+    "missing_correct_coverage": 0.0,
+    "orientation_deg": {
+      "count": 106,
+      "median": 0.12433754657823926,
+      "p90": 0.5640325937462904,
+      "max": 0.8028725746418484
+    },
+    "projected_stud_error_px": {
+      "count": 32,
+      "median": 6.308607212406527,
+      "p90": 9.101595167380989,
+      "max": 9.683310331320678
+    },
+    "observed_stud_peak_error_px": {
+      "count": 15,
+      "median": 6.181090068801005,
+      "p90": 7.216371953432215,
+      "max": 7.986704989775763
+    },
+    "actual_physical_current_top_accuracy": null
+  },
+  "cases": {
+    "brightness_070": {
+      "correct_present": 52,
+      "incorrect_confirmed_present": 0,
+      "positive_correct_present_coverage": 0.4642857142857143,
+      "present_instance_precision": 1.0,
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 6,
+        "no_match": 0
+      },
+      "labeled_lower_fragment_top_selections": 0
+    },
+    "brightness_130": {
+      "correct_present": 53,
+      "incorrect_confirmed_present": 0,
+      "positive_correct_present_coverage": 0.4732142857142857,
+      "present_instance_precision": 1.0,
+      "missing_decisions": {
+        "present": 0,
+        "missing": 1,
+        "uncertain": 5,
+        "no_match": 0
+      },
+      "labeled_lower_fragment_top_selections": 0
+    },
+    "initial_x_m04": {
+      "correct_present": 56,
+      "incorrect_confirmed_present": 0,
+      "positive_correct_present_coverage": 0.5,
+      "present_instance_precision": 1.0,
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 6,
+        "no_match": 0
+      },
+      "labeled_lower_fragment_top_selections": 0
+    },
+    "initial_x_p04": {
+      "correct_present": 53,
+      "incorrect_confirmed_present": 1,
+      "positive_correct_present_coverage": 0.4732142857142857,
+      "present_instance_precision": 0.9814814814814815,
+      "missing_decisions": {
+        "present": 0,
+        "missing": 1,
+        "uncertain": 5,
+        "no_match": 0
+      },
+      "labeled_lower_fragment_top_selections": 0
+    },
+    "initial_y_m04": {
+      "correct_present": 56,
+      "incorrect_confirmed_present": 0,
+      "positive_correct_present_coverage": 0.5,
+      "present_instance_precision": 1.0,
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 6,
+        "no_match": 0
+      },
+      "labeled_lower_fragment_top_selections": 1
+    },
+    "initial_y_p04": {
+      "correct_present": 46,
+      "incorrect_confirmed_present": 0,
+      "positive_correct_present_coverage": 0.4107142857142857,
+      "present_instance_precision": 1.0,
+      "missing_decisions": {
+        "present": 0,
+        "missing": 1,
+        "uncertain": 5,
+        "no_match": 0
+      },
+      "labeled_lower_fragment_top_selections": 0
+    },
+    "nominal": {
+      "correct_present": 52,
+      "incorrect_confirmed_present": 0,
+      "positive_correct_present_coverage": 0.4642857142857143,
+      "present_instance_precision": 1.0,
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 6,
+        "no_match": 0
+      },
+      "labeled_lower_fragment_top_selections": 0
+    },
+    "rotation_m05": {
+      "correct_present": 49,
+      "incorrect_confirmed_present": 0,
+      "positive_correct_present_coverage": 0.4375,
+      "present_instance_precision": 1.0,
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 6,
+        "no_match": 0
+      },
+      "labeled_lower_fragment_top_selections": 0
+    },
+    "rotation_p05": {
+      "correct_present": 50,
+      "incorrect_confirmed_present": 0,
+      "positive_correct_present_coverage": 0.44642857142857145,
+      "present_instance_precision": 1.0,
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 6,
+        "no_match": 0
+      },
+      "labeled_lower_fragment_top_selections": 0
+    }
+  },
+  "flat_image_sanity": {
+    "observations": [
+      {
+        "file": "img_1.jpg",
+        "split": "development",
+        "confident_present": 0
+      },
+      {
+        "file": "img_3.jpg",
+        "split": "development",
+        "confident_present": 0
+      },
+      {
+        "file": "img_7.jpg",
+        "split": "development",
+        "confident_present": 0
+      },
+      {
+        "file": "img_10.jpg",
+        "split": "development",
+        "confident_present": 0
+      }
+    ],
+    "confident_present_total": 0
+  },
+  "failure_evidence": [
+    {
+      "file": "img_10.jpg",
+      "case": "initial_x_p04",
+      "candidate": "c1r4",
+      "decision": "present",
+      "top_stud": 0.45412958954959637,
+      "confirmed_studs": 7,
+      "edge": 0.12337934603006202,
+      "lower": null,
+      "interpretation": "Misregistered polygon overlaps a genuine orange face incompletely and extends into adjacent lower region, fails frozen IoU matching; not pure background hallucination."
+    },
+    {
+      "file": "img_3.jpg",
+      "case": "initial_y_m04",
+      "candidate": "c4r3",
+      "lower_reference": "lower_2",
+      "lower_envelope_coverage": 0.507704859618353,
+      "center_inside_lower": false,
+      "interpretation": "Borderline sparse-envelope proxy flag while also matching positive face; not proof of physical layer misselection."
+    }
+  ],
+  "limitations": [
+    "No held-out observations used; D remains sealed.",
+    "Six missing-face references remain uncertain in nominal; no real held-out absence references.",
+    "Stud residuals are distances to historical rim/highlight marks, not true geometric centers.",
+    "Manual global registration and nominal camera inputs do not establish metric pose or actual top-layer classification."
+  ]
+}

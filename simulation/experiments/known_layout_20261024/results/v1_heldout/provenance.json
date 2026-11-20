@@ -1,0 +1,7 @@
+{
+  "pueue_job_id": 1672,
+  "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T001228.831310Z-known-layout-v1-heldout",
+  "source_commit": "12dd890f100203323fbe0e3337578f22f7ed1641",
+  "scope": "final selected-v1 held-out group D only; version selected before results; no subsequent tuning",
+  "evaluation_sha256": "6a519cbab80a6c607c817395cd0405b4b94d5290635a33372a5d2722296a5fc7"
+}

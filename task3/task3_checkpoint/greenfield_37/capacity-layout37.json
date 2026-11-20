@@ -1,0 +1,977 @@
+{
+  "implementation": "Functional full-cart37 engine with adopted Jacob layout, not Jacob commissioning engine",
+  "backendFingerprint": "dae71e17e51973bc",
+  "denominator": "max(last full pallet completion,last inspection completion)",
+  "inputFixtureSHA256": "209f629195d00c38b672029c02c89cfe923c67010a4e9930b94b9955b5b0f7ef",
+  "sourceFilesFrozenIn": "/tmp/layout37-capacity/frozen-dae71e17e51973bc",
+  "cases": [
+    {
+      "error": null,
+      "completeInput": true,
+      "ranToEnd": true,
+      "totalInput": 57600,
+      "inspected": 57600,
+      "rejected": 6936,
+      "disposed": 6936,
+      "uniqueDisposed": 6936,
+      "disposedAllBad": true,
+      "approved": 50664,
+      "approvedShadeCounts": [
+        16906,
+        16928,
+        16830
+      ],
+      "rejectedExtremeCounts": [
+        3340,
+        3596
+      ],
+      "identicalCarts": true,
+      "produced": 84,
+      "completedJobs": 84,
+      "completeOutputUnique": 47040,
+      "completeOutputHasNoDuplicates": true,
+      "completeOutputAllGood": true,
+      "products": [
+        41,
+        15,
+        14,
+        14
+      ],
+      "productionEnd_s": 21114.716635320437,
+      "lastInspection_s": 21117.713792177292,
+      "comparisonWindow_s": 21117.713792177292,
+      "total_s": 23675.656923197854,
+      "bricksPerHour": 8019.04986811265,
+      "palletsPerHour": 14.319731907344018,
+      "modelBph": 8019.04986811265,
+      "modelPph": 14.319731907344018,
+      "WIP": 3624,
+      "WIPShadeCounts": [
+        1250,
+        1154,
+        1220
+      ],
+      "WIPParts": {
+        "mixed:lane0:well2": 192,
+        "mixed:lane0:well1": 202,
+        "Warm:lane0:well0": 240,
+        "Russet:lane1:well2": 556,
+        "Copper:lane1:well1": 26,
+        "Warm:lane1:well0": 28,
+        "mixed:lane2:well2": 546,
+        "Copper:lane3:well1": 558,
+        "Russet:lane3:well2": 44,
+        "Warm:lane3:well0": 2,
+        "mixed:lane4:well2": 242,
+        "mixed:lane4:well0": 238,
+        "mixed:lane4:well1": 158,
+        "Warm:lane5:well0": 494,
+        "Russet:lane5:well2": 46,
+        "Copper:lane5:well1": 52
+      },
+      "unroutedGood": 0,
+      "formed": 50360,
+      "stored": 84,
+      "loaded": 64,
+      "shipped": 64,
+      "shippedBricksPerFullReplayHour": 5449.648152046833,
+      "shippedPalletsPerFullReplayHour": 9.731514557226488,
+      "storageCapacity": 128,
+      "handoffCapacity": 16,
+      "docks": 2,
+      "fleetRoles": [
+        "warehouse",
+        "warehouse",
+        "loader",
+        "loader"
+      ],
+      "allOrdersHaveUniqueIDs": true,
+      "orders": [
+        {
+          "id": "truck-0-1",
+          "category": 0,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-0-2",
+          "category": 0,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-2-1",
+          "category": 2,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-3-1",
+          "category": 3,
+          "dock": 1,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-1-1",
+          "category": 1,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-0-3",
+          "category": 0,
+          "dock": 1,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-0-4",
+          "category": 0,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-0-5",
+          "category": 0,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        }
+      ],
+      "moduleControl": {
+        "pitchX": 0.08,
+        "pitchZ": 0.025,
+        "originX": 0.04,
+        "tick": 0.2,
+        "exclusive": true,
+        "requests": 57600,
+        "deferred": 3989,
+        "totalDelay": 2642.6000000051117
+      },
+      "materialConserved": true,
+      "waitingState": null,
+      "case": "current",
+      "layoutFingerprint": "dae71e17e51973bc",
+      "sourceHashes": {
+        "layout.js": "a11dee5e45cfcdca3c6bacec03f5fcc46fdfeffb1c2554add5efb09b4330d3d5",
+        "cart_model.js": "8f64c7db9c5de61a04faa4e86350ecfb4cb44b1e25cff24f056535847803d759",
+        "logistics.js": "75360da7ac6728ec44c5faf51744153cbdfc5d2c12f5988268c5a7d7db9b7e5b"
+      },
+      "inputFixtureSHA256": "209f629195d00c38b672029c02c89cfe923c67010a4e9930b94b9955b5b0f7ef",
+      "wallSeconds": 198.6157831669998,
+      "validFactoryCalculation": true,
+      "publishableFactoryBricksPerHour": 8019.04986811265,
+      "publishableFactoryPalletsPerHour": 14.319731907344018,
+      "inspectedApproved": 50664,
+      "inspectedApprovedWIP": 3624,
+      "uninspectedKnownGood": 0
+    },
+    {
+      "error": null,
+      "completeInput": true,
+      "ranToEnd": true,
+      "totalInput": 57600,
+      "inspected": 57600,
+      "rejected": 6936,
+      "disposed": 6936,
+      "uniqueDisposed": 6936,
+      "disposedAllBad": true,
+      "approved": 50664,
+      "approvedShadeCounts": [
+        16906,
+        16928,
+        16830
+      ],
+      "rejectedExtremeCounts": [
+        3340,
+        3596
+      ],
+      "identicalCarts": true,
+      "produced": 88,
+      "completedJobs": 88,
+      "completeOutputUnique": 49280,
+      "completeOutputHasNoDuplicates": true,
+      "completeOutputAllGood": true,
+      "products": [
+        88,
+        0,
+        0,
+        0
+      ],
+      "productionEnd_s": 19410.510778610642,
+      "lastInspection_s": 19416.22698860323,
+      "comparisonWindow_s": 19416.22698860323,
+      "total_s": 22984.788682105413,
+      "bricksPerHour": 9137.09960767009,
+      "palletsPerHour": 16.316249299410877,
+      "modelBph": 9137.09960767009,
+      "modelPph": 16.316249299410877,
+      "WIP": 1384,
+      "WIPShadeCounts": [
+        440,
+        460,
+        484
+      ],
+      "WIPParts": {
+        "mixed:lane0:well0": 33,
+        "mixed:lane0:well2": 1,
+        "mixed:lane0:well1": 40,
+        "mixed:lane1:well0": 40,
+        "mixed:lane1:well1": 10,
+        "mixed:lane2:well1": 546,
+        "mixed:lane3:well2": 168,
+        "mixed:lane3:well1": 159,
+        "mixed:lane3:well0": 277,
+        "mixed:lane4:well0": 38,
+        "mixed:lane4:well1": 40,
+        "mixed:lane5:well0": 30,
+        "mixed:lane5:well1": 2
+      },
+      "unroutedGood": 0,
+      "formed": 50440,
+      "stored": 88,
+      "loaded": 88,
+      "shipped": 88,
+      "shippedBricksPerFullReplayHour": 7718.49602159359,
+      "shippedPalletsPerFullReplayHour": 13.783028609988554,
+      "storageCapacity": 128,
+      "handoffCapacity": 16,
+      "docks": 2,
+      "fleetRoles": [
+        "warehouse",
+        "warehouse",
+        "loader",
+        "loader"
+      ],
+      "allOrdersHaveUniqueIDs": true,
+      "orders": [
+        {
+          "id": "truck-0-1",
+          "category": 0,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-0-2",
+          "category": 0,
+          "dock": 1,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-0-3",
+          "category": 0,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-0-4",
+          "category": 0,
+          "dock": 1,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-0-5",
+          "category": 0,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-0-6",
+          "category": 0,
+          "dock": 1,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-0-7",
+          "category": 0,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-0-8",
+          "category": 0,
+          "dock": 1,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-0-9",
+          "category": 0,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-0-10",
+          "category": 0,
+          "dock": 1,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-0-11",
+          "category": 0,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        }
+      ],
+      "moduleControl": {
+        "pitchX": 0.08,
+        "pitchZ": 0.025,
+        "originX": 0.04,
+        "tick": 0.2,
+        "exclusive": true,
+        "requests": 57600,
+        "deferred": 4120,
+        "totalDelay": 2839.800000005357
+      },
+      "materialConserved": true,
+      "waitingState": null,
+      "case": "all_mixed",
+      "layoutFingerprint": "dae71e17e51973bc",
+      "sourceHashes": {
+        "layout.js": "a11dee5e45cfcdca3c6bacec03f5fcc46fdfeffb1c2554add5efb09b4330d3d5",
+        "cart_model.js": "8f64c7db9c5de61a04faa4e86350ecfb4cb44b1e25cff24f056535847803d759",
+        "logistics.js": "75360da7ac6728ec44c5faf51744153cbdfc5d2c12f5988268c5a7d7db9b7e5b"
+      },
+      "inputFixtureSHA256": "209f629195d00c38b672029c02c89cfe923c67010a4e9930b94b9955b5b0f7ef",
+      "wallSeconds": 218.2160891600006,
+      "validFactoryCalculation": true,
+      "publishableFactoryBricksPerHour": 9137.09960767009,
+      "publishableFactoryPalletsPerHour": 16.316249299410877,
+      "inspectedApproved": 50664,
+      "inspectedApprovedWIP": 1384,
+      "uninspectedKnownGood": 0
+    },
+    {
+      "error": null,
+      "completeInput": false,
+      "ranToEnd": true,
+      "totalInput": 57600,
+      "inspected": 48105,
+      "rejected": 5795,
+      "disposed": 5795,
+      "uniqueDisposed": 5795,
+      "disposedAllBad": true,
+      "approved": 50664,
+      "approvedShadeCounts": [
+        16906,
+        16928,
+        16830
+      ],
+      "rejectedExtremeCounts": [
+        3340,
+        3596
+      ],
+      "identicalCarts": true,
+      "produced": 66,
+      "completedJobs": 66,
+      "completeOutputUnique": 36960,
+      "completeOutputHasNoDuplicates": true,
+      "completeOutputAllGood": true,
+      "products": [
+        60,
+        6,
+        0,
+        0
+      ],
+      "productionEnd_s": 14664.013736549568,
+      "lastInspection_s": 16516.75648010716,
+      "comparisonWindow_s": 16516.75648010716,
+      "total_s": 17098.69411936414,
+      "bricksPerHour": 8055.818959385465,
+      "palletsPerHour": 14.385390998902617,
+      "modelBph": 8055.818959385465,
+      "modelPph": 14.385390998902617,
+      "WIP": 13704,
+      "WIPShadeCounts": [
+        5108,
+        4255,
+        4341
+      ],
+      "WIPParts": {
+        "unrouted:lane0:well-": 1263,
+        "mixed:lane0:well0": 411,
+        "Warm:lane0:well2": 240,
+        "mixed:lane0:well1": 400,
+        "unrouted:lane1:well-": 1261,
+        "mixed:lane1:well0": 440,
+        "mixed:lane1:well1": 423,
+        "Warm:lane1:well2": 166,
+        "unrouted:lane2:well-": 1247,
+        "mixed:lane2:well1": 378,
+        "mixed:lane2:well0": 400,
+        "Warm:lane2:well2": 201,
+        "unrouted:lane3:well-": 1267,
+        "mixed:lane3:well1": 361,
+        "mixed:lane3:well0": 398,
+        "Warm:lane3:well2": 258,
+        "unrouted:lane4:well-": 1675,
+        "mixed:lane4:well1": 239,
+        "Warm:lane4:well2": 206,
+        "mixed:lane4:well0": 198,
+        "unrouted:lane5:well-": 1647,
+        "mixed:lane5:well1": 210,
+        "mixed:lane5:well0": 240,
+        "Warm:lane5:well2": 175
+      },
+      "unroutedGood": 8360,
+      "formed": 42080,
+      "stored": 66,
+      "loaded": 56,
+      "shipped": 56,
+      "shippedBricksPerFullReplayHour": 6602.609486542376,
+      "shippedPalletsPerFullReplayHour": 11.790374083111384,
+      "storageCapacity": 128,
+      "handoffCapacity": 16,
+      "docks": 2,
+      "fleetRoles": [
+        "warehouse",
+        "warehouse",
+        "loader",
+        "loader"
+      ],
+      "allOrdersHaveUniqueIDs": true,
+      "orders": [
+        {
+          "id": "truck-0-1",
+          "category": 0,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-0-2",
+          "category": 0,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-0-3",
+          "category": 0,
+          "dock": 1,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-0-4",
+          "category": 0,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-0-5",
+          "category": 0,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-0-6",
+          "category": 0,
+          "dock": 1,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-0-7",
+          "category": 0,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        }
+      ],
+      "moduleControl": {
+        "pitchX": 0.08,
+        "pitchZ": 0.025,
+        "originX": 0.04,
+        "tick": 0.2,
+        "exclusive": true,
+        "requests": 48099,
+        "deferred": 3383,
+        "totalDelay": 2478.6000000037
+      },
+      "materialConserved": true,
+      "waitingState": [
+        {
+          "id": 0,
+          "inspected": 8160,
+          "waiting": [],
+          "stations": [
+            {
+              "id": 0,
+              "shade": null,
+              "stacked": 10,
+              "layer": 10,
+              "filled": 11
+            },
+            {
+              "id": 1,
+              "shade": null,
+              "stacked": 10,
+              "layer": 10,
+              "filled": 0
+            },
+            {
+              "id": 2,
+              "shade": 0,
+              "stacked": 6,
+              "layer": 6,
+              "filled": 0
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "inspected": 8160,
+          "waiting": [],
+          "stations": [
+            {
+              "id": 0,
+              "shade": null,
+              "stacked": 11,
+              "layer": 11,
+              "filled": 0
+            },
+            {
+              "id": 1,
+              "shade": null,
+              "stacked": 10,
+              "layer": 10,
+              "filled": 23
+            },
+            {
+              "id": 2,
+              "shade": 0,
+              "stacked": 4,
+              "layer": 4,
+              "filled": 6
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "inspected": 8160,
+          "waiting": [],
+          "stations": [
+            {
+              "id": 0,
+              "shade": null,
+              "stacked": 10,
+              "layer": 10,
+              "filled": 0
+            },
+            {
+              "id": 1,
+              "shade": null,
+              "stacked": 9,
+              "layer": 9,
+              "filled": 18
+            },
+            {
+              "id": 2,
+              "shade": 0,
+              "stacked": 5,
+              "layer": 5,
+              "filled": 1
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "inspected": 8160,
+          "waiting": [],
+          "stations": [
+            {
+              "id": 0,
+              "shade": null,
+              "stacked": 9,
+              "layer": 9,
+              "filled": 38
+            },
+            {
+              "id": 1,
+              "shade": null,
+              "stacked": 9,
+              "layer": 9,
+              "filled": 1
+            },
+            {
+              "id": 2,
+              "shade": 0,
+              "stacked": 6,
+              "layer": 6,
+              "filled": 18
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "inspected": 7725,
+          "waiting": [
+            {
+              "id": 49119,
+              "shade": 2
+            },
+            {
+              "id": 49910,
+              "shade": 1
+            }
+          ],
+          "stations": [
+            {
+              "id": 0,
+              "shade": null,
+              "stacked": 4,
+              "layer": 4,
+              "filled": 38
+            },
+            {
+              "id": 1,
+              "shade": null,
+              "stacked": 5,
+              "layer": 5,
+              "filled": 39
+            },
+            {
+              "id": 2,
+              "shade": 0,
+              "stacked": 5,
+              "layer": 5,
+              "filled": 6
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "inspected": 7740,
+          "waiting": [],
+          "stations": [
+            {
+              "id": 0,
+              "shade": null,
+              "stacked": 6,
+              "layer": 6,
+              "filled": 0
+            },
+            {
+              "id": 1,
+              "shade": null,
+              "stacked": 5,
+              "layer": 5,
+              "filled": 10
+            },
+            {
+              "id": 2,
+              "shade": 0,
+              "stacked": 4,
+              "layer": 4,
+              "filled": 15
+            }
+          ]
+        }
+      ],
+      "case": "mixed_warm",
+      "layoutFingerprint": "dae71e17e51973bc",
+      "sourceHashes": {
+        "layout.js": "a11dee5e45cfcdca3c6bacec03f5fcc46fdfeffb1c2554add5efb09b4330d3d5",
+        "cart_model.js": "8f64c7db9c5de61a04faa4e86350ecfb4cb44b1e25cff24f056535847803d759",
+        "logistics.js": "75360da7ac6728ec44c5faf51744153cbdfc5d2c12f5988268c5a7d7db9b7e5b"
+      },
+      "inputFixtureSHA256": "209f629195d00c38b672029c02c89cfe923c67010a4e9930b94b9955b5b0f7ef",
+      "wallSeconds": 167.39376350200018,
+      "checks": {
+        "complete_input": false,
+        "model_no_error": true,
+        "fixed_input": false,
+        "discard_accounting": false,
+        "complete_pallet_membership": true,
+        "material_conservation": true,
+        "unique_good_output": true,
+        "identical_carts": true,
+        "all_good_routed": false,
+        "unique_orders": true
+      },
+      "validFactoryCalculation": false,
+      "publishableFactoryBricksPerHour": null,
+      "publishableFactoryPalletsPerHour": null,
+      "inspectedApproved": 42310,
+      "inspectedApprovedWIP": 5350,
+      "uninspectedKnownGood": 8354
+    },
+    {
+      "error": null,
+      "completeInput": true,
+      "ranToEnd": true,
+      "totalInput": 57600,
+      "inspected": 57600,
+      "rejected": 6936,
+      "disposed": 6936,
+      "uniqueDisposed": 6936,
+      "disposedAllBad": true,
+      "approved": 50664,
+      "approvedShadeCounts": [
+        16906,
+        16928,
+        16830
+      ],
+      "rejectedExtremeCounts": [
+        3340,
+        3596
+      ],
+      "identicalCarts": true,
+      "produced": 83,
+      "completedJobs": 83,
+      "completeOutputUnique": 46480,
+      "completeOutputHasNoDuplicates": true,
+      "completeOutputAllGood": true,
+      "products": [
+        0,
+        28,
+        28,
+        27
+      ],
+      "productionEnd_s": 21757.28135868952,
+      "lastInspection_s": 21813.274246474433,
+      "comparisonWindow_s": 21813.274246474433,
+      "total_s": 22410.326374311884,
+      "bricksPerHour": 7670.925424093284,
+      "palletsPerHour": 13.698081114452293,
+      "modelBph": 7670.925424093284,
+      "modelPph": 13.698081114452293,
+      "WIP": 4184,
+      "WIPShadeCounts": [
+        1226,
+        1248,
+        1710
+      ],
+      "WIPParts": {
+        "Warm:lane0:well0": 94,
+        "Russet:lane0:well2": 536,
+        "Copper:lane0:well1": 4,
+        "Russet:lane1:well2": 556,
+        "Copper:lane1:well1": 26,
+        "Warm:lane1:well0": 28,
+        "Warm:lane2:well0": 544,
+        "Copper:lane2:well1": 554,
+        "Russet:lane2:well2": 8,
+        "Copper:lane3:well1": 558,
+        "Russet:lane3:well2": 44,
+        "Warm:lane3:well0": 2,
+        "Russet:lane4:well2": 520,
+        "Warm:lane4:well0": 64,
+        "Copper:lane4:well1": 54,
+        "Warm:lane5:well0": 494,
+        "Russet:lane5:well2": 46,
+        "Copper:lane5:well1": 52
+      },
+      "unroutedGood": 0,
+      "formed": 50360,
+      "stored": 83,
+      "loaded": 72,
+      "shipped": 72,
+      "shippedBricksPerFullReplayHour": 6477.014103925871,
+      "shippedPalletsPerFullReplayHour": 11.566096614153341,
+      "storageCapacity": 128,
+      "handoffCapacity": 16,
+      "docks": 2,
+      "fleetRoles": [
+        "warehouse",
+        "warehouse",
+        "loader",
+        "loader"
+      ],
+      "allOrdersHaveUniqueIDs": true,
+      "orders": [
+        {
+          "id": "truck-1-1",
+          "category": 1,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-3-1",
+          "category": 3,
+          "dock": 1,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-2-1",
+          "category": 2,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-1-2",
+          "category": 1,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-2-2",
+          "category": 2,
+          "dock": 1,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-3-2",
+          "category": 3,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-2-3",
+          "category": 2,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-3-3",
+          "category": 3,
+          "dock": 1,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        },
+        {
+          "id": "truck-1-3",
+          "category": 1,
+          "dock": 0,
+          "capacity": 8,
+          "physicalCapacity": 20,
+          "loaded": 8,
+          "status": "shipped"
+        }
+      ],
+      "moduleControl": {
+        "pitchX": 0.08,
+        "pitchZ": 0.025,
+        "originX": 0.04,
+        "tick": 0.2,
+        "exclusive": true,
+        "requests": 57600,
+        "deferred": 3947,
+        "totalDelay": 2571.6000000050767
+      },
+      "materialConserved": true,
+      "waitingState": null,
+      "case": "pure_three",
+      "layoutFingerprint": "dae71e17e51973bc",
+      "sourceHashes": {
+        "layout.js": "a11dee5e45cfcdca3c6bacec03f5fcc46fdfeffb1c2554add5efb09b4330d3d5",
+        "cart_model.js": "8f64c7db9c5de61a04faa4e86350ecfb4cb44b1e25cff24f056535847803d759",
+        "logistics.js": "75360da7ac6728ec44c5faf51744153cbdfc5d2c12f5988268c5a7d7db9b7e5b"
+      },
+      "inputFixtureSHA256": "209f629195d00c38b672029c02c89cfe923c67010a4e9930b94b9955b5b0f7ef",
+      "wallSeconds": 180.99774169099965,
+      "checks": {
+        "complete_input": true,
+        "model_no_error": true,
+        "fixed_input": true,
+        "discard_accounting": true,
+        "complete_pallet_membership": true,
+        "material_conservation": true,
+        "unique_good_output": true,
+        "identical_carts": true,
+        "all_good_routed": true,
+        "unique_orders": true
+      },
+      "validFactoryCalculation": true,
+      "publishableFactoryBricksPerHour": 7670.925424093284,
+      "publishableFactoryPalletsPerHour": 13.698081114452293,
+      "inspectedApproved": 50664,
+      "inspectedApprovedWIP": 4184,
+      "uninspectedKnownGood": 0
+    }
+  ]
+}

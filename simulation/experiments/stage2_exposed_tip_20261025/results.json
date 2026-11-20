@@ -1,0 +1,117 @@
+{
+  "schema": "exposed-tip-sequence-results-v1",
+  "configuration_count": 1,
+  "G": {
+    "job_id": 1778,
+    "source_commit": "a5a9cb1",
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T080456.949852Z-exposed-tip-G",
+    "status": "FAILED_GLOBAL_GEOMETRY_100UM",
+    "proceed_gate_passed": false,
+    "integrity_checks_passed": 469,
+    "integrity_checks_count": 469,
+    "quality_checks": {
+      "left_all106parities": true,
+      "left_design_clear_100um": false,
+      "left_source_exposed_clear_100um": false,
+      "left_clear_grip_and_outward_taper": true,
+      "right_all106parities": true,
+      "right_design_clear_100um": false,
+      "right_source_exposed_clear_100um": false,
+      "right_clear_grip_and_outward_taper": true
+    },
+    "failed_clear_queries": {
+      "left": [
+        {
+          "id": "left_bbox_2_-1",
+          "error_m": 0.0001300755143165619,
+          "source_error_m": 0.0001300755143165619
+        }
+      ],
+      "right": [
+        {
+          "id": "right_bbox_2_-1",
+          "error_m": 0.00013013511896133728,
+          "source_error_m": 0.00013013511896133728
+        }
+      ]
+    },
+    "cooked_hashes": {
+      "left": "a370b1d937a6230319ff3fb4aa0b5c28d1538fbffba1220e3839b012289a4199",
+      "right": "147719157bddafdc2681d2016aa985d14b8f869b33b75f51d0146fa7f7aa0094"
+    },
+    "actual_capture_plus_audit_seconds": 16.54994369900669,
+    "audit_sha256": "9e3f623e8f198f730727159009d0238f37207984bebed4f918505f7d2a731c9c"
+  },
+  "D": {
+    "status": "PASS_LATERAL_CONTACT_ONLY",
+    "job_id": 1791,
+    "source_commit": "e65db67",
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T083717.764321Z-exposed-tip-D",
+    "proceed_gate_passed": true,
+    "physical_case_attempts": 1,
+    "failed_invocations": [
+      {
+        "job_id": 1788,
+        "source_commit": "61ffff3",
+        "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T082958.777598Z-exposed-tip-D",
+        "status": "INCOMPLETE_CAPTURE_ARGUMENT_FORWARDING",
+        "scope": "Separate lateral-qualified contact diagnostic; original G remains FAILED",
+        "proceed_gate_passed": false,
+        "physical_case_exercised": false,
+        "target_claims": "UNTESTED",
+        "actual_capture_plus_audit_seconds": 0.8786062049912289,
+        "diagnosis": "Default argparse abbreviation consumed forwarded --geometry as --geometry-audit before simulator startup."
+      }
+    ],
+    "integrity_checks_passed": 42,
+    "integrity_check_count": 42,
+    "contact_checks_passed": 27,
+    "contact_check_count": 27,
+    "steps": 102,
+    "positive_first_completed_step": 50,
+    "release_first_completed_step": 72,
+    "peak_all_normal_magnitudes_N": {
+      "left": 0.23463265868940653,
+      "right": 0.23758839348738547
+    },
+    "actual_capture_plus_audit_seconds": 45.58708199701505,
+    "cumulative_with_1788_seconds": 46.46568820200628,
+    "audit_sha256": "940f2926afc45a238c059ce4ecb90583d4668a5c3af7e10f8c1d59942a79c1ab",
+    "scope": "Lateral-qualified normal-contact reporting and reopen only; no dynamic hold or native extraction.",
+    "independent_team_review": "Evaluator and reviewer accepted recorded lateral contact/reopen; original G remains failed.",
+    "loaded_point_observations": 394,
+    "reciprocal_observations": 197,
+    "observation_independence": "Repeated contact manifold observations and reciprocal reports are correlated, not independent trials."
+  },
+  "R": {
+    "status": "PASS_LATERAL_CONTACT_ONLY",
+    "job_id": 1794,
+    "source_commit": "e65db67",
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T084049.478049Z-exposed-tip-R",
+    "hand_x_offset_m": 0.002,
+    "same_D_geometry_audit_sha256": "940f2926afc45a238c059ce4ecb90583d4668a5c3af7e10f8c1d59942a79c1ab",
+    "proceed_gate_passed": true,
+    "physical_case_attempts": 1,
+    "integrity_checks_passed": 43,
+    "integrity_check_count": 43,
+    "contact_checks_passed": 27,
+    "contact_check_count": 27,
+    "steps": 100,
+    "positive_first_completed_step": 49,
+    "release_first_completed_step": 70,
+    "peak_all_normal_magnitudes_N": {
+      "left": 0.2236507760198947,
+      "right": 0.22530027912580408
+    },
+    "actual_capture_plus_audit_seconds": 39.0783828139829,
+    "audit_sha256": "b9e2f0268a2258489be48995487564f55bb75a8327fb15d93743795baa73c71a",
+    "independent_team_review": "Independent evaluator and reviewer accepted unchanged reserved +2mm hand-X case; bounded D/R benchmark complete.",
+    "loaded_point_observations": 438,
+    "reciprocal_observations": 219,
+    "observation_independence": "Repeated contact manifold observations and reciprocal reports are correlated, not independent trials."
+  },
+  "reassessment": "Independent planner/evaluator/reviewer approved one distinct lateral-qualified D and conditional R with unchanged model/config/cooked hashes. Canonical side authorization is frozen; original global G remains failed.",
+  "scope": "Contact/control primitive only; no native grasp/extraction/placement or physical calibration validated.",
+  "benchmark_status": "COMPLETE_LATERAL_CONTACT_ONLY; original global G remains failed",
+  "next_goal_requirement": "Actual dynamic grasp retention and native-connected extraction using sensor-driven decisions; not yet implemented or validated."
+}

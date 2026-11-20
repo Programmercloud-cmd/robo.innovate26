@@ -1,0 +1,61 @@
+Binaries/Linux/Brickflow: OK
+Binaries/Linux/Brickflow.debug: OK
+Binaries/Linux/Brickflow.sym: OK
+Binaries/Linux/Brickflow.target: OK
+Binaries/Linux/BrickflowEditor.target: OK
+Binaries/Linux/UnrealEditor.modules: OK
+Binaries/Linux/libUnrealEditor-Brickflow.debug: OK
+Binaries/Linux/libUnrealEditor-Brickflow.so: OK
+Binaries/Linux/libUnrealEditor-Brickflow.sym: OK
+Config/DefaultEngine.ini: OK
+Config/DefaultGame.ini: OK
+Content/Data/8f2a6303-282a-4929-964c-0cce8ce95eb4.png: OK
+Content/Data/factory.json: OK
+Content/Materials/M_FactorySurface.uasset: OK
+Content/Materials/M_FactorySurfaceTwoSided.uasset: OK
+Source/Brickflow.Target.cs: OK
+Source/Brickflow/Brickflow.Build.cs: OK
+Source/Brickflow/Brickflow.cpp: OK
+Source/Brickflow/BrickflowGameMode.cpp: OK
+Source/Brickflow/BrickflowGameMode.h: OK
+Source/Brickflow/BrickflowStage.cpp: OK
+Source/Brickflow/BrickflowStage.h: OK
+Source/Brickflow/Core/Assembly.cpp: OK
+Source/Brickflow/Core/EventRuntime.h: OK
+Source/Brickflow/Core/Production.cpp: OK
+Source/Brickflow/Core/Simulation.cpp: OK
+Source/Brickflow/Core/Simulation.h: OK
+Source/Brickflow/FactoryFilm.cpp: OK
+Source/Brickflow/FactoryScene.cpp: OK
+Source/Brickflow/FilmTiming.h: OK
+Source/BrickflowEditor.Target.cs: OK
+/home/shadeform/workspace/brickflow-native/Saved/Films/continuous-4k-v4-delivery/brickflow-tracking-4k.mp4: OK
+{
+  "verified": true,
+  "framesChecked": 11867,
+  "maximumPoseErrorMetres": 1.0302869668521453e-12,
+  "playback": "continuous smooth ramps up to 40x",
+  "cameraAuditOnly": false,
+  "complete": true,
+  "limitation": "Numerical agreement with synthetic reference; not physical validation."
+}
+{
+  "verified": true,
+  "packets": 11867,
+  "fps": 30,
+  "maximumPresentationTimestampErrorSeconds": 3.333333467026023e-07,
+  "limitation": "Timestamp continuity only; visual review and native trace checks are separate."
+}
+{
+  "verified": true,
+  "historyCopyComplete": true,
+  "archiveSha256": "e04523a1e03d06da56ab7d423ca7b51ba753a1490903c436ea149cc6fc99f2c9",
+  "restoredArchiveEntries": 2333,
+  "gpuCount": 4,
+  "projectChecksumsVerified": true,
+  "renderedTraceVerified": true,
+  "videoChecksumVerified": true,
+  "videoTimestampsVerified": true,
+  "distributedEncodingVerified": true,
+  "limitation": "Synthetic simulation checks; not physical validation."
+}

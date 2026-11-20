@@ -1,0 +1,28 @@
+{
+  "complete": true,
+  "bricks": 57600,
+  "rejected": 6936,
+  "pallets": 82,
+  "products": {
+    "2": 13,
+    "0": 45,
+    "1": 12,
+    "3": 12
+  },
+  "bricks_h": 8491.305755858988,
+  "pallets_h": 15.163045992605337,
+  "production_seconds": 19468.383868515743,
+  "replay_seconds": 20824.472537276753,
+  "warehouse": {
+    "0": 5,
+    "1": 4,
+    "2": 5,
+    "3": 4
+  },
+  "loaded": 64,
+  "shipped": 64,
+  "interlock_checks": 6934,
+  "mixed_cart_pallets": 18,
+  "approved_WIP": 4744,
+  "fleet_tasks": 146
+}

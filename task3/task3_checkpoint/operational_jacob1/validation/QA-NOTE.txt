@@ -1,0 +1,89 @@
+INDEPENDENT REVIEW — UPDATED OPERATIONAL SIMULATION
+28 October 2026
+
+RESULT
+The independent audit passed30 check groups on the new default run, and all
+four deliberate fault injections were rejected. The scalar geometry audit also
+passed15 checks. No old process replay was used to generate this run.
+
+AUTHORITATIVE INPUTS
+Shared geometry SHA256:
+74a93f84df620df69fc66ba5ce95f8243554bb41fa3d8095fb3ad920b45e4249
+Engine source SHA256 reviewed:
+157acac42aadc593b05896ebc09d9eb8382e892e0c654552d8ee0cdd645fb280
+Generated run SHA256:
+aafacff6e73cba4f38bd815b1f0e7eabc240298ddeeaef60c2ba4d321a336284
+The geometry retains the accepted routing, formation, reject collection,
+128-position shared storage, access aisles, finished-goods gantry and OptionA
+subsets exactly. The authorized north/south kiln-cart extension has a7.2m
+support tray over a6.8m chassis, sufficient for the6.98m loaded-layer footprint.
+
+INDEPENDENT COVERAGE
+The auditor derives results from brick identities, material transactions, layer
+membership, actual motion segments and resource intervals rather than trusting
+an engine 'passed' flag. It checks finite source inventory, causal source feed,
+forty unique good bricks per layer, all18 production stations, FIFO two-position
+buffers, actual supported buffer poses, fourteen ordered layers per pallet,
+560 unique good IDs per completed pack, and pure/mixed colour recipes.
+
+Pallet layer heights are checked against the actual descending wood pose:
+wood origin +0.060m support top +layer index x0.069m. Completed wood origins
+finish atY0.224m; runner bottoms matchY0.164m outfeed support. Storage and
+handoff origins lower toY0.060m, so the runners contact the actual floor; all
+fourteen layers retain deck contact. Fork bearing tops follow the deck underside
+at wood origin +0.025m inside the runner channels, with an empty insertion top
+of0.085m above the floor. Loaded pallet
+locations cannot overwrite occupied truck cells. Forklift-carried pallets stay
+in the signed load-center frame during drives, turns and supported insertions.
+
+The audit samples full horizontal good-brick footprints against the supported
+routing deck union and checks the upstream channel caps. Cross-module paths
+must use the supported upstream bridge. One continuous reserved route enters
+an already allocated receiving position; routing is not an intermediate buffer.
+Resource intervals independently reject concurrent conflicting owners.
+
+The north/south cart keeps fixedX and yaw; every source pick removes a complete
+topmost forty-brick layer with unique IDs. Loaded ninety-degree rotation retains
+the local grip frame and rigid layer geometry. The partly consumed cart remains
+at the unloading station. Inspection cannot precede actual source delivery.
+
+Skip exchange checks reconstruct stopped admissions and cleared reject transit,
+raised west-stowed head before exchange, returned/lowered head before resuming,
+and retained ownership of all rejected IDs removed with the full body.
+
+FINAL MATERIAL ACCOUNTING
+28,800 input IDs =17,200 still on the source cart +103 in upstream processing
++10,080 shipped good bricks +1,200 removed rejects +217 rejects in the skip.
+252 formed layers produce18 complete560-brick pallets. All material identities
+remain accounted; none is duplicated, destroyed or recreated during animation.
+
+NEGATIVE CONTROLS
+The same auditor rejects a duplicate brick within a layer, overlapping exclusive
+zone owners, reversed pallet-layer order and a duplicate ledger transaction ID.
+The unmodified run must pass before these negative-control results count.
+
+LIMITS / ASSUMPTIONS
+This is a deterministic commissioning scenario with finite demand-paced source
+colours, not a random factory-input or yield/throughput experiment. One serialized
+forty-brick source claw and six row tools stand in for the industrial simultaneous
+36-head unloading system. Speeds, singulation and indexing are authored review
+kinematics. The initial portal hold deliberately demonstrates buffer backpressure.
+The default bounded schedule lasts203,239.2811 model seconds; this deliberately
+conservative serialized commissioning trace is not a factory cycle-time forecast.
+Use the event jumps and timeline to inspect representative operations.
+
+Support screens and sampled rigid transforms do not certify continuous contact,
+friction, acceleration, gripper force, whole-machine collision or structural load.
+The reject chute/incline and bulk-drop model does not solve brick breakage,
+impact, settling or dust. The small skip trigger is a demonstration count, not
+capacity qualification of the nominal10m3 body. Actual hooklift vehicle swept
+paths, load limits, sensing and live interlocks remain engineering work.
+
+Warehouse and truck handling assume unitized packs, an explicit load-center
+convention and reserved journeys. Real vehicle footprint/turning-radius/fork
+length/load-chart qualification remains open. Truck securing is a timed stationary
+state; restraint hardware is not simulated. The second dispatch bay stays reserve.
+
+The existing replay and Unreal project remain untouched. This delivery validates
+logical/material invariants and authored supported paths for the identified new
+run; it is not industrial safety certification or photoreal rendering.

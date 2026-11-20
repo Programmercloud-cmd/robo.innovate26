@@ -1,0 +1,669 @@
+{
+  "scope": "Nominal XY/parity review, not validated old-layer identity",
+  "records": [
+    {
+      "recorded_id": "point_08",
+      "anchor_destination": null,
+      "raw_R_base_EE": [
+        [
+          0.9995158910751343,
+          -0.020584262907505035,
+          -0.02332828752696514
+        ],
+        [
+          -0.02031816728413105,
+          -0.999726414680481,
+          0.011586727574467659
+        ],
+        [
+          -0.023560410365462303,
+          -0.011107129976153374,
+          -0.9996607303619385
+        ]
+      ],
+      "raw_Z_reused": false,
+      "proposed": [
+        {
+          "parity": 0,
+          "orientation_change_deg": 92.14531764025804,
+          "long_axis_line_error_deg": 87.8721373108394,
+          "rotation_matrix": [
+            [
+              -0.01682252526744155,
+              0.9998584913094585,
+              0.0
+            ],
+            [
+              0.9998584913094585,
+              0.01682252526744155,
+              0.0
+            ],
+            [
+              -0.0,
+              0.0,
+              -1.0
+            ]
+          ]
+        },
+        {
+          "parity": 1,
+          "orientation_change_deg": 2.6057378974735377,
+          "long_axis_line_error_deg": 2.5203735386078816,
+          "rotation_matrix": [
+            [
+              0.9998584913094585,
+              0.016822525267442115,
+              0.0
+            ],
+            [
+              0.016822525267442115,
+              -0.9998584913094585,
+              0.0
+            ],
+            [
+              -0.0,
+              0.0,
+              -1.0
+            ]
+          ]
+        }
+      ],
+      "nearest_slot_xy_by_parity": [
+        {
+          "parity": 0,
+          "slot_id": "b_1_0_0",
+          "residual_m": 0.023053327085400623
+        },
+        {
+          "parity": 1,
+          "slot_id": "b_0_1_1",
+          "residual_m": 0.0007295740038181571
+        }
+      ],
+      "recommended_parity": 1,
+      "recommendation_scope": "Nearest nominal XY grid only; old layer identity and measured placement are not verified",
+      "original_export_modified": false
+    },
+    {
+      "recorded_id": "point_09",
+      "anchor_destination": null,
+      "raw_R_base_EE": [
+        [
+          0.9997586011886597,
+          -0.015877434983849525,
+          -0.015184180811047554
+        ],
+        [
+          -0.015788502991199493,
+          -0.9998576045036316,
+          0.005959039553999901
+        ],
+        [
+          -0.015276632271707058,
+          -0.005717865657061338,
+          -0.9998669624328613
+        ]
+      ],
+      "raw_Z_reused": false,
+      "proposed": [
+        {
+          "parity": 0,
+          "orientation_change_deg": 91.87485447786297,
+          "long_axis_line_error_deg": 88.13155525334535,
+          "rotation_matrix": [
+            [
+              -0.01682252526744155,
+              0.9998584913094585,
+              0.0
+            ],
+            [
+              0.9998584913094585,
+              0.01682252526744155,
+              0.0
+            ],
+            [
+              -0.0,
+              0.0,
+              -1.0
+            ]
+          ]
+        },
+        {
+          "parity": 1,
+          "orientation_change_deg": 2.0916051506310938,
+          "long_axis_line_error_deg": 2.0635167561883194,
+          "rotation_matrix": [
+            [
+              0.9998584913094585,
+              0.016822525267442115,
+              0.0
+            ],
+            [
+              0.016822525267442115,
+              -0.9998584913094585,
+              0.0
+            ],
+            [
+              -0.0,
+              0.0,
+              -1.0
+            ]
+          ]
+        }
+      ],
+      "nearest_slot_xy_by_parity": [
+        {
+          "parity": 0,
+          "slot_id": "b_1_0_0",
+          "residual_m": 0.0008062701213879911
+        },
+        {
+          "parity": 1,
+          "slot_id": "b_0_0_1",
+          "residual_m": 0.02185669674740203
+        }
+      ],
+      "recommended_parity": 0,
+      "recommendation_scope": "Nearest nominal XY grid only; old layer identity and measured placement are not verified",
+      "original_export_modified": false
+    },
+    {
+      "recorded_id": "point_10",
+      "anchor_destination": null,
+      "raw_R_base_EE": [
+        [
+          0.9995312094688416,
+          -0.020223507657647133,
+          -0.022984910756349564
+        ],
+        [
+          -0.01997883804142475,
+          -0.999741792678833,
+          0.01082506775856018
+        ],
+        [
+          -0.023197894915938377,
+          -0.010360781103372574,
+          -0.9996771812438965
+        ]
+      ],
+      "raw_Z_reused": false,
+      "proposed": [
+        {
+          "parity": 0,
+          "orientation_change_deg": 92.12479379740623,
+          "long_axis_line_error_deg": 87.89157520953468,
+          "rotation_matrix": [
+            [
+              -0.01682252526744155,
+              0.9998584913094585,
+              0.0
+            ],
+            [
+              0.9998584913094585,
+              0.01682252526744155,
+              0.0
+            ],
+            [
+              -0.0,
+              0.0,
+              -1.0
+            ]
+          ]
+        },
+        {
+          "parity": 1,
+          "orientation_change_deg": 2.5683420540033786,
+          "long_axis_line_error_deg": 2.492829585865945,
+          "rotation_matrix": [
+            [
+              0.9998584913094585,
+              0.016822525267442115,
+              0.0
+            ],
+            [
+              0.016822525267442115,
+              -0.9998584913094585,
+              0.0
+            ],
+            [
+              -0.0,
+              0.0,
+              -1.0
+            ]
+          ]
+        }
+      ],
+      "nearest_slot_xy_by_parity": [
+        {
+          "parity": 0,
+          "slot_id": "b_0_0_0",
+          "residual_m": 0.022627171673236978
+        },
+        {
+          "parity": 1,
+          "slot_id": "b_0_0_1",
+          "residual_m": 4.745458811569891e-06
+        }
+      ],
+      "recommended_parity": 1,
+      "recommendation_scope": "Nearest nominal XY grid only; old layer identity and measured placement are not verified",
+      "original_export_modified": false
+    },
+    {
+      "recorded_id": "point_11",
+      "anchor_destination": "B",
+      "raw_R_base_EE": [
+        [
+          0.9997652173042297,
+          -0.015747806057333946,
+          -0.014882516115903854
+        ],
+        [
+          -0.01566982828080654,
+          -0.9998629093170166,
+          0.005341758951544762
+        ],
+        [
+          -0.014964597299695015,
+          -0.005107298027724028,
+          -0.999875009059906
+        ]
+      ],
+      "raw_Z_reused": false,
+      "proposed": [
+        {
+          "parity": 0,
+          "orientation_change_deg": 91.86751342090042,
+          "long_axis_line_error_deg": 88.13835107422973,
+          "rotation_matrix": [
+            [
+              -0.01682252526744155,
+              0.9998584913094585,
+              0.0
+            ],
+            [
+              0.9998584913094585,
+              0.01682252526744155,
+              0.0
+            ],
+            [
+              -0.0,
+              0.0,
+              -1.0
+            ]
+          ]
+        },
+        {
+          "parity": 1,
+          "orientation_change_deg": 2.07256796903399,
+          "long_axis_line_error_deg": 2.049768013749148,
+          "rotation_matrix": [
+            [
+              0.9998584913094585,
+              0.016822525267442115,
+              0.0
+            ],
+            [
+              0.016822525267442115,
+              -0.9998584913094585,
+              0.0
+            ],
+            [
+              -0.0,
+              0.0,
+              -1.0
+            ]
+          ]
+        }
+      ],
+      "nearest_slot_xy_by_parity": [
+        {
+          "parity": 0,
+          "slot_id": "b_0_0_0",
+          "residual_m": 0.0
+        },
+        {
+          "parity": 1,
+          "slot_id": "b_0_0_1",
+          "residual_m": 0.022627416997969545
+        }
+      ],
+      "recommended_parity": 0,
+      "recommendation_scope": "Operator first-slot anchor",
+      "original_export_modified": false
+    },
+    {
+      "recorded_id": "point_12",
+      "anchor_destination": null,
+      "raw_R_base_EE": [
+        [
+          0.9997655153274536,
+          -0.01568533107638359,
+          -0.014926972799003124
+        ],
+        [
+          -0.01561711821705103,
+          -0.9998670816421509,
+          0.004675496369600296
+        ],
+        [
+          -0.014998326078057289,
+          -0.004441283643245697,
+          -0.9998776316642761
+        ]
+      ],
+      "raw_Z_reused": false,
+      "proposed": [
+        {
+          "parity": 0,
+          "orientation_change_deg": 91.86413931279543,
+          "long_axis_line_error_deg": 88.14137201571667,
+          "rotation_matrix": [
+            [
+              -0.01682252526744155,
+              0.9998584913094585,
+              0.0
+            ],
+            [
+              0.9998584913094585,
+              0.01682252526744155,
+              0.0
+            ],
+            [
+              -0.0,
+              0.0,
+              -1.0
+            ]
+          ]
+        },
+        {
+          "parity": 1,
+          "orientation_change_deg": 2.065402557478886,
+          "long_axis_line_error_deg": 2.047869377620385,
+          "rotation_matrix": [
+            [
+              0.9998584913094585,
+              0.016822525267442115,
+              0.0
+            ],
+            [
+              0.016822525267442115,
+              -0.9998584913094585,
+              0.0
+            ],
+            [
+              -0.0,
+              0.0,
+              -1.0
+            ]
+          ]
+        }
+      ],
+      "nearest_slot_xy_by_parity": [
+        {
+          "parity": 0,
+          "slot_id": "b_0_1_0",
+          "residual_m": 0.0006512040102388108
+        },
+        {
+          "parity": 1,
+          "slot_id": "b_2_0_1",
+          "residual_m": 0.022157059677169917
+        }
+      ],
+      "recommended_parity": 0,
+      "recommendation_scope": "Nearest nominal XY grid only; old layer identity and measured placement are not verified",
+      "original_export_modified": false
+    },
+    {
+      "recorded_id": "point_13",
+      "anchor_destination": null,
+      "raw_R_base_EE": [
+        [
+          0.9995443820953369,
+          -0.019992658868432045,
+          -0.022610750049352646
+        ],
+        [
+          -0.019765222445130348,
+          -0.9997522234916687,
+          0.010237902402877808
+        ],
+        [
+          -0.02280982956290245,
+          -0.009786331094801426,
+          -0.999691903591156
+        ]
+      ],
+      "raw_Z_reused": false,
+      "proposed": [
+        {
+          "parity": 0,
+          "orientation_change_deg": 92.11164325763167,
+          "long_axis_line_error_deg": 87.9038082870165,
+          "rotation_matrix": [
+            [
+              -0.01682252526744155,
+              0.9998584913094585,
+              0.0
+            ],
+            [
+              0.9998584913094585,
+              0.01682252526744155,
+              0.0
+            ],
+            [
+              -0.0,
+              0.0,
+              -1.0
+            ]
+          ]
+        },
+        {
+          "parity": 1,
+          "orientation_change_deg": 2.5388935305420657,
+          "long_axis_line_error_deg": 2.4706470632571387,
+          "rotation_matrix": [
+            [
+              0.9998584913094585,
+              0.016822525267442115,
+              0.0
+            ],
+            [
+              0.016822525267442115,
+              -0.9998584913094585,
+              0.0
+            ],
+            [
+              -0.0,
+              0.0,
+              -1.0
+            ]
+          ]
+        }
+      ],
+      "nearest_slot_xy_by_parity": [
+        {
+          "parity": 0,
+          "slot_id": "b_1_0_0",
+          "residual_m": 0.022129979224177237
+        },
+        {
+          "parity": 1,
+          "slot_id": "b_1_0_1",
+          "residual_m": 0.0004980665996340289
+        }
+      ],
+      "recommended_parity": 1,
+      "recommendation_scope": "Nearest nominal XY grid only; old layer identity and measured placement are not verified",
+      "original_export_modified": false
+    },
+    {
+      "recorded_id": "point_14",
+      "anchor_destination": "C",
+      "raw_R_base_EE": [
+        [
+          0.9994128346443176,
+          -0.02156466618180275,
+          -0.02662624605000019
+        ],
+        [
+          -0.021138552576303482,
+          -0.9996455907821655,
+          0.01618259772658348
+        ],
+        [
+          -0.026965782046318054,
+          -0.015610255300998688,
+          -0.9995144605636597
+        ]
+      ],
+      "raw_Z_reused": false,
+      "proposed": [
+        {
+          "parity": 0,
+          "orientation_change_deg": 92.20104091563498,
+          "long_axis_line_error_deg": 87.82520559912136,
+          "rotation_matrix": [
+            [
+              -0.01682252526744155,
+              0.9998584913094585,
+              0.0
+            ],
+            [
+              0.9998584913094585,
+              0.01682252526744155,
+              0.0
+            ],
+            [
+              -0.0,
+              0.0,
+              -1.0
+            ]
+          ]
+        },
+        {
+          "parity": 1,
+          "orientation_change_deg": 2.82373790413804,
+          "long_axis_line_error_deg": 2.668274678007959,
+          "rotation_matrix": [
+            [
+              0.9998584913094585,
+              0.016822525267442115,
+              0.0
+            ],
+            [
+              0.016822525267442115,
+              -0.9998584913094585,
+              0.0
+            ],
+            [
+              -0.0,
+              0.0,
+              -1.0
+            ]
+          ]
+        }
+      ],
+      "nearest_slot_xy_by_parity": [
+        {
+          "parity": 0,
+          "slot_id": "c_0_0_0",
+          "residual_m": 0.0
+        },
+        {
+          "parity": 1,
+          "slot_id": "c_0_0_1",
+          "residual_m": 0.022627416997969545
+        }
+      ],
+      "recommended_parity": 0,
+      "recommendation_scope": "Operator first-slot anchor",
+      "original_export_modified": false
+    },
+    {
+      "recorded_id": "point_15",
+      "anchor_destination": "D",
+      "raw_R_base_EE": [
+        [
+          0.9992257356643677,
+          -0.022955339401960373,
+          -0.03195156529545784
+        ],
+        [
+          -0.022240879014134407,
+          -0.9994985461235046,
+          0.022539399564266205
+        ],
+        [
+          -0.032452940940856934,
+          -0.021811317652463913,
+          -0.9992352724075317
+        ]
+      ],
+      "raw_Z_reused": false,
+      "proposed": [
+        {
+          "parity": 0,
+          "orientation_change_deg": 92.28034775066804,
+          "long_axis_line_error_deg": 87.76218950347608,
+          "rotation_matrix": [
+            [
+              -0.01682252526744155,
+              0.9998584913094585,
+              0.0
+            ],
+            [
+              0.9998584913094585,
+              0.01682252526744155,
+              0.0
+            ],
+            [
+              -0.0,
+              0.0,
+              -1.0
+            ]
+          ]
+        },
+        {
+          "parity": 1,
+          "orientation_change_deg": 3.1820519682860353,
+          "long_axis_line_error_deg": 2.910364569710426,
+          "rotation_matrix": [
+            [
+              0.9998584913094585,
+              0.016822525267442115,
+              0.0
+            ],
+            [
+              0.016822525267442115,
+              -0.9998584913094585,
+              0.0
+            ],
+            [
+              -0.0,
+              0.0,
+              -1.0
+            ]
+          ]
+        }
+      ],
+      "nearest_slot_xy_by_parity": [
+        {
+          "parity": 0,
+          "slot_id": "d_0_0_0",
+          "residual_m": 0.0
+        },
+        {
+          "parity": 1,
+          "slot_id": "d_1_0_1",
+          "residual_m": 0.022627416997969503
+        }
+      ],
+      "recommended_parity": 0,
+      "recommendation_scope": "Operator first-slot anchor",
+      "original_export_modified": false
+    }
+  ]
+}

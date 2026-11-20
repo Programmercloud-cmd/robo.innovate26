@@ -1,0 +1,12 @@
+{
+  "acquired_at": "2026-10-02T22:55:02.777205+00:00",
+  "repository": "facebook/sam3",
+  "model_revision": "3c879f39826c281e95690f02c7821c4de09afae7",
+  "filename": "sam3.pt",
+  "sha256": "9999e2341ceef5e136daa386eecb55cb414446a00ac2b55eb2dfd2f7c3cf8c9e",
+  "expected_lfs_sha256": "9999e2341ceef5e136daa386eecb55cb414446a00ac2b55eb2dfd2f7c3cf8c9e",
+  "bytes": 3450062241,
+  "local_path": "/home/faps/.cache/aimassist/huggingface/models--facebook--sam3/snapshots/3c879f39826c281e95690f02c7821c4de09afae7/sam3.pt",
+  "source_revision": "660a5e9e1b8b4c02c0ad97229b88a09a6e4ff5b7",
+  "access": "authorized HF_TOKEN from untracked .env.local; SHA-256 verified against Hugging Face LFS metadata"
+}

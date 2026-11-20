@@ -1,0 +1,7 @@
+{
+  "verified": true,
+  "packets": 11867,
+  "fps": 30,
+  "maximumPresentationTimestampErrorSeconds": 3.333333467026023e-07,
+  "limitation": "Timestamp continuity only; visual review and native trace checks are separate."
+}

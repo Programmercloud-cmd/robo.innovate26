@@ -1,0 +1,48 @@
+{
+  "experiment": "depth_assisted_metric_brick_windows_20261024",
+  "conditions": [
+    "real",
+    "invalid",
+    "flat_plane"
+  ],
+  "brick_length_m": 0.032,
+  "brick_width_m": 0.016,
+  "stud_pitch_m": 0.008,
+  "stud_height_m": 0.0017,
+  "ridge_transverse_join_tolerance_m": 0.004,
+  "ridge_width_tolerance_m": 0.004,
+  "minimum_fragment_area_m2": 5e-05,
+  "end_sample_offset_m": 0.003,
+  "end_sample_width_fraction": 0.7,
+  "minimum_inside_end_coverage": 0.6,
+  "maximum_outside_end_coverage": 0.2,
+  "minimum_observed_lower_end_fraction": 0.5,
+  "minimum_outside_height_drop_m": 0.003,
+  "maximum_integer_span_residual_m": 0.004,
+  "minimum_slot_top_coverage": 0.7,
+  "minimum_confirmed_studs": 4,
+  "stud_confirm_score": 0.35,
+  "minimum_edge_score": 0.12,
+  "seam_search_half_window_m": 0.002,
+  "seam_minimum_common_width_support": 0.6,
+  "seam_gradient_floor": 4.0,
+  "seam_noise_mad_multiplier": 2.0,
+  "evidence": {
+    "feature_model": "ring_coherence_v1",
+    "pixels_per_stud": 24,
+    "stud_radius_fractions": [
+      0.25,
+      0.29,
+      0.33
+    ],
+    "stud_search_fraction": 0.25,
+    "contrast_range_for_observability": 35.0
+  },
+  "notes": "Frozen known-2x4 metric class hypothesis. No layout, ridge/brick count, yaw, designed stack height or actual poses. Both current ends establish only an observed-window phase. RGB maxima do not translate slots. Weak slots remain uncertain; missing requires the strict actual-lower-depth rule; internal metric divisions are inferred unless an observed edge supports them.",
+  "strict_missing": {
+    "enabled": true,
+    "maximum_top_coverage": 0.2,
+    "minimum_valid_lower_returns": 6,
+    "minimum_height_drop_m": 0.003
+  }
+}

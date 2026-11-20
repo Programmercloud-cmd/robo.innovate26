@@ -1,0 +1,7 @@
+{
+  "id": "R1",
+  "round_number": 1,
+  "parent": "B0",
+  "target": "Select the supported singleton higher band and eliminate the two wrong-lower-band cases and ten wrong-lower present claims; singleton orientation may remain uncertain.",
+  "change": "Only minimum_band_roi_area_fraction: 0.01 to 0.001953125 (128 mm^2, one quarter of the known 32x16 mm footprint). All sources and other settings are byte-identical to B0."
+}

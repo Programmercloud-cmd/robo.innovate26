@@ -1,0 +1,116 @@
+{
+  "seconds": 0.6512331429985352,
+  "cases": [
+    {
+      "condition": "real",
+      "view": "top",
+      "status": "supported",
+      "direction_world_deg_mod180": 90.04829191145852,
+      "seconds": 0.04783274400688242
+    },
+    {
+      "condition": "real",
+      "view": "near_top_x",
+      "status": "supported",
+      "direction_world_deg_mod180": 90.01492547179707,
+      "seconds": 0.042312126999604516
+    },
+    {
+      "condition": "real",
+      "view": "near_top_y",
+      "status": "supported",
+      "direction_world_deg_mod180": 90.0442333311007,
+      "seconds": 0.039109468008973636
+    },
+    {
+      "condition": "real",
+      "view": "oblique_front",
+      "status": "supported",
+      "direction_world_deg_mod180": 89.88881063912002,
+      "seconds": 0.050308284000493586
+    },
+    {
+      "condition": "real",
+      "view": "oblique_side",
+      "status": "supported",
+      "direction_world_deg_mod180": 90.02432566211104,
+      "seconds": 0.039414621991454624
+    },
+    {
+      "condition": "invalid",
+      "view": "top",
+      "status": "uncertain",
+      "direction_world_deg_mod180": null,
+      "seconds": 0.033136215002741665
+    },
+    {
+      "condition": "invalid",
+      "view": "near_top_x",
+      "status": "uncertain",
+      "direction_world_deg_mod180": null,
+      "seconds": 0.03327097700093873
+    },
+    {
+      "condition": "invalid",
+      "view": "near_top_y",
+      "status": "uncertain",
+      "direction_world_deg_mod180": null,
+      "seconds": 0.033892484003445134
+    },
+    {
+      "condition": "invalid",
+      "view": "oblique_front",
+      "status": "uncertain",
+      "direction_world_deg_mod180": null,
+      "seconds": 0.035403353002038784
+    },
+    {
+      "condition": "invalid",
+      "view": "oblique_side",
+      "status": "uncertain",
+      "direction_world_deg_mod180": null,
+      "seconds": 0.03507864799757954
+    },
+    {
+      "condition": "flat_plane",
+      "view": "top",
+      "status": "uncertain",
+      "direction_world_deg_mod180": null,
+      "seconds": 0.051775892003206536
+    },
+    {
+      "condition": "flat_plane",
+      "view": "near_top_x",
+      "status": "uncertain",
+      "direction_world_deg_mod180": null,
+      "seconds": 0.05203543599054683
+    },
+    {
+      "condition": "flat_plane",
+      "view": "near_top_y",
+      "status": "uncertain",
+      "direction_world_deg_mod180": null,
+      "seconds": 0.05153940900345333
+    },
+    {
+      "condition": "flat_plane",
+      "view": "oblique_front",
+      "status": "uncertain",
+      "direction_world_deg_mod180": null,
+      "seconds": 0.052936125997803174
+    },
+    {
+      "condition": "flat_plane",
+      "view": "oblique_side",
+      "status": "uncertain",
+      "direction_world_deg_mod180": null,
+      "seconds": 0.052790054003708065
+    }
+  ],
+  "versions": {
+    "opencv": "4.10.0",
+    "numpy": "1.26.0"
+  },
+  "config_sha256": "127f04e168b2621d4e7a9b4ff43a77b67a8b2710f6979bf3aebc468eaef48b8e",
+  "calibration_sha256": "1287a6c4f7e349a8b237e5bddc505dfbc3cf84bb87298e592da2495f38a333a7"
+}

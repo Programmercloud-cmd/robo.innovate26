@@ -1,0 +1,186 @@
+{
+  "schema": "stage2-position-candidate-round1-result-v1",
+  "job_id": 1819,
+  "source_commit": "a2e1a2f",
+  "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T151026.796083Z-stage2-position-candidate-I-r1",
+  "status": "FAILED_PHYSICAL_EXTRACTION",
+  "improvement_round": 1,
+  "phase_closed": true,
+  "automatic_retry": false,
+  "audit_sha256": "c35f3dcfdd7602fe9a1f6fd3ea365bacea66ec16379ad9578124ca202723e531",
+  "physics_extraction_passed": false,
+  "checks_passed": 145,
+  "checks_total": 153,
+  "failed_checks": [
+    "all_measured_frame_guards",
+    "controller_record_complete",
+    "target_detached_singleton",
+    "commanded_straight_5mm_lift",
+    "target_rise_4mm",
+    "held_relative_transform",
+    "final_hold_250ms",
+    "detachment_after_lift_admission"
+  ],
+  "frame_failure_counts": {
+    "actual_joint_speed": 1,
+    "all_finger_and_reciprocal_plane_compatible": 1,
+    "no_capture_abort": 1
+  },
+  "position_candidate": {
+    "status": "GRASP_CANDIDATE",
+    "step": 1853,
+    "command_q_m": 0.005593305453658104,
+    "commanded_finger_q_m": [
+      0.005593305453658104,
+      0.005593305453658104
+    ],
+    "consecutive_steps": 30,
+    "endpoint_settle_completed_commands": 30,
+    "window": [
+      {
+        "step": 1851,
+        "endpoint_settle_completed_commands": 28,
+        "sample_passed": true,
+        "forces_N": {
+          "left": 0.9899687767028809,
+          "right": 1.236982822418213
+        },
+        "actual_finger_q_m": [
+          0.006155075505375862,
+          0.00615508621558547
+        ],
+        "commanded_finger_q_m": [
+          0.005593305453658104,
+          0.005593305453658104
+        ],
+        "finger_tracking_errors_m": [
+          0.0005617700517177582,
+          0.0005617807619273663
+        ],
+        "actual_joint_gap_m": 0.015123551012969475,
+        "commanded_joint_gap_m": 0.014000000199324354
+      },
+      {
+        "step": 1852,
+        "endpoint_settle_completed_commands": 29,
+        "sample_passed": true,
+        "forces_N": {
+          "left": 0.9900861978530884,
+          "right": 1.2369558811187744
+        },
+        "actual_finger_q_m": [
+          0.00615510530769825,
+          0.006155115552246571
+        ],
+        "commanded_finger_q_m": [
+          0.005593305453658104,
+          0.005593305453658104
+        ],
+        "finger_tracking_errors_m": [
+          0.0005617998540401459,
+          0.0005618100985884666
+        ],
+        "actual_joint_gap_m": 0.015123610151952963,
+        "commanded_joint_gap_m": 0.014000000199324354
+      },
+      {
+        "step": 1853,
+        "endpoint_settle_completed_commands": 30,
+        "sample_passed": true,
+        "forces_N": {
+          "left": 0.9902424812316895,
+          "right": 1.2367132902145386
+        },
+        "actual_finger_q_m": [
+          0.006155132316052914,
+          0.0061551425606012344
+        ],
+        "commanded_finger_q_m": [
+          0.005593305453658104,
+          0.005593305453658104
+        ],
+        "finger_tracking_errors_m": [
+          0.0005618268623948097,
+          0.0005618371069431305
+        ],
+        "actual_joint_gap_m": 0.015123664168662291,
+        "commanded_joint_gap_m": 0.014000000199324354
+      }
+    ]
+  },
+  "lift_admission": {
+    "kind": "position_candidate",
+    "step": 1853,
+    "command_q_m": 0.005593305453658104
+  },
+  "force_confirmation": null,
+  "controller_status": "aborted",
+  "steps": 2113,
+  "metrics": {
+    "first_singleton_step": null,
+    "target_rise_m": 0.00010976195335388184,
+    "held_translation_max_m": null,
+    "held_angle_max_rad": null,
+    "non_target_translation_max_m": 0.00031680104439146817,
+    "non_target_angle_max_rad": 0.013601968064904213,
+    "force_peak_N": {
+      "left": 1.3784589162096381,
+      "right": 1.239529974758625
+    },
+    "first_force_trigger_step": null,
+    "loaded_point_observations": 9200,
+    "max_loaded_flat_distance_m": 0.00127648978871634,
+    "min_loaded_outward_dot": 0.1328175290340259
+  },
+  "private_native_failures": {
+    "all_finger_and_reciprocal_plane_compatible": 1
+  },
+  "force_only_reference_checks": {
+    "positive_force_trigger": false,
+    "detachment_after_grasp_trigger": false
+  },
+  "timing": {
+    "mode": "position_candidate_round1_I",
+    "phases": [
+      {
+        "phase": "capture",
+        "wall_seconds": 159.31600987902493,
+        "returncode": 0,
+        "cleanup": "complete_marker_cleanup"
+      },
+      {
+        "phase": "audit",
+        "wall_seconds": 50.479492022976046,
+        "returncode": 0
+      }
+    ],
+    "actual_capture_plus_audit_seconds": 209.7960794570099,
+    "prior_case_wall_seconds": 1844.0700749640234,
+    "cumulative_case_seconds": 2054.2607472610234,
+    "case_limit_seconds": 2200,
+    "previous_case_limit_seconds": 2200,
+    "improvement_round": 1,
+    "within_budget": true,
+    "physics_extraction_passed": false,
+    "transfer_authorized": false,
+    "online_held_identity": "UNKNOWN",
+    "automatic_retry": false,
+    "H_authorized": false,
+    "audit_sha256": "c35f3dcfdd7602fe9a1f6fd3ea365bacea66ec16379ad9578124ca202723e531",
+    "inner_capture_plus_audit_seconds": 209.7960794570099,
+    "full_pueue_job_seconds": 210.190672297,
+    "pueue_job_id": 1819,
+    "pueue_start": "2026-10-25T16:10:27.263481560+01:00",
+    "pueue_end": "2026-10-25T16:13:57.454153857+01:00",
+    "full_pueue_timing_authoritative": true,
+    "remaining_case_seconds": 145.7392527389766
+  },
+  "conclusion": "Position-controlled14mm-model-gap closure yields a fresh bilateral resisted-closure candidate. Straight lift aborts atstep2113 on motion and nonlateral/plane-incompatible selected-source BODY contact; no native singleton or completedhold. Cause not isolated; do not infer a need for complex grasping fromthis simulatorfailure.",
+  "transfer_authorized": false,
+  "H_authorized": false,
+  "hardware_readiness_claimed": false,
+  "independent_result_reviews": {
+    "reviewer": "ACCEPTED limited negative physical result: valid position candidate; extraction failed, no detachment. Round1 exhausted; no automatic retry or threshold relaxation.",
+    "evaluator": "ACCEPTED bounded negative physical result; audit hash/provenance/full timing agree. Valid candidate step1853, physical speed/lateralcontact stops2113; all930 links retained, no singleton/completedlift/hold. Preserve FAIL; no retry,H,transfer."
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "image_size": [
+    1280,
+    960
+  ],
+  "focal_length_mm": 24.0,
+  "horizontal_aperture_mm": 33.25,
+  "clipping_range_m": [
+    0.01,
+    10.0
+  ],
+  "calibration_status": "Diagnostic virtual inspection cameras only, not physical wrist equivalence",
+  "settle_steps": 0,
+  "render_warmup_frames": 12,
+  "lighting": {
+    "dome_intensity": 120.0,
+    "key_type": "rect",
+    "key_intensity": 2000.0,
+    "key_normalize": false,
+    "key_width_m": 0.26,
+    "key_height_m": 0.18,
+    "key_color_linear": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "key_position_table_m": [
+      -0.55,
+      0.05,
+      0.4
+    ],
+    "key_target_table_m": [
+      0.03,
+      0.0,
+      0.06
+    ],
+    "status": "Approximate LED-panel-like emitter on negative table X; position, size and intensity are heuristic, not photometrically calibrated"
+  },
+  "panel": {
+    "columns": 3,
+    "thumbnail_size": [
+      640,
+      480
+    ]
+  },
+  "views": [
+    {
+      "id": "diagnostic_table_top",
+      "eye_offset_m": [
+        0.15,
+        -0.055,
+        1.4
+      ],
+      "target_offset_m": [
+        0.15,
+        -0.055,
+        -0.1
+      ],
+      "up_world": [
+        0,
+        -1,
+        0
+      ]
+    },
+    {
+      "id": "diagnostic_oblique",
+      "eye_offset_m": [
+        -1.1,
+        1.7,
+        1.6
+      ],
+      "target_offset_m": [
+        0.15,
+        -0.05,
+        0.3
+      ],
+      "up_world": [
+        0,
+        0,
+        1
+      ]
+    }
+  ],
+  "capture_mode": "static_initialized_not_physics_settled",
+  "dynamics_validation": "None; full native graph is present but no load-bearing stability is claimed.",
+  "framing_note": "Diagnostic oblique moved to bowl-side corner with raised look-at to avoid robot foreground occlusion; not a physical camera estimate."
+}

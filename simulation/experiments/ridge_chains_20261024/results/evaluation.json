@@ -1,0 +1,3882 @@
+{
+  "schema": "rgb-ridge-chain-fixed-evaluation-v1",
+  "protocol_sha256": "3b6315f24d063bae22d9cba94cc83f8d35e439c14d8b044e4d479c3eb58986d7",
+  "all18_counts": [
+    {
+      "file": "img_1.jpg",
+      "chains": 3,
+      "slots": 10,
+      "decisions": {
+        "uncertain": 7,
+        "present": 3
+      },
+      "phase_status": {
+        "selected": 2,
+        "ambiguous": 1
+      },
+      "boundary_provenance": {
+        "inferred": 7,
+        "observed": 6
+      }
+    },
+    {
+      "file": "img_2.jpg",
+      "chains": 2,
+      "slots": 8,
+      "decisions": {
+        "uncertain": 4,
+        "present": 4
+      },
+      "phase_status": {
+        "selected": 1,
+        "ambiguous": 1
+      },
+      "boundary_provenance": {
+        "inferred": 7,
+        "observed": 3
+      }
+    },
+    {
+      "file": "img_3.jpg",
+      "chains": 5,
+      "slots": 12,
+      "decisions": {
+        "uncertain": 10,
+        "present": 2
+      },
+      "phase_status": {
+        "selected": 1,
+        "ambiguous": 4
+      },
+      "boundary_provenance": {
+        "inferred": 13,
+        "observed": 4
+      }
+    },
+    {
+      "file": "img_4.jpg",
+      "chains": 2,
+      "slots": 8,
+      "decisions": {
+        "uncertain": 4,
+        "present": 4
+      },
+      "phase_status": {
+        "selected": 2
+      },
+      "boundary_provenance": {
+        "inferred": 6,
+        "observed": 4
+      }
+    },
+    {
+      "file": "img_5.jpg",
+      "chains": 2,
+      "slots": 8,
+      "decisions": {
+        "uncertain": 3,
+        "present": 5
+      },
+      "phase_status": {
+        "selected": 2
+      },
+      "boundary_provenance": {
+        "inferred": 4,
+        "observed": 6
+      }
+    },
+    {
+      "file": "img_6.jpg",
+      "chains": 3,
+      "slots": 13,
+      "decisions": {
+        "uncertain": 7,
+        "present": 6
+      },
+      "phase_status": {
+        "selected": 3
+      },
+      "boundary_provenance": {
+        "inferred": 7,
+        "observed": 9
+      }
+    },
+    {
+      "file": "img_7.jpg",
+      "chains": 4,
+      "slots": 15,
+      "decisions": {
+        "uncertain": 14,
+        "present": 1
+      },
+      "phase_status": {
+        "ambiguous": 3,
+        "selected": 1
+      },
+      "boundary_provenance": {
+        "inferred": 10,
+        "observed": 9
+      }
+    },
+    {
+      "file": "img_8.jpg",
+      "chains": 1,
+      "slots": 4,
+      "decisions": {
+        "uncertain": 4
+      },
+      "phase_status": {
+        "ambiguous": 1
+      },
+      "boundary_provenance": {
+        "observed": 3,
+        "inferred": 2
+      }
+    },
+    {
+      "file": "img_9.jpg",
+      "chains": 0,
+      "slots": 0,
+      "decisions": {},
+      "phase_status": {},
+      "boundary_provenance": {}
+    },
+    {
+      "file": "img_10.jpg",
+      "chains": 4,
+      "slots": 16,
+      "decisions": {
+        "uncertain": 10,
+        "present": 6
+      },
+      "phase_status": {
+        "selected": 3,
+        "ambiguous": 1
+      },
+      "boundary_provenance": {
+        "inferred": 13,
+        "observed": 7
+      }
+    },
+    {
+      "file": "img_11.jpg",
+      "chains": 6,
+      "slots": 25,
+      "decisions": {
+        "uncertain": 20,
+        "present": 5
+      },
+      "phase_status": {
+        "selected": 2,
+        "ambiguous": 4
+      },
+      "boundary_provenance": {
+        "inferred": 17,
+        "observed": 14
+      }
+    },
+    {
+      "file": "img_12.jpg",
+      "chains": 4,
+      "slots": 19,
+      "decisions": {
+        "uncertain": 10,
+        "present": 9
+      },
+      "phase_status": {
+        "selected": 4
+      },
+      "boundary_provenance": {
+        "observed": 10,
+        "inferred": 13
+      }
+    },
+    {
+      "file": "img_13.jpg",
+      "chains": 6,
+      "slots": 29,
+      "decisions": {
+        "present": 18,
+        "uncertain": 11
+      },
+      "phase_status": {
+        "selected": 5,
+        "ambiguous": 1
+      },
+      "boundary_provenance": {
+        "observed": 20,
+        "inferred": 15
+      }
+    },
+    {
+      "file": "img_14.jpg",
+      "chains": 4,
+      "slots": 20,
+      "decisions": {
+        "present": 11,
+        "uncertain": 9
+      },
+      "phase_status": {
+        "selected": 4
+      },
+      "boundary_provenance": {
+        "observed": 13,
+        "inferred": 11
+      }
+    },
+    {
+      "file": "img_15.jpg",
+      "chains": 6,
+      "slots": 27,
+      "decisions": {
+        "uncertain": 13,
+        "present": 14
+      },
+      "phase_status": {
+        "selected": 4,
+        "ambiguous": 2
+      },
+      "boundary_provenance": {
+        "observed": 16,
+        "inferred": 17
+      }
+    },
+    {
+      "file": "img_16.jpg",
+      "chains": 5,
+      "slots": 17,
+      "decisions": {
+        "present": 9,
+        "uncertain": 8
+      },
+      "phase_status": {
+        "selected": 3,
+        "ambiguous": 2
+      },
+      "boundary_provenance": {
+        "observed": 12,
+        "inferred": 10
+      }
+    },
+    {
+      "file": "img_17.jpg",
+      "chains": 2,
+      "slots": 10,
+      "decisions": {
+        "uncertain": 1,
+        "present": 9
+      },
+      "phase_status": {
+        "selected": 2
+      },
+      "boundary_provenance": {
+        "inferred": 7,
+        "observed": 5
+      }
+    },
+    {
+      "file": "img_18.jpg",
+      "chains": 5,
+      "slots": 23,
+      "decisions": {
+        "present": 10,
+        "uncertain": 13
+      },
+      "phase_status": {
+        "selected": 4,
+        "ambiguous": 1
+      },
+      "boundary_provenance": {
+        "observed": 17,
+        "inferred": 11
+      }
+    }
+  ],
+  "primary_present": {
+    "positive_references": 166,
+    "ambiguous_references_excluded": 14,
+    "lower_fragments": 23,
+    "raw_detections": 39,
+    "matched": 35,
+    "missed_individual_faces": 131,
+    "merge": 0,
+    "duplicate": 0,
+    "lower_layer_target": 0,
+    "ambiguous_ignored": 1,
+    "other_spurious_or_unresolved": 3,
+    "outside_roi": 0,
+    "annotated_images": 6,
+    "individual_face_recall": 0.21084337349397592,
+    "scored_roi_instance_precision": 0.9210526315789473
+  },
+  "historical_baseline_absence": {
+    "sam_raw": {
+      "missing_calls": 0,
+      "correct_absence_calls": 0,
+      "interpretation": "Only present detections; absent output is not a missing declaration."
+    },
+    "dimensions_only": {
+      "missing_calls": 0,
+      "correct_absence_calls": 0,
+      "interpretation": "Only present detections; absent output is not a missing declaration."
+    },
+    "dimensions_split": {
+      "missing_calls": 0,
+      "correct_absence_calls": 0,
+      "interpretation": "Only present detections; absent output is not a missing declaration."
+    }
+  },
+  "three_way_slots": {
+    "positive_decisions": {
+      "present": 35,
+      "missing": 0,
+      "uncertain": 32,
+      "no_match": 99
+    },
+    "missing_decisions": {
+      "present": 1,
+      "missing": 0,
+      "uncertain": 0,
+      "no_match": 5
+    },
+    "positive_decisive_coverage": 0.21084337349397592,
+    "positive_correct_present_coverage": 0.21084337349397592,
+    "absence_decisive_coverage": 0.16666666666666666,
+    "absence_correct_missing_coverage": 0.0,
+    "known_reference_missing_precision": null,
+    "unverified_missing_claims": 0
+  },
+  "annotated_present_observations": [
+    {
+      "positive_references": 28,
+      "ambiguous_references_excluded": 2,
+      "lower_fragments": 4,
+      "raw_detections": 3,
+      "matched": 2,
+      "missed_individual_faces": 26,
+      "merge": 0,
+      "duplicate": 0,
+      "lower_layer_target": 0,
+      "ambiguous_ignored": 1,
+      "other_spurious_or_unresolved": 0,
+      "outside_roi": 0,
+      "categories": {
+        "merge": [],
+        "duplicate": [],
+        "lower_layer_target": [],
+        "ambiguous_ignored": [
+          "ridge_line0063_line0014_s02"
+        ],
+        "other_spurious_or_unresolved": [],
+        "outside_roi": []
+      },
+      "matches": [
+        {
+          "detection_id": "ridge_line0000_line0058_s02",
+          "reference_id": "c4r2",
+          "box_iou": 0.8714033034487506
+        },
+        {
+          "detection_id": "ridge_line0000_line0058_s03",
+          "reference_id": "c4r1",
+          "box_iou": 0.9061850449396905
+        }
+      ],
+      "merge_references": {},
+      "physical_current_top_accuracy": null,
+      "file": "img_1.jpg",
+      "correlation_group": "A"
+    },
+    {
+      "positive_references": 28,
+      "ambiguous_references_excluded": 2,
+      "lower_fragments": 3,
+      "raw_detections": 2,
+      "matched": 2,
+      "missed_individual_faces": 26,
+      "merge": 0,
+      "duplicate": 0,
+      "lower_layer_target": 0,
+      "ambiguous_ignored": 0,
+      "other_spurious_or_unresolved": 0,
+      "outside_roi": 0,
+      "categories": {
+        "merge": [],
+        "duplicate": [],
+        "lower_layer_target": [],
+        "ambiguous_ignored": [],
+        "other_spurious_or_unresolved": [],
+        "outside_roi": []
+      },
+      "matches": [
+        {
+          "detection_id": "ridge_line0006_line0057_s01",
+          "reference_id": "c3r1",
+          "box_iou": 0.8979354847598544
+        },
+        {
+          "detection_id": "ridge_line0006_line0057_s02",
+          "reference_id": "c3r2",
+          "box_iou": 0.8683887073349157
+        }
+      ],
+      "merge_references": {},
+      "physical_current_top_accuracy": null,
+      "file": "img_3.jpg",
+      "correlation_group": "A"
+    },
+    {
+      "positive_references": 28,
+      "ambiguous_references_excluded": 2,
+      "lower_fragments": 4,
+      "raw_detections": 1,
+      "matched": 1,
+      "missed_individual_faces": 27,
+      "merge": 0,
+      "duplicate": 0,
+      "lower_layer_target": 0,
+      "ambiguous_ignored": 0,
+      "other_spurious_or_unresolved": 0,
+      "outside_roi": 0,
+      "categories": {
+        "merge": [],
+        "duplicate": [],
+        "lower_layer_target": [],
+        "ambiguous_ignored": [],
+        "other_spurious_or_unresolved": [],
+        "outside_roi": []
+      },
+      "matches": [
+        {
+          "detection_id": "ridge_line0080_line0016_s02",
+          "reference_id": "c3r2",
+          "box_iou": 0.8824604822417044
+        }
+      ],
+      "merge_references": {},
+      "physical_current_top_accuracy": null,
+      "file": "img_7.jpg",
+      "correlation_group": "B"
+    },
+    {
+      "positive_references": 28,
+      "ambiguous_references_excluded": 2,
+      "lower_fragments": 4,
+      "raw_detections": 6,
+      "matched": 3,
+      "missed_individual_faces": 25,
+      "merge": 0,
+      "duplicate": 0,
+      "lower_layer_target": 0,
+      "ambiguous_ignored": 0,
+      "other_spurious_or_unresolved": 3,
+      "outside_roi": 0,
+      "categories": {
+        "merge": [],
+        "duplicate": [],
+        "lower_layer_target": [],
+        "ambiguous_ignored": [],
+        "other_spurious_or_unresolved": [
+          "ridge_line0010_line0000_s01",
+          "ridge_line0010_line0000_s02",
+          "ridge_line0010_line0000_s03"
+        ],
+        "outside_roi": []
+      },
+      "matches": [
+        {
+          "detection_id": "ridge_line0004_line0078_s04",
+          "reference_id": "c0r4",
+          "box_iou": 0.7566942919093631
+        },
+        {
+          "detection_id": "ridge_line0006_line0002_s03",
+          "reference_id": "c3r3",
+          "box_iou": 0.8636609020220521
+        },
+        {
+          "detection_id": "ridge_line0006_line0002_s04",
+          "reference_id": "c3r4",
+          "box_iou": 0.7835249708682431
+        }
+      ],
+      "merge_references": {},
+      "physical_current_top_accuracy": null,
+      "file": "img_10.jpg",
+      "correlation_group": "C"
+    },
+    {
+      "positive_references": 28,
+      "ambiguous_references_excluded": 2,
+      "lower_fragments": 4,
+      "raw_detections": 18,
+      "matched": 18,
+      "missed_individual_faces": 10,
+      "merge": 0,
+      "duplicate": 0,
+      "lower_layer_target": 0,
+      "ambiguous_ignored": 0,
+      "other_spurious_or_unresolved": 0,
+      "outside_roi": 0,
+      "categories": {
+        "merge": [],
+        "duplicate": [],
+        "lower_layer_target": [],
+        "ambiguous_ignored": [],
+        "other_spurious_or_unresolved": [],
+        "outside_roi": []
+      },
+      "matches": [
+        {
+          "detection_id": "ridge_line0004_line0002_s00",
+          "reference_id": "c3r0",
+          "box_iou": 0.8971436039300065
+        },
+        {
+          "detection_id": "ridge_line0004_line0002_s01",
+          "reference_id": "c3r1",
+          "box_iou": 0.9590403840139347
+        },
+        {
+          "detection_id": "ridge_line0004_line0002_s02",
+          "reference_id": "c3r2",
+          "box_iou": 0.9501347466400549
+        },
+        {
+          "detection_id": "ridge_line0004_line0002_s03",
+          "reference_id": "c3r3",
+          "box_iou": 0.9157038222191594
+        },
+        {
+          "detection_id": "ridge_line0004_line0002_s04",
+          "reference_id": "c3r4",
+          "box_iou": 0.8642013030465889
+        },
+        {
+          "detection_id": "ridge_line0001_line0008_s00",
+          "reference_id": "c5r4",
+          "box_iou": 0.8593017669551778
+        },
+        {
+          "detection_id": "ridge_line0001_line0008_s01",
+          "reference_id": "c5r3",
+          "box_iou": 0.8411206751177576
+        },
+        {
+          "detection_id": "ridge_line0001_line0008_s02",
+          "reference_id": "c5r2",
+          "box_iou": 0.8379458863849605
+        },
+        {
+          "detection_id": "ridge_line0001_line0008_s03",
+          "reference_id": "c5r1",
+          "box_iou": 0.8493391104163
+        },
+        {
+          "detection_id": "ridge_line0001_line0008_s04",
+          "reference_id": "c5r0",
+          "box_iou": 0.8653776260411564
+        },
+        {
+          "detection_id": "ridge_line0000_line0016_s00",
+          "reference_id": "c4r4",
+          "box_iou": 0.9545659215141119
+        },
+        {
+          "detection_id": "ridge_line0000_line0016_s01",
+          "reference_id": "c4r3",
+          "box_iou": 0.9257069759101025
+        },
+        {
+          "detection_id": "ridge_line0000_line0016_s02",
+          "reference_id": "c4r2",
+          "box_iou": 0.8893781526508585
+        },
+        {
+          "detection_id": "ridge_line0000_line0016_s03",
+          "reference_id": "c4r1",
+          "box_iou": 0.8760171434022955
+        },
+        {
+          "detection_id": "ridge_line0000_line0016_s04",
+          "reference_id": "c4r0",
+          "box_iou": 0.8460359774221304
+        },
+        {
+          "detection_id": "ridge_line0019_line0038_s01",
+          "reference_id": "c1r1",
+          "box_iou": 0.8835223921157968
+        },
+        {
+          "detection_id": "ridge_line0019_line0038_s03",
+          "reference_id": "c1r3",
+          "box_iou": 0.8474824626545342
+        },
+        {
+          "detection_id": "ridge_line0013_line0006_s00",
+          "reference_id": "c2r1",
+          "box_iou": 0.8651757337367818
+        }
+      ],
+      "merge_references": {},
+      "physical_current_top_accuracy": null,
+      "file": "img_13.jpg",
+      "correlation_group": "D"
+    },
+    {
+      "positive_references": 26,
+      "ambiguous_references_excluded": 4,
+      "lower_fragments": 4,
+      "raw_detections": 9,
+      "matched": 9,
+      "missed_individual_faces": 17,
+      "merge": 0,
+      "duplicate": 0,
+      "lower_layer_target": 0,
+      "ambiguous_ignored": 0,
+      "other_spurious_or_unresolved": 0,
+      "outside_roi": 0,
+      "categories": {
+        "merge": [],
+        "duplicate": [],
+        "lower_layer_target": [],
+        "ambiguous_ignored": [],
+        "other_spurious_or_unresolved": [],
+        "outside_roi": []
+      },
+      "matches": [
+        {
+          "detection_id": "ridge_line0001_line0021_s00",
+          "reference_id": "c3r4",
+          "box_iou": 0.8716475198769156
+        },
+        {
+          "detection_id": "ridge_line0001_line0021_s01",
+          "reference_id": "c3r3",
+          "box_iou": 0.8665920621641434
+        },
+        {
+          "detection_id": "ridge_line0001_line0021_s02",
+          "reference_id": "c3r2",
+          "box_iou": 0.8544834624739261
+        },
+        {
+          "detection_id": "ridge_line0001_line0021_s03",
+          "reference_id": "c3r1",
+          "box_iou": 0.8402504437264826
+        },
+        {
+          "detection_id": "ridge_line0001_line0021_s04",
+          "reference_id": "c3r0",
+          "box_iou": 0.8174443512153148
+        },
+        {
+          "detection_id": "ridge_line0007_line0062_s02",
+          "reference_id": "c2r2",
+          "box_iou": 0.8639082268698777
+        },
+        {
+          "detection_id": "ridge_line0007_line0062_s03",
+          "reference_id": "c2r1",
+          "box_iou": 0.8627638554502264
+        },
+        {
+          "detection_id": "ridge_line0008_line0063_s01",
+          "reference_id": "c1r3",
+          "box_iou": 0.8625270850459739
+        },
+        {
+          "detection_id": "ridge_line0008_line0063_s02",
+          "reference_id": "c1r2",
+          "box_iou": 0.9567736185307667
+        }
+      ],
+      "merge_references": {},
+      "physical_current_top_accuracy": null,
+      "file": "img_16.jpg",
+      "correlation_group": "D"
+    }
+  ],
+  "annotated_three_way_observations": [
+    {
+      "positive_references": 28,
+      "missing_references": 2,
+      "positive_decisions": {
+        "present": 2,
+        "missing": 0,
+        "uncertain": 6,
+        "no_match": 20
+      },
+      "missing_decisions": {
+        "present": 1,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 1
+      },
+      "merged_slots_ineligible": [],
+      "unverified_missing_claims": [],
+      "matches": [
+        {
+          "slot_id": "ridge_line0000_line0058_s00",
+          "reference_id": "c4r4",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.7634709557328313
+        },
+        {
+          "slot_id": "ridge_line0000_line0058_s01",
+          "reference_id": "c4r3",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.8170812196316056
+        },
+        {
+          "slot_id": "ridge_line0000_line0058_s02",
+          "reference_id": "c4r2",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8714033034487506
+        },
+        {
+          "slot_id": "ridge_line0000_line0058_s03",
+          "reference_id": "c4r1",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.9061850449396905
+        },
+        {
+          "slot_id": "ridge_line0000_line0058_s04",
+          "reference_id": "c4r0",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.9078181409714855
+        },
+        {
+          "slot_id": "ridge_line0063_line0014_s01",
+          "reference_id": "c5r2",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.5234395729260417
+        },
+        {
+          "slot_id": "ridge_line0063_line0014_s02",
+          "reference_id": "c5r1",
+          "reference_kind": "missing",
+          "decision": "present",
+          "iou": 0.5396669481059696
+        },
+        {
+          "slot_id": "ridge_line0037_line0024_s00",
+          "reference_id": "c2r1",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.9727341207466702
+        },
+        {
+          "slot_id": "ridge_line0037_line0024_s01",
+          "reference_id": "c2r0",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.9419781029589809
+        }
+      ],
+      "file": "img_1.jpg",
+      "correlation_group": "A"
+    },
+    {
+      "positive_references": 28,
+      "missing_references": 2,
+      "positive_decisions": {
+        "present": 2,
+        "missing": 0,
+        "uncertain": 5,
+        "no_match": 21
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 2
+      },
+      "merged_slots_ineligible": [],
+      "unverified_missing_claims": [],
+      "matches": [
+        {
+          "slot_id": "ridge_line0006_line0057_s00",
+          "reference_id": "c3r0",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.8969884180640456
+        },
+        {
+          "slot_id": "ridge_line0006_line0057_s01",
+          "reference_id": "c3r1",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8979354847598544
+        },
+        {
+          "slot_id": "ridge_line0006_line0057_s02",
+          "reference_id": "c3r2",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8683887073349157
+        },
+        {
+          "slot_id": "ridge_line0006_line0057_s03",
+          "reference_id": "c3r3",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.8202425167896099
+        },
+        {
+          "slot_id": "ridge_line0006_line0057_s04",
+          "reference_id": "c3r4",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.7598275196835724
+        },
+        {
+          "slot_id": "ridge_line0026_line0020_s00",
+          "reference_id": "c2r0",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.8508653787647525
+        },
+        {
+          "slot_id": "ridge_line0026_line0020_s01",
+          "reference_id": "c2r1",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.8770722219341042
+        }
+      ],
+      "file": "img_3.jpg",
+      "correlation_group": "A"
+    },
+    {
+      "positive_references": 28,
+      "missing_references": 2,
+      "positive_decisions": {
+        "present": 1,
+        "missing": 0,
+        "uncertain": 3,
+        "no_match": 24
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 2
+      },
+      "merged_slots_ineligible": [
+        "ridge_line0005_line0000_s03",
+        "ridge_line0006_line0012_s03"
+      ],
+      "unverified_missing_claims": [],
+      "matches": [
+        {
+          "slot_id": "ridge_line0080_line0016_s00",
+          "reference_id": "c3r0",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.7547736670068992
+        },
+        {
+          "slot_id": "ridge_line0080_line0016_s01",
+          "reference_id": "c3r1",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.8551345923494976
+        },
+        {
+          "slot_id": "ridge_line0080_line0016_s02",
+          "reference_id": "c3r2",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8824604822417044
+        },
+        {
+          "slot_id": "ridge_line0080_line0016_s03",
+          "reference_id": "c3r3",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.8382085645503023
+        }
+      ],
+      "file": "img_7.jpg",
+      "correlation_group": "B"
+    },
+    {
+      "positive_references": 28,
+      "missing_references": 0,
+      "positive_decisions": {
+        "present": 3,
+        "missing": 0,
+        "uncertain": 5,
+        "no_match": 20
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "merged_slots_ineligible": [],
+      "unverified_missing_claims": [],
+      "matches": [
+        {
+          "slot_id": "ridge_line0004_line0078_s00",
+          "reference_id": "c0r0",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.701258476888519
+        },
+        {
+          "slot_id": "ridge_line0004_line0078_s01",
+          "reference_id": "c0r1",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.6992238644939985
+        },
+        {
+          "slot_id": "ridge_line0004_line0078_s04",
+          "reference_id": "c0r4",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.7566942919093631
+        },
+        {
+          "slot_id": "ridge_line0006_line0002_s00",
+          "reference_id": "c3r0",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.7808786323022001
+        },
+        {
+          "slot_id": "ridge_line0006_line0002_s01",
+          "reference_id": "c3r1",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.8742435303777701
+        },
+        {
+          "slot_id": "ridge_line0006_line0002_s02",
+          "reference_id": "c3r2",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.9122513811632084
+        },
+        {
+          "slot_id": "ridge_line0006_line0002_s03",
+          "reference_id": "c3r3",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8636609020220521
+        },
+        {
+          "slot_id": "ridge_line0006_line0002_s04",
+          "reference_id": "c3r4",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.7835249708682431
+        }
+      ],
+      "file": "img_10.jpg",
+      "correlation_group": "C"
+    },
+    {
+      "positive_references": 28,
+      "missing_references": 0,
+      "positive_decisions": {
+        "present": 18,
+        "missing": 0,
+        "uncertain": 6,
+        "no_match": 4
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "merged_slots_ineligible": [],
+      "unverified_missing_claims": [],
+      "matches": [
+        {
+          "slot_id": "ridge_line0004_line0002_s00",
+          "reference_id": "c3r0",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8971436039300065
+        },
+        {
+          "slot_id": "ridge_line0004_line0002_s01",
+          "reference_id": "c3r1",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.9590403840139347
+        },
+        {
+          "slot_id": "ridge_line0004_line0002_s02",
+          "reference_id": "c3r2",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.9501347466400549
+        },
+        {
+          "slot_id": "ridge_line0004_line0002_s03",
+          "reference_id": "c3r3",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.9157038222191594
+        },
+        {
+          "slot_id": "ridge_line0004_line0002_s04",
+          "reference_id": "c3r4",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8642013030465889
+        },
+        {
+          "slot_id": "ridge_line0001_line0008_s00",
+          "reference_id": "c5r4",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8593017669551778
+        },
+        {
+          "slot_id": "ridge_line0001_line0008_s01",
+          "reference_id": "c5r3",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8411206751177576
+        },
+        {
+          "slot_id": "ridge_line0001_line0008_s02",
+          "reference_id": "c5r2",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8379458863849605
+        },
+        {
+          "slot_id": "ridge_line0001_line0008_s03",
+          "reference_id": "c5r1",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8493391104163
+        },
+        {
+          "slot_id": "ridge_line0001_line0008_s04",
+          "reference_id": "c5r0",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8653776260411564
+        },
+        {
+          "slot_id": "ridge_line0000_line0016_s00",
+          "reference_id": "c4r4",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.9545659215141119
+        },
+        {
+          "slot_id": "ridge_line0000_line0016_s01",
+          "reference_id": "c4r3",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.9257069759101025
+        },
+        {
+          "slot_id": "ridge_line0000_line0016_s02",
+          "reference_id": "c4r2",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8893781526508585
+        },
+        {
+          "slot_id": "ridge_line0000_line0016_s03",
+          "reference_id": "c4r1",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8760171434022955
+        },
+        {
+          "slot_id": "ridge_line0000_line0016_s04",
+          "reference_id": "c4r0",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8460359774221304
+        },
+        {
+          "slot_id": "ridge_line0019_line0038_s00",
+          "reference_id": "c1r0",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.8864725957298003
+        },
+        {
+          "slot_id": "ridge_line0019_line0038_s01",
+          "reference_id": "c1r1",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8835223921157968
+        },
+        {
+          "slot_id": "ridge_line0019_line0038_s02",
+          "reference_id": "c1r2",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.8579533962312167
+        },
+        {
+          "slot_id": "ridge_line0019_line0038_s03",
+          "reference_id": "c1r3",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8474824626545342
+        },
+        {
+          "slot_id": "ridge_line0019_line0038_s04",
+          "reference_id": "c1r4",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.8403293589121823
+        },
+        {
+          "slot_id": "ridge_line0013_line0006_s00",
+          "reference_id": "c2r1",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8651757337367818
+        },
+        {
+          "slot_id": "ridge_line0013_line0006_s01",
+          "reference_id": "c2r2",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.7961979915355573
+        },
+        {
+          "slot_id": "ridge_line0013_line0006_s02",
+          "reference_id": "c2r3",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.7566396100528195
+        },
+        {
+          "slot_id": "ridge_line0013_line0006_s03",
+          "reference_id": "c2r4",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.7424950154735191
+        }
+      ],
+      "file": "img_13.jpg",
+      "correlation_group": "D"
+    },
+    {
+      "positive_references": 26,
+      "missing_references": 0,
+      "positive_decisions": {
+        "present": 9,
+        "missing": 0,
+        "uncertain": 7,
+        "no_match": 10
+      },
+      "missing_decisions": {
+        "present": 0,
+        "missing": 0,
+        "uncertain": 0,
+        "no_match": 0
+      },
+      "merged_slots_ineligible": [],
+      "unverified_missing_claims": [],
+      "matches": [
+        {
+          "slot_id": "ridge_line0001_line0021_s00",
+          "reference_id": "c3r4",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8716475198769156
+        },
+        {
+          "slot_id": "ridge_line0001_line0021_s01",
+          "reference_id": "c3r3",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8665920621641434
+        },
+        {
+          "slot_id": "ridge_line0001_line0021_s02",
+          "reference_id": "c3r2",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8544834624739261
+        },
+        {
+          "slot_id": "ridge_line0001_line0021_s03",
+          "reference_id": "c3r1",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8402504437264826
+        },
+        {
+          "slot_id": "ridge_line0001_line0021_s04",
+          "reference_id": "c3r0",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8174443512153148
+        },
+        {
+          "slot_id": "ridge_line0007_line0062_s00",
+          "reference_id": "c2r4",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.6811069747848942
+        },
+        {
+          "slot_id": "ridge_line0007_line0062_s01",
+          "reference_id": "c2r3",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.7677257383851707
+        },
+        {
+          "slot_id": "ridge_line0007_line0062_s02",
+          "reference_id": "c2r2",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8639082268698777
+        },
+        {
+          "slot_id": "ridge_line0007_line0062_s03",
+          "reference_id": "c2r1",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8627638554502264
+        },
+        {
+          "slot_id": "ridge_line0007_line0062_s04",
+          "reference_id": "c2r0",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.7790047752951073
+        },
+        {
+          "slot_id": "ridge_line0008_line0063_s00",
+          "reference_id": "c1r4",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.7719522061926087
+        },
+        {
+          "slot_id": "ridge_line0008_line0063_s01",
+          "reference_id": "c1r3",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.8625270850459739
+        },
+        {
+          "slot_id": "ridge_line0008_line0063_s02",
+          "reference_id": "c1r2",
+          "reference_kind": "positive",
+          "decision": "present",
+          "iou": 0.9567736185307667
+        },
+        {
+          "slot_id": "ridge_line0008_line0063_s03",
+          "reference_id": "c1r1",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.8844309377564148
+        },
+        {
+          "slot_id": "ridge_line0023_line0003_s00",
+          "reference_id": "c5r4",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.8670130012857562
+        },
+        {
+          "slot_id": "ridge_line0023_line0003_s01",
+          "reference_id": "c5r3",
+          "reference_kind": "positive",
+          "decision": "uncertain",
+          "iou": 0.7896706396806199
+        }
+      ],
+      "file": "img_16.jpg",
+      "correlation_group": "D"
+    }
+  ],
+  "global_reference_changes": [
+    {
+      "file": "img_1.jpg",
+      "baselines": {
+        "sam_raw": {
+          "recovered_reference_ids": [],
+          "lost_reference_ids": [
+            "c0r0",
+            "c0r1",
+            "c0r2",
+            "c0r3",
+            "c0r4",
+            "c1r0",
+            "c1r1",
+            "c1r2",
+            "c1r3",
+            "c1r4",
+            "c2r0",
+            "c2r1",
+            "c2r2",
+            "c2r3",
+            "c2r4",
+            "c3r0",
+            "c3r1",
+            "c3r2",
+            "c3r3",
+            "c3r4",
+            "c4r0",
+            "c4r3",
+            "c4r4",
+            "c5r0",
+            "c5r2",
+            "c5r4"
+          ]
+        },
+        "dimensions_only": {
+          "recovered_reference_ids": [],
+          "lost_reference_ids": [
+            "c0r0",
+            "c0r1",
+            "c0r2",
+            "c0r3",
+            "c0r4",
+            "c1r0",
+            "c1r1",
+            "c1r2",
+            "c1r3",
+            "c1r4",
+            "c2r0",
+            "c2r1",
+            "c2r2",
+            "c2r3",
+            "c2r4",
+            "c3r0",
+            "c3r2",
+            "c3r3",
+            "c3r4",
+            "c4r0",
+            "c4r3",
+            "c4r4",
+            "c5r0",
+            "c5r2",
+            "c5r4"
+          ]
+        },
+        "dimensions_split": {
+          "recovered_reference_ids": [],
+          "lost_reference_ids": [
+            "c0r0",
+            "c0r1",
+            "c0r2",
+            "c0r3",
+            "c0r4",
+            "c1r0",
+            "c1r1",
+            "c1r2",
+            "c1r3",
+            "c1r4",
+            "c2r0",
+            "c2r1",
+            "c2r2",
+            "c2r3",
+            "c2r4",
+            "c3r0",
+            "c3r2",
+            "c3r3",
+            "c3r4",
+            "c4r0",
+            "c4r3",
+            "c4r4",
+            "c5r0",
+            "c5r2",
+            "c5r4"
+          ]
+        }
+      }
+    },
+    {
+      "file": "img_3.jpg",
+      "baselines": {
+        "sam_raw": {
+          "recovered_reference_ids": [],
+          "lost_reference_ids": [
+            "c0r0",
+            "c0r1",
+            "c0r2",
+            "c0r3",
+            "c0r4",
+            "c1r0",
+            "c1r1",
+            "c1r2",
+            "c1r3",
+            "c1r4",
+            "c2r0",
+            "c2r1",
+            "c2r2",
+            "c2r3",
+            "c2r4",
+            "c3r0",
+            "c3r3",
+            "c3r4",
+            "c4r0",
+            "c4r1",
+            "c4r2",
+            "c4r3",
+            "c4r4",
+            "c5r0",
+            "c5r2",
+            "c5r4"
+          ]
+        },
+        "dimensions_only": {
+          "recovered_reference_ids": [
+            "c3r1"
+          ],
+          "lost_reference_ids": [
+            "c0r0",
+            "c0r1",
+            "c0r2",
+            "c0r3",
+            "c0r4",
+            "c1r1",
+            "c1r2",
+            "c1r4",
+            "c2r0",
+            "c2r1",
+            "c2r2",
+            "c2r3",
+            "c2r4",
+            "c3r0",
+            "c3r3",
+            "c3r4",
+            "c4r0",
+            "c4r1",
+            "c4r2",
+            "c4r3",
+            "c4r4",
+            "c5r0",
+            "c5r2",
+            "c5r4"
+          ]
+        },
+        "dimensions_split": {
+          "recovered_reference_ids": [
+            "c3r1"
+          ],
+          "lost_reference_ids": [
+            "c0r0",
+            "c0r1",
+            "c0r2",
+            "c0r3",
+            "c0r4",
+            "c1r1",
+            "c1r2",
+            "c1r4",
+            "c2r0",
+            "c2r1",
+            "c2r2",
+            "c2r3",
+            "c2r4",
+            "c3r0",
+            "c3r3",
+            "c3r4",
+            "c4r0",
+            "c4r1",
+            "c4r2",
+            "c4r3",
+            "c4r4",
+            "c5r0",
+            "c5r2",
+            "c5r4"
+          ]
+        }
+      }
+    },
+    {
+      "file": "img_7.jpg",
+      "baselines": {
+        "sam_raw": {
+          "recovered_reference_ids": [],
+          "lost_reference_ids": [
+            "c0r0",
+            "c0r1",
+            "c0r2",
+            "c0r3",
+            "c0r4",
+            "c1r0",
+            "c1r1",
+            "c1r2",
+            "c1r3",
+            "c1r4",
+            "c2r0",
+            "c2r1",
+            "c2r2",
+            "c2r3",
+            "c2r4",
+            "c3r0",
+            "c3r1",
+            "c3r3",
+            "c3r4",
+            "c4r0",
+            "c4r1",
+            "c4r2",
+            "c4r3",
+            "c4r4",
+            "c5r0",
+            "c5r2",
+            "c5r4"
+          ]
+        },
+        "dimensions_only": {
+          "recovered_reference_ids": [
+            "c3r2"
+          ],
+          "lost_reference_ids": [
+            "c0r0",
+            "c0r1",
+            "c0r2",
+            "c0r3",
+            "c0r4",
+            "c1r0",
+            "c1r1",
+            "c1r3",
+            "c1r4",
+            "c2r0",
+            "c2r1",
+            "c2r2",
+            "c2r3",
+            "c2r4",
+            "c3r0",
+            "c3r1",
+            "c3r3",
+            "c3r4",
+            "c4r0",
+            "c4r1",
+            "c4r2",
+            "c4r3",
+            "c4r4",
+            "c5r0",
+            "c5r2",
+            "c5r4"
+          ]
+        },
+        "dimensions_split": {
+          "recovered_reference_ids": [
+            "c3r2"
+          ],
+          "lost_reference_ids": [
+            "c0r0",
+            "c0r1",
+            "c0r2",
+            "c0r3",
+            "c0r4",
+            "c1r0",
+            "c1r1",
+            "c1r3",
+            "c1r4",
+            "c2r0",
+            "c2r1",
+            "c2r2",
+            "c2r3",
+            "c2r4",
+            "c3r0",
+            "c3r1",
+            "c3r3",
+            "c3r4",
+            "c4r0",
+            "c4r1",
+            "c4r2",
+            "c4r3",
+            "c4r4",
+            "c5r0",
+            "c5r2",
+            "c5r4"
+          ]
+        }
+      }
+    },
+    {
+      "file": "img_10.jpg",
+      "baselines": {
+        "sam_raw": {
+          "recovered_reference_ids": [
+            "c0r4",
+            "c3r3",
+            "c3r4"
+          ],
+          "lost_reference_ids": [
+            "c1r0",
+            "c2r4",
+            "c4r0",
+            "c5r0"
+          ]
+        },
+        "dimensions_only": {
+          "recovered_reference_ids": [
+            "c0r4",
+            "c3r3",
+            "c3r4"
+          ],
+          "lost_reference_ids": []
+        },
+        "dimensions_split": {
+          "recovered_reference_ids": [
+            "c0r4",
+            "c3r3",
+            "c3r4"
+          ],
+          "lost_reference_ids": []
+        }
+      }
+    },
+    {
+      "file": "img_13.jpg",
+      "baselines": {
+        "sam_raw": {
+          "recovered_reference_ids": [
+            "c3r0",
+            "c3r1",
+            "c4r4"
+          ],
+          "lost_reference_ids": [
+            "c0r2",
+            "c0r3",
+            "c0r4",
+            "c1r0",
+            "c1r2",
+            "c2r0",
+            "c2r2"
+          ]
+        },
+        "dimensions_only": {
+          "recovered_reference_ids": [
+            "c3r0",
+            "c3r1",
+            "c4r4"
+          ],
+          "lost_reference_ids": [
+            "c0r2",
+            "c0r3",
+            "c0r4",
+            "c1r0",
+            "c1r2",
+            "c2r0",
+            "c2r2"
+          ]
+        },
+        "dimensions_split": {
+          "recovered_reference_ids": [
+            "c4r4"
+          ],
+          "lost_reference_ids": [
+            "c0r2",
+            "c0r3",
+            "c0r4",
+            "c1r0",
+            "c1r2",
+            "c2r0",
+            "c2r2"
+          ]
+        }
+      }
+    },
+    {
+      "file": "img_16.jpg",
+      "baselines": {
+        "sam_raw": {
+          "recovered_reference_ids": [
+            "c1r2",
+            "c1r3",
+            "c2r2",
+            "c3r0",
+            "c3r3"
+          ],
+          "lost_reference_ids": [
+            "c1r1",
+            "c1r4",
+            "c2r3",
+            "c2r4",
+            "c4r0",
+            "c4r3",
+            "c4r4",
+            "c5r0",
+            "c5r3",
+            "c5r4"
+          ]
+        },
+        "dimensions_only": {
+          "recovered_reference_ids": [
+            "c1r2",
+            "c1r3",
+            "c2r2",
+            "c3r0",
+            "c3r3"
+          ],
+          "lost_reference_ids": [
+            "c1r1",
+            "c1r4",
+            "c2r4",
+            "c4r0",
+            "c4r3",
+            "c4r4",
+            "c5r0",
+            "c5r3",
+            "c5r4"
+          ]
+        },
+        "dimensions_split": {
+          "recovered_reference_ids": [
+            "c1r2",
+            "c1r3",
+            "c2r2"
+          ],
+          "lost_reference_ids": [
+            "c1r1",
+            "c1r4",
+            "c2r4",
+            "c4r0",
+            "c4r3",
+            "c4r4",
+            "c5r0",
+            "c5r3",
+            "c5r4"
+          ]
+        }
+      }
+    }
+  ],
+  "conditional_boundary_phase_proxies": [
+    {
+      "file": "img_1.jpg",
+      "matched_slot_phase": [
+        {
+          "slot_id": "ridge_line0000_line0058_s00",
+          "reference_id": "c4r4",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 6.490000848156191,
+          "phase_offset_reference_lengths": 0.07211094248357876
+        },
+        {
+          "slot_id": "ridge_line0000_line0058_s01",
+          "reference_id": "c4r3",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 4.117498235856753,
+          "phase_offset_reference_lengths": 0.04574986743591218
+        },
+        {
+          "slot_id": "ridge_line0000_line0058_s02",
+          "reference_id": "c4r2",
+          "decision": "present",
+          "center_long_axis_offset_px": 1.9428929145992746,
+          "phase_offset_reference_lengths": 0.021587645748339847
+        },
+        {
+          "slot_id": "ridge_line0000_line0058_s03",
+          "reference_id": "c4r1",
+          "decision": "present",
+          "center_long_axis_offset_px": 0.03444460692760312,
+          "phase_offset_reference_lengths": 0.0003827169097722883
+        },
+        {
+          "slot_id": "ridge_line0000_line0058_s04",
+          "reference_id": "c4r0",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 1.8151361906595669,
+          "phase_offset_reference_lengths": 0.020168130098426794
+        },
+        {
+          "slot_id": "ridge_line0063_line0014_s01",
+          "reference_id": "c5r2",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 4.994681551848387,
+          "phase_offset_reference_lengths": 0.055311952393733495
+        },
+        {
+          "slot_id": "ridge_line0037_line0024_s00",
+          "reference_id": "c2r1",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 0.4350571761621238,
+          "phase_offset_reference_lengths": 0.004839297773087282
+        },
+        {
+          "slot_id": "ridge_line0037_line0024_s01",
+          "reference_id": "c2r0",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 1.951540097866569,
+          "phase_offset_reference_lengths": 0.02170768387963997
+        }
+      ],
+      "matched_face_ends": [
+        {
+          "slot_id": "ridge_line0000_line0058_s00",
+          "reference_id": "c4r4",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 8.400595696067494,
+          "long_axis_offset_px": 7.7258122905887845,
+          "angle_error_deg": 0.14981181672869262
+        },
+        {
+          "slot_id": "ridge_line0000_line0058_s00",
+          "reference_id": "c4r4",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 5.978137566298026,
+          "long_axis_offset_px": 5.254189405723597,
+          "angle_error_deg": 0.14977966877367427
+        },
+        {
+          "slot_id": "ridge_line0000_line0058_s01",
+          "reference_id": "c4r3",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 5.978137566298026,
+          "long_axis_offset_px": 5.254189405723601,
+          "angle_error_deg": 0.14977966877367427
+        },
+        {
+          "slot_id": "ridge_line0000_line0058_s01",
+          "reference_id": "c4r3",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 2.5872408983420723,
+          "long_axis_offset_px": 0.9770395661837387,
+          "angle_error_deg": 0.14975028189380885
+        },
+        {
+          "slot_id": "ridge_line0000_line0058_s02",
+          "reference_id": "c4r2",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 2.5872408983420723,
+          "long_axis_offset_px": 0.9770395661837357,
+          "angle_error_deg": 0.14975028189380885
+        },
+        {
+          "slot_id": "ridge_line0000_line0058_s02",
+          "reference_id": "c4r2",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 2.15892165246304,
+          "long_axis_offset_px": 0.9049787632086471,
+          "angle_error_deg": 0.14975246434943398
+        },
+        {
+          "slot_id": "ridge_line0000_line0058_s03",
+          "reference_id": "c4r1",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 2.15892165246304,
+          "long_axis_offset_px": 0.9049787632086497,
+          "angle_error_deg": 0.14975246434943398
+        },
+        {
+          "slot_id": "ridge_line0000_line0058_s03",
+          "reference_id": "c4r1",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 6.145452437349301,
+          "long_axis_offset_px": 5.961665448856135,
+          "angle_error_deg": 0.14974722582761701
+        },
+        {
+          "slot_id": "ridge_line0000_line0058_s04",
+          "reference_id": "c4r0",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 6.145452437349301,
+          "long_axis_offset_px": 5.961665448856138,
+          "angle_error_deg": 0.14974722582761701
+        },
+        {
+          "slot_id": "ridge_line0000_line0058_s04",
+          "reference_id": "c4r0",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 2.864729207725703,
+          "long_axis_offset_px": 2.656404404255277,
+          "angle_error_deg": 0.14974332555038994
+        },
+        {
+          "slot_id": "ridge_line0063_line0014_s01",
+          "reference_id": "c5r2",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 14.302050360253865,
+          "long_axis_offset_px": 8.026190881503855,
+          "angle_error_deg": 0.6614350750152281
+        },
+        {
+          "slot_id": "ridge_line0063_line0014_s01",
+          "reference_id": "c5r2",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 11.872774027309086,
+          "long_axis_offset_px": 0.04000466843343913,
+          "angle_error_deg": 0.4068150149702892
+        },
+        {
+          "slot_id": "ridge_line0037_line0024_s00",
+          "reference_id": "c2r1",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 0.20003187991383742,
+          "long_axis_offset_px": 0.19730107047987389,
+          "angle_error_deg": 0.9008240607882397
+        },
+        {
+          "slot_id": "ridge_line0037_line0024_s00",
+          "reference_id": "c2r1",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 1.088956234344317,
+          "long_axis_offset_px": 1.0674154228041495,
+          "angle_error_deg": 1.1554125076282529
+        },
+        {
+          "slot_id": "ridge_line0037_line0024_s01",
+          "reference_id": "c2r0",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 1.088956234344317,
+          "long_axis_offset_px": 1.0674154228041495,
+          "angle_error_deg": 1.1554125076282529
+        },
+        {
+          "slot_id": "ridge_line0037_line0024_s01",
+          "reference_id": "c2r0",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 2.863332263813205,
+          "long_axis_offset_px": 2.8356647729289604,
+          "angle_error_deg": 1.4099390302939911
+        }
+      ],
+      "reference_strip_chain_ids": {
+        "c0": [],
+        "c1": [],
+        "c2": [
+          "ridge_line0037_line0024"
+        ],
+        "c3": [],
+        "c4": [
+          "ridge_line0000_line0058"
+        ],
+        "c5": [
+          "ridge_line0063_line0014"
+        ]
+      },
+      "uncovered_reference_strips": [
+        "c0",
+        "c1",
+        "c3"
+      ],
+      "fragmented_reference_strips": [],
+      "predicted_chain_reference_strips": {
+        "ridge_line0000_line0058": [
+          "c4"
+        ],
+        "ridge_line0063_line0014": [
+          "c5"
+        ],
+        "ridge_line0037_line0024": [
+          "c2"
+        ]
+      },
+      "mixed_reference_strip_chains": [],
+      "interpretation": "Conditional image-plane alignment to existing face polygons; repeated shared ends counted per face, not unique physical seams. Provenance is an algorithm declaration, not independent observed-seam truth."
+    },
+    {
+      "file": "img_3.jpg",
+      "matched_slot_phase": [
+        {
+          "slot_id": "ridge_line0006_line0057_s00",
+          "reference_id": "c3r0",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 0.30081759969491156,
+          "phase_offset_reference_lengths": 0.0036596546245333136
+        },
+        {
+          "slot_id": "ridge_line0006_line0057_s01",
+          "reference_id": "c3r1",
+          "decision": "present",
+          "center_long_axis_offset_px": 2.7431602524610015,
+          "phase_offset_reference_lengths": 0.03337244600693717
+        },
+        {
+          "slot_id": "ridge_line0006_line0057_s02",
+          "reference_id": "c3r2",
+          "decision": "present",
+          "center_long_axis_offset_px": 4.960833240948402,
+          "phase_offset_reference_lengths": 0.06035197518425812
+        },
+        {
+          "slot_id": "ridge_line0006_line0057_s03",
+          "reference_id": "c3r3",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 6.954735570826679,
+          "phase_offset_reference_lengths": 0.08460917918364975
+        },
+        {
+          "slot_id": "ridge_line0006_line0057_s04",
+          "reference_id": "c3r4",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 8.725752826445541,
+          "phase_offset_reference_lengths": 0.10615483175260576
+        },
+        {
+          "slot_id": "ridge_line0026_line0020_s00",
+          "reference_id": "c2r0",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 2.907833233556384,
+          "phase_offset_reference_lengths": 0.035704665880310384
+        },
+        {
+          "slot_id": "ridge_line0026_line0020_s01",
+          "reference_id": "c2r1",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 2.2382268183012854,
+          "phase_offset_reference_lengths": 0.02748271110928136
+        }
+      ],
+      "matched_face_ends": [
+        {
+          "slot_id": "ridge_line0006_line0057_s00",
+          "reference_id": "c3r0",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 2.9740332313502096,
+          "long_axis_offset_px": 0.9766338038783318,
+          "angle_error_deg": 0.8101767819031783
+        },
+        {
+          "slot_id": "ridge_line0006_line0057_s00",
+          "reference_id": "c3r0",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 2.4889975894115497,
+          "long_axis_offset_px": 1.5782690032681967,
+          "angle_error_deg": 0.85039637696269
+        },
+        {
+          "slot_id": "ridge_line0006_line0057_s01",
+          "reference_id": "c3r1",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 2.4889975894115497,
+          "long_axis_offset_px": 1.5782690032681967,
+          "angle_error_deg": 0.85039637696269
+        },
+        {
+          "slot_id": "ridge_line0006_line0057_s01",
+          "reference_id": "c3r1",
+          "decision": "present",
+          "provenance": "inferred",
+          "midpoint_error_px": 4.044692646110113,
+          "long_axis_offset_px": 3.9080515016537922,
+          "angle_error_deg": 0.8910371771608491
+        },
+        {
+          "slot_id": "ridge_line0006_line0057_s02",
+          "reference_id": "c3r2",
+          "decision": "present",
+          "provenance": "inferred",
+          "midpoint_error_px": 4.044692646110113,
+          "long_axis_offset_px": 3.908051501653791,
+          "angle_error_deg": 0.8910371771608491
+        },
+        {
+          "slot_id": "ridge_line0006_line0057_s02",
+          "reference_id": "c3r2",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 3.0128623066267557,
+          "long_axis_offset_px": 3.006608475894861,
+          "angle_error_deg": 0.9320604431999621
+        },
+        {
+          "slot_id": "ridge_line0006_line0057_s03",
+          "reference_id": "c3r3",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 3.0128623066267557,
+          "long_axis_offset_px": 3.006608475894861,
+          "angle_error_deg": 0.9320604431999621
+        },
+        {
+          "slot_id": "ridge_line0006_line0057_s03",
+          "reference_id": "c3r3",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 3.954779804815192,
+          "long_axis_offset_px": 3.89707593611051,
+          "angle_error_deg": 0.9735023504522201
+        },
+        {
+          "slot_id": "ridge_line0006_line0057_s04",
+          "reference_id": "c3r4",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 3.954779804815192,
+          "long_axis_offset_px": 3.89707593611051,
+          "angle_error_deg": 0.9735023504522201
+        },
+        {
+          "slot_id": "ridge_line0006_line0057_s04",
+          "reference_id": "c3r4",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 9.687033959780502,
+          "long_axis_offset_px": 9.555649491480768,
+          "angle_error_deg": 1.0153524265883036
+        },
+        {
+          "slot_id": "ridge_line0026_line0020_s00",
+          "reference_id": "c2r0",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 4.397278475524751,
+          "long_axis_offset_px": 3.2932256220708642,
+          "angle_error_deg": 2.1697926823164977
+        },
+        {
+          "slot_id": "ridge_line0026_line0020_s00",
+          "reference_id": "c2r0",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 3.521657199047628,
+          "long_axis_offset_px": 2.5224408450418476,
+          "angle_error_deg": 2.169782190668417
+        },
+        {
+          "slot_id": "ridge_line0026_line0020_s01",
+          "reference_id": "c2r1",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 3.521657199047628,
+          "long_axis_offset_px": 2.522440845041851,
+          "angle_error_deg": 2.169782190668417
+        },
+        {
+          "slot_id": "ridge_line0026_line0020_s01",
+          "reference_id": "c2r1",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 2.7960645834032642,
+          "long_axis_offset_px": 1.9540127915607899,
+          "angle_error_deg": 2.169847216292451
+        }
+      ],
+      "reference_strip_chain_ids": {
+        "c0": [],
+        "c1": [],
+        "c2": [
+          "ridge_line0026_line0020"
+        ],
+        "c3": [
+          "ridge_line0006_line0057"
+        ],
+        "c4": [],
+        "c5": []
+      },
+      "uncovered_reference_strips": [
+        "c0",
+        "c1",
+        "c4",
+        "c5"
+      ],
+      "fragmented_reference_strips": [],
+      "predicted_chain_reference_strips": {
+        "ridge_line0006_line0057": [
+          "c3"
+        ],
+        "ridge_line0026_line0020": [
+          "c2"
+        ]
+      },
+      "mixed_reference_strip_chains": [],
+      "interpretation": "Conditional image-plane alignment to existing face polygons; repeated shared ends counted per face, not unique physical seams. Provenance is an algorithm declaration, not independent observed-seam truth."
+    },
+    {
+      "file": "img_7.jpg",
+      "matched_slot_phase": [
+        {
+          "slot_id": "ridge_line0080_line0016_s00",
+          "reference_id": "c3r0",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 4.3711730957031705,
+          "phase_offset_reference_lengths": 0.04989923625231928
+        },
+        {
+          "slot_id": "ridge_line0080_line0016_s01",
+          "reference_id": "c3r1",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 0.43327941894528976,
+          "phase_offset_reference_lengths": 0.004946112088416548
+        },
+        {
+          "slot_id": "ridge_line0080_line0016_s02",
+          "reference_id": "c3r2",
+          "decision": "present",
+          "center_long_axis_offset_px": 3.8248748779296875,
+          "phase_offset_reference_lengths": 0.04366295522750789
+        },
+        {
+          "slot_id": "ridge_line0080_line0016_s03",
+          "reference_id": "c3r3",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 5.7671295166014716,
+          "phase_offset_reference_lengths": 0.06583481183335012
+        }
+      ],
+      "matched_face_ends": [
+        {
+          "slot_id": "ridge_line0080_line0016_s00",
+          "reference_id": "c3r0",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 9.499432024539352,
+          "long_axis_offset_px": 8.091400146484375,
+          "angle_error_deg": 0.1784555967050715
+        },
+        {
+          "slot_id": "ridge_line0080_line0016_s00",
+          "reference_id": "c3r0",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 3.714896309196979,
+          "long_axis_offset_px": 1.6202148437499773,
+          "angle_error_deg": 0.17851424472191318
+        },
+        {
+          "slot_id": "ridge_line0080_line0016_s01",
+          "reference_id": "c3r1",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 3.714896309196979,
+          "long_axis_offset_px": 1.6202148437499773,
+          "angle_error_deg": 0.17851424472191318
+        },
+        {
+          "slot_id": "ridge_line0080_line0016_s01",
+          "reference_id": "c3r1",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 2.9907476730561937,
+          "long_axis_offset_px": 2.4867736816406705,
+          "angle_error_deg": 0.17851995375175397
+        },
+        {
+          "slot_id": "ridge_line0080_line0016_s02",
+          "reference_id": "c3r2",
+          "decision": "present",
+          "provenance": "inferred",
+          "midpoint_error_px": 2.9907476730561937,
+          "long_axis_offset_px": 2.4867736816406705,
+          "angle_error_deg": 0.17851995375175397
+        },
+        {
+          "slot_id": "ridge_line0080_line0016_s02",
+          "reference_id": "c3r2",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 5.163206817362879,
+          "long_axis_offset_px": 5.1629760742187045,
+          "angle_error_deg": 0.17852913176201252
+        },
+        {
+          "slot_id": "ridge_line0080_line0016_s03",
+          "reference_id": "c3r3",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 5.163206817362879,
+          "long_axis_offset_px": 5.1629760742187045,
+          "angle_error_deg": 0.17852913176201252
+        },
+        {
+          "slot_id": "ridge_line0080_line0016_s03",
+          "reference_id": "c3r3",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 4.669807478478961,
+          "long_axis_offset_px": 4.296118164062477,
+          "angle_error_deg": 0.17854254219341287
+        }
+      ],
+      "reference_strip_chain_ids": {
+        "c0": [],
+        "c1": [],
+        "c2": [],
+        "c3": [
+          "ridge_line0080_line0016"
+        ],
+        "c4": [],
+        "c5": []
+      },
+      "uncovered_reference_strips": [
+        "c0",
+        "c1",
+        "c2",
+        "c4",
+        "c5"
+      ],
+      "fragmented_reference_strips": [],
+      "predicted_chain_reference_strips": {
+        "ridge_line0080_line0016": [
+          "c3"
+        ]
+      },
+      "mixed_reference_strip_chains": [],
+      "interpretation": "Conditional image-plane alignment to existing face polygons; repeated shared ends counted per face, not unique physical seams. Provenance is an algorithm declaration, not independent observed-seam truth."
+    },
+    {
+      "file": "img_10.jpg",
+      "matched_slot_phase": [
+        {
+          "slot_id": "ridge_line0004_line0078_s00",
+          "reference_id": "c0r0",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 4.567612126381457,
+          "phase_offset_reference_lengths": 0.04890332162055826
+        },
+        {
+          "slot_id": "ridge_line0004_line0078_s01",
+          "reference_id": "c0r1",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 5.037751801722809,
+          "phase_offset_reference_lengths": 0.053936890827761756
+        },
+        {
+          "slot_id": "ridge_line0004_line0078_s04",
+          "reference_id": "c0r4",
+          "decision": "present",
+          "center_long_axis_offset_px": 0.41914787240549184,
+          "phase_offset_reference_lengths": 0.004487623432915514
+        },
+        {
+          "slot_id": "ridge_line0006_line0002_s00",
+          "reference_id": "c3r0",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 8.786968994140636,
+          "phase_offset_reference_lengths": 0.09458524213283788
+        },
+        {
+          "slot_id": "ridge_line0006_line0002_s01",
+          "reference_id": "c3r1",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 4.04137268066404,
+          "phase_offset_reference_lengths": 0.04350239699315437
+        },
+        {
+          "slot_id": "ridge_line0006_line0002_s02",
+          "reference_id": "c3r2",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 0.6216278076171875,
+          "phase_offset_reference_lengths": 0.006691364990497168
+        },
+        {
+          "slot_id": "ridge_line0006_line0002_s03",
+          "reference_id": "c3r3",
+          "decision": "present",
+          "center_long_axis_offset_px": 5.201910400390602,
+          "phase_offset_reference_lengths": 0.05599472982121209
+        },
+        {
+          "slot_id": "ridge_line0006_line0002_s04",
+          "reference_id": "c3r4",
+          "decision": "present",
+          "center_long_axis_offset_px": 9.699368286132767,
+          "phase_offset_reference_lengths": 0.10440654775169828
+        }
+      ],
+      "matched_face_ends": [
+        {
+          "slot_id": "ridge_line0004_line0078_s00",
+          "reference_id": "c0r0",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 5.94713654270384,
+          "long_axis_offset_px": 4.076534682999661,
+          "angle_error_deg": 0.9516992202759508
+        },
+        {
+          "slot_id": "ridge_line0004_line0078_s00",
+          "reference_id": "c0r0",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 6.710844790498461,
+          "long_axis_offset_px": 5.058689569763252,
+          "angle_error_deg": 0.9517184374290798
+        },
+        {
+          "slot_id": "ridge_line0004_line0078_s01",
+          "reference_id": "c0r1",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 6.710844790498461,
+          "long_axis_offset_px": 5.058689569763252,
+          "angle_error_deg": 0.9517184374290798
+        },
+        {
+          "slot_id": "ridge_line0004_line0078_s01",
+          "reference_id": "c0r1",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 6.731508608905391,
+          "long_axis_offset_px": 5.016814033682252,
+          "angle_error_deg": 0.9516968896068715
+        },
+        {
+          "slot_id": "ridge_line0004_line0078_s04",
+          "reference_id": "c0r4",
+          "decision": "present",
+          "provenance": "inferred",
+          "midpoint_error_px": 5.027063812529541,
+          "long_axis_offset_px": 1.9270736313485644,
+          "angle_error_deg": 0.9517644730693233
+        },
+        {
+          "slot_id": "ridge_line0004_line0078_s04",
+          "reference_id": "c0r4",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 4.84313446336846,
+          "long_axis_offset_px": 1.0887778865376943,
+          "angle_error_deg": 0.9517352037614838
+        },
+        {
+          "slot_id": "ridge_line0006_line0002_s00",
+          "reference_id": "c3r0",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 11.272555063142715,
+          "long_axis_offset_px": 11.180389404296875,
+          "angle_error_deg": 0.1554023338718252
+        },
+        {
+          "slot_id": "ridge_line0006_line0002_s00",
+          "reference_id": "c3r0",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 10.468341308642897,
+          "long_axis_offset_px": 10.400628662109398,
+          "angle_error_deg": 0.40451589023852413
+        },
+        {
+          "slot_id": "ridge_line0006_line0002_s01",
+          "reference_id": "c3r1",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 10.468341308642897,
+          "long_axis_offset_px": 10.400628662109398,
+          "angle_error_deg": 0.40451589023852413
+        },
+        {
+          "slot_id": "ridge_line0006_line0002_s01",
+          "reference_id": "c3r1",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 1.9431542538836564,
+          "long_axis_offset_px": 1.6891967773437955,
+          "angle_error_deg": 0.6536264519255921
+        },
+        {
+          "slot_id": "ridge_line0006_line0002_s02",
+          "reference_id": "c3r2",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 1.9431542538836564,
+          "long_axis_offset_px": 1.6891967773437955,
+          "angle_error_deg": 0.6536264519255921
+        },
+        {
+          "slot_id": "ridge_line0006_line0002_s02",
+          "reference_id": "c3r2",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 1.2943757037445587,
+          "long_axis_offset_px": 1.0821655273437045,
+          "angle_error_deg": 0.9026326024032146
+        },
+        {
+          "slot_id": "ridge_line0006_line0002_s03",
+          "reference_id": "c3r3",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 1.2943757037445587,
+          "long_axis_offset_px": 1.0821655273437045,
+          "angle_error_deg": 0.9026326024032146
+        },
+        {
+          "slot_id": "ridge_line0006_line0002_s03",
+          "reference_id": "c3r3",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 2.4926516941954455,
+          "long_axis_offset_px": 2.4483581542968977,
+          "angle_error_deg": 1.1516919359794588
+        },
+        {
+          "slot_id": "ridge_line0006_line0002_s04",
+          "reference_id": "c3r4",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 2.4926516941954455,
+          "long_axis_offset_px": 2.4483581542968977,
+          "angle_error_deg": 1.1516919359794588
+        },
+        {
+          "slot_id": "ridge_line0006_line0002_s04",
+          "reference_id": "c3r4",
+          "decision": "present",
+          "provenance": "inferred",
+          "midpoint_error_px": 11.929814985378824,
+          "long_axis_offset_px": 11.9273681640625,
+          "angle_error_deg": 1.400718425993062
+        }
+      ],
+      "reference_strip_chain_ids": {
+        "c0": [
+          "ridge_line0004_line0078"
+        ],
+        "c1": [],
+        "c2": [],
+        "c3": [
+          "ridge_line0006_line0002"
+        ],
+        "c4": [],
+        "c5": []
+      },
+      "uncovered_reference_strips": [
+        "c1",
+        "c2",
+        "c4",
+        "c5"
+      ],
+      "fragmented_reference_strips": [],
+      "predicted_chain_reference_strips": {
+        "ridge_line0004_line0078": [
+          "c0"
+        ],
+        "ridge_line0006_line0002": [
+          "c3"
+        ]
+      },
+      "mixed_reference_strip_chains": [],
+      "interpretation": "Conditional image-plane alignment to existing face polygons; repeated shared ends counted per face, not unique physical seams. Provenance is an algorithm declaration, not independent observed-seam truth."
+    },
+    {
+      "file": "img_13.jpg",
+      "matched_slot_phase": [
+        {
+          "slot_id": "ridge_line0004_line0002_s00",
+          "reference_id": "c3r0",
+          "decision": "present",
+          "center_long_axis_offset_px": 2.3684423101588474,
+          "phase_offset_reference_lengths": 0.024671220524237657
+        },
+        {
+          "slot_id": "ridge_line0004_line0002_s01",
+          "reference_id": "c3r1",
+          "decision": "present",
+          "center_long_axis_offset_px": 0.24873610241043795,
+          "phase_offset_reference_lengths": 0.0025909954439615225
+        },
+        {
+          "slot_id": "ridge_line0004_line0002_s02",
+          "reference_id": "c3r2",
+          "decision": "present",
+          "center_long_axis_offset_px": 1.254727438101233,
+          "phase_offset_reference_lengths": 0.013070049116430086
+        },
+        {
+          "slot_id": "ridge_line0004_line0002_s03",
+          "reference_id": "c3r3",
+          "decision": "present",
+          "center_long_axis_offset_px": 0.6886945020412777,
+          "phase_offset_reference_lengths": 0.007173885494618972
+        },
+        {
+          "slot_id": "ridge_line0004_line0002_s04",
+          "reference_id": "c3r4",
+          "decision": "present",
+          "center_long_axis_offset_px": 1.4114416136961119,
+          "phase_offset_reference_lengths": 0.014702484902934868
+        },
+        {
+          "slot_id": "ridge_line0001_line0008_s00",
+          "reference_id": "c5r4",
+          "decision": "present",
+          "center_long_axis_offset_px": 4.100649544764508,
+          "phase_offset_reference_lengths": 0.04302769075994691
+        },
+        {
+          "slot_id": "ridge_line0001_line0008_s01",
+          "reference_id": "c5r3",
+          "decision": "present",
+          "center_long_axis_offset_px": 4.497136342289172,
+          "phase_offset_reference_lengths": 0.04718798564202819
+        },
+        {
+          "slot_id": "ridge_line0001_line0008_s02",
+          "reference_id": "c5r2",
+          "decision": "present",
+          "center_long_axis_offset_px": 4.016325588354302,
+          "phase_offset_reference_lengths": 0.042142888223064445
+        },
+        {
+          "slot_id": "ridge_line0001_line0008_s03",
+          "reference_id": "c5r1",
+          "decision": "present",
+          "center_long_axis_offset_px": 2.6459988009839406,
+          "phase_offset_reference_lengths": 0.02776419123777267
+        },
+        {
+          "slot_id": "ridge_line0001_line0008_s04",
+          "reference_id": "c5r0",
+          "decision": "present",
+          "center_long_axis_offset_px": 0.3737029006484614,
+          "phase_offset_reference_lengths": 0.00392122581304874
+        },
+        {
+          "slot_id": "ridge_line0000_line0016_s00",
+          "reference_id": "c4r4",
+          "decision": "present",
+          "center_long_axis_offset_px": 0.7722103618779531,
+          "phase_offset_reference_lengths": 0.008060369920208121
+        },
+        {
+          "slot_id": "ridge_line0000_line0016_s01",
+          "reference_id": "c4r3",
+          "decision": "present",
+          "center_long_axis_offset_px": 2.1856902025293885,
+          "phase_offset_reference_lengths": 0.022814342351632287
+        },
+        {
+          "slot_id": "ridge_line0000_line0016_s02",
+          "reference_id": "c4r2",
+          "decision": "present",
+          "center_long_axis_offset_px": 2.360599995892668,
+          "phase_offset_reference_lengths": 0.02464005941886588
+        },
+        {
+          "slot_id": "ridge_line0000_line0016_s03",
+          "reference_id": "c4r1",
+          "decision": "present",
+          "center_long_axis_offset_px": 1.272408406602356,
+          "phase_offset_reference_lengths": 0.013281461831016632
+        },
+        {
+          "slot_id": "ridge_line0000_line0016_s04",
+          "reference_id": "c4r0",
+          "decision": "present",
+          "center_long_axis_offset_px": 1.1040737856248943,
+          "phase_offset_reference_lengths": 0.011524376738093709
+        },
+        {
+          "slot_id": "ridge_line0019_line0038_s00",
+          "reference_id": "c1r0",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 0.4326708939183111,
+          "phase_offset_reference_lengths": 0.0045633890603989915
+        },
+        {
+          "slot_id": "ridge_line0019_line0038_s01",
+          "reference_id": "c1r1",
+          "decision": "present",
+          "center_long_axis_offset_px": 3.765104896257256,
+          "phase_offset_reference_lengths": 0.03971064089667876
+        },
+        {
+          "slot_id": "ridge_line0019_line0038_s02",
+          "reference_id": "c1r2",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 5.859614882778885,
+          "phase_offset_reference_lengths": 0.06180148198106618
+        },
+        {
+          "slot_id": "ridge_line0019_line0038_s03",
+          "reference_id": "c1r3",
+          "decision": "present",
+          "center_long_axis_offset_px": 6.739476720615456,
+          "phase_offset_reference_lengths": 0.0710814033760191
+        },
+        {
+          "slot_id": "ridge_line0019_line0038_s04",
+          "reference_id": "c1r4",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 6.427382711327441,
+          "phase_offset_reference_lengths": 0.06778974126557938
+        },
+        {
+          "slot_id": "ridge_line0013_line0006_s00",
+          "reference_id": "c2r1",
+          "decision": "present",
+          "center_long_axis_offset_px": 4.165654867128508,
+          "phase_offset_reference_lengths": 0.04348273266517375
+        },
+        {
+          "slot_id": "ridge_line0013_line0006_s01",
+          "reference_id": "c2r2",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 5.778293258001009,
+          "phase_offset_reference_lengths": 0.060316082107836996
+        },
+        {
+          "slot_id": "ridge_line0013_line0006_s02",
+          "reference_id": "c2r3",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 5.666303534241697,
+          "phase_offset_reference_lengths": 0.059147089626510836
+        },
+        {
+          "slot_id": "ridge_line0013_line0006_s03",
+          "reference_id": "c2r4",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 3.8750934038039917,
+          "phase_offset_reference_lengths": 0.04044973861368844
+        }
+      ],
+      "matched_face_ends": [
+        {
+          "slot_id": "ridge_line0004_line0002_s00",
+          "reference_id": "c3r0",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 4.5080121362640115,
+          "long_axis_offset_px": 4.084800184396425,
+          "angle_error_deg": 0.7272373479460027
+        },
+        {
+          "slot_id": "ridge_line0004_line0002_s00",
+          "reference_id": "c3r0",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 4.551090376030921,
+          "long_axis_offset_px": 4.4816779725111555,
+          "angle_error_deg": 0.7272551399978519
+        },
+        {
+          "slot_id": "ridge_line0004_line0002_s01",
+          "reference_id": "c3r1",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 4.551090376030921,
+          "long_axis_offset_px": 4.481677972511155,
+          "angle_error_deg": 0.7272551399978519
+        },
+        {
+          "slot_id": "ridge_line0004_line0002_s01",
+          "reference_id": "c3r1",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 5.195342635863244,
+          "long_axis_offset_px": 5.189819949743775,
+          "angle_error_deg": 0.7272225845867906
+        },
+        {
+          "slot_id": "ridge_line0004_line0002_s02",
+          "reference_id": "c3r2",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 5.195342635863244,
+          "long_axis_offset_px": 5.189819949743775,
+          "angle_error_deg": 0.7272225845867906
+        },
+        {
+          "slot_id": "ridge_line0004_line0002_s02",
+          "reference_id": "c3r2",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 2.65724513697556,
+          "long_axis_offset_px": 2.3538511184248816,
+          "angle_error_deg": 0.727245680893182
+        },
+        {
+          "slot_id": "ridge_line0004_line0002_s03",
+          "reference_id": "c3r3",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 2.65724513697556,
+          "long_axis_offset_px": 2.353851118424883,
+          "angle_error_deg": 0.727245680893182
+        },
+        {
+          "slot_id": "ridge_line0004_line0002_s03",
+          "reference_id": "c3r3",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 2.2319640647632877,
+          "long_axis_offset_px": 0.017490768622235527,
+          "angle_error_deg": 0.7272853481542273
+        },
+        {
+          "slot_id": "ridge_line0004_line0002_s04",
+          "reference_id": "c3r4",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 2.2319640647632877,
+          "long_axis_offset_px": 0.017490768622232884,
+          "angle_error_deg": 0.7272853481542273
+        },
+        {
+          "slot_id": "ridge_line0004_line0002_s04",
+          "reference_id": "c3r4",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 4.2976312338155225,
+          "long_axis_offset_px": 2.8403739960144567,
+          "angle_error_deg": 0.7272729599746668
+        },
+        {
+          "slot_id": "ridge_line0001_line0008_s00",
+          "reference_id": "c5r4",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 1.7305326842860713,
+          "long_axis_offset_px": 0.7454693731025501,
+          "angle_error_deg": 2.709550737289747
+        },
+        {
+          "slot_id": "ridge_line0001_line0008_s00",
+          "reference_id": "c5r4",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 4.00056377323827,
+          "long_axis_offset_px": 3.5280598201504167,
+          "angle_error_deg": 2.4706265609644666
+        },
+        {
+          "slot_id": "ridge_line0001_line0008_s01",
+          "reference_id": "c5r3",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 4.00056377323827,
+          "long_axis_offset_px": 3.5280598201504167,
+          "angle_error_deg": 2.4706265609644666
+        },
+        {
+          "slot_id": "ridge_line0001_line0008_s01",
+          "reference_id": "c5r3",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 4.99630916708649,
+          "long_axis_offset_px": 4.477564053276562,
+          "angle_error_deg": 2.2295452182118445
+        },
+        {
+          "slot_id": "ridge_line0001_line0008_s02",
+          "reference_id": "c5r2",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 4.99630916708649,
+          "long_axis_offset_px": 4.477564053276557,
+          "angle_error_deg": 2.2295452182118445
+        },
+        {
+          "slot_id": "ridge_line0001_line0008_s02",
+          "reference_id": "c5r2",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 5.226663997107196,
+          "long_axis_offset_px": 4.562015919079862,
+          "angle_error_deg": 1.986258192089955
+        },
+        {
+          "slot_id": "ridge_line0001_line0008_s03",
+          "reference_id": "c5r1",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 5.226663997107196,
+          "long_axis_offset_px": 4.562015919079868,
+          "angle_error_deg": 1.986258192089955
+        },
+        {
+          "slot_id": "ridge_line0001_line0008_s03",
+          "reference_id": "c5r1",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 2.9864520203354163,
+          "long_axis_offset_px": 0.7204831187694745,
+          "angle_error_deg": 1.7407495188019422
+        },
+        {
+          "slot_id": "ridge_line0001_line0008_s04",
+          "reference_id": "c5r0",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 2.9864520203354163,
+          "long_axis_offset_px": 0.7204831187694745,
+          "angle_error_deg": 1.7407495188019422
+        },
+        {
+          "slot_id": "ridge_line0001_line0008_s04",
+          "reference_id": "c5r0",
+          "decision": "present",
+          "provenance": "inferred",
+          "midpoint_error_px": 3.3861458727096636,
+          "long_axis_offset_px": 0.9895046772388468,
+          "angle_error_deg": 1.4929968401827702
+        },
+        {
+          "slot_id": "ridge_line0000_line0016_s00",
+          "reference_id": "c4r4",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 1.3633189052693553,
+          "long_axis_offset_px": 1.2117712122846684,
+          "angle_error_deg": 1.156292713327327
+        },
+        {
+          "slot_id": "ridge_line0000_line0016_s00",
+          "reference_id": "c4r4",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 0.32527030012938896,
+          "long_axis_offset_px": 0.18107208097634364,
+          "angle_error_deg": 1.156292358101165
+        },
+        {
+          "slot_id": "ridge_line0000_line0016_s01",
+          "reference_id": "c4r3",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 0.32527030012938896,
+          "long_axis_offset_px": 0.18107208097634334,
+          "angle_error_deg": 1.156292358101165
+        },
+        {
+          "slot_id": "ridge_line0000_line0016_s01",
+          "reference_id": "c4r3",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 2.829518620757365,
+          "long_axis_offset_px": 2.5858183141953943,
+          "angle_error_deg": 1.1562845903372487
+        },
+        {
+          "slot_id": "ridge_line0000_line0016_s02",
+          "reference_id": "c4r2",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 2.829518620757365,
+          "long_axis_offset_px": 2.585818314195393,
+          "angle_error_deg": 1.1562845903372487
+        },
+        {
+          "slot_id": "ridge_line0000_line0016_s02",
+          "reference_id": "c4r2",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 3.7527725233881197,
+          "long_axis_offset_px": 3.144553625257327,
+          "angle_error_deg": 1.1562862145751776
+        },
+        {
+          "slot_id": "ridge_line0000_line0016_s03",
+          "reference_id": "c4r1",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 3.7527725233881197,
+          "long_axis_offset_px": 3.144553625257329,
+          "angle_error_deg": 1.1562862145751776
+        },
+        {
+          "slot_id": "ridge_line0000_line0016_s03",
+          "reference_id": "c4r1",
+          "decision": "present",
+          "provenance": "inferred",
+          "midpoint_error_px": 3.0067054881738104,
+          "long_axis_offset_px": 0.4094351356147658,
+          "angle_error_deg": 1.1562836115168658
+        },
+        {
+          "slot_id": "ridge_line0000_line0016_s04",
+          "reference_id": "c4r0",
+          "decision": "present",
+          "provenance": "inferred",
+          "midpoint_error_px": 3.0067054881738104,
+          "long_axis_offset_px": 0.4094351356147623,
+          "angle_error_deg": 1.1562836115168658
+        },
+        {
+          "slot_id": "ridge_line0000_line0016_s04",
+          "reference_id": "c4r0",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 4.7069179044567235,
+          "long_axis_offset_px": 2.6175827068645487,
+          "angle_error_deg": 1.1562913529208563
+        },
+        {
+          "slot_id": "ridge_line0019_line0038_s00",
+          "reference_id": "c1r0",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 2.7419859348157627,
+          "long_axis_offset_px": 1.54597378259917,
+          "angle_error_deg": 0.17829747162147913
+        },
+        {
+          "slot_id": "ridge_line0019_line0038_s00",
+          "reference_id": "c1r0",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 5.679276791217348,
+          "long_axis_offset_px": 5.477638876141426,
+          "angle_error_deg": 0.17828992275481476
+        },
+        {
+          "slot_id": "ridge_line0019_line0038_s01",
+          "reference_id": "c1r1",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 5.679276791217348,
+          "long_axis_offset_px": 5.477638876141426,
+          "angle_error_deg": 0.17828992275481476
+        },
+        {
+          "slot_id": "ridge_line0019_line0038_s01",
+          "reference_id": "c1r1",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 5.179582775634688,
+          "long_axis_offset_px": 5.1188942220787235,
+          "angle_error_deg": 0.17828184127105925
+        },
+        {
+          "slot_id": "ridge_line0019_line0038_s02",
+          "reference_id": "c1r2",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 5.179582775634688,
+          "long_axis_offset_px": 5.118894222078724,
+          "angle_error_deg": 0.17828184127105925
+        },
+        {
+          "slot_id": "ridge_line0019_line0038_s02",
+          "reference_id": "c1r2",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 6.600680265209098,
+          "long_axis_offset_px": 6.600335543479046,
+          "angle_error_deg": 0.17829775802186307
+        },
+        {
+          "slot_id": "ridge_line0019_line0038_s03",
+          "reference_id": "c1r3",
+          "decision": "present",
+          "provenance": "inferred",
+          "midpoint_error_px": 6.600680265209098,
+          "long_axis_offset_px": 6.600335543479046,
+          "angle_error_deg": 0.17829775802186307
+        },
+        {
+          "slot_id": "ridge_line0019_line0038_s03",
+          "reference_id": "c1r3",
+          "decision": "present",
+          "provenance": "inferred",
+          "midpoint_error_px": 6.908942795095946,
+          "long_axis_offset_px": 6.8786178977519254,
+          "angle_error_deg": 0.178310283635265
+        },
+        {
+          "slot_id": "ridge_line0019_line0038_s04",
+          "reference_id": "c1r4",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 6.908942795095946,
+          "long_axis_offset_px": 6.8786178977519254,
+          "angle_error_deg": 0.178310283635265
+        },
+        {
+          "slot_id": "ridge_line0019_line0038_s04",
+          "reference_id": "c1r4",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 6.127134524272419,
+          "long_axis_offset_px": 5.976147524903016,
+          "angle_error_deg": 0.17832748591469932
+        },
+        {
+          "slot_id": "ridge_line0013_line0006_s00",
+          "reference_id": "c2r1",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 3.048149941187916,
+          "long_axis_offset_px": 2.9224039664996475,
+          "angle_error_deg": 0.3139350720003929
+        },
+        {
+          "slot_id": "ridge_line0013_line0006_s00",
+          "reference_id": "c2r1",
+          "decision": "present",
+          "provenance": "inferred",
+          "midpoint_error_px": 5.844380705604942,
+          "long_axis_offset_px": 5.408905767757368,
+          "angle_error_deg": 0.3138850200905983
+        },
+        {
+          "slot_id": "ridge_line0013_line0006_s01",
+          "reference_id": "c2r2",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 5.844380705604942,
+          "long_axis_offset_px": 5.40890576775737,
+          "angle_error_deg": 0.3138850200905983
+        },
+        {
+          "slot_id": "ridge_line0013_line0006_s01",
+          "reference_id": "c2r2",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 7.092563086133088,
+          "long_axis_offset_px": 6.147680748244647,
+          "angle_error_deg": 0.31392671521373505
+        },
+        {
+          "slot_id": "ridge_line0013_line0006_s02",
+          "reference_id": "c2r3",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 7.092563086133088,
+          "long_axis_offset_px": 6.147680748244643,
+          "angle_error_deg": 0.31392671521373505
+        },
+        {
+          "slot_id": "ridge_line0013_line0006_s02",
+          "reference_id": "c2r3",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 7.0908502983107935,
+          "long_axis_offset_px": 5.184926320238809,
+          "angle_error_deg": 0.31389262836078735
+        },
+        {
+          "slot_id": "ridge_line0013_line0006_s03",
+          "reference_id": "c2r4",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 7.0908502983107935,
+          "long_axis_offset_px": 5.184926320238814,
+          "angle_error_deg": 0.31389262836078735
+        },
+        {
+          "slot_id": "ridge_line0013_line0006_s03",
+          "reference_id": "c2r4",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 6.121521113925467,
+          "long_axis_offset_px": 0.640610160952775,
+          "angle_error_deg": 0.31386821665848785
+        }
+      ],
+      "reference_strip_chain_ids": {
+        "c0": [],
+        "c1": [
+          "ridge_line0019_line0038"
+        ],
+        "c2": [
+          "ridge_line0013_line0006"
+        ],
+        "c3": [
+          "ridge_line0004_line0002"
+        ],
+        "c4": [
+          "ridge_line0000_line0016"
+        ],
+        "c5": [
+          "ridge_line0001_line0008"
+        ]
+      },
+      "uncovered_reference_strips": [
+        "c0"
+      ],
+      "fragmented_reference_strips": [],
+      "predicted_chain_reference_strips": {
+        "ridge_line0004_line0002": [
+          "c3"
+        ],
+        "ridge_line0001_line0008": [
+          "c5"
+        ],
+        "ridge_line0000_line0016": [
+          "c4"
+        ],
+        "ridge_line0019_line0038": [
+          "c1"
+        ],
+        "ridge_line0013_line0006": [
+          "c2"
+        ]
+      },
+      "mixed_reference_strip_chains": [],
+      "interpretation": "Conditional image-plane alignment to existing face polygons; repeated shared ends counted per face, not unique physical seams. Provenance is an algorithm declaration, not independent observed-seam truth."
+    },
+    {
+      "file": "img_16.jpg",
+      "matched_slot_phase": [
+        {
+          "slot_id": "ridge_line0001_line0021_s00",
+          "reference_id": "c3r4",
+          "decision": "present",
+          "center_long_axis_offset_px": 0.36600467140663123,
+          "phase_offset_reference_lengths": 0.004218962600706686
+        },
+        {
+          "slot_id": "ridge_line0001_line0021_s01",
+          "reference_id": "c3r3",
+          "decision": "present",
+          "center_long_axis_offset_px": 0.8950899884071577,
+          "phase_offset_reference_lengths": 0.01031776772368365
+        },
+        {
+          "slot_id": "ridge_line0001_line0021_s02",
+          "reference_id": "c3r2",
+          "decision": "present",
+          "center_long_axis_offset_px": 2.3103075394591994,
+          "phase_offset_reference_lengths": 0.026631083881112592
+        },
+        {
+          "slot_id": "ridge_line0001_line0021_s03",
+          "reference_id": "c3r1",
+          "decision": "present",
+          "center_long_axis_offset_px": 3.8800588588666756,
+          "phase_offset_reference_lengths": 0.044725722082143295
+        },
+        {
+          "slot_id": "ridge_line0001_line0021_s04",
+          "reference_id": "c3r0",
+          "decision": "present",
+          "center_long_axis_offset_px": 5.604747260512197,
+          "phase_offset_reference_lengths": 0.06460633135538116
+        },
+        {
+          "slot_id": "ridge_line0007_line0062_s00",
+          "reference_id": "c2r4",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 10.04107777770484,
+          "phase_offset_reference_lengths": 0.11466303190766144
+        },
+        {
+          "slot_id": "ridge_line0007_line0062_s01",
+          "reference_id": "c2r3",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 5.612636027996048,
+          "phase_offset_reference_lengths": 0.06409290697789066
+        },
+        {
+          "slot_id": "ridge_line0007_line0062_s02",
+          "reference_id": "c2r2",
+          "decision": "present",
+          "center_long_axis_offset_px": 1.0694941098648503,
+          "phase_offset_reference_lengths": 0.01221297553503465
+        },
+        {
+          "slot_id": "ridge_line0007_line0062_s03",
+          "reference_id": "c2r1",
+          "decision": "present",
+          "center_long_axis_offset_px": 3.58856904276321,
+          "phase_offset_reference_lengths": 0.040979286861699646
+        },
+        {
+          "slot_id": "ridge_line0007_line0062_s04",
+          "reference_id": "c2r0",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 8.361769216304458,
+          "phase_offset_reference_lengths": 0.09548634436260443
+        },
+        {
+          "slot_id": "ridge_line0008_line0063_s00",
+          "reference_id": "c1r4",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 7.993499077270272,
+          "phase_offset_reference_lengths": 0.09070354391186555
+        },
+        {
+          "slot_id": "ridge_line0008_line0063_s01",
+          "reference_id": "c1r3",
+          "decision": "present",
+          "center_long_axis_offset_px": 4.633542710034018,
+          "phase_offset_reference_lengths": 0.052577568422088
+        },
+        {
+          "slot_id": "ridge_line0008_line0063_s02",
+          "reference_id": "c1r2",
+          "decision": "present",
+          "center_long_axis_offset_px": 0.6331786609599437,
+          "phase_offset_reference_lengths": 0.007184782023900475
+        },
+        {
+          "slot_id": "ridge_line0008_line0063_s03",
+          "reference_id": "c1r1",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 4.01435334679017,
+          "phase_offset_reference_lengths": 0.045551525251776206
+        },
+        {
+          "slot_id": "ridge_line0023_line0003_s00",
+          "reference_id": "c5r4",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 1.877153100900216,
+          "phase_offset_reference_lengths": 0.022209868875871883
+        },
+        {
+          "slot_id": "ridge_line0023_line0003_s01",
+          "reference_id": "c5r3",
+          "decision": "uncertain",
+          "center_long_axis_offset_px": 6.195558236844265,
+          "phase_offset_reference_lengths": 0.07330384292423972
+        }
+      ],
+      "matched_face_ends": [
+        {
+          "slot_id": "ridge_line0001_line0021_s00",
+          "reference_id": "c3r4",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 3.8982918653347833,
+          "long_axis_offset_px": 0.9580817843807996,
+          "angle_error_deg": 0.41472592349311255
+        },
+        {
+          "slot_id": "ridge_line0001_line0021_s00",
+          "reference_id": "c3r4",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 4.1996729590084,
+          "long_axis_offset_px": 2.2264169221607224,
+          "angle_error_deg": 0.06452478207928573
+        },
+        {
+          "slot_id": "ridge_line0001_line0021_s01",
+          "reference_id": "c3r3",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 4.1996729590084,
+          "long_axis_offset_px": 2.2264169221607224,
+          "angle_error_deg": 0.06452478207928573
+        },
+        {
+          "slot_id": "ridge_line0001_line0021_s01",
+          "reference_id": "c3r3",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 4.892545437290516,
+          "long_axis_offset_px": 3.5679610049186397,
+          "angle_error_deg": 0.542728377011806
+        },
+        {
+          "slot_id": "ridge_line0001_line0021_s02",
+          "reference_id": "c3r2",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 4.892545437290516,
+          "long_axis_offset_px": 3.5679610049186357,
+          "angle_error_deg": 0.542728377011806
+        },
+        {
+          "slot_id": "ridge_line0001_line0021_s02",
+          "reference_id": "c3r2",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 5.1304939853954865,
+          "long_axis_offset_px": 4.060160525245095,
+          "angle_error_deg": 1.0197844107344736
+        },
+        {
+          "slot_id": "ridge_line0001_line0021_s03",
+          "reference_id": "c3r1",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 5.1304939853954865,
+          "long_axis_offset_px": 4.060160525245099,
+          "angle_error_deg": 1.0197844107344736
+        },
+        {
+          "slot_id": "ridge_line0001_line0021_s03",
+          "reference_id": "c3r1",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 6.413538346445485,
+          "long_axis_offset_px": 5.70904589797636,
+          "angle_error_deg": 1.4955922980257845
+        },
+        {
+          "slot_id": "ridge_line0001_line0021_s04",
+          "reference_id": "c3r0",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 6.413538346445485,
+          "long_axis_offset_px": 5.70904589797636,
+          "angle_error_deg": 1.4955922980257845
+        },
+        {
+          "slot_id": "ridge_line0001_line0021_s04",
+          "reference_id": "c3r0",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 9.903553895584402,
+          "long_axis_offset_px": 9.527533097119077,
+          "angle_error_deg": 1.9701592557344338
+        },
+        {
+          "slot_id": "ridge_line0007_line0062_s00",
+          "reference_id": "c2r4",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 14.251578618762375,
+          "long_axis_offset_px": 12.226653789884674,
+          "angle_error_deg": 1.0600112310620369
+        },
+        {
+          "slot_id": "ridge_line0007_line0062_s00",
+          "reference_id": "c2r4",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 9.768332902535198,
+          "long_axis_offset_px": 7.855501765525122,
+          "angle_error_deg": 0.9865494385757175
+        },
+        {
+          "slot_id": "ridge_line0007_line0062_s01",
+          "reference_id": "c2r3",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 9.768332902535198,
+          "long_axis_offset_px": 7.855501765525121,
+          "angle_error_deg": 0.9865494385757175
+        },
+        {
+          "slot_id": "ridge_line0007_line0062_s01",
+          "reference_id": "c2r3",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 5.453744234518891,
+          "long_axis_offset_px": 3.369770290467032,
+          "angle_error_deg": 0.9143264368949271
+        },
+        {
+          "slot_id": "ridge_line0007_line0062_s02",
+          "reference_id": "c2r2",
+          "decision": "present",
+          "provenance": "inferred",
+          "midpoint_error_px": 5.453744234518891,
+          "long_axis_offset_px": 3.3697702904670326,
+          "angle_error_deg": 0.9143264368949271
+        },
+        {
+          "slot_id": "ridge_line0007_line0062_s02",
+          "reference_id": "c2r2",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 5.896381034590712,
+          "long_axis_offset_px": 5.240816774789074,
+          "angle_error_deg": 0.843303942637852
+        },
+        {
+          "slot_id": "ridge_line0007_line0062_s03",
+          "reference_id": "c2r1",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 5.896381034590712,
+          "long_axis_offset_px": 5.240816774789075,
+          "angle_error_deg": 0.843303942637852
+        },
+        {
+          "slot_id": "ridge_line0007_line0062_s03",
+          "reference_id": "c2r1",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 6.075570253362608,
+          "long_axis_offset_px": 5.946356014789032,
+          "angle_error_deg": 0.7734054856597172
+        },
+        {
+          "slot_id": "ridge_line0007_line0062_s04",
+          "reference_id": "c2r0",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 6.075570253362608,
+          "long_axis_offset_px": 5.946356014789032,
+          "angle_error_deg": 0.7734054856597172
+        },
+        {
+          "slot_id": "ridge_line0007_line0062_s04",
+          "reference_id": "c2r0",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 10.780751316053962,
+          "long_axis_offset_px": 10.777182417819883,
+          "angle_error_deg": 0.7046498533401531
+        },
+        {
+          "slot_id": "ridge_line0008_line0063_s00",
+          "reference_id": "c1r4",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 9.797772702261229,
+          "long_axis_offset_px": 9.514215640628022,
+          "angle_error_deg": 1.2222398301474386
+        },
+        {
+          "slot_id": "ridge_line0008_line0063_s00",
+          "reference_id": "c1r4",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 6.623567433389323,
+          "long_axis_offset_px": 6.472782513912523,
+          "angle_error_deg": 1.3528062171451485
+        },
+        {
+          "slot_id": "ridge_line0008_line0063_s01",
+          "reference_id": "c1r3",
+          "decision": "present",
+          "provenance": "inferred",
+          "midpoint_error_px": 6.623567433389323,
+          "long_axis_offset_px": 6.472782513912523,
+          "angle_error_deg": 1.3528062171451485
+        },
+        {
+          "slot_id": "ridge_line0008_line0063_s01",
+          "reference_id": "c1r3",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 1.849386426344713,
+          "long_axis_offset_px": 1.7928917143260534,
+          "angle_error_deg": 1.4800310804629102
+        },
+        {
+          "slot_id": "ridge_line0008_line0063_s02",
+          "reference_id": "c1r2",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 1.849386426344713,
+          "long_axis_offset_px": 1.7928917143260534,
+          "angle_error_deg": 1.4800310804629102
+        },
+        {
+          "slot_id": "ridge_line0008_line0063_s02",
+          "reference_id": "c1r2",
+          "decision": "present",
+          "provenance": "observed",
+          "midpoint_error_px": 1.602807112934541,
+          "long_axis_offset_px": 1.5279455842356242,
+          "angle_error_deg": 1.6039050590303028
+        },
+        {
+          "slot_id": "ridge_line0008_line0063_s03",
+          "reference_id": "c1r1",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 1.602807112934541,
+          "long_axis_offset_px": 1.5279455842356242,
+          "angle_error_deg": 1.6039050590303028
+        },
+        {
+          "slot_id": "ridge_line0008_line0063_s03",
+          "reference_id": "c1r1",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 6.658069440790526,
+          "long_axis_offset_px": 6.500761109344714,
+          "angle_error_deg": 1.724673407626095
+        },
+        {
+          "slot_id": "ridge_line0023_line0003_s00",
+          "reference_id": "c5r4",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 1.4029430295035497,
+          "long_axis_offset_px": 0.0036283616414270175,
+          "angle_error_deg": 0.041464118115858484
+        },
+        {
+          "slot_id": "ridge_line0023_line0003_s00",
+          "reference_id": "c5r4",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 6.008707846621711,
+          "long_axis_offset_px": 5.77717912728202,
+          "angle_error_deg": 0.17262535032999957
+        },
+        {
+          "slot_id": "ridge_line0023_line0003_s01",
+          "reference_id": "c5r3",
+          "decision": "uncertain",
+          "provenance": "observed",
+          "midpoint_error_px": 6.008707846621711,
+          "long_axis_offset_px": 5.77717912728202,
+          "angle_error_deg": 0.17262535032999957
+        },
+        {
+          "slot_id": "ridge_line0023_line0003_s01",
+          "reference_id": "c5r3",
+          "decision": "uncertain",
+          "provenance": "inferred",
+          "midpoint_error_px": 8.838243980282432,
+          "long_axis_offset_px": 8.633181910246673,
+          "angle_error_deg": 0.2993637112201806
+        }
+      ],
+      "reference_strip_chain_ids": {
+        "c0": [],
+        "c1": [
+          "ridge_line0008_line0063"
+        ],
+        "c2": [
+          "ridge_line0007_line0062"
+        ],
+        "c3": [
+          "ridge_line0001_line0021"
+        ],
+        "c4": [],
+        "c5": [
+          "ridge_line0023_line0003"
+        ]
+      },
+      "uncovered_reference_strips": [
+        "c0",
+        "c4"
+      ],
+      "fragmented_reference_strips": [],
+      "predicted_chain_reference_strips": {
+        "ridge_line0001_line0021": [
+          "c3"
+        ],
+        "ridge_line0007_line0062": [
+          "c2"
+        ],
+        "ridge_line0008_line0063": [
+          "c1"
+        ],
+        "ridge_line0023_line0003": [
+          "c5"
+        ]
+      },
+      "mixed_reference_strip_chains": [],
+      "interpretation": "Conditional image-plane alignment to existing face polygons; repeated shared ends counted per face, not unique physical seams. Provenance is an algorithm declaration, not independent observed-seam truth."
+    }
+  ],
+  "proxy_summary": {
+    "slot_phase_reference_lengths": {
+      "count": 67,
+      "median": 0.040979286861699646,
+      "p90": 0.07782597742800372,
+      "max": 0.11466303190766144
+    },
+    "boundary_by_provenance": {
+      "observed": {
+        "midpoint_error_px": {
+          "count": 83,
+          "median": 4.1996729590084,
+          "p90": 6.145452437349301,
+          "max": 11.872774027309086
+        },
+        "long_axis_offset_px": {
+          "count": 83,
+          "median": 3.006608475894861,
+          "p90": 5.912520637287629,
+          "max": 11.180389404296875
+        },
+        "angle_error_deg": {
+          "count": 83,
+          "median": 0.843303942637852,
+          "p90": 1.9830384048188507,
+          "max": 2.709550737289747
+        }
+      },
+      "inferred": {
+        "midpoint_error_px": {
+          "count": 51,
+          "median": 5.978137566298026,
+          "p90": 9.768332902535198,
+          "max": 14.302050360253865
+        },
+        "long_axis_offset_px": {
+          "count": 51,
+          "median": 5.184926320238809,
+          "p90": 8.633181910246673,
+          "max": 12.226653789884674
+        },
+        "angle_error_deg": {
+          "count": 51,
+          "median": 0.8101767819031783,
+          "p90": 1.400718425993062,
+          "max": 2.169847216292451
+        }
+      }
+    }
+  },
+  "by_group": {
+    "A": {
+      "primary_present": {
+        "positive_references": 56,
+        "ambiguous_references_excluded": 4,
+        "lower_fragments": 7,
+        "raw_detections": 5,
+        "matched": 4,
+        "missed_individual_faces": 52,
+        "merge": 0,
+        "duplicate": 0,
+        "lower_layer_target": 0,
+        "ambiguous_ignored": 1,
+        "other_spurious_or_unresolved": 0,
+        "outside_roi": 0,
+        "annotated_images": 2,
+        "individual_face_recall": 0.07142857142857142,
+        "scored_roi_instance_precision": 1.0
+      },
+      "three_way_slots": {
+        "positive_decisions": {
+          "present": 4,
+          "missing": 0,
+          "uncertain": 11,
+          "no_match": 41
+        },
+        "missing_decisions": {
+          "present": 1,
+          "missing": 0,
+          "uncertain": 0,
+          "no_match": 3
+        },
+        "positive_decisive_coverage": 0.07142857142857142,
+        "positive_correct_present_coverage": 0.07142857142857142,
+        "absence_decisive_coverage": 0.25,
+        "absence_correct_missing_coverage": 0.0,
+        "known_reference_missing_precision": null,
+        "unverified_missing_claims": 0
+      }
+    },
+    "B": {
+      "primary_present": {
+        "positive_references": 28,
+        "ambiguous_references_excluded": 2,
+        "lower_fragments": 4,
+        "raw_detections": 1,
+        "matched": 1,
+        "missed_individual_faces": 27,
+        "merge": 0,
+        "duplicate": 0,
+        "lower_layer_target": 0,
+        "ambiguous_ignored": 0,
+        "other_spurious_or_unresolved": 0,
+        "outside_roi": 0,
+        "annotated_images": 1,
+        "individual_face_recall": 0.03571428571428571,
+        "scored_roi_instance_precision": 1.0
+      },
+      "three_way_slots": {
+        "positive_decisions": {
+          "present": 1,
+          "missing": 0,
+          "uncertain": 3,
+          "no_match": 24
+        },
+        "missing_decisions": {
+          "present": 0,
+          "missing": 0,
+          "uncertain": 0,
+          "no_match": 2
+        },
+        "positive_decisive_coverage": 0.03571428571428571,
+        "positive_correct_present_coverage": 0.03571428571428571,
+        "absence_decisive_coverage": 0.0,
+        "absence_correct_missing_coverage": 0.0,
+        "known_reference_missing_precision": null,
+        "unverified_missing_claims": 0
+      }
+    },
+    "C": {
+      "primary_present": {
+        "positive_references": 28,
+        "ambiguous_references_excluded": 2,
+        "lower_fragments": 4,
+        "raw_detections": 6,
+        "matched": 3,
+        "missed_individual_faces": 25,
+        "merge": 0,
+        "duplicate": 0,
+        "lower_layer_target": 0,
+        "ambiguous_ignored": 0,
+        "other_spurious_or_unresolved": 3,
+        "outside_roi": 0,
+        "annotated_images": 1,
+        "individual_face_recall": 0.10714285714285714,
+        "scored_roi_instance_precision": 0.5
+      },
+      "three_way_slots": {
+        "positive_decisions": {
+          "present": 3,
+          "missing": 0,
+          "uncertain": 5,
+          "no_match": 20
+        },
+        "missing_decisions": {
+          "present": 0,
+          "missing": 0,
+          "uncertain": 0,
+          "no_match": 0
+        },
+        "positive_decisive_coverage": 0.10714285714285714,
+        "positive_correct_present_coverage": 0.10714285714285714,
+        "absence_decisive_coverage": null,
+        "absence_correct_missing_coverage": null,
+        "known_reference_missing_precision": null,
+        "unverified_missing_claims": 0
+      }
+    },
+    "D": {
+      "primary_present": {
+        "positive_references": 54,
+        "ambiguous_references_excluded": 6,
+        "lower_fragments": 8,
+        "raw_detections": 27,
+        "matched": 27,
+        "missed_individual_faces": 27,
+        "merge": 0,
+        "duplicate": 0,
+        "lower_layer_target": 0,
+        "ambiguous_ignored": 0,
+        "other_spurious_or_unresolved": 0,
+        "outside_roi": 0,
+        "annotated_images": 2,
+        "individual_face_recall": 0.5,
+        "scored_roi_instance_precision": 1.0
+      },
+      "three_way_slots": {
+        "positive_decisions": {
+          "present": 27,
+          "missing": 0,
+          "uncertain": 13,
+          "no_match": 14
+        },
+        "missing_decisions": {
+          "present": 0,
+          "missing": 0,
+          "uncertain": 0,
+          "no_match": 0
+        },
+        "positive_decisive_coverage": 0.5,
+        "positive_correct_present_coverage": 0.5,
+        "absence_decisive_coverage": null,
+        "absence_correct_missing_coverage": null,
+        "known_reference_missing_precision": null,
+        "unverified_missing_claims": 0
+      }
+    }
+  }
+}

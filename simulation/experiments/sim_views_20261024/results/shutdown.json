@@ -1,0 +1,7 @@
+{
+  "completed": false,
+  "capture_validated": true,
+  "queue_result": "Killed",
+  "reason": "Validated capture completed; normal app.close(wait_for_replicator=False) did not return, so orchestrator stopped cleanup to release default queue.",
+  "ended_local": "2026-10-24T12:32:43.962993538+02:00"
+}

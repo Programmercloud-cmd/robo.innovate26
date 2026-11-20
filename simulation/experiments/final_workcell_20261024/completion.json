@@ -1,0 +1,2336 @@
+{
+  "complete": true,
+  "scope": "Approximate static visual workcell twin; no training/perception development/manipulation/ROS/hardware control",
+  "runs": [
+    {
+      "job_id": 1696,
+      "role": "photo_audit_superseded",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T202958.605774Z-final-workcell-photo-audit",
+      "source_commit": "86b4ccb64e7f10d635f11ef5b8393be24e97c69d",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T202958.605774Z-final-workcell-photo-audit/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1697,
+      "role": "tape_aware_layout_audit",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T203806.556370Z-final-workcell-photo-audit-tape",
+      "source_commit": "e9f9bc26bd180995f2f739c8afdae00ec698b4fe",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T203806.556370Z-final-workcell-photo-audit-tape/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1698,
+      "role": "initial_static_preview",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T204010.578349Z-final-workcell-render",
+      "source_commit": "4c482e2442ec66a3038b9ad5314520d893f13714",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T204010.578349Z-final-workcell-render/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1699,
+      "role": "diagnostic_framing_preview",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T204355.276192Z-final-workcell-render-framing",
+      "source_commit": "87352b6cd31a975300ab87853389d7c30f359475",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T204355.276192Z-final-workcell-render-framing/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1700,
+      "role": "final_initialized_twin",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T204939.156692Z-final-workcell-preview",
+      "source_commit": "e02864e3da7fa9afe3fbcb00f8781a1fbf36079f",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T204939.156692Z-final-workcell-preview/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1701,
+      "role": "nominal_charuco_asset_and_photo_correspondences",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T211152.477912Z-charuco-asset-audit",
+      "source_commit": "e0a639cf654c2f157d337f2b0d1ed5bc2c5977ad",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T211152.477912Z-charuco-asset-audit/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1702,
+      "role": "final_charuco_twin_and_rendered_UV_check",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T211537.337776Z-final-workcell-preview",
+      "source_commit": "45ab945508dd8ab4fddc5cb0cdef1bd76449fd6c",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T211537.337776Z-final-workcell-preview/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1703,
+      "role": "fixed_base_asset_axis_probe_yaw90",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T213858.289323Z-final-workcell-preview",
+      "source_commit": "5958a3e486b5851ae98a5afc2f39a4326dd79bda",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T213858.289323Z-final-workcell-preview/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1704,
+      "role": "photo_estimated_yaw45_and_comparable_views",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T214640.110593Z-final-workcell-preview",
+      "source_commit": "0565e3a5818fcaa4193d5257668cee47254d1d75",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T214640.110593Z-final-workcell-preview/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1705,
+      "role": "initial_fixed_feature_annotations",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T214812.834041Z-base-orientation-annotations",
+      "source_commit": "0565e3a5818fcaa4193d5257668cee47254d1d75",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T214812.834041Z-base-orientation-annotations/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1706,
+      "role": "final_legible_fixed_feature_evidence",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T214949.269584Z-base-orientation-evidence",
+      "source_commit": "ebd2ef0c6fae02aa4b87331349ff8c16c1691f27",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T214949.269584Z-base-orientation-evidence/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1707,
+      "role": "first_appearance_pass_weak_key_not_promoted",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T222727.585199Z-final-workcell-preview",
+      "source_commit": "f54d701ffc9293c5f4b55e9c203a316edce4438f",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T222727.585199Z-final-workcell-preview/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1708,
+      "role": "corrected_visual_appearance_preset",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T223031.192426Z-final-workcell-preview",
+      "source_commit": "810bcdef3a1bb550103cbcc7c7c3545cec05b137",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T223031.192426Z-final-workcell-preview/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1709,
+      "role": "matched_view_appearance_invariance_and_exposure_diagnostics",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T223147.006998Z-appearance-comparison",
+      "source_commit": "810bcdef3a1bb550103cbcc7c7c3545cec05b137",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T223147.006998Z-appearance-comparison/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1710,
+      "role": "corrected_wrist_camera_and_bracket_side",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T225412.612710Z-final-workcell-preview",
+      "source_commit": "526fc7eb88950f83a26802cbf88641e70bb9b7f4",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T225412.612710Z-final-workcell-preview/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1711,
+      "role": "mount_transform_and_unchanged_workcell_verification",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T225503.569156Z-wrist-mount-verification",
+      "source_commit": "077b75fce8c48e04bb26e625e0f9b40d3f66bde6",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T225503.569156Z-wrist-mount-verification/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1712,
+      "role": "initial_c920_visual",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T230925.480932Z-final-workcell-preview",
+      "source_commit": "8580c67b019c61882dc99fe7cf98faeb7828d7f7",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T230925.480932Z-final-workcell-preview/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1713,
+      "role": "initial_c920_invariance",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T230938.571170Z-c920-verification",
+      "source_commit": "8580c67b019c61882dc99fe7cf98faeb7828d7f7",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T230938.571170Z-c920-verification/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1714,
+      "role": "c920_framing_revision",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T231037.993175Z-final-workcell-preview",
+      "source_commit": "8ed4279294a6627cfe11233a8f77298599af7d91",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T231037.993175Z-final-workcell-preview/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1715,
+      "role": "c920_framing_invariance",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T231048.734625Z-c920-verification",
+      "source_commit": "8ed4279294a6627cfe11233a8f77298599af7d91",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T231048.734625Z-c920-verification/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1716,
+      "role": "final_c920_unobstructed_inspection",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T231138.248707Z-final-workcell-preview",
+      "source_commit": "aec7f2c38dfd3272505684a9ceea74dc5f31dff5",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T231138.248707Z-final-workcell-preview/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1717,
+      "role": "final_c920_invariance",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T231148.980882Z-c920-verification",
+      "source_commit": "aec7f2c38dfd3272505684a9ceea74dc5f31dff5",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261024T231148.980882Z-c920-verification/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1718,
+      "role": "C920_reference_correction_initial_finger_audit",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T000241.718074Z-final-workcell-preview",
+      "source_commit": "83a0df3b1fe9b040dc13755919d1debca9a6de3e",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261025T000241.718074Z-final-workcell-preview/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1719,
+      "role": "native_pad_material_face_audit",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T000456.886434Z-final-workcell-preview",
+      "source_commit": "3211147e1d5268a5ec0241eecc248062219fd25b",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261025T000456.886434Z-final-workcell-preview/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1720,
+      "role": "reference_C920_and_supplied_tip_visuals",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T000918.719244Z-final-workcell-preview",
+      "source_commit": "ac29781575fc6f46a21e7fb461100fecc048439f",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261025T000918.719244Z-final-workcell-preview/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1721,
+      "role": "end_effector_invariance",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T001003.870890Z-end-effector-verification",
+      "source_commit": "ac29781575fc6f46a21e7fb461100fecc048439f",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261025T001003.870890Z-end-effector-verification/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1770,
+      "role": "saved_native_seat_inspection_no_unique_distal_seat",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T070427.808136Z-pad-seat-inspection",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261025T070427.808136Z-pad-seat-inspection/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1771,
+      "role": "corrected_tapered_pads_and_outside_round_heads",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T071719.927577Z-final-workcell-preview",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261025T071719.927577Z-final-workcell-preview/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1772,
+      "role": "mounting_visual_and_unchanged_workcell_verification",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T071811.763056Z-pad-mount-verification",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261025T071811.763056Z-pad-mount-verification/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1773,
+      "role": "pad_upper_edge_alignment_and_extra_distal_length",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T072956.568941Z-final-workcell-preview",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261025T072956.568941Z-final-workcell-preview/launch.sh",
+      "queue": "default"
+    },
+    {
+      "job_id": 1774,
+      "role": "pad_height_and_unchanged_workcell_visual_verification",
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T073123.815357Z-pad-height-verification",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261025T073123.815357Z-pad-height-verification/launch.sh",
+      "queue": "default"
+    }
+  ],
+  "final_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T072956.568941Z-final-workcell-preview",
+  "final_scene_config": "/home/faps/dev/github/robo.innovate26/experiments/final_workcell_20261024/scene_config.json",
+  "artifacts": {
+    "usd_visual_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T072956.568941Z-final-workcell-preview/output/final_workcell.usda",
+    "overhead": "/home/faps/dev/github/robo.innovate26/runs/20261025T072956.568941Z-final-workcell-preview/output/images/diagnostic_table_top.png",
+    "oblique": "/home/faps/dev/github/robo.innovate26/runs/20261025T000918.719244Z-final-workcell-preview/output/images/diagnostic_oblique.png",
+    "panel": "/home/faps/dev/github/robo.innovate26/runs/20261025T072956.568941Z-final-workcell-preview/output/panel.png",
+    "manifest": "/home/faps/dev/github/robo.innovate26/runs/20261025T072956.568941Z-final-workcell-preview/output/manifest.json",
+    "layout_estimate": "/home/faps/dev/github/robo.innovate26/experiments/final_workcell_20261024/layout_estimate.json",
+    "charuco_uv_check": "/home/faps/dev/github/robo.innovate26/runs/20261025T072956.568941Z-final-workcell-preview/output/charuco_uv_check.json",
+    "photo_charuco_overlay": "/home/faps/dev/github/robo.innovate26/runs/20261024T211152.477912Z-charuco-asset-audit/output/photo09_charuco_detection.png",
+    "annotated_orientation_photo": "/home/faps/dev/github/robo.innovate26/runs/20261024T214949.269584Z-base-orientation-evidence/output/photo1_annotated.png",
+    "annotated_base_top": "/home/faps/dev/github/robo.innovate26/runs/20261024T214949.269584Z-base-orientation-evidence/output/base_top_annotated.png",
+    "annotated_connector_render": "/home/faps/dev/github/robo.innovate26/runs/20261024T214949.269584Z-base-orientation-evidence/output/base_connector_face_annotated.png",
+    "orientation_comparison": "/home/faps/dev/github/robo.innovate26/runs/20261024T214949.269584Z-base-orientation-evidence/output/comparison.jpg",
+    "appearance_top_comparison": "/home/faps/dev/github/robo.innovate26/runs/20261024T223147.006998Z-appearance-comparison/output/corrected/diagnostic_table_top_before_after.png",
+    "appearance_oblique_comparison": "/home/faps/dev/github/robo.innovate26/runs/20261024T223147.006998Z-appearance-comparison/output/corrected/diagnostic_oblique_before_after.png",
+    "appearance_diagnostics": "/home/faps/dev/github/robo.innovate26/runs/20261024T223147.006998Z-appearance-comparison/output/corrected/comparison.json",
+    "wrist_mount_closeup": "/home/faps/dev/github/robo.innovate26/runs/20261025T000918.719244Z-final-workcell-preview/output/images/diagnostic_wrist_mount.png",
+    "wrist_mount_verification": "/home/faps/dev/github/robo.innovate26/runs/20261024T225503.569156Z-wrist-mount-verification/output/verification.json",
+    "c920_side": "/home/faps/dev/github/robo.innovate26/runs/20261025T000918.719244Z-final-workcell-preview/output/images/diagnostic_c920_side.png",
+    "c920_profile": "/home/faps/dev/github/robo.innovate26/runs/20261025T072956.568941Z-final-workcell-preview/output/images/diagnostic_c920_profile.png",
+    "c920_verification": "/home/faps/dev/github/robo.innovate26/runs/20261024T231148.980882Z-c920-verification/output/verification.json",
+    "corrected_C920_and_tips": "/home/faps/dev/github/robo.innovate26/runs/20261025T072956.568941Z-final-workcell-preview/output/images/diagnostic_c920_grasp_side.png",
+    "updated_fingertips": "/home/faps/dev/github/robo.innovate26/runs/20261025T072956.568941Z-final-workcell-preview/output/updated_fingertips.json",
+    "end_effector_verification": "/home/faps/dev/github/robo.innovate26/runs/20261025T073123.815357Z-pad-height-verification/output/verification.json",
+    "pad_support_side": "/home/faps/dev/github/robo.innovate26/runs/20261025T072956.568941Z-final-workcell-preview/output/images/diagnostic_pad_support_side.png",
+    "pad_inner_faces": "/home/faps/dev/github/robo.innovate26/runs/20261025T072956.568941Z-final-workcell-preview/output/images/diagnostic_pad_inner_faces.png"
+  },
+  "validation": {
+    "bricks": 300,
+    "native_connections": 930,
+    "native_connected_parts": 301,
+    "all_capture_states_equal": true,
+    "post_connection_physics_steps": 0,
+    "robot_initialization": {
+      "preassembly_physics_steps": 1,
+      "joint_names": [
+        "fr3_joint1",
+        "fr3_joint2",
+        "fr3_joint3",
+        "fr3_joint4",
+        "fr3_joint5",
+        "fr3_joint6",
+        "fr3_joint7",
+        "fr3_finger_joint1",
+        "fr3_finger_joint2"
+      ],
+      "joint_units": [
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "rad",
+        "m",
+        "m"
+      ],
+      "requested_joint_positions_native_units": [
+        0.0,
+        -0.4000000059604645,
+        0.0,
+        -2.5,
+        0.0,
+        2.0999999046325684,
+        0.7853999733924866,
+        0.03999999910593033,
+        0.03999999910593033
+      ],
+      "actual_joint_positions_native_units": [
+        0.0,
+        -0.4000000059604645,
+        0.0,
+        -2.5,
+        0.0,
+        2.0999999046325684,
+        0.7853999733924866,
+        0.03999999910593033,
+        0.03999999910593033
+      ],
+      "max_joint_position_error_native_units": 0.0,
+      "hand_physics_pose_wxyz": [
+        0.20277990400791168,
+        -0.10721971094608307,
+        0.4265362620353699,
+        -1.7838465282693505e-07,
+        0.923879861831665,
+        0.3826829195022583,
+        -2.5331974029541016e-07
+      ],
+      "hand_usd_pose_wxyz": [
+        0.20277990400791174,
+        -0.10721971094608301,
+        0.4265362620353699,
+        -1.7838459495235684e-07,
+        0.9238797620632972,
+        0.3826828781769174,
+        -2.5331971290494905e-07
+      ],
+      "hand_position_disagreement_m": 7.850462293418876e-17,
+      "hand_orientation_disagreement_rad": 0.0,
+      "joint_tolerance_native_units": 0.001,
+      "position_tolerance_m": 0.0001,
+      "orientation_tolerance_rad": 0.001,
+      "purpose": "Nominal visual articulation initialization only; no task motion or pose fitting"
+    },
+    "supervisor": {
+      "capture_validated": true,
+      "child_returncode": 0,
+      "cleanup_result": "cleanup_stall_after_validated_capture",
+      "seconds": 20.524982853006804,
+      "native_source_parts": 301,
+      "native_source_connections": 930,
+      "diagnostic_views": [
+        "diagnostic_table_top",
+        "diagnostic_oblique"
+      ],
+      "physical_camera_calibration": "unavailable"
+    },
+    "charuco_asset": {
+      "photo9_marker_count": 17,
+      "photo9_inner_corner_count": 24,
+      "orientation_raw_yaw_deg": 0.060308579337151405,
+      "nominal_rotation_deg": 0,
+      "generated_png_sha256": "ef436eadc3801abd61f4eaffcca6d66f044babeafddb05f5117630b13800476d",
+      "print_scale_verified": false
+    },
+    "charuco_rendered_uv_check": {
+      "schema": "rendered-charuco-uv-check-v1",
+      "configured_center_table_m": [
+        0.4,
+        -0.42,
+        0.00045
+      ],
+      "configured_yaw_deg": 0.0,
+      "views": [
+        {
+          "view": "diagnostic_table_top",
+          "image_sha256": "e5664da58ba7cd5ecd53c07b39ca721bfb298b4cc59f96d22c3eb6e85382f83a",
+          "detected_ids": [
+            13,
+            1,
+            6,
+            15,
+            16,
+            14,
+            3,
+            4,
+            10,
+            11
+          ],
+          "matched_markers": 10,
+          "ordered_corner_checks": [
+            {
+              "id": 13,
+              "observed_ordered_corners_xy": [
+                [
+                  436.0,
+                  243.0
+                ],
+                [
+                  424.0,
+                  242.0
+                ],
+                [
+                  424.0,
+                  230.0
+                ],
+                [
+                  437.0,
+                  230.0
+                ]
+              ],
+              "hypotheses": {
+                "normal": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      437.4165251147846,
+                      243.55004187774944
+                    ],
+                    [
+                      423.86991225521933,
+                      243.550042318348
+                    ],
+                    [
+                      423.8699116630781,
+                      230.00342958862015
+                    ],
+                    [
+                      437.41652452264333,
+                      230.0034291567037
+                    ]
+                  ],
+                  "rms_px": 1.1089502527915225
+                },
+                "Y_mirrored": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      437.41652613757384,
+                      266.94873274072427
+                    ],
+                    [
+                      423.86991327800865,
+                      266.9487331963192
+                    ],
+                    [
+                      423.86991387014984,
+                      280.49534592604704
+                    ],
+                    [
+                      437.4165267297151,
+                      280.49534546176994
+                    ]
+                  ],
+                  "rms_px": 39.679197469372475
+                },
+                "rotated_180": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      534.7058187809481,
+                      266.94872946872454
+                    ],
+                    [
+                      548.252431498442,
+                      266.9487290131296
+                    ],
+                    [
+                      548.2524320905833,
+                      280.49534166313975
+                    ],
+                    [
+                      534.7058193730893,
+                      280.4953421274168
+                    ]
+                  ],
+                  "rms_px": 118.8088162164986
+                }
+              }
+            },
+            {
+              "id": 1,
+              "observed_ordered_corners_xy": [
+                [
+                  492.0,
+                  298.0
+                ],
+                [
+                  479.0,
+                  298.0
+                ],
+                [
+                  479.0,
+                  286.0
+                ],
+                [
+                  492.0,
+                  286.0
+                ]
+              ],
+              "hypotheses": {
+                "normal": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      492.8344823815174,
+                      298.96799954968486
+                    ],
+                    [
+                      479.2878695929877,
+                      298.96800002580125
+                    ],
+                    [
+                      479.2878690008465,
+                      285.4213867581246
+                    ],
+                    [
+                      492.83448178937607,
+                      285.42138629069035
+                    ]
+                  ],
+                  "rms_px": 1.0126811507693863
+                },
+                "Y_mirrored": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      492.8344785595147,
+                      211.53077140254302
+                    ],
+                    [
+                      479.2878657709851,
+                      211.53077182262018
+                    ],
+                    [
+                      479.28786636312634,
+                      225.07738509029684
+                    ],
+                    [
+                      492.834479151656,
+                      225.07738466153754
+                    ]
+                  ],
+                  "rms_px": 74.79729845825192
+                },
+                "rotated_180": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      479.28786173377983,
+                      211.5307718226203
+                    ],
+                    [
+                      492.83447452230945,
+                      211.53077140254317
+                    ],
+                    [
+                      492.83447511445075,
+                      225.0773846615377
+                    ],
+                    [
+                      479.28786232592114,
+                      225.07738509029699
+                    ]
+                  ],
+                  "rms_px": 75.96539882323108
+                }
+              }
+            },
+            {
+              "id": 6,
+              "observed_ordered_corners_xy": [
+                [
+                  437.0,
+                  279.0
+                ],
+                [
+                  424.0,
+                  279.0
+                ],
+                [
+                  424.0,
+                  267.0
+                ],
+                [
+                  437.0,
+                  267.0
+                ]
+              ],
+              "hypotheses": {
+                "normal": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      437.41652672971526,
+                      280.49534867318323
+                    ],
+                    [
+                      423.86991387015,
+                      280.4953491374603
+                    ],
+                    [
+                      423.8699132780087,
+                      266.9487364077325
+                    ],
+                    [
+                      437.416526137574,
+                      266.9487359521375
+                    ]
+                  ],
+                  "rms_px": 1.1020692074521674
+                },
+                "Y_mirrored": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      437.41652452264316,
+                      230.00342594529047
+                    ],
+                    [
+                      423.86991166307797,
+                      230.00342637720686
+                    ],
+                    [
+                      423.8699122552192,
+                      243.55003910693472
+                    ],
+                    [
+                      437.4165251147844,
+                      243.55003866633618
+                    ]
+                  ],
+                  "rms_px": 38.410645269101494
+                },
+                "rotated_180": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      534.7058171660174,
+                      230.00342284334582
+                    ],
+                    [
+                      548.2524298835114,
+                      230.00342241142937
+                    ],
+                    [
+                      548.2524304756525,
+                      243.55003506143947
+                    ],
+                    [
+                      534.7058177581587,
+                      243.55003550203804
+                    ]
+                  ],
+                  "rms_px": 118.18557147762337
+                }
+              }
+            },
+            {
+              "id": 15,
+              "observed_ordered_corners_xy": [
+                [
+                  492.0,
+                  224.0
+                ],
+                [
+                  479.0,
+                  224.0
+                ],
+                [
+                  479.0,
+                  212.0
+                ],
+                [
+                  492.0,
+                  212.0
+                ]
+              ],
+              "hypotheses": {
+                "normal": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      492.834479151656,
+                      225.07738557908417
+                    ],
+                    [
+                      479.2878663631264,
+                      225.07738600784347
+                    ],
+                    [
+                      479.28786577098515,
+                      211.5307733136335
+                    ],
+                    [
+                      492.83447855951476,
+                      211.5307728935563
+                    ]
+                  ],
+                  "rms_px": 1.0392679782542018
+                },
+                "Y_mirrored": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      492.834481789376,
+                      285.42138537314366
+                    ],
+                    [
+                      479.2878690008464,
+                      285.42138584057795
+                    ],
+                    [
+                      479.2878695929877,
+                      298.9679985347879
+                    ],
+                    [
+                      492.8344823815172,
+                      298.9679980586715
+                    ]
+                  ],
+                  "rms_px": 75.28877262477359
+                },
+                "rotated_180": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      479.2878649636412,
+                      285.42138584057807
+                    ],
+                    [
+                      492.83447775217087,
+                      285.42138537314383
+                    ],
+                    [
+                      492.83447834431206,
+                      298.96799805867175
+                    ],
+                    [
+                      479.2878655557825,
+                      298.9679985347881
+                    ]
+                  ],
+                  "rms_px": 76.44936392845018
+                }
+              }
+            },
+            {
+              "id": 16,
+              "observed_ordered_corners_xy": [
+                [
+                  455.0,
+                  224.0
+                ],
+                [
+                  442.0,
+                  224.0
+                ],
+                [
+                  442.0,
+                  212.0
+                ],
+                [
+                  455.0,
+                  212.0
+                ]
+              ],
+              "hypotheses": {
+                "normal": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      455.8891790128759,
+                      225.0773867484275
+                    ],
+                    [
+                      442.3425661769892,
+                      225.07738717718675
+                    ],
+                    [
+                      442.3425655848479,
+                      211.5307744592982
+                    ],
+                    [
+                      455.88917842073465,
+                      211.53077403922103
+                    ]
+                  ],
+                  "rms_px": 1.069795692170677
+                },
+                "Y_mirrored": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      455.8891816505959,
+                      285.4213866479641
+                    ],
+                    [
+                      442.34256881470924,
+                      285.4213871153983
+                    ],
+                    [
+                      442.3425694068505,
+                      298.9679998332869
+                    ],
+                    [
+                      455.88918224273715,
+                      298.9679993571705
+                    ]
+                  ],
+                  "rms_px": 75.28920147735265
+                },
+                "rotated_180": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      516.2331650206228,
+                      285.4213845657577
+                    ],
+                    [
+                      529.7797777617953,
+                      285.4213840983234
+                    ],
+                    [
+                      529.7797783539365,
+                      298.96799676017275
+                    ],
+                    [
+                      516.2331656127641,
+                      298.96799723628914
+                    ]
+                  ],
+                  "rms_px": 106.74925977668008
+                }
+              }
+            },
+            {
+              "id": 14,
+              "observed_ordered_corners_xy": [
+                [
+                  529.0,
+                  224.0
+                ],
+                [
+                  516.0,
+                  224.0
+                ],
+                [
+                  516.0,
+                  212.0
+                ],
+                [
+                  529.0,
+                  212.0
+                ]
+              ],
+              "hypotheses": {
+                "normal": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      529.7797860428803,
+                      225.07738440974072
+                    ],
+                    [
+                      516.2331733017078,
+                      225.0773848385
+                    ],
+                    [
+                      516.2331727095666,
+                      211.53077216796854
+                    ],
+                    [
+                      529.779785450739,
+                      211.5307717478914
+                    ]
+                  ],
+                  "rms_px": 1.0107838654335377
+                },
+                "Y_mirrored": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      529.7797886806003,
+                      285.4213840983231
+                    ],
+                    [
+                      516.2331759394278,
+                      285.4213845657573
+                    ],
+                    [
+                      516.233176531569,
+                      298.96799723628874
+                    ],
+                    [
+                      529.7797892727415,
+                      298.9679967601724
+                    ]
+                  ],
+                  "rms_px": 75.28838355667285
+                },
+                "rotated_180": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      442.34255789590406,
+                      285.4213871153987
+                    ],
+                    [
+                      455.88917073179084,
+                      285.4213866479645
+                    ],
+                    [
+                      455.8891713239321,
+                      298.9679993571709
+                    ],
+                    [
+                      442.3425584880453,
+                      298.9679998332873
+                    ]
+                  ],
+                  "rms_px": 105.96896644889475
+                }
+              }
+            },
+            {
+              "id": 3,
+              "observed_ordered_corners_xy": [
+                [
+                  547.0,
+                  279.0
+                ],
+                [
+                  535.0,
+                  279.0
+                ],
+                [
+                  535.0,
+                  267.0
+                ],
+                [
+                  547.0,
+                  267.0
+                ]
+              ],
+              "hypotheses": {
+                "normal": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      548.2524412889884,
+                      280.49534487455264
+                    ],
+                    [
+                      534.7058279980279,
+                      280.4953453388298
+                    ],
+                    [
+                      534.7058274058866,
+                      266.94873268013754
+                    ],
+                    [
+                      548.2524406968472,
+                      266.94873222454254
+                    ]
+                  ],
+                  "rms_px": 1.395319162633662
+                },
+                "Y_mirrored": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      548.2524390819164,
+                      230.00342241142909
+                    ],
+                    [
+                      534.7058257909558,
+                      230.00342284334553
+                    ],
+                    [
+                      534.705826383097,
+                      243.55003550203776
+                    ],
+                    [
+                      548.2524396740577,
+                      243.55003506143916
+                    ]
+                  ],
+                  "rms_px": 38.42018077914744
+                },
+                "rotated_180": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      423.86990246467275,
+                      230.0034263772072
+                    ],
+                    [
+                      437.4165158977047,
+                      230.00342594529073
+                    ],
+                    [
+                      437.41651648984595,
+                      243.55003866633643
+                    ],
+                    [
+                      423.869903056814,
+                      243.55003910693506
+                    ]
+                  ],
+                  "rms_px": 117.54599542745594
+                }
+              }
+            },
+            {
+              "id": 4,
+              "observed_ordered_corners_xy": [
+                [
+                  510.0,
+                  279.0
+                ],
+                [
+                  498.0,
+                  279.0
+                ],
+                [
+                  498.0,
+                  267.0
+                ],
+                [
+                  510.0,
+                  267.0
+                ]
+              ],
+              "hypotheses": {
+                "normal": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      511.30713618274194,
+                      280.4953461407628
+                    ],
+                    [
+                      497.76052341789097,
+                      280.49534660503997
+                    ],
+                    [
+                      497.76052282574966,
+                      266.9487339226692
+                    ],
+                    [
+                      511.3071355906007,
+                      266.9487334670742
+                    ]
+                  ],
+                  "rms_px": 1.4150339943615928
+                },
+                "Y_mirrored": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      511.3071339756699,
+                      230.00342358938286
+                    ],
+                    [
+                      497.76052121081887,
+                      230.0034240212993
+                    ],
+                    [
+                      497.76052180296017,
+                      243.5500367036701
+                    ],
+                    [
+                      511.3071345678111,
+                      243.5500362630715
+                    ]
+                  ],
+                  "rms_px": 38.42090067712676
+                },
+                "rotated_180": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      460.81520787658775,
+                      230.00342519925337
+                    ],
+                    [
+                      474.36182068879594,
+                      230.00342476733695
+                    ],
+                    [
+                      474.3618212809372,
+                      243.55003746470413
+                    ],
+                    [
+                      460.81520846872905,
+                      243.55003790530267
+                    ]
+                  ],
+                  "rms_px": 54.44479933929764
+                }
+              }
+            },
+            {
+              "id": 10,
+              "observed_ordered_corners_xy": [
+                [
+                  547.0,
+                  242.0
+                ],
+                [
+                  535.0,
+                  242.0
+                ],
+                [
+                  535.0,
+                  230.0
+                ],
+                [
+                  547.0,
+                  230.0
+                ]
+              ],
+              "hypotheses": {
+                "normal": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      548.2524396740578,
+                      243.55003827285242
+                    ],
+                    [
+                      534.7058263830971,
+                      243.55003871345102
+                    ],
+                    [
+                      534.7058257909559,
+                      230.0034260547588
+                    ],
+                    [
+                      548.2524390819166,
+                      230.00342562284231
+                    ]
+                  ],
+                  "rms_px": 1.4243900015850328
+                },
+                "Y_mirrored": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      548.2524406968471,
+                      266.9487290131293
+                    ],
+                    [
+                      534.7058274058865,
+                      266.9487294687243
+                    ],
+                    [
+                      534.7058279980276,
+                      280.49534212741656
+                    ],
+                    [
+                      548.2524412889883,
+                      280.4953416631394
+                    ]
+                  ],
+                  "rms_px": 39.83637652723808
+                },
+                "rotated_180": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      423.8699040796035,
+                      266.9487331963195
+                    ],
+                    [
+                      437.4165175126354,
+                      266.9487327407245
+                    ],
+                    [
+                      437.4165181047766,
+                      280.4953454617702
+                    ],
+                    [
+                      423.86990467174473,
+                      280.4953459260474
+                    ]
+                  ],
+                  "rms_px": 118.01647270300066
+                }
+              }
+            },
+            {
+              "id": 11,
+              "observed_ordered_corners_xy": [
+                [
+                  510.0,
+                  242.0
+                ],
+                [
+                  498.0,
+                  242.0
+                ],
+                [
+                  498.0,
+                  231.0
+                ],
+                [
+                  509.0,
+                  230.0
+                ]
+              ],
+              "hypotheses": {
+                "normal": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      511.30713456781126,
+                      243.55003947448475
+                    ],
+                    [
+                      497.7605218029602,
+                      243.55003991508335
+                    ],
+                    [
+                      497.760521210819,
+                      230.0034272327126
+                    ],
+                    [
+                      511.30713397567,
+                      230.00342680079612
+                    ]
+                  ],
+                  "rms_px": 1.7989290558314266
+                },
+                "Y_mirrored": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      511.3071355906005,
+                      266.94873025566096
+                    ],
+                    [
+                      497.76052282574955,
+                      266.94873071125596
+                    ],
+                    [
+                      497.7605234178908,
+                      280.49534339362674
+                    ],
+                    [
+                      511.3071361827418,
+                      280.4953429293496
+                    ]
+                  ],
+                  "rms_px": 39.533508444882685
+                },
+                "rotated_180": {
+                  "expected_ordered_corners_xy": [
+                    [
+                      460.81520949151843,
+                      266.94873195378784
+                    ],
+                    [
+                      474.36182230372657,
+                      266.9487314981929
+                    ],
+                    [
+                      474.36182289586776,
+                      280.49534419556005
+                    ],
+                    [
+                      460.8152100836597,
+                      280.49534465983714
+                    ]
+                  ],
+                  "rms_px": 55.006571918897954
+                }
+              }
+            }
+          ],
+          "rms_px": {
+            "normal": 1.2621546848892216,
+            "Y_mirrored": 56.34870643075976,
+            "rotated_180": 98.00935949819605
+          },
+          "minimum_error_hypothesis": "normal",
+          "status": "conditional_correspondence_check_available"
+        },
+        {
+          "view": "diagnostic_oblique",
+          "image_sha256": "62d49261b4da503b50f9b19b7ce932c3c189efd2040cad6014adc367e4015288",
+          "detected_ids": [],
+          "matched_markers": 0,
+          "ordered_corner_checks": [],
+          "rms_px": {
+            "normal": null,
+            "Y_mirrored": null,
+            "rotated_180": null
+          },
+          "minimum_error_hypothesis": null,
+          "status": "unverified_insufficient_decoded_ids"
+        }
+      ],
+      "asset_png_sha256": "ef436eadc3801abd61f4eaffcca6d66f044babeafddb05f5117630b13800476d",
+      "source_sha256": "07a66ddf647680a2642f334cf2e63d00e2f84194258a082b4911b87ee73673d4",
+      "asset_audit_sha256": "da6e3e69a76f3a1589e35c087d9d789d50e001c7e77a52736072162118bc4e5c",
+      "cameras_sha256": "316a2474c68a582242da2e2b56ad921b4e76788eb932bfffe6e5c89cc9d43561",
+      "interpretation": "Conditional decoded-ID ordered-corner check of saved render against configured asset geometry. No detector tuning, layout fitting, scale change or physical camera calibration; low-resolution non-decoding remains unverified."
+    }
+  },
+  "camera_provenance": {
+    "model": "Apple iPhone 12",
+    "zoom": "Original photos6and7 at0.5x; originalphotos1-5,8-10 at1x",
+    "source": "User identified two reference images; exact-byte original matches recorded where available",
+    "intrinsics_calibrated": false,
+    "note": "Embedded focal/device EXIF absent; mixed supplied resolutions. This records lens groups, not calibrated intrinsics or wristD435i calibration."
+  },
+  "limits": [
+    "Reported25/38cm plate sizes differ from native25.6/38.4cm; stud geometry unstretched",
+    "Tape-aware planar fit retains ruler/gray-size discrepancies; no robot/phone/wrist calibration",
+    "Robotbase SE2 and joint pose nominal/estimated, nominal ChArUco graphic, actual print scale unverified",
+    "Only physical wrist camera specified; opticalTF/intrinsics unset; additional2cameras omitted",
+    "Native connections procedurally restored by launcher; standaloneUSD graph persistence unvalidated",
+    "Tape-covered studrows unavailable in placement metadata; no insertion/reachability/drop dynamics verified",
+    "ChArUco oblique render has no decoded markers; top-view UV evidence is conditional and does not calibrate physical cameras or robot."
+  ],
+  "artifact_sha256": {
+    "final_workcell.usda": "bb8d7ffd53e1aa3259417928eeda3017751c64a807b25d8e0e0ec903a7423f62",
+    "manifest.json": "794d2f14699f0a56bf8d481416bd549f42e7d9c6f34171626456a1c9eb7c40b1",
+    "robot_initialization.json": "8b1d550049f0b78fc52da04ab84da95b4f811d90f1b875783b6a9a4fe6740063",
+    "comparison.json": "58f7bcdde3b4927df36e712b86feeb17706b648ed54e3e7703e129cebae2b452"
+  },
+  "previous_final_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T071719.927577Z-final-workcell-preview",
+  "base_orientation_update": {
+    "previous_yaw_table_deg": 90,
+    "estimated_yaw_table_deg": 45,
+    "asset_connector_face": "lower white-housing flank approximately asset -Y",
+    "photo1_table_direction": "+X/-Y quadrant",
+    "photo2_role": "fixed feature identification only; different brick layout ignored",
+    "qualitative_uncertainty": "Coarse photograph-supported visual orientation, not calibrated robot-frame alignment.",
+    "base_position_unchanged": true,
+    "all_other_scene_parameters_unchanged": true,
+    "nominal_joints_unchanged": true,
+    "all_source_states_max_difference": 0.0,
+    "annotation_provenance": "/home/faps/dev/github/robo.innovate26/runs/20261024T214949.269584Z-base-orientation-evidence/output/annotation_provenance.json"
+  },
+  "appearance_update": {
+    "kind": "heuristic lighting/material-finish preset; not calibrated photometry or transfer validation",
+    "preset": "appearance_config.json",
+    "lighting": "cameras_realism.json",
+    "key": "RectLight on negative table X, .26x.18m, authoredintensity20000normalizeFalse, dome120",
+    "brick_palette_and_abs_materials_unchanged": true,
+    "all_invariance_guards": {
+      "scene_config_equal": true,
+      "required_counts_and_static_capture": true,
+      "exposure_and_tonemapping_unchanged": true,
+      "native_graph_counts": true,
+      "native_part_set_unchanged": true,
+      "requested_default_q_equal": true,
+      "actual_q_equal": true,
+      "preassembly_steps_unchanged": true,
+      "source_position_within_2um": true,
+      "source_orientation_within_1e_minus4_rad": true,
+      "source_velocities_equal": true,
+      "cameras_unchanged_1e_minus6": true
+    },
+    "comparison_report": "/home/faps/dev/github/robo.innovate26/runs/20261024T223147.006998Z-appearance-comparison/output/corrected/comparison.json",
+    "observed_tradeoff": "Clearer contact shadows/form highlights, darker gray plate/background; no >=254 gray/channel clipping in the two checked views",
+    "domain_gap_reduction_measured": false,
+    "detector_training_or_hardware_control": false,
+    "default_legacy_preview_preserved": "Use explicit --cameras cameras_realism.json --appearance appearance_config.json to enable new preset"
+  },
+  "wrist_mount_update": {
+    "correction": "Rotate camera AND bracket 180 degrees around fr3_hand Z with consistent initial poses and fixed-joint frames",
+    "calibration": "Inherited dimensions remain approximate; no calibrated hand-optical transform",
+    "all_invariance_checks_passed": true,
+    "verification_job": 1711
+  },
+  "wrist_mount_capture_validation": {
+    "capture_validated": true,
+    "child_returncode": 0,
+    "cleanup_result": "cleanup_stall_after_validated_capture",
+    "seconds": 19.52601598999172,
+    "native_source_parts": 301,
+    "native_source_connections": 930,
+    "diagnostic_views": [
+      "diagnostic_table_top",
+      "diagnostic_oblique",
+      "diagnostic_wrist_mount"
+    ],
+    "physical_camera_calibration": "unavailable"
+  },
+  "validation_provenance": "Historical detailed appearance capture checks retained; latest mount capture and invariance checks are recorded separately under wrist_mount_capture_validation and wrist_mount_update.",
+  "c920_update": {
+    "scope": "Visual-only housing, folded stand, hinge and tape child under hand -X; preserves D435i hand +X",
+    "capture_validation": {
+      "capture_validated": true,
+      "child_returncode": 0,
+      "cleanup_result": "cleanup_stall_after_validated_capture",
+      "seconds": 21.72778300799837,
+      "native_source_parts": 301,
+      "native_source_connections": 930,
+      "diagnostic_views": [
+        "diagnostic_table_top",
+        "diagnostic_oblique",
+        "diagnostic_wrist_mount",
+        "diagnostic_c920_side",
+        "diagnostic_c920_profile"
+      ],
+      "physical_camera_calibration": "unavailable"
+    },
+    "verification": {
+      "checks": {
+        "layout_except_c920_unchanged": true,
+        "geometry_unchanged": true,
+        "applied_lighting_attributes_unchanged": true,
+        "resolved_render_settings_unchanged": true,
+        "brick_count_unchanged": true,
+        "native_connections_unchanged": true,
+        "native_connected_parts_unchanged": true,
+        "post_connection_physics_steps_unchanged": true,
+        "full_native_stack": true,
+        "static_capture": true,
+        "requested_joint_positions_native_units_unchanged": true,
+        "actual_joint_positions_native_units_unchanged": true,
+        "hand_usd_pose_wxyz_unchanged": true,
+        "active_bricks.json_unchanged": true,
+        "source_states_unchanged": true,
+        "diagnostic_table_top_actual_eye_world_m_unchanged": true,
+        "diagnostic_table_top_actual_quaternion_wxyz_opengl_unchanged": true,
+        "diagnostic_table_top_intrinsics_unchanged": true,
+        "diagnostic_oblique_actual_eye_world_m_unchanged": true,
+        "diagnostic_oblique_actual_quaternion_wxyz_opengl_unchanged": true,
+        "diagnostic_oblique_intrinsics_unchanged": true,
+        "d435_mount_unchanged": true,
+        "c920_visual_only": true,
+        "two_wrist_housings": true,
+        "c920_centered_opposite": true,
+        "noncoplanar_body": true,
+        "mount_transform_verified": true
+      },
+      "all_passed": true,
+      "mount": {
+        "rotation_about_hand_z_deg": 180,
+        "status": "Opposite side requested by user; approximate visual correction of inherited camera and bracket together, not optical calibration",
+        "components": [
+          {
+            "body": "/World/envs/env_0/Robot/D435",
+            "joint": "/World/envs/env_0/Robot/fr3_hand/fr3_hand_D435_joint",
+            "old_position_hand_m": [
+              -0.03750000149011612,
+              0.0,
+              0.05260000005364418
+            ],
+            "new_position_hand_m": [
+              0.03750000149011612,
+              -4.592425679289168e-18,
+              0.05260000005364418
+            ],
+            "new_rotation_hand_wxyz": [
+              4.329780301713277e-17,
+              0.7071067690849304,
+              -4.329780301713277e-17,
+              0.7071067690849304
+            ],
+            "actual_position_hand_m": [
+              0.03750000731441691,
+              3.620570176998683e-09,
+              0.05260001369776518
+            ],
+            "position_error_m": 1.5270659645401474e-08,
+            "orientation_error_rad": 3.462716948575456e-07
+          },
+          {
+            "body": "/World/envs/env_0/Robot/D435_mount",
+            "joint": "/World/envs/env_0/Robot/fr3_hand/fr3_hand_D435_mount_joint",
+            "old_position_hand_m": [
+              0.0,
+              0.0,
+              0.009999999776482582
+            ],
+            "new_position_hand_m": [
+              0.0,
+              0.0,
+              0.009999999776482582
+            ],
+            "new_rotation_hand_wxyz": [
+              6.123234262925839e-17,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "actual_position_hand_m": [
+              3.31544132425865e-09,
+              5.234935651632355e-09,
+              0.009999990463254949
+            ],
+            "position_error_m": 1.1186282287040382e-08,
+            "orientation_error_rad": 0.0
+          }
+        ]
+      },
+      "before": "/home/faps/dev/github/robo.innovate26/runs/20261024T225412.612710Z-final-workcell-preview/output",
+      "after": "/home/faps/dev/github/robo.innovate26/runs/20261024T231138.248707Z-final-workcell-preview/output",
+      "scope": "Visual C920 addition only; no measured optical transform"
+    },
+    "mounting": "Laterally centered handY=0. Folded stand armward end at nominal wrist-face handZ=0; unmeasured artist stop. Body illustration rotated 60deg toward fingers, not measured hinge limit.",
+    "calibration": "Dimensions, exact contact fit, hinge limit, optical center, viewing direction and intrinsics unmeasured. No optical sensor or physics added."
+  },
+  "end_effector_update": {
+    "capture": {
+      "job_id": 1773,
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T072956.568941Z-final-workcell-preview",
+      "source_commit": "3cee3d7f22317f91b65028f6c12773331d9bd144",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261025T072956.568941Z-final-workcell-preview/launch.sh"
+    },
+    "invariance": {
+      "job_id": 1774,
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T073123.815357Z-pad-height-verification",
+      "all_passed": true,
+      "checks": {
+        "layout_except_tip_visual_unchanged": true,
+        "geometry_unchanged": true,
+        "applied_lighting_attributes_unchanged": true,
+        "resolved_render_settings_unchanged": true,
+        "brick_count_unchanged": true,
+        "native_connections_unchanged": true,
+        "native_connected_parts_unchanged": true,
+        "post_connection_physics_steps_unchanged": true,
+        "full300_native_static": true,
+        "source_states_exact": true,
+        "native_white_visual_geometry_exact": true,
+        "requested_joint_positions_native_units_unchanged": true,
+        "actual_joint_positions_native_units_unchanged": true,
+        "hand_usd_pose_wxyz_unchanged": true,
+        "D435_mount_unchanged": true,
+        "C920_actual_visual_report_unchanged": true,
+        "existing_camera_views_present": true,
+        "diagnostic_c920_grasp_side_camera_K_pose_unchanged": true,
+        "diagnostic_c920_profile_camera_K_pose_unchanged": true,
+        "diagnostic_pad_inner_faces_camera_K_pose_unchanged": true,
+        "diagnostic_pad_support_side_camera_K_pose_unchanged": true,
+        "diagnostic_table_top_camera_K_pose_unchanged": true,
+        "two_supplied_tips": true,
+        "fr3_leftfinger_proper_flip": true,
+        "fr3_leftfinger_taper_distal": true,
+        "fr3_leftfinger_grip_inward_boss_outward": true,
+        "fr3_leftfinger_reported_directions_match": true,
+        "fr3_leftfinger_reported_probes_match": true,
+        "fr3_leftfinger_nominal_body_mount_plane": true,
+        "fr3_leftfinger_visual_attached_to_finger": true,
+        "fr3_leftfinger_taper_more_distal_than_boss_and_proximal": true,
+        "fr3_leftfinger_proximal_edge_matches_stock_pad": true,
+        "fr3_leftfinger_longer_tip_extends_beyond_metal": true,
+        "fr3_leftfinger_height_matches_proximal_anchor_and_CAD_span": true,
+        "fr3_leftfinger_only_old_pad_faces_hidden": true,
+        "fr3_leftfinger_white_fingerprint_preserved": true,
+        "fr3_leftfinger_stock_collision_fingerprint_preserved": true,
+        "fr3_leftfinger_width_centered": true,
+        "fr3_leftfinger_round_head_visual_attached": true,
+        "fr3_leftfinger_head_configured_envelope": true,
+        "fr3_leftfinger_head_outside_at_boss_height": true,
+        "fr3_rightfinger_proper_flip": true,
+        "fr3_rightfinger_taper_distal": true,
+        "fr3_rightfinger_grip_inward_boss_outward": true,
+        "fr3_rightfinger_reported_directions_match": true,
+        "fr3_rightfinger_reported_probes_match": true,
+        "fr3_rightfinger_nominal_body_mount_plane": true,
+        "fr3_rightfinger_visual_attached_to_finger": true,
+        "fr3_rightfinger_taper_more_distal_than_boss_and_proximal": true,
+        "fr3_rightfinger_proximal_edge_matches_stock_pad": true,
+        "fr3_rightfinger_longer_tip_extends_beyond_metal": true,
+        "fr3_rightfinger_height_matches_proximal_anchor_and_CAD_span": true,
+        "fr3_rightfinger_only_old_pad_faces_hidden": true,
+        "fr3_rightfinger_white_fingerprint_preserved": true,
+        "fr3_rightfinger_stock_collision_fingerprint_preserved": true,
+        "fr3_rightfinger_width_centered": true,
+        "fr3_rightfinger_round_head_visual_attached": true,
+        "fr3_rightfinger_head_configured_envelope": true,
+        "fr3_rightfinger_head_outside_at_boss_height": true,
+        "grip_normals_opposed": true
+      }
+    },
+    "tip_registration": {
+      "status": "User-confirmed orientation and proximal-edge alignment. Nominal backplane/width placement; STL millimeters assumed. Simple rigid visual screw attachment, no form-fit/contact certification.",
+      "sha256": "30c3e47142dce9ba82ec46edf42f1dc2825d620d23bad0a95ce1e2de902b752d",
+      "instances": [
+        {
+          "bounds_finger_m": [
+            [
+              -0.007499993897974233,
+              0.0014066899999999921,
+              0.03609036868907001
+            ],
+            [
+              0.00750000109244137,
+              0.012406690522471966,
+              0.06164037057020194
+            ]
+          ],
+          "finger": "fr3_leftfinger",
+          "prim": "/World/envs/env_0/Robot/fr3_leftfinger/UpdatedTipSTLVisual",
+          "removed_stock_pad_faces": 262,
+          "retained_white_finger_faces": 362,
+          "rotation_z_deg": 90.0,
+          "rotation_y_deg": 180.0,
+          "translation_finger_m": [
+            -0.0155,
+            0.0014066900000000004,
+            0.06369037610351562
+          ],
+          "actual_matrix_CAD_mm_to_finger_m": [
+            [
+              -2.220446154715841e-19,
+              -0.0010000000474974513,
+              -1.224646857314955e-19,
+              0.0
+            ],
+            [
+              -0.0010000000474974513,
+              2.2204458962218998e-19,
+              0.0,
+              0.0
+            ],
+            [
+              2.407412430484045e-35,
+              1.224646857314955e-19,
+              -0.0010000000474974513,
+              0.0
+            ],
+            [
+              -0.015500000000000014,
+              0.001406690000000002,
+              0.06369037610351558,
+              1.0
+            ]
+          ],
+          "probes_finger_m": {
+            "taper_distal": [
+              7.362104814667703e-10,
+              0.0014066899999999989,
+              0.06164037057020194
+            ],
+            "body_mount_axis": [
+              3.0362105919723437e-09,
+              0.010906690451225788,
+              0.04509036938006271
+            ],
+            "boss_front_axis": [
+              3.0362105919723437e-09,
+              0.012406690522471965,
+              0.04509036938006271
+            ],
+            "broad_grip_axis": [
+              3.03621059023762e-09,
+              0.001406690000000001,
+              0.04509036938006271
+            ],
+            "broad_proximal": [
+              3.03621059023762e-09,
+              0.001406690000000002,
+              0.03609036868907001
+            ]
+          },
+          "grip_normal_finger": [
+            -2.220446049250313e-16,
+            -1.0,
+            -1.2246467991473532e-16
+          ],
+          "boss_direction_finger": [
+            2.220446049250313e-16,
+            1.0,
+            1.2246467991473532e-16
+          ],
+          "nominal_mount_plane_finger_y_m": 0.01090669,
+          "nominal_boss_depth_into_support_m": 0.0015,
+          "outside_screw_visual": {
+            "parent_finger": "/World/envs/env_0/Robot/fr3_leftfinger",
+            "parent": "/World/envs/env_0/Robot/fr3_leftfinger/UpdatedTipFastenerVisual",
+            "visual_only": true,
+            "head_prim": "/World/envs/env_0/Robot/fr3_leftfinger/UpdatedTipFastenerVisual/Head",
+            "axis": "Y",
+            "head_radius_m": 0.003,
+            "head_height_m": 0.002,
+            "outward_protrusion_m": 0.002,
+            "head_center_finger_m": [
+              3.0362105919723437e-09,
+              0.013805219739675523,
+              0.04509036938006271
+            ],
+            "head_base_finger_y_m": 0.012805219739675522,
+            "head_outer_finger_y_m": 0.014805219739675522,
+            "head_envelope_finger_m": [
+              [
+                -0.002999996963789408,
+                0.012805219739675522,
+                0.042090369380062706
+              ],
+              [
+                0.003000003036210592,
+                0.014805219739675522,
+                0.04809036938006271
+              ]
+            ],
+            "outside_face_estimate": "Local white-visual vertex bound within head-radius height band; fallback nominal wall if empty",
+            "nearby_white_vertices": 49,
+            "physical_fit_or_clearance_verified": false
+          },
+          "white_fingerprint_before": "292774122fc13e988b27bf80b33643e6560ca5de96708730e72bf7b4d3e79872",
+          "white_fingerprint_after": "292774122fc13e988b27bf80b33643e6560ca5de96708730e72bf7b4d3e79872",
+          "collision_fingerprint_before": "3c3a897d8862b1d7c7485208242b98fcd2e9c14baf7356635f308856169a4d4f",
+          "collision_fingerprint_after": "3c3a897d8862b1d7c7485208242b98fcd2e9c14baf7356635f308856169a4d4f",
+          "scale": 0.001,
+          "triangles": 1256
+        },
+        {
+          "bounds_finger_m": [
+            [
+              -0.007500001092441422,
+              -0.012406690522471973,
+              0.03609036868907001
+            ],
+            [
+              0.007499993897974179,
+              -0.00140669,
+              0.06164037057020194
+            ]
+          ],
+          "finger": "fr3_rightfinger",
+          "prim": "/World/envs/env_0/Robot/fr3_rightfinger/UpdatedTipSTLVisual",
+          "removed_stock_pad_faces": 262,
+          "retained_white_finger_faces": 362,
+          "rotation_z_deg": -90.0,
+          "rotation_y_deg": 180.0,
+          "translation_finger_m": [
+            0.0155,
+            -0.0014066900000000004,
+            0.06369037610351562
+          ],
+          "actual_matrix_CAD_mm_to_finger_m": [
+            [
+              -2.220446154715841e-19,
+              0.0010000000474974513,
+              -1.2246468573149552e-19,
+              0.0
+            ],
+            [
+              0.0010000000474974513,
+              2.2204464132097826e-19,
+              0.0,
+              0.0
+            ],
+            [
+              1.8055593228630336e-35,
+              -1.224646857314955e-19,
+              -0.0010000000474974513,
+              0.0
+            ],
+            [
+              0.015499999999999958,
+              -0.001406690000000002,
+              0.06369037610351558,
+              1.0
+            ]
+          ],
+          "probes_finger_m": {
+            "taper_distal": [
+              -7.362105369779215e-10,
+              -0.0014066900000000058,
+              0.06164037057020194
+            ],
+            "body_mount_axis": [
+              -3.036210644014048e-09,
+              -0.010906690451225795,
+              0.04509036938006271
+            ],
+            "boss_front_axis": [
+              -3.036210644014048e-09,
+              -0.012406690522471972,
+              0.04509036938006271
+            ],
+            "broad_grip_axis": [
+              -3.0362106457487714e-09,
+              -0.0014066900000000077,
+              0.04509036938006271
+            ],
+            "broad_proximal": [
+              -3.0362106457487714e-09,
+              -0.0014066900000000088,
+              0.03609036868907001
+            ]
+          },
+          "grip_normal_finger": [
+            -2.220446049250313e-16,
+            1.0,
+            -1.2246467991473535e-16
+          ],
+          "boss_direction_finger": [
+            2.220446049250313e-16,
+            -1.0,
+            1.2246467991473535e-16
+          ],
+          "nominal_mount_plane_finger_y_m": -0.01090669,
+          "nominal_boss_depth_into_support_m": 0.0015,
+          "outside_screw_visual": {
+            "parent_finger": "/World/envs/env_0/Robot/fr3_rightfinger",
+            "parent": "/World/envs/env_0/Robot/fr3_rightfinger/UpdatedTipFastenerVisual",
+            "visual_only": true,
+            "head_prim": "/World/envs/env_0/Robot/fr3_rightfinger/UpdatedTipFastenerVisual/Head",
+            "axis": "Y",
+            "head_radius_m": 0.003,
+            "head_height_m": 0.002,
+            "outward_protrusion_m": 0.002,
+            "head_center_finger_m": [
+              -3.036210644014048e-09,
+              -0.013805219739500402,
+              0.04509036938006271
+            ],
+            "head_base_finger_y_m": -0.012805219739500402,
+            "head_outer_finger_y_m": -0.014805219739500402,
+            "head_envelope_finger_m": [
+              [
+                -0.003000003036210644,
+                -0.014805219739500402,
+                0.042090369380062706
+              ],
+              [
+                0.002999996963789356,
+                -0.012805219739500402,
+                0.04809036938006271
+              ]
+            ],
+            "outside_face_estimate": "Local white-visual vertex bound within head-radius height band; fallback nominal wall if empty",
+            "nearby_white_vertices": 49,
+            "physical_fit_or_clearance_verified": false
+          },
+          "white_fingerprint_before": "292774122fc13e988b27bf80b33643e6560ca5de96708730e72bf7b4d3e79872",
+          "white_fingerprint_after": "292774122fc13e988b27bf80b33643e6560ca5de96708730e72bf7b4d3e79872",
+          "collision_fingerprint_before": "c5738053b8cf99cad45e9147c329d82e0c5fa6c2e7bed8767632044845b3d4b3",
+          "collision_fingerprint_after": "c5738053b8cf99cad45e9147c329d82e0c5fa6c2e7bed8767632044845b3d4b3",
+          "scale": 0.001,
+          "triangles": 1256
+        }
+      ],
+      "collision_status": "Stock pad collision and friction unchanged; new STL contact geometry not yet validated",
+      "registration": "User-confirmed proper X/Z flip and proximal/top edge aligned with stock pad; extra body length extends distally. Low CAD Z taper distal, bosses toward metal, broad CAD X0 gripping faces inward. Body plane CAD X-9.5 nominally aligns with stock pad backplane.",
+      "reference_CAD_probes_mm": {
+        "taper_distal": [
+          0.0,
+          -15.5,
+          2.0500054359436035
+        ],
+        "body_mount_axis": [
+          -9.5,
+          -15.5000023,
+          18.60000584
+        ],
+        "boss_front_axis": [
+          -11.0,
+          -15.5000023,
+          18.60000584
+        ],
+        "broad_grip_axis": [
+          0.0,
+          -15.5000023,
+          18.60000584
+        ],
+        "broad_proximal": [
+          0.0,
+          -15.5000023,
+          27.600006103515625
+        ]
+      },
+      "seating_status": "User-confirmed proximal alignment and boss-to-metal-hole attachment intent. Rigid visual attachment only; no form-fit or clearance certification.",
+      "stock_pad_proximal_edge_finger_z_m": 0.03609037,
+      "proximal_extension_vs_stock_m": 1.3109299895619486e-09,
+      "distal_extension_vs_stock_m": 0.007740490570201944,
+      "material_status": "Illustrative dark pad finish; physical material/color unknown"
+    },
+    "physics_scope": "Stock collision/friction retained; head is visual-only with recorded clearance envelope, no custom-tip contact claim"
+  },
+  "previous_artifacts_before_mount_correction": {
+    "usd_visual_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T000918.719244Z-final-workcell-preview/output/final_workcell.usda",
+    "overhead": "/home/faps/dev/github/robo.innovate26/runs/20261025T000918.719244Z-final-workcell-preview/output/images/diagnostic_table_top.png",
+    "oblique": "/home/faps/dev/github/robo.innovate26/runs/20261025T000918.719244Z-final-workcell-preview/output/images/diagnostic_oblique.png",
+    "panel": "/home/faps/dev/github/robo.innovate26/runs/20261025T000918.719244Z-final-workcell-preview/output/panel.png",
+    "manifest": "/home/faps/dev/github/robo.innovate26/runs/20261025T000918.719244Z-final-workcell-preview/output/manifest.json",
+    "layout_estimate": "/home/faps/dev/github/robo.innovate26/experiments/final_workcell_20261024/layout_estimate.json",
+    "charuco_uv_check": "/home/faps/dev/github/robo.innovate26/runs/20261025T000918.719244Z-final-workcell-preview/output/charuco_uv_check.json",
+    "photo_charuco_overlay": "/home/faps/dev/github/robo.innovate26/runs/20261024T211152.477912Z-charuco-asset-audit/output/photo09_charuco_detection.png",
+    "annotated_orientation_photo": "/home/faps/dev/github/robo.innovate26/runs/20261024T214949.269584Z-base-orientation-evidence/output/photo1_annotated.png",
+    "annotated_base_top": "/home/faps/dev/github/robo.innovate26/runs/20261024T214949.269584Z-base-orientation-evidence/output/base_top_annotated.png",
+    "annotated_connector_render": "/home/faps/dev/github/robo.innovate26/runs/20261024T214949.269584Z-base-orientation-evidence/output/base_connector_face_annotated.png",
+    "orientation_comparison": "/home/faps/dev/github/robo.innovate26/runs/20261024T214949.269584Z-base-orientation-evidence/output/comparison.jpg",
+    "appearance_top_comparison": "/home/faps/dev/github/robo.innovate26/runs/20261024T223147.006998Z-appearance-comparison/output/corrected/diagnostic_table_top_before_after.png",
+    "appearance_oblique_comparison": "/home/faps/dev/github/robo.innovate26/runs/20261024T223147.006998Z-appearance-comparison/output/corrected/diagnostic_oblique_before_after.png",
+    "appearance_diagnostics": "/home/faps/dev/github/robo.innovate26/runs/20261024T223147.006998Z-appearance-comparison/output/corrected/comparison.json",
+    "wrist_mount_closeup": "/home/faps/dev/github/robo.innovate26/runs/20261025T000918.719244Z-final-workcell-preview/output/images/diagnostic_wrist_mount.png",
+    "wrist_mount_verification": "/home/faps/dev/github/robo.innovate26/runs/20261024T225503.569156Z-wrist-mount-verification/output/verification.json",
+    "c920_side": "/home/faps/dev/github/robo.innovate26/runs/20261025T000918.719244Z-final-workcell-preview/output/images/diagnostic_c920_side.png",
+    "c920_profile": "/home/faps/dev/github/robo.innovate26/runs/20261025T000918.719244Z-final-workcell-preview/output/images/diagnostic_c920_profile.png",
+    "c920_verification": "/home/faps/dev/github/robo.innovate26/runs/20261024T231148.980882Z-c920-verification/output/verification.json",
+    "corrected_C920_and_tips": "/home/faps/dev/github/robo.innovate26/runs/20261025T000918.719244Z-final-workcell-preview/output/images/diagnostic_c920_grasp_side.png",
+    "updated_fingertips": "/home/faps/dev/github/robo.innovate26/runs/20261025T000918.719244Z-final-workcell-preview/output/updated_fingertips.json",
+    "end_effector_verification": "/home/faps/dev/github/robo.innovate26/runs/20261025T001003.870890Z-end-effector-verification/output/verification.json"
+  },
+  "previous_artifact_sha256_before_mount_correction": {
+    "final_workcell.usda": "b614d14eed35665ef6909fa160592dbb43d3f173e3e42bdaae890fcd1f6d5ba6",
+    "manifest.json": "dd2c2a38d0d3eab3464e14ac74ebb9b9a504d6321902acd5008012aba57215ad",
+    "robot_initialization.json": "8b1d550049f0b78fc52da04ab84da95b4f811d90f1b875783b6a9a4fe6740063",
+    "comparison.json": "58f7bcdde3b4927df36e712b86feeb17706b648ed54e3e7703e129cebae2b452"
+  },
+  "previous_end_effector_update": {
+    "capture": {
+      "job_id": 1771,
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T071719.927577Z-final-workcell-preview",
+      "source_commit": "3afda2d53dfb00b768ad0c02347aaa8d891c95bc",
+      "launcher": "/home/faps/dev/github/robo.innovate26/runs/20261025T071719.927577Z-final-workcell-preview/launch.sh"
+    },
+    "invariance": {
+      "job_id": 1772,
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T071811.763056Z-pad-mount-verification",
+      "all_passed": true,
+      "checks": {
+        "layout_except_tip_visual_unchanged": true,
+        "geometry_unchanged": true,
+        "applied_lighting_attributes_unchanged": true,
+        "resolved_render_settings_unchanged": true,
+        "brick_count_unchanged": true,
+        "native_connections_unchanged": true,
+        "native_connected_parts_unchanged": true,
+        "post_connection_physics_steps_unchanged": true,
+        "full300_native_static": true,
+        "source_states_exact": true,
+        "native_white_visual_geometry_exact": true,
+        "requested_joint_positions_native_units_unchanged": true,
+        "actual_joint_positions_native_units_unchanged": true,
+        "hand_usd_pose_wxyz_unchanged": true,
+        "D435_mount_unchanged": true,
+        "C920_actual_visual_report_unchanged": true,
+        "existing_camera_views_present": true,
+        "diagnostic_c920_grasp_side_camera_K_pose_unchanged": true,
+        "diagnostic_c920_profile_camera_K_pose_unchanged": true,
+        "diagnostic_table_top_camera_K_pose_unchanged": true,
+        "two_supplied_tips": true,
+        "fr3_leftfinger_proper_flip": true,
+        "fr3_leftfinger_taper_distal": true,
+        "fr3_leftfinger_grip_inward_boss_outward": true,
+        "fr3_leftfinger_reported_directions_match": true,
+        "fr3_leftfinger_reported_probes_match": true,
+        "fr3_leftfinger_nominal_body_mount_plane": true,
+        "fr3_leftfinger_visual_attached_to_finger": true,
+        "fr3_leftfinger_taper_more_distal_than_boss_and_proximal": true,
+        "fr3_leftfinger_only_old_pad_faces_hidden": true,
+        "fr3_leftfinger_white_fingerprint_preserved": true,
+        "fr3_leftfinger_stock_collision_fingerprint_preserved": true,
+        "fr3_leftfinger_width_centered": true,
+        "fr3_leftfinger_round_head_visual_attached": true,
+        "fr3_leftfinger_head_configured_envelope": true,
+        "fr3_leftfinger_head_outside_at_boss_height": true,
+        "fr3_rightfinger_proper_flip": true,
+        "fr3_rightfinger_taper_distal": true,
+        "fr3_rightfinger_grip_inward_boss_outward": true,
+        "fr3_rightfinger_reported_directions_match": true,
+        "fr3_rightfinger_reported_probes_match": true,
+        "fr3_rightfinger_nominal_body_mount_plane": true,
+        "fr3_rightfinger_visual_attached_to_finger": true,
+        "fr3_rightfinger_taper_more_distal_than_boss_and_proximal": true,
+        "fr3_rightfinger_only_old_pad_faces_hidden": true,
+        "fr3_rightfinger_white_fingerprint_preserved": true,
+        "fr3_rightfinger_stock_collision_fingerprint_preserved": true,
+        "fr3_rightfinger_width_centered": true,
+        "fr3_rightfinger_round_head_visual_attached": true,
+        "fr3_rightfinger_head_configured_envelope": true,
+        "fr3_rightfinger_head_outside_at_boss_height": true,
+        "grip_normals_opposed": true
+      }
+    },
+    "tip_registration": {
+      "status": "User-confirmed orientation with nominal translation from stock pad backplane/widthcenter and prior visual distal endpoint. STL millimeters assumed. Distal recess concentricity and clearance are unmeasured; no physical-fit/contact claim.",
+      "sha256": "30c3e47142dce9ba82ec46edf42f1dc2825d620d23bad0a95ce1e2de902b752d",
+      "instances": [
+        {
+          "bounds_finger_m": [
+            [
+              -0.007499993897974233,
+              0.0014066899999999921,
+              0.02834987802149802
+            ],
+            [
+              0.00750000109244137,
+              0.012406690522471966,
+              0.053899879902629955
+            ]
+          ],
+          "finger": "fr3_leftfinger",
+          "prim": "/World/envs/env_0/Robot/fr3_leftfinger/UpdatedTipSTLVisual",
+          "removed_stock_pad_faces": 262,
+          "retained_white_finger_faces": 362,
+          "rotation_z_deg": 90.0,
+          "rotation_y_deg": 180.0,
+          "translation_finger_m": [
+            -0.0155,
+            0.0014066900000000004,
+            0.0559498854359436
+          ],
+          "actual_matrix_CAD_mm_to_finger_m": [
+            [
+              -2.220446154715841e-19,
+              -0.0010000000474974513,
+              -1.224646857314955e-19,
+              0.0
+            ],
+            [
+              -0.0010000000474974513,
+              2.2204458962218998e-19,
+              0.0,
+              0.0
+            ],
+            [
+              2.407412430484045e-35,
+              1.224646857314955e-19,
+              -0.0010000000474974513,
+              0.0
+            ],
+            [
+              -0.015500000000000014,
+              0.001406690000000002,
+              0.05594988543594359,
+              1.0
+            ]
+          ],
+          "probes_finger_m": {
+            "taper_distal": [
+              7.362104814667703e-10,
+              0.0014066899999999989,
+              0.053899879902629955
+            ],
+            "body_mount_axis": [
+              3.0362105919723437e-09,
+              0.010906690451225788,
+              0.03734987871249072
+            ],
+            "boss_front_axis": [
+              3.0362105919723437e-09,
+              0.012406690522471965,
+              0.03734987871249072
+            ],
+            "broad_grip_axis": [
+              3.03621059023762e-09,
+              0.001406690000000001,
+              0.03734987871249072
+            ],
+            "broad_proximal": [
+              3.03621059023762e-09,
+              0.001406690000000002,
+              0.02834987802149802
+            ]
+          },
+          "grip_normal_finger": [
+            -2.220446049250313e-16,
+            -1.0,
+            -1.2246467991473532e-16
+          ],
+          "boss_direction_finger": [
+            2.220446049250313e-16,
+            1.0,
+            1.2246467991473532e-16
+          ],
+          "nominal_mount_plane_finger_y_m": 0.01090669,
+          "nominal_boss_depth_into_support_m": 0.0015,
+          "outside_screw_visual": {
+            "parent_finger": "/World/envs/env_0/Robot/fr3_leftfinger",
+            "parent": "/World/envs/env_0/Robot/fr3_leftfinger/UpdatedTipFastenerVisual",
+            "visual_only": true,
+            "head_prim": "/World/envs/env_0/Robot/fr3_leftfinger/UpdatedTipFastenerVisual/Head",
+            "axis": "Y",
+            "head_radius_m": 0.003,
+            "head_height_m": 0.002,
+            "outward_protrusion_m": 0.002,
+            "head_center_finger_m": [
+              3.0362105919723437e-09,
+              0.016667790547013284,
+              0.03734987871249072
+            ],
+            "head_base_finger_y_m": 0.015667790547013283,
+            "head_outer_finger_y_m": 0.017667790547013285,
+            "head_envelope_finger_m": [
+              [
+                -0.002999996963789408,
+                0.015667790547013283,
+                0.03434987871249072
+              ],
+              [
+                0.003000003036210592,
+                0.017667790547013285,
+                0.040349878712490725
+              ]
+            ],
+            "outside_face_estimate": "Local white-visual vertex bound within head-radius height band; fallback nominal wall if empty",
+            "nearby_white_vertices": 95,
+            "physical_fit_or_clearance_verified": false
+          },
+          "white_fingerprint_before": "292774122fc13e988b27bf80b33643e6560ca5de96708730e72bf7b4d3e79872",
+          "white_fingerprint_after": "292774122fc13e988b27bf80b33643e6560ca5de96708730e72bf7b4d3e79872",
+          "collision_fingerprint_before": "3c3a897d8862b1d7c7485208242b98fcd2e9c14baf7356635f308856169a4d4f",
+          "collision_fingerprint_after": "3c3a897d8862b1d7c7485208242b98fcd2e9c14baf7356635f308856169a4d4f",
+          "scale": 0.001,
+          "triangles": 1256
+        },
+        {
+          "bounds_finger_m": [
+            [
+              -0.007500001092441422,
+              -0.012406690522471973,
+              0.02834987802149802
+            ],
+            [
+              0.007499993897974179,
+              -0.00140669,
+              0.053899879902629955
+            ]
+          ],
+          "finger": "fr3_rightfinger",
+          "prim": "/World/envs/env_0/Robot/fr3_rightfinger/UpdatedTipSTLVisual",
+          "removed_stock_pad_faces": 262,
+          "retained_white_finger_faces": 362,
+          "rotation_z_deg": -90.0,
+          "rotation_y_deg": 180.0,
+          "translation_finger_m": [
+            0.0155,
+            -0.0014066900000000004,
+            0.0559498854359436
+          ],
+          "actual_matrix_CAD_mm_to_finger_m": [
+            [
+              -2.220446154715841e-19,
+              0.0010000000474974513,
+              -1.2246468573149552e-19,
+              0.0
+            ],
+            [
+              0.0010000000474974513,
+              2.2204464132097826e-19,
+              0.0,
+              0.0
+            ],
+            [
+              1.8055593228630336e-35,
+              -1.224646857314955e-19,
+              -0.0010000000474974513,
+              0.0
+            ],
+            [
+              0.015499999999999958,
+              -0.001406690000000002,
+              0.05594988543594359,
+              1.0
+            ]
+          ],
+          "probes_finger_m": {
+            "taper_distal": [
+              -7.362105369779215e-10,
+              -0.0014066900000000058,
+              0.053899879902629955
+            ],
+            "body_mount_axis": [
+              -3.036210644014048e-09,
+              -0.010906690451225795,
+              0.03734987871249072
+            ],
+            "boss_front_axis": [
+              -3.036210644014048e-09,
+              -0.012406690522471972,
+              0.03734987871249072
+            ],
+            "broad_grip_axis": [
+              -3.0362106457487714e-09,
+              -0.0014066900000000077,
+              0.03734987871249072
+            ],
+            "broad_proximal": [
+              -3.0362106457487714e-09,
+              -0.0014066900000000088,
+              0.02834987802149802
+            ]
+          },
+          "grip_normal_finger": [
+            -2.220446049250313e-16,
+            1.0,
+            -1.2246467991473535e-16
+          ],
+          "boss_direction_finger": [
+            2.220446049250313e-16,
+            -1.0,
+            1.2246467991473535e-16
+          ],
+          "nominal_mount_plane_finger_y_m": -0.01090669,
+          "nominal_boss_depth_into_support_m": 0.0015,
+          "outside_screw_visual": {
+            "parent_finger": "/World/envs/env_0/Robot/fr3_rightfinger",
+            "parent": "/World/envs/env_0/Robot/fr3_rightfinger/UpdatedTipFastenerVisual",
+            "visual_only": true,
+            "head_prim": "/World/envs/env_0/Robot/fr3_rightfinger/UpdatedTipFastenerVisual/Head",
+            "axis": "Y",
+            "head_radius_m": 0.003,
+            "head_height_m": 0.002,
+            "outward_protrusion_m": 0.002,
+            "head_center_finger_m": [
+              -3.036210644014048e-09,
+              -0.01666779131665934,
+              0.03734987871249072
+            ],
+            "head_base_finger_y_m": -0.015667791316659338,
+            "head_outer_finger_y_m": -0.01766779131665934,
+            "head_envelope_finger_m": [
+              [
+                -0.003000003036210644,
+                -0.01766779131665934,
+                0.03434987871249072
+              ],
+              [
+                0.002999996963789356,
+                -0.015667791316659338,
+                0.040349878712490725
+              ]
+            ],
+            "outside_face_estimate": "Local white-visual vertex bound within head-radius height band; fallback nominal wall if empty",
+            "nearby_white_vertices": 95,
+            "physical_fit_or_clearance_verified": false
+          },
+          "white_fingerprint_before": "292774122fc13e988b27bf80b33643e6560ca5de96708730e72bf7b4d3e79872",
+          "white_fingerprint_after": "292774122fc13e988b27bf80b33643e6560ca5de96708730e72bf7b4d3e79872",
+          "collision_fingerprint_before": "c5738053b8cf99cad45e9147c329d82e0c5fa6c2e7bed8767632044845b3d4b3",
+          "collision_fingerprint_after": "c5738053b8cf99cad45e9147c329d82e0c5fa6c2e7bed8767632044845b3d4b3",
+          "scale": 0.001,
+          "triangles": 1256
+        }
+      ],
+      "collision_status": "Stock pad collision and friction unchanged; new STL contact geometry not yet validated",
+      "registration": "User-confirmed proper X/Z flip; low CAD Z tapered end distal, bosses toward metal, broad CAD X0 gripping faces inward. Body plane CAD X-9.5 nominally aligns with stock pad backplane.",
+      "reference_CAD_probes_mm": {
+        "taper_distal": [
+          0.0,
+          -15.5,
+          2.0500054359436035
+        ],
+        "body_mount_axis": [
+          -9.5,
+          -15.5000023,
+          18.60000584
+        ],
+        "boss_front_axis": [
+          -11.0,
+          -15.5000023,
+          18.60000584
+        ],
+        "broad_grip_axis": [
+          0.0,
+          -15.5000023,
+          18.60000584
+        ],
+        "broad_proximal": [
+          0.0,
+          -15.5000023,
+          27.600006103515625
+        ]
+      },
+      "seating_status": "Nominal visual placement only. Distal recess center/concentricity and clearances remain unmeasured; inspection1770 found only irrelevant proximal circles.",
+      "proximal_extension_vs_stock_m": 0.007740491978501976,
+      "material_status": "Illustrative dark pad finish; physical material/color unknown"
+    },
+    "physics_scope": "Stock collision/friction retained; head is visual-only with recorded clearance envelope, no custom-tip contact claim"
+  },
+  "historical_only_artifact_keys": [
+    "oblique",
+    "wrist_mount_closeup",
+    "c920_side",
+    "wrist_mount_verification",
+    "c920_verification"
+  ],
+  "mounting_correction": {
+    "scope": "User-requested simple visual mounting correction only; full sorting demo incomplete",
+    "visual_task_complete": true,
+    "capture_job_id": 1773,
+    "verification_job_id": 1774,
+    "seat_inspection_job_id": 1770,
+    "source_commit": "3cee3d7f22317f91b65028f6c12773331d9bd144",
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T072956.568941Z-final-workcell-preview",
+    "verification_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T073123.815357Z-pad-height-verification",
+    "checks_passed": 60,
+    "check_count": 60,
+    "all_passed": true,
+    "manual_visual_review": "Root, independent evaluator and reviewer accepted visibly extended black tips and corrected outside head height.",
+    "head_dimensions": {
+      "diameter_m": 0.006,
+      "outward_protrusion_m": 0.002,
+      "status": "Configurable estimates; not measured"
+    },
+    "camera_mounts_and_layout_unchanged": true,
+    "collision_status": "Stock collision/friction retained; head is visual-only with recorded clearance envelope, no custom-tip contact claim",
+    "old_experiments": "Original results/registrations remain preserved. Corrected shared visual mounting supersedes their nominal physical-mount interpretation.",
+    "sha256": {
+      "/home/faps/dev/github/robo.innovate26/runs/20261025T072956.568941Z-final-workcell-preview/manifest.json": "43ba5dbcb4704cb0b5ac97ab62db6df63d6aa06a99a2350f80a974c94d0e008b",
+      "/home/faps/dev/github/robo.innovate26/runs/20261025T072956.568941Z-final-workcell-preview/output/updated_fingertips.json": "cc28a415f85db1520f9de26c2fa477381f5cbb1c56c76a0a1dcfb620ce14e9b0",
+      "/home/faps/dev/github/robo.innovate26/runs/20261025T072956.568941Z-final-workcell-preview/output/final_workcell.usda": "bb8d7ffd53e1aa3259417928eeda3017751c64a807b25d8e0e0ec903a7423f62",
+      "/home/faps/dev/github/robo.innovate26/runs/20261025T073123.815357Z-pad-height-verification/output/verification.json": "f72eecbbbf736c063d98ddb0c5511984ace67dfa369c4cd96226db8291c9273b"
+    },
+    "previous_height_capture_job_id": 1771,
+    "height_anchor": "Upper/proximal edge equals stock pad upper edge; added length extends distally beyond metal. User-confirmed boss-to-hole height intent.",
+    "tip_heights_finger_m": {
+      "fr3_leftfinger": {
+        "native_stock_pad_proximal_z_m": 0.03609037026762962,
+        "native_metal_distal_z_m": 0.05385756120085716,
+        "expected_tip_from_proximal_anchor_m": 0.061640370935201645
+      },
+      "fr3_rightfinger": {
+        "native_stock_pad_proximal_z_m": 0.03609037026762962,
+        "native_metal_distal_z_m": 0.05385756120085716,
+        "expected_tip_from_proximal_anchor_m": 0.061640370935201645
+      }
+    }
+  },
+  "overall_sorting_demo_complete": false,
+  "previous_mounting_correction": {
+    "scope": "User-requested simple visual mounting correction only; full sorting demo incomplete",
+    "visual_task_complete": true,
+    "capture_job_id": 1771,
+    "verification_job_id": 1772,
+    "seat_inspection_job_id": 1770,
+    "source_commit": "3afda2d53dfb00b768ad0c02347aaa8d891c95bc",
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T071719.927577Z-final-workcell-preview",
+    "verification_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T071811.763056Z-pad-mount-verification",
+    "checks_passed": 52,
+    "check_count": 52,
+    "all_passed": true,
+    "manual_visual_review": "Root and independent reviewer/evaluator accepted visible pad-metal-head connection in both closeups. No further fit metrology required.",
+    "head_dimensions": {
+      "diameter_m": 0.006,
+      "outward_protrusion_m": 0.002,
+      "status": "Configurable estimates; not measured"
+    },
+    "camera_mounts_and_layout_unchanged": true,
+    "collision_status": "Stock collision/friction retained; head is visual-only with recorded clearance envelope, no custom-tip contact claim",
+    "old_experiments": "Original results/registrations remain preserved. Corrected shared visual mounting supersedes their nominal physical-mount interpretation.",
+    "sha256": {
+      "/home/faps/dev/github/robo.innovate26/runs/20261025T071719.927577Z-final-workcell-preview/manifest.json": "57b8e75e34f1511f86c8b12c668a0d8fbf9f6eff00a6d8ad94622c7100dae684",
+      "/home/faps/dev/github/robo.innovate26/runs/20261025T071719.927577Z-final-workcell-preview/output/updated_fingertips.json": "238c2e624ff343d04588c40c1e65cdfa5532cdf46a14d23333d24f05d650cb96",
+      "/home/faps/dev/github/robo.innovate26/runs/20261025T071719.927577Z-final-workcell-preview/output/final_workcell.usda": "704e4258f788cb5786b69d45f5f4d964115c95f57fbf803d11ccde9f00fd3ada",
+      "/home/faps/dev/github/robo.innovate26/runs/20261025T071811.763056Z-pad-mount-verification/output/verification.json": "406cf0a54b10000b7093584ba8266b258c85673d966efd3c2425f58c08103912"
+    }
+  }
+}

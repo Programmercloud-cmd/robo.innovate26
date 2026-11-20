@@ -1,0 +1,53 @@
+{
+  "scope": "appearance-only visual twin refinement",
+  "baseline_job_id": 1704,
+  "baseline_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T214640.110593Z-final-workcell-preview",
+  "reference_photo": "resources/setup_images/final_workcell_20261024/photo_09.jpg",
+  "reference_limit": "Qualitative comparison only; phone view and illumination not calibrated to diagnostic cameras",
+  "invariants": [
+    "scene configuration and color palette",
+    "geometry",
+    "base yaw45 and position",
+    "nominal joints",
+    "camera poses/K/exposure",
+    "native300/930/301 and0postassemblysteps"
+  ],
+  "baseline_sha256": {
+    "experiments/final_workcell_20261024/scene_config.json": "995a12b1194de4a07f3385e446e29c0fe0d1e17500ff193b9f538bbfab0f167d",
+    "experiments/final_workcell_20261024/geometry.json": "8a0266b2ccbf75f6d773fdd1e6309c70f9ab8828da96b563da133f383f83c897",
+    "experiments/final_workcell_20261024/cameras.json": "3a8995c93f345d760d1256da2e209a5e1b5f201ab6994578d46679cc08ef8c31",
+    "experiments/final_workcell_20261024/charuco_board.png": "ef436eadc3801abd61f4eaffcca6d66f044babeafddb05f5117630b13800476d",
+    "challenge2/env_cfg.py": "68e9c624f0ce26474c53e487ab1301002e7c6d329156d00f5e39a544ffc16246"
+  },
+  "comparison": "Matched original two diagnostic views; exposure diagnostics are not a domain-gap score",
+  "planned_pass": "lighting and roughness first; only concrete observed brightness/clipping correction if necessary",
+  "deferred": [
+    "proceduraltextures and randomization",
+    "sensor noise models",
+    "new perception/training",
+    "camera or hardware calibration",
+    "scene geometry modifications"
+  ],
+  "passes": [
+    {
+      "id": "first",
+      "job_id": 1707,
+      "snapshot": "runs/20261024T222727.585199Z-final-workcell-preview",
+      "key_intensity": 2000,
+      "outcome": "Valid geometry/capture but visual review found darker flat image; not promoted as realism improvement."
+    },
+    {
+      "id": "corrected",
+      "key_intensity": 20000,
+      "single_change": "RectLight intensity only, fixed materials/fill/exposure/cameras",
+      "reason": "Recorded Rect orientation correct; first direct-light contribution too weak",
+      "status": "retained_after_independent_review",
+      "job_id": 1708,
+      "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T223031.192426Z-final-workcell-preview",
+      "outcome": "Clearer contact shadows/directional highlights; darker background/grayplate; no white clipping in two checked views. No measured sim-to-real claim."
+    }
+  ],
+  "comparison_job_id": 1709,
+  "comparison_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T223147.006998Z-appearance-comparison",
+  "scope_complete": true
+}

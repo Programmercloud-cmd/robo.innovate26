@@ -1,0 +1,1578 @@
+{
+  "version": "dispatch-option-A-20261028-v2",
+  "baseline": "frozen37-ccaf03c52e40aaca",
+  "units": "metres",
+  "axes": {
+    "units": "metres",
+    "horizontal_axes": "X east/right; Z south/down",
+    "vertical_axis": "Y up",
+    "plan_bounds": {
+      "x_min": -47,
+      "x_max": 130,
+      "z_min": -30,
+      "z_max": 66
+    }
+  },
+  "staticOnly": true,
+  "manifestSha256": "27f236bff4bfd311775b3d0e99fdf2271325b9ab956245110ae8285d4c315a2f",
+  "laneZ": [
+    -13,
+    -7,
+    -3,
+    3,
+    7,
+    13
+  ],
+  "groupZ": [
+    -10,
+    0,
+    10
+  ],
+  "inspectionCameras": [
+    26.52,
+    27.16
+  ],
+  "cover": [
+    25.95,
+    34.35
+  ],
+  "crossfeed": [
+    28.65,
+    31.25
+  ],
+  "router": [
+    31.25,
+    34.25
+  ],
+  "formation": [
+    34.4,
+    36.35
+  ],
+  "formationCenter": 35.375,
+  "downstreamDelta": -10.665,
+  "wellX": 42.335,
+  "outfeedEnd": 45.035,
+  "pickupX": 44.335,
+  "retentionStopX": 36.385,
+  "reject": {
+    "branchStart": 31.25,
+    "branchEnd": 47.0,
+    "branchY": 0.75,
+    "width": 0.8,
+    "collectorX": 47.0,
+    "collectorY": 0.4,
+    "levelEndZ": 17.0,
+    "inclineDegrees": 20.0,
+    "headY": 3.0,
+    "containerHeight": 2.591,
+    "containerLength": 6.058,
+    "containerWidth": 2.438,
+    "containerCenterZ": 26.0
+  },
+  "warehouse": {
+    "x_min_m": 50.5,
+    "x_max_m": 79.3,
+    "z_min_m": -16.4,
+    "z_max_m": 16.4,
+    "slots": [
+      {
+        "id": "R1-S01",
+        "index": 0,
+        "x": 51.2,
+        "z": -11.3,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R1-S02",
+        "index": 1,
+        "x": 51.2,
+        "z": -10.1,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R1-S03",
+        "index": 2,
+        "x": 51.2,
+        "z": -8.9,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R1-S04",
+        "index": 3,
+        "x": 51.2,
+        "z": -7.7,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R1-S05",
+        "index": 4,
+        "x": 51.2,
+        "z": -6.5,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R1-S06",
+        "index": 5,
+        "x": 51.2,
+        "z": -5.3,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R1-S07",
+        "index": 6,
+        "x": 51.2,
+        "z": -4.1,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R1-S08",
+        "index": 7,
+        "x": 51.2,
+        "z": -2.9,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R1-S09",
+        "index": 8,
+        "x": 51.2,
+        "z": 2.9,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R1-S10",
+        "index": 9,
+        "x": 51.2,
+        "z": 4.1,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R1-S11",
+        "index": 10,
+        "x": 51.2,
+        "z": 5.3,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R1-S12",
+        "index": 11,
+        "x": 51.2,
+        "z": 6.5,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R1-S13",
+        "index": 12,
+        "x": 51.2,
+        "z": 7.7,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R1-S14",
+        "index": 13,
+        "x": 51.2,
+        "z": 8.9,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R1-S15",
+        "index": 14,
+        "x": 51.2,
+        "z": 10.1,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R1-S16",
+        "index": 15,
+        "x": 51.2,
+        "z": 11.3,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R2-S01",
+        "index": 16,
+        "x": 57.0,
+        "z": -11.3,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R2-S02",
+        "index": 17,
+        "x": 57.0,
+        "z": -10.1,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R2-S03",
+        "index": 18,
+        "x": 57.0,
+        "z": -8.9,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R2-S04",
+        "index": 19,
+        "x": 57.0,
+        "z": -7.7,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R2-S05",
+        "index": 20,
+        "x": 57.0,
+        "z": -6.5,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R2-S06",
+        "index": 21,
+        "x": 57.0,
+        "z": -5.3,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R2-S07",
+        "index": 22,
+        "x": 57.0,
+        "z": -4.1,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R2-S08",
+        "index": 23,
+        "x": 57.0,
+        "z": -2.9,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R2-S09",
+        "index": 24,
+        "x": 57.0,
+        "z": 2.9,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R2-S10",
+        "index": 25,
+        "x": 57.0,
+        "z": 4.1,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R2-S11",
+        "index": 26,
+        "x": 57.0,
+        "z": 5.3,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R2-S12",
+        "index": 27,
+        "x": 57.0,
+        "z": 6.5,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R2-S13",
+        "index": 28,
+        "x": 57.0,
+        "z": 7.7,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R2-S14",
+        "index": 29,
+        "x": 57.0,
+        "z": 8.9,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R2-S15",
+        "index": 30,
+        "x": 57.0,
+        "z": 10.1,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R2-S16",
+        "index": 31,
+        "x": 57.0,
+        "z": 11.3,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R3-S01",
+        "index": 32,
+        "x": 58.4,
+        "z": -11.3,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R3-S02",
+        "index": 33,
+        "x": 58.4,
+        "z": -10.1,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R3-S03",
+        "index": 34,
+        "x": 58.4,
+        "z": -8.9,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R3-S04",
+        "index": 35,
+        "x": 58.4,
+        "z": -7.7,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R3-S05",
+        "index": 36,
+        "x": 58.4,
+        "z": -6.5,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R3-S06",
+        "index": 37,
+        "x": 58.4,
+        "z": -5.3,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R3-S07",
+        "index": 38,
+        "x": 58.4,
+        "z": -4.1,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R3-S08",
+        "index": 39,
+        "x": 58.4,
+        "z": -2.9,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R3-S09",
+        "index": 40,
+        "x": 58.4,
+        "z": 2.9,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R3-S10",
+        "index": 41,
+        "x": 58.4,
+        "z": 4.1,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R3-S11",
+        "index": 42,
+        "x": 58.4,
+        "z": 5.3,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R3-S12",
+        "index": 43,
+        "x": 58.4,
+        "z": 6.5,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R3-S13",
+        "index": 44,
+        "x": 58.4,
+        "z": 7.7,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R3-S14",
+        "index": 45,
+        "x": 58.4,
+        "z": 8.9,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R3-S15",
+        "index": 46,
+        "x": 58.4,
+        "z": 10.1,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R3-S16",
+        "index": 47,
+        "x": 58.4,
+        "z": 11.3,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R4-S01",
+        "index": 48,
+        "x": 64.2,
+        "z": -11.3,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R4-S02",
+        "index": 49,
+        "x": 64.2,
+        "z": -10.1,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R4-S03",
+        "index": 50,
+        "x": 64.2,
+        "z": -8.9,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R4-S04",
+        "index": 51,
+        "x": 64.2,
+        "z": -7.7,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R4-S05",
+        "index": 52,
+        "x": 64.2,
+        "z": -6.5,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R4-S06",
+        "index": 53,
+        "x": 64.2,
+        "z": -5.3,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R4-S07",
+        "index": 54,
+        "x": 64.2,
+        "z": -4.1,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R4-S08",
+        "index": 55,
+        "x": 64.2,
+        "z": -2.9,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R4-S09",
+        "index": 56,
+        "x": 64.2,
+        "z": 2.9,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R4-S10",
+        "index": 57,
+        "x": 64.2,
+        "z": 4.1,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R4-S11",
+        "index": 58,
+        "x": 64.2,
+        "z": 5.3,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R4-S12",
+        "index": 59,
+        "x": 64.2,
+        "z": 6.5,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R4-S13",
+        "index": 60,
+        "x": 64.2,
+        "z": 7.7,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R4-S14",
+        "index": 61,
+        "x": 64.2,
+        "z": 8.9,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R4-S15",
+        "index": 62,
+        "x": 64.2,
+        "z": 10.1,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R4-S16",
+        "index": 63,
+        "x": 64.2,
+        "z": 11.3,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R5-S01",
+        "index": 64,
+        "x": 65.6,
+        "z": -11.3,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R5-S02",
+        "index": 65,
+        "x": 65.6,
+        "z": -10.1,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R5-S03",
+        "index": 66,
+        "x": 65.6,
+        "z": -8.9,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R5-S04",
+        "index": 67,
+        "x": 65.6,
+        "z": -7.7,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R5-S05",
+        "index": 68,
+        "x": 65.6,
+        "z": -6.5,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R5-S06",
+        "index": 69,
+        "x": 65.6,
+        "z": -5.3,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R5-S07",
+        "index": 70,
+        "x": 65.6,
+        "z": -4.1,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R5-S08",
+        "index": 71,
+        "x": 65.6,
+        "z": -2.9,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R5-S09",
+        "index": 72,
+        "x": 65.6,
+        "z": 2.9,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R5-S10",
+        "index": 73,
+        "x": 65.6,
+        "z": 4.1,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R5-S11",
+        "index": 74,
+        "x": 65.6,
+        "z": 5.3,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R5-S12",
+        "index": 75,
+        "x": 65.6,
+        "z": 6.5,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R5-S13",
+        "index": 76,
+        "x": 65.6,
+        "z": 7.7,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R5-S14",
+        "index": 77,
+        "x": 65.6,
+        "z": 8.9,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R5-S15",
+        "index": 78,
+        "x": 65.6,
+        "z": 10.1,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R5-S16",
+        "index": 79,
+        "x": 65.6,
+        "z": 11.3,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R6-S01",
+        "index": 80,
+        "x": 71.4,
+        "z": -11.3,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R6-S02",
+        "index": 81,
+        "x": 71.4,
+        "z": -10.1,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R6-S03",
+        "index": 82,
+        "x": 71.4,
+        "z": -8.9,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R6-S04",
+        "index": 83,
+        "x": 71.4,
+        "z": -7.7,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R6-S05",
+        "index": 84,
+        "x": 71.4,
+        "z": -6.5,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R6-S06",
+        "index": 85,
+        "x": 71.4,
+        "z": -5.3,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R6-S07",
+        "index": 86,
+        "x": 71.4,
+        "z": -4.1,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R6-S08",
+        "index": 87,
+        "x": 71.4,
+        "z": -2.9,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R6-S09",
+        "index": 88,
+        "x": 71.4,
+        "z": 2.9,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R6-S10",
+        "index": 89,
+        "x": 71.4,
+        "z": 4.1,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R6-S11",
+        "index": 90,
+        "x": 71.4,
+        "z": 5.3,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R6-S12",
+        "index": 91,
+        "x": 71.4,
+        "z": 6.5,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R6-S13",
+        "index": 92,
+        "x": 71.4,
+        "z": 7.7,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R6-S14",
+        "index": 93,
+        "x": 71.4,
+        "z": 8.9,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R6-S15",
+        "index": 94,
+        "x": 71.4,
+        "z": 10.1,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R6-S16",
+        "index": 95,
+        "x": 71.4,
+        "z": 11.3,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R7-S01",
+        "index": 96,
+        "x": 72.8,
+        "z": -11.3,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R7-S02",
+        "index": 97,
+        "x": 72.8,
+        "z": -10.1,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R7-S03",
+        "index": 98,
+        "x": 72.8,
+        "z": -8.9,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R7-S04",
+        "index": 99,
+        "x": 72.8,
+        "z": -7.7,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R7-S05",
+        "index": 100,
+        "x": 72.8,
+        "z": -6.5,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R7-S06",
+        "index": 101,
+        "x": 72.8,
+        "z": -5.3,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R7-S07",
+        "index": 102,
+        "x": 72.8,
+        "z": -4.1,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R7-S08",
+        "index": 103,
+        "x": 72.8,
+        "z": -2.9,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R7-S09",
+        "index": 104,
+        "x": 72.8,
+        "z": 2.9,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R7-S10",
+        "index": 105,
+        "x": 72.8,
+        "z": 4.1,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R7-S11",
+        "index": 106,
+        "x": 72.8,
+        "z": 5.3,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R7-S12",
+        "index": 107,
+        "x": 72.8,
+        "z": 6.5,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R7-S13",
+        "index": 108,
+        "x": 72.8,
+        "z": 7.7,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R7-S14",
+        "index": 109,
+        "x": 72.8,
+        "z": 8.9,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R7-S15",
+        "index": 110,
+        "x": 72.8,
+        "z": 10.1,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R7-S16",
+        "index": 111,
+        "x": 72.8,
+        "z": 11.3,
+        "approachSide": "+X",
+        "yaw": 0.0
+      },
+      {
+        "id": "R8-S01",
+        "index": 112,
+        "x": 78.6,
+        "z": -11.3,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R8-S02",
+        "index": 113,
+        "x": 78.6,
+        "z": -10.1,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R8-S03",
+        "index": 114,
+        "x": 78.6,
+        "z": -8.9,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R8-S04",
+        "index": 115,
+        "x": 78.6,
+        "z": -7.7,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R8-S05",
+        "index": 116,
+        "x": 78.6,
+        "z": -6.5,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R8-S06",
+        "index": 117,
+        "x": 78.6,
+        "z": -5.3,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R8-S07",
+        "index": 118,
+        "x": 78.6,
+        "z": -4.1,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R8-S08",
+        "index": 119,
+        "x": 78.6,
+        "z": -2.9,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R8-S09",
+        "index": 120,
+        "x": 78.6,
+        "z": 2.9,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R8-S10",
+        "index": 121,
+        "x": 78.6,
+        "z": 4.1,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R8-S11",
+        "index": 122,
+        "x": 78.6,
+        "z": 5.3,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R8-S12",
+        "index": 123,
+        "x": 78.6,
+        "z": 6.5,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R8-S13",
+        "index": 124,
+        "x": 78.6,
+        "z": 7.7,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R8-S14",
+        "index": 125,
+        "x": 78.6,
+        "z": 8.9,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R8-S15",
+        "index": 126,
+        "x": 78.6,
+        "z": 10.1,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      },
+      {
+        "id": "R8-S16",
+        "index": 127,
+        "x": 78.6,
+        "z": 11.3,
+        "approachSide": "-X",
+        "yaw": 3.141592653589793
+      }
+    ],
+    "aisles": [
+      {
+        "id": "A1",
+        "x_min_m": 51.9,
+        "x_max_m": 56.3,
+        "z_min_m": -16.4,
+        "z_max_m": 16.4,
+        "clear_width_m": 4.4,
+        "status": "planning assumption, not certified vehicle swept-path width"
+      },
+      {
+        "id": "A2",
+        "x_min_m": 59.1,
+        "x_max_m": 63.5,
+        "z_min_m": -16.4,
+        "z_max_m": 16.4,
+        "clear_width_m": 4.4,
+        "status": "planning assumption, not certified vehicle swept-path width"
+      },
+      {
+        "id": "A3",
+        "x_min_m": 66.3,
+        "x_max_m": 70.7,
+        "z_min_m": -16.4,
+        "z_max_m": 16.4,
+        "clear_width_m": 4.4,
+        "status": "planning assumption, not certified vehicle swept-path width"
+      },
+      {
+        "id": "A4",
+        "x_min_m": 73.5,
+        "x_max_m": 77.9,
+        "z_min_m": -16.4,
+        "z_max_m": 16.4,
+        "clear_width_m": 4.4,
+        "status": "planning assumption, not certified vehicle swept-path width"
+      }
+    ],
+    "crossAisles": [
+      {
+        "id": "north",
+        "x_min_m": 50.5,
+        "x_max_m": 79.3,
+        "z_min_m": -16.4,
+        "z_max_m": -12,
+        "clear_width_m": 4.4
+      },
+      {
+        "id": "middle",
+        "x_min_m": 50.5,
+        "x_max_m": 79.3,
+        "z_min_m": -2.2,
+        "z_max_m": 2.2,
+        "clear_width_m": 4.4
+      },
+      {
+        "id": "south",
+        "x_min_m": 50.5,
+        "x_max_m": 79.3,
+        "z_min_m": 12,
+        "z_max_m": 16.4,
+        "clear_width_m": 4.4
+      }
+    ]
+  },
+  "gantry": {
+    "pickup_x_m": 44.335,
+    "storage_service_x_max_m": 79.3,
+    "nominal_x_service_span_m": 34.965,
+    "outer_post_z_m": [
+      -16.7,
+      16.7
+    ],
+    "post_footprint_m": [
+      0.24,
+      0.24
+    ],
+    "post_x_m": [
+      43.535,
+      52.5,
+      61.5,
+      70.5,
+      80.0
+    ],
+    "notes": [
+      "Outer posts lie wholly outside cross-aisle Z extents \u00b116.4.",
+      "No ground support may be placed inside any clear aisle rectangle.",
+      "Overhead coverage and span are geometric only; a new engineered structure/support design is required."
+    ]
+  },
+  "eastWallX": 94.0,
+  "doorZ": [],
+  "staging": [],
+  "pallet": {
+    "length": 1.18,
+    "width": 0.86
+  },
+  "assumptions": [
+    "Static proposed geometry only; no old replay",
+    "128 GROSS planning slots, not qualified net capacity",
+    "Fork/vehicle envelopes schematic; payload and access unqualified",
+    "East loading interface schematic; truck method under research"
+  ],
+  "selectedOption": "side_two_bays",
+  "optionStatus": "One active bay plus one flexible/contingency bay; static reference poses only",
+  "dispatchSourceSha256": "d841c9c3e2239cc51bfbb9f858d1de765f4130111800676321fb02c71bfc5d7b",
+  "dispatch": {
+    "priority": "candidate primary proposal",
+    "active_trucks": 1,
+    "truck_orientation": "N/S drive-through, cab +Z; entrance/exit gates and vehicle swept paths unverified",
+    "side_bays": [
+      {
+        "id": "S1",
+        "centre_x_m": 92.0,
+        "centre_z_m": 0,
+        "truck": {
+          "x_min_m": 90.725,
+          "x_max_m": 93.275,
+          "z_min_m": -8.25,
+          "z_max_m": 8.25,
+          "length_m": 16.5,
+          "width_m": 2.55,
+          "cab_toward": "+Z",
+          "trailer_rear_z_m": -8.25,
+          "trailer_front_z_m": 5.35,
+          "nominal_reference_only": true
+        },
+        "west_forklift_work_lane": {
+          "x_min_m": 85.825,
+          "x_max_m": 90.225,
+          "z_min_m": -12,
+          "z_max_m": 12
+        },
+        "east_forklift_work_lane": {
+          "x_min_m": 93.775,
+          "x_max_m": 98.175,
+          "z_min_m": -12,
+          "z_max_m": 12
+        },
+        "truck_side_buffer_m": 0.5,
+        "work_lane_width_m": 4.4,
+        "working_method": "Ground-running forklift/AMR accesses both exposed trailer sides; each side places its near half, no across-trailer far-row reach.",
+        "trailer_deck_height_nominal_m": 1.21,
+        "deck_height_status": "Supplier reference screen only; select exact vehicle/trailer/load chart before operation.",
+        "dedicated_loader": "East-cell dedicated side loader; manufacturer case precedent only, exact1262kgpack/load-centre/forks/vision task unqualified."
+      },
+      {
+        "id": "S2",
+        "centre_x_m": 109.0,
+        "centre_z_m": 0,
+        "truck": {
+          "x_min_m": 107.725,
+          "x_max_m": 110.275,
+          "z_min_m": -8.25,
+          "z_max_m": 8.25,
+          "length_m": 16.5,
+          "width_m": 2.55,
+          "cab_toward": "+Z",
+          "trailer_rear_z_m": -8.25,
+          "trailer_front_z_m": 5.35,
+          "nominal_reference_only": true
+        },
+        "west_forklift_work_lane": {
+          "x_min_m": 102.825,
+          "x_max_m": 107.225,
+          "z_min_m": -12,
+          "z_max_m": 12
+        },
+        "east_forklift_work_lane": {
+          "x_min_m": 110.775,
+          "x_max_m": 115.175,
+          "z_min_m": -12,
+          "z_max_m": 12
+        },
+        "truck_side_buffer_m": 0.5,
+        "work_lane_width_m": 4.4,
+        "working_method": "Ground-running forklift/AMR accesses both exposed trailer sides; each side places its near half, no across-trailer far-row reach.",
+        "trailer_deck_height_nominal_m": 1.21,
+        "deck_height_status": "Supplier reference screen only; select exact vehicle/trailer/load chart before operation.",
+        "dedicated_loader": "East-cell dedicated side loader; manufacturer case precedent only, exact1262kgpack/load-centre/forks/vision task unqualified."
+      }
+    ],
+    "north_forklift_cross_connection": {
+      "x_min_m": 79.3,
+      "x_max_m": 119.5,
+      "z_min_m": -16.4,
+      "z_max_m": -12
+    },
+    "south_forklift_cross_connection": {
+      "x_min_m": 79.3,
+      "x_max_m": 119.5,
+      "z_min_m": 12,
+      "z_max_m": 16.4
+    },
+    "canopy_reservation": {
+      "x_min_m": 84.8,
+      "x_max_m": 119.5,
+      "z_min_m": -12,
+      "z_max_m": 12
+    },
+    "canopy_status": "Column locations, wind/snow loads, vehicle clearance and reach not engineered. Keep columns outside all work lanes.",
+    "staging_positions": [
+      {
+        "id": "H01",
+        "x_m": 85.0,
+        "z_m": -9.0,
+        "length_x_m": 1.2,
+        "width_z_m": 1.0,
+        "approach_from": [
+          "-X",
+          "+X"
+        ],
+        "warehouse_AMR_approach_from": "-X",
+        "dedicated_loader_approach_from": "+X",
+        "counted_as_storage": false,
+        "purpose": "Two-sided pack-check/securing/handoff; no warehouse-AMR trip through truck cell."
+      },
+      {
+        "id": "H02",
+        "x_m": 85.0,
+        "z_m": -7.8,
+        "length_x_m": 1.2,
+        "width_z_m": 1.0,
+        "approach_from": [
+          "-X",
+          "+X"
+        ],
+        "warehouse_AMR_approach_from": "-X",
+        "dedicated_loader_approach_from": "+X",
+        "counted_as_storage": false,
+        "purpose": "Two-sided pack-check/securing/handoff; no warehouse-AMR trip through truck cell."
+      },
+      {
+        "id": "H03",
+        "x_m": 85.0,
+        "z_m": -6.6,
+        "length_x_m": 1.2,
+        "width_z_m": 1.0,
+        "approach_from": [
+          "-X",
+          "+X"
+        ],
+        "warehouse_AMR_approach_from": "-X",
+        "dedicated_loader_approach_from": "+X",
+        "counted_as_storage": false,
+        "purpose": "Two-sided pack-check/securing/handoff; no warehouse-AMR trip through truck cell."
+      },
+      {
+        "id": "H04",
+        "x_m": 85.0,
+        "z_m": -5.4,
+        "length_x_m": 1.2,
+        "width_z_m": 1.0,
+        "approach_from": [
+          "-X",
+          "+X"
+        ],
+        "warehouse_AMR_approach_from": "-X",
+        "dedicated_loader_approach_from": "+X",
+        "counted_as_storage": false,
+        "purpose": "Two-sided pack-check/securing/handoff; no warehouse-AMR trip through truck cell."
+      },
+      {
+        "id": "H05",
+        "x_m": 85.0,
+        "z_m": -4.2,
+        "length_x_m": 1.2,
+        "width_z_m": 1.0,
+        "approach_from": [
+          "-X",
+          "+X"
+        ],
+        "warehouse_AMR_approach_from": "-X",
+        "dedicated_loader_approach_from": "+X",
+        "counted_as_storage": false,
+        "purpose": "Two-sided pack-check/securing/handoff; no warehouse-AMR trip through truck cell."
+      },
+      {
+        "id": "H06",
+        "x_m": 85.0,
+        "z_m": -3.0,
+        "length_x_m": 1.2,
+        "width_z_m": 1.0,
+        "approach_from": [
+          "-X",
+          "+X"
+        ],
+        "warehouse_AMR_approach_from": "-X",
+        "dedicated_loader_approach_from": "+X",
+        "counted_as_storage": false,
+        "purpose": "Two-sided pack-check/securing/handoff; no warehouse-AMR trip through truck cell."
+      },
+      {
+        "id": "H07",
+        "x_m": 85.0,
+        "z_m": -1.8,
+        "length_x_m": 1.2,
+        "width_z_m": 1.0,
+        "approach_from": [
+          "-X",
+          "+X"
+        ],
+        "warehouse_AMR_approach_from": "-X",
+        "dedicated_loader_approach_from": "+X",
+        "counted_as_storage": false,
+        "purpose": "Two-sided pack-check/securing/handoff; no warehouse-AMR trip through truck cell."
+      },
+      {
+        "id": "H08",
+        "x_m": 85.0,
+        "z_m": -0.6,
+        "length_x_m": 1.2,
+        "width_z_m": 1.0,
+        "approach_from": [
+          "-X",
+          "+X"
+        ],
+        "warehouse_AMR_approach_from": "-X",
+        "dedicated_loader_approach_from": "+X",
+        "counted_as_storage": false,
+        "purpose": "Two-sided pack-check/securing/handoff; no warehouse-AMR trip through truck cell."
+      },
+      {
+        "id": "H09",
+        "x_m": 85.0,
+        "z_m": 0.6,
+        "length_x_m": 1.2,
+        "width_z_m": 1.0,
+        "approach_from": [
+          "-X",
+          "+X"
+        ],
+        "warehouse_AMR_approach_from": "-X",
+        "dedicated_loader_approach_from": "+X",
+        "counted_as_storage": false,
+        "purpose": "Two-sided pack-check/securing/handoff; no warehouse-AMR trip through truck cell."
+      },
+      {
+        "id": "H10",
+        "x_m": 85.0,
+        "z_m": 1.8,
+        "length_x_m": 1.2,
+        "width_z_m": 1.0,
+        "approach_from": [
+          "-X",
+          "+X"
+        ],
+        "warehouse_AMR_approach_from": "-X",
+        "dedicated_loader_approach_from": "+X",
+        "counted_as_storage": false,
+        "purpose": "Two-sided pack-check/securing/handoff; no warehouse-AMR trip through truck cell."
+      },
+      {
+        "id": "H11",
+        "x_m": 85.0,
+        "z_m": 3.0,
+        "length_x_m": 1.2,
+        "width_z_m": 1.0,
+        "approach_from": [
+          "-X",
+          "+X"
+        ],
+        "warehouse_AMR_approach_from": "-X",
+        "dedicated_loader_approach_from": "+X",
+        "counted_as_storage": false,
+        "purpose": "Two-sided pack-check/securing/handoff; no warehouse-AMR trip through truck cell."
+      },
+      {
+        "id": "H12",
+        "x_m": 85.0,
+        "z_m": 4.2,
+        "length_x_m": 1.2,
+        "width_z_m": 1.0,
+        "approach_from": [
+          "-X",
+          "+X"
+        ],
+        "warehouse_AMR_approach_from": "-X",
+        "dedicated_loader_approach_from": "+X",
+        "counted_as_storage": false,
+        "purpose": "Two-sided pack-check/securing/handoff; no warehouse-AMR trip through truck cell."
+      },
+      {
+        "id": "H13",
+        "x_m": 85.0,
+        "z_m": 5.4,
+        "length_x_m": 1.2,
+        "width_z_m": 1.0,
+        "approach_from": [
+          "-X",
+          "+X"
+        ],
+        "warehouse_AMR_approach_from": "-X",
+        "dedicated_loader_approach_from": "+X",
+        "counted_as_storage": false,
+        "purpose": "Two-sided pack-check/securing/handoff; no warehouse-AMR trip through truck cell."
+      },
+      {
+        "id": "H14",
+        "x_m": 85.0,
+        "z_m": 6.6,
+        "length_x_m": 1.2,
+        "width_z_m": 1.0,
+        "approach_from": [
+          "-X",
+          "+X"
+        ],
+        "warehouse_AMR_approach_from": "-X",
+        "dedicated_loader_approach_from": "+X",
+        "counted_as_storage": false,
+        "purpose": "Two-sided pack-check/securing/handoff; no warehouse-AMR trip through truck cell."
+      },
+      {
+        "id": "H15",
+        "x_m": 85.0,
+        "z_m": 7.8,
+        "length_x_m": 1.2,
+        "width_z_m": 1.0,
+        "approach_from": [
+          "-X",
+          "+X"
+        ],
+        "warehouse_AMR_approach_from": "-X",
+        "dedicated_loader_approach_from": "+X",
+        "counted_as_storage": false,
+        "purpose": "Two-sided pack-check/securing/handoff; no warehouse-AMR trip through truck cell."
+      },
+      {
+        "id": "H16",
+        "x_m": 85.0,
+        "z_m": 9.0,
+        "length_x_m": 1.2,
+        "width_z_m": 1.0,
+        "approach_from": [
+          "-X",
+          "+X"
+        ],
+        "warehouse_AMR_approach_from": "-X",
+        "dedicated_loader_approach_from": "+X",
+        "counted_as_storage": false,
+        "purpose": "Two-sided pack-check/securing/handoff; no warehouse-AMR trip through truck cell."
+      }
+    ],
+    "staging_count": 16,
+    "driver_parking_and_pedestrian_refuge_reservation": {
+      "x_min_m": 121,
+      "x_max_m": 130,
+      "z_min_m": -10,
+      "z_max_m": 12
+    },
+    "segregating_barrier_x_m": 120,
+    "driver_access_status": "Driver exits/returns under controlled immobilization and forklift exclusion; no pedestrian route through an active loading lane is assumed.",
+    "truck_through_access_reservation": {
+      "north": {
+        "x_min_m": 89.5,
+        "x_max_m": 111.5,
+        "z_min_m": -30,
+        "z_max_m": -16.4
+      },
+      "south": {
+        "x_min_m": 89.5,
+        "x_max_m": 111.5,
+        "z_min_m": 16.4,
+        "z_max_m": 38
+      }
+    },
+    "traffic_rule": "Immobilize truck while forklifts load; controlled crossings at both bay ends. Both loading sides served from north/south cross connections. No concurrent truck movement across occupied forklift lanes.",
+    "platform_level_m": 0.0,
+    "lifting_interface": "Forklift raises pallet from ground staging to trailer deck; no dock platform. Real load-at-height/centre ratings and task automation remain qualification gates.",
+    "operating_assignment": "One active side-loading bay plus one flexible/contingency bay; no inferred loading throughput.",
+    "staging_status": "Exactly16two-sided handoff positions, separate from128frozen storage. Supersedes initial32-position sketch. No runtime capacity/throughput claim; second bay may idle or handle exceptions.",
+    "physical_bays": 2,
+    "flexible_bays": 1
+  },
+  "dispatchCanopyUndersideY": 5.8
+}

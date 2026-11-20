@@ -1,0 +1,288 @@
+{
+  "point": 10,
+  "trajectory": "continuous_arc",
+  "execute": true,
+  "target_xyz_m": [
+    0.4733837842941284,
+    -0.33313971757888794,
+    0.030165500938892365
+  ],
+  "target_O_T_EE": [
+    0.9995312094688416,
+    -0.01997883804142475,
+    -0.023197894915938377,
+    0,
+    -0.020223507657647133,
+    -0.999741792678833,
+    -0.010360781103372574,
+    0,
+    -0.022984910756349564,
+    0.01082506775856018,
+    -0.9996771812438965,
+    0,
+    0.4733837842941284,
+    -0.33313971757888794,
+    0.030165500938892365,
+    1
+  ],
+  "control_points_m": [
+    [
+      0.7090107798576355,
+      -0.06030631437897682,
+      0.132843479514122
+    ],
+    [
+      0.7090107798576355,
+      -0.06030631437897682,
+      0.23284347951412201
+    ],
+    [
+      0.7090107798576355,
+      -0.06030631437897682,
+      0.23284347951412201
+    ],
+    [
+      0.4733837842941284,
+      -0.33313971757888794,
+      0.13016550093889237
+    ],
+    [
+      0.4733837842941284,
+      -0.33313971757888794,
+      0.13016550093889237
+    ],
+    [
+      0.4733837842941284,
+      -0.33313971757888794,
+      0.030165500938892365
+    ]
+  ],
+  "duration_s": 7.176925921970273,
+  "derivative_bounds": {
+    "nominal_distance_time_s": 7.176925921970273,
+    "derivative_required_time_s": 6.053481307482709,
+    "straight_distance_m": 0.37483451578560045,
+    "translation_derivative_bounds": [
+      1.3208831457172199,
+      7.7485054454785285,
+      95.81151870534796
+    ],
+    "angular_derivative_bounds": [
+      0.058789023474054534,
+      0.5204418307648229,
+      11.63042847728379
+    ],
+    "estimated_peak_velocity_m_s": 0.18404581015301874,
+    "estimated_peak_acceleration_m_s2": 0.15043227221423922,
+    "estimated_peak_jerk_m_s3": 0.2591805059998184
+  },
+  "motion_config": {
+    "schema_version": 1,
+    "trajectory": "continuous_quintic_bezier",
+    "vertical_standoff_m": 0.1,
+    "max_translation_velocity_m_s": 0.4,
+    "max_translation_acceleration_m_s2": 0.75,
+    "max_translation_jerk_m_s3": 0.5,
+    "max_rotation_velocity_rad_s": 0.3,
+    "max_rotation_acceleration_rad_s2": 1.0,
+    "max_rotation_jerk_rad_s3": 5.0,
+    "filter_cutoff_hz": 1000,
+    "endpoint_position_tolerance_m": 0.001,
+    "endpoint_orientation_tolerance_rad": 0.017453292519943295,
+    "max_callback_gap_s": 0.005,
+    "workspace_bounds_m": {
+      "min": [
+        0.1978522479534149,
+        -0.6432363748550415,
+        -0.0800563082098961
+      ],
+      "max": [
+        0.8095304727554321,
+        0.10219795852899552,
+        0.2334850788116455
+      ]
+    },
+    "clearance_basis": "Operator: the whole path is clear; all 15 marked poses plus 10 cm in all directions are allowed.",
+    "clearance_recorded_utc": "2026-10-25T18:55:20.105140+00:00",
+    "path_definition": "100 mm vertical departure/arrival guide points blended into one continuous curve with vertical endpoint tangents. Guide points are control points, not stop points; corners are rounded within the workspace bounds.",
+    "rate_limiting_enabled": false,
+    "signal_processing_note": "Trajectory derivatives are explicitly bounded before motion. Use documented FR3 default (rate limiting disabled) and no feedback-based low-pass filter; robot safety limits and runtime motion guards remain enforced.",
+    "signal_processing_reference": "https://github.com/frankarobotics/libfranka/blob/main/CHANGELOG.md",
+    "updated_utc": "2026-10-25T19:03:20.811029+00:00",
+    "timing_policy": "cube_root_distance_with_derivative_limits",
+    "workspace_reference_distance_m": 1.0139678483364465,
+    "reference_move_duration_s": 10.0,
+    "minimum_move_duration_s": 1.0,
+    "max_joint_velocity_rad_s": 0.6,
+    "control_cpu": 6,
+    "stationary_start_stable_time_s": 0.5,
+    "stationary_start_timeout_s": 2.0,
+    "timing_note": "Nominal T=10*(straight_distance/workspace_diagonal)^(1/3); actual duration is the maximum of nominal time, minimum time and bounded arc/orientation derivative requirements."
+  },
+  "temporary_overrides": {
+    "z_offset_mm": 0,
+    "vertical_tool": false
+  },
+  "taught_point": {
+    "image_point": 10,
+    "label": "output_point_10_above_grasp",
+    "recorded_utc": "2026-10-25T18:30:36.967747+00:00",
+    "xyz_m": [
+      0.4733837842941284,
+      -0.33313971757888794,
+      0.030165500938892365
+    ],
+    "O_T_EE": [
+      0.9995312094688416,
+      -0.01997883804142475,
+      -0.023197894915938377,
+      0,
+      -0.020223507657647133,
+      -0.999741792678833,
+      -0.010360781103372574,
+      0,
+      -0.022984910756349564,
+      0.01082506775856018,
+      -0.9996771812438965,
+      0,
+      0.4733837842941284,
+      -0.33313971757888794,
+      0.030165500938892365,
+      1
+    ],
+    "q_rad": [
+      -1.4859840869903564,
+      0.9126006960868835,
+      0.880772590637207,
+      -1.9858731031417847,
+      -1.0257842540740967,
+      2.3340377807617188,
+      0.826336681842804
+    ],
+    "elbow": [
+      0.880772590637207,
+      -1
+    ],
+    "tool_frames": {
+      "F_T_EE": [
+        0.7071067690849304,
+        -0.7071067690849304,
+        0,
+        0,
+        0.7071067690849304,
+        0.7071067690849304,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0.10339999943971634,
+        1
+      ],
+      "F_T_NE": [
+        0.7071067690849304,
+        -0.7071067690849304,
+        0,
+        0,
+        0.7071067690849304,
+        0.7071067690849304,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0.10339999943971634,
+        1
+      ],
+      "NE_T_EE": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "EE_T_K": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    "tool_mass_kg": 0.7300000190734863,
+    "payload_mass_kg": 0,
+    "operator_declared_vertical": false,
+    "measured_tool_z_tilt_from_base_down_deg": 1.4558904390714935,
+    "note": "Operator identifies current pose as annotated point #10 on the gray output plate. Preserve measured pose and apply the standard 15 mm downward base-Z grasp reference offset. Height normalization to point #3 applies only to #2, #3 and #5.",
+    "stationary_check": {
+      "duration_ms": 500,
+      "max_joint_speed_rad_s": 0.0025762186851352453,
+      "max_joint_drift_rad": 7.62939453125e-06,
+      "max_tcp_drift_m": 6.935988593727912e-06
+    },
+    "raw_capture": "teaching/history/point_10_20261025T183036.967747Z.json",
+    "motion_to_pose_validated": false,
+    "grasp_reference": {
+      "source": "operator-provided vertical offset; derived, not physically taught",
+      "offset_from_recorded_pose_base_m": [
+        0,
+        0,
+        -0.015
+      ],
+      "xyz_m": [
+        0.4733837842941284,
+        -0.33313971757888794,
+        0.015165500938892365
+      ],
+      "O_T_EE": [
+        0.9995312094688416,
+        -0.01997883804142475,
+        -0.023197894915938377,
+        0,
+        -0.020223507657647133,
+        -0.999741792678833,
+        -0.010360781103372574,
+        0,
+        -0.022984910756349564,
+        0.01082506775856018,
+        -0.9996771812438965,
+        0,
+        0.4733837842941284,
+        -0.33313971757888794,
+        0.015165500938892365,
+        1
+      ],
+      "motion_validated": false
+    }
+  },
+  "catalog_sha256": "1b812ddfd252c00c4e1ba363e0a51fba347f05b5d472211924a3e64c4f446c0e",
+  "grasp_offset_executed": false
+}

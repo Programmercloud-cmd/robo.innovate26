@@ -1,0 +1,9 @@
+{
+  "python_executable": "/home/faps/miniforge3/envs/unitree_sim_env/bin/python",
+  "python": "3.11.15",
+  "opencv": "4.10.0",
+  "numpy": "1.26.0",
+  "scipy": "1.15.3",
+  "dependencies_changed": false,
+  "model_inference": false
+}

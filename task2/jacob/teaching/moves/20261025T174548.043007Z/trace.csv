@@ -1,0 +1,2 @@
+stage,time_s,x_m,y_m,z_m,tracking_error_m,command_success_rate
+lift,0,0.47242602706,0.00080342264846,0.0976951494813,1.53636302531e-06,0

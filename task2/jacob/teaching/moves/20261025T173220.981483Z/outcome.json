@@ -1,0 +1,29 @@
+{
+  "observed_utc": "2026-10-25T17:34:17.219632+00:00",
+  "requested_point": 3,
+  "completed": true,
+  "target_xyz_m": [
+    0.47464385628700256,
+    0.002197958528995514,
+    0.09742671251296997
+  ],
+  "actual_xyz_m": [
+    0.4742811918258667,
+    0.0021530096419155598,
+    0.09718938916921616
+  ],
+  "position_error_mm": 0.4357387787553279,
+  "orientation_error_deg": 0.06225554869293165,
+  "tool_z_tilt_from_down_deg": 0.15701751249847418,
+  "final_mode": "Idle",
+  "final_errors": [],
+  "stages": [
+    "lift 10 mm",
+    "XY transfer and restore taught orientation at clearance",
+    "vertical descent to saved upper pose"
+  ],
+  "execution_log": "teaching/moves/20261025T173220.981483Z/execution.log",
+  "gripper_commands_sent": false,
+  "grasp_offset_executed": false,
+  "validation_scope": "This logged route from its recorded initial pose only; other routes require independent checks."
+}

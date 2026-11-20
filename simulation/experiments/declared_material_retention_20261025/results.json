@@ -1,0 +1,149 @@
+{
+  "schema": "declared-material-retention-result-v1",
+  "job_id": 1830,
+  "source_commit": "2f20f7a",
+  "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T181056.838163Z-declared-material-retention",
+  "status": "CLOSED_NEGATIVE_PHYSICAL_RETENTION_RESULT",
+  "corrected_material_configuration_verified": true,
+  "fresh_control_passed": true,
+  "fresh_control_steps": 1500,
+  "fresh_control_check_count": 175,
+  "fresh_control_bridge_passed": true,
+  "retention_fixture_passed": false,
+  "pick_steps": 716,
+  "stop_reasons": [
+    "unqualified_contact_right"
+  ],
+  "frame_failure_counts": {
+    "coupon_relative_retention": 129,
+    "no_capture_abort": 1,
+    "plane_compatible": 1
+  },
+  "failed_checks": [
+    "all_frames",
+    "completed_pick",
+    "coupon_rise",
+    "lift_5mm",
+    "held_30"
+  ],
+  "metrics": {
+    "coupon_rise_m": 0.0007657408714294434,
+    "relative_translation_max_m": 0.001686823429204364,
+    "relative_angle_max_rad": 0.11860428094857202,
+    "minimum_hold_support_clearance_m": null,
+    "source_drift_max_m": 0.00020829330605920404,
+    "source_angle_max_rad": 0.002178899707942024,
+    "force_peak_N": {
+      "left": 1.4815527014434338,
+      "right": 1.689989247592166
+    }
+  },
+  "lift_admission": {
+    "kind": "position_candidate",
+    "step": 450,
+    "command_q_m": 0.005593305453658104
+  },
+  "finger_actual_speed_max_m_s_by_phase": {
+    "close": [
+      0.0019513594452291727,
+      0.0019360713195055723
+    ],
+    "lift": [
+      0.0032917382195591927,
+      0.003326583653688431
+    ]
+  },
+  "baseline_1825_comparison": {
+    "old_stop_step": 740,
+    "old_retention_violation_frames": 151,
+    "old_relative_translation_max_m": 0.0018605646125109585,
+    "old_relative_angle_max_rad": 0.13869291804694414,
+    "old_final_rise_m": 0.0008535236120223999,
+    "interpretation": "Both failed. Earlier stop at716 means smaller observed maxima do not establish improvement or completion under a common horizon."
+  },
+  "timing": {
+    "schema": "declared-material-regression-supervisor-v1",
+    "phases": [
+      {
+        "phase": "capture",
+        "mode": "control",
+        "wall_seconds": 101.40258928301046,
+        "returncode": 0,
+        "cleanup": "complete_marker_cleanup",
+        "capture_completed": true
+      },
+      {
+        "phase": "audit",
+        "mode": "control",
+        "wall_seconds": 29.852871282986598,
+        "returncode": 0
+      },
+      {
+        "phase": "capture",
+        "mode": "pick",
+        "wall_seconds": 62.281160885002464,
+        "returncode": 0,
+        "cleanup": "complete_marker_cleanup",
+        "capture_completed": true
+      },
+      {
+        "phase": "audit",
+        "mode": "pick",
+        "wall_seconds": 22.89346753398422,
+        "returncode": 1
+      }
+    ],
+    "actual_capture_plus_audit_seconds": 216.43403172001126,
+    "prior_case_seconds": 2698.1306163560234,
+    "cumulative_case_seconds": 2914.8227498130236,
+    "previous_case_limit_seconds": 2800,
+    "case_limit_seconds": 3000,
+    "maximum_active_seconds": 300,
+    "within_budget": true,
+    "control_passed": true,
+    "pick_attempted": true,
+    "improvement_round": 0,
+    "closed_old_fixture_improvements": 3,
+    "new_improvement_pool": 0,
+    "retention_fixture_passed": false,
+    "proceed_gate_passed": false,
+    "physics_extraction_passed": false,
+    "perception_credit": false,
+    "transfer_authorized": false,
+    "automatic_retry": false,
+    "control_audit_sha256": "b8caf2e604e602634f49f611253bdcbef36eb65b7c1ced62f0f3b2c25b80056a",
+    "pick_audit_sha256": "3537d60fe36f1b50f91bb900d8b3df5a206873712b130ee9347ad0532d07a7bc",
+    "supervised_cumulative_case_seconds": 2914.5646480760347,
+    "full_pueue_job_seconds": 216.692133457,
+    "pueue_job_id": 1830,
+    "pueue_start": "2026-10-25T19:10:57.162499172+01:00",
+    "pueue_end": "2026-10-25T19:14:33.854632629+01:00",
+    "full_pueue_timing_authoritative": true,
+    "remaining_case_seconds": 85.17725018697638
+  },
+  "original_three_round_fixture_history": "CLOSED_PRESERVED",
+  "new_improvement_pool": 0,
+  "automatic_retry": false,
+  "native_tower_extraction_passed": false,
+  "perception_credit": false,
+  "held_identity": "UNKNOWN",
+  "transfer_authorized": false,
+  "hardware_claim": false,
+  "global_model_adopted": false,
+  "runtime_row_to_BODY_mapping": "UNKNOWN",
+  "pair_friction": "UNKNOWN",
+  "control_audit_sha256": "b8caf2e604e602634f49f611253bdcbef36eb65b7c1ced62f0f3b2c25b80056a",
+  "pick_audit_sha256": "3537d60fe36f1b50f91bb900d8b3df5a206873712b130ee9347ad0532d07a7bc",
+  "independent_reviews": {
+    "evaluator": "Accepts uncensored negative retention result; control/config/native/raw gates pass. Do not infer improvement from earlier stop. Working real grasp reference is the next dependency.",
+    "planner": "No further source-supported defect or justified parameter change identified; downstream transfer/placement blocked on retained grasp.",
+    "reviewer": "Accepts uncensored negative result, verified materials/margins and fresh1500control. No further grounded parameter variant. Supports goal blocked, not complete, pending successful real grasp requested/measured width and actual engagement depth reference."
+  },
+  "next_dependency": "Clarify the successful real grasp: requested versus measured Desk/SDK width and actual brick engagement depth relative to the custom pad/metal fingers. Existing photos and CAD mounting intent do not determine the operating grasp. No further coefficient/offset/guard/depth/width variant is selected without that reference or a materially different evidence-based approach.",
+  "reproducible_commands": [
+    "python3 experiments/declared_material_retention_20261025/submit.py (original2f20f7a source; onejob, no automaticresubmission)",
+    "Exact frozen runtime: /home/faps/dev/github/robo.innovate26/runs/20261025T181056.838163Z-declared-material-retention/launch.sh",
+    "Exact control/pick/audit commands: /home/faps/dev/github/robo.innovate26/runs/20261025T181056.838163Z-declared-material-retention/experiments/declared_material_retention_20261025/pipeline.py"
+  ],
+  "remaining_dependency_repeated_across_goal_turns": true
+}

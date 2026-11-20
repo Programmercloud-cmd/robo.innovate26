@@ -1,0 +1,13 @@
+{
+  "image": "img_8.jpg",
+  "detections": [
+    {
+      "parent_detection_id": "d000",
+      "stud_count": 38,
+      "orientation_deg": 165.06759313513828,
+      "pca_eigenvalue_ratio": 3.7635175366937625,
+      "passes_eight_stud_pca_gate": false,
+      "interpretation": "image-space heuristic only; not exposure, accessibility or metric pose"
+    }
+  ]
+}

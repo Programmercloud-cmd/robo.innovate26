@@ -1,0 +1,15 @@
+{
+  "image": "img_1.jpg",
+  "parents": [
+    {
+      "parent_detection_id": "d000",
+      "crop_image_xyxy": [
+        754,
+        52,
+        790,
+        91
+      ],
+      "detections": []
+    }
+  ]
+}

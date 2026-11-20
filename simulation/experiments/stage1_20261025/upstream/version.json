@@ -1,0 +1,7 @@
+{
+  "id": "R3",
+  "round_number": 3,
+  "parent": "R2",
+  "target": "Confirm at least one of the ten observable interior gaps with zero wrong or unverified missing claims, no NaN-patch/control claims, and every R2 present identity retained.",
+  "change": "Only uncertain selected-phase slots bracketed by same-ridge top material may become missing after actual-depth 6-of-8 lower returns with an all-valid-return contradiction veto. No RGB veto or geometry/present changes."
+}

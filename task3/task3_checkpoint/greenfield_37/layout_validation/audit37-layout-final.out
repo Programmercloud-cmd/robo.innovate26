@@ -1,0 +1,6 @@
+PARSED 57600 290 {'rigid_brick_segments': 1076840, 'local_good_routes': 50664, 'roller_approaches': 50664, 'discard_routes': 6936}
+MATERIAL_PASS {2: 14, 0: 41, 1: 15, 3: 14} WIP 3624
+FORMER_COLUMN_ACCUMULATION_PASS 1259
+GROUND_DATUM_AND_THROUGH_CART_PASS
+FLEET_AABB_MIN 0.04999999999999716 ('amr-2', 'truck-0-1', 5551.5) OVERLAPS []
+FINAL {"inspected": 57600, "rejected": 6936, "disposed": 6936, "produced": 84, "loaded": 64, "shipped": 64, "bph": 8019.04986811265, "pph": 14.319731907344018, "productionEnd": 21114.716635320437, "total": 23675.656923197854}

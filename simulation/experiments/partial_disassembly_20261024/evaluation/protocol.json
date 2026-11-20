@@ -1,0 +1,150 @@
+{
+  "schema": "partial-disassembly-fixed-evaluation-v1",
+  "status": "planning_artifact_frozen_before_implementation_and_render_outputs",
+  "benchmark_path": "experiments/partial_disassembly_20261024/benchmark.json",
+  "benchmark_sha256": "be8d242d15d599334dbbd235474246c059cde8a3ee34e4af4182f65fddf90919",
+  "baseline_settings_sha256": {
+    "frozen/baseline_config.json": "e640a29070da4d7e093ca30a5dc669ed5ffa34eb902dc064f4fc2978b2befb3a",
+    "frozen/calibration.json": "1287a6c4f7e349a8b237e5bddc505dfbc3cf84bb87298e592da2495f38a333a7",
+    "frozen/depth_config.json": "127f04e168b2621d4e7a9b4ff43a77b67a8b2710f6979bf3aebc468eaef48b8e"
+  },
+  "dataset": {
+    "primary_configurations": 10,
+    "views_per_configuration": 2,
+    "development_observations": 16,
+    "reserved_observations": 4,
+    "views": [
+      "top",
+      "oblique_side"
+    ],
+    "development_cases": [
+      "I_mix",
+      "I_tan",
+      "H_mix",
+      "E_mix",
+      "A_mix",
+      "A_repeat",
+      "U_tan",
+      "T_mix"
+    ],
+    "reserved_cases": [
+      "S_repeat",
+      "P_mix"
+    ],
+    "development_controls": [
+      "invalid_top",
+      "invalid_side",
+      "flat_top",
+      "flat_side",
+      "no_return_patch"
+    ],
+    "palette_semantics": "mixed, single tan, and repeated color pattern as specified by benchmark.json. A_repeat/S_repeat denote repeated colors, not independent repeat captures.",
+    "correlation": "Two views and palette variants of related states are correlated observations of the same static design. Report each configuration/view and group totals; no independent-stack generalization."
+  },
+  "render_integrity": {
+    "inventory": "Each state must validate exact active source asset IDs/counts, no removed-body ghost prims, expected native graph including plate, and actual PhysX/USD poses before/after capture. Compare against benchmark expected inventory/links.",
+    "camera_policy": "Fixedworldposes/lightscomputedfrominitialfulldesign;neverrecenterfromremainingtruth",
+    "pose_policy": "Static initialized captures with unchanged state/time across views; zero post-connection physics steps. No physical disassembly, equilibrium, load-bearing or clutch-stability claim.",
+    "truth_isolation": "Active/removed IDs, source layout, poses, native graph, reference roles and camera truth are evaluation-only. Perception receives sensor RGB/depth, nominal calibration/ROI and frozen method settings only; case labels may name files but must not branch method behavior."
+  },
+  "target_definition": {
+    "physical_layer": "Determine highest remaining physical layer from active inventory/poses, never from detector-selected bands or minimum component/area support.",
+    "primary": "Every brick on that layer is a target candidate, including a single isolated remnant. Retain a positive reference when its full projected face is in frame and at least6 of8 depth-tested stud samples are visible.",
+    "visibility_tolerance_m": 0.002,
+    "partial_unknown": "One to five visible stud samples or a clipped face: excluded partial/unknown reference, counted and reported. Zero visible samples: excluded occluded/not visible. No excluded case becomes a correct absence.",
+    "sensor_patch": "Physical-present references for no_return_patch use unchanged rendered-scene visibility; an invalid depth patch does not remove a physical brick from truth.",
+    "lower_surfaces": "Report lower-relative-to-current-task surfaces separately. A vertically uncovered lower brick is not a primary target while a higher-layer remnant remains; do not call it mechanically inaccessible. Record higher-material footprint overlap separately if supplied, without a grasp-accessibility claim."
+  },
+  "present_matching": {
+    "historical_2d": "Preserve one-to-one axis-aligned face-envelope IoU>=0.50: maximum cardinality then IoU. A prediction covering at least50% of each of two positive face envelopes and containing both centers is a merge and ineligible as an individual TP.",
+    "categories": "Unmatched non-merge prediction matching an already matched positive is duplicate; otherwise lower-footprint-center, excluded partial/unknown-center, unresolved and outside-ROI categories follow the existing historical precedence. Lower footprint flags are conservative image-overlap flags, not exact visible masks.",
+    "roi": "Evaluation ROI is the projected full design/source footprint envelope, including removed locations; it is never passed as a detection template. Report outside predictions separately.",
+    "stages": "Score all raw geometric hypotheses separately from decision=present declarations. Raw matches measure geometry coverage, not confirmed detection. Joint present/missing/uncertain slot decisions use separate matching; assignment ownership may differ.",
+    "task_height_gate_m": 0.003,
+    "height_consistent_task_tp": "In addition to unchanged2D TP, count task-correct present only when its declared surface height is within3mm of either actual current-highest-layer body-top or stud-top reference height. A nonfinite/absent height is unverified, not a task TP. Report image TP and height-consistent task TP separately; a wrong lower band cannot hide behind2D IoU.",
+    "report": "Misses, merges, duplicates, unresolved, lower image flags, wrong-layer selections, precision/recall, uncertain/no_match and exclusions with all denominators. Zero errors at zero coverage is not success."
+  },
+  "missing_and_extent": {
+    "source": "Only evaluation may use removed inventory to construct counterfactual missing-slot polygons at their original current-layer position. Perception never receives these positions or removal labels.",
+    "bounded_internal": "A removed slot is an internal-absence candidate only if surviving same-layer material brackets it on both longitudinal sides of the same original ridge. A run of adjacent removed slots is one shared-phase gap with one reference per original slot.",
+    "observable_lower_return": "For each candidate project the fixed8 hypothetical stud-center rays into the original camera view. At least6 must have a finite valid sensor return whose world height is at least3mm below the current-layer body-top reference. Returns on same-height occluders and invalid/no returns do not count as lower evidence.",
+    "sample_count": 8,
+    "required_lower_samples": 6,
+    "minimum_lower_height_drop_m": 0.003,
+    "absence_exclusions": "Unbracketed endpoints, entirely absent ridges, outside-span slots and nonobservable/occluded gaps are extent-unknown or visibility-unknown, even when inventory says removed. Report counts; they are not scored correct missing references.",
+    "endpoint_rule": "Current sensor ends can establish a current observed window; they do not establish the original full chain or a missing end. No GT original extent, fixed five-brick count, or prior state is supplied.",
+    "joint_matching": "Match all declared present/missing/uncertain slots jointly one-to-one at IoU>=0.50 to visible positive plus observable bounded-absence references, with multi-positive merges ineligible. No slot can claim both classes.",
+    "correct_missing": "A matched observable bounded-absence slot with decision=missing and current-layer-consistent height is correct. No output is no_match, never correct missing. Wrong missing on a known physical positive is a confident error. Present on a known absence is a ghost-present error.",
+    "missing_precision": "Known-reference missing precision = height-consistent correct missing divided by ALL missing declarations jointly matched to scorable positive/absence references. This denominator includes wrong missing on physical positives and wrong-layer missing claims on absence references. List unmatched, unknown-extent and visibility-unknown missing claims separately as unverified; do not manufacture true absence for them.",
+    "baseline": "The unchanged baseline has no missing declaration: zero missing calls and zero correct missing calls. Omission/uncertainty does not solve absence.",
+    "full_layer_transition": "After complete top-layer removal, the next actual highest layer is the target, with its new orientation. Do not score all old top-layer slots as missing in this stateless task."
+  },
+  "controls": {
+    "all_invalid_and_flat": "Two invalid-depth and two flat-plane inputs from intact mixed views. Report any confident present/missing output as false support under the sensor/no-ridge control; no physical absence success is inferred.",
+    "no_return_patch": "Fixed NaN patch on intact top-view depth, RGB unchanged. Keep physical positives unchanged. Wrong missing declarations on them are errors; invalid/no returns must remain unknown and must not generate lower-return absence references. Retaining correct present outside/through the patch is not automatically a false positive.",
+    "positions": [
+      {
+        "id": "invalid_top",
+        "source": "I_mix/top",
+        "operation": "all_depth_NaN"
+      },
+      {
+        "id": "invalid_side",
+        "source": "I_mix/oblique_side",
+        "operation": "all_depth_NaN"
+      },
+      {
+        "id": "flat_top",
+        "source": "I_mix/top",
+        "operation": "flat_world_plane",
+        "height_m": 0.03
+      },
+      {
+        "id": "flat_side",
+        "source": "I_mix/oblique_side",
+        "operation": "flat_world_plane",
+        "height_m": 0.03
+      },
+      {
+        "id": "no_return_patch",
+        "source": "I_mix/top",
+        "operation": "depth_patch_NaN",
+        "pixel_xyxy": [
+          600,
+          280,
+          680,
+          360
+        ],
+        "RGB": "unchanged",
+        "truth": "Physicalbricksstillpresent;unknownsensorevidencenotabsence"
+      }
+    ]
+  },
+  "conditional_geometry_diagnostics": {
+    "xy_yaw": "On geometrically matched references report conditional in-plane centerXY mm and undirected world yaw degrees, with N/median/p90/max. Shared depth-plane/ridge-axis assumptions remain explicit; no free6D/root-height/insertion-accuracy claim.",
+    "phase": "Compare metric longitudinal phase modulo nominal32mm on matched current-layer positive and bounded-gap slots. Report both sides of internal/adjacent gaps, far-side geometric drift and no-match. Arbitrary local index renaming is not a phase error if metric positions remain consistent.",
+    "fragmentation": "Report predicted parent chains per original reference ridge and mixed-ridge chains among matches, with uncovered ridges. A valid split component with consistent phase is not automatically an error.",
+    "boundaries": "Observed/inferred boundary provenance is a method declaration, not independently labeled seam truth. Do not turn inferred metric divisions into observed evidence or original-extent knowledge."
+  },
+  "comparisons_and_transitions": {
+    "same_observation_versions": "Use per-configuration/view global GT reference sets to count recovered/lost task-correct targets versus baseline and previous retained version. Do not sum hypothesis-ownership changes as recoveries.",
+    "state_pairs": "Report survival/recovery/loss for physical target IDs shared between intact/removed states, and ghost-present persistence on removed locations. These are paired stateless observations, not temporal tracking results.",
+    "layer_transition": "Report selected surface band and undirected direction against actual highest remaining layer, especially isolated-remnant states and complete-layer removal.",
+    "mode": "Each view is evaluated separately with fresh sensor state; combined-view and temporal modes are not implemented/not measured."
+  },
+  "reserved_policy": {
+    "seal": "All reserved RGB/depth/truth, predictions, overlays and metrics are withheld from implementation and development-round selection until final method freeze. Evaluator/orchestrator may validate dataset integrity without disclosing reserved evidence.",
+    "final": "After development selection freezes, evaluate baseline and every retained version on the reserved subset once, separately. No additional implementation, threshold adjustment or version selection from reserved outcomes.",
+    "hashes": "Freeze configuration, source, reference definitions and sensor/reference artifact hashes before baseline decisions; generated counts derive from unchanged rules, not result-driven label edits."
+  },
+  "rounds": {
+    "maximum": 3,
+    "initial": "Run the unchanged detector before any confidence change.",
+    "unit": "One observed failure family per reviewer-preapproved minimal change, committed source/settings and defaultPueue snapshot/job ID. Declare targeted metric/family before each change.",
+    "retain": "Retain only if the predeclared targeted correctness/coverage metric improves without a new confident-present ERROR, wrong-missing, wrong-layer or control error on development. New correct true positives are allowed. Otherwise preserve outcome and revert or stop. Optional infrastructure does not block the demo.",
+    "ledger": "experiments/partial_disassembly_20261024/rounds.json",
+    "no_tuning_after_reserved": true
+  },
+  "execution": "All rendering, perception and batch evaluation use pueue add in the default queue with stable snapshots and reported job IDs. No global concurrency changes, training, models, ROS, manipulation or hardware control. Lightweight planning/source checks only before implementation authorization.",
+  "scope": "One corrected300-brick design with partial top-layer removals and frozen palettes/views. No real D435i calibration, physical gap-removal forces, grasping, held-brick transforms or insertion validation."
+}

@@ -1,0 +1,56 @@
+{
+  "schema": "brickflow.migration-review.v1",
+  "reference": "greenfield_37",
+  "referenceSha256": "9a2d911750e252a69ad737b009704a9c6440722aa08c67bfd14a04681018bb2c",
+  "validationStatus": "unvalidated",
+  "nativePortComplete": false,
+  "nativeInputCapacity": 28800,
+  "referenceInputConfigured": 57600,
+  "newActorKinds": {
+    "cartShuttle": 1,
+    "dockLift": 4,
+    "truck": 12,
+    "amr": 4,
+    "amrFork": 4
+  },
+  "requiredNativeState": [
+    "cart index and second cart lifecycle",
+    "simultaneous mixed and single production across 18 wells",
+    "producer groups and scores preserved behind intake adapter",
+    "finite classified storage and AMR task reservations",
+    "truck orders, loading and departure",
+    "record hiddenAt visibility",
+    "produced/stored/loaded/shipped metrics with separate semantics"
+  ],
+  "sourceObservedCounters": {
+    "inspected": 57600,
+    "rejected": 7020,
+    "produced": 90,
+    "stored": 90,
+    "loaded": 64,
+    "shipped": 64
+  },
+  "visibilityReview": {
+    "issue": "Future truck records have visible=0, allowing appearance before their order exists.",
+    "affectedRecords": [
+      "truck-0-2",
+      "truck-0-3",
+      "truck-3-2",
+      "truck-2-2",
+      "truck-1-2",
+      "truck-0-4",
+      "truck-0-5",
+      "truck-0-6"
+    ],
+    "status": "Observed source behavior; no source correction applied"
+  },
+  "artifacts": {
+    "geometry": "factory-candidate.json",
+    "cameraBookmarks": "camera-bookmarks-unreal.json",
+    "nativeRuntimeActivation": false
+  },
+  "limitations": [
+    "Synthetic source execution, not independent physical or business validation.",
+    "Candidate geometry contains actor bindings that the current native simulation cannot drive."
+  ]
+}

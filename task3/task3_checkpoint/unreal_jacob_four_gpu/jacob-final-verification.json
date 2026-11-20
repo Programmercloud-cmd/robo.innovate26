@@ -1,0 +1,11 @@
+{
+  "verified": true,
+  "instanceId": "f9firmbdt",
+  "sourceInstanceId": "eztxpn39l",
+  "projectHashesVerified": 31,
+  "nativeGpuAuditsPassed": 4,
+  "nativeFramesCheckedPerGpu": 11867,
+  "nvencGpuChecksPassed": 4,
+  "newFilmCaptured": false,
+  "scope": "Copied project and tools; native numeric audit and encoder availability. No new visual film validation."
+}

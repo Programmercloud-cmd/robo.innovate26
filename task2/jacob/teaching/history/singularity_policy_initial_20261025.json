@@ -1,0 +1,14 @@
+{
+  "characteristic_length_m": 0.3,
+  "joint_limit_margin_rad": 0.06,
+  "min_full_sigma": 0.15,
+  "min_fixed_elbow_sigma": 0.12,
+  "max_condition": 35,
+  "min_abs_joint2_rad": 0.2617993877991494,
+  "min_abs_joint5_rad": 0.0,
+  "min_elbow_extension_margin_rad": 0.2,
+  "ik_position_tolerance_m": 2e-05,
+  "ik_rotation_tolerance_rad": 0.0002,
+  "allow_yaw180_for_bricks": true,
+  "margin_basis": "Engineering margins; not a published Desk warning threshold. Joint-2 chart margin plus scaled full/fixed-elbow Jacobian margins cover shoulder, wrist and extension degeneration. Joint 5 alone is not used as a singularity test."
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "version": "B0",
+    "split": "development",
+    "job_id": 1687,
+    "source_commit": "b88028eaa1ebe7737cab00e1fafd56e809d5162e",
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T152313.472731Z-partial-B0-development",
+    "evaluation_sha256": "4b0077d168771710ee6a4198976b21f47f041a0454441396d296a3fbe6ea3a9b",
+    "references_sha256": "7e8725373c2d086cff689bba79110595949d656eb9cdb6721ec6d702a1e30b13"
+  },
+  {
+    "version": "R1",
+    "split": "development",
+    "job_id": 1688,
+    "source_commit": "048765d64aef91264f2cf91a9c108935ee40fd01",
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T153014.420274Z-partial-R1-development",
+    "evaluation_sha256": "1df781e26c10b38e67de13d770d15199b0b8cc564943e56a3e30cf2ae043e2f2",
+    "references_sha256": "7e8725373c2d086cff689bba79110595949d656eb9cdb6721ec6d702a1e30b13"
+  },
+  {
+    "version": "R2",
+    "split": "development",
+    "job_id": 1689,
+    "source_commit": "ba15b90ec66c55b4b73cd3230d24b211437c7376",
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T154216.903442Z-partial-R2-development",
+    "evaluation_sha256": "24d8202ccc1c42a235a375e6d0bff298ef0838118cbf86df44d9f61d1f62d6b0",
+    "references_sha256": "7e8725373c2d086cff689bba79110595949d656eb9cdb6721ec6d702a1e30b13"
+  },
+  {
+    "version": "R3",
+    "split": "development",
+    "job_id": 1690,
+    "source_commit": "692a27747eec06080e4b10da5d7e0c58973babfc",
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T155031.394271Z-partial-R3-development",
+    "evaluation_sha256": "617ffc964b332eb49f9024eb436aca22fba837f1904de679ac07a7993db418fa",
+    "references_sha256": "7e8725373c2d086cff689bba79110595949d656eb9cdb6721ec6d702a1e30b13"
+  },
+  {
+    "version": "B0",
+    "split": "reserved",
+    "job_id": 1691,
+    "source_commit": "7dbc98a03924a40dafbaf354e84206bde707998b",
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T155225.322191Z-partial-B0-reserved",
+    "evaluation_sha256": "141e229c8b926ecb04277068a7def7900738e3bfc6aeaca15b019251878e8556",
+    "references_sha256": "c347a5fe5e2afb040678847e8709fe2ce96394e0a2f0004a5e3ae15ae9598e9f"
+  },
+  {
+    "version": "R1",
+    "split": "reserved",
+    "job_id": 1692,
+    "source_commit": "7dbc98a03924a40dafbaf354e84206bde707998b",
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T155234.715919Z-partial-R1-reserved",
+    "evaluation_sha256": "aba0e8f4537e831a9674a6f809af302da8e5421a0e1039501776ee1dba70f13d",
+    "references_sha256": "c347a5fe5e2afb040678847e8709fe2ce96394e0a2f0004a5e3ae15ae9598e9f"
+  },
+  {
+    "version": "R2",
+    "split": "reserved",
+    "job_id": 1693,
+    "source_commit": "7dbc98a03924a40dafbaf354e84206bde707998b",
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T155243.339309Z-partial-R2-reserved",
+    "evaluation_sha256": "aba0e8f4537e831a9674a6f809af302da8e5421a0e1039501776ee1dba70f13d",
+    "references_sha256": "c347a5fe5e2afb040678847e8709fe2ce96394e0a2f0004a5e3ae15ae9598e9f"
+  },
+  {
+    "version": "R3",
+    "split": "reserved",
+    "job_id": 1694,
+    "source_commit": "7dbc98a03924a40dafbaf354e84206bde707998b",
+    "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T155307.098684Z-partial-R3-reserved",
+    "evaluation_sha256": "094063c85f54bf73436c65f64fdb035f48f9e79a3361b9566427a6b3f42bc691",
+    "references_sha256": "c347a5fe5e2afb040678847e8709fe2ce96394e0a2f0004a5e3ae15ae9598e9f"
+  }
+]

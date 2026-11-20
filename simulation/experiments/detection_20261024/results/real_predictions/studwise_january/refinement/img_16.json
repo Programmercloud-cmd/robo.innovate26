@@ -1,0 +1,21 @@
+{
+  "image": "img_16.jpg",
+  "detections": [
+    {
+      "parent_detection_id": "d000",
+      "stud_count": 3,
+      "orientation_deg": null,
+      "pca_eigenvalue_ratio": null,
+      "passes_eight_stud_pca_gate": false,
+      "interpretation": "image-space heuristic only; not exposure, accessibility or metric pose"
+    },
+    {
+      "parent_detection_id": "d001",
+      "stud_count": 76,
+      "orientation_deg": 90.92388225367999,
+      "pca_eigenvalue_ratio": 2.7747166516419206,
+      "passes_eight_stud_pca_gate": false,
+      "interpretation": "image-space heuristic only; not exposure, accessibility or metric pose"
+    }
+  ]
+}

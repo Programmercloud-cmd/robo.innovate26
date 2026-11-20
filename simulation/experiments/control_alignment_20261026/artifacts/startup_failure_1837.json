@@ -1,0 +1,21 @@
+{
+  "job_id": 1837,
+  "source_commit": "b07f930ed22d18350fe97d513ca75bb8e3c596bf",
+  "snapshot": "runs/20261026T010941.404058Z-control-alignment-b",
+  "result": "Failed startup equivalence, followed by shutdown timeout",
+  "full_scheduler_seconds": 65.680754783,
+  "failure_file_sha256": "e4bc0a52093f2fb77998d21093eabfaf18ee0a23e5aa21588b04a08b26627e84",
+  "failure": {
+    "type": "RuntimeError",
+    "reason": "Batched/per-asset startup source poses differ",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/faps/dev/github/robo.innovate26/runs/20261026T010941.404058Z-control-alignment-b/experiments/control_alignment_20261026/run_sim.py\", line 121, in main\n    render_core.render(app,args,spec,bricks,cameras,[],postassembly_hook=smoke)\n  File \"/home/faps/dev/github/robo.innovate26/runs/20261026T010941.404058Z-control-alignment-b/experiments/final_workcell_20261024/render_core.py\", line 494, in render\n    postassembly_hook(sim=sim, scene=scene, bricks=bricks, spec=spec, output=output, robot=robot)\n  File \"/home/faps/dev/github/robo.innovate26/runs/20261026T010941.404058Z-control-alignment-b/experiments/control_alignment_20261026/run_sim.py\", line 79, in smoke\n    proof_clock=float(sim.current_time);reader=BatchedSourcePoses(scene,names)\n                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/faps/dev/github/robo.innovate26/runs/20261026T010941.404058Z-control-alignment-b/experiments/control_alignment_20261026/batched_source.py\", line 59, in __init__\n    if not passed:raise RuntimeError('Batched/per-asset startup source poses differ')\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Batched/per-asset startup source poses differ\n"
+  },
+  "startup_equivalence_proof_persisted": false,
+  "completed_capture": false,
+  "independent_audit_completed": false,
+  "smoke_control_commands_started": false,
+  "physics_initialization_started": true,
+  "startup_equivalence_residuals": "UNKNOWN; failed proof was not persisted",
+  "physical_control_alignment_verified": false,
+  "original_failure_preserved": true
+}

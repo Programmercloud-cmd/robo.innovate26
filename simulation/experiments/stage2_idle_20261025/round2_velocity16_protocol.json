@@ -1,0 +1,51 @@
+{
+  "schema": "stage2-round2-velocity16-v1",
+  "improvement_round": 2,
+  "maximum_improvement_rounds": 3,
+  "status": "frozen_before_execution",
+  "change": {
+    "source_rigid_bodies": 300,
+    "position_iterations_unchanged": 32,
+    "velocity_iterations_configured_before": 4,
+    "velocity_iterations_variant": 16
+  },
+  "source_setting_scope": "Experiment-local scene factory wrapper, before physics actors are created; plate and robot configurations excluded",
+  "baseline_runtime_before4_status": "Historically not measured; baseline4 is pinned authored configuration only. Variant initial and terminal counts are queried from actual actors.",
+  "runtime_getter": "Installed omni.isaac.dynamic_control2.0.7 get_rigid_body_properties, getter only; process-local activation before physics initialization, no install or shared config change",
+  "prestep_failure_policy": "If extension/getter unavailable or any active source actor is not32/16, stop before postassembly step1; no setter, fallback, retry or sweep",
+  "numerical_epsilon": "1e-4",
+  "steps": 120,
+  "wall_limit_s": 180,
+  "first_failure_stops": true,
+  "idle_gate": "Unchanged baseline120step finite/301parts/930links/drift2mm2deg/finalspeed.02m_s.2rad_s",
+  "physics_parameters_changed": false,
+  "numerical_solver_quality_changed": true,
+  "break_criterion_changed": false,
+  "interpretation": "Numerical constraint-quality sensitivity only; surviving120steps is an idle candidate, not contact or manipulation validation",
+  "baseline_jobs": [
+    1725,
+    1733
+  ],
+  "reserved_configuration": {
+    "id": "H_mix",
+    "source_benchmark": "experiments/stage1_20261025/benchmark.json",
+    "meaning": "One interior top brick removed from same design; not a replacement for the full300 development benchmark",
+    "policy": "Excluded from implementation decisions; do not render/run/evaluate unless full300 idle gate passes and a separately frozen check is justified"
+  },
+  "baseline_protocol_sha256": "9f43c444cd0154147630b2ea3765d1526ed34549378dea510596b61577c5466b",
+  "frozen_inputs": {
+    "challenge2/env_cfg.py": "68e9c624f0ce26474c53e487ab1301002e7c6d329156d00f5e39a544ffc16246",
+    "experiments/final_workcell_20261024/scene.py": "ebcd45e6fdcc6672b6a3dee1b5e35f828daf88afc710fdba124e814ebb911eb6",
+    "experiments/final_workcell_20261024/scene_config.json": "77cb33b140c8449e9527437c1fc8a452d5f95a9680413dc05b66db07e27342e7"
+  },
+  "runtime_verification": {
+    "source_actor_initial_and_terminal": [
+      32,
+      16
+    ],
+    "baseline_runtime_before4_measured": false,
+    "usd_scene_requirements": "TGS with minVelocityIterationCount<=16<=maxVelocityIterationCount; record all scene solver/clamp fields",
+    "native_thresholds": "All11breakage fields plus assembly enabled/required_force captured initial/terminal and must remain equal; debug_dump reporting difference from1733 allowed",
+    "success_marker": "velocity16_complete.json only after terminal readback and unchanged native-rule verification"
+  }
+}

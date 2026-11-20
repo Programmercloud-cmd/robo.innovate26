@@ -1,0 +1,409 @@
+{
+  "schema": "depth-ridge-direction-fixed-evaluation-v1",
+  "protocol_sha256": "d12bb3821fabe023cf97746179b49ef4b9c9fd0f5b90eb05f766748f4b6d205b",
+  "reference": {
+    "frame": "world_xy",
+    "direction_deg_mod180": 89.99999999999999,
+    "highest_layer_bricks": 30,
+    "direction_spread_deg": 0.0,
+    "body_top_height_world_m": 0.09919999680519104,
+    "stud_top_height_world_m": 0.10089999680519104,
+    "body_top_height_range_m": [
+      0.09919999680519104,
+      0.09919999680519104
+    ],
+    "stud_top_height_range_m": [
+      0.10089999680519104,
+      0.10089999680519104
+    ]
+  },
+  "observations": [
+    {
+      "view": "top",
+      "condition": "real",
+      "status": "supported",
+      "direction_world_deg_mod180": 90.04829191145852,
+      "height_band_world_m": [
+        0.098,
+        0.101
+      ],
+      "estimated_surface_height_world_m": 0.09914999332427976,
+      "reasons": [],
+      "support": {
+        "sampled_depth_pixels": 230400,
+        "valid_sampled_depth_pixels": 230400,
+        "horizontal_roi_points": 28917,
+        "top_band_points": 13397,
+        "raw_band_xy_cells": 9603,
+        "closed_band_xy_cells": 13037,
+        "elongated_ridge_xy_cells": 13030
+      },
+      "angular_error_deg_mod180": 0.04829191145853429,
+      "body_top_in_candidate_band": true,
+      "stud_top_in_candidate_band": true,
+      "surface_minus_body_top_mm": -0.05000348091127593,
+      "surface_minus_stud_top_mm": -1.750003480911283
+    },
+    {
+      "view": "near_top_x",
+      "condition": "real",
+      "status": "supported",
+      "direction_world_deg_mod180": 90.01492547179707,
+      "height_band_world_m": [
+        0.098,
+        0.101
+      ],
+      "estimated_surface_height_world_m": 0.09919396233341583,
+      "reasons": [],
+      "support": {
+        "sampled_depth_pixels": 230400,
+        "valid_sampled_depth_pixels": 230400,
+        "horizontal_roi_points": 28304,
+        "top_band_points": 12386,
+        "raw_band_xy_cells": 8909,
+        "closed_band_xy_cells": 12489,
+        "elongated_ridge_xy_cells": 12485
+      },
+      "angular_error_deg_mod180": 0.01492547179708481,
+      "body_top_in_candidate_band": true,
+      "stud_top_in_candidate_band": true,
+      "surface_minus_body_top_mm": -0.00603447177520422,
+      "surface_minus_stud_top_mm": -1.7060344717752112
+    },
+    {
+      "view": "near_top_y",
+      "condition": "real",
+      "status": "supported",
+      "direction_world_deg_mod180": 90.0442333311007,
+      "height_band_world_m": [
+        0.098,
+        0.101
+      ],
+      "estimated_surface_height_world_m": 0.0991939917495194,
+      "reasons": [],
+      "support": {
+        "sampled_depth_pixels": 230400,
+        "valid_sampled_depth_pixels": 230400,
+        "horizontal_roi_points": 28016,
+        "top_band_points": 12375,
+        "raw_band_xy_cells": 8943,
+        "closed_band_xy_cells": 12699,
+        "elongated_ridge_xy_cells": 12695
+      },
+      "angular_error_deg_mod180": 0.04423333110071326,
+      "body_top_in_candidate_band": true,
+      "stud_top_in_candidate_band": true,
+      "surface_minus_body_top_mm": -0.006005055671637338,
+      "surface_minus_stud_top_mm": -1.7060050556716444
+    },
+    {
+      "view": "oblique_front",
+      "condition": "real",
+      "status": "supported",
+      "direction_world_deg_mod180": 89.88881063912002,
+      "height_band_world_m": [
+        0.099,
+        0.10200000000000001
+      ],
+      "estimated_surface_height_world_m": 0.09926662190268928,
+      "reasons": [],
+      "support": {
+        "sampled_depth_pixels": 230400,
+        "valid_sampled_depth_pixels": 230400,
+        "horizontal_roi_points": 28374,
+        "top_band_points": 9138,
+        "raw_band_xy_cells": 7210,
+        "closed_band_xy_cells": 10589,
+        "elongated_ridge_xy_cells": 10586
+      },
+      "angular_error_deg_mod180": 0.1111893608799619,
+      "body_top_in_candidate_band": true,
+      "stud_top_in_candidate_band": true,
+      "surface_minus_body_top_mm": 0.0666250974982463,
+      "surface_minus_stud_top_mm": -1.6333749025017608
+    },
+    {
+      "view": "oblique_side",
+      "condition": "real",
+      "status": "supported",
+      "direction_world_deg_mod180": 90.02432566211104,
+      "height_band_world_m": [
+        0.099,
+        0.10200000000000001
+      ],
+      "estimated_surface_height_world_m": 0.09926704119298364,
+      "reasons": [],
+      "support": {
+        "sampled_depth_pixels": 230400,
+        "valid_sampled_depth_pixels": 230348,
+        "horizontal_roi_points": 28455,
+        "top_band_points": 9953,
+        "raw_band_xy_cells": 7348,
+        "closed_band_xy_cells": 10813,
+        "elongated_ridge_xy_cells": 10806
+      },
+      "angular_error_deg_mod180": 0.024325662111053248,
+      "body_top_in_candidate_band": true,
+      "stud_top_in_candidate_band": true,
+      "surface_minus_body_top_mm": 0.0670443877926058,
+      "surface_minus_stud_top_mm": -1.6329556122074012
+    },
+    {
+      "view": "top",
+      "condition": "invalid",
+      "status": "uncertain",
+      "direction_world_deg_mod180": null,
+      "height_band_world_m": null,
+      "estimated_surface_height_world_m": null,
+      "reasons": [
+        "no_sufficiently_supported_horizontal_height_band"
+      ],
+      "support": {
+        "sampled_depth_pixels": 230400,
+        "valid_sampled_depth_pixels": 0,
+        "horizontal_roi_points": 0
+      },
+      "false_supported_direction": false,
+      "interpretation": "No-ridge control; no physical absence or pose metric."
+    },
+    {
+      "view": "near_top_x",
+      "condition": "invalid",
+      "status": "uncertain",
+      "direction_world_deg_mod180": null,
+      "height_band_world_m": null,
+      "estimated_surface_height_world_m": null,
+      "reasons": [
+        "no_sufficiently_supported_horizontal_height_band"
+      ],
+      "support": {
+        "sampled_depth_pixels": 230400,
+        "valid_sampled_depth_pixels": 0,
+        "horizontal_roi_points": 0
+      },
+      "false_supported_direction": false,
+      "interpretation": "No-ridge control; no physical absence or pose metric."
+    },
+    {
+      "view": "near_top_y",
+      "condition": "invalid",
+      "status": "uncertain",
+      "direction_world_deg_mod180": null,
+      "height_band_world_m": null,
+      "estimated_surface_height_world_m": null,
+      "reasons": [
+        "no_sufficiently_supported_horizontal_height_band"
+      ],
+      "support": {
+        "sampled_depth_pixels": 230400,
+        "valid_sampled_depth_pixels": 0,
+        "horizontal_roi_points": 0
+      },
+      "false_supported_direction": false,
+      "interpretation": "No-ridge control; no physical absence or pose metric."
+    },
+    {
+      "view": "oblique_front",
+      "condition": "invalid",
+      "status": "uncertain",
+      "direction_world_deg_mod180": null,
+      "height_band_world_m": null,
+      "estimated_surface_height_world_m": null,
+      "reasons": [
+        "no_sufficiently_supported_horizontal_height_band"
+      ],
+      "support": {
+        "sampled_depth_pixels": 230400,
+        "valid_sampled_depth_pixels": 0,
+        "horizontal_roi_points": 0
+      },
+      "false_supported_direction": false,
+      "interpretation": "No-ridge control; no physical absence or pose metric."
+    },
+    {
+      "view": "oblique_side",
+      "condition": "invalid",
+      "status": "uncertain",
+      "direction_world_deg_mod180": null,
+      "height_band_world_m": null,
+      "estimated_surface_height_world_m": null,
+      "reasons": [
+        "no_sufficiently_supported_horizontal_height_band"
+      ],
+      "support": {
+        "sampled_depth_pixels": 230400,
+        "valid_sampled_depth_pixels": 0,
+        "horizontal_roi_points": 0
+      },
+      "false_supported_direction": false,
+      "interpretation": "No-ridge control; no physical absence or pose metric."
+    },
+    {
+      "view": "top",
+      "condition": "flat_plane",
+      "status": "uncertain",
+      "direction_world_deg_mod180": null,
+      "height_band_world_m": [
+        0.027,
+        0.03
+      ],
+      "estimated_surface_height_world_m": 0.029999992513656593,
+      "reasons": [
+        "insufficient_elongated_surface_components",
+        "component_directions_ambiguous",
+        "insufficient_long_mask_edges",
+        "line_directions_ambiguous"
+      ],
+      "support": {
+        "sampled_depth_pixels": 230400,
+        "valid_sampled_depth_pixels": 230400,
+        "horizontal_roi_points": 75625,
+        "top_band_points": 75625,
+        "raw_band_xy_cells": 65536,
+        "closed_band_xy_cells": 65536,
+        "elongated_ridge_xy_cells": 0
+      },
+      "false_supported_direction": false,
+      "interpretation": "No-ridge control; no physical absence or pose metric."
+    },
+    {
+      "view": "near_top_x",
+      "condition": "flat_plane",
+      "status": "uncertain",
+      "direction_world_deg_mod180": null,
+      "height_band_world_m": [
+        0.028,
+        0.031
+      ],
+      "estimated_surface_height_world_m": 0.029999999282413103,
+      "reasons": [
+        "insufficient_elongated_surface_components",
+        "component_directions_ambiguous",
+        "insufficient_long_mask_edges",
+        "line_directions_ambiguous"
+      ],
+      "support": {
+        "sampled_depth_pixels": 230400,
+        "valid_sampled_depth_pixels": 230400,
+        "horizontal_roi_points": 72393,
+        "top_band_points": 72393,
+        "raw_band_xy_cells": 64494,
+        "closed_band_xy_cells": 65536,
+        "elongated_ridge_xy_cells": 0
+      },
+      "false_supported_direction": false,
+      "interpretation": "No-ridge control; no physical absence or pose metric."
+    },
+    {
+      "view": "near_top_y",
+      "condition": "flat_plane",
+      "status": "uncertain",
+      "direction_world_deg_mod180": null,
+      "height_band_world_m": [
+        0.028,
+        0.031
+      ],
+      "estimated_surface_height_world_m": 0.02999999928241317,
+      "reasons": [
+        "insufficient_elongated_surface_components",
+        "component_directions_ambiguous",
+        "insufficient_long_mask_edges",
+        "line_directions_ambiguous"
+      ],
+      "support": {
+        "sampled_depth_pixels": 230400,
+        "valid_sampled_depth_pixels": 230400,
+        "horizontal_roi_points": 72393,
+        "top_band_points": 72393,
+        "raw_band_xy_cells": 64494,
+        "closed_band_xy_cells": 65536,
+        "elongated_ridge_xy_cells": 0
+      },
+      "false_supported_direction": false,
+      "interpretation": "No-ridge control; no physical absence or pose metric."
+    },
+    {
+      "view": "oblique_front",
+      "condition": "flat_plane",
+      "status": "uncertain",
+      "direction_world_deg_mod180": null,
+      "height_band_world_m": [
+        0.028,
+        0.031
+      ],
+      "estimated_surface_height_world_m": 0.029999999509777546,
+      "reasons": [
+        "insufficient_elongated_surface_components",
+        "component_directions_ambiguous",
+        "insufficient_long_mask_edges",
+        "line_directions_ambiguous"
+      ],
+      "support": {
+        "sampled_depth_pixels": 230400,
+        "valid_sampled_depth_pixels": 230400,
+        "horizontal_roi_points": 71086,
+        "top_band_points": 71086,
+        "raw_band_xy_cells": 57787,
+        "closed_band_xy_cells": 65536,
+        "elongated_ridge_xy_cells": 0
+      },
+      "false_supported_direction": false,
+      "interpretation": "No-ridge control; no physical absence or pose metric."
+    },
+    {
+      "view": "oblique_side",
+      "condition": "flat_plane",
+      "status": "uncertain",
+      "direction_world_deg_mod180": null,
+      "height_band_world_m": [
+        0.028,
+        0.031
+      ],
+      "estimated_surface_height_world_m": 0.029999999509777376,
+      "reasons": [
+        "insufficient_elongated_surface_components",
+        "component_directions_ambiguous",
+        "insufficient_long_mask_edges",
+        "line_directions_ambiguous"
+      ],
+      "support": {
+        "sampled_depth_pixels": 230400,
+        "valid_sampled_depth_pixels": 230400,
+        "horizontal_roi_points": 71086,
+        "top_band_points": 71086,
+        "raw_band_xy_cells": 57787,
+        "closed_band_xy_cells": 65536,
+        "elongated_ridge_xy_cells": 0
+      },
+      "false_supported_direction": false,
+      "interpretation": "No-ridge control; no physical absence or pose metric."
+    }
+  ],
+  "real_summary": {
+    "views": 5,
+    "supported": 5,
+    "uncertain": 0,
+    "no_angle": 0,
+    "all_finite_angle_errors_deg": {
+      "count": 5,
+      "median": 0.04423333110071326,
+      "max": 0.1111893608799619
+    },
+    "supported_angle_errors_deg": {
+      "count": 5,
+      "median": 0.04423333110071326,
+      "max": 0.1111893608799619
+    }
+  },
+  "controls": {
+    "invalid": {
+      "cases": 5,
+      "false_supported_directions": 0
+    },
+    "flat_plane": {
+      "cases": 5,
+      "false_supported_directions": 0
+    }
+  },
+  "interpretation": "Highest visible layer direction and height-band diagnostics only. Five correlated views of one static synthetic scene; not instance poses, selection accessibility, grasping or stacking accuracy."
+}

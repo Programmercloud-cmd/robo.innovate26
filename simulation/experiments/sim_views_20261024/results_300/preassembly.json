@@ -1,0 +1,8 @@
+{
+  "automatic_assembly_enabled": false,
+  "breakage_detection_enabled": true,
+  "source_component_parts_before_manual": 1,
+  "source_component_connections_before_manual": 0,
+  "assembled_events_before_manual": [],
+  "mode": "Explicit native preassembly; automatic detector disabled only in this process"
+}

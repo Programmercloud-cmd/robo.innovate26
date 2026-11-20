@@ -1,0 +1,40 @@
+{
+  "schema": "sam3-dimension-seam-fixed-evaluation-v1",
+  "status": "agreed_by_orchestrator_before_processed_outputs",
+  "reference_path": "experiments/detection_20261024/reference/annotations.json",
+  "reference_sha256": "1a36cf4531bca88678a989fb01421df1304dcfe3a980318ac4b06a936e936e3f",
+  "base_evaluation_path": "base_evaluation.py",
+  "base_evaluation_sha256": "5df88102f12dd004414b6931a0209518484a64c09e4a6927536d7d8b84e69207",
+  "historical_source": "experiments/sam3_20261024/evaluation.py byte-identical copied scorer; historical prompt LEGO brick only",
+  "input": "18 saved original SAM3 LEGO brick raw output records/masks from job1673; no new inference or prompts.",
+  "stages": [
+    "raw",
+    "retained_only",
+    "final"
+  ],
+  "reference_counts": {
+    "visual_faces": 166,
+    "ambiguous_excluded": 14,
+    "sparse_lower_fragments": 23,
+    "annotated_views": 6
+  },
+  "correlation": "A img1-6, B img7-9, C img10-12, D img13-18; no independent-stack generalization.",
+  "baseline_reproduction_required": {
+    "all18_raw": 1062,
+    "sixview_raw": 353,
+    "matched": 124,
+    "missed": 42,
+    "merges": 26,
+    "strict_duplicates": 0,
+    "lower_center_flags": 19,
+    "ambiguous_ignored": 12,
+    "outside_roi": 1,
+    "other_unresolved": 171
+  },
+  "scoring": "Call copied original score_boxes, score_masks and summarize unchanged at every stage; historical one-to-one envelope IoU>=.50, merge ineligibility, category precedence andROI semantics. No reference, threshold, mask/box matching or annotation changes. Masks remain supplementary diagnostics against approximate polygons.",
+  "parent_child_attribution": "Every final detection has known original parent_id and operation retained or split_child. Apply same global stage matching; list each childTP/reference or unmatched category, per-parent gained/lost references and allsplit-child outcome totals. Mere removal of a merged parent is not a recoveredface. Headline gains/losses use per-image global matched-reference sets; do not sum per-parent gains because global reassignment may shift ownership.",
+  "diagnostics": "Preserve per-image implementation diagnostics verbatim; aggregate declared scale-support/ambiguity, rejection/seam-abstention reasons only after fixedrun, without evaluator estimating thresholds or fitting scale to labels.",
+  "algorithm_scope": "Frozen implementation/config only: dimension estimates from saved masks without reference inputs; dimensional tolerance\u00b125%, nominal cohort support6/margin1.5 as proposed; split only integer-long candidates with required image seam evidence. Details fixed in separately hashed code/config, no sweep or result-driven adjustment.",
+  "reporting": "All18stagecounts; sixview/group matched/missed/merges/duplicates/lower/unresolved/ambiguous/outside and conditionalprecision/recall; rawbaseline retained; supplementary mask overlaps; parent-child gains/losses; scale/seam abstentions; no claims of physical exposure/accessibility or metricrobotpose.",
+  "execution": "One immutable postprocessing+scoring defaultPueue job using existing hostPython. No model inference, training, simulation, manipulation, new framework, or shared dependency changes. Scoring references excluded from filterinputs."
+}

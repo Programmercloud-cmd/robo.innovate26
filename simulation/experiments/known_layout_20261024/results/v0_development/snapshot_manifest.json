@@ -1,0 +1,33 @@
+{
+  "git_commit": "2ccb3acba82a6cd9fb6c4763836ade63b2eee88a",
+  "tag": "v0",
+  "split": "development",
+  "created_utc": "20261023T234525.001300Z",
+  "python": "/home/faps/miniforge3/envs/unitree_sim_env/bin/python",
+  "sha256": {
+    "effective_config.json": "57e210858d992729b9d758bcfcfaa2d7d2e4897955bbaa6917411c5c5e4bea31",
+    "evaluation_input/images/img_1.jpg": "3eea0741cf5423d7dbecdd73e7a29e2da2aae1a9e9f047b75e848d8ff059c5f4",
+    "evaluation_input/images/img_10.jpg": "9a6b67b34cbf91de7a843c6e879e5fb53b21aeca6961d5ee926385afa19afa0b",
+    "evaluation_input/images/img_3.jpg": "7119555e59c9f3ca9a95f69700521c0f39aba06ccfca62188dd829f61f88ba3b",
+    "evaluation_input/images/img_7.jpg": "283c6229a58df69c9540eb2604a6c68aa8724208f92ce4c6188ecea0ce87d9c3",
+    "evaluation_input/missing_reference.json": "144050d78c2f8655f30c126d1470d5616bb709ede47f0d9095fbadb97393cd49",
+    "evaluation_input/reference.json": "5c6587eca5b5ba4a610b270f67d20cf8bbe39c8cfd24305c35eac9b251b0d33f",
+    "evaluation_input/registrations.json": "ec7da4e63558f0d555a966818de79f4a67c95c10c76e4a2c0a2b47a0b213a365",
+    "launch.sh": "e47217e24e7e85816fd6ba16631b1e0e0ae249b8b3787036f0b1034a8f1de320",
+    "perception/README.md": "ea1e7ab14bb37acdc6db9667ee8424739c423fb4ca92b954b73d1b0663c3613b",
+    "perception/__init__.py": "83599b0df437c93c0a505ff294cb946a8e27e58d4cf892c1c17480330c3d1047",
+    "perception/algorithm.py": "3f0afcfcd7a691e39851b153684d77e1a9dcb84efdd58f522a4ed9329f16338d",
+    "perception/configs/baseline_v0.json": "57e210858d992729b9d758bcfcfaa2d7d2e4897955bbaa6917411c5c5e4bea31",
+    "perception/evaluation/evaluate.py": "d5c497c9825b7219fca357cd86d39549ed017638a11c1ecb427c1b9b5cbb73fd",
+    "perception/evaluation/freeze_manifest.json": "6ba119679d1e57fb307349c90e138671a84b7cee504f72344fb106ac9bc64e2a",
+    "perception/evaluation/missing_reference.json": "144050d78c2f8655f30c126d1470d5616bb709ede47f0d9095fbadb97393cd49",
+    "perception/evaluation/predict_cases.py": "09ba9cd205e48b127041ce752a9ce9302fe719a915985a4e89dc28d9db4f0b2d",
+    "perception/evaluation/protocol.json": "eb759f74987de4b08c1c381113d1033ea5302cba5e4c05b63b0e464a86e97bb1",
+    "perception/evaluation/registrations_development.json": "ec7da4e63558f0d555a966818de79f4a67c95c10c76e4a2c0a2b47a0b213a365",
+    "perception/evaluation/registrations_heldout.json": "bab2d53aa44c7bc518e7493d0c15cf75089b176ba1f40286a663499507fbcdda",
+    "perception/evaluation/run_batch.py": "c98a29c06ab4549d81b963f2a70b88233b5b94769327b512be11ac5e46c09a3b",
+    "perception/evaluation/submit_evaluation.py": "44e205b4a49683775f91d5f8afafc076469e073505abcf483b7710cde80545dc",
+    "perception/evaluation/test_evaluate.py": "932bbc1b1be9fa747e18a3cbd28aab17b76fd9a21e3a8881850ddad454da0716",
+    "perception/run.py": "ad5ac01bee981bb623218ab1582cc0a24a65ca6f60c200b513e03438f6186aca"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "exposed-tip-lateral-authorization-v1",
+  "authorization": "D_then_conditional_R_lateral_only",
+  "global_G_passed": false,
+  "geometry_audit_sha256": "9e3f623e8f198f730727159009d0238f37207984bebed4f918505f7d2a731c9c",
+  "original_geometry_protocol_sha256": "7ae07afd4e08c27fa9bfa3c94eb1dd74d1d11d7fb6e16aefeb722b7c4cb8be00",
+  "model_config_sha256": "9dbece90e4a2c6435834f0153dcc4fc31946867077b9325b5cf7dda7b7e96734",
+  "cooked_hashes": {
+    "left": "a370b1d937a6230319ff3fb4aa0b5c28d1538fbffba1220e3839b012289a4199",
+    "right": "147719157bddafdc2681d2016aa985d14b8f869b33b75f51d0146fa7f7aa0094"
+  },
+  "existing_attempts_only": true,
+  "known_exception": {
+    "left": {
+      "probe": "left_bbox_2_-1",
+      "axial_query_retreat_m": 0.0001300755143165619,
+      "full_G_100um_condition": "FAILED unchanged"
+    },
+    "right": {
+      "probe": "right_bbox_2_-1",
+      "axial_query_retreat_m": 0.00013013511896133728,
+      "full_G_100um_condition": "FAILED unchanged"
+    }
+  },
+  "retained_coverage": {
+    "left": {
+      "all106parities": true,
+      "clear_grip_and_outward_taper": true
+    },
+    "right": {
+      "all106parities": true,
+      "clear_grip_and_outward_taper": true
+    }
+  },
+  "point_contract": {
+    "flat_face_extra_slack_m": 5e-05,
+    "minimum_outward_dot_grip_normal": 0.9,
+    "finger_outward": "negative raw signed force coefficient times world normal",
+    "coupon_outward": "positive raw signed force coefficient times world normal",
+    "all_abs_force_above_N": 1e-08,
+    "Z_cutoff": null,
+    "normal_fitting_or_sign_selection": false
+  },
+  "maximum_D_attempts": 1,
+  "maximum_reserved_attempts_after_D_pass": 1,
+  "scope": "Distinct lateral-qualified normal-contact experiment only; not a replacement G/pass. ALL loaded points retain original body/white/head ownership plus flat inward plane and fixed signed-normal qualifier. Endcap-normal or unqualified taper loads stop. Cosine0.9 permits limited off-axis components, not a zero-axial-force claim. No recook, geometry/force tolerance change, Z exclusion, grasp/extraction or new improvement pool.",
+  "source_sha256": "136768794234b79fe14f8c16a71fc5b5068e925123468ee29fb14db5aa12e69e"
+}

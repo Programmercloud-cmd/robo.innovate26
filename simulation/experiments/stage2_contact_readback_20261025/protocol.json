@@ -1,0 +1,76 @@
+{
+  "schema": "contact-readback-protocol-v1",
+  "execution_authorized": true,
+  "scope": "ONE startup-only runtime readback; exact1822initializer, no postnative trialsteps, no closure/lift/new setters or physicalretry. Inheritedinitialization andtargetedmassrestoration explicitlyretained.",
+  "maximum_jobs": 1,
+  "maximum_active_seconds": 90,
+  "capture_cutoff_seconds": 75,
+  "audit_limit_seconds": 8,
+  "prior_case_seconds": 2388.0386521710234,
+  "aggregate_case_ceiling_seconds": 2500,
+  "source_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1",
+  "parent_runner": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/experiments/stage2_free_position_20261025/run_fixture.py",
+    "sha256": "e5e8323cb111f216527c9e37dd3582fb3be4a66690953160e6656e3e2eac81a5"
+  },
+  "source_pins": {
+    "parent_runner": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/experiments/stage2_free_position_20261025/run_fixture.py",
+      "sha256": "e5e8323cb111f216527c9e37dd3582fb3be4a66690953160e6656e3e2eac81a5"
+    },
+    "parent_protocol": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/experiments/stage2_free_position_20261025/protocol.json",
+      "sha256": "2a991fcf99a195c7a3837380ecb481a8c411adea1a071ad2cc0a5c6d9a54139b"
+    },
+    "source_science": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/experiments/stage2_free_position_20261025/source_science.json",
+      "sha256": "9382013075e97767cc67daf8e29cdef2432d658d2a3cad2c8947ca07b70f765d"
+    },
+    "tool_model": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/experiments/stage2_pick_20261025/tool_model.py",
+      "sha256": "dac6aed5f5bf77d6b5e425d7f588125c7e04f60b6d2f20bf0742b42a32eb35f3"
+    },
+    "tensor_api": {
+      "path": "/home/faps/miniforge3/envs/unitree_sim_env/lib/python3.11/site-packages/isaacsim/extscache/omni.physics.tensors-107.3.26+107.3.3.lx64.r.cp311.u353/omni/physics/tensors/impl/api.py",
+      "sha256": "5dd16f8a37eccc94ac82338d6c1127e785cccf761cae1f6f18ef03d55b0f325f"
+    }
+  },
+  "reference_metadata": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/pick/capture_metadata.json",
+    "sha256": "9e38044c26e74fade421b97f57f9d65e07def0264b24dc7c4c482f2451d09cab"
+  },
+  "prior_supervisor": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/pipeline_supervisor.json",
+    "sha256": "688ee9708a23186055bdf22ad3bb4290ec63bab4bebf069902b45c0a679b5434"
+  },
+  "native_core": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/.deps/bricksim/core.cpython-311-x86_64-linux-gnu.so",
+    "sha256": "4e62dc33ee02270993c20e3cfd658e6d6ef0ea9780e53ad15cedde12f41b2455"
+  },
+  "view_paths": {
+    "left": "/World/envs/env_0/Robot/fr3_leftfinger",
+    "right": "/World/envs/env_0/Robot/fr3_rightfinger",
+    "coupon": "/World/envs/env_0/contact_coupon"
+  },
+  "input_sha256": {
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/experiments/stage2_free_position_20261025/run_fixture.py": "e5e8323cb111f216527c9e37dd3582fb3be4a66690953160e6656e3e2eac81a5",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/experiments/stage2_free_position_20261025/protocol.json": "2a991fcf99a195c7a3837380ecb481a8c411adea1a071ad2cc0a5c6d9a54139b",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/experiments/stage2_free_position_20261025/source_science.json": "9382013075e97767cc67daf8e29cdef2432d658d2a3cad2c8947ca07b70f765d",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/experiments/stage2_pick_20261025/tool_model.py": "dac6aed5f5bf77d6b5e425d7f588125c7e04f60b6d2f20bf0742b42a32eb35f3",
+    "/home/faps/miniforge3/envs/unitree_sim_env/lib/python3.11/site-packages/isaacsim/extscache/omni.physics.tensors-107.3.26+107.3.3.lx64.r.cp311.u353/omni/physics/tensors/impl/api.py": "5dd16f8a37eccc94ac82338d6c1127e785cccf761cae1f6f18ef03d55b0f325f",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/pick/capture_metadata.json": "9e38044c26e74fade421b97f57f9d65e07def0264b24dc7c4c482f2451d09cab",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/pipeline_supervisor.json": "688ee9708a23186055bdf22ad3bb4290ec63bab4bebf069902b45c0a679b5434",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/.deps/bricksim/core.cpython-311-x86_64-linux-gnu.so": "4e62dc33ee02270993c20e3cfd658e6d6ef0ea9780e53ad15cedde12f41b2455",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/pick/fixture_initial.json": "000232d7211b93db371dd45a6b3880916ed78c4257261206225ca2bd8da6b988"
+  },
+  "mapping_policy": "No publicshapeorderfound. Recordallrawrows; row-to-USDcomponentUNKNOWN. NeverchoosePADrow fromexpectedfriction/count/traversalorder. Uniformall-returnedslots maybereportedwithoutcomponentassignment.",
+  "meaning": "Runtimegettermaterials/offsets describe configuration, notpaircombinedfriction, calibratedtraction orcausalretentionfix. PartialUNKNOWNgetter/mapping distinguishedfromcapturecompletion.",
+  "physics_extraction_passed": false,
+  "physical_retry_authorized": false,
+  "automatic_retry": false,
+  "independent_review": "FinalsourceAPPROVED planner/evaluator/reviewer: ONE<=90s exact1822startupreadback+JSONaudit, no trialhook/extra steps/new setters. All2388.038652171s retained under2500; source/synthetic testsPASS. Rowmapping/masks remainUNKNOWN, no BODY/pairfriction/causalfix/retentioncredit, no retry.",
+  "reference_fixture": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/pick/fixture_initial.json",
+    "sha256": "000232d7211b93db371dd45a6b3880916ed78c4257261206225ca2bd8da6b988"
+  }
+}

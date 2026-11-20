@@ -1,0 +1,373 @@
+{
+  "domain": "real",
+  "versions": {
+    "ultralytics": "8.3.221",
+    "ultralytics-thop": "2.0.18",
+    "torch": "2.7.0+cu128",
+    "torchvision": "0.22.0+cu128",
+    "numpy": "1.26.0",
+    "opencv-python": "4.10.0.84",
+    "Pillow": "11.3.0"
+  },
+  "cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 5070",
+  "settings": {
+    "conf": 0.25,
+    "iou": 0.5,
+    "device": 0,
+    "half": false,
+    "augment": false,
+    "max_det": 300,
+    "verbose": false,
+    "brick_imgsz": 1280,
+    "stud_crop_imgsz": 640,
+    "stud_fullframe_imgsz": 1280,
+    "stud_max_det": 1000,
+    "rect": true
+  },
+  "input_sha256": {
+    "img_1.jpg": "3eea0741cf5423d7dbecdd73e7a29e2da2aae1a9e9f047b75e848d8ff059c5f4",
+    "img_10.jpg": "9a6b67b34cbf91de7a843c6e879e5fb53b21aeca6961d5ee926385afa19afa0b",
+    "img_11.jpg": "bc1bcd68b3a675a5feb035b5c66cb1a9314183277076047c9274773235f47e61",
+    "img_12.jpg": "36970d2545e467c5f2c9c185d66a6a92bd5c50ed07d35213e4b77009d896ab03",
+    "img_13.jpg": "f525303f710226a88efe02fdec71f3002b3a13010b6a057b1e7d440f7181165a",
+    "img_14.jpg": "bd38cb66e21af10f14134d8148307f367e67cdaa53a0e85af1dd56765b458772",
+    "img_15.jpg": "98f9f5d25f197e934e2f3db351e960d1e765196dbc2ee0204e9f75fc150ee634",
+    "img_16.jpg": "1da3d711f77275754cb60e5c45ee43bbc8157e461d64db9be5af970a18c76ddf",
+    "img_17.jpg": "94d8b0156a30cdd5ad35999ed8abaefd37e3fccce3720e5cbffb5aa2cebd5b4f",
+    "img_18.jpg": "2809f044a7433b82cfa237aff78b234d03ed1d86ccc3c28d41cb9a110ef36936",
+    "img_2.jpg": "4fa4da3aa00d4a75f1b9f19925f38290ee937eb5c86351f16916683e4550a702",
+    "img_3.jpg": "7119555e59c9f3ca9a95f69700521c0f39aba06ccfca62188dd829f61f88ba3b",
+    "img_4.jpg": "47678ea3c10715eef60f8c77fbb65cf58f5a8745c75a3b83f74728c6466c4c1d",
+    "img_5.jpg": "df5d68d0cad2ad4779fceb379a1904d5591cb2ef45ff41afb3eb5df7197bc1c4",
+    "img_6.jpg": "783ac67686190394fc1f9f69f51c68e8040d5b9d69d3d5143f010db84751bc3d",
+    "img_7.jpg": "283c6229a58df69c9540eb2604a6c68aa8724208f92ce4c6188ecea0ce87d9c3",
+    "img_8.jpg": "f7a8ec98f756b2a4964dae59e2dfa13d4a703f12bbe322bcefeec1f3a21b839d",
+    "img_9.jpg": "8da9d78f56b66cf0486551e983b99906f909a26b2c0d2dba4dce4f35a175ff2f"
+  },
+  "notes": [
+    "RGB JPEG/PNG are decoded by OpenCV to BGR; Ultralytics handles normalization and letterboxing.",
+    "Stud inference is conditional on raw predicted brick crops, truncated/clipped to integer image bounds.",
+    "A separate independent full-frame stud baseline uses imgsz1280 and max_det1000, with no brick proposals.",
+    "No simulator truth, image-domain-specific preprocessing, shade labels or metric poses enter inference.",
+    "PCA estimates only an undirected image-space angle; eight-stud count is not proof of a single brick or exposure."
+  ],
+  "methods": {
+    "studwise_january": {
+      "brick_weights": "Brick_Model_best20250123_192838t.pt",
+      "stud_weights": "Stud_Model_best20250124_170824.pt",
+      "brick_sha256": "1853d5efbbacec4b6058761c5368483971a0fd01dd25205521c5620c111cdbee",
+      "stud_sha256": "2f37a4bc5c5be3677683c036d1b9b2e914225840b453fdf260ff673b8696477d",
+      "brick_classes": {
+        "0": "brick"
+      },
+      "stud_classes": {
+        "0": "stud"
+      },
+      "images": [
+        {
+          "image": "img_1.jpg",
+          "raw_bricks": 1,
+          "raw_studs_fullframe": 18,
+          "raw_studs_in_predicted_crops": 0,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.3487812359999225
+        },
+        {
+          "image": "img_10.jpg",
+          "raw_bricks": 0,
+          "raw_studs_fullframe": 16,
+          "raw_studs_in_predicted_crops": 0,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.024216891999458312
+        },
+        {
+          "image": "img_11.jpg",
+          "raw_bricks": 0,
+          "raw_studs_fullframe": 9,
+          "raw_studs_in_predicted_crops": 0,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.018014789999142522
+        },
+        {
+          "image": "img_12.jpg",
+          "raw_bricks": 0,
+          "raw_studs_fullframe": 29,
+          "raw_studs_in_predicted_crops": 0,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.025702312999783317
+        },
+        {
+          "image": "img_13.jpg",
+          "raw_bricks": 0,
+          "raw_studs_fullframe": 41,
+          "raw_studs_in_predicted_crops": 0,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.021597123999526957
+        },
+        {
+          "image": "img_14.jpg",
+          "raw_bricks": 1,
+          "raw_studs_fullframe": 9,
+          "raw_studs_in_predicted_crops": 8,
+          "eight_stud_pca_gate": 1,
+          "seconds": 0.03978178600118554
+        },
+        {
+          "image": "img_15.jpg",
+          "raw_bricks": 2,
+          "raw_studs_fullframe": 10,
+          "raw_studs_in_predicted_crops": 12,
+          "eight_stud_pca_gate": 1,
+          "seconds": 0.04423348700038332
+        },
+        {
+          "image": "img_16.jpg",
+          "raw_bricks": 2,
+          "raw_studs_fullframe": 12,
+          "raw_studs_in_predicted_crops": 79,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.06731105099970591
+        },
+        {
+          "image": "img_17.jpg",
+          "raw_bricks": 1,
+          "raw_studs_fullframe": 22,
+          "raw_studs_in_predicted_crops": 7,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.03825730600146926
+        },
+        {
+          "image": "img_18.jpg",
+          "raw_bricks": 2,
+          "raw_studs_fullframe": 11,
+          "raw_studs_in_predicted_crops": 16,
+          "eight_stud_pca_gate": 2,
+          "seconds": 0.03500656399955915
+        },
+        {
+          "image": "img_2.jpg",
+          "raw_bricks": 1,
+          "raw_studs_fullframe": 18,
+          "raw_studs_in_predicted_crops": 9,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.025672971998574212
+        },
+        {
+          "image": "img_3.jpg",
+          "raw_bricks": 1,
+          "raw_studs_fullframe": 11,
+          "raw_studs_in_predicted_crops": 8,
+          "eight_stud_pca_gate": 1,
+          "seconds": 0.03599856100117904
+        },
+        {
+          "image": "img_4.jpg",
+          "raw_bricks": 1,
+          "raw_studs_fullframe": 14,
+          "raw_studs_in_predicted_crops": 10,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.02405867100060277
+        },
+        {
+          "image": "img_5.jpg",
+          "raw_bricks": 0,
+          "raw_studs_fullframe": 22,
+          "raw_studs_in_predicted_crops": 0,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.02124605300014082
+        },
+        {
+          "image": "img_6.jpg",
+          "raw_bricks": 2,
+          "raw_studs_fullframe": 16,
+          "raw_studs_in_predicted_crops": 17,
+          "eight_stud_pca_gate": 1,
+          "seconds": 0.029393697001069086
+        },
+        {
+          "image": "img_7.jpg",
+          "raw_bricks": 0,
+          "raw_studs_fullframe": 1,
+          "raw_studs_in_predicted_crops": 0,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.01835464299983869
+        },
+        {
+          "image": "img_8.jpg",
+          "raw_bricks": 0,
+          "raw_studs_fullframe": 3,
+          "raw_studs_in_predicted_crops": 0,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.019908283999029663
+        },
+        {
+          "image": "img_9.jpg",
+          "raw_bricks": 0,
+          "raw_studs_fullframe": 4,
+          "raw_studs_in_predicted_crops": 0,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.017462116999013233
+        }
+      ]
+    },
+    "studwise_march": {
+      "brick_weights": "bricks_model_kaggle50epoch_10032025.pt",
+      "stud_weights": "studs_model_kaggle50epoch_10032025.pt",
+      "brick_sha256": "a1cb24df060c08886cbce3bdca8d18e4da0fead3f722cf7e088bc21bcadbcd63",
+      "stud_sha256": "42cd13baa96d0edfd6d48db737a58e61e2a7344c1b1b6dc59abed80dab28a45b",
+      "brick_classes": {
+        "0": "item"
+      },
+      "stud_classes": {
+        "0": "item"
+      },
+      "images": [
+        {
+          "image": "img_1.jpg",
+          "raw_bricks": 3,
+          "raw_studs_fullframe": 1,
+          "raw_studs_in_predicted_crops": 12,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.08086023200121417
+        },
+        {
+          "image": "img_10.jpg",
+          "raw_bricks": 1,
+          "raw_studs_fullframe": 1,
+          "raw_studs_in_predicted_crops": 10,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.0302941230002034
+        },
+        {
+          "image": "img_11.jpg",
+          "raw_bricks": 0,
+          "raw_studs_fullframe": 0,
+          "raw_studs_in_predicted_crops": 0,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.017452666999815847
+        },
+        {
+          "image": "img_12.jpg",
+          "raw_bricks": 1,
+          "raw_studs_fullframe": 0,
+          "raw_studs_in_predicted_crops": 35,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.037331100000301376
+        },
+        {
+          "image": "img_13.jpg",
+          "raw_bricks": 2,
+          "raw_studs_fullframe": 1,
+          "raw_studs_in_predicted_crops": 61,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.03786370399939187
+        },
+        {
+          "image": "img_14.jpg",
+          "raw_bricks": 3,
+          "raw_studs_fullframe": 2,
+          "raw_studs_in_predicted_crops": 37,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.03855432799900882
+        },
+        {
+          "image": "img_15.jpg",
+          "raw_bricks": 4,
+          "raw_studs_fullframe": 2,
+          "raw_studs_in_predicted_crops": 13,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.0391234920007264
+        },
+        {
+          "image": "img_16.jpg",
+          "raw_bricks": 2,
+          "raw_studs_fullframe": 1,
+          "raw_studs_in_predicted_crops": 10,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.024647156000355608
+        },
+        {
+          "image": "img_17.jpg",
+          "raw_bricks": 4,
+          "raw_studs_fullframe": 2,
+          "raw_studs_in_predicted_crops": 38,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.042129282001042156
+        },
+        {
+          "image": "img_18.jpg",
+          "raw_bricks": 5,
+          "raw_studs_fullframe": 7,
+          "raw_studs_in_predicted_crops": 14,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.035418858000412
+        },
+        {
+          "image": "img_2.jpg",
+          "raw_bricks": 4,
+          "raw_studs_fullframe": 1,
+          "raw_studs_in_predicted_crops": 3,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.03890525099996012
+        },
+        {
+          "image": "img_3.jpg",
+          "raw_bricks": 4,
+          "raw_studs_fullframe": 5,
+          "raw_studs_in_predicted_crops": 1,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.0451522629991814
+        },
+        {
+          "image": "img_4.jpg",
+          "raw_bricks": 3,
+          "raw_studs_fullframe": 1,
+          "raw_studs_in_predicted_crops": 40,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.03659253499972692
+        },
+        {
+          "image": "img_5.jpg",
+          "raw_bricks": 3,
+          "raw_studs_fullframe": 0,
+          "raw_studs_in_predicted_crops": 43,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.03689129799931834
+        },
+        {
+          "image": "img_6.jpg",
+          "raw_bricks": 2,
+          "raw_studs_fullframe": 3,
+          "raw_studs_in_predicted_crops": 6,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.02456052500019723
+        },
+        {
+          "image": "img_7.jpg",
+          "raw_bricks": 0,
+          "raw_studs_fullframe": 0,
+          "raw_studs_in_predicted_crops": 0,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.018752276000668644
+        },
+        {
+          "image": "img_8.jpg",
+          "raw_bricks": 1,
+          "raw_studs_fullframe": 0,
+          "raw_studs_in_predicted_crops": 38,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.02390629000001354
+        },
+        {
+          "image": "img_9.jpg",
+          "raw_bricks": 1,
+          "raw_studs_fullframe": 0,
+          "raw_studs_in_predicted_crops": 25,
+          "eight_stud_pca_gate": 0,
+          "seconds": 0.031390940999699524
+        }
+      ]
+    }
+  }
+}

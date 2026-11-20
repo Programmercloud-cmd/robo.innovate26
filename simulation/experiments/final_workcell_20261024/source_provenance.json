@@ -1,0 +1,6 @@
+{
+  "renderer_source": "experiments/sim_views_20261024/render_views.py",
+  "renderer_sha256": "79f03b94fd4f0ca0ff0adf60f96b569671470147424306466b72e2b8bdef8b57",
+  "reuse": "Private copy with local final scene factory/config/decorations/frame/export changes and explicit preassembly nominal-joint/USD synchronization. Historical files untouched.",
+  "native_graph_reload": "Procedurally authored at launch; exported USD visual snapshot reload/persistence of native clutch graph is unvalidated."
+}

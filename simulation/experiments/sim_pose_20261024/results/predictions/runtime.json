@@ -1,0 +1,166 @@
+{
+  "seconds": 3.2491510520048905,
+  "cases": [
+    {
+      "condition": "nominal",
+      "view": "top",
+      "counts": {
+        "supported": 0,
+        "selected_top": 0,
+        "fitted": 11
+      },
+      "seconds": 0.22601013999519637
+    },
+    {
+      "condition": "nominal",
+      "view": "near_top_x",
+      "counts": {
+        "supported": 0,
+        "selected_top": 0,
+        "fitted": 11
+      },
+      "seconds": 0.22120851699583
+    },
+    {
+      "condition": "nominal",
+      "view": "near_top_y",
+      "counts": {
+        "supported": 0,
+        "selected_top": 0,
+        "fitted": 12
+      },
+      "seconds": 0.21870495400071377
+    },
+    {
+      "condition": "nominal",
+      "view": "oblique_front",
+      "counts": {
+        "supported": 0,
+        "selected_top": 0,
+        "fitted": 23
+      },
+      "seconds": 0.23911297700396972
+    },
+    {
+      "condition": "nominal",
+      "view": "oblique_side",
+      "counts": {
+        "supported": 0,
+        "selected_top": 0,
+        "fitted": 12
+      },
+      "seconds": 0.22759612400113838
+    },
+    {
+      "condition": "perturbed",
+      "view": "top",
+      "counts": {
+        "supported": 0,
+        "selected_top": 0,
+        "fitted": 3
+      },
+      "seconds": 0.20541628500359366
+    },
+    {
+      "condition": "perturbed",
+      "view": "near_top_x",
+      "counts": {
+        "supported": 0,
+        "selected_top": 0,
+        "fitted": 8
+      },
+      "seconds": 0.2208557829944766
+    },
+    {
+      "condition": "perturbed",
+      "view": "near_top_y",
+      "counts": {
+        "supported": 0,
+        "selected_top": 0,
+        "fitted": 5
+      },
+      "seconds": 0.21420673400280066
+    },
+    {
+      "condition": "perturbed",
+      "view": "oblique_front",
+      "counts": {
+        "supported": 0,
+        "selected_top": 0,
+        "fitted": 18
+      },
+      "seconds": 0.23548661499808077
+    },
+    {
+      "condition": "perturbed",
+      "view": "oblique_side",
+      "counts": {
+        "supported": 0,
+        "selected_top": 0,
+        "fitted": 14
+      },
+      "seconds": 0.22951670199836371
+    },
+    {
+      "condition": "blank_nominal",
+      "view": "top",
+      "counts": {
+        "supported": 0,
+        "selected_top": 0,
+        "fitted": 0
+      },
+      "seconds": 0.20123052800045116
+    },
+    {
+      "condition": "blank_nominal",
+      "view": "near_top_x",
+      "counts": {
+        "supported": 0,
+        "selected_top": 0,
+        "fitted": 0
+      },
+      "seconds": 0.20052203099476174
+    },
+    {
+      "condition": "blank_nominal",
+      "view": "near_top_y",
+      "counts": {
+        "supported": 0,
+        "selected_top": 0,
+        "fitted": 0
+      },
+      "seconds": 0.20381979099329328
+    },
+    {
+      "condition": "blank_nominal",
+      "view": "oblique_front",
+      "counts": {
+        "supported": 0,
+        "selected_top": 0,
+        "fitted": 0
+      },
+      "seconds": 0.20183678300236352
+    },
+    {
+      "condition": "blank_nominal",
+      "view": "oblique_side",
+      "counts": {
+        "supported": 0,
+        "selected_top": 0,
+        "fitted": 0
+      },
+      "seconds": 0.20138159899943275
+    }
+  ],
+  "versions": {
+    "opencv": "4.10.0",
+    "numpy": "1.26.0",
+    "scipy": "1.15.3"
+  },
+  "input_hashes": {
+    "geometry": "f69d3e2766ab191103bd8b8da8400f61ee93fba003eb052be355834a1b3410b5",
+    "calibration": "3a747401d50e97c5a27875d3e809db1579dd818c2d0e99f06e511c30cce0941a",
+    "config": "9cb796fd137747431d2bda8aa174f832f9ff8a9644d326b4e3e5f299ea55f694",
+    "evidence_source": "97e53a1aa65c7393ffcf8226ee4d612521c610e262ef5f19e6d9f5d3c334986e"
+  }
+}

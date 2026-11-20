@@ -1,0 +1,17 @@
+{
+  "schema": "native-breakage-observation-v1",
+  "maximum_steps": 8,
+  "first_failure_stops": true,
+  "baseline_protocol_sha256": "9f43c444cd0154147630b2ea3765d1526ed34549378dea510596b61577c5466b",
+  "watched_baseline_connections": [
+    836,
+    837
+  ],
+  "utilization": "Public native csw.utilization peroriginal930link perstep;\u22121 meansmissing/unmapped, not zero utilization",
+  "temp_policy": "Owned output/native_debug_tmp through TMPDIR before native import",
+  "physics_changes": false,
+  "idle_validation_claim": false,
+  "cause_inference": "Do not infer cooldown as cause; solve/utilization runs before cooldown break selection",
+  "only_changed_breakage_setting": "BreakageThresholds.debug_dump False\u2192True",
+  "numerical_epsilon_variants": "Optional explicit OSQP_EPSILON=1e-4 or1e-6 couples numerical tolerances and inequality margins; physical parameters and native break criterion remain unchanged"
+}

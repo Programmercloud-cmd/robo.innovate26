@@ -1,0 +1,29 @@
+{
+  "image": "img_5.jpg",
+  "detections": [
+    {
+      "parent_detection_id": "d000",
+      "stud_count": 26,
+      "orientation_deg": 169.5004987112002,
+      "pca_eigenvalue_ratio": 2.0950051745390317,
+      "passes_eight_stud_pca_gate": false,
+      "interpretation": "image-space heuristic only; not exposure, accessibility or metric pose"
+    },
+    {
+      "parent_detection_id": "d001",
+      "stud_count": 17,
+      "orientation_deg": null,
+      "pca_eigenvalue_ratio": 1.7072145936020804,
+      "passes_eight_stud_pca_gate": false,
+      "interpretation": "image-space heuristic only; not exposure, accessibility or metric pose"
+    },
+    {
+      "parent_detection_id": "d002",
+      "stud_count": 0,
+      "orientation_deg": null,
+      "pca_eigenvalue_ratio": null,
+      "passes_eight_stud_pca_gate": false,
+      "interpretation": "image-space heuristic only; not exposure, accessibility or metric pose"
+    }
+  ]
+}

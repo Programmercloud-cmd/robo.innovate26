@@ -1,0 +1,143 @@
+{
+  "schema": "source-color-handoff-result-v1",
+  "job_id": 1826,
+  "source_commit": "2882ac3",
+  "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T171714.068640Z-stage1-handoff",
+  "handoff_contract_passed": true,
+  "checks_passed": 1276,
+  "checks_total": 1276,
+  "failed_checks": [],
+  "raw_equivalence_counts": {
+    "f000": {
+      "candidates": 30,
+      "known": 15,
+      "unknown": 15
+    },
+    "f001": {
+      "candidates": 27,
+      "known": 0,
+      "unknown": 27
+    },
+    "f002": {
+      "candidates": 30,
+      "known": 13,
+      "unknown": 17
+    },
+    "f004": {
+      "candidates": 29,
+      "known": 13,
+      "unknown": 16
+    },
+    "f006": {
+      "candidates": 0,
+      "known": 0,
+      "unknown": 0
+    }
+  },
+  "original_candidates_equivalent": 116,
+  "raw_known_including_calibration": 41,
+  "raw_unknown": 75,
+  "transactions": 117,
+  "invalidation_controls_passed": 10,
+  "selected_source_color": {
+    "frame_id": "frame_0000",
+    "candidate_id": "ridge_00_s00",
+    "source_decision": "present",
+    "label": "tan",
+    "decision": "known",
+    "reasons": [],
+    "evidence": {
+      "interior_pixels": 1225,
+      "valid_pixels": 1225,
+      "valid_fraction": 1.0,
+      "nearest_label": "tan",
+      "distances": {
+        "bright_red": 51.6137488183834,
+        "brown": 47.15526320977783,
+        "dark_red": 44.42556750837217,
+        "ochre": 20.278616970876634,
+        "tan": 0.4519240149880021
+      },
+      "margin": 19.826692955888632,
+      "pixel_agreement": 1.0,
+      "median_lab": [
+        51.6357421875,
+        12.75,
+        42.96875
+      ]
+    },
+    "region_polygon": [
+      [
+        444.128404961837,
+        307.7451142489448
+      ],
+      [
+        444.1112115731096,
+        355.57914927636864
+      ],
+      [
+        468.0282290868216,
+        355.58774597073227
+      ],
+      [
+        468.0454224755489,
+        307.7537109433085
+      ]
+    ]
+  },
+  "selected_final_status": "INVALIDATED",
+  "selected_reference_exclusion": "The historical selected tan brick was itself an original calibration-reference brick, excluded from prior accuracy scoring. This case establishes plumbing only.",
+  "prior_accuracy_only": {
+    "correct": 35,
+    "eligible_present_observations": 35,
+    "all_visible_observations": 98,
+    "eligible_present_unique_objects": 14
+  },
+  "new_accuracy_evaluated": false,
+  "held_identity": "UNKNOWN",
+  "transfer_authorized": false,
+  "grasp_or_retention_claim": false,
+  "live_runtime_scope": "Optional hook implemented in current runner/shared Sensors; actual helper synthetic-tested without Isaac. Saved replay invokes the same classifier adapter. No fresh renderer/camera/physics run.",
+  "versions": {
+    "python": "3.11.15",
+    "opencv": "4.10.0",
+    "numpy": "1.26.0"
+  },
+  "source_pins": {
+    "classifier_sha256": "e2a5d7d15ac128fda73b8937d6d2416f9142b82c9c059fe34c3946f3e26af4a4",
+    "settings_sha256": "c41761cc438f5509c50681e2030ea2261f53e76c2725b4e17d70b05843c2cd85",
+    "prototypes_sha256": "52b6b6e64d25c92a0edb75ec6b53c7ff7ccc8cedfb505f091303c56352a020c0",
+    "settings_content_sha256": "050886db90f0eb53641d4286dcf8c23de1c2038253c6e32830d7c9de8242c7bf",
+    "prototypes_content_sha256": "a767d729f4b5112d412ff1c0f901b3929b50d0d8b2ea58950e8672e87a0ad884",
+    "adapter_sha256": "f61ac23686048b3ee8fee6d82dd6e04852ffa4556d062157fbb22a1052331669"
+  },
+  "audit_sha256": "81e693840696b6c888fb8cc487bd95aa2bcbccaf9d659a04eb1ea181acefae26",
+  "timing": {
+    "pueue_start": "2026-10-25T18:17:14.296121334+01:00",
+    "pueue_end": "2026-10-25T18:17:16.979662208+01:00",
+    "full_pueue_job_seconds": 2.683540874,
+    "maximum_active_seconds": 30,
+    "inference_seconds": 2.2631937690021005,
+    "audit_seconds": 0.27830400099628605,
+    "retention_fixture_budget_unchanged_seconds": 2682.9455824780234
+  },
+  "independent_reviews": {
+    "evaluator": "Accepts 116 exact prior outputs, final-selection binding and all 10 invalidation controls. No new accuracy or live manipulation evidence.",
+    "reviewer": "Accepts saved handoff equivalence; selected calibration-reference exclusion retained. No additional compute or fourth fixture trial."
+  },
+  "reproducible_commands": [
+    "/home/faps/miniforge3/envs/unitree_sim_env/bin/python experiments/stage1_handoff_20261025/test_synthetic.py",
+    "/home/faps/miniforge3/envs/unitree_sim_env/bin/python experiments/stage1_handoff_20261025/test_evaluation.py",
+    "/home/faps/miniforge3/envs/unitree_sim_env/bin/python experiments/stage1_handoff_20261025/test_live_hook.py",
+    "python3 experiments/stage1_handoff_20261025/submit.py (original source 2882ac3, one job only; no automatic resubmission)",
+    "Exact frozen commands in /home/faps/dev/github/robo.innovate26/runs/20261025T171714.068640Z-stage1-handoff/pipeline.sh"
+  ],
+  "limitations": [
+    "Correlated previously evaluated ideal rendered observations; no independent real-stack generalization.",
+    "Original 35 correct non-reference observations / 98 visible observations remains the accuracy/coverage evidence.",
+    "No simulator colors, object identities or native state enter the color adapter.",
+    "No quality decision or routing inferred from provisional shade labels.",
+    "Grasp model gap/depth mapping still needs clarification against successful real Desk 14 mm grasp.",
+    "Closed retention comparison stays closed; no further parameter trial follows."
+  ]
+}

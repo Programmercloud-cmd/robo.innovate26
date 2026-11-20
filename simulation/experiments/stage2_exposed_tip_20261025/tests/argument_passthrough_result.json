@@ -1,0 +1,11 @@
+{
+  "schema": "exposed-tip-argument-passthrough-v1",
+  "before_reproduced_missing_geometry": true,
+  "after_D_R_all_renderer_and_evidence_arguments_preserved": true,
+  "Isaac_or_Kit_imported": false,
+  "source_sha256": {
+    "experiments/stage2_exposed_tip_20261025/run_contact.py": "7d97d2ffe254a43fe5ef855d2ccb75d477df5b5c8a3958b2de542c020ac6b8e0",
+    "experiments/stage2_contact_20261025/run_contact.py": "5c2cacde261c5cafbe3984ab301c6ce43f1f528f1509a1eee08f605f411c809a",
+    "experiments/final_workcell_20261024/render_core.py": "c113531b35b8527871e60f6763666e08c054c6653f240d107051123563f8cf6b"
+  }
+}

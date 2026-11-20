@@ -1,0 +1,174 @@
+{
+  "schema": "stage1-interface-benchmark-source-views-v1",
+  "status": "frozen_before_implementation",
+  "design": "confirmed300bricks10layers6ridges5bricks",
+  "geometry_source": "experiments/final_workcell_20261024/geometry.json",
+  "views": [
+    "diagnostic_table_top",
+    "diagnostic_oblique"
+  ],
+  "camera_light_policy": "Fixedworldposes/lightscomputedfrominitialfulldesign;neverrecenterfromremainingtruth",
+  "capture_mode": "static_initialized_no_postconnectionphysics",
+  "native_connections": "Allremainingoverlappingpairsandbaseplatelinks,strictgraph/posechecks;nostabilityclaim",
+  "top_layer_removed_only": 9,
+  "lower_layers_unchanged": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "indices": "(ridge,long-axisbrick),0-based; layer9 native(i,j)=(r,b); countsdesignonlyneverperceptioninput",
+  "palettes": {
+    "mixed": "Original300 RNG26 palette/order assignedBEFOREfiltering removals"
+  },
+  "cases": [
+    {
+      "id": "I_mix",
+      "split": "development",
+      "palette": "mixed",
+      "remove_top_ridge_brick": [],
+      "keep_only_top_ridge_brick": null,
+      "expected": {
+        "active_bricks": 300,
+        "native_connections": 930,
+        "connected_parts": 301
+      }
+    },
+    {
+      "id": "H_mix",
+      "split": "development",
+      "palette": "mixed",
+      "remove_top_ridge_brick": [
+        [
+          2,
+          2
+        ]
+      ],
+      "keep_only_top_ridge_brick": null,
+      "expected": {
+        "active_bricks": 299,
+        "native_connections": 926,
+        "connected_parts": 300
+      }
+    },
+    {
+      "id": "E_mix",
+      "split": "development",
+      "palette": "mixed",
+      "remove_top_ridge_brick": [
+        [
+          4,
+          0
+        ]
+      ],
+      "keep_only_top_ridge_brick": null,
+      "expected": {
+        "active_bricks": 299,
+        "native_connections": 926,
+        "connected_parts": 300
+      }
+    },
+    {
+      "id": "T_mix",
+      "split": "reserved",
+      "palette": "mixed",
+      "remove_top_ridge_brick": null,
+      "keep_only_top_ridge_brick": [],
+      "expected": {
+        "active_bricks": 270,
+        "native_connections": 830,
+        "connected_parts": 271
+      }
+    },
+    {
+      "id": "P_mix",
+      "split": "reserved",
+      "palette": "mixed",
+      "remove_top_ridge_brick": null,
+      "keep_only_top_ridge_brick": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          4
+        ]
+      ],
+      "expected": {
+        "active_bricks": 273,
+        "native_connections": 838,
+        "connected_parts": 274
+      }
+    }
+  ],
+  "split_policy": "Development I/H/E only; all P/T views withheld until interface freeze. Historical patterns are known; this is not new generalization evidence.",
+  "modes": {
+    "single_view": "evaluated independently",
+    "combined_view": "notimplemented/notmeasured",
+    "temporal": "notimplemented;freshsensorstateperobservation,nohistory/GTinitialization"
+  },
+  "reserved_final_policy": "After interface freeze, process reserved P/T once with unchanged frozen R3; no result-driven source, thresholds or camera changes",
+  "frozen_sources_sha256": {
+    "experiments/final_workcell_20261024/geometry.json": "8a0266b2ccbf75f6d773fdd1e6309c70f9ab8828da96b563da133f383f83c897",
+    "experiments/stage1_20261025/upstream/method.py": "45b8004948d1af8779f79c7c7bedbd984aa186087626a1c58c7c3dec74b732ba",
+    "experiments/stage1_20261025/upstream/depth_module.py": "7d9243a7282309ae98344b9213ac7f575baac23a334bdd97c05d48fd656249ae",
+    "experiments/stage1_20261025/upstream/evidence.py": "97e53a1aa65c7393ffcf8226ee4d612521c610e262ef5f19e6d9f5d3c334986e",
+    "experiments/stage1_20261025/upstream/config.json": "9e14b949200cb23c809ea8181e85dee657540401dd8ff10301cb7cc68c0ef56f",
+    "experiments/stage1_20261025/upstream/depth_config.json": "5d5a31ba9ef310c67bf9acd92b943c8f6cbda42f9904fc427d6c1deab86e6c14",
+    "experiments/stage1_20261025/upstream/version.json": "6a650edca3ba8e9ed39975160cdb14bcff2a0d23bb4a99fd133ddcd5a5891d15",
+    "experiments/stage1_20261025/source_views_v1.json": "be1c29aa65c17329bc5014e7e45ad36fe782d9e05e693c6a3961a2dc3923b820"
+  },
+  "stage1_status": "Separate frozen source-scale camera experiment; unchanged R3, workspace prior and evaluation rules",
+  "stage1_split": {
+    "development": [
+      "I_mix",
+      "H_mix",
+      "E_mix"
+    ],
+    "reserved": [
+      "P_mix",
+      "T_mix"
+    ]
+  },
+  "stage1_controls": {
+    "all_depth_NaN": [
+      "diagnostic_table_top",
+      "diagnostic_oblique"
+    ],
+    "depth_patch_NaN": {
+      "view": "diagnostic_table_top",
+      "pixel_xyxy": [
+        600,
+        280,
+        680,
+        360
+      ]
+    }
+  },
+  "camera_experiment": {
+    "id": "source_views_v1",
+    "source": "experiments/stage1_20261025/source_views_v1.json",
+    "selection": "One separately reviewed camera-only experiment after development baselines 1723 and 1726 yielded zero raw candidates; both presets frozen before capture",
+    "full_design_reference_center_table_m": [
+      0.0,
+      0.0,
+      0.1009
+    ],
+    "reference_policy": "Use unchanged configured full-design center for every state; never derive a new camera from remaining bricks",
+    "unchanged": "K, resolution, light configuration, geometry, appearance, R3 source and thresholds, source XY ROI, workspace_v1 bounds, cases and metric rules",
+    "intact_policy": "Recapture I_mix with these cameras; do not reuse the earlier distant-view full-stack capture",
+    "reserved_policy": "P/T images may be captured and sealed; online/evaluation execution only after this interface/configuration version is frozen",
+    "calibration_status": "Configured virtual inspection views, not a measured physical wrist-camera transform",
+    "sampling_status": "Closer image sampling is a hypothesis to test, not a validated performance result"
+  }
+}

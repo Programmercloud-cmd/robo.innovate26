@@ -1,0 +1,34 @@
+{
+  "experiment": "sim_rgb_upright_pose_20261024",
+  "candidate_layers": [9, 8],
+  "conditions": [
+    {"id": "nominal", "translation_xy_m": [0.0, 0.0], "yaw_deg": 0.0, "blank": false},
+    {"id": "perturbed", "translation_xy_m": [0.0008, -0.0006], "yaw_deg": 0.3, "blank": false},
+    {"id": "blank_nominal", "translation_xy_m": [0.0, 0.0], "yaw_deg": 0.0, "blank": true}
+  ],
+  "evidence": {
+    "feature_model": "ring_coherence_v1",
+    "pixels_per_stud": 24,
+    "stud_radius_fractions": [0.25, 0.29, 0.33],
+    "stud_search_fraction": 0.2,
+    "contrast_range_for_observability": 35.0
+  },
+  "stud_confirm_score": 0.35,
+  "minimum_confirmed_studs": 6,
+  "minimum_mean_stud_score": 0.45,
+  "minimum_observability": 0.25,
+  "minimum_edge_score": 0.12,
+  "xy_correction_bound_m": 0.003,
+  "yaw_correction_bound_deg": 5.0,
+  "z_correction_bound_heights": 1.5,
+  "fit_loss_scale_px": 1.5,
+  "fit_max_evaluations": 50,
+  "fit_max_rms_px": 1.5,
+  "pixel_noise_floor_px": 1.0,
+  "jacobian_steps": [0.00001, 0.00001, 0.00001, 0.0001],
+  "maximum_xy_std_m": 0.0015,
+  "maximum_z_std_height_fraction": 0.3333333333333333,
+  "maximum_yaw_std_deg": 2.0,
+  "maximum_layer_residual_height_fraction": 0.3333333333333333,
+  "notes": "Frozen assisted experiment on top and immediately lower nominal layers only. Upright roll/pitch prior; continuous fitted XYZ/yaw, no pose snapping or NMS. Linearized uncertainty excludes calibration error. No ground-truth files or depth inputs."
+}

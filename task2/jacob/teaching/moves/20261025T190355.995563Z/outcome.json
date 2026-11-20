@@ -1,0 +1,55 @@
+{
+  "completed": true,
+  "requested_point": 1,
+  "trajectory": "continuous_arc",
+  "returncode": 0,
+  "saved_catalog_unchanged": true,
+  "grasp_offset_executed": false,
+  "execution_log": "/home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T190355.995563Z/execution.log",
+  "actual_xyz_m": [
+    0.7091330885887146,
+    -0.06015315651893616,
+    0.13296520709991455
+  ],
+  "target_xyz_m": [
+    0.7095304727554321,
+    -0.06002897396683693,
+    0.1334850788116455
+  ],
+  "position_error_mm": 0.6660345928416466,
+  "orientation_error_deg": 0.07791543376354049,
+  "completion_mode": "Idle",
+  "completion_errors": [],
+  "after_settling": {
+    "actual_xyz_m": [
+      0.7090115547180176,
+      -0.06029824912548065,
+      0.13284660875797272
+    ],
+    "position_error_mm": 0.8656957029197425,
+    "orientation_error_deg": 0.0960194538011446,
+    "mode": "Idle",
+    "errors": []
+  },
+  "planned_motion_duration_s": 8.29750033048736,
+  "distance_timing": {
+    "nominal_distance_time_s": 8.29750033048736,
+    "derivative_required_time_s": 6.9985363512285135,
+    "straight_distance_m": 0.5792499692557563,
+    "translation_derivative_bounds": [
+      2.0393260299138602,
+      11.183229788344846,
+      148.05523749706435
+    ],
+    "angular_derivative_bounds": [
+      0.1108571493959719,
+      0.981385544028837,
+      21.93123938883644
+    ],
+    "estimated_peak_velocity_m_s": 0.2457759504294083,
+    "estimated_peak_acceleration_m_s2": 0.16243241148742255,
+    "estimated_peak_jerk_m_s3": 0.2591683358960283
+  },
+  "commanded_peak_speed_from_50hz_trace_m_s": 0.2454192544956674,
+  "recorded_samples": 455
+}
