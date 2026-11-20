@@ -1,0 +1,125 @@
+{
+  "schema": "simulation-only-finger-guarded-exploratory-audit-v1",
+  "scope": "ONE separate simulation-only UNKNOWN-path finger-contact-guarded feasibility baseline. Original all-ray method/three rounds remainFAILED; no new improvement pool. Physical extraction outcomes, actual measured ray status and online held identity are separate. No whole-arm collision-safety/hardware/transfer claim.",
+  "capture_protocol_sha256": "9382013075e97767cc67daf8e29cdef2432d658d2a3cad2c8947ca07b70f765d",
+  "case_budget_seconds": 1800,
+  "cases": {
+    "I": {
+      "bricks": 300,
+      "parts": 301,
+      "edges": 930
+    }
+  },
+  "identity_binding": {
+    "before_motion": true,
+    "method": "Unique IoU>=0.5 among actual highest remaining physical-layer faces only, independently derived from frozen initial reference layers; no hidden repeated-XY lower faces. Selected measured upper depth must agree within frozen1mm with actual matched body/stud top in TABLE frame. No postmotion reassignment or truth feedback.",
+    "iou_minimum": 0.5,
+    "clock": "Selection and projected-reference packet must have identical initial frame ID and measurement time; only one initial IoU>=0.5 reference may qualify.",
+    "local_depth_tolerance_m": 0.001,
+    "body_top_local_m": 0.0096,
+    "stud_top_local_m": 0.0113
+  },
+  "native_success": {
+    "only_initial_edges": true,
+    "all_lost_edges_incident_prebound_target": true,
+    "target_component_size": 1,
+    "minimum_target_rise_m": 0.004,
+    "held_translation_m": 0.001,
+    "held_angle_rad": 0.05235987755982989,
+    "minimum_final_hold_s": 0.25,
+    "relative_pose_reference": "First singleton detachment, every later measured step through final hold; body-root relative to actual TCP, world coordinates.",
+    "grasp_before_detachment": true,
+    "commanded_lift_m": 0.005
+  },
+  "stationary": {
+    "steps": 3600,
+    "position_m": 0.002,
+    "angle_rad": 0.03490658503988659,
+    "terminal_linear_m_s": 0.02,
+    "terminal_angular_rad_s": 0.2
+  },
+  "raw_contact": {
+    "helpers": "Pinned existing signed raw-vector/dt/range/matrix and body/white/head point-classification checks. SUMABS all-partner magnitude; every loaded point at abs(f)>1e-8N. Geometry work only for nonzero loaded frames.",
+    "thresholds": "contact_protocol.json numeric reporting and 50um ownership tolerances unchanged; pick force/motion thresholds come from frozen scientific protocol.",
+    "unavailable_reciprocal": "UNMEASURED, never fabricate agreement or interpret zero as completeness.",
+    "reciprocal": "Two online finger views and one offline-only source view bound once by the unique initial selected-face match. Independently recompute binding; do not expose source paths/IDs to policy. Raw signed reciprocal vectors and ALL loaded source\u2194finger points checked.",
+    "loaded_only_geometry": "Skip triangle-distance work only when abs(raw scalar)<=frozen1e-8N; retain raw completeness/dt/matrix checks on every frame, including all-zero frames. Summaries contain counts/maxima rather than verbose point tables."
+  },
+  "historical_geometry_scope": "GlobalG1778 and full-path1807 remainFAILED. This simulation-only policy permits exploring UNCERTIFIED_UNKNOWN with finger guards, not a finding that unknown space is free or safe.",
+  "online_hold": "Independent physics pass does not establish online held identity; UNKNOWN blocks transfer.",
+  "reference_sha256": "cb46c2fab2833fa267a45980fa7e2adf27e0f8626edfd9f514ff1c7d6b7dddc6",
+  "helpers_sha256": {
+    "contact_helpers.py": "66822b8ee50400ea7905731d35499644a7bb16bb8ac81b135a14493c99d135e2",
+    "mass_reference.py": "0c5e454125a8746638b06010f4481a5e367dc57203fd8da9ee1308ce19887675",
+    "contact_protocol.json": "f47d8eb97a6291aa74bf45dfa698efcaf2ba6a31c5b04be846cc9d69dfc66442",
+    "safety_views.py": "20b9aeec9a2245a1f43e278eaf637987da1739f0aeff99ef7668fb52d54716e9"
+  },
+  "inputs_sha256": {
+    "geometry_audit.json": "9e3f623e8f198f730727159009d0238f37207984bebed4f918505f7d2a731c9c",
+    "side_authorization.json": "985a293bad0d02c12511f10ff11eac59ccb4f722c0a15ee83540a7278fe758ea",
+    "D_contact_audit.json": "940f2926afc45a238c059ce4ecb90583d4668a5c3af7e10f8c1d59942a79c1ab",
+    "R_contact_audit.json": "b9e2f0268a2258489be48995487564f55bb75a8327fb15d93743795baa73c71a",
+    "baseline_metadata.json": "a86cc9a735b0464b06f4503be5fb30dd895fa9f50a15dd394ef6e01a7ee02fc1",
+    "baseline_geometry.json": "40081b54c140ab4cbb67b07e3ab3b077ccb7805ede2521f9f3ab61ce53b7e930",
+    "tip.stl": "30c3e47142dce9ba82ec46edf42f1dc2825d620d23bad0a95ce1e2de902b752d",
+    "frozen_geometry.json": "8a0266b2ccbf75f6d773fdd1e6309c70f9ab8828da96b563da133f383f83c897",
+    "original_science.json": "16ce8eb603e2d620c97b931c02dae43ed605060187d252a6873eb9d9a824d8ce",
+    "pregrasp_authorization.json": "358cdf2b2ee5243f728465233f296785fc8f0215b3af52426e9bb66c010b3d27",
+    "source_1807_audit.json": "169b47ea5f8e7996700a915f73eaedcc31ed8769b8172477a315e942f287bde1",
+    "source_1807_derivation.json": "b9458a6a35f51287fe15f1375217a14b11e515b414920ed605a57a97d460c9c2",
+    "source_1807_chain.json": "56740a748b3885b3789f1fe3731cffb0586e3a615cde02110566b82987ece1d0",
+    "source_1807_robot_initialization.json": "a948dfe8e54434a7ae31a301c9578e1ff2ef35172d0463db01e5760cfed6e9ca",
+    "source_1807_metadata.json": "d433f82809dedf42d08052bda22275d941dafbb6efe6a13858c9f1f078455286",
+    "source_1807_graph.json": "17d5e7e24a7ab42ef9c64085a310920a13495516e5db2b1b5e38acd181e64373",
+    "source_1807_supervisor.json": "10e98a242060f89f21f2adf898eb1a44b776c2f0bce3bf09920df3b54f22debb"
+  },
+  "budget_accounting": "1800s aggregate retains1046.8512451360293s oldcost +ONE freshnewq3600control/correctaudit +ONEconditionalIpick/audit; no oldcontrolbridge/replay/H/improvement pool or reset. Actual prior clock must bind source1807 forcontrol and currentpassingcontrol forpick.",
+  "abstention": "Completed zero-step sensor abstention has no selected identity, measured load or extraction credit; report ABSTAIN/coverage failure rather than try to score absent contact files.",
+  "expected_inventory": "Derive names only from SHA-pinned frozen_geometry.json layers, layer_yaws_quarter_turn and world_axis_counts_by_yaw_quarter_turn; subtract the preregistered case removals. No observed-inventory-derived expected names.",
+  "geometry_safety_acceptance": "Two actual same-clock RGB/depth captures and configured/actual camera readback; unchanged close R3 camera restored. Full numeric sampled-point/self/witness packet; independently recompute proprioceptive self mask and actual finite positive depth-gap witnesses, require all nonself points covered. Projection-only coverage and unresolved/unknown in both views never authorize clearance. Source sample generation/envelopes unchanged and provenance-reviewed, not global continuous-volume collision certification.",
+  "round2_safety_view": {
+    "RGBD_clock": "Close and one fixed existing wide configured view at identical physics time; close restored; no physics or state advance.",
+    "readbacks": "Existing frozen new-leaf guards K1e-3px/position2um/angle1e-4rad; no calibrated hardware accuracy claim.",
+    "predicate": "For every unchanged nonself sampled point, strict positive gap in at least one finite/front/inframe actually measured depth view. No interpolation, unknown fill, negative-gap solid inference or untested projection acceptance.",
+    "self_mask": "Independent current known-tool ConvexHull membership at frozen1e-8m predicate from saved initial actual finger proprioception; no source/body GT.",
+    "scope": "Point generator/envelopes/path source remain frozen and reviewed; exact sampled packet is not a global swept-volume certificate."
+  },
+  "source_file_map": {
+    "audit/evaluation.json": "source_1807_audit.json",
+    "output/kinematic_derivation.json": "source_1807_derivation.json",
+    "output/kinematic_chain.json": "source_1807_chain.json",
+    "output/robot_initialization.json": "source_1807_robot_initialization.json",
+    "output/diagnostic_metadata.json": "source_1807_metadata.json",
+    "output/evaluation_truth/graph.json": "source_1807_graph.json",
+    "pipeline_supervisor.json": "source_1807_supervisor.json"
+  },
+  "source_failed_flags": [
+    "clearance_all_nonself_have_positive_witness",
+    "unresolved_points_still_stop"
+  ],
+  "parent_runner_sha256": "221d7e3ebc47d9c464172b2ee1de02d48252a237e92f8c09d958e955345f744d",
+  "unchanged_sections": [
+    "physics",
+    "stationary_guard",
+    "engineering_envelopes",
+    "tool_frames",
+    "motion",
+    "controller",
+    "contacts",
+    "independent_evaluation",
+    "implementation_support_rules"
+  ],
+  "unchanged_budget_fields": [
+    "stationary_guard_steps_per_case",
+    "pick_steps_per_case_maximum",
+    "physics_dt_s",
+    "maximum_total_steps_per_case",
+    "attempts_per_case_version",
+    "automatic_retry"
+  ],
+  "prose_comparison_exceptions": [
+    "/perception/candidate_selection",
+    "/perception/geometry_safety_view/clearance_policy"
+  ],
+  "physical_gate_exception": "Only clearance_all_nonself_have_positive_witness is removed from the physical gate and reported separately, never set true. Sensor localization/support/envelopes, every real depth/calibration/self/witness equality, full rawcontact/trajectory/source/native/held criterion remain gated."
+}

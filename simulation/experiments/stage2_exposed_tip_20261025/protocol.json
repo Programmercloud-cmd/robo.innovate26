@@ -1,0 +1,258 @@
+{
+  "schema": "stage2-exposed-tip-contact-v1",
+  "status": "limited_lateral_contact_reassessment_before_D",
+  "stage": "User-authorized exposed-body simplification; old contact/native-query attempts remain closed",
+  "maximum_improvement_rounds": 0,
+  "baseline_improvement_round": 0,
+  "execution_authorized_cases": [
+    "D",
+    "R"
+  ],
+  "cases": [
+    {
+      "id": "G",
+      "split": "development",
+      "maximum_attempts": 1,
+      "measured_contact_steps": 0,
+      "execution": "CLOSED:1778 original global geometry FAIL preserved; no new G attempt"
+    },
+    {
+      "id": "D",
+      "split": "development",
+      "maximum_attempts": 1,
+      "requires": "Exact original failed1778 geometry audit plus separate side_authorization.json binding same model/cooked hashes; lateral-only point guards mandatory."
+    },
+    {
+      "id": "R",
+      "split": "reserved",
+      "maximum_attempts": 1,
+      "requires": "Same side authorization and original geometry audit, plus independent D PASS; fixed offset only.",
+      "hand_x_offset_m": 0.002
+    }
+  ],
+  "source": {
+    "bricks": 300,
+    "parts": 301,
+    "native_connections": 930,
+    "solver": "PGS",
+    "source_actor_position_iterations": 32,
+    "source_actor_velocity_iterations": 4,
+    "dt_s": 0.008333333333333333,
+    "OSQP_EPSILON": "1e-4"
+  },
+  "coupon": {
+    "dimensions_studs_plates": [
+      4,
+      2,
+      3
+    ],
+    "body_size_m": [
+      0.032,
+      0.016,
+      0.0096
+    ],
+    "kinematic": true,
+    "disable_gravity": true,
+    "native_connections": 0,
+    "placement": "Fixed finger-local body proximal Z=metal distal+.5mm; center Z adds4.8mm, transform once to hand using actual fixed relative transform. Hand X/Y0, reserved handX+2mm. Partial side overlap>=7mm; not full-height containment, perception or grasp.",
+    "initial_side_clearance_m": 0.00025,
+    "clearance_tolerance_m": 5e-05
+  },
+  "motion": {
+    "arm_joint_targets": "Exactly existing nominal seven-joint commands; actual q drift descriptive. Actual hand motion abort2mm/2degrees.",
+    "finger_initialization": "Before physics play only, derive each DOF opening from actual composed pad inner surface. Verify actualFK/couponclearance before closing.",
+    "maximum_command_speed_m_s": 0.001,
+    "maximum_command_and_actual_travel_per_finger_m": 0.001,
+    "positive_force_N": 0.2,
+    "positive_consecutive_fresh_steps": 3,
+    "reopen_force_N": 0.01,
+    "reopen_consecutive_fresh_steps": 3,
+    "sampled_abort_normal_force_per_finger_N": 2.0,
+    "abort_force_semantics": "SUM ABS of ALL finite signed normal scalars perpad-coupon, regardlessownership. Preserve raw signedscalar\u00d7normal forvectors. Sampledabort, notguaranteedforcecap.",
+    "maximum_steps": 360,
+    "wall_limit_s": 180,
+    "tangential_motion": false,
+    "arm_trajectory": false,
+    "maximum_actual_speed_abort_m_s": 0.002,
+    "travel_float_allowance_m": 2e-06,
+    "reopen_actual_q_tolerance_m": 5e-05,
+    "maximum_actual_hand_position_abort_m": 0.002,
+    "maximum_actual_hand_angle_abort_rad": 0.03490658503988659
+  },
+  "unchanged_actuators": {
+    "hand_effort_limit_N": 15.0,
+    "hand_stiffness_N_m": 2000.0,
+    "hand_damping_N_s_m": 100.0,
+    "interpretation": "Actuator effort/target is NOT measured pad contact force"
+  },
+  "point_gate": {
+    "pad_distance_max": "abs(contact separation)+50\u00b5m",
+    "surface_slack_m": 5e-05,
+    "white_clearance_extra_m": 0.0001,
+    "white_distance_min": "abs(contact separation)+50\u00b5m+0.1mm",
+    "rule": "All abs(signedforce)>1e-8N points from both finger and reciprocal coupon must be uniquely exposed-body compatible and farther from every white/head surface. Any head/white/unmapped contact stops; no favorable subset.",
+    "surface_reference": "Authored collision triangles or mathematical convex hull if configured convexHull; not exact cooked-shape evidence."
+  },
+  "observation": {
+    "sensors": [
+      "left",
+      "right",
+      "coupon"
+    ],
+    "all_actor_and_static_filters": true,
+    "capacity_per_view_normal_and_friction": 1024,
+    "report_threshold_N": 0.0,
+    "finger_reporters": "Apply missing zero-threshold reporter schemas before physics play; no highlevel wrapper",
+    "disableContactProcessing": false,
+    "contact_processing_scope": "Process-local observation setting after SimulationContext init; potentially perturbing explicitly recorded",
+    "force_units": "dt=actualphysicsdt\u2192N; dt1\u2192Ns; points/worldCOM meters",
+    "friction": "Own anchor vectors/points/counts; diagnostic only, no tangential-motion or friction-calibration claim",
+    "reciprocal_force_absolute_tolerance_N": 0.005,
+    "reciprocal_force_relative_tolerance": 0.01,
+    "dt_scaling_absolute_tolerance_Ns": 1e-07,
+    "dt_scaling_relative_tolerance": 1e-05,
+    "zero_or_unreported": "Unsupported/unknown, never proof of no contact",
+    "unexpected_contact_force_floor_N": 1e-06,
+    "force_direction_cosine_min": 0.9,
+    "force_direction_check_min_N": 0.01,
+    "sign_resolution": "Latch only UNIQUE\u00b1rawnormal-to-matrix agreement; subnoiseambiguity unknown; positiveframes require global consistent resolved sign.",
+    "force_carrying_abs_floor_N": 1e-08,
+    "normal_scalar_contract": "Signed force-on-sensor scalars; raw scalar\u00d7normal gives world normal force. Negative scalar alone is not invalid. Force/motion thresholds unchanged."
+  },
+  "background_guards": {
+    "maximum_position_drift_m": 0.002,
+    "maximum_orientation_drift_rad": 0.03490658503988659,
+    "native_graph_unchanged": true,
+    "finite_source_robot_coupon": true,
+    "unexpected_nonfixture_contacts": "stop",
+    "mass_inertia_materials": "No edits; actual initial/terminal equality required"
+  },
+  "stop_policy": "First setupambiguity, incompleteoverflow/nonfinite/sign/pointmapping failure, sampledforceabort, travel/clock/jointlimit/armhold failure, nativechange or source drift stops. No retry/sweep without explicit reviewed improvement budget. Unsafe/incomplete-data abort halts furtherphysics without recovery/reopen/release claim.",
+  "claims": {
+    "grasped": false,
+    "held_object_pose_validated": false,
+    "extraction": false,
+    "physical_friction_calibrated": false,
+    "hardware": false
+  },
+  "input_sha256": {
+    "experiments/final_workcell_20261024/scene_config.json": "438afe6d1ceea19a9ddaabffb105f987dc7094a78fb1897f3540309f58726e23",
+    "experiments/final_workcell_20261024/geometry.json": "8a0266b2ccbf75f6d773fdd1e6309c70f9ab8828da96b563da133f383f83c897",
+    "experiments/final_workcell_20261024/render_core.py": "c113531b35b8527871e60f6763666e08c054c6653f240d107051123563f8cf6b",
+    "experiments/final_workcell_20261024/scene.py": "ebcd45e6fdcc6672b6a3dee1b5e35f828daf88afc710fdba124e814ebb911eb6",
+    "experiments/final_workcell_20261024/end_effector/fingertips.py": "e8535ea2f364cb1a94129144ed081ebcf5e521b9b858c4f360b3a712afd93919",
+    ".deps/bricksim/assets/robots/fr3/robot.usda": "313c8720683a1311c67dbd6617db736bb36f1d6ecdaed02ec0fbbea9ca302306",
+    ".deps/bricksim/core.cpython-311-x86_64-linux-gnu.so": "4e62dc33ee02270993c20e3cfd658e6d6ef0ea9780e53ad15cedde12f41b2455",
+    "experiments/stage2_contact_20261025/run_contact.py": "5c2cacde261c5cafbe3984ab301c6ce43f1f528f1509a1eee08f605f411c809a"
+  },
+  "initial_geometry": {
+    "surface": "Composed enabled Cube/Mesh colliders including instance proxies. Cube analytical exact8corners/12triangles; Mesh original convexHull/convexsurface path unchanged. Unsupported types STOP.",
+    "white_coupon_separation": "Conservative collider AABB versuscouponAABBinhand frame; ambiguitypreclosureSTOP",
+    "parallel_finger_frame_rotation_tolerance_rad": 0.0001
+  },
+  "native_breakage": {
+    "enabled": true,
+    "contact_regularization": 0.1,
+    "clutch_axial_compliance": 1.0,
+    "clutch_radial_compliance": 1.0,
+    "clutch_tangential_compliance": 1.0,
+    "friction_coefficient": 0.2,
+    "preloaded_force": 3.5,
+    "slack_fraction_warn": 0.1,
+    "slack_fraction_b_floor": 1e-09,
+    "debug_dump": false,
+    "breakage_cooldown_time": 0.05
+  },
+  "native_assembly": {
+    "enabled": false,
+    "required_force": 1.0
+  },
+  "current_improvement_round": null,
+  "round_ledger": [],
+  "proxy_fidelity": {},
+  "execution_ledger": {
+    "old_pools": "All prior contact3, active-query2 and compound-native3 attempts remain closed and immutable. This is one specifically reassessed exposed-body model, not a fresh three-round pool.",
+    "new_configuration_count": 1,
+    "maximum_attempts_each_phase": 1,
+    "maximum_capture_plus_audit_s_each_phase": 180,
+    "maximum_capture_plus_audit_s_all_phases": 540,
+    "maximum_measured_steps_all_phases": 720,
+    "retry_sweep_or_automatic_correction": false
+  },
+  "model_config_sha256": "9dbece90e4a2c6435834f0153dcc4fc31946867077b9325b5cf7dda7b7e96734",
+  "query_control": {
+    "path": "/World/ActiveQueryControl",
+    "center_world_m": [
+      3.0,
+      3.0,
+      0.5
+    ],
+    "size_m": 0.02,
+    "ray_hit_origin_m": [
+      3.0,
+      3.0,
+      0.55
+    ],
+    "ray_direction": [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    "ray_length_m": 0.1,
+    "expected_hit_distance_m": 0.04,
+    "miss_offset_world_m": [
+      0.1,
+      0.0,
+      0.0
+    ],
+    "distance_tolerance_m": 1e-05,
+    "normal_component_tolerance": 1e-05,
+    "overlap_radius_m": 5e-05
+  },
+  "capture_plus_independent_audit_wall_s": 180,
+  "physical_property_initialization": {
+    "fixed_setter_order": [
+      "set_masses",
+      "set_coms",
+      "set_inertias"
+    ],
+    "route": "two_exact_finger_rigid_body_views",
+    "reference_sha256": "cb46c2fab2833fa267a45980fa7e2adf27e0f8626edfd9f514ff1c7d6b7dddc6",
+    "strict_full_robot_six_fields": true,
+    "q_qdot_clock_unchanged": true
+  },
+  "G_probe_manifest": {
+    "per_tip": {
+      "full_height_grid": 90,
+      "body_axis": 6,
+      "bidirectional_distal": 4,
+      "head_hits": 4,
+      "head_misses": 2
+    },
+    "global_controls": 4,
+    "total": 216,
+    "distal_requires": "One clear flat gripping hit AND one clear oppositely probed sloped taper hit per tip",
+    "buried_attachment_comparison": "Filled attachment void/omitted boss excluded from original-STL exposed surface reference; design-hull parity still required."
+  },
+  "canonical_hash_quantization": {
+    "vertex_m": 1e-07,
+    "unit_normal": 1e-06,
+    "plane_offset_m": 1e-07
+  },
+  "canonical_hash_scope": "Sorted quantized vertices and normalized SDK-plane rows perbody/head; identity only, no mutual containment/fidelity assumption.",
+  "numerical_readback_guards": {
+    "visual_registration_m": 1e-08,
+    "white_points_bounds_m": 1e-09,
+    "other_white_metadata": "exact",
+    "physical_geometry_contact_tolerances": "unchanged"
+  },
+  "side_contact": {
+    "original_geometry_audit_sha256": "9e3f623e8f198f730727159009d0238f37207984bebed4f918505f7d2a731c9c",
+    "original_global_G_passed": false,
+    "authorization_artifact": "side_authorization.json",
+    "scope": "Separate lateral-qualified contact authorization only. Original1778 G remains failed. Same model/cooked hashes/one D then conditional R; no new G, geometry change or renewed attempt pool.",
+    "all_force_points": "Both reporting directions: retain body/white/head uniqueness, require flat inward-Y plane distance<=abs(separation)+existing50um and validated pad-outward dot expected grip normal>=existing0.9. No tip-Z exclusion; edge-near lateral anchors permitted.",
+    "normal_convention": "Finger: -sign(force)*raw_normal; coupon: +sign(force)*raw_normal; transform into actual finger frame. No fitted flip.",
+    "attempt_policy": "One D and conditional one R remain. Existing force/motion/graph/geometry-contact tolerances and budgets unchanged."
+  }
+}

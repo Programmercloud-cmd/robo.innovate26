@@ -1,0 +1,2815 @@
+{
+  "schema": "depth-assisted-brick-fixed-evaluation-v1",
+  "protocol_sha256": "4d8e1ee024a1570f6747ad6eff7d7c45d2c12de35f001810543fda73220e3a38",
+  "raw_geometry": {
+    "positive_references": 150,
+    "raw_detections": 150,
+    "matched": 150,
+    "missed_individual_faces": 0,
+    "merge": 0,
+    "duplicate": 0,
+    "lower_layer_target": 0,
+    "ambiguous_ignored": 0,
+    "other_spurious_or_unresolved": 0,
+    "outside_roi": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "matched_plane_xy_error_mm": {
+      "count": 150,
+      "median": 0.5013708628966611,
+      "p90": 0.7086966518288701,
+      "max": 1.1438024817652612
+    },
+    "matched_shared_ridge_yaw_error_deg_mod180": {
+      "count": 150,
+      "median": 0.044233331100709095,
+      "p90": 0.11118936087995757,
+      "max": 0.11118936087995757
+    },
+    "matched_without_plane_pose": 0
+  },
+  "image_supported_present": {
+    "positive_references": 150,
+    "raw_detections": 27,
+    "matched": 27,
+    "missed_individual_faces": 123,
+    "merge": 0,
+    "duplicate": 0,
+    "lower_layer_target": 0,
+    "ambiguous_ignored": 0,
+    "other_spurious_or_unresolved": 0,
+    "outside_roi": 0,
+    "precision": 1.0,
+    "recall": 0.18,
+    "matched_plane_xy_error_mm": {
+      "count": 27,
+      "median": 0.49936718621193077,
+      "p90": 0.6929226152576843,
+      "max": 0.736279046829292
+    },
+    "matched_shared_ridge_yaw_error_deg_mod180": {
+      "count": 27,
+      "median": 0.02432566211105597,
+      "p90": 0.048291911458534564,
+      "max": 0.048291911458534564
+    },
+    "matched_without_plane_pose": 0
+  },
+  "raw_geometry_reference_decisions": {
+    "present": 27,
+    "uncertain": 123
+  },
+  "reason_flags_nonexclusive": {
+    "insufficient_rgb_stud_support": 53,
+    "stud_support_not_distributed_across_both_ends_and_rows": 51,
+    "insufficient_top_band_material_coverage": 32,
+    "current_window_count_or_phase_uncertain": 75
+  },
+  "observations": [
+    {
+      "view": "top",
+      "raw_geometry": {
+        "positive_references": 30,
+        "ambiguous_references_excluded": 0,
+        "lower_fragments": 30,
+        "raw_detections": 30,
+        "matched": 30,
+        "missed_individual_faces": 0,
+        "merge": 0,
+        "duplicate": 0,
+        "lower_layer_target": 0,
+        "ambiguous_ignored": 0,
+        "other_spurious_or_unresolved": 0,
+        "outside_roi": 0,
+        "categories": {
+          "merge": [],
+          "duplicate": [],
+          "lower_layer_target": [],
+          "ambiguous_ignored": [],
+          "other_spurious_or_unresolved": [],
+          "outside_roi": []
+        },
+        "matches": [
+          {
+            "detection_id": "ridge_00_s00",
+            "reference_id": "brick_9_5_0",
+            "box_iou": 0.9153741241384661
+          },
+          {
+            "detection_id": "ridge_00_s01",
+            "reference_id": "brick_9_5_1",
+            "box_iou": 0.9125849186207772
+          },
+          {
+            "detection_id": "ridge_00_s02",
+            "reference_id": "brick_9_5_2",
+            "box_iou": 0.9098029725662691
+          },
+          {
+            "detection_id": "ridge_00_s03",
+            "reference_id": "brick_9_5_3",
+            "box_iou": 0.9070274399890608
+          },
+          {
+            "detection_id": "ridge_00_s04",
+            "reference_id": "brick_9_5_4",
+            "box_iou": 0.9042599330579132
+          },
+          {
+            "detection_id": "ridge_01_s00",
+            "reference_id": "brick_9_4_0",
+            "box_iou": 0.9161076374769626
+          },
+          {
+            "detection_id": "ridge_01_s01",
+            "reference_id": "brick_9_4_1",
+            "box_iou": 0.913316400120046
+          },
+          {
+            "detection_id": "ridge_01_s02",
+            "reference_id": "brick_9_4_2",
+            "box_iou": 0.9105324302837299
+          },
+          {
+            "detection_id": "ridge_01_s03",
+            "reference_id": "brick_9_4_3",
+            "box_iou": 0.9077548809717854
+          },
+          {
+            "detection_id": "ridge_01_s04",
+            "reference_id": "brick_9_4_4",
+            "box_iou": 0.9049853662529794
+          },
+          {
+            "detection_id": "ridge_02_s00",
+            "reference_id": "brick_9_3_0",
+            "box_iou": 0.918223874000654
+          },
+          {
+            "detection_id": "ridge_02_s01",
+            "reference_id": "brick_9_3_1",
+            "box_iou": 0.9154265072051683
+          },
+          {
+            "detection_id": "ridge_02_s02",
+            "reference_id": "brick_9_3_2",
+            "box_iou": 0.9126364327429296
+          },
+          {
+            "detection_id": "ridge_02_s03",
+            "reference_id": "brick_9_3_3",
+            "box_iou": 0.9098528007572878
+          },
+          {
+            "detection_id": "ridge_02_s04",
+            "reference_id": "brick_9_3_4",
+            "box_iou": 0.9070772306610334
+          },
+          {
+            "detection_id": "ridge_03_s00",
+            "reference_id": "brick_9_2_0",
+            "box_iou": 0.9621408431357683
+          },
+          {
+            "detection_id": "ridge_03_s01",
+            "reference_id": "brick_9_2_1",
+            "box_iou": 0.9656041456064095
+          },
+          {
+            "detection_id": "ridge_03_s02",
+            "reference_id": "brick_9_2_2",
+            "box_iou": 0.967866907919
+          },
+          {
+            "detection_id": "ridge_03_s03",
+            "reference_id": "brick_9_2_3",
+            "box_iou": 0.9666580504121818
+          },
+          {
+            "detection_id": "ridge_03_s04",
+            "reference_id": "brick_9_2_4",
+            "box_iou": 0.9637231201211349
+          },
+          {
+            "detection_id": "ridge_04_s00",
+            "reference_id": "brick_9_1_0",
+            "box_iou": 0.9616205787616469
+          },
+          {
+            "detection_id": "ridge_04_s01",
+            "reference_id": "brick_9_1_1",
+            "box_iou": 0.9650819696848061
+          },
+          {
+            "detection_id": "ridge_04_s02",
+            "reference_id": "brick_9_1_2",
+            "box_iou": 0.9678669079189981
+          },
+          {
+            "detection_id": "ridge_04_s03",
+            "reference_id": "brick_9_1_3",
+            "box_iou": 0.9671812116076371
+          },
+          {
+            "detection_id": "ridge_04_s04",
+            "reference_id": "brick_9_1_4",
+            "box_iou": 0.9642447943110869
+          },
+          {
+            "detection_id": "ridge_05_s00",
+            "reference_id": "brick_9_0_0",
+            "box_iou": 0.9658916938158458
+          },
+          {
+            "detection_id": "ridge_05_s01",
+            "reference_id": "brick_9_0_1",
+            "box_iou": 0.9676006180609531
+          },
+          {
+            "detection_id": "ridge_05_s02",
+            "reference_id": "brick_9_0_2",
+            "box_iou": 0.9658398070293834
+          },
+          {
+            "detection_id": "ridge_05_s03",
+            "reference_id": "brick_9_0_3",
+            "box_iou": 0.9629067901897324
+          },
+          {
+            "detection_id": "ridge_05_s04",
+            "reference_id": "brick_9_0_4",
+            "box_iou": 0.9599825075583787
+          }
+        ],
+        "merge_references": {},
+        "physical_current_top_accuracy": null,
+        "matched_plane_errors": [
+          {
+            "candidate_id": "ridge_00_s00",
+            "truth_id": "brick_9_5_0",
+            "xy_error_mm": 0.6730282139983456,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_00_s01",
+            "truth_id": "brick_9_5_1",
+            "xy_error_mm": 0.6912680002715531,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_00_s02",
+            "truth_id": "brick_9_5_2",
+            "xy_error_mm": 0.7100639554933317,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_00_s03",
+            "truth_id": "brick_9_5_3",
+            "xy_error_mm": 0.7293833412121549,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_00_s04",
+            "truth_id": "brick_9_5_4",
+            "xy_error_mm": 0.7491656914818298,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s00",
+            "truth_id": "brick_9_4_0",
+            "xy_error_mm": 0.6716446512726261,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s01",
+            "truth_id": "brick_9_4_1",
+            "xy_error_mm": 0.6898395969186584,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_01_s02",
+            "truth_id": "brick_9_4_2",
+            "xy_error_mm": 0.7085941734874511,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s03",
+            "truth_id": "brick_9_4_3",
+            "xy_error_mm": 0.7278754019970793,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s04",
+            "truth_id": "brick_9_4_4",
+            "xy_error_mm": 0.7476225225473615,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_02_s00",
+            "truth_id": "brick_9_3_0",
+            "xy_error_mm": 0.6611309533621426,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_02_s01",
+            "truth_id": "brick_9_3_1",
+            "xy_error_mm": 0.6790885345901766,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_02_s02",
+            "truth_id": "brick_9_3_2",
+            "xy_error_mm": 0.6976268626277234,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_02_s03",
+            "truth_id": "brick_9_3_3",
+            "xy_error_mm": 0.7167112605419649,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_02_s04",
+            "truth_id": "brick_9_3_4",
+            "xy_error_mm": 0.736279046829292,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_03_s00",
+            "truth_id": "brick_9_2_0",
+            "xy_error_mm": 0.5012566295868846,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_03_s01",
+            "truth_id": "brick_9_2_1",
+            "xy_error_mm": 0.49905755184476264,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_03_s02",
+            "truth_id": "brick_9_2_2",
+            "xy_error_mm": 0.49831071906137964,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_03_s03",
+            "truth_id": "brick_9_2_3",
+            "xy_error_mm": 0.4990375309361808,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_03_s04",
+            "truth_id": "brick_9_2_4",
+            "xy_error_mm": 0.5012019474475841,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s00",
+            "truth_id": "brick_9_1_0",
+            "xy_error_mm": 0.501253986693194,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s01",
+            "truth_id": "brick_9_1_1",
+            "xy_error_mm": 0.4990562244860361,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s02",
+            "truth_id": "brick_9_1_2",
+            "xy_error_mm": 0.49831071887971407,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s03",
+            "truth_id": "brick_9_1_3",
+            "xy_error_mm": 0.49903885798185565,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s04",
+            "truth_id": "brick_9_1_4",
+            "xy_error_mm": 0.5012045902545177,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_05_s00",
+            "truth_id": "brick_9_0_0",
+            "xy_error_mm": 0.4984921986889752,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_05_s01",
+            "truth_id": "brick_9_0_1",
+            "xy_error_mm": 0.4984757734940588,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_05_s02",
+            "truth_id": "brick_9_0_2",
+            "xy_error_mm": 0.49991661574396656,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_05_s03",
+            "truth_id": "brick_9_0_3",
+            "xy_error_mm": 0.502816964203028,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_05_s04",
+            "truth_id": "brick_9_0_4",
+            "xy_error_mm": 0.5071224976186668,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "uncertain"
+          }
+        ],
+        "matched_without_plane_pose": []
+      },
+      "image_supported_present": {
+        "positive_references": 30,
+        "ambiguous_references_excluded": 0,
+        "lower_fragments": 30,
+        "raw_detections": 11,
+        "matched": 11,
+        "missed_individual_faces": 19,
+        "merge": 0,
+        "duplicate": 0,
+        "lower_layer_target": 0,
+        "ambiguous_ignored": 0,
+        "other_spurious_or_unresolved": 0,
+        "outside_roi": 0,
+        "categories": {
+          "merge": [],
+          "duplicate": [],
+          "lower_layer_target": [],
+          "ambiguous_ignored": [],
+          "other_spurious_or_unresolved": [],
+          "outside_roi": []
+        },
+        "matches": [
+          {
+            "detection_id": "ridge_00_s00",
+            "reference_id": "brick_9_5_0",
+            "box_iou": 0.9153741241384661
+          },
+          {
+            "detection_id": "ridge_00_s01",
+            "reference_id": "brick_9_5_1",
+            "box_iou": 0.9125849186207772
+          },
+          {
+            "detection_id": "ridge_01_s01",
+            "reference_id": "brick_9_4_1",
+            "box_iou": 0.913316400120046
+          },
+          {
+            "detection_id": "ridge_02_s00",
+            "reference_id": "brick_9_3_0",
+            "box_iou": 0.918223874000654
+          },
+          {
+            "detection_id": "ridge_02_s04",
+            "reference_id": "brick_9_3_4",
+            "box_iou": 0.9070772306610334
+          },
+          {
+            "detection_id": "ridge_03_s01",
+            "reference_id": "brick_9_2_1",
+            "box_iou": 0.9656041456064095
+          },
+          {
+            "detection_id": "ridge_03_s02",
+            "reference_id": "brick_9_2_2",
+            "box_iou": 0.967866907919
+          },
+          {
+            "detection_id": "ridge_03_s03",
+            "reference_id": "brick_9_2_3",
+            "box_iou": 0.9666580504121818
+          },
+          {
+            "detection_id": "ridge_05_s00",
+            "reference_id": "brick_9_0_0",
+            "box_iou": 0.9658916938158458
+          },
+          {
+            "detection_id": "ridge_05_s01",
+            "reference_id": "brick_9_0_1",
+            "box_iou": 0.9676006180609531
+          },
+          {
+            "detection_id": "ridge_05_s03",
+            "reference_id": "brick_9_0_3",
+            "box_iou": 0.9629067901897324
+          }
+        ],
+        "merge_references": {},
+        "physical_current_top_accuracy": null,
+        "matched_plane_errors": [
+          {
+            "candidate_id": "ridge_00_s00",
+            "truth_id": "brick_9_5_0",
+            "xy_error_mm": 0.6730282139983456,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_00_s01",
+            "truth_id": "brick_9_5_1",
+            "xy_error_mm": 0.6912680002715531,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_01_s01",
+            "truth_id": "brick_9_4_1",
+            "xy_error_mm": 0.6898395969186584,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_02_s00",
+            "truth_id": "brick_9_3_0",
+            "xy_error_mm": 0.6611309533621426,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_02_s04",
+            "truth_id": "brick_9_3_4",
+            "xy_error_mm": 0.736279046829292,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_03_s01",
+            "truth_id": "brick_9_2_1",
+            "xy_error_mm": 0.49905755184476264,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_03_s02",
+            "truth_id": "brick_9_2_2",
+            "xy_error_mm": 0.49831071906137964,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_03_s03",
+            "truth_id": "brick_9_2_3",
+            "xy_error_mm": 0.4990375309361808,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_05_s00",
+            "truth_id": "brick_9_0_0",
+            "xy_error_mm": 0.4984921986889752,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_05_s01",
+            "truth_id": "brick_9_0_1",
+            "xy_error_mm": 0.4984757734940588,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_05_s03",
+            "truth_id": "brick_9_0_3",
+            "xy_error_mm": 0.502816964203028,
+            "yaw_error_deg_mod180": 0.048291911458534564,
+            "decision": "present"
+          }
+        ],
+        "matched_without_plane_pose": []
+      },
+      "raw_geometry_reference_decisions": {
+        "present": 11,
+        "uncertain": 19,
+        "no_match": 0
+      },
+      "raw_references_not_confirmed_present": [
+        "brick_9_0_2",
+        "brick_9_0_4",
+        "brick_9_1_0",
+        "brick_9_1_1",
+        "brick_9_1_2",
+        "brick_9_1_3",
+        "brick_9_1_4",
+        "brick_9_2_0",
+        "brick_9_2_4",
+        "brick_9_3_1",
+        "brick_9_3_2",
+        "brick_9_3_3",
+        "brick_9_4_0",
+        "brick_9_4_2",
+        "brick_9_4_3",
+        "brick_9_4_4",
+        "brick_9_5_2",
+        "brick_9_5_3",
+        "brick_9_5_4"
+      ],
+      "present_references_not_raw_assigned": [],
+      "counts": {
+        "ridge_hypotheses": 6,
+        "candidates": 30,
+        "present": 11,
+        "uncertain": 19
+      },
+      "reason_flags_nonexclusive": {
+        "insufficient_rgb_stud_support": 18,
+        "stud_support_not_distributed_across_both_ends_and_rows": 13
+      }
+    },
+    {
+      "view": "near_top_x",
+      "raw_geometry": {
+        "positive_references": 30,
+        "ambiguous_references_excluded": 0,
+        "lower_fragments": 30,
+        "raw_detections": 30,
+        "matched": 30,
+        "missed_individual_faces": 0,
+        "merge": 0,
+        "duplicate": 0,
+        "lower_layer_target": 0,
+        "ambiguous_ignored": 0,
+        "other_spurious_or_unresolved": 0,
+        "outside_roi": 0,
+        "categories": {
+          "merge": [],
+          "duplicate": [],
+          "lower_layer_target": [],
+          "ambiguous_ignored": [],
+          "other_spurious_or_unresolved": [],
+          "outside_roi": []
+        },
+        "matches": [
+          {
+            "detection_id": "ridge_00_s00",
+            "reference_id": "brick_9_5_0",
+            "box_iou": 0.9126729957954254
+          },
+          {
+            "detection_id": "ridge_00_s01",
+            "reference_id": "brick_9_5_1",
+            "box_iou": 0.9120024615710228
+          },
+          {
+            "detection_id": "ridge_00_s02",
+            "reference_id": "brick_9_5_2",
+            "box_iou": 0.9112476066229764
+          },
+          {
+            "detection_id": "ridge_00_s03",
+            "reference_id": "brick_9_5_3",
+            "box_iou": 0.9112768427225519
+          },
+          {
+            "detection_id": "ridge_00_s04",
+            "reference_id": "brick_9_5_4",
+            "box_iou": 0.9111860994170706
+          },
+          {
+            "detection_id": "ridge_01_s00",
+            "reference_id": "brick_9_4_0",
+            "box_iou": 0.9678166055761842
+          },
+          {
+            "detection_id": "ridge_01_s01",
+            "reference_id": "brick_9_4_1",
+            "box_iou": 0.9685300753221918
+          },
+          {
+            "detection_id": "ridge_01_s02",
+            "reference_id": "brick_9_4_2",
+            "box_iou": 0.9687203089986307
+          },
+          {
+            "detection_id": "ridge_01_s03",
+            "reference_id": "brick_9_4_3",
+            "box_iou": 0.9687319267771902
+          },
+          {
+            "detection_id": "ridge_01_s04",
+            "reference_id": "brick_9_4_4",
+            "box_iou": 0.9680804337416524
+          },
+          {
+            "detection_id": "ridge_02_s00",
+            "reference_id": "brick_9_3_0",
+            "box_iou": 0.9122420578107859
+          },
+          {
+            "detection_id": "ridge_02_s01",
+            "reference_id": "brick_9_3_1",
+            "box_iou": 0.9124315075517018
+          },
+          {
+            "detection_id": "ridge_02_s02",
+            "reference_id": "brick_9_3_2",
+            "box_iou": 0.9125099601884977
+          },
+          {
+            "detection_id": "ridge_02_s03",
+            "reference_id": "brick_9_3_3",
+            "box_iou": 0.9133526723303499
+          },
+          {
+            "detection_id": "ridge_02_s04",
+            "reference_id": "brick_9_3_4",
+            "box_iou": 0.9141012928284029
+          },
+          {
+            "detection_id": "ridge_03_s00",
+            "reference_id": "brick_9_2_0",
+            "box_iou": 0.9675460227198103
+          },
+          {
+            "detection_id": "ridge_03_s01",
+            "reference_id": "brick_9_2_1",
+            "box_iou": 0.9682682759693196
+          },
+          {
+            "detection_id": "ridge_03_s02",
+            "reference_id": "brick_9_2_2",
+            "box_iou": 0.9686709904128712
+          },
+          {
+            "detection_id": "ridge_03_s03",
+            "reference_id": "brick_9_2_3",
+            "box_iou": 0.96887800177736
+          },
+          {
+            "detection_id": "ridge_03_s04",
+            "reference_id": "brick_9_2_4",
+            "box_iou": 0.9682138445438303
+          },
+          {
+            "detection_id": "ridge_04_s00",
+            "reference_id": "brick_9_1_0",
+            "box_iou": 0.9675441764666569
+          },
+          {
+            "detection_id": "ridge_04_s01",
+            "reference_id": "brick_9_1_1",
+            "box_iou": 0.96827187885726
+          },
+          {
+            "detection_id": "ridge_04_s02",
+            "reference_id": "brick_9_1_2",
+            "box_iou": 0.9686476492642389
+          },
+          {
+            "detection_id": "ridge_04_s03",
+            "reference_id": "brick_9_1_3",
+            "box_iou": 0.9688171018802435
+          },
+          {
+            "detection_id": "ridge_04_s04",
+            "reference_id": "brick_9_1_4",
+            "box_iou": 0.9681482328154507
+          },
+          {
+            "detection_id": "ridge_05_s00",
+            "reference_id": "brick_9_0_0",
+            "box_iou": 0.9674025288238212
+          },
+          {
+            "detection_id": "ridge_05_s01",
+            "reference_id": "brick_9_0_1",
+            "box_iou": 0.9681341594628232
+          },
+          {
+            "detection_id": "ridge_05_s02",
+            "reference_id": "brick_9_0_2",
+            "box_iou": 0.9686542428200016
+          },
+          {
+            "detection_id": "ridge_05_s03",
+            "reference_id": "brick_9_0_3",
+            "box_iou": 0.9689604331529872
+          },
+          {
+            "detection_id": "ridge_05_s04",
+            "reference_id": "brick_9_0_4",
+            "box_iou": 0.9682850773123035
+          }
+        ],
+        "merge_references": {},
+        "physical_current_top_accuracy": null,
+        "matched_plane_errors": [
+          {
+            "candidate_id": "ridge_00_s00",
+            "truth_id": "brick_9_5_0",
+            "xy_error_mm": 0.695404537736881,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_00_s01",
+            "truth_id": "brick_9_5_1",
+            "xy_error_mm": 0.7012190488805593,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_00_s02",
+            "truth_id": "brick_9_5_2",
+            "xy_error_mm": 0.7070840221098901,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_00_s03",
+            "truth_id": "brick_9_5_3",
+            "xy_error_mm": 0.7130086616748574,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_00_s04",
+            "truth_id": "brick_9_5_4",
+            "xy_error_mm": 0.7189707671728824,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s00",
+            "truth_id": "brick_9_4_0",
+            "xy_error_mm": 0.498724984308403,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s01",
+            "truth_id": "brick_9_4_1",
+            "xy_error_mm": 0.49850953840759266,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_01_s02",
+            "truth_id": "brick_9_4_2",
+            "xy_error_mm": 0.4984334320603804,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s03",
+            "truth_id": "brick_9_4_3",
+            "xy_error_mm": 0.4985116281662321,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s04",
+            "truth_id": "brick_9_4_4",
+            "xy_error_mm": 0.49871426924119405,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_02_s00",
+            "truth_id": "brick_9_3_0",
+            "xy_error_mm": 0.7096189569016413,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_02_s01",
+            "truth_id": "brick_9_3_1",
+            "xy_error_mm": 0.7037070448299686,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_02_s02",
+            "truth_id": "brick_9_3_2",
+            "xy_error_mm": 0.6978446261846125,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_02_s03",
+            "truth_id": "brick_9_3_3",
+            "xy_error_mm": 0.6920436939573773,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_02_s04",
+            "truth_id": "brick_9_3_4",
+            "xy_error_mm": 0.6862841571194807,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_03_s00",
+            "truth_id": "brick_9_2_0",
+            "xy_error_mm": 0.49952873668480774,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_03_s01",
+            "truth_id": "brick_9_2_1",
+            "xy_error_mm": 0.49930258337045264,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_03_s02",
+            "truth_id": "brick_9_2_2",
+            "xy_error_mm": 0.4992155417743923,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_03_s03",
+            "truth_id": "brick_9_2_3",
+            "xy_error_mm": 0.4992825840569506,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_03_s04",
+            "truth_id": "brick_9_2_4",
+            "xy_error_mm": 0.499473861925669,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s00",
+            "truth_id": "brick_9_1_0",
+            "xy_error_mm": 0.4998917365471409,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s01",
+            "truth_id": "brick_9_1_1",
+            "xy_error_mm": 0.49967919153226253,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s02",
+            "truth_id": "brick_9_1_2",
+            "xy_error_mm": 0.49960566153195984,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s03",
+            "truth_id": "brick_9_1_3",
+            "xy_error_mm": 0.49968610693430415,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s04",
+            "truth_id": "brick_9_1_4",
+            "xy_error_mm": 0.4998906687099456,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_05_s00",
+            "truth_id": "brick_9_0_0",
+            "xy_error_mm": 0.4997838761867301,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_05_s01",
+            "truth_id": "brick_9_0_1",
+            "xy_error_mm": 0.4995603318793606,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_05_s02",
+            "truth_id": "brick_9_0_2",
+            "xy_error_mm": 0.499475829125702,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_05_s03",
+            "truth_id": "brick_9_0_3",
+            "xy_error_mm": 0.49954533782374955,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_05_s04",
+            "truth_id": "brick_9_0_4",
+            "xy_error_mm": 0.4997390077335338,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "uncertain"
+          }
+        ],
+        "matched_without_plane_pose": []
+      },
+      "image_supported_present": {
+        "positive_references": 30,
+        "ambiguous_references_excluded": 0,
+        "lower_fragments": 30,
+        "raw_detections": 9,
+        "matched": 9,
+        "missed_individual_faces": 21,
+        "merge": 0,
+        "duplicate": 0,
+        "lower_layer_target": 0,
+        "ambiguous_ignored": 0,
+        "other_spurious_or_unresolved": 0,
+        "outside_roi": 0,
+        "categories": {
+          "merge": [],
+          "duplicate": [],
+          "lower_layer_target": [],
+          "ambiguous_ignored": [],
+          "other_spurious_or_unresolved": [],
+          "outside_roi": []
+        },
+        "matches": [
+          {
+            "detection_id": "ridge_00_s00",
+            "reference_id": "brick_9_5_0",
+            "box_iou": 0.9126729957954254
+          },
+          {
+            "detection_id": "ridge_01_s01",
+            "reference_id": "brick_9_4_1",
+            "box_iou": 0.9685300753221918
+          },
+          {
+            "detection_id": "ridge_02_s00",
+            "reference_id": "brick_9_3_0",
+            "box_iou": 0.9122420578107859
+          },
+          {
+            "detection_id": "ridge_02_s04",
+            "reference_id": "brick_9_3_4",
+            "box_iou": 0.9141012928284029
+          },
+          {
+            "detection_id": "ridge_03_s01",
+            "reference_id": "brick_9_2_1",
+            "box_iou": 0.9682682759693196
+          },
+          {
+            "detection_id": "ridge_03_s02",
+            "reference_id": "brick_9_2_2",
+            "box_iou": 0.9686709904128712
+          },
+          {
+            "detection_id": "ridge_03_s03",
+            "reference_id": "brick_9_2_3",
+            "box_iou": 0.96887800177736
+          },
+          {
+            "detection_id": "ridge_05_s02",
+            "reference_id": "brick_9_0_2",
+            "box_iou": 0.9686542428200016
+          },
+          {
+            "detection_id": "ridge_05_s03",
+            "reference_id": "brick_9_0_3",
+            "box_iou": 0.9689604331529872
+          }
+        ],
+        "merge_references": {},
+        "physical_current_top_accuracy": null,
+        "matched_plane_errors": [
+          {
+            "candidate_id": "ridge_00_s00",
+            "truth_id": "brick_9_5_0",
+            "xy_error_mm": 0.695404537736881,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_01_s01",
+            "truth_id": "brick_9_4_1",
+            "xy_error_mm": 0.49850953840759266,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_02_s00",
+            "truth_id": "brick_9_3_0",
+            "xy_error_mm": 0.7096189569016413,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_02_s04",
+            "truth_id": "brick_9_3_4",
+            "xy_error_mm": 0.6862841571194807,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_03_s01",
+            "truth_id": "brick_9_2_1",
+            "xy_error_mm": 0.49930258337045264,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_03_s02",
+            "truth_id": "brick_9_2_2",
+            "xy_error_mm": 0.4992155417743923,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_03_s03",
+            "truth_id": "brick_9_2_3",
+            "xy_error_mm": 0.4992825840569506,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_05_s02",
+            "truth_id": "brick_9_0_2",
+            "xy_error_mm": 0.499475829125702,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_05_s03",
+            "truth_id": "brick_9_0_3",
+            "xy_error_mm": 0.49954533782374955,
+            "yaw_error_deg_mod180": 0.014925471797090022,
+            "decision": "present"
+          }
+        ],
+        "matched_without_plane_pose": []
+      },
+      "raw_geometry_reference_decisions": {
+        "present": 9,
+        "uncertain": 21,
+        "no_match": 0
+      },
+      "raw_references_not_confirmed_present": [
+        "brick_9_0_0",
+        "brick_9_0_1",
+        "brick_9_0_4",
+        "brick_9_1_0",
+        "brick_9_1_1",
+        "brick_9_1_2",
+        "brick_9_1_3",
+        "brick_9_1_4",
+        "brick_9_2_0",
+        "brick_9_2_4",
+        "brick_9_3_1",
+        "brick_9_3_2",
+        "brick_9_3_3",
+        "brick_9_4_0",
+        "brick_9_4_2",
+        "brick_9_4_3",
+        "brick_9_4_4",
+        "brick_9_5_1",
+        "brick_9_5_2",
+        "brick_9_5_3",
+        "brick_9_5_4"
+      ],
+      "present_references_not_raw_assigned": [],
+      "counts": {
+        "ridge_hypotheses": 6,
+        "candidates": 30,
+        "present": 9,
+        "uncertain": 21
+      },
+      "reason_flags_nonexclusive": {
+        "stud_support_not_distributed_across_both_ends_and_rows": 17,
+        "insufficient_rgb_stud_support": 14,
+        "insufficient_top_band_material_coverage": 2
+      }
+    },
+    {
+      "view": "near_top_y",
+      "raw_geometry": {
+        "positive_references": 30,
+        "ambiguous_references_excluded": 0,
+        "lower_fragments": 30,
+        "raw_detections": 30,
+        "matched": 30,
+        "missed_individual_faces": 0,
+        "merge": 0,
+        "duplicate": 0,
+        "lower_layer_target": 0,
+        "ambiguous_ignored": 0,
+        "other_spurious_or_unresolved": 0,
+        "outside_roi": 0,
+        "categories": {
+          "merge": [],
+          "duplicate": [],
+          "lower_layer_target": [],
+          "ambiguous_ignored": [],
+          "other_spurious_or_unresolved": [],
+          "outside_roi": []
+        },
+        "matches": [
+          {
+            "detection_id": "ridge_00_s00",
+            "reference_id": "brick_9_5_0",
+            "box_iou": 0.9493342777863418
+          },
+          {
+            "detection_id": "ridge_00_s01",
+            "reference_id": "brick_9_5_1",
+            "box_iou": 0.9465804117332561
+          },
+          {
+            "detection_id": "ridge_00_s02",
+            "reference_id": "brick_9_5_2",
+            "box_iou": 0.9438283482315039
+          },
+          {
+            "detection_id": "ridge_00_s03",
+            "reference_id": "brick_9_5_3",
+            "box_iou": 0.9410783474054447
+          },
+          {
+            "detection_id": "ridge_00_s04",
+            "reference_id": "brick_9_5_4",
+            "box_iou": 0.9383308213004988
+          },
+          {
+            "detection_id": "ridge_01_s00",
+            "reference_id": "brick_9_4_0",
+            "box_iou": 0.9476381358091416
+          },
+          {
+            "detection_id": "ridge_01_s01",
+            "reference_id": "brick_9_4_1",
+            "box_iou": 0.9448212308920463
+          },
+          {
+            "detection_id": "ridge_01_s02",
+            "reference_id": "brick_9_4_2",
+            "box_iou": 0.942008692993141
+          },
+          {
+            "detection_id": "ridge_01_s03",
+            "reference_id": "brick_9_4_3",
+            "box_iou": 0.9392006859621482
+          },
+          {
+            "detection_id": "ridge_01_s04",
+            "reference_id": "brick_9_4_4",
+            "box_iou": 0.9363974485995853
+          },
+          {
+            "detection_id": "ridge_02_s00",
+            "reference_id": "brick_9_3_0",
+            "box_iou": 0.9475568463290005
+          },
+          {
+            "detection_id": "ridge_02_s01",
+            "reference_id": "brick_9_3_1",
+            "box_iou": 0.9446705531253203
+          },
+          {
+            "detection_id": "ridge_02_s02",
+            "reference_id": "brick_9_3_2",
+            "box_iou": 0.9417914470245564
+          },
+          {
+            "detection_id": "ridge_02_s03",
+            "reference_id": "brick_9_3_3",
+            "box_iou": 0.9389195752689724
+          },
+          {
+            "detection_id": "ridge_02_s04",
+            "reference_id": "brick_9_3_4",
+            "box_iou": 0.9360549794250363
+          },
+          {
+            "detection_id": "ridge_03_s00",
+            "reference_id": "brick_9_2_0",
+            "box_iou": 0.9459050520429332
+          },
+          {
+            "detection_id": "ridge_03_s01",
+            "reference_id": "brick_9_2_1",
+            "box_iou": 0.943020122073584
+          },
+          {
+            "detection_id": "ridge_03_s02",
+            "reference_id": "brick_9_2_2",
+            "box_iou": 0.9401425092086614
+          },
+          {
+            "detection_id": "ridge_03_s03",
+            "reference_id": "brick_9_2_3",
+            "box_iou": 0.9372722843347439
+          },
+          {
+            "detection_id": "ridge_03_s04",
+            "reference_id": "brick_9_2_4",
+            "box_iou": 0.9344094170809738
+          },
+          {
+            "detection_id": "ridge_04_s00",
+            "reference_id": "brick_9_1_0",
+            "box_iou": 0.9981662736476398
+          },
+          {
+            "detection_id": "ridge_04_s01",
+            "reference_id": "brick_9_1_1",
+            "box_iou": 0.9977563730466752
+          },
+          {
+            "detection_id": "ridge_04_s02",
+            "reference_id": "brick_9_1_2",
+            "box_iou": 0.9948377393633581
+          },
+          {
+            "detection_id": "ridge_04_s03",
+            "reference_id": "brick_9_1_3",
+            "box_iou": 0.9919222205658321
+          },
+          {
+            "detection_id": "ridge_04_s04",
+            "reference_id": "brick_9_1_4",
+            "box_iou": 0.9890099753144443
+          },
+          {
+            "detection_id": "ridge_05_s00",
+            "reference_id": "brick_9_0_0",
+            "box_iou": 0.9956226705675613
+          },
+          {
+            "detection_id": "ridge_05_s01",
+            "reference_id": "brick_9_0_1",
+            "box_iou": 0.9982264169349477
+          },
+          {
+            "detection_id": "ridge_05_s02",
+            "reference_id": "brick_9_0_2",
+            "box_iou": 0.9980025182265329
+          },
+          {
+            "detection_id": "ridge_05_s03",
+            "reference_id": "brick_9_0_3",
+            "box_iou": 0.9951771291701204
+          },
+          {
+            "detection_id": "ridge_05_s04",
+            "reference_id": "brick_9_0_4",
+            "box_iou": 0.992351323469052
+          }
+        ],
+        "merge_references": {},
+        "physical_current_top_accuracy": null,
+        "matched_plane_errors": [
+          {
+            "candidate_id": "ridge_00_s00",
+            "truth_id": "brick_9_5_0",
+            "xy_error_mm": 0.4521063242014406,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_00_s01",
+            "truth_id": "brick_9_5_1",
+            "xy_error_mm": 0.4768108737112084,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_00_s02",
+            "truth_id": "brick_9_5_2",
+            "xy_error_mm": 0.5015154237133695,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_00_s03",
+            "truth_id": "brick_9_5_3",
+            "xy_error_mm": 0.5262199737958646,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_00_s04",
+            "truth_id": "brick_9_5_4",
+            "xy_error_mm": 0.5509245242024775,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s00",
+            "truth_id": "brick_9_4_0",
+            "xy_error_mm": 0.45174889324028394,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s01",
+            "truth_id": "brick_9_4_1",
+            "xy_error_mm": 0.47645321342018104,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s02",
+            "truth_id": "brick_9_4_2",
+            "xy_error_mm": 0.5011575567022334,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s03",
+            "truth_id": "brick_9_4_3",
+            "xy_error_mm": 0.5258618538669965,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s04",
+            "truth_id": "brick_9_4_4",
+            "xy_error_mm": 0.5505662367297813,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_02_s00",
+            "truth_id": "brick_9_3_0",
+            "xy_error_mm": 0.4363053411223489,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_02_s01",
+            "truth_id": "brick_9_3_1",
+            "xy_error_mm": 0.46100954071915873,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_02_s02",
+            "truth_id": "brick_9_3_2",
+            "xy_error_mm": 0.48571377641887487,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_02_s03",
+            "truth_id": "brick_9_3_3",
+            "xy_error_mm": 0.5104179640987135,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_02_s04",
+            "truth_id": "brick_9_3_4",
+            "xy_error_mm": 0.5351222604756617,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_03_s00",
+            "truth_id": "brick_9_2_0",
+            "xy_error_mm": 0.450580387903122,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_03_s01",
+            "truth_id": "brick_9_2_1",
+            "xy_error_mm": 0.47528470694320696,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_03_s02",
+            "truth_id": "brick_9_2_2",
+            "xy_error_mm": 0.499989049252024,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_03_s03",
+            "truth_id": "brick_9_2_3",
+            "xy_error_mm": 0.5246933454578833,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_03_s04",
+            "truth_id": "brick_9_2_4",
+            "xy_error_mm": 0.5493977276059675,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s00",
+            "truth_id": "brick_9_1_0",
+            "xy_error_mm": 0.008325870561393932,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s01",
+            "truth_id": "brick_9_1_1",
+            "xy_error_mm": 0.016721059015906443,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s02",
+            "truth_id": "brick_9_1_2",
+            "xy_error_mm": 0.04135816165356697,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s03",
+            "truth_id": "brick_9_1_3",
+            "xy_error_mm": 0.06604523062081805,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s04",
+            "truth_id": "brick_9_1_4",
+            "xy_error_mm": 0.09074213917182375,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_05_s00",
+            "truth_id": "brick_9_0_0",
+            "xy_error_mm": 0.03401947933628498,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_05_s01",
+            "truth_id": "brick_9_0_1",
+            "xy_error_mm": 0.009460057929856141,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_05_s02",
+            "truth_id": "brick_9_0_2",
+            "xy_error_mm": 0.015565681626677137,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_05_s03",
+            "truth_id": "brick_9_0_3",
+            "xy_error_mm": 0.04019527359852086,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_05_s04",
+            "truth_id": "brick_9_0_4",
+            "xy_error_mm": 0.06488233489240573,
+            "yaw_error_deg_mod180": 0.044233331100709095,
+            "decision": "uncertain"
+          }
+        ],
+        "matched_without_plane_pose": []
+      },
+      "image_supported_present": {
+        "positive_references": 30,
+        "ambiguous_references_excluded": 0,
+        "lower_fragments": 30,
+        "raw_detections": 0,
+        "matched": 0,
+        "missed_individual_faces": 30,
+        "merge": 0,
+        "duplicate": 0,
+        "lower_layer_target": 0,
+        "ambiguous_ignored": 0,
+        "other_spurious_or_unresolved": 0,
+        "outside_roi": 0,
+        "categories": {
+          "merge": [],
+          "duplicate": [],
+          "lower_layer_target": [],
+          "ambiguous_ignored": [],
+          "other_spurious_or_unresolved": [],
+          "outside_roi": []
+        },
+        "matches": [],
+        "merge_references": {},
+        "physical_current_top_accuracy": null,
+        "matched_plane_errors": [],
+        "matched_without_plane_pose": []
+      },
+      "raw_geometry_reference_decisions": {
+        "present": 0,
+        "uncertain": 30,
+        "no_match": 0
+      },
+      "raw_references_not_confirmed_present": [
+        "brick_9_0_0",
+        "brick_9_0_1",
+        "brick_9_0_2",
+        "brick_9_0_3",
+        "brick_9_0_4",
+        "brick_9_1_0",
+        "brick_9_1_1",
+        "brick_9_1_2",
+        "brick_9_1_3",
+        "brick_9_1_4",
+        "brick_9_2_0",
+        "brick_9_2_1",
+        "brick_9_2_2",
+        "brick_9_2_3",
+        "brick_9_2_4",
+        "brick_9_3_0",
+        "brick_9_3_1",
+        "brick_9_3_2",
+        "brick_9_3_3",
+        "brick_9_3_4",
+        "brick_9_4_0",
+        "brick_9_4_1",
+        "brick_9_4_2",
+        "brick_9_4_3",
+        "brick_9_4_4",
+        "brick_9_5_0",
+        "brick_9_5_1",
+        "brick_9_5_2",
+        "brick_9_5_3",
+        "brick_9_5_4"
+      ],
+      "present_references_not_raw_assigned": [],
+      "counts": {
+        "ridge_hypotheses": 6,
+        "candidates": 30,
+        "present": 0,
+        "uncertain": 30
+      },
+      "reason_flags_nonexclusive": {
+        "current_window_count_or_phase_uncertain": 30,
+        "insufficient_rgb_stud_support": 15,
+        "stud_support_not_distributed_across_both_ends_and_rows": 10,
+        "insufficient_top_band_material_coverage": 2
+      }
+    },
+    {
+      "view": "oblique_front",
+      "raw_geometry": {
+        "positive_references": 30,
+        "ambiguous_references_excluded": 0,
+        "lower_fragments": 62,
+        "raw_detections": 30,
+        "matched": 30,
+        "missed_individual_faces": 0,
+        "merge": 0,
+        "duplicate": 0,
+        "lower_layer_target": 0,
+        "ambiguous_ignored": 0,
+        "other_spurious_or_unresolved": 0,
+        "outside_roi": 0,
+        "categories": {
+          "merge": [],
+          "duplicate": [],
+          "lower_layer_target": [],
+          "ambiguous_ignored": [],
+          "other_spurious_or_unresolved": [],
+          "outside_roi": []
+        },
+        "matches": [
+          {
+            "detection_id": "ridge_00_s00",
+            "reference_id": "brick_9_5_0",
+            "box_iou": 0.9679148694181786
+          },
+          {
+            "detection_id": "ridge_00_s01",
+            "reference_id": "brick_9_5_1",
+            "box_iou": 0.9693951945982512
+          },
+          {
+            "detection_id": "ridge_00_s02",
+            "reference_id": "brick_9_5_2",
+            "box_iou": 0.9643347687898061
+          },
+          {
+            "detection_id": "ridge_00_s03",
+            "reference_id": "brick_9_5_3",
+            "box_iou": 0.9591503258166327
+          },
+          {
+            "detection_id": "ridge_00_s04",
+            "reference_id": "brick_9_5_4",
+            "box_iou": 0.9538587037174239
+          },
+          {
+            "detection_id": "ridge_01_s00",
+            "reference_id": "brick_9_4_0",
+            "box_iou": 0.964732613910297
+          },
+          {
+            "detection_id": "ridge_01_s01",
+            "reference_id": "brick_9_4_1",
+            "box_iou": 0.9695222954389139
+          },
+          {
+            "detection_id": "ridge_01_s02",
+            "reference_id": "brick_9_4_2",
+            "box_iou": 0.9663100703806673
+          },
+          {
+            "detection_id": "ridge_01_s03",
+            "reference_id": "brick_9_4_3",
+            "box_iou": 0.9605220166628029
+          },
+          {
+            "detection_id": "ridge_01_s04",
+            "reference_id": "brick_9_4_4",
+            "box_iou": 0.9546709080979221
+          },
+          {
+            "detection_id": "ridge_02_s00",
+            "reference_id": "brick_9_3_0",
+            "box_iou": 0.9582101242670046
+          },
+          {
+            "detection_id": "ridge_02_s01",
+            "reference_id": "brick_9_3_1",
+            "box_iou": 0.965522489367742
+          },
+          {
+            "detection_id": "ridge_02_s02",
+            "reference_id": "brick_9_3_2",
+            "box_iou": 0.9694339799557122
+          },
+          {
+            "detection_id": "ridge_02_s03",
+            "reference_id": "brick_9_3_3",
+            "box_iou": 0.9644809727361721
+          },
+          {
+            "detection_id": "ridge_02_s04",
+            "reference_id": "brick_9_3_4",
+            "box_iou": 0.9579494212437806
+          },
+          {
+            "detection_id": "ridge_03_s00",
+            "reference_id": "brick_9_2_0",
+            "box_iou": 0.9571675905975737
+          },
+          {
+            "detection_id": "ridge_03_s01",
+            "reference_id": "brick_9_2_1",
+            "box_iou": 0.9646631503402953
+          },
+          {
+            "detection_id": "ridge_03_s02",
+            "reference_id": "brick_9_2_2",
+            "box_iou": 0.967634268783465
+          },
+          {
+            "detection_id": "ridge_03_s03",
+            "reference_id": "brick_9_2_3",
+            "box_iou": 0.9651077640212464
+          },
+          {
+            "detection_id": "ridge_03_s04",
+            "reference_id": "brick_9_2_4",
+            "box_iou": 0.9584335514752498
+          },
+          {
+            "detection_id": "ridge_04_s00",
+            "reference_id": "brick_9_1_0",
+            "box_iou": 0.9533161443594518
+          },
+          {
+            "detection_id": "ridge_04_s01",
+            "reference_id": "brick_9_1_1",
+            "box_iou": 0.9602097555445642
+          },
+          {
+            "detection_id": "ridge_04_s02",
+            "reference_id": "brick_9_1_2",
+            "box_iou": 0.9672332144979346
+          },
+          {
+            "detection_id": "ridge_04_s03",
+            "reference_id": "brick_9_1_3",
+            "box_iou": 0.9685473960935826
+          },
+          {
+            "detection_id": "ridge_04_s04",
+            "reference_id": "brick_9_1_4",
+            "box_iou": 0.9643403281496516
+          },
+          {
+            "detection_id": "ridge_05_s00",
+            "reference_id": "brick_9_0_0",
+            "box_iou": 0.9518574130221039
+          },
+          {
+            "detection_id": "ridge_05_s01",
+            "reference_id": "brick_9_0_1",
+            "box_iou": 0.9582603736177131
+          },
+          {
+            "detection_id": "ridge_05_s02",
+            "reference_id": "brick_9_0_2",
+            "box_iou": 0.9648190485792776
+          },
+          {
+            "detection_id": "ridge_05_s03",
+            "reference_id": "brick_9_0_3",
+            "box_iou": 0.9687360044897741
+          },
+          {
+            "detection_id": "ridge_05_s04",
+            "reference_id": "brick_9_0_4",
+            "box_iou": 0.9674528957835599
+          }
+        ],
+        "merge_references": {},
+        "physical_current_top_accuracy": null,
+        "matched_plane_errors": [
+          {
+            "candidate_id": "ridge_00_s00",
+            "truth_id": "brick_9_5_0",
+            "xy_error_mm": 0.5207586617290543,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_00_s01",
+            "truth_id": "brick_9_5_1",
+            "xy_error_mm": 0.5100693738253624,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_00_s02",
+            "truth_id": "brick_9_5_2",
+            "xy_error_mm": 0.5068182426865138,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_00_s03",
+            "truth_id": "brick_9_5_3",
+            "xy_error_mm": 0.511132441875358,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_00_s04",
+            "truth_id": "brick_9_5_4",
+            "xy_error_mm": 0.5228536138382696,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s00",
+            "truth_id": "brick_9_4_0",
+            "xy_error_mm": 0.518514234323547,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s01",
+            "truth_id": "brick_9_4_1",
+            "xy_error_mm": 0.508486305620712,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s02",
+            "truth_id": "brick_9_4_2",
+            "xy_error_mm": 0.5059371675099537,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s03",
+            "truth_id": "brick_9_4_3",
+            "xy_error_mm": 0.5109640080526364,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s04",
+            "truth_id": "brick_9_4_4",
+            "xy_error_mm": 0.5233773737471135,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_02_s00",
+            "truth_id": "brick_9_3_0",
+            "xy_error_mm": 0.5242521395307789,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_02_s01",
+            "truth_id": "brick_9_3_1",
+            "xy_error_mm": 0.5123410481340981,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_02_s02",
+            "truth_id": "brick_9_3_2",
+            "xy_error_mm": 0.5077983616163088,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_02_s03",
+            "truth_id": "brick_9_3_3",
+            "xy_error_mm": 0.510805884098308,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_02_s04",
+            "truth_id": "brick_9_3_4",
+            "xy_error_mm": 0.521261969692328,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_03_s00",
+            "truth_id": "brick_9_2_0",
+            "xy_error_mm": 0.517620605641848,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_03_s01",
+            "truth_id": "brick_9_2_1",
+            "xy_error_mm": 0.5086434983125508,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_03_s02",
+            "truth_id": "brick_9_2_2",
+            "xy_error_mm": 0.5071667457777015,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_03_s03",
+            "truth_id": "brick_9_2_3",
+            "xy_error_mm": 0.5132403762764535,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_03_s04",
+            "truth_id": "brick_9_2_4",
+            "xy_error_mm": 0.5266318893197842,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s00",
+            "truth_id": "brick_9_1_0",
+            "xy_error_mm": 0.5214424587673593,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s01",
+            "truth_id": "brick_9_1_1",
+            "xy_error_mm": 0.5104087447792689,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s02",
+            "truth_id": "brick_9_1_2",
+            "xy_error_mm": 0.5067984987600865,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s03",
+            "truth_id": "brick_9_1_3",
+            "xy_error_mm": 0.5107543706366761,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s04",
+            "truth_id": "brick_9_1_4",
+            "xy_error_mm": 0.5221333374568204,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_05_s00",
+            "truth_id": "brick_9_0_0",
+            "xy_error_mm": 0.5219337378406103,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_05_s01",
+            "truth_id": "brick_9_0_1",
+            "xy_error_mm": 0.5111469891970618,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_05_s02",
+            "truth_id": "brick_9_0_2",
+            "xy_error_mm": 0.507779917967112,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_05_s03",
+            "truth_id": "brick_9_0_3",
+            "xy_error_mm": 0.511964152814589,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_05_s04",
+            "truth_id": "brick_9_0_4",
+            "xy_error_mm": 0.5235475696186875,
+            "yaw_error_deg_mod180": 0.11118936087995757,
+            "decision": "uncertain"
+          }
+        ],
+        "matched_without_plane_pose": []
+      },
+      "image_supported_present": {
+        "positive_references": 30,
+        "ambiguous_references_excluded": 0,
+        "lower_fragments": 62,
+        "raw_detections": 0,
+        "matched": 0,
+        "missed_individual_faces": 30,
+        "merge": 0,
+        "duplicate": 0,
+        "lower_layer_target": 0,
+        "ambiguous_ignored": 0,
+        "other_spurious_or_unresolved": 0,
+        "outside_roi": 0,
+        "categories": {
+          "merge": [],
+          "duplicate": [],
+          "lower_layer_target": [],
+          "ambiguous_ignored": [],
+          "other_spurious_or_unresolved": [],
+          "outside_roi": []
+        },
+        "matches": [],
+        "merge_references": {},
+        "physical_current_top_accuracy": null,
+        "matched_plane_errors": [],
+        "matched_without_plane_pose": []
+      },
+      "raw_geometry_reference_decisions": {
+        "present": 0,
+        "uncertain": 30,
+        "no_match": 0
+      },
+      "raw_references_not_confirmed_present": [
+        "brick_9_0_0",
+        "brick_9_0_1",
+        "brick_9_0_2",
+        "brick_9_0_3",
+        "brick_9_0_4",
+        "brick_9_1_0",
+        "brick_9_1_1",
+        "brick_9_1_2",
+        "brick_9_1_3",
+        "brick_9_1_4",
+        "brick_9_2_0",
+        "brick_9_2_1",
+        "brick_9_2_2",
+        "brick_9_2_3",
+        "brick_9_2_4",
+        "brick_9_3_0",
+        "brick_9_3_1",
+        "brick_9_3_2",
+        "brick_9_3_3",
+        "brick_9_3_4",
+        "brick_9_4_0",
+        "brick_9_4_1",
+        "brick_9_4_2",
+        "brick_9_4_3",
+        "brick_9_4_4",
+        "brick_9_5_0",
+        "brick_9_5_1",
+        "brick_9_5_2",
+        "brick_9_5_3",
+        "brick_9_5_4"
+      ],
+      "present_references_not_raw_assigned": [],
+      "counts": {
+        "ridge_hypotheses": 6,
+        "candidates": 30,
+        "present": 0,
+        "uncertain": 30
+      },
+      "reason_flags_nonexclusive": {
+        "current_window_count_or_phase_uncertain": 30,
+        "insufficient_top_band_material_coverage": 13,
+        "insufficient_rgb_stud_support": 1,
+        "stud_support_not_distributed_across_both_ends_and_rows": 2
+      }
+    },
+    {
+      "view": "oblique_side",
+      "raw_geometry": {
+        "positive_references": 30,
+        "ambiguous_references_excluded": 0,
+        "lower_fragments": 60,
+        "raw_detections": 30,
+        "matched": 30,
+        "missed_individual_faces": 0,
+        "merge": 0,
+        "duplicate": 0,
+        "lower_layer_target": 0,
+        "ambiguous_ignored": 0,
+        "other_spurious_or_unresolved": 0,
+        "outside_roi": 0,
+        "categories": {
+          "merge": [],
+          "duplicate": [],
+          "lower_layer_target": [],
+          "ambiguous_ignored": [],
+          "other_spurious_or_unresolved": [],
+          "outside_roi": []
+        },
+        "matches": [
+          {
+            "detection_id": "ridge_00_s00",
+            "reference_id": "brick_9_5_0",
+            "box_iou": 0.9361602709861727
+          },
+          {
+            "detection_id": "ridge_00_s01",
+            "reference_id": "brick_9_5_1",
+            "box_iou": 0.9356896587394152
+          },
+          {
+            "detection_id": "ridge_00_s02",
+            "reference_id": "brick_9_5_2",
+            "box_iou": 0.9346380679624385
+          },
+          {
+            "detection_id": "ridge_00_s03",
+            "reference_id": "brick_9_5_3",
+            "box_iou": 0.9322937984994316
+          },
+          {
+            "detection_id": "ridge_00_s04",
+            "reference_id": "brick_9_5_4",
+            "box_iou": 0.9293508341837383
+          },
+          {
+            "detection_id": "ridge_01_s00",
+            "reference_id": "brick_9_4_0",
+            "box_iou": 0.9972522681566568
+          },
+          {
+            "detection_id": "ridge_01_s01",
+            "reference_id": "brick_9_4_1",
+            "box_iou": 0.995992986172074
+          },
+          {
+            "detection_id": "ridge_01_s02",
+            "reference_id": "brick_9_4_2",
+            "box_iou": 0.994591438569982
+          },
+          {
+            "detection_id": "ridge_01_s03",
+            "reference_id": "brick_9_4_3",
+            "box_iou": 0.9927456620244968
+          },
+          {
+            "detection_id": "ridge_01_s04",
+            "reference_id": "brick_9_4_4",
+            "box_iou": 0.991027047888193
+          },
+          {
+            "detection_id": "ridge_02_s00",
+            "reference_id": "brick_9_3_0",
+            "box_iou": 0.967388365846333
+          },
+          {
+            "detection_id": "ridge_02_s01",
+            "reference_id": "brick_9_3_1",
+            "box_iou": 0.9654375380103326
+          },
+          {
+            "detection_id": "ridge_02_s02",
+            "reference_id": "brick_9_3_2",
+            "box_iou": 0.9635895173781542
+          },
+          {
+            "detection_id": "ridge_02_s03",
+            "reference_id": "brick_9_3_3",
+            "box_iou": 0.9627986138564639
+          },
+          {
+            "detection_id": "ridge_02_s04",
+            "reference_id": "brick_9_3_4",
+            "box_iou": 0.9620728286601749
+          },
+          {
+            "detection_id": "ridge_03_s00",
+            "reference_id": "brick_9_2_0",
+            "box_iou": 0.9663597572425032
+          },
+          {
+            "detection_id": "ridge_03_s01",
+            "reference_id": "brick_9_2_1",
+            "box_iou": 0.964424561538248
+          },
+          {
+            "detection_id": "ridge_03_s02",
+            "reference_id": "brick_9_2_2",
+            "box_iou": 0.9625978467493019
+          },
+          {
+            "detection_id": "ridge_03_s03",
+            "reference_id": "brick_9_2_3",
+            "box_iou": 0.9617596473068137
+          },
+          {
+            "detection_id": "ridge_03_s04",
+            "reference_id": "brick_9_2_4",
+            "box_iou": 0.9609954855748454
+          },
+          {
+            "detection_id": "ridge_04_s00",
+            "reference_id": "brick_9_1_0",
+            "box_iou": 0.9654173303393703
+          },
+          {
+            "detection_id": "ridge_04_s01",
+            "reference_id": "brick_9_1_1",
+            "box_iou": 0.9634982159736345
+          },
+          {
+            "detection_id": "ridge_04_s02",
+            "reference_id": "brick_9_1_2",
+            "box_iou": 0.9616927573174708
+          },
+          {
+            "detection_id": "ridge_04_s03",
+            "reference_id": "brick_9_1_3",
+            "box_iou": 0.9608095818343736
+          },
+          {
+            "detection_id": "ridge_04_s04",
+            "reference_id": "brick_9_1_4",
+            "box_iou": 0.9600083864159877
+          },
+          {
+            "detection_id": "ridge_05_s00",
+            "reference_id": "brick_9_0_0",
+            "box_iou": 0.8576213002781545
+          },
+          {
+            "detection_id": "ridge_05_s01",
+            "reference_id": "brick_9_0_1",
+            "box_iou": 0.8609798625873097
+          },
+          {
+            "detection_id": "ridge_05_s02",
+            "reference_id": "brick_9_0_2",
+            "box_iou": 0.8645777350289903
+          },
+          {
+            "detection_id": "ridge_05_s03",
+            "reference_id": "brick_9_0_3",
+            "box_iou": 0.868938484686672
+          },
+          {
+            "detection_id": "ridge_05_s04",
+            "reference_id": "brick_9_0_4",
+            "box_iou": 0.8732744797640086
+          }
+        ],
+        "merge_references": {},
+        "physical_current_top_accuracy": null,
+        "matched_plane_errors": [
+          {
+            "candidate_id": "ridge_00_s00",
+            "truth_id": "brick_9_5_0",
+            "xy_error_mm": 0.4719509532706128,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_00_s01",
+            "truth_id": "brick_9_5_1",
+            "xy_error_mm": 0.48553695059196544,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_00_s02",
+            "truth_id": "brick_9_5_2",
+            "xy_error_mm": 0.49912294886016845,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_00_s03",
+            "truth_id": "brick_9_5_3",
+            "xy_error_mm": 0.5127089170384659,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_00_s04",
+            "truth_id": "brick_9_5_4",
+            "xy_error_mm": 0.5262949175513069,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s00",
+            "truth_id": "brick_9_4_0",
+            "xy_error_mm": 0.0282661473808604,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s01",
+            "truth_id": "brick_9_4_1",
+            "xy_error_mm": 0.01470683699344965,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_01_s02",
+            "truth_id": "brick_9_4_2",
+            "xy_error_mm": 0.001663313730281849,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s03",
+            "truth_id": "brick_9_4_3",
+            "xy_error_mm": 0.012584263591665618,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_01_s04",
+            "truth_id": "brick_9_4_4",
+            "xy_error_mm": 0.026137294988732074,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_02_s00",
+            "truth_id": "brick_9_3_0",
+            "xy_error_mm": 0.4999480593986284,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_02_s01",
+            "truth_id": "brick_9_3_1",
+            "xy_error_mm": 0.49936718621193077,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_02_s02",
+            "truth_id": "brick_9_3_2",
+            "xy_error_mm": 0.4991555577428246,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_02_s03",
+            "truth_id": "brick_9_3_3",
+            "xy_error_mm": 0.49929874685561426,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_02_s04",
+            "truth_id": "brick_9_3_4",
+            "xy_error_mm": 0.4998262115104469,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_03_s00",
+            "truth_id": "brick_9_2_0",
+            "xy_error_mm": 0.5014319612401249,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_03_s01",
+            "truth_id": "brick_9_2_1",
+            "xy_error_mm": 0.5008526737635928,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_03_s02",
+            "truth_id": "brick_9_2_2",
+            "xy_error_mm": 0.5006415378998473,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_03_s03",
+            "truth_id": "brick_9_2_3",
+            "xy_error_mm": 0.500784122617381,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_03_s04",
+            "truth_id": "brick_9_2_4",
+            "xy_error_mm": 0.5013098892513635,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s00",
+            "truth_id": "brick_9_1_0",
+            "xy_error_mm": 0.5014305680145622,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s01",
+            "truth_id": "brick_9_1_1",
+            "xy_error_mm": 0.5008519450585385,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s02",
+            "truth_id": "brick_9_1_2",
+            "xy_error_mm": 0.5006414752994419,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s03",
+            "truth_id": "brick_9_1_3",
+            "xy_error_mm": 0.5007847262561363,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_04_s04",
+            "truth_id": "brick_9_1_4",
+            "xy_error_mm": 0.50131115777876,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_05_s00",
+            "truth_id": "brick_9_0_0",
+            "xy_error_mm": 1.1438024817652612,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_05_s01",
+            "truth_id": "brick_9_0_1",
+            "xy_error_mm": 1.1316135899247461,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_05_s02",
+            "truth_id": "brick_9_0_2",
+            "xy_error_mm": 1.119456866566918,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_05_s03",
+            "truth_id": "brick_9_0_3",
+            "xy_error_mm": 1.107326616982904,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          },
+          {
+            "candidate_id": "ridge_05_s04",
+            "truth_id": "brick_9_0_4",
+            "xy_error_mm": 1.0952373782980867,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "uncertain"
+          }
+        ],
+        "matched_without_plane_pose": []
+      },
+      "image_supported_present": {
+        "positive_references": 30,
+        "ambiguous_references_excluded": 0,
+        "lower_fragments": 60,
+        "raw_detections": 7,
+        "matched": 7,
+        "missed_individual_faces": 23,
+        "merge": 0,
+        "duplicate": 0,
+        "lower_layer_target": 0,
+        "ambiguous_ignored": 0,
+        "other_spurious_or_unresolved": 0,
+        "outside_roi": 0,
+        "categories": {
+          "merge": [],
+          "duplicate": [],
+          "lower_layer_target": [],
+          "ambiguous_ignored": [],
+          "other_spurious_or_unresolved": [],
+          "outside_roi": []
+        },
+        "matches": [
+          {
+            "detection_id": "ridge_00_s00",
+            "reference_id": "brick_9_5_0",
+            "box_iou": 0.9361602709861727
+          },
+          {
+            "detection_id": "ridge_00_s01",
+            "reference_id": "brick_9_5_1",
+            "box_iou": 0.9356896587394152
+          },
+          {
+            "detection_id": "ridge_01_s01",
+            "reference_id": "brick_9_4_1",
+            "box_iou": 0.995992986172074
+          },
+          {
+            "detection_id": "ridge_01_s04",
+            "reference_id": "brick_9_4_4",
+            "box_iou": 0.991027047888193
+          },
+          {
+            "detection_id": "ridge_02_s00",
+            "reference_id": "brick_9_3_0",
+            "box_iou": 0.967388365846333
+          },
+          {
+            "detection_id": "ridge_02_s01",
+            "reference_id": "brick_9_3_1",
+            "box_iou": 0.9654375380103326
+          },
+          {
+            "detection_id": "ridge_02_s04",
+            "reference_id": "brick_9_3_4",
+            "box_iou": 0.9620728286601749
+          }
+        ],
+        "merge_references": {},
+        "physical_current_top_accuracy": null,
+        "matched_plane_errors": [
+          {
+            "candidate_id": "ridge_00_s00",
+            "truth_id": "brick_9_5_0",
+            "xy_error_mm": 0.4719509532706128,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_00_s01",
+            "truth_id": "brick_9_5_1",
+            "xy_error_mm": 0.48553695059196544,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_01_s01",
+            "truth_id": "brick_9_4_1",
+            "xy_error_mm": 0.01470683699344965,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_01_s04",
+            "truth_id": "brick_9_4_4",
+            "xy_error_mm": 0.026137294988732074,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_02_s00",
+            "truth_id": "brick_9_3_0",
+            "xy_error_mm": 0.4999480593986284,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_02_s01",
+            "truth_id": "brick_9_3_1",
+            "xy_error_mm": 0.49936718621193077,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "present"
+          },
+          {
+            "candidate_id": "ridge_02_s04",
+            "truth_id": "brick_9_3_4",
+            "xy_error_mm": 0.4998262115104469,
+            "yaw_error_deg_mod180": 0.02432566211105597,
+            "decision": "present"
+          }
+        ],
+        "matched_without_plane_pose": []
+      },
+      "raw_geometry_reference_decisions": {
+        "present": 7,
+        "uncertain": 23,
+        "no_match": 0
+      },
+      "raw_references_not_confirmed_present": [
+        "brick_9_0_0",
+        "brick_9_0_1",
+        "brick_9_0_2",
+        "brick_9_0_3",
+        "brick_9_0_4",
+        "brick_9_1_0",
+        "brick_9_1_1",
+        "brick_9_1_2",
+        "brick_9_1_3",
+        "brick_9_1_4",
+        "brick_9_2_0",
+        "brick_9_2_1",
+        "brick_9_2_2",
+        "brick_9_2_3",
+        "brick_9_2_4",
+        "brick_9_3_2",
+        "brick_9_3_3",
+        "brick_9_4_0",
+        "brick_9_4_2",
+        "brick_9_4_3",
+        "brick_9_5_2",
+        "brick_9_5_3",
+        "brick_9_5_4"
+      ],
+      "present_references_not_raw_assigned": [],
+      "counts": {
+        "ridge_hypotheses": 6,
+        "candidates": 30,
+        "present": 7,
+        "uncertain": 23
+      },
+      "reason_flags_nonexclusive": {
+        "stud_support_not_distributed_across_both_ends_and_rows": 9,
+        "insufficient_rgb_stud_support": 5,
+        "current_window_count_or_phase_uncertain": 15,
+        "insufficient_top_band_material_coverage": 15
+      }
+    }
+  ],
+  "controls": [
+    {
+      "condition": "invalid",
+      "view": "top",
+      "raw_candidates": 0,
+      "present_claims": 0,
+      "uncertain": 0,
+      "interpretation": "Sensor-failure/no-ridge control, not physical brick absence."
+    },
+    {
+      "condition": "invalid",
+      "view": "near_top_x",
+      "raw_candidates": 0,
+      "present_claims": 0,
+      "uncertain": 0,
+      "interpretation": "Sensor-failure/no-ridge control, not physical brick absence."
+    },
+    {
+      "condition": "invalid",
+      "view": "near_top_y",
+      "raw_candidates": 0,
+      "present_claims": 0,
+      "uncertain": 0,
+      "interpretation": "Sensor-failure/no-ridge control, not physical brick absence."
+    },
+    {
+      "condition": "invalid",
+      "view": "oblique_front",
+      "raw_candidates": 0,
+      "present_claims": 0,
+      "uncertain": 0,
+      "interpretation": "Sensor-failure/no-ridge control, not physical brick absence."
+    },
+    {
+      "condition": "invalid",
+      "view": "oblique_side",
+      "raw_candidates": 0,
+      "present_claims": 0,
+      "uncertain": 0,
+      "interpretation": "Sensor-failure/no-ridge control, not physical brick absence."
+    },
+    {
+      "condition": "flat_plane",
+      "view": "top",
+      "raw_candidates": 0,
+      "present_claims": 0,
+      "uncertain": 0,
+      "interpretation": "Sensor-failure/no-ridge control, not physical brick absence."
+    },
+    {
+      "condition": "flat_plane",
+      "view": "near_top_x",
+      "raw_candidates": 0,
+      "present_claims": 0,
+      "uncertain": 0,
+      "interpretation": "Sensor-failure/no-ridge control, not physical brick absence."
+    },
+    {
+      "condition": "flat_plane",
+      "view": "near_top_y",
+      "raw_candidates": 0,
+      "present_claims": 0,
+      "uncertain": 0,
+      "interpretation": "Sensor-failure/no-ridge control, not physical brick absence."
+    },
+    {
+      "condition": "flat_plane",
+      "view": "oblique_front",
+      "raw_candidates": 0,
+      "present_claims": 0,
+      "uncertain": 0,
+      "interpretation": "Sensor-failure/no-ridge control, not physical brick absence."
+    },
+    {
+      "condition": "flat_plane",
+      "view": "oblique_side",
+      "raw_candidates": 0,
+      "present_claims": 0,
+      "uncertain": 0,
+      "interpretation": "Sensor-failure/no-ridge control, not physical brick absence."
+    }
+  ],
+  "control_summary": {
+    "invalid": {
+      "cases": 5,
+      "raw_candidates": 0,
+      "present_claims": 0
+    },
+    "flat_plane": {
+      "cases": 5,
+      "raw_candidates": 0,
+      "present_claims": 0
+    }
+  },
+  "same_source_rgb_pose_context": {
+    "accepted_top": 0,
+    "top_targets": 150,
+    "limitation": "Different sensor inputs/method; historical real-photo ridge results are not a direct comparison."
+  },
+  "interpretation": "Raw depth/ridge partition hypotheses are not confirmed detections. Conditional XY/yaw errors assume shared depth surface plane and ridge direction; no metricZ, free6D, graspability, missing-brick or insertion claim. Five correlated simulated views only."
+}

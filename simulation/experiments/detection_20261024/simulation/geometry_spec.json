@@ -1,0 +1,19 @@
+{
+  "status": "blocked_missing_layer_origins",
+  "required_bricks": 360,
+  "layers": 10,
+  "bricks_per_layer": [6, 6],
+  "brick_dimensions_studs": [4, 2, 3],
+  "pitch_studs_xy": [4, 4],
+  "pitch_status": "visible_approximately_four_studs_between_parallel_strips; longitudinal_pitch_four_studs_from_2x4_brick_ends",
+  "baseplate_studs": 32,
+  "source_xy_m": [0.45, -0.16],
+  "camera_matching": "approximate_no_measured_D435i_intrinsics_or_extrinsics",
+  "layer_origins_studs_xy": [null, null, null, null, null, null, null, null, null, null],
+  "layer_yaws_quarter_turn": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
+  "unknowns": [
+    "The user confirmed 90-degree alternation and a one-stud stagger, but has not identified the translation axes, sign, phase, or repetition rule.",
+    "Photographs were taken after layer removal. Their visible brick inventory is not a complete description of the original ten-layer stack.",
+    "The right strip in img_13 has five visible 2x4 bricks; this does not establish six bricks along the original full layer."
+  ]
+}

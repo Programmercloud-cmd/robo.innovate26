@@ -1,0 +1,20 @@
+{
+  "environmentId": "f9firmbdt",
+  "memberUserId": "user-3L8JXSElQtthMPST9dI4l3GmVHj",
+  "memberEmail": "jacob.behrendt03@gmail.com",
+  "memberDisplayName": "jacob.behrendt03-5174e3",
+  "existingAccess": [
+    {
+      "userId": "user-3L6If4VIdpp0U1JlH767ABDqrCU",
+      "portId": "nport-3LHpuvH2zFC5EEdAq2Xl9PMWJNu",
+      "linuxUser": "shadeform"
+    }
+  ],
+  "verifiedGrantedAccess": [
+    {
+      "userId": "user-3L8JXSElQtthMPST9dI4l3GmVHj",
+      "portId": "nport-3LHpuvH2zFC5EEdAq2Xl9PMWJNu",
+      "linuxUser": "shadeform"
+    }
+  ]
+}

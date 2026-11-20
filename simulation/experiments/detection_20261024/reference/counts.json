@@ -1,0 +1,32 @@
+{
+  "img_1.jpg": {
+    "exposed_top": 28,
+    "ambiguous": 2,
+    "visible_lower": 4
+  },
+  "img_3.jpg": {
+    "exposed_top": 28,
+    "ambiguous": 2,
+    "visible_lower": 3
+  },
+  "img_7.jpg": {
+    "exposed_top": 28,
+    "ambiguous": 2,
+    "visible_lower": 4
+  },
+  "img_10.jpg": {
+    "exposed_top": 28,
+    "ambiguous": 2,
+    "visible_lower": 4
+  },
+  "img_13.jpg": {
+    "exposed_top": 28,
+    "ambiguous": 2,
+    "visible_lower": 4
+  },
+  "img_16.jpg": {
+    "exposed_top": 26,
+    "ambiguous": 4,
+    "visible_lower": 4
+  }
+}

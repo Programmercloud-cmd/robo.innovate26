@@ -1,0 +1,31 @@
+{
+  "schema": "user-specified-charuco-board-v1",
+  "source": "User supplied board definition; not inferred from photographs",
+  "specification_screenshot": "resources/setup_images/final_workcell_20261024/clarifications/clarification_03.jpg",
+  "specification_screenshot_sha256": "5f4404bcea36fd92a55b007f19a1105f58a60c849273867dbe375186f0c3c352",
+  "squares_xy": [7, 5],
+  "dictionary": "DICT_4X4_50",
+  "square_length_m": 0.03,
+  "marker_length_m": 0.022,
+  "marker_ids": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+  "expected_charuco_corners": 24,
+  "pattern_size_m": [0.21, 0.15],
+  "image_size_wh": [1400, 1000],
+  "margin_pixels": 0,
+  "border_bits": 1,
+  "real_photo": "resources/setup_images/final_workcell_20261024/photo_09.jpg",
+  "real_photo_user_reported_zoom": "1x, Apple iPhone 12; not a calibrated intrinsic matrix",
+  "frozen_planar_estimate": "experiments/final_workcell_20261024/layout_estimate.json",
+  "minimum_matched_markers_for_orientation": 2,
+  "maximum_per_marker_rotation_disagreement_deg": 10,
+  "board_frame": "Pattern center, +X toward generated-image right, +Y toward generated-image top; +Z out of printed face",
+  "texture_pixel_corner_order": ["top_left", "top_right", "bottom_right", "bottom_left"],
+  "texture_corner_board_xy_m": [[-0.105, 0.075], [0.105, 0.075], [0.105, -0.075], [-0.105, -0.075]],
+  "limitations": [
+    "Real photo processed exactly once at original resolution, without camera intrinsics or undistortion.",
+    "Frozen photo09 planar homography is approximate; its systematic errors remain and are not corrected using this board.",
+    "Printed marker correspondence checks decoded IDs and ordered corners; ID-set overlap alone does not validate physical orientation.",
+    "Rigid residual and diagnostic similarity scale mix print scaling, anchor, lens and planar errors. They do not verify actual print scale or establish calibrated accuracy.",
+    "No rigid or similarity fit updates the scene layout, camera calibration or generated metric board size."
+  ]
+}

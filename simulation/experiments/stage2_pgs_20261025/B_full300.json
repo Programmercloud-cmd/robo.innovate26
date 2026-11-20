@@ -1,0 +1,31 @@
+{
+  "schema": "stage2-round3-PGS-full300-v1",
+  "status": "declared_before_execution",
+  "steps": 120,
+  "dt_s": 0.008333333333333333,
+  "expected_source_bricks": 300,
+  "expected_source_parts": 301,
+  "expected_native_connections": 930,
+  "maximum_position_drift_m": 0.002,
+  "maximum_orientation_drift_rad": 0.03490658503988659,
+  "maximum_final_linear_speed_m_s": 0.02,
+  "maximum_final_angular_speed_rad_s": 0.2,
+  "policy": "Stop first failure; no tuning, reduced stack, reset or root/joint-state writes after existing initialization. Hold existing nominal joint targets only.",
+  "capture_claim": false,
+  "contact_geometry": "Stock collision baseline; supplied updated tips are visual only and their contact geometry is unvalidated",
+  "automatic_assembly_required": false,
+  "breakage_detection_required": true,
+  "limitations": [
+    "120-step idle smoke only, not production stability or manipulation validation",
+    "No approach, grasp, insertion, camera sensing, classification, training or hardware control"
+  ],
+  "frozen_input_hashes": {
+    "experiments/final_workcell_20261024/geometry.json": "8a0266b2ccbf75f6d773fdd1e6309c70f9ab8828da96b563da133f383f83c897",
+    "experiments/final_workcell_20261024/scene_config.json": "77cb33b140c8449e9527437c1fc8a452d5f95a9680413dc05b66db07e27342e7",
+    "experiments/final_workcell_20261024/cameras_realism.json": "aad98d4f63c3f754d7cdfcc62d70c2b3f4179233e84d2ba776042eb773c85dac",
+    "experiments/final_workcell_20261024/appearance_config.json": "1087683dbc574f2b155f3ee23b2ae2612d0a216360655b008d46c7e588bc73fe"
+  },
+  "solver_type": "PGS",
+  "improvement_round": 3,
+  "maximum_improvement_rounds": 3
+}

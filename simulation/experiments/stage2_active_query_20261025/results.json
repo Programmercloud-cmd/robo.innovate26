@@ -1,0 +1,135 @@
+{
+  "schema": "active-tip-query-results-v1",
+  "scope": "Motion-free unchanged-proxy observational diagnostic, completed after one query-manager setup correction; no contact promotion.",
+  "maximum_diagnostic_attempts": 2,
+  "attempts_used": 2,
+  "further_setup_attempts_allowed": 0,
+  "history": [
+    {
+      "attempt": 1,
+      "capture_job_id": 1759,
+      "capture_source_commit": "e75efa2",
+      "capture_snapshot": "runs/20261025T043724.980817Z-active-tip-shape-query",
+      "audit_job_id": 1760,
+      "audit_snapshot": "runs/20261025T044432.987494Z-active-query-failed-controls-audit",
+      "outcome": "Failed at positive controls: four empty raw control records, no target probes. Scene-query runtime flag not recorded; installed headless default was disabled.",
+      "target_geometry": "UNTESTED"
+    },
+    {
+      "attempt": 2,
+      "capture_job_id": 1761,
+      "capture_source_commit": "8380bec",
+      "capture_snapshot": "runs/20261025T044456.732801Z-active-tip-query-enabled",
+      "audit_job_id": 1762,
+      "audit_snapshot": "runs/20261025T044722.913725Z-active-tip-query-enabled-audit",
+      "correction": "Process-local enable_scene_query_support False->True only beyond the retained PGS selection; full SimulationCfg equality guard.",
+      "outcome": "Completed all250 fixed queries; all34 independent observation-integrity checks pass. Local CAD discrepancies observed; no contact/G promotion."
+    }
+  ],
+  "checks_passed": 34,
+  "checks_total": 34,
+  "capture_wall_s": 14.883154222989106,
+  "capture_plus_audit_limit_s": 180,
+  "preassembly_nominal_initialization_steps": 1,
+  "measured_postassembly_physics_steps": 0,
+  "source": "300bricks/301parts/930nativeconnections, PGS/source32/4; q/qdot/source poses/time/native graph unchanged during probes.",
+  "query_support": "True SDK getter and actualUSD before controls; positive ray/overlap plus separate miss controls pass.",
+  "tips": {
+    "left": {
+      "ray_count": 96,
+      "rays_with_PAD_hit": 42,
+      "CAD_hits_without_PAD_hit": 0,
+      "PAD_hits_without_CAD_hit": 0,
+      "first_hit_distance_error_min_m": -0.006499987408518794,
+      "first_hit_distance_error_max_m": 0.00015467919409274666,
+      "worst_abs_ray_error_m": 0.006499987408518794,
+      "worst_ray_id": "left_grid_4_4",
+      "worst_ray_edge_or_grazing": false,
+      "CAD_verified_free_spheres": 27,
+      "sphere_radius_m": 5e-05,
+      "PAD_overlaps_in_CAD_free_spheres": 2,
+      "overlap_ids": [
+        "left_bore_-10.5_5",
+        "left_bore_-10.5_7"
+      ],
+      "positive_probe_reference_clearance_m": [
+        0.0005984363555908215,
+        0.0005986782521714303
+      ]
+    },
+    "right": {
+      "ray_count": 96,
+      "rays_with_PAD_hit": 42,
+      "CAD_hits_without_PAD_hit": 0,
+      "PAD_hits_without_CAD_hit": 0,
+      "first_hit_distance_error_min_m": -0.0005380346775054889,
+      "first_hit_distance_error_max_m": 0.001346395835280418,
+      "worst_abs_ray_error_m": 0.001346395835280418,
+      "worst_ray_id": "right_grid_5_3",
+      "worst_ray_edge_or_grazing": false,
+      "CAD_verified_free_spheres": 27,
+      "sphere_radius_m": 5e-05,
+      "PAD_overlaps_in_CAD_free_spheres": 9,
+      "overlap_ids": [
+        "right_bore_-5.0_0",
+        "right_bore_-5.0_1",
+        "right_bore_-5.0_2",
+        "right_bore_-5.0_3",
+        "right_bore_-5.0_4",
+        "right_bore_-5.0_5",
+        "right_bore_-5.0_6",
+        "right_bore_-5.0_7",
+        "right_bore_-5.0_8"
+      ],
+      "positive_probe_reference_clearance_m": [
+        0.0004999999999999996,
+        0.0004999999999999996,
+        0.0004999999999999996,
+        0.0004999999999999996,
+        0.0004999999999999996,
+        0.0004999999999999996,
+        0.0004999999999999996,
+        0.0004999999999999996,
+        0.0004999999999999996
+      ]
+    }
+  },
+  "versions": {
+    "python": "3.11.15 (main, Mar 11 2026, 17:20:07) [GCC 14.3.0]",
+    "packages": {
+      "numpy": "1.26.0",
+      "scipy": "1.15.3",
+      "torch": "2.7.0+cu128",
+      "isaacsim": "5.1.0.0"
+    }
+  },
+  "external_isaaclab_commit": "80094be3245aa5c8376a7464d29cb4412ea518f5",
+  "decision": "Reject this automatic-decomposition configuration as a faithful updated-tip collision model. No D/R, grasp or extraction with it. Stop automatic-decomposition tuning and further observational setup attempts.",
+  "next_approach": "Inspect whether one small explicit CAD-derived convex compound can preserve the supplied STL bore and contact surfaces with existing tools. Review concrete parts and freeze one approach attempt before cooking; no fresh three-round allowance. If reliable parts require broad geometry tooling, request original CAD/convex-part export. Not implemented.",
+  "limits": [
+    "Positive exact-pad overlaps in independently CAD-free spheres are conditional local intrusion evidence, not proof of contact/grasp failure.",
+    "No-hit sphere results do not certify complete target-mesh overlap coverage or global free space.",
+    "First-hit ray difference is a one-dimensional surface discrepancy, not Hausdorff distance, calibrated pose error or hardware accuracy.",
+    "No force/contact trial, property equivalence, dynamic holding, extraction, insertion or integrated sorting is demonstrated.",
+    "Old1756G/bounds failure and closedthree-roundcontactbenchmark remain unchanged."
+  ],
+  "proceed_gate_passed": false,
+  "full_demo_complete": false,
+  "sha256": {
+    "runs/20261025T043724.980817Z-active-tip-shape-query/manifest.json": "147d9b4ee979635b4a341b764ac1e3768c727c717aa80eff72c58fcb80eca123",
+    "runs/20261025T043724.980817Z-active-tip-shape-query/output/failure.json": "64f5571ef50051e45e49a51ed793180ebeef2f5e622da56718420555d97358d4",
+    "runs/20261025T044432.987494Z-active-query-failed-controls-audit/output/evaluation.json": "26a175bfca4748f99b735e23dfbeda3748a6679c7f87191dcdaa673a2c0d53d2",
+    "runs/20261025T044456.732801Z-active-tip-query-enabled/manifest.json": "571b343c152361e8ad9a3e208ca48e4deca393355ca9fd163992d48c589f71a4",
+    "runs/20261025T044456.732801Z-active-tip-query-enabled/output/prequery_setup.json": "a170ce8248e29c27dd109fc3a5e22d134deacfe04b986c35469e6011d6190779",
+    "runs/20261025T044456.732801Z-active-tip-query-enabled/output/queries.json": "b11ab52c35fc797b504ada443bce87128eba3a5f67e8b9f46b22bddfcb981acc",
+    "runs/20261025T044456.732801Z-active-tip-query-enabled/output/query_report.json": "3cbbd94396978900ef55376a05a5e10fed9f14874f728459c1bce1a02abfd63f",
+    "runs/20261025T044722.913725Z-active-tip-query-enabled-audit/manifest.json": "0b09e1f9d001818b1f39b58aa7896cc28a9594a0b23d880806ac340956b5b536",
+    "runs/20261025T044722.913725Z-active-tip-query-enabled-audit/output/evaluation.json": "14b8a76176ea26ed6b5909b4c149f8eb1e4a481617b3de2d06e9ca3abfb1685d",
+    "runs/20261025T044722.913725Z-active-tip-query-enabled-audit/output/run_complete.json": "5b36babe4d65f2762d9cdc58b33501c7ddb4e8f2bd9021d85b31b27f41476ef8",
+    "runs/20261025T044722.913725Z-active-tip-query-enabled-audit/audit_supervisor.json": "388af2ebda58c56440ad7c0781c79b8580929c5092386962a566f4e1ba6ad019"
+  },
+  "audit_algorithm_wall_s": 0.08111671500955708,
+  "audit_supervised_wall_s": 0.16364398300356697,
+  "total_algorithm_active_wall_s": 14.964270937998663,
+  "total_supervised_active_wall_s": 15.046798205992673
+}

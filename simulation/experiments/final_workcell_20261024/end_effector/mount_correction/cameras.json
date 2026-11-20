@@ -1,0 +1,143 @@
+{
+  "image_size": [
+    1280,
+    960
+  ],
+  "focal_length_mm": 24.0,
+  "horizontal_aperture_mm": 33.25,
+  "clipping_range_m": [
+    0.01,
+    10.0
+  ],
+  "calibration_status": "Diagnostic virtual inspection cameras only, not physical wrist equivalence",
+  "settle_steps": 0,
+  "render_warmup_frames": 12,
+  "lighting": {
+    "dome_intensity": 120.0,
+    "key_type": "rect",
+    "key_intensity": 20000.0,
+    "key_normalize": false,
+    "key_width_m": 0.26,
+    "key_height_m": 0.18,
+    "key_color_linear": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "key_position_table_m": [
+      -0.55,
+      0.05,
+      0.4
+    ],
+    "key_target_table_m": [
+      0.03,
+      0.0,
+      0.06
+    ],
+    "status": "Approximate LED-panel-like emitter on negative table X; position, size and intensity are heuristic, not photometrically calibrated"
+  },
+  "panel": {
+    "columns": 3,
+    "thumbnail_size": [
+      640,
+      480
+    ]
+  },
+  "views": [
+    {
+      "id": "diagnostic_table_top",
+      "eye_offset_m": [
+        0.15,
+        -0.055,
+        1.4
+      ],
+      "target_offset_m": [
+        0.15,
+        -0.055,
+        -0.1
+      ],
+      "up_world": [
+        0,
+        -1,
+        0
+      ]
+    },
+    {
+      "id": "diagnostic_c920_profile",
+      "eye_offset_m": [
+        0.47,
+        -0.37,
+        0.4
+      ],
+      "target_offset_m": [
+        0.18,
+        -0.13,
+        0.37
+      ],
+      "up_world": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "diagnostic_c920_grasp_side",
+      "eye_offset_m": [
+        0.43,
+        0.12,
+        0.02
+      ],
+      "target_offset_m": [
+        0.17,
+        -0.14,
+        0.27
+      ],
+      "up_world": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "diagnostic_pad_inner_faces",
+      "eye_offset_m": [
+        0.20277977807739875,
+        -0.10721968336986759,
+        0.12063626021150721
+      ],
+      "target_offset_m": [
+        0.20277984156075288,
+        -0.10721969762147565,
+        0.22563626021148703
+      ],
+      "up_world": [
+        0.707107629500333,
+        0.7071059328716668,
+        -3.315444517315511e-07
+      ],
+      "purpose": "Virtual close-up of supplied pad mounting only; no physical camera mount or optical estimate changed"
+    },
+    {
+      "id": "diagnostic_pad_support_side",
+      "eye_offset_m": [
+        0.3442010966795954,
+        -0.1637884023141033,
+        0.170636167029661
+      ],
+      "target_offset_m": [
+        0.22399301954689746,
+        -0.12843292650648758,
+        0.22563624450666497
+      ],
+      "up_world": [
+        0,
+        0,
+        1
+      ],
+      "purpose": "Virtual close-up of supplied pad mounting only; no physical camera mount or optical estimate changed"
+    }
+  ],
+  "capture_mode": "static_initialized_not_physics_settled",
+  "dynamics_validation": "None; full native graph is present but no load-bearing stability is claimed.",
+  "framing_note": "Three existing inspection views unchanged; two virtual close-ups derived from the saved nominal hand pose. Physical D435i/C920 mounts unchanged."
+}

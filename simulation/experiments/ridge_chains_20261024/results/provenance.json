@@ -1,0 +1,29 @@
+{
+  "pueue_job_id": 1675,
+  "source_commit": "80db1027a9034b38c94654c1f9e2974b46fd48e1",
+  "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T092702.536426Z-rgb-ridge-chains",
+  "evaluation_sha256": "1297bfd3f72ab03fd3751d7743fc49b665335f4806699245893c39ccb9137640",
+  "protocol_sha256": "3b6315f24d063bae22d9cba94cc83f8d35e439c14d8b044e4d479c3eb58986d7",
+  "chain_record_paths_and_sha256": {
+    "/home/faps/dev/github/robo.innovate26/runs/20261024T092702.536426Z-rgb-ridge-chains/output/predictions/img_1/chains.json": "6631564a09187e224c44f4a7e5ff21b134935287ae7fd2805c3cc95cf974f546",
+    "/home/faps/dev/github/robo.innovate26/runs/20261024T092702.536426Z-rgb-ridge-chains/output/predictions/img_2/chains.json": "951a7b9733ecb746dba445858f0d7afb6f35dc7f15f4b0a8d24973bd7fca29cb",
+    "/home/faps/dev/github/robo.innovate26/runs/20261024T092702.536426Z-rgb-ridge-chains/output/predictions/img_3/chains.json": "fc9ba81f8e58711165204277c6441f7b72ef4d7bc2fe82002aa6de4f1924b448",
+    "/home/faps/dev/github/robo.innovate26/runs/20261024T092702.536426Z-rgb-ridge-chains/output/predictions/img_4/chains.json": "cd4202d8175ec885a32096f00b424da04fc15d984f4780994c6e99049a74db5e",
+    "/home/faps/dev/github/robo.innovate26/runs/20261024T092702.536426Z-rgb-ridge-chains/output/predictions/img_5/chains.json": "e5ed2628afb155c7b3ad1eacb5bf232ff183e54ee761e3a552bde5dba8e06b06",
+    "/home/faps/dev/github/robo.innovate26/runs/20261024T092702.536426Z-rgb-ridge-chains/output/predictions/img_6/chains.json": "caaefc2e6170862f958729b67087b26ed7d3f4eee71e07e023482ae2a795113b",
+    "/home/faps/dev/github/robo.innovate26/runs/20261024T092702.536426Z-rgb-ridge-chains/output/predictions/img_7/chains.json": "ca90cf7f706308dd3daa0ab9c79b45d27431b5325bf51b9eb4c30151e6aa72e9",
+    "/home/faps/dev/github/robo.innovate26/runs/20261024T092702.536426Z-rgb-ridge-chains/output/predictions/img_8/chains.json": "7f2aadb96ff77e7daa27dbfe19090e7c0041a2ec33b909dc500c69350941803e",
+    "/home/faps/dev/github/robo.innovate26/runs/20261024T092702.536426Z-rgb-ridge-chains/output/predictions/img_9/chains.json": "2df6b0a8e8ebc17434253a3f930aba40068d6d056818a676fa3e9c8af39bec49",
+    "/home/faps/dev/github/robo.innovate26/runs/20261024T092702.536426Z-rgb-ridge-chains/output/predictions/img_10/chains.json": "496b404c5d8eec5dff85260a460de227faa0d424e6cc775366073bf455b8d9f3",
+    "/home/faps/dev/github/robo.innovate26/runs/20261024T092702.536426Z-rgb-ridge-chains/output/predictions/img_11/chains.json": "411bfa6e39374f9ebd49c79e626645f4f1f786968e9b65175ca9071dc09623a5",
+    "/home/faps/dev/github/robo.innovate26/runs/20261024T092702.536426Z-rgb-ridge-chains/output/predictions/img_12/chains.json": "4ee267f13ddce815d1697e5d4a9e60b2312553ff53bef73b2016ccb44a77699f",
+    "/home/faps/dev/github/robo.innovate26/runs/20261024T092702.536426Z-rgb-ridge-chains/output/predictions/img_13/chains.json": "0f5c1538a938a882f5f2def6d1307ff59beed87e49e04eb6304cd6deafa78185",
+    "/home/faps/dev/github/robo.innovate26/runs/20261024T092702.536426Z-rgb-ridge-chains/output/predictions/img_14/chains.json": "2cfb6a341023eb2d65e0bc82b01f4e205a90750b8977d7e91f6a064b64a6e3a7",
+    "/home/faps/dev/github/robo.innovate26/runs/20261024T092702.536426Z-rgb-ridge-chains/output/predictions/img_15/chains.json": "dabb0425030647b64b1fec4f09ade135611c611472296a740581308b2cb124bc",
+    "/home/faps/dev/github/robo.innovate26/runs/20261024T092702.536426Z-rgb-ridge-chains/output/predictions/img_16/chains.json": "3f24588dd7edb69486d165db7e3e2eab0726d1b25855e613b592771e32eb9e33",
+    "/home/faps/dev/github/robo.innovate26/runs/20261024T092702.536426Z-rgb-ridge-chains/output/predictions/img_17/chains.json": "7e9f116bee7343a729e9ebb721a1fc13d8fdf5f873a37cdf8b94af10bcfcfacf",
+    "/home/faps/dev/github/robo.innovate26/runs/20261024T092702.536426Z-rgb-ridge-chains/output/predictions/img_18/chains.json": "ce5e4a2d9f0a730373f634c24823928bf08a7a56068bbed0315205f472216bde"
+  },
+  "settings_sha256": "3e070ba817afe483a5679a196e04f5dee6f8ec41c6a09966a55cd237d533e0f2",
+  "large_artifacts": "Full chains.json source/proposal/phase diagnostics and overlays remain in ignored immutable snapshot; no model inference."
+}

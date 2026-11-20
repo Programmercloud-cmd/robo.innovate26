@@ -1,0 +1,9 @@
+TCP_start_m 0.679320276 -0.0797218382 0.0997985825 tool_mass_kg 0.730000019 payload_kg 0
+PLAN joint 1 delta_rad 0.1 predicted_peak_mm 68.3884444 endpoint_dz_mm 0
+PLAN joint 2 delta_rad -0.1 predicted_peak_mm 63.757807 endpoint_dz_mm 60.4409276
+PLAN joint 3 delta_rad 0.1 predicted_peak_mm 67.1822906 endpoint_dz_mm 26.5196898
+PLAN joint 4 delta_rad 0.1 predicted_peak_mm 58.9311694 endpoint_dz_mm 39.6457813
+PLAN joint 5 delta_rad -0.1 predicted_peak_mm 9.87432387 endpoint_dz_mm 0.436673312
+PLAN joint 6 delta_rad 0.1 predicted_peak_mm 22.7966732 endpoint_dz_mm 10.3178638
+PLAN joint 7 delta_rad -0.1 predicted_peak_mm 0 endpoint_dz_mm 0
+PREVIEW_ONLY no motion sent

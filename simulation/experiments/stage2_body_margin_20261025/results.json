@@ -1,0 +1,119 @@
+{
+  "schema": "body-margin-sensitivity-result-v1",
+  "job_id": 1824,
+  "source_commit": "4d257f3",
+  "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T163329.924990Z-stage2-body-margin",
+  "improvement_round": 2,
+  "phase_closed": true,
+  "maximum_improvements": 2,
+  "automatic_retry": false,
+  "control_passed": true,
+  "control_steps": 1500,
+  "configuration_integrity_passed": true,
+  "retention_fixture_passed": false,
+  "retention_verdict": "CENSORED_BY_ACTUAL_FINGER_SPEED_ABORT",
+  "physics_extraction_passed": false,
+  "pick_steps": 488,
+  "observed_lift_samples": 38,
+  "failed_checks": [
+    "all_frames",
+    "completed_pick",
+    "coupon_rise",
+    "lift_5mm",
+    "held_30"
+  ],
+  "frame_failure_counts": {
+    "no_capture_abort": 1,
+    "actual_joint_speeds": 1
+  },
+  "metrics": {
+    "coupon_rise_m": 7.699429988861084e-05,
+    "relative_translation_max_m": 0.00019669961985126482,
+    "relative_angle_max_rad": 0.016377075843641214,
+    "minimum_hold_support_clearance_m": null,
+    "source_drift_max_m": 0.00020829330605920404,
+    "source_angle_max_rad": 0.002178899707942024,
+    "force_peak_N": {
+      "left": 1.364017110390705,
+      "right": 1.3595447025145404
+    }
+  },
+  "lift_admission": {
+    "kind": "position_candidate",
+    "step": 450,
+    "command_q_m": 0.005593305453658104
+  },
+  "terminal_finger_velocities_m_s": [
+    0.002042802749,
+    0.002077677986
+  ],
+  "actual_finger_speed_limit_m_s": 0.002,
+  "control_audit_sha256": "9856c14d9d2ce12c529890a62ba60e7f8684f4bfefb8d14d2e84df2c2dbc1be6",
+  "pick_audit_sha256": "057826035836018190285f9ef056178a2922791b8931fe31d3634c4b21f6e138",
+  "interpretation": "BODY-only100umconfigurationverified/freshcontrolPASS; frozen14mmtargets. EarlyLIFT stoppedonlyactualopeningqdotbound; no observednormal/native/body-mappingfailure inshortprefix. No completedlift/hold, so retention remainsunresolved andoldlatefailureisnotshownfixed.",
+  "independent_reviews": {
+    "evaluator": "Acceptedlimitedearly-motioncensoredoutcome; stopimprovement2, reconcileageguardsemantics/modelsourceonlynext.",
+    "reviewer": "Acceptedcensoredoutcome; no automaticthreshold/offset/trajectorytuning, separatecommandlimitfrompassiveresponse."
+  },
+  "next_dependency": "Source-onlyreassessment ofactualfingerresponse cutoff versus1mm/scommand bound andimplicitactuatorcontactdynamics; anynewcriterionmustbeprospectivelyjustified, notfit2.078mm/s.",
+  "timing": {
+    "schema": "body-margin-sensitivity-supervisor-v1",
+    "phases": [
+      {
+        "phase": "capture",
+        "mode": "control",
+        "wall_seconds": 99.57024317997275,
+        "returncode": 0,
+        "cleanup": "complete_marker_cleanup",
+        "capture_completed": true
+      },
+      {
+        "phase": "audit",
+        "mode": "control",
+        "wall_seconds": 29.896889052004553,
+        "returncode": 0
+      },
+      {
+        "phase": "capture",
+        "mode": "pick",
+        "wall_seconds": 46.46003234598902,
+        "returncode": 0,
+        "cleanup": "complete_marker_cleanup",
+        "capture_completed": true
+      },
+      {
+        "phase": "audit",
+        "mode": "pick",
+        "wall_seconds": 14.329295898991404,
+        "returncode": 0
+      }
+    ],
+    "actual_capture_plus_audit_seconds": 190.2607438809937,
+    "prior_case_seconds": 2403.7184853080234,
+    "cumulative_case_seconds": 2594.2272199420236,
+    "previous_case_limit_seconds": 2500,
+    "case_limit_seconds": 2800,
+    "maximum_active_seconds": 300,
+    "within_budget": true,
+    "control_passed": true,
+    "pick_attempted": true,
+    "improvement_round": 2,
+    "retention_fixture_passed": false,
+    "proceed_gate_passed": false,
+    "physics_extraction_passed": false,
+    "perception_credit": false,
+    "transfer_authorized": false,
+    "automatic_retry": false,
+    "control_audit_sha256": "9856c14d9d2ce12c529890a62ba60e7f8684f4bfefb8d14d2e84df2c2dbc1be6",
+    "pick_audit_sha256": "057826035836018190285f9ef056178a2922791b8931fe31d3634c4b21f6e138",
+    "supervised_cumulative_case_seconds": 2593.979229189017,
+    "full_pueue_job_seconds": 190.508734634,
+    "pueue_job_id": 1824,
+    "pueue_start": "2026-10-25T17:33:30.445055402+01:00",
+    "pueue_end": "2026-10-25T17:36:40.953790036+01:00",
+    "remaining_case_seconds": 205.7727800579766,
+    "full_pueue_timing_authoritative": true
+  },
+  "transfer_authorized": false,
+  "perception_credit": false
+}

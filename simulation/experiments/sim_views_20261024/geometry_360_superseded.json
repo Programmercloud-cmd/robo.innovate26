@@ -1,0 +1,116 @@
+{
+  "status": "confirmed_explicit_geometry",
+  "confirmation": "User confirmed studs (dots) in contact, and supplied close-up showing a one-stud stagger/crossing. Latest photo supersedes earlier approximate shared-center interpretation.",
+  "required_bricks": 360,
+  "layers": 10,
+  "bricks_per_layer": [
+    6,
+    6
+  ],
+  "brick_dimensions_studs": [
+    4,
+    2,
+    3
+  ],
+  "pitch_studs_xy": [
+    4,
+    4
+  ],
+  "baseplate_studs": 32,
+  "border_studs": 4,
+  "source_xy_m": [
+    0.45,
+    -0.16
+  ],
+  "layer_origins_studs_xy": [
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "layer_yaws_quarter_turn": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1
+  ],
+  "camera_matching": "approximate; no measured D435i intrinsics or mounting transform",
+  "native_connections_required": true,
+  "confirmed_facts": {
+    "layers": 10,
+    "bricks_per_layer": [
+      6,
+      6
+    ],
+    "two_stud_gap_between_parallel_rows": true,
+    "alternating_90_degrees": true,
+    "user_previously_confirmed_shared_layer_center": true,
+    "exact_shared_layer_center": false,
+    "center_update": "Direct photo-supported stagger replaces the earlier rough shared-center answer."
+  },
+  "reported_contact_pattern": {
+    "corner_studs": 1,
+    "edge_studs": 2,
+    "interior_studs": 4,
+    "unit": "total engaged studs described locally by user; actual model histogram recorded above"
+  },
+  "expected_native_connections": 1125,
+  "contact_geometry": {
+    "adjacent_layer_patch_count": 121,
+    "studs_per_patch": 1,
+    "total_contact_studs_per_brick_histogram": {
+      "1": 1,
+      "2": 10,
+      "4": 25
+    },
+    "note": "Histogram per adjacent-layer pair; no universal all-four-corners claim. Each stud crossing creates one native connection."
+  },
+  "evidence": {
+    "image": "resources/setup_images/contact_corner_20261024.jpg",
+    "sha256": "15bd0bfd8fc9793d2e1fd825181982e30f6898ffef43a710d3b259ed1f38ca4f",
+    "visible_phase": "Horizontal upper starts one stud to the right of the perpendicular lower strip; seams bisect lower stud columns.",
+    "limit": "Close-up supports local repeating phase; colors, dimensions of table, camera calibration and full hidden-layer inventory are not measured by this photograph."
+  }
+}

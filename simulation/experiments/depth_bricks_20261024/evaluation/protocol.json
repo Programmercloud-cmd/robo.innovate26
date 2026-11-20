@@ -1,0 +1,45 @@
+{
+  "schema": "depth-assisted-brick-fixed-evaluation-v1",
+  "status": "agreed_before_detection_outputs",
+  "source_render_job": 1681,
+  "truth_sha256": {
+    "manifest.json": "6c4fcb0b5f3398c812c774e535a765177fbd5cfe8d0b68fa1a4b3f710beb3e70",
+    "annotations.json": "8bfe537c72a40fe9073b0add930dd3b98879371b10c502e80d488dd76a22ae81",
+    "cameras.json": "5d8a452f00a054a77cc3772a2cd86b597b2316ea67bbd8bc7b641bbd31cc4815",
+    "frozen_physics_state.npy": "da201b5d302e4181a3350298a449ab4c610e0de3665e07670ff914e194cee2a9"
+  },
+  "base_evaluation_sha256": "5df88102f12dd004414b6931a0209518484a64c09e4a6927536d7d8b84e69207",
+  "views": [
+    "top",
+    "near_top_x",
+    "near_top_y",
+    "oblique_front",
+    "oblique_side"
+  ],
+  "conditions": [
+    "real",
+    "invalid",
+    "flat_plane"
+  ],
+  "record_path": "<condition>/<view>/detections.json",
+  "reference_counts": {
+    "top_faces_per_view": 30,
+    "top_faces_total": 150,
+    "depth_sample_visible_lower_footprints": 212
+  },
+  "reference_limit": "Layer9full-imagefaceenvelopes with>=6/8depth-testedstudsamples. Lowerreferences have>=1/8samples andwholefaceprojections,notpixel-exact visible masks or physicalaccessibility. Actual300rootstates provideXY/yaw onlyaftermatching.",
+  "matching": "Byte-identical historical score_boxes: topface-envelope IoU>=.50 maximumcardinalitythenIoU; multi-facecover>=.50andcenters mergeineligible; unmatchedduplicate,lowerfootprintcenter,ambiguity,unresolved,outside precedenceunchanged. EvaluationROI=envelopeall300projectedfaces,neverperceptioninput.",
+  "stages": "All rawdepth/ridge-derived candidate slots scored separately fromdecision=present subset. Rawcandidatecounts and geometricmatches arehypothesiscoverage,notconfirmeddetection. Present/uncertain/no_match amongrawmatches separatefrompresent-only assignments,whichcanhaveownershipdifferences. No missingdecision/no successfulabsenceclaim.",
+  "inplane_errors": "Ongeometricmatches only, comparecenter_world_xy_m andyaw_world_rad toactualGTrootXY/yaw; yawmod180. N/median/p90/max perstage. Shareddepthsurfaceplane/calibration/ridgeaxis assumptions explicit; noZ/free6Dpose/independentperbrickorientationaccuracyclaim. Unmatchedreferences/invalidposeN remainvisible.",
+  "controls": "Fiveinvaliddepth andfiveflat-plane sensor/no-ridgecontrols. Report rawhypothesis/presentclaim counts; anypresentcontrolclaim isfalse-support,notphysicalabsenceclassification. Do notscoreGTrecall orpositionaccuracy oncontrols.",
+  "context_baseline": {
+    "job_id": 1683,
+    "evaluation_sha256": "154926bcb95a8baf8abce897f3cf1e92072ea7e70d2323c3669bb9957102cda4",
+    "nominal_selected_top": 0,
+    "top_targets": 150,
+    "note": "SamefivecorrectedsyntheticRGBviews; methodinputs differ becausedepthnowauthorized. Priorreal-photochain35/166 results have differentdata/domain andmustnotenterdirectcomparisontable."
+  },
+  "inputs": "OriginaldepthandRGB,configurednominalcalibration/XYROI,frozenupstreamdepthdirection/Evidencecode andfixedglobalparams. No stageposes,GTlabels,referencebrickcount/locations,actualcamera truth or manual image registration inperception. Count/phasehypotheses data-derived;2x4physicalsizeprior disclosed.",
+  "limits": "Sameonefullyoccupiedstatic300brickscene in5correlatedviews; no physicalmissingcases,independent-stackgeneralization,D435icalibration,gripperaccessibility,heldbricktransform,insertion orhardwarevalidation.",
+  "execution": "OnefrozendefaultPueue batchforprocessing+independent scoring. No additionalmodel,render,training,dependency/scheduler changes or result-driventuning."
+}

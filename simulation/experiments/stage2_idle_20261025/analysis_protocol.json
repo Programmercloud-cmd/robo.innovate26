@@ -1,0 +1,46 @@
+{
+  "schema": "bounded-native-dump-analysis-v3-coupled-epsilon",
+  "watched_connections": [
+    836,
+    837
+  ],
+  "comparison_connections": [
+    832,
+    833,
+    922,
+    923
+  ],
+  "part_of_interest": 273,
+  "matrix_loader_source": ".deps/bricksim/utils/matrix_loader.py",
+  "matrix_loader_sha256": "c745fb09248ba70882ce31d7e1534a523630ad4be00b7c0ce32f150c9fbd68bf",
+  "solver_rerun": false,
+  "parameter_changes": false,
+  "gravity_reference_world_m_s2": [
+    0,
+    0,
+    -9.81
+  ],
+  "gravity_reference_status": "Nominal configured Isaac default reference; not independently separated in native J/H",
+  "scope": "Serialized solver info/residuals/utilization/capacity terms/mass/inertia/impulse observations only; root cause may remain unresolved",
+  "extension_reason": "Independent review found stage2 per-clutch nonnegative relaxation intentionally permits stage3 Hx<=1+Vv; need distinguish permitted relaxation from a numerical feasibility gap before considering any fix",
+  "only_added_offline_fields": [
+    "raw and clamped v[k] from rlx_sol tail(num_clutches)",
+    "H*opt_sol-1 and V*max(v_raw,0)",
+    "stage3 signed/positive relaxed constraint gaps",
+    "stage2 relaxed constraint gap and nonnegative-v violation",
+    "serialized primal residuals and source-configured tolerance reference"
+  ],
+  "no_additional_physics_or_solver_execution": true,
+  "executed_step_bounds": [
+    1,
+    8
+  ],
+  "dump_count_policy": "Exactly diagnostic_report.steps_executed dumps, trace0..N, within1..8; legacy7step inputs retained",
+  "supported_requested_numerical_epsilons": [
+    0.0001,
+    1e-06
+  ],
+  "numerical_epsilon_source": "diagnostic_report.numerical_epsilon.effective_requested; absent legacy field assumes source default1e-4 with explicit provenance caveat",
+  "numerical_coupling": "Epsilon changes eps_abs/eps_rel AND G lower bound AND stage2 1-epsilon capacity margin; not a pure termination test",
+  "extension_v3": "Offline interpretation/count adaptation only; same frozen matrix reader and unchanged previous outputs"
+}

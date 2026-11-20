@@ -1,0 +1,114 @@
+{
+  "schema": "stage2-final-round3-pgs-audit-v1",
+  "status": "frozen_before_PGS_data",
+  "round": 3,
+  "maximum_rounds": 3,
+  "change": "One solver-family configuration TGS to PGS; no native build or physical-parameter modification.",
+  "budget": {
+    "phases": [
+      "A",
+      "B",
+      "C"
+    ],
+    "order": "A independent audit pass required before B; B independent audit pass required before C. Any failure stops.",
+    "maximum_physics_steps": 248,
+    "maximum_wall_time_s_per_phase": 180,
+    "maximum_total_wall_time_s": 540,
+    "retry": false,
+    "sweep": false
+  },
+  "A": {
+    "steps": 8,
+    "maximum_J_minus_gravity_norm_Ns": 1e-08,
+    "maximum_H_to_same_step_frozen_TGS_ratio": 0.01,
+    "maximum_position_drift_m": 0.002,
+    "maximum_orientation_drift_rad": 0.03490658503988659,
+    "baseline_audit_job": 1744,
+    "baseline_capture_job": 1743,
+    "baseline_audit_file": "runs/20261025T022352.760544Z-stage2-eccentric-evaluation/output/evaluation.json",
+    "baseline_audit_sha256": "5445d7984bacc684e6ea70ccb52cefd2f5bc7bf0bbff1f4b489a335a864aa298",
+    "interpretation": "Operational numerical writeback suppression screen only, not physical calibration, overload proof or full300 stability. All8alignedvalidrecords required; angular velocity and delta angular momentum descriptive, not extra post-hoc gates.",
+    "baseline_initial_states_sha256": "0d4552a972897d2f963bdda1ecdbfcbfca016bb7752a735bb12fbd87f9efbbbd"
+  },
+  "B": {
+    "steps": 120,
+    "source_bricks": 300,
+    "source_parts": 301,
+    "native_connections": 930
+  },
+  "C": {
+    "steps": 120,
+    "source_bricks": 299,
+    "source_parts": 300,
+    "native_connections": 926,
+    "reserved_case": "H_mix",
+    "removed_source_ids": [
+      "brick_9_2_2"
+    ],
+    "meaning": "New reserved stability condition; not a replacement for the required full300 benchmark. Same H image state previously exists, but no dynamic stability feedback used to select PGS."
+  },
+  "common": {
+    "solver_type": "PGS",
+    "source_position_iterations": 32,
+    "source_velocity_iterations": 4,
+    "dt_s": 0.008333333333333333,
+    "OSQP_EPSILON": "1e-4",
+    "native_core_sha256": "4e62dc33ee02270993c20e3cfd658e6d6ef0ea9780e53ad15cedde12f41b2455",
+    "maximum_position_drift_m": 0.002,
+    "maximum_orientation_drift_rad": 0.03490658503988659,
+    "maximum_final_linear_speed_m_s": 0.02,
+    "maximum_final_angular_speed_rad_s": 0.2,
+    "simulation_clock_tolerance_s": 1e-07,
+    "initial_position_tolerance_m": 2e-06,
+    "initial_orientation_tolerance_rad": 0.0001,
+    "initial_velocity_tolerance": 1e-05,
+    "joint_position_tolerance": 1e-06,
+    "joint_velocity_tolerance": 1e-06,
+    "physical_threshold_policy": "All public native physical fields equal frozen baseline; ignore debug_dump reporting only. Automatic assembly disabled, breakage enabled.",
+    "native_breakage": {
+      "enabled": true,
+      "contact_regularization": 0.1,
+      "clutch_axial_compliance": 1.0,
+      "clutch_radial_compliance": 1.0,
+      "clutch_tangential_compliance": 1.0,
+      "friction_coefficient": 0.2,
+      "preloaded_force": 3.5,
+      "slack_fraction_warn": 0.1,
+      "slack_fraction_b_floor": 1e-09,
+      "breakage_cooldown_time": 0.05
+    },
+    "native_assembly": {
+      "enabled": false,
+      "required_force": 1.0
+    },
+    "joint_positions": [
+      0,
+      -0.4,
+      0,
+      -2.5,
+      0,
+      2.1,
+      0.7854,
+      0.04,
+      0.04
+    ]
+  },
+  "idle_reference": {
+    "job": 1725,
+    "snapshot": "runs/20261025T002411.589299Z-stage2-full300-idle/output",
+    "initial_states_sha256": "b3c3e9d002236fd2af1101563e23dda577c92f2f21f8e04d2047b9c348e84cd9",
+    "policy": "Initial actual states and source IDs match baseline for B, or baseline subset excluding C removed ID. No poststep state restoration. Native graph identities/invariants checked each step by original idle capture."
+  },
+  "unknowns": [
+    "Executed effective island solver iteration counters not exposed",
+    "Installed exact binary lineage relative to upstream source uncertain; behavior/provenance comparison required",
+    "A numerical suppression is not independently calibrated contact/force correctness",
+    "Passing B/C is bounded idle stability only, not fingertip collision or manipulation validation"
+  ],
+  "promotion": "Only audited phase proceed gates. No extraction, insertion or repeated-sort success claimed.",
+  "copied_eccentric_helpers_sha256": {
+    "matrix_loader.py": "c745fb09248ba70882ce31d7e1534a523630ad4be00b7c0ce32f150c9fbd68bf",
+    "protocol.json": "3e0dd59309cdf9d7c667aa7764cc83c9c4dae1dccd871a9971fd00863217366f",
+    "evaluate.py": "7d4d8a53a6a1178cc59e85e6fdfd1424ede51c634781c82b39d429ce7378c208"
+  }
+}

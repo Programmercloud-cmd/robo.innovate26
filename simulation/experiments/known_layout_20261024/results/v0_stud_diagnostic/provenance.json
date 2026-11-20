@@ -1,0 +1,7 @@
+{
+  "pueue_job_id": 1668,
+  "snapshot": "runs/20261023T234904.706461Z-geometry-v0-stud-diagnostic",
+  "source_commit": "94cd78186593a93c55872e4f0d3edef310d01a15",
+  "manifest_sha256": "951368163aaccd12938cdb5f2c79455a1cea2009fa5d3951d6e7208fb1aa3dbf",
+  "scope": "32 evaluation-only DEVELOPMENT manual stud points, no D data and no perception changes"
+}

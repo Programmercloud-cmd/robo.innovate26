@@ -1,0 +1,115 @@
+{
+  "scope": "final workcell reconstruction; originals preserved unchanged",
+  "photos": [
+    {
+      "id": 1,
+      "path": "resources/setup_images/final_workcell_20261024/photo_01.jpg",
+      "original_name": "1-Photo-1.jpg",
+      "sha256": "9ea3617a14a2f492dabf2a561f042cc44e49b7e975b5a3546f1d362d083c51f4",
+      "bytes": 1747672,
+      "user_reported_zoom": "1x"
+    },
+    {
+      "id": 2,
+      "path": "resources/setup_images/final_workcell_20261024/photo_02.jpg",
+      "original_name": "2-Photo-2.jpg",
+      "sha256": "29eff2bb4386a9ba72e2a5b24976d3edd2e8ce2c3785baad6293689ac6ae33b2",
+      "bytes": 1852883,
+      "user_reported_zoom": "1x"
+    },
+    {
+      "id": 3,
+      "path": "resources/setup_images/final_workcell_20261024/photo_03.jpg",
+      "original_name": "3-Photo-3.jpg",
+      "sha256": "fbf1d380108e03a336ade4f51a58a8352a260fedb5820a11867551fdd837b082",
+      "bytes": 1845765,
+      "user_reported_zoom": "1x"
+    },
+    {
+      "id": 4,
+      "path": "resources/setup_images/final_workcell_20261024/photo_04.jpg",
+      "original_name": "4-Photo-4.jpg",
+      "sha256": "5dd16b136fc94b86392697469347456a0c1301ea9e1207220224a7baa0803e65",
+      "bytes": 2139851,
+      "user_reported_zoom": "1x"
+    },
+    {
+      "id": 5,
+      "path": "resources/setup_images/final_workcell_20261024/photo_05.jpg",
+      "original_name": "5-Photo-5.jpg",
+      "sha256": "3698d00fd88d8ef9de604b998c3f6d8ae7db4a5a22a819ef0d668e79cd3c968c",
+      "bytes": 2001388,
+      "user_reported_zoom": "1x"
+    },
+    {
+      "id": 6,
+      "path": "resources/setup_images/final_workcell_20261024/photo_06.jpg",
+      "original_name": "6-Photo-6.jpg",
+      "sha256": "6c1c489cd686d3b5a81dfa3996a2ec295a76abfe61377758580ac2bd95d9c426",
+      "bytes": 2484950,
+      "user_reported_zoom": "0.5x"
+    },
+    {
+      "id": 7,
+      "path": "resources/setup_images/final_workcell_20261024/photo_07.jpg",
+      "original_name": "7-Photo-7.jpg",
+      "sha256": "8d9d72b736250afad29b652a6553c2c2b5f908b78ae6ef0ce1fca4e915bf6b6b",
+      "bytes": 2683773,
+      "user_reported_zoom": "0.5x"
+    },
+    {
+      "id": 8,
+      "path": "resources/setup_images/final_workcell_20261024/photo_08.jpg",
+      "original_name": "8-Photo-8.jpg",
+      "sha256": "7c8a6007285bc292b56ed2f91a5eefb8d16dc6f6554ac44a37f1f45a6c2baaec",
+      "bytes": 1785985,
+      "user_reported_zoom": "1x"
+    },
+    {
+      "id": 9,
+      "path": "resources/setup_images/final_workcell_20261024/photo_09.jpg",
+      "original_name": "9-Photo-9.jpg",
+      "sha256": "d6bce867c2e80a68337abfc352edc0b2e88083421b2828824ee5881149bfe64d",
+      "bytes": 225197,
+      "user_reported_zoom": "1x"
+    },
+    {
+      "id": 10,
+      "path": "resources/setup_images/final_workcell_20261024/photo_10.jpg",
+      "original_name": "10-Photo-10.jpg",
+      "sha256": "c2931578eb2d691569c48ba28592a9ce639dce1da3365bc70f5cdb6670e1dcb9",
+      "bytes": 1612089,
+      "user_reported_zoom": "1x"
+    }
+  ],
+  "capture_device_user_report": {
+    "model": "Apple iPhone 12",
+    "zoom": "Original photos6and7 at0.5x; originalphotos1-5,8-10 at1x",
+    "source": "User identified two reference images; exact-byte original matches recorded where available",
+    "intrinsics_calibrated": false,
+    "note": "Embedded focal/device EXIF absent; mixed supplied resolutions. This records lens groups, not calibrated intrinsics or wristD435i calibration."
+  },
+  "clarifications": [
+    {
+      "path": "resources/setup_images/final_workcell_20261024/clarifications/clarification_01.jpg",
+      "sha256": "8d9d72b736250afad29b652a6553c2c2b5f908b78ae6ef0ce1fca4e915bf6b6b",
+      "bytes": 2683773,
+      "matches_original_photo_id": 7,
+      "role": "user_0.5x_reference"
+    },
+    {
+      "path": "resources/setup_images/final_workcell_20261024/clarifications/clarification_02.jpg",
+      "sha256": "6c1c489cd686d3b5a81dfa3996a2ec295a76abfe61377758580ac2bd95d9c426",
+      "bytes": 2484950,
+      "matches_original_photo_id": 6,
+      "role": "user_0.5x_reference"
+    },
+    {
+      "path": "resources/setup_images/final_workcell_20261024/clarifications/clarification_03.jpg",
+      "sha256": "5f4404bcea36fd92a55b007f19a1105f58a60c849273867dbe375186f0c3c352",
+      "bytes": 144464,
+      "matches_original_photo_id": null,
+      "role": "charuco_specification_screenshot"
+    }
+  ]
+}

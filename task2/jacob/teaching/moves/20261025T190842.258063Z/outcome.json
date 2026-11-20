@@ -1,0 +1,34 @@
+{
+  "completed": false,
+  "requested_point": 10,
+  "trajectory": "continuous_arc",
+  "returncode": 1,
+  "saved_catalog_unchanged": true,
+  "grasp_offset_executed": false,
+  "execution_log": "/home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T190842.258063Z/execution.log",
+  "after_stop": {
+    "xyz_m": [
+      0.4731604754924774,
+      -0.3329063951969147,
+      0.033021435141563416
+    ],
+    "remaining_delta_xyz_mm": [
+      0.22330880165100098,
+      -0.2333223819732666,
+      -2.855934202671051
+    ],
+    "remaining_position_error_mm": 2.8741374923289276,
+    "mode": "Idle",
+    "errors": []
+  },
+  "prior_attempt": "teaching/moves/20261025T190625.430028Z/outcome.json",
+  "timing_stop": "7 ms callback gap exceeded 5 ms active-motion guard; Performance profile held during the attempt",
+  "cpu_governor_observed": "schedutil",
+  "required_host_step": "sudo cpupower frequency-set -g performance",
+  "host_step_reference": "https://frankarobotics.github.io/docs/troubleshooting.html#disabling-cpu-frequency-scaling",
+  "administrator_access": "sudo -n -l reported a password is required; no CPU governor or IRQ changes made",
+  "recorded_utc": "2026-10-25T19:09:35.111249+00:00",
+  "launcher_returncode": 0,
+  "controller_pass_verified": false,
+  "status_note": "Performance launcher returned zero despite child failure; completion is determined from verified controller PASS and FINAL_STATE records."
+}

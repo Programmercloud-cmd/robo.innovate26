@@ -1,0 +1,168 @@
+{
+  "schema": "eccentric-native-diagnostic-results-v1",
+  "capture": {
+    "pueue_job_id": 1743,
+    "snapshot": "runs/20261025T022336.537932Z-stage2-eccentric-diagnostic",
+    "source_commit": "c9f90e2",
+    "diagnostic_completed": true,
+    "measured_steps": 8,
+    "first_failure": null,
+    "native_actors_parts_links": [
+      2,
+      2,
+      1
+    ],
+    "maximum_position_drift_m": 0.0,
+    "maximum_orientation_drift_rad": 0.0,
+    "utilization_after_step_range": [
+      0.08635063205765342,
+      0.086366503402094
+    ],
+    "cleanup": {
+      "diagnostic_completed": true,
+      "idle_validated": false,
+      "full300_validated": false,
+      "child_returncode": 0,
+      "cleanup_result": "shutdown_stall_after_observation",
+      "wall_seconds": 12.969901411008323
+    }
+  },
+  "independent_audit": {
+    "pueue_job_id": 1744,
+    "snapshot": "runs/20261025T022352.760544Z-stage2-eccentric-evaluation",
+    "passed_integrity_checks": 36,
+    "total_integrity_checks": 36,
+    "all_checks_passed": true,
+    "matrix_reader_sha256": "c745fb09248ba70882ce31d7e1534a523630ad4be00b7c0ce32f150c9fbd68bf",
+    "evaluator_protocol_sha256": "3e0dd59309cdf9d7c667aa7764cc83c9c4dae1dccd871a9971fd00863217366f"
+  },
+  "observations": {
+    "same_reported_loads_all_8_steps": true,
+    "upper_native_mass_kg": 0.00216,
+    "native_J_world_Ns": [
+      0.0,
+      0.0,
+      -0.00017658001161180437
+    ],
+    "gravity_reference_Ns": [
+      0.0,
+      0.0,
+      -0.00017658000236934018
+    ],
+    "J_minus_gravity_norm_Ns": 9.24246418873391e-12,
+    "J_residual_over_gravity_scale": 5.234151129640426e-08,
+    "native_H_world_Nms": [
+      5.65056052437285e-06,
+      5.65056052437285e-06,
+      -2.0837010502455788e-19
+    ],
+    "native_H_norm_Nms": 7.991099328578112e-06,
+    "H_over_characteristic_gravity_moment_scale": 2.529822328957583,
+    "conditional_raw_delta_angular_momentum_all_steps_world_Nms": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "angular_velocity_observation": "Native input/capture angular velocity remains zero; raw angular-momentum change is zero. Damping coefficient is nonzero (.05), but no angular velocity is observed.",
+    "linear_damping_authored": 0.0,
+    "angular_damping_authored": 0.05000000074505806,
+    "COM_alignment_distance_pre_post_m": [
+      9.313225746154785e-10,
+      9.313225746154785e-10
+    ],
+    "actual_native_COM_world_m": [
+      -0.01600000075995922,
+      0.01600000075995922,
+      0.014400001615285873
+    ],
+    "native_common_interface_P_world_m": [
+      -0.012,
+      0.004,
+      0.009600000000000001
+    ],
+    "P_minus_COM_approx_m": [
+      0.004,
+      -0.012,
+      -0.0048
+    ],
+    "lever_arm_caveat": "H component / |Jz| is approximately32mm, twice the16mm world COM/root XY offset; this is NOT twice the actual interface-to-COM lever arm. Actual interface P differs from both world origin and upper COM. A numerical origin-dependent relation is a source-check signature, not proof of a bookkeeping defect.",
+    "raw_weld_force": "Unavailable; native J/H are inferred after internal weld subtraction, not independent weld-force measurements."
+  },
+  "interpretation": {
+    "established": "Eight-step eccentric2actor fixture retains native link and reproducibly reports gravity-consistent J plus nonzero inferred external H despite zero angular velocity and raw angular-momentum change. SI residuals and dimensional ratios are descriptive.",
+    "not_established": [
+      "Physical overload or a specific lever-arm bug",
+      "Independent raw weld-reaction magnitude/sign or exact native callback event order",
+      "Physical correctness of every native model term",
+      "Stability of full300 redundant lattice or extraction/insertion/sorting"
+    ],
+    "authored_solver_counts": "32position/4velocity configuration; executed effective island counts unmeasured",
+    "idle_validated": false,
+    "full300_validated": false,
+    "manipulation_validated": false,
+    "promotion": "None; full300 idle gate remains failed."
+  },
+  "execution_history": {
+    "failed_capture_job": 1742,
+    "failed_capture_snapshot": "runs/20261025T022049.810033Z-stage2-eccentric-diagnostic",
+    "measured_steps": 0,
+    "failure": "Metadata JSON export rejected nonfinite SDK USD scalar before measured step0; physical arrays were not processed.",
+    "unsubmitted_blocked_audit": "runs/20261025T022119.745139Z-stage2-eccentric-evaluation",
+    "adapter_repair": "Tagged nonfinite USD scalar metadata only; state/mass/inertia/COM remain strict. One final same-case capture1743; no third launch or physics retry authorized."
+  },
+  "unknowns": [
+    "Independent raw weld force/couple unavailable",
+    "Damping and finite-step terms are recorded but not independently subtracted",
+    "COM distance is an alignment diagnostic, not proof of native callback event order",
+    "Break-step before/after event order must be kept distinct"
+  ],
+  "sha256": {
+    "runs/20261025T022336.537932Z-stage2-eccentric-diagnostic/manifest.json": "c18419a42965405a0335a045b80bf23ba2eb5cc0b573c5fb3f2b011b9dc4e09e",
+    "runs/20261025T022336.537932Z-stage2-eccentric-diagnostic/output/fixture_metadata.json": "541489a518a5dfe596be9467df696ea3192b7dd5ad456cd839834a5a27fe97de",
+    "runs/20261025T022336.537932Z-stage2-eccentric-diagnostic/output/trace.jsonl": "cc76a481dc1b745b74868340c88ab5a01dd77d045c8640a65d1831375fc05af7",
+    "runs/20261025T022336.537932Z-stage2-eccentric-diagnostic/output/diagnostic_report.json": "2d933f5e1493e318227a03d138382a4c8440d1fd6148ff3a18c5c84abd8877fc",
+    "runs/20261025T022336.537932Z-stage2-eccentric-diagnostic/output/diagnostic_complete.json": "b90aac13df214a11a3c6a1dc0774e531d5a81d566fec7bc12e51a911cb8348c7",
+    "runs/20261025T022336.537932Z-stage2-eccentric-diagnostic/output/supervisor.json": "b40603ec8e94e97f4d23280c7855fc317f61775da7f9936ef6edb998d9447a80",
+    "runs/20261025T022352.760544Z-stage2-eccentric-evaluation/manifest.json": "258b5cc405f1189345a79be30747457b9201be1bb91fcea2f1d3405113b7d563",
+    "runs/20261025T022352.760544Z-stage2-eccentric-evaluation/output/evaluation.json": "5445d7984bacc684e6ea70ccb52cefd2f5bc7bf0bbff1f4b489a335a864aa298",
+    "runs/20261025T022352.760544Z-stage2-eccentric-evaluation/output/REPORT.md": "d57284ec50fb3254ff11224bb50783acfb40399e3cc38946ed387aaa260b6b32",
+    "runs/20261025T022352.760544Z-stage2-eccentric-evaluation/output/run_complete.json": "13a8a3f12385d44cf61701d6773e56a2b4cfed7d8dabc161dc72c6b0f88689e5"
+  }
+}

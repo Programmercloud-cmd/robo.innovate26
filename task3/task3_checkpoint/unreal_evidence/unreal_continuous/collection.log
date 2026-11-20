@@ -1,0 +1,9 @@
+{
+  "verified": true,
+  "framesChecked": 11867,
+  "maximumPoseErrorMetres": 1.0302869668521453e-12,
+  "playback": "continuous smooth ramps up to 40x",
+  "cameraAuditOnly": false,
+  "complete": true,
+  "limitation": "Numerical agreement with synthetic reference; not physical validation."
+}

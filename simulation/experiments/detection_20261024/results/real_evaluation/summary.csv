@@ -1,0 +1,3 @@
+method,images,top_refs,matched,missed,merges,duplicates,lower_fragment_targets,other_unmatched,ambiguous_ignored,outside_roi,angle_n,angle_median_deg,stud_refs,crop_stud_matched,crop_stud_median_px,full_stud_matched,full_stud_median_px
+studwise_january,6,166,1,165,1,0,0,0,0,2,1,0.33364623300876417,48,4,4.585050903840671,4,6.440986930653876
+studwise_march,6,166,0,166,8,0,0,0,0,4,0,None,48,0,None,0,None

@@ -1,0 +1,118 @@
+{
+  "schema": "R3-supplied-proxy-independent-audit-v1",
+  "round": 3,
+  "maximum_contact_rounds": 3,
+  "phases": "G independent fidelity pass before D; D independent contact pass before reserved R; any failure stops, no retry/coarsening/alternate cook",
+  "configuration": {
+    "schema": "R3-one-supplied-tip-proxy-v1",
+    "improvement_round": 3,
+    "last_contact_round": true,
+    "stl": "experiments/final_workcell_20261024/end_effector/assets/franka_research3_gripper.stl",
+    "stl_sha256": "30c3e47142dce9ba82ec46edf42f1dc2825d620d23bad0a95ce1e2de902b752d",
+    "stl_unit_m": 0.001,
+    "registration": {
+      "left": {
+        "rotation_z_deg": 90.0,
+        "translation_m": [
+          -0.0155,
+          0.01090669,
+          0.026299879999999998
+        ]
+      },
+      "right": {
+        "rotation_z_deg": -90.0,
+        "translation_m": [
+          0.0155,
+          -0.01090669,
+          0.026299879999999998
+        ]
+      }
+    },
+    "collision": {
+      "approximation": "convexDecomposition",
+      "maxConvexHulls": 32,
+      "hullVertexLimit": 64,
+      "voxelResolution": 1000000,
+      "errorPercentage": 1.0,
+      "minThickness": 0.0001,
+      "shrinkWrap": true
+    },
+    "parameter_units": {
+      "minThickness": "meters",
+      "errorPercentage": "percent,1.0=1%",
+      "voxelResolution": "voxels"
+    },
+    "frame": "finger_local_m, baked registered vertices, identity collider transform",
+    "canonical_hash": {
+      "vertex_quantum_m": 1e-07,
+      "unit_plane_normal_quantum": 1e-06,
+      "plane_offset_quantum_m": 1e-07,
+      "rule": "Sort unique quantized vertices and normalized outward planes within each hull, then sort hulls. D/R require exact canonical hash equality; no fallback."
+    },
+    "fidelity": {
+      "surface_sample_spacing_m": 0.00025,
+      "maximum_stl_samples_per_tip": 200000,
+      "maximum_hull_samples_per_tip": 200000,
+      "maximum_bidirectional_external_boundary_sample_distance_m": 0.00025,
+      "maximum_outer_bound_error_m": 0.0001,
+      "membership_epsilon_m": 1e-07,
+      "external_probe_offset_m": 1e-06,
+      "contact_ray_extra_m": 1e-06,
+      "witness_reference_clearance_m": 0.00025,
+      "bore_center_cad_yz_mm": [
+        -15.5,
+        18.600005
+      ],
+      "bore_x_cad_mm": [
+        -10.5,
+        -8.0,
+        -5.0
+      ],
+      "bore_witness_radius_mm": 1.0,
+      "bore_witnesses_per_x": 9,
+      "interpretation": "A bounded sampled CAD screen only. Bore purpose and physical mounting remain unverified. Internal hull faces are excluded from surface fidelity.",
+      "inside_solid_rule": "Closed solid: a point is inside a hull when every normalized plane residual is <= +1e-7 m. Union membership means inside any hull.",
+      "contact_outward_rule": "Use documented signed scalar times normal. Pad outward is minus force direction for a finger sensor and plus force direction for a coupon sensor. Never fit or try both ray directions."
+    },
+    "budgets": {
+      "capture_plus_audit_per_phase_s": 180.0,
+      "cook_query_total_s": 90.0,
+      "maximum_all_phase_active_s": 540.0,
+      "maximum_D_steps": 360,
+      "maximum_R_steps": 360,
+      "retry": false,
+      "coarsen_on_budget": false
+    },
+    "reference": "proxy_reference.json",
+    "reference_sha256": "cb46c2fab2833fa267a45980fa7e2adf27e0f8626edfd9f514ff1c7d6b7dddc6",
+    "phases": {
+      "G": "Use the same full initializer. Export cooked data before play; verify 300 bricks/930 native links and robot properties after initialization. Coupon stays parked; zero measured contact steps. Independent fidelity audit required.",
+      "D": "Only after independent G audit passes. Re-query the actual collider data and match the approved canonical hashes before closing. Keep the exact B0 coupon center.",
+      "R": "Only after independent D audit passes. Use the same proxy and approved G hashes; offset the coupon by +2 mm along hand X only. No tuning after reserved feedback."
+    },
+    "schema_float_readback_atol": 1e-10,
+    "visual_registration_match_m": 1e-08
+  },
+  "base_contact_protocol_sha256": "d88ab951b3e674759ecfbaa453813552c856628fb76f83ad6786df85ab23ad91",
+  "baseline_metadata_sha256": "a86cc9a735b0464b06f4503be5fb30dd895fa9f50a15dd394ef6e01a7ee02fc1",
+  "baseline_geometry_sha256": "40081b54c140ab4cbb67b07e3ab3b077ccb7805ede2521f9f3ab61ce53b7e930",
+  "baseline_source_initial_sha256": "b3c3e9d002236fd2af1101563e23dda577c92f2f21f8e04d2047b9c348e84cd9",
+  "fixed_coupon_center_hand_m": [
+    7.919060315483839e-09,
+    -1.949048195407088e-09,
+    0.10365001863560062
+  ],
+  "reserved_offset_hand_m": [
+    0.002,
+    0,
+    0
+  ],
+  "membership": "Closed solid: inside hull iff max(normalized outward plane residual)<=+1e-7m; inside union ANY, outside union ALL residual maxima>+1e-7m. Same definition for exposure and contact rays.",
+  "sampling": "Triangle barycentric lattice longest-edge spacing<=.25mm. Cap200k generated candidate points per STL/tip and total cooked hulls/tip before filtering/dedup; stop, do not coarsen. Hull polygon outward planes orient1um probes; external iff outward probe outsideALL and inward probe insideANY. cKDTree distances compare sampled clouds, NOT global Hausdorff certification.",
+  "witnesses": "27 fixed canonical CAD witnesses: three frozen X positions, center plus8 circle points at radius1mm inYZ. Require outside closed oriented STL by winding and exact triangle clearance>.25mm, then outside every cooked hull. Transform using frozen visual registration; no witness relocation.",
+  "contact_union": "Require near ANY actual hull surface within abs(separation)+50um, white clearance unchanged, AND outward ray point+(tol+1um)nPAD outsideALL / inward ray insideANY. nPAD is minus signed force-on-finger, plus signed force-on-coupon, transformed to finger frame. Buried internal hull faces cannot qualify.",
+  "state_properties": "Compare actual full robot mass/inertia/COM/actuator arrays and white Cube collider properties to frozen1754 baseline; no automatic inertia recook silently accepted. Source300/301/930 PGS32/4/native physical settings unchanged; G0 measured contact steps with coupon parked.",
+  "budget": "Capture supervisor wall time plus independent audit<=180s each phase; audit receives remaining180-capture seconds, cumulative<=540s, D/R<=360steps each. Queue wait excluded. No fallback if cap/time/SDK query fails.",
+  "claims": "Sampled CAD compatibility and bounded fixture contact only; not physical mounting/cooking global certification, friction calibration, grasp, extraction or repeated sorting.",
+  "capture_protocol_semantic_sha256": "6fec33b28ccbf2a8ffa76e281e2ca7fd52f37ba3a3db743d8813a615753b90c9"
+}

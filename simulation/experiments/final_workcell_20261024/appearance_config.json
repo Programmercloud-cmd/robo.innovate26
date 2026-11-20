@@ -1,0 +1,15 @@
+{
+  "version": "appearance_first_pass",
+  "status": "Heuristic visual-only finishing and lighting; not measured BRDF or sim-to-real validation",
+  "roughness": {
+    "plates": 0.35,
+    "table": 0.55,
+    "black_tape": 0.45,
+    "yellow_tape": 0.3,
+    "paper_placeholder": 0.85,
+    "charuco_pattern": 0.85,
+    "cream_bowl": 0.35
+  },
+  "native_bricks": "Unchanged uint8 sRGB palette converted by native shader to linear; roughness .15 and IOR1.53 retained",
+  "geometry_changes": false
+}

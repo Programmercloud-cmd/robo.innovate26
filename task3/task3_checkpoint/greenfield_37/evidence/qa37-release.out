@@ -1,0 +1,5 @@
+{"ready":true}
+LOAD_SECONDS 10.2070887
+{"complete":true,"rate":8491.305755858988,"views":[{"camera":1,"captured":9786.983287143712,"ready":9787.133287143712,"good":true,"shade":0},{"camera":2,"captured":9788.108287143714,"ready":9788.308287143715,"good":true,"shade":0}]}
+{"clonedCartChecks":28800,"sideBarriers":0,"truckVisibilityChecks":12,"bricks_h":8491.305755858988,"pallets_h":15.163045992605337,"produced":82,"stored":82,"shipped":64}
+{"rateTableRows":7,"caption":"Production, inventory and orders"}

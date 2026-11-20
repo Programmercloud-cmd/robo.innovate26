@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "scope": "Default deterministic commissioning scenario; kinematic support and logical interlocks, not rigid-body or hardware qualification.",
+  "manifestSha": "74a93f84df620df69fc66ba5ce95f8243554bb41fa3d8095fb3ad920b45e4249",
+  "engineSha": "157acac42aadc593b05896ebc09d9eb8382e892e0c654552d8ee0cdd645fb280",
+  "runSha": "aafacff6e73cba4f38bd815b1f0e7eabc240298ddeeaef60c2ba4d321a336284",
+  "seed": 8,
+  "palletsPerStation": 1,
+  "independentCheckGroups": 30,
+  "negativeControls": 4,
+  "summary": {
+    "records": 28872,
+    "bricks": 28800,
+    "layers": 252,
+    "pallets": 18,
+    "resourceZones": 113,
+    "movingTracks": 536233,
+    "routingTracks": 10080,
+    "crossTransfers": 3366,
+    "ledger": {
+      "source": 17200,
+      "shipped": 10080,
+      "removed": 1200,
+      "skip": 217,
+      "upstream": 103
+    }
+  },
+  "existingReplaySha256": "f5cf831107f4909b249f8b073531309746c1604f20755b1167731d55b756df79"
+}

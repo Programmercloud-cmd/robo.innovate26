@@ -1,0 +1,185 @@
+{
+  "sha": "ee3ded6015d4624a1eea76e448c30fbf34ce231d",
+  "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/trees/ee3ded6015d4624a1eea76e448c30fbf34ce231d",
+  "tree": [
+    {
+      "path": "Code",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a3ba76f9a0a67953979e65ccaef8895af4df9990",
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/trees/a3ba76f9a0a67953979e65ccaef8895af4df9990"
+    },
+    {
+      "path": "Code/Object_Detection",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3af214f839410926d4372c49b05e8e9340de3424",
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/trees/3af214f839410926d4372c49b05e8e9340de3424"
+    },
+    {
+      "path": "Code/Object_Detection/Tiny_YOLO_v3.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "667d59c5037094b002f32b88d6798d8550e6d218",
+      "size": 2601765,
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/blobs/667d59c5037094b002f32b88d6798d8550e6d218"
+    },
+    {
+      "path": "Code/Object_Detection/YOLO_v3.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0e0ef056ad2547935b076955fe72e89e8666252f",
+      "size": 1560427,
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/blobs/0e0ef056ad2547935b076955fe72e89e8666252f"
+    },
+    {
+      "path": "Code/Sub_Task_Classification",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cfb16a80d7b2a6c550dd25813c5bc74cfe8b3d5a",
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/trees/cfb16a80d7b2a6c550dd25813c5bc74cfe8b3d5a"
+    },
+    {
+      "path": "Code/Sub_Task_Classification/Lego.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d9d08c332a89990492f9b0b4a7ff97fb7b4063c3",
+      "size": 6132632,
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/blobs/d9d08c332a89990492f9b0b4a7ff97fb7b4063c3"
+    },
+    {
+      "path": "Code/Sub_Task_Classification/Transfer_Learning",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4b19cf8f8b414a969611bf97b6558949b06dd1a9",
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/trees/4b19cf8f8b414a969611bf97b6558949b06dd1a9"
+    },
+    {
+      "path": "Code/Sub_Task_Classification/Transfer_Learning/classes.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "432d11d349d9658f699ffa0a203261b2bd92d9d8",
+      "size": 889,
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/blobs/432d11d349d9658f699ffa0a203261b2bd92d9d8"
+    },
+    {
+      "path": "Code/Sub_Task_Classification/Transfer_Learning/config.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "12cd93c95a5210ad1fa3900a70e028031ed364a3",
+      "size": 183,
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/blobs/12cd93c95a5210ad1fa3900a70e028031ed364a3"
+    },
+    {
+      "path": "Code/Sub_Task_Classification/Transfer_Learning/run_classifier.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c2cbc85e89adb6e9cef9616fa38eb75fea3f2b60",
+      "size": 5106,
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/blobs/c2cbc85e89adb6e9cef9616fa38eb75fea3f2b60"
+    },
+    {
+      "path": "Code/Sub_Task_Classification/Transfer_Learning/utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "beee3364706831bf645d3233e1412d2ddddc4709",
+      "size": 4043,
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/blobs/beee3364706831bf645d3233e1412d2ddddc4709"
+    },
+    {
+      "path": "Lego_Project_Report.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "52d96d675e7d1dc8cdb9129374e2e1d86bff694b",
+      "size": 4846679,
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/blobs/52d96d675e7d1dc8cdb9129374e2e1d86bff694b"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d71db832a4fbebe749afa7b6c07fd15f2b8180ef",
+      "size": 2396,
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/blobs/d71db832a4fbebe749afa7b6c07fd15f2b8180ef"
+    },
+    {
+      "path": "Results",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b51c96277b3b25d76d4f6177b3bf9112af09fd50",
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/trees/b51c96277b3b25d76d4f6177b3bf9112af09fd50"
+    },
+    {
+      "path": "Results/tiny_1.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba9c4eb13c1123f10ebb540efe15d6d4c9b5f875",
+      "size": 379736,
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/blobs/ba9c4eb13c1123f10ebb540efe15d6d4c9b5f875"
+    },
+    {
+      "path": "Results/tiny_2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1191168b3cf1ca12c7d866f623284fe75e0e71b8",
+      "size": 452929,
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/blobs/1191168b3cf1ca12c7d866f623284fe75e0e71b8"
+    },
+    {
+      "path": "Results/training_accuracy.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "39e562d23531302dd76a26a03060d3b06ce229c2",
+      "size": 309600,
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/blobs/39e562d23531302dd76a26a03060d3b06ce229c2"
+    },
+    {
+      "path": "Results/training_loss.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ffa3f2162c929009cc7338d8a653d57fa8a6a52",
+      "size": 342403,
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/blobs/2ffa3f2162c929009cc7338d8a653d57fa8a6a52"
+    },
+    {
+      "path": "Results/v3_1.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad6027c95b4d2febc5c11eca828edfebc6fccdcd",
+      "size": 424187,
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/blobs/ad6027c95b4d2febc5c11eca828edfebc6fccdcd"
+    },
+    {
+      "path": "Results/v3_2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "89774ba4495fa463e65e34cab9dce541428b98fe",
+      "size": 408014,
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/blobs/89774ba4495fa463e65e34cab9dce541428b98fe"
+    },
+    {
+      "path": "Single_Bricks_Picture_Generator",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fdd0d40fa351756ebb017b8be41315d57f1ca363",
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/trees/fdd0d40fa351756ebb017b8be41315d57f1ca363"
+    },
+    {
+      "path": "Single_Bricks_Picture_Generator/step1.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "125f685cdcb36eb3aa9bbbada1664fb36c4874ea",
+      "size": 2027,
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/blobs/125f685cdcb36eb3aa9bbbada1664fb36c4874ea"
+    },
+    {
+      "path": "Single_Bricks_Picture_Generator/step2.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cbffac57a3d3424b6b0f5508b684e66307734548",
+      "size": 2587,
+      "url": "https://api.github.com/repos/XuanyiZhao/Lego_bricks_object_detection/git/blobs/cbffac57a3d3424b6b0f5508b684e66307734548"
+    }
+  ],
+  "truncated": false
+}

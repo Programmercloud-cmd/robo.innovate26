@@ -1,0 +1,19 @@
+Motion log: /home/nshenoy/lean_franka_research_lego_manipulation/teaching/moves/20261025T204509.686628Z/execution.log
+KINEMATIC_PREFLIGHT yaw=0; long_rotation=False; elbow=early; checking complete path
+Certified arc: 6.0 s; equivalent yaw 0 deg; target XYZ mm [709.53047276 -60.02897397 133.48507881]
+START_STATE XYZ_m [0.47416558861732483, 0.001953297294676304, 0.08511817455291748] mode Idle errors []
+PLAN certified joint realization of continuous arc; duration_s 6.0415353371262199
+PROGRESS 10%
+PROGRESS 20%
+PROGRESS 30%
+PROGRESS 40%
+PROGRESS 50%
+PROGRESS 60%
+PROGRESS 70%
+PROGRESS 80%
+PROGRESS 90%
+PROGRESS 100%
+JOINT_METRICS min_full_sigma 0.31262126232897242 min_fixed_sigma 0.27913097507168838 min_abs_joint2_rad 0.11064774543046951 max_callback_period_ms 6 max_tracking_mm 1.4938708645663035 min_command_success_rate 0.92000001668930054
+ENDPOINT position_error_mm 0.63029559910557731 orientation_error_deg 0.078908584734332848
+FINAL_STATE XYZ_m [0.709138035774231, -0.060132574290037155, 0.1330028623342514] mode Idle errors []
+PASS certified joint arc

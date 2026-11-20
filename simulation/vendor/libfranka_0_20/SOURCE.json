@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/frankarobotics/libfranka",
+  "tag": "0.20.0",
+  "scope": "Only joint-position limiter math and source provenance; no robot or networking code compiled",
+  "real_binary_SONAME": "libfranka.so.0.20",
+  "exact_real_patch_version": "UNKNOWN",
+  "sha256": {
+    "LICENSE": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9",
+    "include/franka/joint_velocity_limits.h": "c277bb888384595ee52eb5d3a696d8d9b958a8f5d7875a76691c7a40f47b007a",
+    "include/franka/rate_limiting.h": "e2cb5a6f9f2f050956d7f5b27db4610999ad2ba4f6db1255003ef41cb8ef5a52",
+    "src/control_loop.cpp": "8d7e45365147cc57a72e118cc382f6b128129edd16d5cb7f61d5d1197d7f8059",
+    "src/joint_velocity_limits.cpp": "087194e90e4b19fd1f424274567f4205433b1fa1a7329dbc908ab22578fe2e57",
+    "src/rate_limiting.cpp": "76497732a22ceb782bc09e0bb403bae31b5be54d8fefb5237a252d3ad263cf65"
+  }
+}

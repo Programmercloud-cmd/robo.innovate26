@@ -1,0 +1,242 @@
+{
+  "nominal_plan_contract_passed": false,
+  "checks": {
+    "input_pin_references": true,
+    "input_pin_config": true,
+    "exact_export_config": true,
+    "reference_hash_binding": true,
+    "source_conventions": true,
+    "frozen_geometry_config": true,
+    "explicit_palette_reject_contract": true,
+    "operator_geometry_confirmation": true,
+    "scope_honesty": true,
+    "all_900_unique_slots": true,
+    "all_slot_fields": false,
+    "within_ridge_32mm": true,
+    "between_ridge_32mm": true,
+    "two_layer_repetition": true,
+    "relative_native_stud_lattice": true,
+    "no_nominal_same_layer_overlap": true,
+    "nominal_layer_extents_both_parities": true,
+    "all_routing_cases": true,
+    "routing_results": true,
+    "all_preference_cases": true,
+    "preference_cycle": true,
+    "confirmation_case_inventory": true,
+    "confirmation_proposal_no_change": true,
+    "confirmation_abstention_reject_no_change": true,
+    "confirmation_confirm_0_to_1": true,
+    "confirmation_stale_0_rejected": true,
+    "confirmation_confirm_11_to_12": true,
+    "confirmation_confirm_299_to_300": true,
+    "confirmation_capacity_rejected": true,
+    "eight_raw_orientation_records": true,
+    "point_08_raw_retained": true,
+    "point_08_source_not_rewritten": true,
+    "point_08_anchor_semantics": true,
+    "point_08_two_parity_diagnostics": true,
+    "point_08_parity0_geometry": true,
+    "point_08_parity0_nearest_descriptive": true,
+    "point_08_parity1_geometry": true,
+    "point_08_parity1_nearest_descriptive": true,
+    "point_08_recommendation_not_old_layer_claim": true,
+    "point_09_raw_retained": true,
+    "point_09_source_not_rewritten": true,
+    "point_09_anchor_semantics": true,
+    "point_09_two_parity_diagnostics": true,
+    "point_09_parity0_geometry": true,
+    "point_09_parity0_nearest_descriptive": true,
+    "point_09_parity1_geometry": true,
+    "point_09_parity1_nearest_descriptive": true,
+    "point_09_recommendation_not_old_layer_claim": true,
+    "point_10_raw_retained": true,
+    "point_10_source_not_rewritten": true,
+    "point_10_anchor_semantics": true,
+    "point_10_two_parity_diagnostics": true,
+    "point_10_parity0_geometry": true,
+    "point_10_parity0_nearest_descriptive": true,
+    "point_10_parity1_geometry": true,
+    "point_10_parity1_nearest_descriptive": true,
+    "point_10_recommendation_not_old_layer_claim": true,
+    "point_11_raw_retained": true,
+    "point_11_source_not_rewritten": true,
+    "point_11_anchor_semantics": true,
+    "point_11_two_parity_diagnostics": true,
+    "point_11_parity0_geometry": true,
+    "point_11_parity0_nearest_descriptive": true,
+    "point_11_parity1_geometry": true,
+    "point_11_parity1_nearest_descriptive": true,
+    "point_11_recommendation_not_old_layer_claim": true,
+    "point_12_raw_retained": true,
+    "point_12_source_not_rewritten": true,
+    "point_12_anchor_semantics": true,
+    "point_12_two_parity_diagnostics": true,
+    "point_12_parity0_geometry": true,
+    "point_12_parity0_nearest_descriptive": true,
+    "point_12_parity1_geometry": true,
+    "point_12_parity1_nearest_descriptive": true,
+    "point_12_recommendation_not_old_layer_claim": true,
+    "point_13_raw_retained": true,
+    "point_13_source_not_rewritten": true,
+    "point_13_anchor_semantics": true,
+    "point_13_two_parity_diagnostics": true,
+    "point_13_parity0_geometry": true,
+    "point_13_parity0_nearest_descriptive": true,
+    "point_13_parity1_geometry": true,
+    "point_13_parity1_nearest_descriptive": true,
+    "point_13_recommendation_not_old_layer_claim": true,
+    "point_14_raw_retained": true,
+    "point_14_source_not_rewritten": true,
+    "point_14_anchor_semantics": true,
+    "point_14_two_parity_diagnostics": true,
+    "point_14_parity0_geometry": true,
+    "point_14_parity0_nearest_descriptive": true,
+    "point_14_parity1_geometry": true,
+    "point_14_parity1_nearest_descriptive": true,
+    "point_14_recommendation_not_old_layer_claim": true,
+    "point_15_raw_retained": true,
+    "point_15_source_not_rewritten": true,
+    "point_15_anchor_semantics": true,
+    "point_15_two_parity_diagnostics": true,
+    "point_15_parity0_geometry": true,
+    "point_15_parity0_nearest_descriptive": true,
+    "point_15_parity1_geometry": true,
+    "point_15_parity1_nearest_descriptive": true,
+    "point_15_recommendation_not_old_layer_claim": true
+  },
+  "failed_checks": [
+    "all_slot_fields"
+  ],
+  "slot_failure_counts": {
+    "native_pitch_height": 900
+  },
+  "failed_slot_examples": [
+    {
+      "id": "b_0_0_0",
+      "failed": [
+        "native_pitch_height"
+      ]
+    },
+    {
+      "id": "b_0_1_0",
+      "failed": [
+        "native_pitch_height"
+      ]
+    },
+    {
+      "id": "b_0_2_0",
+      "failed": [
+        "native_pitch_height"
+      ]
+    },
+    {
+      "id": "b_1_0_0",
+      "failed": [
+        "native_pitch_height"
+      ]
+    },
+    {
+      "id": "b_1_1_0",
+      "failed": [
+        "native_pitch_height"
+      ]
+    },
+    {
+      "id": "b_1_2_0",
+      "failed": [
+        "native_pitch_height"
+      ]
+    },
+    {
+      "id": "b_2_0_0",
+      "failed": [
+        "native_pitch_height"
+      ]
+    },
+    {
+      "id": "b_2_1_0",
+      "failed": [
+        "native_pitch_height"
+      ]
+    }
+  ],
+  "slots_evaluated": 900,
+  "routing_examples": 63,
+  "preference_examples": 42,
+  "confirmation_examples": 7,
+  "raw_orientation_review": [
+    {
+      "recorded_id": "point_08",
+      "anchor_destination": null,
+      "derived_first_parity_change_deg": 92.14531764025804,
+      "old_layer_identity_verified": false
+    },
+    {
+      "recorded_id": "point_09",
+      "anchor_destination": null,
+      "derived_first_parity_change_deg": 91.87485447786297,
+      "old_layer_identity_verified": false
+    },
+    {
+      "recorded_id": "point_10",
+      "anchor_destination": null,
+      "derived_first_parity_change_deg": 92.12479379740623,
+      "old_layer_identity_verified": false
+    },
+    {
+      "recorded_id": "point_11",
+      "anchor_destination": "B",
+      "derived_first_parity_change_deg": 91.86751342090042,
+      "old_layer_identity_verified": false
+    },
+    {
+      "recorded_id": "point_12",
+      "anchor_destination": null,
+      "derived_first_parity_change_deg": 91.86413931279544,
+      "old_layer_identity_verified": false
+    },
+    {
+      "recorded_id": "point_13",
+      "anchor_destination": null,
+      "derived_first_parity_change_deg": 92.11164325763167,
+      "old_layer_identity_verified": false
+    },
+    {
+      "recorded_id": "point_14",
+      "anchor_destination": "C",
+      "derived_first_parity_change_deg": 92.20104091563498,
+      "old_layer_identity_verified": false
+    },
+    {
+      "recorded_id": "point_15",
+      "anchor_destination": "D",
+      "derived_first_parity_change_deg": 92.28034775066806,
+      "old_layer_identity_verified": false
+    }
+  ],
+  "common_first_layer_EE_z_m": -0.0039732874870300194,
+  "native_center_pitch_m": 0.032,
+  "preserved_A_reference_center_pitch_m": 0.0318,
+  "nominal_per_layer_footprint_extent_m": {
+    "even": [
+      0.112,
+      0.096
+    ],
+    "odd": [
+      0.096,
+      0.112
+    ]
+  },
+  "physical_plate_tape_clearance_status": "UNKNOWN; no registered plate/tape boundaries supplied",
+  "actual_held_brick_T_EE": null,
+  "hardware_authorized": false,
+  "placement_verified": false,
+  "native_attachment_verified": false,
+  "manipulation_success_claim": false,
+  "confirmation_scope": "Pure caller-acknowledgment/state-interface examples only; no observed physical placement.",
+  "reject_scope": "Configured symbolic labels only; this audit supplies no reject classifier or quality evidence.",
+  "source_reference_sha256": "2c1af183dea78ef5d7ba220d593dc31cc418c7a02bc98c2d626ef40f5498c967",
+  "config_sha256": "1c9f6b19b6776b549a50bc12dd1fc9d005bfa286feb6ba63e8c6410ad955f1d5",
+  "export_sha256": "b80e993f7358c186dfca29e25b48dafd2c9c0e46b70a061969f7268098143bb8",
+  "wall_seconds": 0.27024493998032995
+}

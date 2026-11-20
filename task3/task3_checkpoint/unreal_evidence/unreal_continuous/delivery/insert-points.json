@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Franka profile insertion handle",
+    "startSeconds": 100.03333333333333,
+    "durationSeconds": 5.0,
+    "nativeSeconds": 99.03333333333333
+  },
+  {
+    "name": "Detection algorithm insertion handle",
+    "startSeconds": 129.63333333333333,
+    "durationSeconds": 7.0,
+    "nativeSeconds": 121.63333333333333
+  }
+]

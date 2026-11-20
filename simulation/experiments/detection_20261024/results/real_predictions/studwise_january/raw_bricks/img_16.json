@@ -1,0 +1,33 @@
+{
+  "image": "img_16.jpg",
+  "domain": "real",
+  "width": 1280,
+  "height": 720,
+  "method": "studwise_january",
+  "detections": [
+    {
+      "id": "d000",
+      "box_xyxy": [
+        731.7650146484375,
+        2.342437744140625,
+        797.3489990234375,
+        42.755863189697266
+      ],
+      "confidence": 0.4170670807361603,
+      "class_id": 0,
+      "class_name": "brick"
+    },
+    {
+      "id": "d001",
+      "box_xyxy": [
+        764.39501953125,
+        193.57464599609375,
+        1019.2421875,
+        670.5035400390625
+      ],
+      "confidence": 0.38153108954429626,
+      "class_id": 0,
+      "class_name": "brick"
+    }
+  ]
+}

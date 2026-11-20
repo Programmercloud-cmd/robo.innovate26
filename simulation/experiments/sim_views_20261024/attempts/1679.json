@@ -1,0 +1,18 @@
+{
+  "job_id": 1679,
+  "group": "default",
+  "status": "Stopped by orchestrator after invalid geometry audit; Pueue Killed",
+  "source_commit": "edda601",
+  "snapshot": "runs/20261024T102452.131554Z-sim-views",
+  "outcome": "Five diagnostic frames and1125 native links created; initialization moved brick poses, so outputs are not accepted as the requested layout comparison. No completion sentinel; stopped during shutdown.",
+  "geometry_drift": {
+    "steps": 0,
+    "max_position_drift_m": 0.016639262768535584,
+    "max_orientation_drift_rad": 0.4917947422899747,
+    "max_linear_speed_m_s": 0.0,
+    "max_angular_speed_rad_s": 0.0,
+    "note": "Static initialized state; no post-connection physics step, equilibrium/dynamics/clutch stability unvalidated"
+  },
+  "native_connections": 1125,
+  "accepted": false
+}

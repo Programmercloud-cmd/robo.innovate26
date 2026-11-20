@@ -1,0 +1,46 @@
+{
+  "schema": "brickflow.migration-review.v1",
+  "reference": "greenfield_37",
+  "referenceSha256": "699975328736402c8da79fce60c6423bbea461d52371ee17be9c58fa7bfacb6f",
+  "validationStatus": "unvalidated",
+  "nativePortComplete": false,
+  "baselineNativeReference": "greenfield_30",
+  "nativeInputConfigured": 28800,
+  "sourceInputConfigured": 57600,
+  "unsupportedNativeActors": {
+    "cartShuttle": 1,
+    "dockLift": 4,
+    "truck": 12,
+    "amr": 4,
+    "amrFork": 4
+  },
+  "nativeChangesRequired": [
+    "Second input cart lifecycle",
+    "Simultaneous mixed/single production and 18 active wells",
+    "Preserve producer groups/scores through intake adapter",
+    "Finite product storage, four AMRs, whole-task reservations",
+    "Order loading, truck departure and hiddenAt",
+    "Separate produced/stored/loaded/shipped metrics",
+    "Decode compact instance batches and preserve distance LOD"
+  ],
+  "sourceObservedCounters": {
+    "inspected": 57600,
+    "rejected": 7020,
+    "produced": 90,
+    "stored": 90,
+    "loaded": 64,
+    "shipped": 64
+  },
+  "finalStorageStates": {
+    "free": 10,
+    "stored": 26
+  },
+  "sourceIssueForReview": "Future truck records start visible at zero, including later orders. No source correction applied.",
+  "candidateGeometry": {
+    "meshInstancesAcrossAllLods": 459782,
+    "compactBatches": 457,
+    "lodGroups": 57,
+    "activationAllowed": false
+  },
+  "scope": "Authoring preparation; neither native simulation migration nor independent plant validation."
+}

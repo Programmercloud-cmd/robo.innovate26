@@ -1,0 +1,115 @@
+{
+  "seconds": 1.2873150699888356,
+  "cases": [
+    {
+      "condition": "real",
+      "view": "top",
+      "ridges": 6,
+      "raw_candidates": 30,
+      "present": 11
+    },
+    {
+      "condition": "real",
+      "view": "near_top_x",
+      "ridges": 6,
+      "raw_candidates": 30,
+      "present": 9
+    },
+    {
+      "condition": "real",
+      "view": "near_top_y",
+      "ridges": 6,
+      "raw_candidates": 30,
+      "present": 0
+    },
+    {
+      "condition": "real",
+      "view": "oblique_front",
+      "ridges": 6,
+      "raw_candidates": 30,
+      "present": 0
+    },
+    {
+      "condition": "real",
+      "view": "oblique_side",
+      "ridges": 6,
+      "raw_candidates": 30,
+      "present": 7
+    },
+    {
+      "condition": "invalid",
+      "view": "top",
+      "ridges": 0,
+      "raw_candidates": 0,
+      "present": 0
+    },
+    {
+      "condition": "invalid",
+      "view": "near_top_x",
+      "ridges": 0,
+      "raw_candidates": 0,
+      "present": 0
+    },
+    {
+      "condition": "invalid",
+      "view": "near_top_y",
+      "ridges": 0,
+      "raw_candidates": 0,
+      "present": 0
+    },
+    {
+      "condition": "invalid",
+      "view": "oblique_front",
+      "ridges": 0,
+      "raw_candidates": 0,
+      "present": 0
+    },
+    {
+      "condition": "invalid",
+      "view": "oblique_side",
+      "ridges": 0,
+      "raw_candidates": 0,
+      "present": 0
+    },
+    {
+      "condition": "flat_plane",
+      "view": "top",
+      "ridges": 0,
+      "raw_candidates": 0,
+      "present": 0
+    },
+    {
+      "condition": "flat_plane",
+      "view": "near_top_x",
+      "ridges": 0,
+      "raw_candidates": 0,
+      "present": 0
+    },
+    {
+      "condition": "flat_plane",
+      "view": "near_top_y",
+      "ridges": 0,
+      "raw_candidates": 0,
+      "present": 0
+    },
+    {
+      "condition": "flat_plane",
+      "view": "oblique_front",
+      "ridges": 0,
+      "raw_candidates": 0,
+      "present": 0
+    },
+    {
+      "condition": "flat_plane",
+      "view": "oblique_side",
+      "ridges": 0,
+      "raw_candidates": 0,
+      "present": 0
+    }
+  ],
+  "versions": {
+    "numpy": "1.26.0",
+    "opencv": "4.10.0"
+  },
+  "config_sha256": "e640a29070da4d7e093ca30a5dc669ed5ffa34eb902dc064f4fc2978b2befb3a"
+}

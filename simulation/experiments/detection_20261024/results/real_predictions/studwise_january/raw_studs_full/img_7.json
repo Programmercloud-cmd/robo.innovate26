@@ -1,0 +1,24 @@
+{
+  "image": "img_7.jpg",
+  "domain": "real",
+  "width": 1280,
+  "height": 720,
+  "detections": [
+    {
+      "box_image_xyxy": [
+        958.065673828125,
+        491.9566650390625,
+        976.152587890625,
+        508.11358642578125
+      ],
+      "center_image_xy": [
+        967.109130859375,
+        500.0351257324219
+      ],
+      "confidence": 0.398394912481308,
+      "class_id": 0,
+      "class_name": "stud"
+    }
+  ],
+  "max_det_cap_reached": false
+}

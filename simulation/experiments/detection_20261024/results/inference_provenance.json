@@ -1,0 +1,88 @@
+{
+  "canonical_job_id": 1666,
+  "canonical_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261023T223848.668564Z-detection-real",
+  "diagnostic_initial_job_id": 1665,
+  "diagnostic_initial_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261023T223642.271685Z-detection-real",
+  "canonical_copied_to": "experiments/detection_20261024/results/real_predictions",
+  "canonical_settings": {
+    "conf": 0.25,
+    "iou": 0.5,
+    "device": 0,
+    "half": false,
+    "augment": false,
+    "max_det": 300,
+    "verbose": false,
+    "brick_imgsz": 1280,
+    "stud_crop_imgsz": 640,
+    "stud_fullframe_imgsz": 1280,
+    "stud_max_det": 1000,
+    "rect": true
+  },
+  "versions": {
+    "ultralytics": "8.3.221",
+    "ultralytics-thop": "2.0.18",
+    "torch": "2.7.0+cu128",
+    "torchvision": "0.22.0+cu128",
+    "numpy": "1.26.0",
+    "opencv-python": "4.10.0.84",
+    "Pillow": "11.3.0"
+  },
+  "cv2_runtime_observed_in_same_unchanged_conda_environment": "4.10.0",
+  "gpu": "NVIDIA GeForce RTX 5070",
+  "cuda": "12.8",
+  "studwise_commit": "3aef8aade8cb74a04780d5e809e49dfa1fc57a47",
+  "xuanyi_tree_commit": "ee3ded6015d4624a1eea76e448c30fbf34ce231d",
+  "weights": {
+    "studwise_january": {
+      "brick_weights": "Brick_Model_best20250123_192838t.pt",
+      "stud_weights": "Stud_Model_best20250124_170824.pt",
+      "brick_sha256": "1853d5efbbacec4b6058761c5368483971a0fd01dd25205521c5620c111cdbee",
+      "stud_sha256": "2f37a4bc5c5be3677683c036d1b9b2e914225840b453fdf260ff673b8696477d",
+      "brick_classes": {
+        "0": "brick"
+      },
+      "stud_classes": {
+        "0": "stud"
+      }
+    },
+    "studwise_march": {
+      "brick_weights": "bricks_model_kaggle50epoch_10032025.pt",
+      "stud_weights": "studs_model_kaggle50epoch_10032025.pt",
+      "brick_sha256": "a1cb24df060c08886cbce3bdca8d18e4da0fead3f722cf7e088bc21bcadbcd63",
+      "stud_sha256": "42cd13baa96d0edfd6d48db737a58e61e2a7344c1b1b6dc59abed80dab28a45b",
+      "brick_classes": {
+        "0": "item"
+      },
+      "stud_classes": {
+        "0": "item"
+      }
+    }
+  },
+  "input_sha256": {
+    "img_1.jpg": "3eea0741cf5423d7dbecdd73e7a29e2da2aae1a9e9f047b75e848d8ff059c5f4",
+    "img_10.jpg": "9a6b67b34cbf91de7a843c6e879e5fb53b21aeca6961d5ee926385afa19afa0b",
+    "img_11.jpg": "bc1bcd68b3a675a5feb035b5c66cb1a9314183277076047c9274773235f47e61",
+    "img_12.jpg": "36970d2545e467c5f2c9c185d66a6a92bd5c50ed07d35213e4b77009d896ab03",
+    "img_13.jpg": "f525303f710226a88efe02fdec71f3002b3a13010b6a057b1e7d440f7181165a",
+    "img_14.jpg": "bd38cb66e21af10f14134d8148307f367e67cdaa53a0e85af1dd56765b458772",
+    "img_15.jpg": "98f9f5d25f197e934e2f3db351e960d1e765196dbc2ee0204e9f75fc150ee634",
+    "img_16.jpg": "1da3d711f77275754cb60e5c45ee43bbc8157e461d64db9be5af970a18c76ddf",
+    "img_17.jpg": "94d8b0156a30cdd5ad35999ed8abaefd37e3fccce3720e5cbffb5aa2cebd5b4f",
+    "img_18.jpg": "2809f044a7433b82cfa237aff78b234d03ed1d86ccc3c28d41cb9a110ef36936",
+    "img_2.jpg": "4fa4da3aa00d4a75f1b9f19925f38290ee937eb5c86351f16916683e4550a702",
+    "img_3.jpg": "7119555e59c9f3ca9a95f69700521c0f39aba06ccfca62188dd829f61f88ba3b",
+    "img_4.jpg": "47678ea3c10715eef60f8c77fbb65cf58f5a8745c75a3b83f74728c6466c4c1d",
+    "img_5.jpg": "df5d68d0cad2ad4779fceb379a1904d5591cb2ef45ff41afb3eb5df7197bc1c4",
+    "img_6.jpg": "783ac67686190394fc1f9f69f51c68e8040d5b9d69d3d5143f010db84751bc3d",
+    "img_7.jpg": "283c6229a58df69c9540eb2604a6c68aa8724208f92ce4c6188ecea0ce87d9c3",
+    "img_8.jpg": "f7a8ec98f756b2a4964dae59e2dfa13d4a703f12bbe322bcefeec1f3a21b839d",
+    "img_9.jpg": "8da9d78f56b66cf0486551e983b99906f909a26b2c0d2dba4dce4f35a175ff2f"
+  },
+  "reproduce_submission": "python3 experiments/detection_20261024/scripts/submit_inference.py --domain real",
+  "reproduce_evaluation": "/home/faps/miniforge3/envs/unitree_sim_env/bin/python experiments/detection_20261024/scripts/evaluate_predictions.py --annotations experiments/detection_20261024/reference/annotations.json --predictions experiments/detection_20261024/results/real_predictions --output experiments/detection_20261024/results/real_evaluation",
+  "same_pipeline_future_sim_submission": "python3 experiments/detection_20261024/scripts/submit_inference.py --domain sim --input-dir <approved-render-images-directory>",
+  "dependency_isolation": "ultralytics8.3.221 andultralytics-thop2.0.18 underexperiments/detection_20261024/.deps; sharedruntimeunchanged",
+  "snapshot_inference_code_sha256": "c95a2111ad9a973f1c7fe2a0aeaada4a0a75bd57277054abd4449274820fe3c1",
+  "note": "Current run_inference.py is byte-for-byte identical to the canonical Pueue 1666 frozen inference script. The separately observed cv2 runtime version is provenance only.",
+  "current_inference_code_sha256": "c95a2111ad9a973f1c7fe2a0aeaada4a0a75bd57277054abd4449274820fe3c1"
+}

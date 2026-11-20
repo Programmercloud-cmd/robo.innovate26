@@ -1,0 +1,229 @@
+{
+  "schema": "user-annotated-workcell-measurements-v1",
+  "source": "User hand measurements and red/blue annotations,2026-10-25",
+  "image": "resources/setup_images/final_workcell_20261025_measurements/annotated_top_view.jpg",
+  "image_sha256": "30558420854a71ebe7cec10ee45dee5a0774e26176dc56aaf5c2e5ba85a25338",
+  "original_attachment": "/tmp/codex-remote-attachments/01a1695a-4748-7da0-9e58-161d211f20b4/9E8E2773-D908-4970-AB32-6BAA79E285AD/1-Photo-1.jpg",
+  "frame_convention": "ExistingTABLE +X toward grayplate,+Y towardbowl,+Zup; image directions alone do not establish robot-frame transforms.",
+  "measurement_quality": "Approximate hand measurements; no numerical uncertainty or calibration precision assigned.",
+  "measurements": [
+    {
+      "id": "source_plate",
+      "values": {
+        "approximate_outer_size_m": [
+          0.25,
+          0.25
+        ],
+        "studs": [
+          32,
+          32
+        ]
+      },
+      "status": "confirms_prior_user_description",
+      "note": "Keep native8mm pitch; do not shrink native.256m plate to rounded25cm."
+    },
+    {
+      "id": "target_plate",
+      "values": {
+        "approximate_outer_size_m": [
+          0.38,
+          0.38
+        ],
+        "studs": [
+          48,
+          48
+        ]
+      },
+      "status": "confirms_prior_user_description",
+      "note": "Keep native8mm pitch/.384m plate."
+    },
+    {
+      "id": "black_tape_width",
+      "value_m": 0.035,
+      "status": "clear_on_annotated_target_side",
+      "application": "Confirms current35mm visual tape width."
+    },
+    {
+      "id": "black_tape_intrusion",
+      "value_m": 0.014,
+      "status": "clear_annotations_on_source_and_target_sides",
+      "application": "Update visual overlap from16mm to14mm; existing whole-stud working bounds remain conservatively two rows. Opposite-side symmetry follows prior workcell convention, not independently measured here."
+    },
+    {
+      "id": "yellow_divider_width",
+      "value_m": 0.02,
+      "status": "clear_annotation",
+      "application": "Update visual width from15mm to20mm; nominal2.5studpitches, not exact three rows."
+    },
+    {
+      "id": "board_pattern_long_side",
+      "value_m": 0.21,
+      "status": "clear_number_endpoint_pattern_edge_likely",
+      "application": "Consistent with7squares of nominal30mm; no camera calibration."
+    },
+    {
+      "id": "board_square",
+      "value_m": 0.03,
+      "status": "clear_annotation",
+      "application": "Confirms nominal30mm square; hand-measured/printflatness not metrology."
+    },
+    {
+      "id": "board_marker",
+      "value_m": 0.02,
+      "status": "hand_measurement_cannot_distinguish_20_from_22mm",
+      "question": "20mm actual marker width or rounded nominal22mm?",
+      "application": "Retain prior nominal22mm specification; 2cm annotation is approximate, with user unsure about1\u20132mm. No print rescale or calibrated width claim."
+    },
+    {
+      "id": "plate_to_board_gap",
+      "value_m": 0.116,
+      "status": "user_boundary_references_clarified",
+      "question": "Gray outerplate edge to printedpattern edge, or tape/paper edges?",
+      "interpretation": "11.6cm physical plate boundary (not tape/paper boundary) to printed black-square pattern boundary, not A4 paper edge. Keep approximate hand-measured status."
+    },
+    {
+      "id": "plate_to_base",
+      "value_m": 0.215,
+      "status": "user_reference_feature_clarified_root_mapping_pending",
+      "question": "Whiteplate outeredge to nearestbasehousing edge versus rotationaxis center?",
+      "interpretation": "21.5cm along a table-plane line perpendicular to the white plate edge, to the fixed FR3 front-center housing reference mark. This is a housing-face mark, not an asserted rotation-axis position."
+    },
+    {
+      "id": "board_to_base",
+      "value_m": 0.26,
+      "status": "user_reference_feature_clarified_root_mapping_pending",
+      "question": "Printedpattern loweredge to which fixedbasehousing point/axis?",
+      "interpretation": "26cm along a line perpendicular to the ChArUco squares, from printed-pattern boundary toward the furthest protruding/widest fixed-base lobe facing the board; not a circular-base center/radius assumption."
+    },
+    {
+      "id": "bowl_horizontal_image_offset",
+      "value_m": 0.16,
+      "status": "tentative_endpoint_interpretation_not_applied",
+      "interpretation": "Dashed horizontal appears bowlcenter to whiteplate outeredge; keep endpoint uncertainty."
+    },
+    {
+      "id": "bowl_vertical_image_offset",
+      "value_m": 0.13,
+      "status": "tentative_endpoint_interpretation_not_applied",
+      "interpretation": "Dashed vertical appears bowlcenter to whiteplate loweredge extension; not robot-frame data."
+    },
+    {
+      "id": "fixed_camera_horizontal_offset",
+      "value_m": 0.19,
+      "status": "perpendicular_offset_to_fixed_C920_clarified",
+      "question": "Whichcamera? Whiteplate outeredge to opticalcenter verticalprojection? Which direction?",
+      "interpretation": "A THIRD fixed Logitech C920, separate from wrist D435i and wrist C920. 19cm on tabletop perpendicular from white plate edge toward table edge to camera position/projection. Third (lateral) coordinate to be provided; optical-center offset remains unmeasured."
+    },
+    {
+      "id": "fixed_camera_height",
+      "value_m": 0.44,
+      "status": "housing_center_height_clarified_optical_frame_unmeasured",
+      "question": "Opticalcenter above tabletop, or housing/support height?",
+      "interpretation": "44cm vertical above tabletop to approximately center of front C920 housing. Not measured optical-center extrinsics or optical-axis direction."
+    },
+    {
+      "id": "fixed_camera_lateral_offset",
+      "value_m": 0.17,
+      "status": "user_edge_reference_clarified",
+      "interpretation": "In tabletop plane, from whiteplate bowl-facing edge (farthest from robotbase) across toward robot side to fixed C920 housing/camera axis. Sign inferred consistently with supplied photograph; no vertical17cm interpretation."
+    }
+  ],
+  "applied_now": [
+    "black_tape_intrusion",
+    "yellow_divider_width"
+  ],
+  "pending": [
+    "Asset-local identification/offset of FR3 front-center mark and board-facing outerlobe to infer approximate base translation",
+    "Fixed C920 viewing direction/intrinsics and housing-to-optical-center transform remain unmeasured",
+    "Bowl13/16cm endpoint interpretation remains tentative"
+  ],
+  "execution_state": "Physical measurement update remains separate from immutable1805 algorithmic benchmark. Bounded initializer1807 completed on that historical scene; no claim validates revised physical workcell.",
+  "not_established": [
+    "robot-frame calibration",
+    "hand-eye extrinsics",
+    "camera intrinsics",
+    "camera opticalaxis",
+    "physicalgrasp/placement readiness"
+  ],
+  "scene_version_note": "Tape boxes change rendered color/depth. Physical collision actors, native plate/brick geometry and conservative whole-stud working bounds are unchanged. Historical RGB-D belongs to the prior scene, not a fresh validation of these visuals.",
+  "clarification_source": "User prose reply2026-10-25 identifying front-center FR3 mark, base outerlobe, fixed THIRD C920, plate/pattern boundaries, and imprecise marker estimate.",
+  "fixed_C920_position_derivation": {
+    "frame": "TABLE: originwhiteplatecenter,+Xgrayplate,+Ybowl,+Zup",
+    "using_reported_250mm_plate_m": [
+      -0.315,
+      -0.045,
+      0.44
+    ],
+    "using_native_32x8mm_plate_m": [
+      -0.318,
+      -0.042,
+      0.44
+    ],
+    "formula": "X=-(plate_half_extent+0.19), Y=plate_half_extent-0.17, Z=0.44",
+    "report_rounded_m": [
+      -0.32,
+      -0.04,
+      0.44
+    ],
+    "reference": "Approximate center of front camera housing fromhandmeasurements, not calibrated optical center.",
+    "orientation": "Unmeasured; no calibrated extrinsic transform or C920depthstream established."
+  },
+  "munich_operator_frame_bridge": {
+    "source_report": "resources/alignment_export_munich_20261025_measured/alignment_report.md",
+    "input_tabletop_reference_origin": "Whiteplate near/reject-facing outercorner (TABLE -X,+Y corner), tabletop projection",
+    "local_axis_in_TABLE": {
+      "X": [
+        0,
+        -1,
+        0
+      ],
+      "Y": [
+        1,
+        0,
+        0
+      ],
+      "Z": [
+        0,
+        0,
+        1
+      ]
+    },
+    "T_TABLE_input_tabletop_reference_nominal_32stud": [
+      [
+        0,
+        1,
+        0,
+        -0.128
+      ],
+      [
+        -1,
+        0,
+        0,
+        0.128
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "housing_position_in_input_tabletop_reference_m": [
+      0.17,
+      -0.19,
+      0.44
+    ],
+    "result_TABLE_housing_m": [
+      -0.318,
+      -0.042,
+      0.44
+    ],
+    "status": "Nominal frame-convention conversion using32x8mm plate; not a surveyed plate/base transform or camera opticalextrinsic."
+  }
+}

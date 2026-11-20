@@ -1,0 +1,43 @@
+{
+  "backend_fingerprint": "dae71e17e51973bc",
+  "visual_entry": "index.html",
+  "replay": "combined-dae71e17e51973bc.json.gz",
+  "rollback_tag": "checkpoint/greenfield37-before-jacob-layout-20261028",
+  "rollback_html": "index-before-jacob-layout.html",
+  "layout_reference_commit": "22a5c6b938aad47c08482352d7783580139a3408",
+  "functional_engine": "Original full-cart engine; two identical-distribution carts, 36 concurrent pickup heads, six independent lines",
+  "input_orientation": "Original pickup grid/yaw retained; through track changed to a single longitudinal axis",
+  "bricks": 57600,
+  "approved": 50664,
+  "disposed": 6936,
+  "pallets_complete": 84,
+  "bricks_h": 8019.04986811265,
+  "pallets_h": 14.319731907344018,
+  "all_mixed_bricks_h": 9137.099608,
+  "capacity_note": "Two-Mixed-plus-Warm variant blocks with current allocator; no complete-run rate reported for that variant",
+  "checks": [
+    "Full batch and material conservation",
+    "Rigid loaded transport",
+    "Continuous vehicle/truck separation",
+    "Formation trajectory collisions",
+    "Floor/fork/trailer contacts",
+    "Browser playback and 11 visual views"
+  ],
+  "sources": {
+    "greenfield/layout.js": "a11dee5e45cfcdca3c6bacec03f5fcc46fdfeffb1c2554add5efb09b4330d3d5",
+    "greenfield/cart_model.js": "8f64c7db9c5de61a04faa4e86350ecfb4cb44b1e25cff24f056535847803d759",
+    "greenfield/logistics.js": "75360da7ac6728ec44c5faf51744153cbdfc5d2c12f5988268c5a7d7db9b7e5b",
+    "greenfield/viewer_cart.js": "a2cacb5603fcd1193f1d5662e85b94b4724ffbe0f68c78f18421c57c8ebfe98d",
+    "greenfield/warehouse_view.js": "ec83f958323ea736c04b5f140f81eb177cffc12e131f471b7884b7b85464b237",
+    "greenfield/viewer_cart.html": "6bc6b1d66b74f5570feefa6afc3939c298d90ad762c8a077e49e083fb6bdbe1b",
+    "scripts/cart_demo.py": "bd8d181cd22973c1630a3ab73d18ba02c0c0905382110a026eefe768a96996ee"
+  },
+  "html_sha256": "e30595e8d5f450eb3cbe14217a5ce5a35ffe53d747f177e6134c4cfe743ee780",
+  "functional_commit": "5e381c3f5113a7197721fabf80f35d202bde8c6b",
+  "lead_time_medians_seconds": {
+    "pickup_to_pallet": 2811.9010124055803,
+    "pickup_to_stock": 3245.806753417129,
+    "pickup_to_truck_loaded_for_loaded_bricks": 6783.556995915926
+  },
+  "visual_commit": "00bdd38371a0f2ddc08706e641778b36bb0a8b98"
+}

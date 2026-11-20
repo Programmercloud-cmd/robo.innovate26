@@ -1,0 +1,68 @@
+BRICKFLOW — UPDATED OPERATIONAL SIMULATION / LIVE V1
+28 October 2026
+
+OPEN
+http://127.0.0.1:18745/viewer/
+VM loopback: http://127.0.0.1:8745/viewer/
+VM project: /home/shadeform/workspace/brickflow-live-simulation-20261028-v1
+The local URL requires the existing SSH forward to the dedicated Brev VM.
+
+The viewer computes a new deterministic discrete-event schedule in a Worker.
+It does not load or reposition the old replay. Play/pause,0.1–100x speed,
+scrubbing and representative-event jumps inspect the same material IDs over time.
+
+START WITH
+Both buffers full: two actual40-brick layers waiting under a commissioning hold.
+Layer transfer: selected station's portal pickup and transfer; press Play slowly.
+Completed pallet: fourteen layers /560 unique good bricks after well indexing.
+Gantry pickup: completed pallet on its outfeed and ready for the overhead gantry.
+Loaded claw rotation: a close view of the actual loaded90-degree source transfer.
+Skip exchange: upstream stopped, reject belts cleared, head raised and west-stowed.
+Use Event type / representative event to inspect pallet-stored, layer-stacked,
+source, dispatch and exchange transitions. Camera presets follow selected station.
+
+LAYOUT
+geometry-manifest.json is the single shared coordinate manifest. All fields of
+the accepted static v4 manifest remain unchanged. A user-authorized upstream
+extension adds the west north-to-south cart track and loaded-claw90-degree turn.
+The rotated6.98m stack footprint uses an assumed7.2m support tray, body6.8m.
+All128 storage positions, four work aisles, three cross aisles, access spine,
+finished-goods gantry, routing fields, reject channels and dispatchA stay fixed.
+
+DEFAULT SCENARIO
+28800 source IDs;11497 inspected;10080 good bricks;252 layers;18 complete pallets.
+All18 reach storage, handoff and the two near-side rows of one active truck.
+3366 neighboring-module transfers occur. Four skip exchanges remove1200 rejects;
+217 remain in the final skip.17200 bricks remain on the kiln cart and103 remain
+in upstream staging at the end. The partially loaded cart stays at unloading;
+there is no false empty-cart departure. The reserve dispatch bay remains unused.
+
+VALIDATION
+Independent validator:30 run-check groups and15 geometry checks pass.
+Four fault-injection controls confirm duplicate material, conflicting exclusive
+zones, reversed layer order and duplicated ledger material are rejected.
+Identity accounting,40/14/560 membership, mixed/pure recipes, FIFO/two-slot
+occupancy, supported routing, rigid source turns, pallet contact, forklift load
+frames and isolated skip exchange are checked. See validation/QA-NOTE.txt.
+Original frozen37 replay checksum remains unchanged; no existing project replaced.
+
+ASSUMPTIONS
+This is a controlled commissioning scenario, not a throughput forecast. Source
+colors are demand-paced; one serialized source claw and row-extraction mechanism
+represent the36-head unloader. A deliberate lane1 portal hold exercises buffers.
+Skip exchange triggers at300 rejects as a small demo limit, not actual10m3 capacity.
+Cart/tray/portal/forks/gantry interfaces and speeds are planning assumptions.
+Well/outfeed wood datum.224 meets rollers.164; ground storage/handoff wood datum
+.060 gives runner-bottom0. Forks bear on deck underside at wood datum+.025.
+The engine does not solve friction, grip force, acceleration/contact dynamics,
+brick impact, dust, exact vehicle/load charts, steering swept paths, hooklift
+lifting trajectory, structural sizing or industrial machine safety qualification.
+Motion assumptions are available inside the viewer.
+
+REPRODUCE
+Serve from this root: python3 server.py --port8745 (loopback only).
+Generate audit trace: node integration/generate-run.cjs
+Independent audit: node validation/audit-run.cjs --run run.json --out validation/run-audit.json
+Fault controls: node validation/negative-controls.cjs --run run.json --out validation/negative-controls.json
+Follow shared-workstation Pueue rules for intensive work. All full integration
+runs in this delivery were executed directly on the dedicated Brev VM.

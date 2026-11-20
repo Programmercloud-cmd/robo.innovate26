@@ -1,0 +1,302 @@
+{
+  "schema": "contact-readback-result-v1",
+  "job_id": 1823,
+  "source_commit": "11b7de7",
+  "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T161523.798508Z-stage2-contact-readback",
+  "diagnostic_complete": true,
+  "runtime_arrays_valid": true,
+  "checks_passed": 60,
+  "checks_total": 60,
+  "measured_physics_steps": 0,
+  "phase_closed": true,
+  "automatic_retry": false,
+  "audit_sha256": "6f462f40df5b496d79fe91ae230253c1f250f6d5b4b9b4d0acf7ace7ac5381a8",
+  "readback_sha256": "986dc66cdd780fb4ea0ae9e0db8d6b1960af32bf419e279c9bab9eaf82e53a99",
+  "returned_views": {
+    "left": {
+      "requested_path": "/World/envs/env_0/Robot/fr3_leftfinger",
+      "prim_paths": [
+        "/World/envs/env_0/Robot/fr3_leftfinger"
+      ],
+      "count": 1,
+      "max_shapes": 5,
+      "row_to_collider_mapping": "UNKNOWN",
+      "view_error": null,
+      "getters": {
+        "material_properties": {
+          "status": "AVAILABLE",
+          "error": null,
+          "values": [
+            [
+              [
+                0.5,
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.5,
+                0.0
+              ],
+              [
+                2.5,
+                2.0,
+                0.0
+              ]
+            ]
+          ],
+          "shape": [
+            1,
+            5,
+            3
+          ],
+          "dtype": "float32"
+        },
+        "contact_offsets": {
+          "status": "AVAILABLE",
+          "error": null,
+          "values": [
+            [
+              0.0013625002466142178,
+              0.0013625002466142178,
+              0.0013625002466142178,
+              0.0013625002466142178,
+              0.0013625002466142178
+            ]
+          ],
+          "shape": [
+            1,
+            5
+          ],
+          "dtype": "float32"
+        },
+        "rest_offsets": {
+          "status": "AVAILABLE",
+          "error": null,
+          "values": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "shape": [
+            1,
+            5
+          ],
+          "dtype": "float32"
+        }
+      }
+    },
+    "right": {
+      "requested_path": "/World/envs/env_0/Robot/fr3_rightfinger",
+      "prim_paths": [
+        "/World/envs/env_0/Robot/fr3_rightfinger"
+      ],
+      "count": 1,
+      "max_shapes": 5,
+      "row_to_collider_mapping": "UNKNOWN",
+      "view_error": null,
+      "getters": {
+        "material_properties": {
+          "status": "AVAILABLE",
+          "error": null,
+          "values": [
+            [
+              [
+                0.5,
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.5,
+                0.0
+              ],
+              [
+                2.5,
+                2.0,
+                0.0
+              ]
+            ]
+          ],
+          "shape": [
+            1,
+            5,
+            3
+          ],
+          "dtype": "float32"
+        },
+        "contact_offsets": {
+          "status": "AVAILABLE",
+          "error": null,
+          "values": [
+            [
+              0.0013625002466142178,
+              0.0013625002466142178,
+              0.0013625002466142178,
+              0.0013625002466142178,
+              0.0013625002466142178
+            ]
+          ],
+          "shape": [
+            1,
+            5
+          ],
+          "dtype": "float32"
+        },
+        "rest_offsets": {
+          "status": "AVAILABLE",
+          "error": null,
+          "values": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "shape": [
+            1,
+            5
+          ],
+          "dtype": "float32"
+        }
+      }
+    },
+    "coupon": {
+      "requested_path": "/World/envs/env_0/contact_coupon",
+      "prim_paths": [
+        "/World/envs/env_0/contact_coupon"
+      ],
+      "count": 1,
+      "max_shapes": 2,
+      "row_to_collider_mapping": "UNKNOWN",
+      "view_error": null,
+      "getters": {
+        "material_properties": {
+          "status": "AVAILABLE",
+          "error": null,
+          "values": [
+            [
+              [
+                0.5,
+                0.5,
+                0.0
+              ],
+              [
+                0.5,
+                0.5,
+                0.0
+              ]
+            ]
+          ],
+          "shape": [
+            1,
+            2,
+            3
+          ],
+          "dtype": "float32"
+        },
+        "contact_offsets": {
+          "status": "AVAILABLE",
+          "error": null,
+          "values": [
+            [
+              0.0013625002466142178,
+              0.0013625002466142178
+            ]
+          ],
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "rest_offsets": {
+          "status": "AVAILABLE",
+          "error": null,
+          "values": [
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "float32"
+        }
+      }
+    }
+  },
+  "BODY_material_mapped": false,
+  "shape_row_to_collider_mapping": "UNKNOWN",
+  "interpretation": "Uniform1.3625002466mmcontact/0rest acrossallreturnedfinger/coupon slots; finger4default+1highfrictionslot unordered; couponboth.5/.5/0 differfromunboundUSDcolliderauthored scalars. Effectivepairfriction/tractionnotmeasured. Contact-generationscalecomparable to3.083mmband isahypothesis, notpenetration/stand-off/cause.",
+  "next_hypothesis": "A separatelyreviewed one-parameter exactBODY-only100umcontactOffset sensitivity couldtestcontactgeneration withrest0/material/geometry/14mmunchanged. Couponoffsetremains1.3625mm, sopaircontact-distance would~1.4625mm. Notimplemented/authorized byreadback; furtherphysicsrequiresnewprospectiveresource decision.",
+  "physics_extraction_passed": false,
+  "retention_passed": false,
+  "physical_retry_authorized": false,
+  "independent_reviews": {
+    "evaluator": "Accepted60/60 initialization/readbackchecks; keepunorderedBODYmapping andtractionUNKNOWN.",
+    "reviewer": "Acceptedconfigurationevidence; margin sensitivity isjustifiedproposal, notcausalfix ornewtrialauthorization."
+  },
+  "timing": {
+    "phases": [
+      {
+        "phase": "capture",
+        "wall_seconds": 15.127773109008558,
+        "returncode": 0,
+        "cleanup": "complete_marker_cleanup",
+        "capture_completed": true
+      },
+      {
+        "phase": "audit",
+        "wall_seconds": 0.11418406799202785,
+        "returncode": 0
+      }
+    ],
+    "actual_capture_plus_audit_seconds": 15.242534841992892,
+    "prior_case_seconds": 2388.0386521710234,
+    "cumulative_case_seconds": 2403.7184853080234,
+    "case_limit_seconds": 2500,
+    "maximum_active_seconds": 90,
+    "within_budget": true,
+    "diagnostic_complete": true,
+    "physics_extraction_passed": false,
+    "physical_retry_authorized": false,
+    "automatic_retry": false,
+    "audit_sha256": "6f462f40df5b496d79fe91ae230253c1f250f6d5b4b9b4d0acf7ace7ac5381a8",
+    "supervised_cumulative_case_seconds": 2403.2811870130163,
+    "full_pueue_job_seconds": 15.679833137,
+    "pueue_job_id": 1823,
+    "pueue_start": "2026-10-25T17:15:24.184992057+01:00",
+    "pueue_end": "2026-10-25T17:15:39.864825194+01:00",
+    "remaining_case_seconds": 96.2815146919766,
+    "full_pueue_timing_authoritative": true
+  }
+}

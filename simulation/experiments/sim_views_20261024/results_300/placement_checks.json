@@ -1,0 +1,132 @@
+[
+  {
+    "stage": "restored_after_reset_before_native_links",
+    "max_physics_position_error_m": 2.9897537742085e-08,
+    "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+    "max_usd_position_error_m": 0.0,
+    "max_usd_orientation_error_rad": 0.0,
+    "max_absolute_velocity": 0.0,
+    "position_tolerance_m": 2e-06,
+    "orientation_tolerance_rad": 0.0001
+  },
+  {
+    "stage": "after_native_links_before_capture",
+    "max_physics_position_error_m": 2.9897537742085e-08,
+    "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+    "max_usd_position_error_m": 1.316562550716263e-16,
+    "max_usd_orientation_error_rad": 0.0,
+    "max_absolute_velocity": 0.0,
+    "position_tolerance_m": 2e-06,
+    "orientation_tolerance_rad": 0.0001
+  },
+  {
+    "stage": "before_view_top",
+    "max_physics_position_error_m": 2.9897537742085e-08,
+    "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+    "max_usd_position_error_m": 1.316562550716263e-16,
+    "max_usd_orientation_error_rad": 0.0,
+    "max_absolute_velocity": 0.0,
+    "position_tolerance_m": 2e-06,
+    "orientation_tolerance_rad": 0.0001
+  },
+  {
+    "stage": "after_render_top",
+    "max_physics_position_error_m": 2.9897537742085e-08,
+    "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+    "max_usd_position_error_m": 1.316562550716263e-16,
+    "max_usd_orientation_error_rad": 0.0,
+    "max_absolute_velocity": 0.0,
+    "position_tolerance_m": 2e-06,
+    "orientation_tolerance_rad": 0.0001
+  },
+  {
+    "stage": "before_view_near_top_x",
+    "max_physics_position_error_m": 2.9897537742085e-08,
+    "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+    "max_usd_position_error_m": 1.316562550716263e-16,
+    "max_usd_orientation_error_rad": 0.0,
+    "max_absolute_velocity": 0.0,
+    "position_tolerance_m": 2e-06,
+    "orientation_tolerance_rad": 0.0001
+  },
+  {
+    "stage": "after_render_near_top_x",
+    "max_physics_position_error_m": 2.9897537742085e-08,
+    "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+    "max_usd_position_error_m": 1.316562550716263e-16,
+    "max_usd_orientation_error_rad": 0.0,
+    "max_absolute_velocity": 0.0,
+    "position_tolerance_m": 2e-06,
+    "orientation_tolerance_rad": 0.0001
+  },
+  {
+    "stage": "before_view_near_top_y",
+    "max_physics_position_error_m": 2.9897537742085e-08,
+    "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+    "max_usd_position_error_m": 1.316562550716263e-16,
+    "max_usd_orientation_error_rad": 0.0,
+    "max_absolute_velocity": 0.0,
+    "position_tolerance_m": 2e-06,
+    "orientation_tolerance_rad": 0.0001
+  },
+  {
+    "stage": "after_render_near_top_y",
+    "max_physics_position_error_m": 2.9897537742085e-08,
+    "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+    "max_usd_position_error_m": 1.316562550716263e-16,
+    "max_usd_orientation_error_rad": 0.0,
+    "max_absolute_velocity": 0.0,
+    "position_tolerance_m": 2e-06,
+    "orientation_tolerance_rad": 0.0001
+  },
+  {
+    "stage": "before_view_oblique_front",
+    "max_physics_position_error_m": 2.9897537742085e-08,
+    "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+    "max_usd_position_error_m": 1.316562550716263e-16,
+    "max_usd_orientation_error_rad": 0.0,
+    "max_absolute_velocity": 0.0,
+    "position_tolerance_m": 2e-06,
+    "orientation_tolerance_rad": 0.0001
+  },
+  {
+    "stage": "after_render_oblique_front",
+    "max_physics_position_error_m": 2.9897537742085e-08,
+    "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+    "max_usd_position_error_m": 1.316562550716263e-16,
+    "max_usd_orientation_error_rad": 0.0,
+    "max_absolute_velocity": 0.0,
+    "position_tolerance_m": 2e-06,
+    "orientation_tolerance_rad": 0.0001
+  },
+  {
+    "stage": "before_view_oblique_side",
+    "max_physics_position_error_m": 2.9897537742085e-08,
+    "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+    "max_usd_position_error_m": 1.316562550716263e-16,
+    "max_usd_orientation_error_rad": 0.0,
+    "max_absolute_velocity": 0.0,
+    "position_tolerance_m": 2e-06,
+    "orientation_tolerance_rad": 0.0001
+  },
+  {
+    "stage": "after_render_oblique_side",
+    "max_physics_position_error_m": 2.9897537742085e-08,
+    "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+    "max_usd_position_error_m": 1.316562550716263e-16,
+    "max_usd_orientation_error_rad": 0.0,
+    "max_absolute_velocity": 0.0,
+    "position_tolerance_m": 2e-06,
+    "orientation_tolerance_rad": 0.0001
+  },
+  {
+    "stage": "final_capture",
+    "max_physics_position_error_m": 2.9897537742085e-08,
+    "max_physics_orientation_error_rad": 2.9802322387695312e-08,
+    "max_usd_position_error_m": 1.316562550716263e-16,
+    "max_usd_orientation_error_rad": 0.0,
+    "max_absolute_velocity": 0.0,
+    "position_tolerance_m": 2e-06,
+    "orientation_tolerance_rad": 0.0001
+  }
+]

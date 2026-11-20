@@ -1,0 +1,60 @@
+{
+  "source": "a_0_0_9",
+  "destination": "1",
+  "close_mode": "position",
+  "approach_width_m": 0.02,
+  "close_width_m": 0.014,
+  "release_width_m": 0.02,
+  "grasp_offset_below_upper_m": 0.012,
+  "stages": [
+    {
+      "name": "initial_vertical_retreat",
+      "returncode": 0
+    },
+    {
+      "name": "approach",
+      "returncode": 1,
+      "log": "/home/nshenoy/lean_franka_research_lego_manipulation/teaching/picks/20261025T204131_a_0_0_9_to_1/approach.log"
+    },
+    {
+      "name": "approach_retry",
+      "returncode": 0,
+      "log": "/home/nshenoy/lean_franka_research_lego_manipulation/teaching/picks/20261025T204131_a_0_0_9_to_1/approach_retry.log"
+    },
+    {
+      "name": "close_position_14mm",
+      "returncode": 1,
+      "log": "/home/nshenoy/lean_franka_research_lego_manipulation/teaching/picks/20261025T204131_a_0_0_9_to_1/close_position_14mm.log"
+    },
+    {
+      "name": "transfer_to_1",
+      "returncode": 0,
+      "log": "/home/nshenoy/lean_franka_research_lego_manipulation/teaching/picks/20261025T204131_a_0_0_9_to_1/transfer_to_1.log"
+    },
+    {
+      "name": "release_20mm",
+      "returncode": 0,
+      "log": "/home/nshenoy/lean_franka_research_lego_manipulation/teaching/picks/20261025T204131_a_0_0_9_to_1/release_20mm.log"
+    }
+  ],
+  "picked_verified": true,
+  "released_verified": true,
+  "completed": true,
+  "closure_acceptance": {
+    "operator_confirmed_contact_width_sufficient": true,
+    "commanded_width_m": 0.014,
+    "observed_contact_width_m": 0.015214113518595695,
+    "position_control": true
+  },
+  "transfer_authorization": "Operator explicitly accepted contact width and requested movement now to pose #1, continuing the original request to release at 20 mm.",
+  "transfer_to_1_completed": true,
+  "release_width_verified": true,
+  "completed_commands": true,
+  "visual_drop_verification_pending": false,
+  "camera_verification_issue": "Post-release wrist camera capture returned an empty MJPEG frame; visual drop result not inferred.",
+  "verified_bricks_delivered": 1,
+  "visual_verification": {
+    "evidence": "teaching/picks/20261025T204131_a_0_0_9_to_1/external_after_release.jpg",
+    "observation": "One orange-brown 2x4 brick visible in the previously empty pose-1 tray after the release"
+  }
+}

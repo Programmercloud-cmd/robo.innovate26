@@ -1,0 +1,33 @@
+{
+  "job_id": 1680,
+  "queue": "default",
+  "source_commit": "f7b9fd49ed048f45e7ffcaa1bbd95523a5a18e46",
+  "snapshot": "runs/20261024T103123.341921Z-sim-views",
+  "capture_validated": true,
+  "raw_truth_directory": "runs/20261024T103123.341921Z-sim-views/output/evaluation_truth",
+  "versions": {
+    "python": "3.11",
+    "IsaacSim": "5.1.0.0",
+    "IsaacLab": "2.3.2",
+    "BrickSim": "0.1.0.dev645+gcbd5de3",
+    "Torch": "2.7.0+cu128",
+    "NumPy": "1.26.0",
+    "Pillow": "11.3.0"
+  },
+  "image_sha256": {
+    "images/near_top_x.png": "e4cd7d03034c1e9b3916f24703247d7afc562ae47cb0e74c3876b7841cfcfdd8",
+    "images/near_top_y.png": "2ee6eb4c55f9bc12e3fdff1e36a96ad9a37be27de571069c458759a907d29394",
+    "images/oblique_front.png": "82d44329b5a9192f13355c55738bf05da3cb5c12bcb85741efade09051028a32",
+    "images/oblique_side.png": "f221e4acf1127ed3536dda939fdf346aa65d0e06e66afef887aeaf51c104f9a6",
+    "images/top.png": "b03be93196e34a66e72189df6c062ca830f9b2aa15a063927e901cd044b56de8",
+    "panel.png": "20fe247d9db17867a7b54625b5c9944826a32e9bf89c343ba37c6c9b73a35fc0"
+  },
+  "captures_are_static_not_dynamics_validated": true,
+  "shutdown_status": {
+    "completed": false,
+    "capture_validated": true,
+    "queue_result": "Killed",
+    "reason": "Validated capture completed; normal app.close(wait_for_replicator=False) did not return, so orchestrator stopped cleanup to release default queue.",
+    "ended_local": "2026-10-24T12:32:43.962993538+02:00"
+  }
+}

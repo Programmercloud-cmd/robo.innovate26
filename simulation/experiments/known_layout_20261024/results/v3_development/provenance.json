@@ -1,0 +1,6 @@
+{
+  "pueue_job_id": 1671,
+  "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T000755.717569Z-known-layout-v3-development",
+  "source_commit": "e8ab714",
+  "decision": "rejected: repeated spatially incorrect c1r4 confirmation under +4 px x initialization; restore v1"
+}

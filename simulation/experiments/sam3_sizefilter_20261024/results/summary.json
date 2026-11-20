@@ -1,0 +1,735 @@
+{
+  "by_stage": {
+    "raw": {
+      "positive_references": 166,
+      "ambiguous_references_excluded": 14,
+      "lower_fragments": 23,
+      "raw_detections": 353,
+      "matched": 124,
+      "missed_individual_faces": 42,
+      "merge": 26,
+      "duplicate": 0,
+      "lower_layer_target": 19,
+      "ambiguous_ignored": 12,
+      "other_spurious_or_unresolved": 171,
+      "outside_roi": 1,
+      "annotated_images": 6,
+      "individual_face_recall": 0.7469879518072289,
+      "scored_roi_instance_precision": 0.36470588235294116,
+      "coarse_stack_localized_views": 5,
+      "multiple_face_masks": 26
+    },
+    "retained_only": {
+      "positive_references": 166,
+      "ambiguous_references_excluded": 14,
+      "lower_fragments": 23,
+      "raw_detections": 152,
+      "matched": 113,
+      "missed_individual_faces": 53,
+      "merge": 0,
+      "duplicate": 0,
+      "lower_layer_target": 1,
+      "ambiguous_ignored": 11,
+      "other_spurious_or_unresolved": 27,
+      "outside_roi": 0,
+      "annotated_images": 6,
+      "individual_face_recall": 0.6807228915662651,
+      "scored_roi_instance_precision": 0.8014184397163121,
+      "coarse_stack_localized_views": 0,
+      "multiple_face_masks": 0
+    },
+    "final": {
+      "positive_references": 166,
+      "ambiguous_references_excluded": 14,
+      "lower_fragments": 23,
+      "raw_detections": 166,
+      "matched": 117,
+      "missed_individual_faces": 49,
+      "merge": 0,
+      "duplicate": 10,
+      "lower_layer_target": 1,
+      "ambiguous_ignored": 11,
+      "other_spurious_or_unresolved": 27,
+      "outside_roi": 0,
+      "annotated_images": 6,
+      "individual_face_recall": 0.7048192771084337,
+      "scored_roi_instance_precision": 0.7548387096774194,
+      "coarse_stack_localized_views": 0,
+      "multiple_face_masks": 0
+    }
+  },
+  "all18_counts": {
+    "raw": 1062,
+    "retained_only": 432,
+    "final": 465
+  },
+  "scale_image_counts": {
+    "estimated": 16,
+    "abstain": 2
+  },
+  "all18_source_decisions": {
+    "retained": 432,
+    "rejected": 477,
+    "uncertain": 144,
+    "split": 9
+  },
+  "all18_reason_counts": {
+    "both_dimensions_match": 432,
+    "long_dimension_not_supported_integer_multiple": 334,
+    "short_dimension_mismatch": 143,
+    "unsupported_image_seam": 25,
+    "split_child_dimension_mismatch": 7,
+    "integer_size_and_all_image_seams_supported": 9,
+    "ambiguous_scale_modes": 112
+  },
+  "all18_seam_diagnostics": {
+    "parents_checked": 41,
+    "expected_boundaries_checked": 103,
+    "boundaries_supported": 60,
+    "boundaries_unsupported": 43,
+    "parents_all_boundaries_supported": 16
+  },
+  "accepted_split_parents_all18": 9,
+  "accepted_split_children_all18": 33,
+  "annotated_split_child_outcomes": {
+    "duplicate": 6,
+    "matched": 8
+  },
+  "global_reference_changes_vs_raw": {
+    "retained_only": {
+      "recovered_faces": 0,
+      "lost_faces": 11
+    },
+    "final": {
+      "recovered_faces": 4,
+      "lost_faces": 11
+    }
+  },
+  "duplicate_mask_pair_flags_all18": 14,
+  "duplicate_mask_pair_flags_involving_split_children": 14,
+  "by_image": [
+    {
+      "image": "img_1.jpg",
+      "scale_status": "estimated",
+      "scale_reasons": [],
+      "winning_mode_candidate": {
+        "short": 46.380191802978516,
+        "long": 90.00185775756836,
+        "support": 28
+      },
+      "support_ratio": 28.0,
+      "source_count": 61,
+      "retained_count": 35,
+      "final_count": 35,
+      "decision_counts": {
+        "retained": 35,
+        "rejected": 26
+      },
+      "reason_counts": {
+        "both_dimensions_match": 35,
+        "long_dimension_not_supported_integer_multiple": 24,
+        "short_dimension_mismatch": 2
+      },
+      "accepted_split_parents": 0,
+      "accepted_split_children": 0,
+      "duplicate_mask_pairs": 0
+    },
+    {
+      "image": "img_2.jpg",
+      "scale_status": "estimated",
+      "scale_reasons": [],
+      "winning_mode_candidate": {
+        "short": 44.0097541809082,
+        "long": 85.0,
+        "support": 29
+      },
+      "support_ratio": 14.5,
+      "source_count": 65,
+      "retained_count": 35,
+      "final_count": 35,
+      "decision_counts": {
+        "retained": 35,
+        "rejected": 29,
+        "uncertain": 1
+      },
+      "reason_counts": {
+        "both_dimensions_match": 35,
+        "long_dimension_not_supported_integer_multiple": 24,
+        "short_dimension_mismatch": 5,
+        "unsupported_image_seam": 1
+      },
+      "accepted_split_parents": 0,
+      "accepted_split_children": 0,
+      "duplicate_mask_pairs": 0
+    },
+    {
+      "image": "img_3.jpg",
+      "scale_status": "estimated",
+      "scale_reasons": [],
+      "winning_mode_candidate": {
+        "short": 43.76503562927246,
+        "long": 83.50378799438477,
+        "support": 28
+      },
+      "support_ratio": 14.0,
+      "source_count": 65,
+      "retained_count": 34,
+      "final_count": 34,
+      "decision_counts": {
+        "rejected": 29,
+        "retained": 34,
+        "uncertain": 2
+      },
+      "reason_counts": {
+        "long_dimension_not_supported_integer_multiple": 21,
+        "both_dimensions_match": 34,
+        "short_dimension_mismatch": 8,
+        "unsupported_image_seam": 2
+      },
+      "accepted_split_parents": 0,
+      "accepted_split_children": 0,
+      "duplicate_mask_pairs": 0
+    },
+    {
+      "image": "img_4.jpg",
+      "scale_status": "estimated",
+      "scale_reasons": [],
+      "winning_mode_candidate": {
+        "short": 44.654197692871094,
+        "long": 87.20484924316406,
+        "support": 27
+      },
+      "support_ratio": 13.5,
+      "source_count": 64,
+      "retained_count": 36,
+      "final_count": 36,
+      "decision_counts": {
+        "retained": 36,
+        "rejected": 27,
+        "uncertain": 1
+      },
+      "reason_counts": {
+        "both_dimensions_match": 36,
+        "long_dimension_not_supported_integer_multiple": 23,
+        "unsupported_image_seam": 1,
+        "short_dimension_mismatch": 4
+      },
+      "accepted_split_parents": 0,
+      "accepted_split_children": 0,
+      "duplicate_mask_pairs": 0
+    },
+    {
+      "image": "img_5.jpg",
+      "scale_status": "estimated",
+      "scale_reasons": [],
+      "winning_mode_candidate": {
+        "short": 48.22858428955078,
+        "long": 93.57709121704102,
+        "support": 28
+      },
+      "support_ratio": 14.0,
+      "source_count": 61,
+      "retained_count": 33,
+      "final_count": 33,
+      "decision_counts": {
+        "retained": 33,
+        "rejected": 28
+      },
+      "reason_counts": {
+        "both_dimensions_match": 33,
+        "long_dimension_not_supported_integer_multiple": 24,
+        "short_dimension_mismatch": 4
+      },
+      "accepted_split_parents": 0,
+      "accepted_split_children": 0,
+      "duplicate_mask_pairs": 0
+    },
+    {
+      "image": "img_6.jpg",
+      "scale_status": "estimated",
+      "scale_reasons": [],
+      "winning_mode_candidate": {
+        "short": 45.114070892333984,
+        "long": 86.07911682128906,
+        "support": 27
+      },
+      "support_ratio": 27.0,
+      "source_count": 64,
+      "retained_count": 34,
+      "final_count": 34,
+      "decision_counts": {
+        "retained": 34,
+        "rejected": 29,
+        "uncertain": 1
+      },
+      "reason_counts": {
+        "both_dimensions_match": 34,
+        "long_dimension_not_supported_integer_multiple": 26,
+        "unsupported_image_seam": 1,
+        "short_dimension_mismatch": 3
+      },
+      "accepted_split_parents": 0,
+      "accepted_split_children": 0,
+      "duplicate_mask_pairs": 0
+    },
+    {
+      "image": "img_7.jpg",
+      "scale_status": "estimated",
+      "scale_reasons": [],
+      "winning_mode_candidate": {
+        "short": 42.4893798828125,
+        "long": 88.0,
+        "support": 27
+      },
+      "support_ratio": 6.75,
+      "source_count": 64,
+      "retained_count": 30,
+      "final_count": 30,
+      "decision_counts": {
+        "retained": 30,
+        "rejected": 33,
+        "uncertain": 1
+      },
+      "reason_counts": {
+        "both_dimensions_match": 30,
+        "short_dimension_mismatch": 5,
+        "long_dimension_not_supported_integer_multiple": 28,
+        "split_child_dimension_mismatch": 1
+      },
+      "accepted_split_parents": 0,
+      "accepted_split_children": 0,
+      "duplicate_mask_pairs": 0
+    },
+    {
+      "image": "img_8.jpg",
+      "scale_status": "estimated",
+      "scale_reasons": [],
+      "winning_mode_candidate": {
+        "short": 44.441232681274414,
+        "long": 90.08633041381836,
+        "support": 22
+      },
+      "support_ratio": 5.5,
+      "source_count": 64,
+      "retained_count": 29,
+      "final_count": 31,
+      "decision_counts": {
+        "uncertain": 3,
+        "retained": 29,
+        "rejected": 31,
+        "split": 1
+      },
+      "reason_counts": {
+        "split_child_dimension_mismatch": 2,
+        "both_dimensions_match": 29,
+        "long_dimension_not_supported_integer_multiple": 28,
+        "unsupported_image_seam": 1,
+        "short_dimension_mismatch": 3,
+        "integer_size_and_all_image_seams_supported": 1
+      },
+      "accepted_split_parents": 1,
+      "accepted_split_children": 2,
+      "duplicate_mask_pairs": 0
+    },
+    {
+      "image": "img_9.jpg",
+      "scale_status": "estimated",
+      "scale_reasons": [],
+      "winning_mode_candidate": {
+        "short": 44.1898250579834,
+        "long": 90.08718872070312,
+        "support": 24
+      },
+      "support_ratio": 4.0,
+      "source_count": 63,
+      "retained_count": 30,
+      "final_count": 30,
+      "decision_counts": {
+        "uncertain": 3,
+        "retained": 30,
+        "rejected": 30
+      },
+      "reason_counts": {
+        "split_child_dimension_mismatch": 2,
+        "both_dimensions_match": 30,
+        "long_dimension_not_supported_integer_multiple": 28,
+        "unsupported_image_seam": 1,
+        "short_dimension_mismatch": 2
+      },
+      "accepted_split_parents": 0,
+      "accepted_split_children": 0,
+      "duplicate_mask_pairs": 0
+    },
+    {
+      "image": "img_10.jpg",
+      "scale_status": "estimated",
+      "scale_reasons": [],
+      "winning_mode_candidate": {
+        "short": 20.0,
+        "long": 44.0,
+        "support": 6
+      },
+      "support_ratio": 3.0,
+      "source_count": 54,
+      "retained_count": 6,
+      "final_count": 6,
+      "decision_counts": {
+        "retained": 6,
+        "rejected": 48
+      },
+      "reason_counts": {
+        "both_dimensions_match": 6,
+        "short_dimension_mismatch": 48
+      },
+      "accepted_split_parents": 0,
+      "accepted_split_children": 0,
+      "duplicate_mask_pairs": 0
+    },
+    {
+      "image": "img_11.jpg",
+      "scale_status": "abstain",
+      "scale_reasons": [
+        "ambiguous_scale_modes"
+      ],
+      "winning_mode_candidate": {
+        "short": 46.987375259399414,
+        "long": 110.90250778198242,
+        "support": 8
+      },
+      "support_ratio": 1.3333333333333333,
+      "source_count": 55,
+      "retained_count": 0,
+      "final_count": 0,
+      "decision_counts": {
+        "uncertain": 55
+      },
+      "reason_counts": {
+        "ambiguous_scale_modes": 55
+      },
+      "accepted_split_parents": 0,
+      "accepted_split_children": 0,
+      "duplicate_mask_pairs": 0
+    },
+    {
+      "image": "img_12.jpg",
+      "scale_status": "abstain",
+      "scale_reasons": [
+        "ambiguous_scale_modes"
+      ],
+      "winning_mode_candidate": {
+        "short": 48.990196228027344,
+        "long": 102.46568298339844,
+        "support": 7
+      },
+      "support_ratio": 1.1666666666666667,
+      "source_count": 57,
+      "retained_count": 0,
+      "final_count": 0,
+      "decision_counts": {
+        "uncertain": 57
+      },
+      "reason_counts": {
+        "ambiguous_scale_modes": 57
+      },
+      "accepted_split_parents": 0,
+      "accepted_split_children": 0,
+      "duplicate_mask_pairs": 0
+    },
+    {
+      "image": "img_13.jpg",
+      "scale_status": "estimated",
+      "scale_reasons": [],
+      "winning_mode_candidate": {
+        "short": 49.0463981628418,
+        "long": 98.5,
+        "support": 24
+      },
+      "support_ratio": 4.8,
+      "source_count": 62,
+      "retained_count": 29,
+      "final_count": 36,
+      "decision_counts": {
+        "rejected": 29,
+        "retained": 29,
+        "uncertain": 2,
+        "split": 2
+      },
+      "reason_counts": {
+        "long_dimension_not_supported_integer_multiple": 20,
+        "both_dimensions_match": 29,
+        "short_dimension_mismatch": 9,
+        "unsupported_image_seam": 2,
+        "integer_size_and_all_image_seams_supported": 2
+      },
+      "accepted_split_parents": 2,
+      "accepted_split_children": 7,
+      "duplicate_mask_pairs": 5
+    },
+    {
+      "image": "img_14.jpg",
+      "scale_status": "estimated",
+      "scale_reasons": [],
+      "winning_mode_candidate": {
+        "short": 44.42189407348633,
+        "long": 87.0,
+        "support": 13
+      },
+      "support_ratio": 2.6,
+      "source_count": 47,
+      "retained_count": 15,
+      "final_count": 20,
+      "decision_counts": {
+        "uncertain": 5,
+        "rejected": 26,
+        "retained": 15,
+        "split": 1
+      },
+      "reason_counts": {
+        "unsupported_image_seam": 5,
+        "short_dimension_mismatch": 7,
+        "both_dimensions_match": 15,
+        "integer_size_and_all_image_seams_supported": 1,
+        "long_dimension_not_supported_integer_multiple": 19
+      },
+      "accepted_split_parents": 1,
+      "accepted_split_children": 5,
+      "duplicate_mask_pairs": 1
+    },
+    {
+      "image": "img_15.jpg",
+      "scale_status": "estimated",
+      "scale_reasons": [],
+      "winning_mode_candidate": {
+        "short": 45.0,
+        "long": 88.0,
+        "support": 14
+      },
+      "support_ratio": 2.3333333333333335,
+      "source_count": 50,
+      "retained_count": 16,
+      "final_count": 26,
+      "decision_counts": {
+        "retained": 16,
+        "rejected": 29,
+        "split": 2,
+        "uncertain": 3
+      },
+      "reason_counts": {
+        "both_dimensions_match": 16,
+        "long_dimension_not_supported_integer_multiple": 19,
+        "short_dimension_mismatch": 10,
+        "integer_size_and_all_image_seams_supported": 2,
+        "unsupported_image_seam": 2,
+        "split_child_dimension_mismatch": 1
+      },
+      "accepted_split_parents": 2,
+      "accepted_split_children": 10,
+      "duplicate_mask_pairs": 2
+    },
+    {
+      "image": "img_16.jpg",
+      "scale_status": "estimated",
+      "scale_reasons": [],
+      "winning_mode_candidate": {
+        "short": 46.037418365478516,
+        "long": 89.07279968261719,
+        "support": 18
+      },
+      "support_ratio": 4.5,
+      "source_count": 47,
+      "retained_count": 18,
+      "final_count": 25,
+      "decision_counts": {
+        "uncertain": 3,
+        "rejected": 24,
+        "split": 2,
+        "retained": 18
+      },
+      "reason_counts": {
+        "unsupported_image_seam": 2,
+        "long_dimension_not_supported_integer_multiple": 10,
+        "integer_size_and_all_image_seams_supported": 2,
+        "short_dimension_mismatch": 14,
+        "both_dimensions_match": 18,
+        "split_child_dimension_mismatch": 1
+      },
+      "accepted_split_parents": 2,
+      "accepted_split_children": 7,
+      "duplicate_mask_pairs": 5
+    },
+    {
+      "image": "img_17.jpg",
+      "scale_status": "estimated",
+      "scale_reasons": [],
+      "winning_mode_candidate": {
+        "short": 46.85487937927246,
+        "long": 91.26126861572266,
+        "support": 28
+      },
+      "support_ratio": 9.333333333333334,
+      "source_count": 67,
+      "retained_count": 34,
+      "final_count": 36,
+      "decision_counts": {
+        "retained": 34,
+        "rejected": 31,
+        "split": 1,
+        "uncertain": 1
+      },
+      "reason_counts": {
+        "both_dimensions_match": 34,
+        "long_dimension_not_supported_integer_multiple": 20,
+        "short_dimension_mismatch": 11,
+        "integer_size_and_all_image_seams_supported": 1,
+        "unsupported_image_seam": 1
+      },
+      "accepted_split_parents": 1,
+      "accepted_split_children": 2,
+      "duplicate_mask_pairs": 1
+    },
+    {
+      "image": "img_18.jpg",
+      "scale_status": "estimated",
+      "scale_reasons": [],
+      "winning_mode_candidate": {
+        "short": 40.3419189453125,
+        "long": 78.24745559692383,
+        "support": 10
+      },
+      "support_ratio": 10.0,
+      "source_count": 52,
+      "retained_count": 18,
+      "final_count": 18,
+      "decision_counts": {
+        "rejected": 28,
+        "retained": 18,
+        "uncertain": 6
+      },
+      "reason_counts": {
+        "short_dimension_mismatch": 8,
+        "long_dimension_not_supported_integer_multiple": 20,
+        "both_dimensions_match": 18,
+        "unsupported_image_seam": 6
+      },
+      "accepted_split_parents": 0,
+      "accepted_split_children": 0,
+      "duplicate_mask_pairs": 0
+    }
+  ],
+  "accepted_splits": [
+    {
+      "image": "img_8.jpg",
+      "parent_id": "q01_047",
+      "children": [
+        "q01_047_s01",
+        "q01_047_s02"
+      ],
+      "seam_boundaries": 1,
+      "all_supported": true
+    },
+    {
+      "image": "img_13.jpg",
+      "parent_id": "q01_051",
+      "children": [
+        "q01_051_s01",
+        "q01_051_s02",
+        "q01_051_s03",
+        "q01_051_s04",
+        "q01_051_s05"
+      ],
+      "seam_boundaries": 4,
+      "all_supported": true
+    },
+    {
+      "image": "img_13.jpg",
+      "parent_id": "q01_053",
+      "children": [
+        "q01_053_s01",
+        "q01_053_s02"
+      ],
+      "seam_boundaries": 1,
+      "all_supported": true
+    },
+    {
+      "image": "img_14.jpg",
+      "parent_id": "q01_003",
+      "children": [
+        "q01_003_s01",
+        "q01_003_s02",
+        "q01_003_s03",
+        "q01_003_s04",
+        "q01_003_s05"
+      ],
+      "seam_boundaries": 4,
+      "all_supported": true
+    },
+    {
+      "image": "img_15.jpg",
+      "parent_id": "q01_006",
+      "children": [
+        "q01_006_s01",
+        "q01_006_s02",
+        "q01_006_s03",
+        "q01_006_s04",
+        "q01_006_s05"
+      ],
+      "seam_boundaries": 4,
+      "all_supported": true
+    },
+    {
+      "image": "img_15.jpg",
+      "parent_id": "q01_026",
+      "children": [
+        "q01_026_s01",
+        "q01_026_s02",
+        "q01_026_s03",
+        "q01_026_s04",
+        "q01_026_s05"
+      ],
+      "seam_boundaries": 4,
+      "all_supported": true
+    },
+    {
+      "image": "img_16.jpg",
+      "parent_id": "q01_002",
+      "children": [
+        "q01_002_s01",
+        "q01_002_s02",
+        "q01_002_s03",
+        "q01_002_s04",
+        "q01_002_s05"
+      ],
+      "seam_boundaries": 4,
+      "all_supported": true
+    },
+    {
+      "image": "img_16.jpg",
+      "parent_id": "q01_039",
+      "children": [
+        "q01_039_s01",
+        "q01_039_s02"
+      ],
+      "seam_boundaries": 1,
+      "all_supported": true
+    },
+    {
+      "image": "img_17.jpg",
+      "parent_id": "q01_010",
+      "children": [
+        "q01_010_s01",
+        "q01_010_s02"
+      ],
+      "seam_boundaries": 1,
+      "all_supported": true
+    }
+  ],
+  "caveats": [
+    "Image10 estimated cohort20x44pixels is a small-fragment mode; scale estimated does not establish correct full-brick scale.",
+    "Images11/12 abstain for ambiguous_scale_modes; their postprocessed outputs are empty.",
+    "Raw124matches reproduced exactly; filter loses11trueface references. Final splits globallyrecover4faces, not8: matched-child assignment counts differ from newface counts under globalmatching.",
+    "All18nineacceptedparentssplitinto33children; sixannotatedviews have14children,8matched and6duplicates; final10duplicateboxes include assignmentownershipchanges.",
+    "Fourteen all18 mask-IoU>=.8 pair flags allinvolve split children; diagnostic only, no dedup performed.",
+    "Dimension/seam evidence remains image-scale, not calibrated brick dimensions, physical exposure or metricpose.",
+    "No tuning, newSAMinference, changedlabels, simulation or furthertrial."
+  ]
+}

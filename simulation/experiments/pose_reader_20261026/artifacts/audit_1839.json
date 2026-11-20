@@ -1,0 +1,66 @@
+{
+  "schema": "pose-reader-independent-audit-v1",
+  "diagnostic_complete": true,
+  "checks": {
+    "schema": true,
+    "full_source_names": true,
+    "exact_actor_paths": true,
+    "world_frame": true,
+    "frozen_limits": true,
+    "no_step_or_control": true,
+    "unchanged_clock": true,
+    "unchanged_step_index": true,
+    "unchanged_arm": true,
+    "initializer_snapshot": true,
+    "exact_row_permutation": true,
+    "unchanged_native_parts_paths": true,
+    "unchanged_native_connections_paths": true,
+    "cached_finite_nonzero_poses": true,
+    "cached_layout_dtype_clock": true,
+    "cached_conversion_and_order": true,
+    "direct_finite_nonzero_poses": true,
+    "direct_layout_dtype_clock": true,
+    "direct_conversion_and_order": true,
+    "batch_finite_nonzero_poses": true,
+    "batch_layout_dtype_clock": true,
+    "batch_conversion_and_order": true,
+    "cached_direct_summary_verified": true,
+    "cached_batch_summary_verified": true,
+    "direct_batch_summary_verified": true,
+    "capture_manifest_binding": true,
+    "manifest_initializer_binding": true,
+    "copied_source_hashes": true,
+    "initializer_base_manifest_binding": true
+  },
+  "failed_checks": [],
+  "reader_status": "CACHE_ONLY_DISCREPANCY",
+  "comparisons": {
+    "cached_direct": {
+      "maximum_position_error_m": 3.725290298461914e-09,
+      "maximum_angle_error_rad": 0.0,
+      "passed": false
+    },
+    "cached_batch": {
+      "maximum_position_error_m": 3.725290298461914e-09,
+      "maximum_angle_error_rad": 0.0,
+      "passed": false
+    },
+    "direct_batch": {
+      "maximum_position_error_m": 0.0,
+      "maximum_angle_error_rad": 0.0,
+      "passed": true
+    }
+  },
+  "all_readers_equivalent": false,
+  "fresh_direct_batch_equivalent": true,
+  "initializer_source_snapshot": "runs/20261026T010941.404058Z-control-alignment-b",
+  "absolute_pose_accuracy_verified": false,
+  "physical_control_alignment_verified": false,
+  "grasp_or_hardware_parity_verified": false,
+  "corrected_check_automatically_authorized": false,
+  "capture_sha256": "02cb583b8b4d560d14f9a0e98f826aec4ecbd23ae481fc6f94cce373a8cf87d8",
+  "evaluator_sha256": "51d526c8c8eb7ced390580567a36311a303a94fbd8a5203327b0be94b0377be0",
+  "manifest_sha256": "f8ec3ab14031f1ca2a8ee069607489317c4d3bfacaa1df74585220dd9513dec2",
+  "source_commit": "c1e6805ec88b4e03f988a28bdd3801f0e0c70a9a",
+  "base_snapshot_manifest_sha256": "e18ccdd65338d2537e781348cf2be0780ef8740a39ae44d250410148d089d3a2"
+}

@@ -1,0 +1,14 @@
+{
+  "job_id": 1834,
+  "source_commit": "0c4890b",
+  "snapshot": "runs/20261026T004924.746380Z-control-alignment-a",
+  "full_scheduler_seconds": 4.537392625,
+  "result": "Failed1",
+  "phase": "A",
+  "native_build_completed": true,
+  "planning_started": false,
+  "simulation_started": false,
+  "hardware_commands": 0,
+  "exception": "AttributeError: Frame object has no attribute parentJoint",
+  "original_failure_preserved": true
+}

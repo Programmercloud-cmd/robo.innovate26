@@ -1,0 +1,57 @@
+{
+  "complete": true,
+  "stopped_after_improvement_rounds": 3,
+  "final_selection_commit": "d7c5b47",
+  "final_implementation_commit": "692a277",
+  "render_job_id": 1686,
+  "development_job_ids": [
+    1687,
+    1688,
+    1689,
+    1690
+  ],
+  "reserved_job_ids": [
+    1691,
+    1692,
+    1693,
+    1694
+  ],
+  "report_job_id": 1695,
+  "all_jobs_successful": true,
+  "queue": "default",
+  "queue_parallel_tasks_unchanged": 1,
+  "report_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T155602.872659Z-partial-final-report",
+  "runtime": {
+    "python_executable": "/home/faps/miniforge3/envs/unitree_sim_env/bin/python",
+    "python": "3.11.15",
+    "isaacsim": "5.1.0.0",
+    "isaaclab_repository_version": "2.3.2",
+    "isaaclab_extension_distribution_version": "0.54.3",
+    "isaaclab_repository_commit": "80094be3245aa5c8376a7464d29cb4412ea518f5",
+    "isaaclab_repository_clean_at_completion": true,
+    "bricksim": "0.1.0.dev645+gcbd5de3",
+    "bricksim_wheel_sha256": "145e7d838ef8f7ad5f848a5633492b57f5f894a7e9a3dfe7812767c7194af8fb",
+    "numpy": "1.26.0",
+    "opencv_python_distribution": "4.10.0.84",
+    "opencv_runtime": "4.10.0",
+    "scipy": "1.15.3",
+    "dependency_installations_or_shared_environment_changes": false
+  },
+  "report_artifacts_sha256": {
+    "output/index.html": "49264555f87df324674f3eb19bf75b31f7ed97edab95632506028b43840ff038",
+    "output/configuration_manifest.json": "20fc0b93c473b5d1c8754df9cf0e2560331c8294f97c938c1dda194bf0ea3aad",
+    "output/tables/summary.json": "db1e9fe9dd455eeb222bbd136a1f07541c3994892f400c02619539ba18f81d0a"
+  },
+  "modes": {
+    "single_view": "evaluated independently",
+    "combined_view": "not measured",
+    "temporal": "not measured; stateless sensor-only initialization"
+  },
+  "limits": [
+    "Ideal rendered depth and nominal calibration, no physical D435i or robot-frame pose accuracy claim",
+    "Static native graphs/roots validated, connection dynamics not evaluated",
+    "Isaac postcapture cleanup stalls handled after validated capture by bounded owned-process supervisor",
+    "No confirmed-face recall gain; multiple sparse compact remnants remain unsupported",
+    "Correlated configurations/views, small observable gap reference set"
+  ]
+}

@@ -1,0 +1,3 @@
+'use strict';
+importScripts('../engine/operational-engine.js');
+self.onmessage=async e=>{try{let run;if(e.data.mode==='load'){const response=await fetch(e.data.url);if(!response.ok)throw Error('Generated run is unavailable ('+response.status+')');self.postMessage({status:'Parsing generated process in background…'});run=await response.json();}else{self.postMessage({status:'Generating new process schedule in background…'});run=await self.OperationalEngine.createRun(e.data.manifest,e.data.options||{});}self.postMessage({run});}catch(error){self.postMessage({error:error.stack||error.message||String(error)});}};

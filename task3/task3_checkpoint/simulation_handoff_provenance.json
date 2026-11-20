@@ -1,0 +1,14 @@
+{
+  "source_repository": "Comentario/robo.innovate-hackathon-TUM",
+  "source_branch": "persona2/planning",
+  "source_commit": "cc388f40257841817548c6f2a9be4b647b2ae5bd",
+  "working_tree_files": [
+    "greenfield/cart_model.js",
+    "greenfield/viewer_cart.html",
+    "greenfield/logistics.js",
+    "scripts/cart_demo.py",
+    "unreal/tools/verify_replica_cloud.py"
+  ],
+  "latest_generated_checkpoint": "greenfield_36",
+  "next_revision": "37 (work in progress, no recorded replay at handoff)"
+}

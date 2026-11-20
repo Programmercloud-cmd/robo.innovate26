@@ -1,0 +1,6 @@
+/run.json
+/run.json.gz
+/server.log
+/server.pid
+__pycache__/
+*.pyc

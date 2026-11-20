@@ -1,0 +1,36 @@
+{
+  "method": "Independent negative controls mutate a fresh newly generated run; baseline must pass",
+  "baselinePassed": true,
+  "passed": true,
+  "results": [
+    {
+      "name": "duplicate brick in a formed layer",
+      "passed": true,
+      "failedChecks": [
+        "layers contain forty unique good bricks and ordered process times",
+        "completed pallets are fourteen FIFO layers / 560 unique good bricks with valid recipes"
+      ]
+    },
+    {
+      "name": "overlapping exclusive zone owners",
+      "passed": true,
+      "failedChecks": [
+        "occupied resource calendars have no conflicting owners"
+      ]
+    },
+    {
+      "name": "out-of-order pallet layers",
+      "passed": true,
+      "failedChecks": [
+        "completed pallets are fourteen FIFO layers / 560 unique good bricks with valid recipes"
+      ]
+    },
+    {
+      "name": "duplicate identity in a ledger transaction",
+      "passed": true,
+      "failedChecks": [
+        "all material ownership transitions conserve unique identities"
+      ]
+    }
+  ]
+}

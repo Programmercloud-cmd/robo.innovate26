@@ -1,0 +1,12 @@
+{
+  "interior_scale": 0.65,
+  "depth_height_offsets_m": [-0.0008, 0.0025],
+  "lightness_range": [8, 95],
+  "minimum_chroma": 8,
+  "minimum_valid_pixels": 64,
+  "minimum_valid_fraction": 0.25,
+  "prototype_minimum_pixels": 64,
+  "maximum_delta_e": 18,
+  "minimum_runner_up_gap": 4,
+  "minimum_pixel_agreement": 0.85
+}

@@ -1,0 +1,21 @@
+{
+  "image": "img_9.jpg",
+  "domain": "real",
+  "width": 1280,
+  "height": 720,
+  "method": "studwise_march",
+  "detections": [
+    {
+      "id": "d000",
+      "box_xyxy": [
+        470.642822265625,
+        283.03167724609375,
+        903.8746337890625,
+        584.7619018554688
+      ],
+      "confidence": 0.2690976858139038,
+      "class_id": 0,
+      "class_name": "item"
+    }
+  ]
+}

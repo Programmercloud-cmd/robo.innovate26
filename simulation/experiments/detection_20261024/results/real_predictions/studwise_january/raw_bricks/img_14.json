@@ -1,0 +1,21 @@
+{
+  "image": "img_14.jpg",
+  "domain": "real",
+  "width": 1280,
+  "height": 720,
+  "method": "studwise_january",
+  "detections": [
+    {
+      "id": "d000",
+      "box_xyxy": [
+        94.0053939819336,
+        50.93727493286133,
+        183.67153930664062,
+        113.14695739746094
+      ],
+      "confidence": 0.6771040558815002,
+      "class_id": 0,
+      "class_name": "brick"
+    }
+  ]
+}

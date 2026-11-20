@@ -1,0 +1,10 @@
+{
+  "baseline_configuration": "baseline_scene_config.json",
+  "only_geometric_parameter_changed": "final_layout.robot.yaw_table_deg",
+  "before": 90,
+  "after": 45,
+  "other_scene_configuration_unchanged": true,
+  "geometry_sha256": "8a0266b2ccbf75f6d773fdd1e6309c70f9ab8828da96b563da133f383f83c897",
+  "joint_configuration_source": "challenge2/env_cfg.py",
+  "joint_configuration_sha256": "68e9c624f0ce26474c53e487ab1301002e7c6d329156d00f5e39a544ffc16246"
+}

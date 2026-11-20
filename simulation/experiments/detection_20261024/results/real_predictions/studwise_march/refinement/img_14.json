@@ -1,0 +1,29 @@
+{
+  "image": "img_14.jpg",
+  "detections": [
+    {
+      "parent_detection_id": "d000",
+      "stud_count": 6,
+      "orientation_deg": 162.7772376233267,
+      "pca_eigenvalue_ratio": 2.6952966031055716,
+      "passes_eight_stud_pca_gate": false,
+      "interpretation": "image-space heuristic only; not exposure, accessibility or metric pose"
+    },
+    {
+      "parent_detection_id": "d001",
+      "stud_count": 4,
+      "orientation_deg": 5.949540850070491,
+      "pca_eigenvalue_ratio": 63.170831097361976,
+      "passes_eight_stud_pca_gate": false,
+      "interpretation": "image-space heuristic only; not exposure, accessibility or metric pose"
+    },
+    {
+      "parent_detection_id": "d002",
+      "stud_count": 27,
+      "orientation_deg": 142.3828807138157,
+      "pca_eigenvalue_ratio": 2.5100400139088204,
+      "passes_eight_stud_pca_gate": false,
+      "interpretation": "image-space heuristic only; not exposure, accessibility or metric pose"
+    }
+  ]
+}

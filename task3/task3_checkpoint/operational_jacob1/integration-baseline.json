@@ -1,0 +1,15 @@
+{
+  "geometry_sha256": "74a93f84df620df69fc66ba5ce95f8243554bb41fa3d8095fb3ad920b45e4249",
+  "frozen_subsets_sha256": "91aede85c16f036bf893ff59daa91a1411f1ca645812b1678de0c88095805ab7",
+  "source_layout": "outputs/brickflow-reject-service-20261028/layout/reject-service.json",
+  "existing_replay": "task3_checkpoint/greenfield_37/combined-ccaf03c52e40aaca.json.gz",
+  "integration_owner": "root",
+  "implementation_split": {
+    "engine": "operational_model",
+    "viewer": "operational_viewer",
+    "independent_validation": "operational_validation"
+  },
+  "scope": "New discrete-event process model and inspection interface using accepted static geometry; no edits to old replay",
+  "accepted_static_geometry_sha256": "9f02d80f5de07d4e17d20fa9f4c21220ce3c0e27a498156b11a4134d137491de",
+  "authorized_upstream_change": "upstream_kiln_cart section; north-to-south track and 90degree held-layer rotation"
+}

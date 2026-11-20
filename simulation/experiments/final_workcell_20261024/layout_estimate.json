@@ -1,0 +1,516 @@
+{
+  "schema": "approximate-planar-photo-layout-v2",
+  "frame": "table: origin white plate center; +X toward gray plate; +Y toward bowl; +Z up; right-handed",
+  "assumptions": {
+    "white_studs_per_side": 32,
+    "stud_pitch_m": 0.008,
+    "measured_outer_side_m": {
+      "white": 0.25,
+      "gray": 0.38
+    },
+    "physical_size_source": "User reported 25cm white / 38cm gray; nominal stud counts remain visual hypotheses",
+    "tape_covered_stud_rows_each_opposite_y_edge": 2,
+    "tape_inset_interpretation": "Approximate 16mm per covered edge from 2 rows x 8mm pitch; tape inner-edge position within row gap unknown",
+    "gray_nominal_studs_per_side_for_comparison_only": 48,
+    "ruler_tick_distance_m": 0.2,
+    "corner_order": [
+      "image_top_left",
+      "image_top_right",
+      "image_bottom_right",
+      "image_bottom_left"
+    ],
+    "observed_quad_semantics": "X edges are full unmasked side edges; Y edges are tape inner edges bounding uncovered region, not full outer plate"
+  },
+  "limitations": [
+    "User-reported white 250mm outer width sets scale; Y calibration uses 218mm uncovered span after two 16mm insets. Gray 380mm outer width is an independent check.",
+    "Native 32/48 stud footprints at 8mm pitch are 256/384mm, differing 6/4mm from user-reported widths. No native geometry or stud pitch is stretched to fit.",
+    "Black tape conceals full outer Y edges; recorded quads are uncovered bounds. Hidden outer bounds are inferred with approximate 16mm insets, not directly observed. Ruler 0/20 marks remain independent manual checks.",
+    "One plane approximates tabletop and raised plates; no lens distortion or phone intrinsics are inferred.",
+    "Base foot is occluded; its approximate image center is not a calibrated FR3 frame or yaw. Bowl rim is above the table and not its measured contact footprint.",
+    "Homography reprojection error cannot establish physical accuracy. Two perturbations omit independent point-pick, height/parallax, lens and dimension errors.",
+    "Marker board visually7x5 squares; dictionary, printed dimensions and scaling unknown. It does not establish an extrinsic calibration."
+  ],
+  "pixel_pick_uncertainty": {
+    "plate_corners_and_ruler_ticks_px": 3,
+    "source_footprint_center_px": 8,
+    "base_foot_center_px": 20,
+    "bowl_center_px": 8,
+    "tape_and_board_centers_px": 3,
+    "scenarios": "Two fixed sensitivities: white uncovered quad expanded/contracted 3px on each axis about its center. Other pixel anchors and assumed 16mm tape insets remain fixed; not statistical or worst-case bounds."
+  },
+  "variants": {
+    "nominal": {
+      "points_table_xy_m": {
+        "source_footprint_center_approx": [
+          0.00031055840584162496,
+          0.003264639377147018
+        ],
+        "robot_base_foot_center_approx": [
+          -0.09442035907852482,
+          -0.40038524964237837
+        ],
+        "bowl_rim_center_projected_approx": [
+          0.006570927799090652,
+          0.2731756695767392
+        ],
+        "yellow_tape_junction": [
+          0.41125326831431613,
+          -0.06110333606738046
+        ],
+        "yellow_tape_top_endpoint": [
+          0.41384109355669335,
+          -0.2389760784342175
+        ],
+        "yellow_tape_left_endpoint": [
+          0.6455825701740916,
+          -0.06307698145196224
+        ],
+        "yellow_tape_right_endpoint": [
+          0.20660177641127542,
+          -0.062051970997916796
+        ],
+        "marker_board_print_center": [
+          0.39626283671893686,
+          -0.4155142302131466
+        ],
+        "gray_plate_center": [
+          0.42229233704789704,
+          -0.05779219330851693
+        ]
+      },
+      "gray_uncovered_quad_table_xy_m": [
+        [
+          0.6304362039836442,
+          -0.2363566844442529
+        ],
+        [
+          0.2229114552940675,
+          -0.23418229890061432
+        ],
+        [
+          0.2136942017115003,
+          0.11791886831082728
+        ],
+        [
+          0.6221274872023761,
+          0.1214513417999721
+        ]
+      ],
+      "gray_inferred_outer_quad_table_xy_m": [
+        [
+          0.6308076423843653,
+          -0.252352372410529
+        ],
+        [
+          0.22333015754728258,
+          -0.25017681947558473
+        ],
+        [
+          0.21327549945828522,
+          0.1339133888857977
+        ],
+        [
+          0.621756048801655,
+          0.1374470297662482
+        ]
+      ],
+      "gray_uncovered_edge_spans_m_top_right_bottom_left": [
+        0.40753054946469347,
+        0.352221790517374,
+        0.4084485611014228,
+        0.3579044822565643
+      ],
+      "gray_inferred_outer_edge_spans_m_top_right_bottom_left": [
+        0.40748329251605847,
+        0.38422179051737393,
+        0.4084958332831966,
+        0.3899044822565643
+      ],
+      "ruler_measured_tick_distance_m": 0.18678376040638542,
+      "source_distances_m": {
+        "gray_plate_center": 0.4263760761622512,
+        "robot_base_foot_center_approx": 0.41461690707556176,
+        "bowl_rim_center_projected_approx": 0.269983622555786
+      }
+    },
+    "expanded_white_quad_3px": {
+      "points_table_xy_m": {
+        "source_footprint_center_approx": [
+          0.00030160528128326316,
+          0.003161087772039335
+        ],
+        "robot_base_foot_center_approx": [
+          -0.0911360845829547,
+          -0.3863586813212422
+        ],
+        "bowl_rim_center_projected_approx": [
+          0.006186029659674363,
+          0.2645593637488856
+        ],
+        "yellow_tape_junction": [
+          0.3987559483529818,
+          -0.05887440184083611
+        ],
+        "yellow_tape_top_endpoint": [
+          0.4009910908159623,
+          -0.2304649909034484
+        ],
+        "yellow_tape_left_endpoint": [
+          0.6257059871521246,
+          -0.060674577801826335
+        ],
+        "yellow_tape_right_endpoint": [
+          0.20041006381567447,
+          -0.0598825080182265
+        ],
+        "marker_board_print_center": [
+          0.3837240705695287,
+          -0.4004450782106819
+        ],
+        "gray_plate_center": [
+          0.40939090581051957,
+          -0.05549863074317732
+        ]
+      },
+      "gray_uncovered_quad_table_xy_m": [
+        [
+          0.6105706392301904,
+          -0.22778739634006476
+        ],
+        [
+          0.21613857357052277,
+          -0.22597953827483838
+        ],
+        [
+          0.20736394777919892,
+          0.11414044955326272
+        ],
+        [
+          0.6034904626621662,
+          0.11763196208893116
+        ]
+      ],
+      "gray_inferred_outer_quad_table_xy_m": [
+        [
+          0.6108985277299337,
+          -0.24378403627261735
+        ],
+        [
+          0.21655121416814027,
+          -0.24197421638154618
+        ],
+        [
+          0.20695130718158142,
+          0.1301351276599705
+        ],
+        [
+          0.6031625741624229,
+          0.13362860202148374
+        ]
+      ],
+      "gray_uncovered_edge_spans_m_top_right_bottom_left": [
+        0.39443620874779783,
+        0.3402331556123909,
+        0.3961419019153521,
+        0.34549191318717365
+      ],
+      "gray_inferred_outer_edge_spans_m_top_right_bottom_left": [
+        0.3943514665389765,
+        0.3722331556123909,
+        0.3962266680142545,
+        0.3774919131871737
+      ],
+      "ruler_measured_tick_distance_m": 0.18109837042858667,
+      "source_distances_m": {
+        "gray_plate_center": 0.41327353941885064,
+        "robot_base_foot_center_approx": 0.40010811244236466,
+        "bowl_rim_center_projected_approx": 0.2614645007145951
+      }
+    },
+    "contracted_white_quad_3px": {
+      "points_table_xy_m": {
+        "source_footprint_center_approx": [
+          0.0003200563505259538,
+          0.0033752240521193033
+        ],
+        "robot_base_foot_center_approx": [
+          -0.09795674975595627,
+          -0.4154954836610583
+        ],
+        "bowl_rim_center_projected_approx": [
+          0.0069932808307470486,
+          0.2823588268972338
+        ],
+        "yellow_tape_junction": [
+          0.4245762253172821,
+          -0.06350722764353792
+        ],
+        "yellow_tape_top_endpoint": [
+          0.42757516009320645,
+          -0.2481534790550287
+        ],
+        "yellow_tape_left_endpoint": [
+          0.666801024357665,
+          -0.06567560704166289
+        ],
+        "yellow_tape_right_endpoint": [
+          0.2131936897073624,
+          -0.06438491693012711
+        ],
+        "marker_board_print_center": [
+          0.4096957281731332,
+          -0.43179980151251235
+        ],
+        "gray_plate_center": [
+          0.43605466859902275,
+          -0.060285062904339944
+        ]
+      },
+      "gray_uncovered_quad_table_xy_m": [
+        [
+          0.6516983642024223,
+          -0.24561065909243762
+        ],
+        [
+          0.23013656655578996,
+          -0.24301460213667567
+        ],
+        [
+          0.22042122077399848,
+          0.12195536741076313
+        ],
+        [
+          0.6419625228638801,
+          0.1255296422009903
+        ]
+      ],
+      "gray_inferred_outer_quad_table_xy_m": [
+        [
+          0.6521179357021812,
+          -0.2616051568887609
+        ],
+        [
+          0.23056232894785758,
+          -0.259008936333056
+        ],
+        [
+          0.21999545838193085,
+          0.13794970160714345
+        ],
+        [
+          0.6415429513641212,
+          0.14152413999731359
+        ]
+      ],
+      "gray_uncovered_edge_spans_m_top_right_bottom_left": [
+        0.4215697910747137,
+        0.3650992558402689,
+        0.42155645506611433,
+        0.3712679757947697
+      ],
+      "gray_inferred_outer_edge_spans_m_top_right_bottom_left": [
+        0.4215636013072996,
+        0.397099255840269,
+        0.4215626471230284,
+        0.40326797579476975
+      ],
+      "ruler_measured_tick_distance_m": 0.1928443214024828,
+      "source_distances_m": {
+        "gray_plate_center": 0.4403604029050825,
+        "robot_base_foot_center_approx": 0.4302452793449678,
+        "bowl_rim_center_projected_approx": 0.27906340244002614
+      }
+    }
+  },
+  "nominal_image_to_table_homography": [
+    [
+      -0.0013777025406791583,
+      3.1307178451355516e-05,
+      0.8451216658324435
+    ],
+    [
+      1.718589963322606e-05,
+      0.00134852851113564,
+      -0.7084301492831164
+    ],
+    [
+      3.457615391028214e-05,
+      0.00012410089641834768,
+      1.0
+    ]
+  ],
+  "white_uncovered_quad_table_xy_m": [
+    [
+      0.125,
+      -0.10899999737739563
+    ],
+    [
+      -0.125,
+      -0.10899999737739563
+    ],
+    [
+      -0.125,
+      0.10899999737739563
+    ],
+    [
+      0.125,
+      0.10899999737739563
+    ]
+  ],
+  "white_inferred_outer_quad_table_xy_m": [
+    [
+      0.125,
+      -0.125
+    ],
+    [
+      -0.125,
+      -0.125
+    ],
+    [
+      -0.125,
+      0.125
+    ],
+    [
+      0.125,
+      0.125
+    ]
+  ],
+  "white_inferred_outer_corners_image_xy": [
+    [
+      525.8563454156655,
+      419.43022387072045
+    ],
+    [
+      720.5690920502296,
+      416.36003347339937
+    ],
+    [
+      727.4500483367792,
+      618.2014178788553
+    ],
+    [
+      528.1499966261438,
+      620.124704787567
+    ]
+  ],
+  "provenance": {
+    "image": "/home/faps/dev/github/robo.innovate26/runs/20261024T203806.556370Z-final-workcell-photo-audit-tape/photo_09.jpg",
+    "image_sha256": "d6bce867c2e80a68337abfc352edc0b2e88083421b2828824ee5881149bfe64d",
+    "measurements_sha256": "d0fdcf928b07e8c3993ff645eec870a7d1ab47d3814f387ca2c4027a907479a7",
+    "source_sha256": "a83154d85a0bf0ef8e053f9d3bbd73ee5ec683465931e1e7ffd4af47a85f219a",
+    "opencv": "4.10.0",
+    "numpy": "1.26.0"
+  },
+  "point_scenario_ranges_m": {
+    "source_footprint_center_approx": {
+      "min_xy": [
+        0.00030160528128326316,
+        0.003161087772039335
+      ],
+      "max_xy": [
+        0.0003200563505259538,
+        0.0033752240521193033
+      ]
+    },
+    "robot_base_foot_center_approx": {
+      "min_xy": [
+        -0.09795674975595627,
+        -0.4154954836610583
+      ],
+      "max_xy": [
+        -0.0911360845829547,
+        -0.3863586813212422
+      ]
+    },
+    "bowl_rim_center_projected_approx": {
+      "min_xy": [
+        0.006186029659674363,
+        0.2645593637488856
+      ],
+      "max_xy": [
+        0.0069932808307470486,
+        0.2823588268972338
+      ]
+    },
+    "yellow_tape_junction": {
+      "min_xy": [
+        0.3987559483529818,
+        -0.06350722764353792
+      ],
+      "max_xy": [
+        0.4245762253172821,
+        -0.05887440184083611
+      ]
+    },
+    "yellow_tape_top_endpoint": {
+      "min_xy": [
+        0.4009910908159623,
+        -0.2481534790550287
+      ],
+      "max_xy": [
+        0.42757516009320645,
+        -0.2304649909034484
+      ]
+    },
+    "yellow_tape_left_endpoint": {
+      "min_xy": [
+        0.6257059871521246,
+        -0.06567560704166289
+      ],
+      "max_xy": [
+        0.666801024357665,
+        -0.060674577801826335
+      ]
+    },
+    "yellow_tape_right_endpoint": {
+      "min_xy": [
+        0.20041006381567447,
+        -0.06438491693012711
+      ],
+      "max_xy": [
+        0.2131936897073624,
+        -0.0598825080182265
+      ]
+    },
+    "marker_board_print_center": {
+      "min_xy": [
+        0.3837240705695287,
+        -0.43179980151251235
+      ],
+      "max_xy": [
+        0.4096957281731332,
+        -0.4004450782106819
+      ]
+    },
+    "gray_plate_center": {
+      "min_xy": [
+        0.40939090581051957,
+        -0.060285062904339944
+      ],
+      "max_xy": [
+        0.43605466859902275,
+        -0.05549863074317732
+      ]
+    }
+  },
+  "independent_checks": {
+    "gray_user_reported_outer_span_m": 0.38,
+    "gray_reported_span_difference_percent_each_inferred_outer_edge": [
+      7.23244539896275,
+      1.1109975045720866,
+      7.4989034955780465,
+      2.606442699095868
+    ],
+    "native_nominal_outer_span_m": {
+      "white": 0.256,
+      "gray": 0.384
+    },
+    "native_minus_user_reported_outer_span_m": {
+      "white": 0.006000000000000005,
+      "gray": 0.0040000000000000036
+    },
+    "ruler_expected_tick_distance_m": 0.2,
+    "ruler_difference_percent": -6.6081197968072996,
+    "interpretation": "Gray full Y spans include inferred 16mm per edge; X edges unmasked. Disagreement retained, not corrected by fitting ruler/gray dimensions. Native pitch/assets unchanged."
+  }
+}

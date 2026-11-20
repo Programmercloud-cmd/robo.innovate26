@@ -1,0 +1,16 @@
+{
+  "schema": "one-logging-only-128cap-diagnostic-v1",
+  "maximum_runs": 1,
+  "maximum_wall_seconds": 10,
+  "baseline_job_id": 1764,
+  "baseline_artifact_sha256": "7c2d251c875310ef038c59e3cb4ea80672a2b866e0c742f0cca8f7f82a80dbbe",
+  "construction_protocol_sha256": "a7fd7bc5f80dcb2ad3f5a1585a6dd6fe564ac6b6923f6a93d17a4655b9a030bc",
+  "baseline_process_wall_seconds": 0.16371565801091492,
+  "cumulative_construction_plus_audit_limit_seconds": 180,
+  "geometry_change_authorized": false,
+  "resource_cap_change_authorized": false,
+  "expected_outcome": "STOP at unchanged128-vertex guard; proceedfalse, no accepted newcandidate",
+  "export": "FailedcellID/rawHSIvertices/firstHull.extremeindices/finalvertices/facets/normalizedfinalandconstructionplanes/LPcenterandclearance/counts. Exactuniqueplanecount is descriptive, notactualcookedpolygoncount.",
+  "equivalence": "Independentqueued comparison of all27 retainedcellrecords to1764 baseline; noarraysprocessedoutsidequeue.",
+  "history": "1764 unchanged48-cellcandidate128-cap failure remainsfailed. This ONEreplay addslogging only; no retries/newshape/fourthcontactround/cooking. Anyfuturecapdecision requiresseparatereview ofgeometry andvertexANDpolygonconstraints."
+}

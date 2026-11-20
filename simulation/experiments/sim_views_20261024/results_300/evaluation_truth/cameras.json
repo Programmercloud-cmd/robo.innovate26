@@ -1,0 +1,602 @@
+[
+  {
+    "id": "top",
+    "requested": {
+      "id": "top",
+      "eye_offset_m": [
+        0,
+        0,
+        0.36
+      ],
+      "target_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "up_world": [
+        0,
+        1,
+        0
+      ]
+    },
+    "eye_world_m": [
+      0.44999995827674866,
+      -0.1599999964237213,
+      0.4609000018239021
+    ],
+    "target_world_m": [
+      0.44999995827674866,
+      -0.1599999964237213,
+      0.10090000182390213
+    ],
+    "quaternion_wxyz_opengl": [
+      1.0,
+      0.0,
+      -0.0,
+      -0.0
+    ],
+    "up_fallback_used": false,
+    "rotation_camera_to_world": [
+      [
+        1.0,
+        0.0,
+        -0.0
+      ],
+      [
+        -0.0,
+        1.0,
+        -0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "intrinsics": [
+      [
+        923.9097900390625,
+        0.0,
+        640.0
+      ],
+      [
+        0.0,
+        923.9097900390625,
+        360.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "actual_eye_world_m": [
+      0.44999995827674866,
+      -0.1599999964237213,
+      0.4609000086784363
+    ],
+    "actual_quaternion_wxyz_opengl": [
+      1.0,
+      -7.450581485102248e-09,
+      -1.4405113546445136e-08,
+      -1.4405113546445136e-08
+    ],
+    "resolved_render_settings": {
+      "/rtx/post/histogram/enabled": false,
+      "/rtx/post/tonemap/op": 6,
+      "/rtx/post/tonemap/filmIso": 100.0,
+      "/rtx/post/tonemap/exposureTime": 0.019999999552965164,
+      "/rtx/post/tonemap/fNumber": 5.0,
+      "/rtx/post/tonemap/cm2Factor": 1.0
+    },
+    "rgb_standard_deviation": 56.84501085177202,
+    "camera_to_world_opengl": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.44999995827674866,
+        -0.1599999964237213,
+        0.4609000086784363,
+        1.0
+      ]
+    ],
+    "physics_time_s": 0.01666666753590107,
+    "camera_matching": "approximate; no measured physical intrinsics/extrinsics"
+  },
+  {
+    "id": "near_top_x",
+    "requested": {
+      "id": "near_top_x",
+      "eye_offset_m": [
+        0.08,
+        0,
+        0.36
+      ],
+      "target_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "up_world": [
+        0,
+        1,
+        0
+      ]
+    },
+    "eye_world_m": [
+      0.5299999582767486,
+      -0.1599999964237213,
+      0.4609000018239021
+    ],
+    "target_world_m": [
+      0.44999995827674866,
+      -0.1599999964237213,
+      0.10090000182390213
+    ],
+    "quaternion_wxyz_opengl": [
+      0.9940289382568178,
+      0.0,
+      0.10911677189150895,
+      0.0
+    ],
+    "up_fallback_used": false,
+    "rotation_camera_to_world": [
+      [
+        0.9761870601839528,
+        0.0,
+        0.21693045781865605
+      ],
+      [
+        0.0,
+        1.0,
+        -0.0
+      ],
+      [
+        -0.21693045781865608,
+        0.0,
+        0.9761870601839527
+      ]
+    ],
+    "intrinsics": [
+      [
+        923.9097900390625,
+        0.0,
+        640.0
+      ],
+      [
+        0.0,
+        923.9097900390625,
+        360.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "actual_eye_world_m": [
+      0.5299999713897705,
+      -0.1599999964237213,
+      0.4609000086784363
+    ],
+    "actual_quaternion_wxyz_opengl": [
+      0.9940289258956909,
+      -9.880160689590411e-09,
+      0.10911678522825241,
+      -1.4229856404313068e-08
+    ],
+    "resolved_render_settings": {
+      "/rtx/post/histogram/enabled": false,
+      "/rtx/post/tonemap/op": 6,
+      "/rtx/post/tonemap/filmIso": 100.0,
+      "/rtx/post/tonemap/exposureTime": 0.019999999552965164,
+      "/rtx/post/tonemap/fNumber": 5.0,
+      "/rtx/post/tonemap/cm2Factor": 1.0
+    },
+    "rgb_standard_deviation": 56.25419484283436,
+    "camera_to_world_opengl": [
+      [
+        0.97618706086677,
+        0.0,
+        -0.21693045474597886,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.21693045474597886,
+        0.0,
+        0.97618706086677,
+        0.0
+      ],
+      [
+        0.5299999713897705,
+        -0.1599999964237213,
+        0.4609000086784363,
+        1.0
+      ]
+    ],
+    "physics_time_s": 0.01666666753590107,
+    "camera_matching": "approximate; no measured physical intrinsics/extrinsics"
+  },
+  {
+    "id": "near_top_y",
+    "requested": {
+      "id": "near_top_y",
+      "eye_offset_m": [
+        0,
+        -0.08,
+        0.36
+      ],
+      "target_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "up_world": [
+        0,
+        1,
+        0
+      ]
+    },
+    "eye_world_m": [
+      0.44999995827674866,
+      -0.23999999642372133,
+      0.4609000018239021
+    ],
+    "target_world_m": [
+      0.44999995827674866,
+      -0.1599999964237213,
+      0.10090000182390213
+    ],
+    "quaternion_wxyz_opengl": [
+      0.9940289382568178,
+      0.10911677189150903,
+      -0.0,
+      -0.0
+    ],
+    "up_fallback_used": false,
+    "rotation_camera_to_world": [
+      [
+        1.0,
+        0.0,
+        -0.0
+      ],
+      [
+        -0.0,
+        0.9761870601839527,
+        -0.21693045781865622
+      ],
+      [
+        0.0,
+        0.21693045781865622,
+        0.9761870601839527
+      ]
+    ],
+    "intrinsics": [
+      [
+        923.9097900390625,
+        0.0,
+        640.0
+      ],
+      [
+        0.0,
+        923.9097900390625,
+        360.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "actual_eye_world_m": [
+      0.44999995827674866,
+      -0.23999999463558197,
+      0.4609000086784363
+    ],
+    "actual_quaternion_wxyz_opengl": [
+      0.9940289855003357,
+      0.1091168150305748,
+      -1.934036752970769e-08,
+      -2.411001709390348e-08
+    ],
+    "resolved_render_settings": {
+      "/rtx/post/histogram/enabled": false,
+      "/rtx/post/tonemap/op": 6,
+      "/rtx/post/tonemap/filmIso": 100.0,
+      "/rtx/post/tonemap/exposureTime": 0.019999999552965164,
+      "/rtx/post/tonemap/fNumber": 5.0,
+      "/rtx/post/tonemap/cm2Factor": 1.0
+    },
+    "rgb_standard_deviation": 56.631847542619994,
+    "camera_to_world_opengl": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.97618706086677,
+        0.21693045474597886,
+        0.0
+      ],
+      [
+        0.0,
+        -0.21693045474597886,
+        0.97618706086677,
+        0.0
+      ],
+      [
+        0.44999995827674866,
+        -0.23999999463558197,
+        0.4609000086784363,
+        1.0
+      ]
+    ],
+    "physics_time_s": 0.01666666753590107,
+    "camera_matching": "approximate; no measured physical intrinsics/extrinsics"
+  },
+  {
+    "id": "oblique_front",
+    "requested": {
+      "id": "oblique_front",
+      "eye_offset_m": [
+        0,
+        -0.23,
+        0.28
+      ],
+      "target_offset_m": [
+        0,
+        0,
+        -0.04
+      ],
+      "up_world": [
+        0,
+        0,
+        1
+      ]
+    },
+    "eye_world_m": [
+      0.44999995827674866,
+      -0.3899999964237213,
+      0.38090000182390216
+    ],
+    "target_world_m": [
+      0.44999995827674866,
+      -0.1599999964237213,
+      0.06090000182390213
+    ],
+    "quaternion_wxyz_opengl": [
+      0.9518443600039646,
+      0.30658166013094007,
+      -0.0,
+      -0.0
+    ],
+    "up_fallback_used": false,
+    "rotation_camera_to_world": [
+      [
+        1.0,
+        0.0,
+        -0.0
+      ],
+      [
+        -0.0,
+        0.8120153713427135,
+        -0.5836360481525753
+      ],
+      [
+        0.0,
+        0.5836360481525753,
+        0.8120153713427135
+      ]
+    ],
+    "intrinsics": [
+      [
+        923.9097900390625,
+        0.0,
+        640.0
+      ],
+      [
+        0.0,
+        923.9097900390625,
+        360.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "actual_eye_world_m": [
+      0.44999995827674866,
+      -0.38999998569488525,
+      0.38089999556541443
+    ],
+    "actual_quaternion_wxyz_opengl": [
+      0.9518443942070007,
+      0.30658164620399475,
+      1.72074141602252e-08,
+      1.9461344535898206e-08
+    ],
+    "resolved_render_settings": {
+      "/rtx/post/histogram/enabled": false,
+      "/rtx/post/tonemap/op": 6,
+      "/rtx/post/tonemap/filmIso": 100.0,
+      "/rtx/post/tonemap/exposureTime": 0.019999999552965164,
+      "/rtx/post/tonemap/fNumber": 5.0,
+      "/rtx/post/tonemap/cm2Factor": 1.0
+    },
+    "rgb_standard_deviation": 59.18650233081589,
+    "camera_to_world_opengl": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.8120153884216972,
+        0.5836360243905101,
+        0.0
+      ],
+      [
+        0.0,
+        -0.5836360243905101,
+        0.8120153884216972,
+        0.0
+      ],
+      [
+        0.44999995827674866,
+        -0.38999998569488525,
+        0.38089999556541443,
+        1.0
+      ]
+    ],
+    "physics_time_s": 0.01666666753590107,
+    "camera_matching": "approximate; no measured physical intrinsics/extrinsics"
+  },
+  {
+    "id": "oblique_side",
+    "requested": {
+      "id": "oblique_side",
+      "eye_offset_m": [
+        0.23,
+        0,
+        0.28
+      ],
+      "target_offset_m": [
+        0,
+        0,
+        -0.04
+      ],
+      "up_world": [
+        0,
+        0,
+        1
+      ]
+    },
+    "eye_world_m": [
+      0.6799999582767486,
+      -0.1599999964237213,
+      0.38090000182390216
+    ],
+    "target_world_m": [
+      0.44999995827674866,
+      -0.1599999964237213,
+      0.06090000182390213
+    ],
+    "quaternion_wxyz_opengl": [
+      0.6730556015929727,
+      0.21678597086601714,
+      0.21678597086601714,
+      0.6730556015929727
+    ],
+    "up_fallback_used": false,
+    "rotation_camera_to_world": [
+      [
+        0.0,
+        -0.8120153713427135,
+        0.5836360481525753
+      ],
+      [
+        1.0,
+        0.0,
+        -0.0
+      ],
+      [
+        -0.0,
+        0.5836360481525753,
+        0.8120153713427135
+      ]
+    ],
+    "intrinsics": [
+      [
+        923.9097900390625,
+        0.0,
+        640.0
+      ],
+      [
+        0.0,
+        923.9097900390625,
+        360.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "actual_eye_world_m": [
+      0.6799999475479126,
+      -0.1599999964237213,
+      0.38089999556541443
+    ],
+    "actual_quaternion_wxyz_opengl": [
+      0.6730555891990662,
+      0.2167859673500061,
+      0.21678592264652252,
+      0.6730555891990662
+    ],
+    "resolved_render_settings": {
+      "/rtx/post/histogram/enabled": false,
+      "/rtx/post/tonemap/op": 6,
+      "/rtx/post/tonemap/filmIso": 100.0,
+      "/rtx/post/tonemap/exposureTime": 0.019999999552965164,
+      "/rtx/post/tonemap/fNumber": 5.0,
+      "/rtx/post/tonemap/cm2Factor": 1.0
+    },
+    "rgb_standard_deviation": 59.95441850360151,
+    "camera_to_world_opengl": [
+      [
+        3.641603996129561e-08,
+        0.9999999999999993,
+        -1.172932284632111e-08,
+        0.0
+      ],
+      [
+        -0.8120153774404877,
+        3.641603996129561e-08,
+        0.5836360396687142,
+        0.0
+      ],
+      [
+        0.5836360396687142,
+        -1.172932284632111e-08,
+        0.8120153774404884,
+        0.0
+      ],
+      [
+        0.6799999475479126,
+        -0.1599999964237213,
+        0.38089999556541443,
+        1.0
+      ]
+    ],
+    "physics_time_s": 0.01666666753590107,
+    "camera_matching": "approximate; no measured physical intrinsics/extrinsics"
+  }
+]

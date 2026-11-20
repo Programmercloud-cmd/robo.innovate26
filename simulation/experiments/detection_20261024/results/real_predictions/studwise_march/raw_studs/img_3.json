@@ -1,0 +1,67 @@
+{
+  "image": "img_3.jpg",
+  "parents": [
+    {
+      "parent_detection_id": "d000",
+      "crop_image_xyxy": [
+        1230,
+        64,
+        1280,
+        262
+      ],
+      "detections": []
+    },
+    {
+      "parent_detection_id": "d001",
+      "crop_image_xyxy": [
+        363,
+        180,
+        765,
+        611
+      ],
+      "detections": []
+    },
+    {
+      "parent_detection_id": "d002",
+      "crop_image_xyxy": [
+        5,
+        664,
+        251,
+        720
+      ],
+      "detections": []
+    },
+    {
+      "parent_detection_id": "d003",
+      "crop_image_xyxy": [
+        487,
+        133,
+        863,
+        574
+      ],
+      "detections": [
+        {
+          "box_crop_xyxy": [
+            295.9353942871094,
+            189.01239013671875,
+            308.7389831542969,
+            202.4119415283203
+          ],
+          "box_image_xyxy": [
+            782.9353942871094,
+            322.01239013671875,
+            795.7389831542969,
+            335.4119415283203
+          ],
+          "center_image_xy": [
+            789.3371887207031,
+            328.71216583251953
+          ],
+          "confidence": 0.2502061426639557,
+          "class_id": 0,
+          "class_name": "item"
+        }
+      ]
+    }
+  ]
+}

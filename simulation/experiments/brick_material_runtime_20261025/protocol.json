@@ -1,0 +1,125 @@
+{
+  "source_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1",
+  "parent_runner": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/experiments/stage2_free_position_20261025/run_fixture.py",
+    "sha256": "e5e8323cb111f216527c9e37dd3582fb3be4a66690953160e6656e3e2eac81a5"
+  },
+  "source_pins": {
+    "parent_runner": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/experiments/stage2_free_position_20261025/run_fixture.py",
+      "sha256": "e5e8323cb111f216527c9e37dd3582fb3be4a66690953160e6656e3e2eac81a5"
+    },
+    "parent_protocol": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/experiments/stage2_free_position_20261025/protocol.json",
+      "sha256": "2a991fcf99a195c7a3837380ecb481a8c411adea1a071ad2cc0a5c6d9a54139b"
+    },
+    "source_science": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/experiments/stage2_free_position_20261025/source_science.json",
+      "sha256": "9382013075e97767cc67daf8e29cdef2432d658d2a3cad2c8947ca07b70f765d"
+    },
+    "tool_model": {
+      "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/experiments/stage2_pick_20261025/tool_model.py",
+      "sha256": "dac6aed5f5bf77d6b5e425d7f588125c7e04f60b6d2f20bf0742b42a32eb35f3"
+    },
+    "tensor_api": {
+      "path": "/home/faps/miniforge3/envs/unitree_sim_env/lib/python3.11/site-packages/isaacsim/extscache/omni.physics.tensors-107.3.26+107.3.3.lx64.r.cp311.u353/omni/physics/tensors/impl/api.py",
+      "sha256": "5dd16f8a37eccc94ac82338d6c1127e785cccf761cae1f6f18ef03d55b0f325f"
+    }
+  },
+  "reference_metadata": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/pick/capture_metadata.json",
+    "sha256": "9e38044c26e74fade421b97f57f9d65e07def0264b24dc7c4c482f2451d09cab"
+  },
+  "native_core": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/.deps/bricksim/core.cpython-311-x86_64-linux-gnu.so",
+    "sha256": "4e62dc33ee02270993c20e3cfd658e6d6ef0ea9780e53ad15cedde12f41b2455"
+  },
+  "view_paths": {
+    "left": "/World/envs/env_0/Robot/fr3_leftfinger",
+    "right": "/World/envs/env_0/Robot/fr3_rightfinger",
+    "coupon": "/World/envs/env_0/contact_coupon"
+  },
+  "input_sha256": {
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/experiments/stage2_free_position_20261025/run_fixture.py": "e5e8323cb111f216527c9e37dd3582fb3be4a66690953160e6656e3e2eac81a5",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/experiments/stage2_free_position_20261025/protocol.json": "2a991fcf99a195c7a3837380ecb481a8c411adea1a071ad2cc0a5c6d9a54139b",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/experiments/stage2_free_position_20261025/source_science.json": "9382013075e97767cc67daf8e29cdef2432d658d2a3cad2c8947ca07b70f765d",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/experiments/stage2_pick_20261025/tool_model.py": "dac6aed5f5bf77d6b5e425d7f588125c7e04f60b6d2f20bf0742b42a32eb35f3",
+    "/home/faps/miniforge3/envs/unitree_sim_env/lib/python3.11/site-packages/isaacsim/extscache/omni.physics.tensors-107.3.26+107.3.3.lx64.r.cp311.u353/omni/physics/tensors/impl/api.py": "5dd16f8a37eccc94ac82338d6c1127e785cccf761cae1f6f18ef03d55b0f325f",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/pick/capture_metadata.json": "9e38044c26e74fade421b97f57f9d65e07def0264b24dc7c4c482f2451d09cab",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/pipeline_supervisor.json": "688ee9708a23186055bdf22ad3bb4290ec63bab4bebf069902b45c0a679b5434",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/.deps/bricksim/core.cpython-311-x86_64-linux-gnu.so": "4e62dc33ee02270993c20e3cfd658e6d6ef0ea9780e53ad15cedde12f41b2455",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/pick/fixture_initial.json": "000232d7211b93db371dd45a6b3880916ed78c4257261206225ca2bd8da6b988",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T161523.798508Z-stage2-contact-readback/output/readback.json": "986dc66cdd780fb4ea0ae9e0db8d6b1960af32bf419e279c9bab9eaf82e53a99",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T161523.798508Z-stage2-contact-readback/audit/evaluation.json": "6f462f40df5b496d79fe91ae230253c1f250f6d5b4b9b4d0acf7ace7ac5381a8",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T165816.000989Z-stage2-finger-response/pipeline_supervisor.json": "c4856bb92ec0446832768c09bdbb0141df255fecb379c5c0348d2365b2372fb6",
+    "/home/faps/dev/github/robo.innovate26/experiments/brick_material_binding_20261025/materials.py": "09f28c7a6ca0e2b7d30ab8a5f56d0757e81f97a3f9931461559a29662a2bdd80",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T161523.798508Z-stage2-contact-readback/code/readback.py": "22de373439ea1cc44e29b10a4f0ab43fbc40691ba83dbf5ffb28cb9573917c7d",
+    "/home/faps/dev/github/robo.innovate26/experiments/brick_material_binding_20261025/results.json": "b523f15df231ebb3ef6721a8f54e11c7c9b4ffce37737e3f8ab3febd8cf147d8",
+    "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/experiments/stage2_exposed_tip_20261025/model.py": "c5b4baf5b0720881c7c791866030d65fe18770fa1b2fa1b1593995884bb51a78"
+  },
+  "reference_fixture": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/pick/fixture_initial.json",
+    "sha256": "000232d7211b93db371dd45a6b3880916ed78c4257261206225ca2bd8da6b988"
+  },
+  "mapping_policy": "No publicshapeorderfound. Recordallrawrows; row-to-USDcomponentUNKNOWN. NeverchoosePADrow fromexpectedfriction/count/traversalorder. Uniformall-returnedslots maybereportedwithoutcomponentassignment.",
+  "meaning": "Runtimegettermaterials/offsets describe configuration, notpaircombinedfriction, calibratedtraction orcausalretentionfix. PartialUNKNOWNgetter/mapping distinguishedfromcapturecompletion.",
+  "schema": "declared-brick-material-runtime-v1",
+  "execution_authorized": true,
+  "scope": "ONE startup-only material verification: exact1822initializer/1823baseline, pre-init binding helper ONLY isolatedcoupon. No measured steps, closure, lift, tensor setters, fourth retention trial, coefficient choices or shared/native edits.",
+  "maximum_jobs": 1,
+  "maximum_active_seconds": 60,
+  "capture_cutoff_seconds": 42,
+  "audit_limit_seconds": 10,
+  "prior_case_seconds": 2682.9455824780234,
+  "aggregate_case_ceiling_seconds": 2800,
+  "maximum_improvement_rounds": 0,
+  "automatic_retry": false,
+  "physical_retry_authorized": false,
+  "physics_extraction_passed": false,
+  "baseline_readback": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T161523.798508Z-stage2-contact-readback/output/readback.json",
+    "sha256": "986dc66cdd780fb4ea0ae9e0db8d6b1960af32bf419e279c9bab9eaf82e53a99"
+  },
+  "baseline_readback_audit": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T161523.798508Z-stage2-contact-readback/audit/evaluation.json",
+    "sha256": "6f462f40df5b496d79fe91ae230253c1f250f6d5b4b9b4d0acf7ace7ac5381a8"
+  },
+  "prior_supervisor": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T165816.000989Z-stage2-finger-response/pipeline_supervisor.json",
+    "sha256": "c4856bb92ec0446832768c09bdbb0141df255fecb379c5c0348d2365b2372fb6"
+  },
+  "binding_helper": {
+    "path": "/home/faps/dev/github/robo.innovate26/experiments/brick_material_binding_20261025/materials.py",
+    "sha256": "09f28c7a6ca0e2b7d30ab8a5f56d0757e81f97a3f9931461559a29662a2bdd80"
+  },
+  "immutable_readback": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T161523.798508Z-stage2-contact-readback/code/readback.py",
+    "sha256": "22de373439ea1cc44e29b10a4f0ab43fbc40691ba83dbf5ffb28cb9573917c7d"
+  },
+  "authoring_contract_result": {
+    "path": "/home/faps/dev/github/robo.innovate26/experiments/brick_material_binding_20261025/results.json",
+    "sha256": "b523f15df231ebb3ef6721a8f54e11c7c9b4ffce37737e3f8ab3febd8cf147d8"
+  },
+  "expected_coupon_materials": [
+    [
+      0.5,
+      0.4,
+      0.1
+    ],
+    [
+      1.0,
+      0.8,
+      0.2
+    ]
+  ],
+  "binding_authoring_file": "binding_authoring.json",
+  "binding_root": "/World/envs/env_0/contact_coupon",
+  "binding_material_scope": "DeclaredContactMaterials",
+  "runtime_row_to_collider_mapping": "UNKNOWN",
+  "application_note": "This configuration check uses pre-margin1822initialization for direct matched1823baseline. It does not adopt/change the closed1825retention model or validate effective coefficients under contact.",
+  "independent_review": "Final source approved by planner/evaluator/reviewer: one <=60 s startup-only PhysX readback under unchanged 2800 s ceiling retaining 2682.945582478 s. Cached Tool class wrapper calls original author once, then coupon-only reviewed helper pre-init; immutable1823 lifecycle/getters replace trial. Exact authoring whitelist, same state/settings/fixture/native inventory, fingers/offset/rest unchanged; coupon unordered float32 declared rows only. Source/synthetic/compile checks pass. No retention/row identity/traction claim, global/native edit, coefficient alternative, fourth fixture trial or retry.",
+  "original_author_source": {
+    "path": "/home/faps/dev/github/robo.innovate26/runs/20261025T155936.755455Z-stage2-free-position-r1/experiments/stage2_exposed_tip_20261025/model.py",
+    "sha256": "c5b4baf5b0720881c7c791866030d65fe18770fa1b2fa1b1593995884bb51a78"
+  }
+}

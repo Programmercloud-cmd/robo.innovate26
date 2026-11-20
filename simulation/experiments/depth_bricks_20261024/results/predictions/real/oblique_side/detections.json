@@ -1,0 +1,4705 @@
+{
+  "view": "oblique_side",
+  "condition": "real",
+  "direction_status": "supported",
+  "depth_direction": {
+    "view": "oblique_side",
+    "condition": "real",
+    "status": "supported",
+    "frame": "world_xy",
+    "direction_world_deg_mod180": 90.02432566211104,
+    "height_band_world_m": [
+      0.099,
+      0.10200000000000001
+    ],
+    "estimated_surface_height_world_m": 0.09926704119298364,
+    "reasons": [],
+    "support": {
+      "sampled_depth_pixels": 230400,
+      "valid_sampled_depth_pixels": 230348,
+      "horizontal_roi_points": 28455,
+      "top_band_points": 9953,
+      "raw_band_xy_cells": 7348,
+      "closed_band_xy_cells": 10813,
+      "elongated_ridge_xy_cells": 10806
+    },
+    "band_search": [
+      {
+        "band_world_m": [
+          0.099,
+          0.10200000000000001
+        ],
+        "unique_xy_cells": 7348,
+        "support_area_m2": 0.0073479999999999995
+      }
+    ],
+    "components": [
+      {
+        "label": 1,
+        "area_m2": 0.001547,
+        "length_m": 0.15899986682589629,
+        "axis_ratio": 10.348326085631482,
+        "angle_deg_mod180": 90.07439076221972,
+        "center_roi_xy_m": [
+          0.04891725921137705,
+          0.12557983193277325
+        ],
+        "accepted": true
+      },
+      {
+        "label": 2,
+        "area_m2": 0.001451,
+        "length_m": 0.15899781851345096,
+        "axis_ratio": 11.266657424335008,
+        "angle_deg_mod180": 90.01558190060004,
+        "center_roi_xy_m": [
+          0.08011164713990293,
+          0.12669745003445915
+        ],
+        "accepted": true
+      },
+      {
+        "label": 3,
+        "area_m2": 0.0015069999999999999,
+        "length_m": 0.15900657912035687,
+        "axis_ratio": 11.479906232349176,
+        "angle_deg_mod180": 89.95784375393366,
+        "center_roi_xy_m": [
+          0.11195421366954245,
+          0.12793032514930341
+        ],
+        "accepted": true
+      },
+      {
+        "label": 4,
+        "area_m2": 0.00208,
+        "length_m": 0.15900426815167726,
+        "axis_ratio": 11.764108028078054,
+        "angle_deg_mod180": 89.97546227334769,
+        "center_roi_xy_m": [
+          0.1438576923076917,
+          0.12744519230769202
+        ],
+        "accepted": true
+      },
+      {
+        "label": 6,
+        "area_m2": 0.0020109999999999998,
+        "length_m": 0.16000028628109567,
+        "axis_ratio": 12.167587643895725,
+        "angle_deg_mod180": 90.00328353167619,
+        "center_roi_xy_m": [
+          0.1760850323222277,
+          0.12743560417702632
+        ],
+        "accepted": true
+      },
+      {
+        "label": 8,
+        "area_m2": 0.0022099999999999997,
+        "length_m": 0.16000034302333388,
+        "axis_ratio": 11.08710484692218,
+        "angle_deg_mod180": 89.97977885378012,
+        "center_roi_xy_m": [
+          0.20745972850678754,
+          0.12699999999999967
+        ],
+        "accepted": true
+      }
+    ],
+    "pca_consensus": {
+      "angle_deg_mod180": 89.9986154222223,
+      "concentration": 0.9999992248678065,
+      "count": 6
+    },
+    "hough_consensus": {
+      "angle_deg_mod180": 90.05003590199979,
+      "concentration": 0.9997455380303223,
+      "count": 26
+    },
+    "raster": {
+      "resolution_m": 0.001,
+      "roi_world_xy_m": {
+        "x": [
+          0.322,
+          0.578
+        ],
+        "y": [
+          -0.288,
+          -0.032
+        ]
+      },
+      "columns_axis": "+worldX",
+      "rows_axis": "+worldY"
+    },
+    "depth_semantics": "axial optical Z in meters, not Euclidean range",
+    "limitations": [
+      "Highest supported horizontal surface is an image/depth hypothesis, not a semantic brick-layer proof.",
+      "Nominal camera calibration; no physical D435i calibration or dynamics claim.",
+      "Component PCA and Hough are complementary checks sharing one sensor-derived mask."
+    ],
+    "hough_lines": [
+      {
+        "roi_pixel_endpoints": [
+          [
+            118,
+            206
+          ],
+          [
+            118,
+            48
+          ]
+        ],
+        "angle_deg_mod180": 90.0,
+        "length_m": 0.158
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            150,
+            206
+          ],
+          [
+            150,
+            49
+          ]
+        ],
+        "angle_deg_mod180": 90.0,
+        "length_m": 0.157
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            214,
+            206
+          ],
+          [
+            214,
+            48
+          ]
+        ],
+        "angle_deg_mod180": 90.0,
+        "length_m": 0.158
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            74,
+            203
+          ],
+          [
+            74,
+            115
+          ]
+        ],
+        "angle_deg_mod180": 90.0,
+        "length_m": 0.088
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            55,
+            206
+          ],
+          [
+            55,
+            49
+          ]
+        ],
+        "angle_deg_mod180": 90.0,
+        "length_m": 0.157
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            137,
+            203
+          ],
+          [
+            137,
+            68
+          ]
+        ],
+        "angle_deg_mod180": 90.0,
+        "length_m": 0.135
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            86,
+            201
+          ],
+          [
+            86,
+            49
+          ]
+        ],
+        "angle_deg_mod180": 90.0,
+        "length_m": 0.152
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            182,
+            207
+          ],
+          [
+            182,
+            48
+          ]
+        ],
+        "angle_deg_mod180": 90.0,
+        "length_m": 0.159
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            50,
+            203
+          ],
+          [
+            50,
+            51
+          ]
+        ],
+        "angle_deg_mod180": 90.0,
+        "length_m": 0.152
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            106,
+            203
+          ],
+          [
+            106,
+            60
+          ]
+        ],
+        "angle_deg_mod180": 90.0,
+        "length_m": 0.14300000000000002
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            81,
+            88
+          ],
+          [
+            82,
+            51
+          ]
+        ],
+        "angle_deg_mod180": 91.54815769897796,
+        "length_m": 0.037013511046643494
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            114,
+            203
+          ],
+          [
+            114,
+            51
+          ]
+        ],
+        "angle_deg_mod180": 90.0,
+        "length_m": 0.152
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            170,
+            157
+          ],
+          [
+            170,
+            65
+          ]
+        ],
+        "angle_deg_mod180": 90.0,
+        "length_m": 0.092
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            111,
+            173
+          ],
+          [
+            112,
+            110
+          ]
+        ],
+        "angle_deg_mod180": 90.90938044919913,
+        "length_m": 0.06300793600809346
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            81,
+            174
+          ],
+          [
+            82,
+            204
+          ]
+        ],
+        "angle_deg_mod180": 88.09084756700362,
+        "length_m": 0.03001666203960727
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            79,
+            169
+          ],
+          [
+            80,
+            110
+          ]
+        ],
+        "angle_deg_mod180": 90.97102193107916,
+        "length_m": 0.059008473967727716
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            82,
+            89
+          ],
+          [
+            82,
+            142
+          ]
+        ],
+        "angle_deg_mod180": 90.0,
+        "length_m": 0.053
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            46,
+            197
+          ],
+          [
+            46,
+            170
+          ]
+        ],
+        "angle_deg_mod180": 90.0,
+        "length_m": 0.027
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            41,
+            60
+          ],
+          [
+            43,
+            122
+          ]
+        ],
+        "angle_deg_mod180": 88.15238973400541,
+        "length_m": 0.0620322496770833
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            73,
+            62
+          ],
+          [
+            74,
+            94
+          ]
+        ],
+        "angle_deg_mod180": 88.21008939175394,
+        "length_m": 0.032015621187164243
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            42,
+            147
+          ],
+          [
+            42,
+            179
+          ]
+        ],
+        "angle_deg_mod180": 90.0,
+        "length_m": 0.032
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            79,
+            173
+          ],
+          [
+            79,
+            201
+          ]
+        ],
+        "angle_deg_mod180": 90.0,
+        "length_m": 0.028
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            45,
+            100
+          ],
+          [
+            47,
+            53
+          ]
+        ],
+        "angle_deg_mod180": 92.43664824681014,
+        "length_m": 0.047042533945356305
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            112,
+            89
+          ],
+          [
+            112,
+            53
+          ]
+        ],
+        "angle_deg_mod180": 90.0,
+        "length_m": 0.036000000000000004
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            110,
+            100
+          ],
+          [
+            111,
+            48
+          ]
+        ],
+        "angle_deg_mod180": 91.10170611520637,
+        "length_m": 0.052009614495783375
+      },
+      {
+        "roi_pixel_endpoints": [
+          [
+            111,
+            203
+          ],
+          [
+            111,
+            174
+          ]
+        ],
+        "angle_deg_mod180": 90.0,
+        "length_m": 0.029
+      }
+    ],
+    "pca_hough_disagreement_deg": 0.05142047977749087,
+    "arrow_center_world_m": [
+      0.4729121678878928,
+      -0.16,
+      0.09926704119298364
+    ]
+  },
+  "ridges": [
+    {
+      "id": "ridge_00",
+      "fragments": [
+        {
+          "label": 8,
+          "area_m2": 0.0022099999999999997,
+          "u_min": -0.24022775640178964,
+          "u_max": -0.08022394966600054,
+          "v_center": -0.529432871342204,
+          "width_m": 0.015064956859447531
+        }
+      ],
+      "transverse_center_m": -0.529432871342204,
+      "observed_extent_u_m": [
+        -0.24022775640178964,
+        -0.08022394966600054
+      ],
+      "original_extent": "unknown",
+      "end_evidence": [
+        {
+          "status": "observed",
+          "coordinate_u_m": -0.24022775640178964,
+          "inside_top_coverage": 0.96875,
+          "outside_top_coverage": 0.0,
+          "actual_observed_lower_fraction": 0.875,
+          "outside_depth_valid_fraction": 0.875,
+          "note": "No projected return is not evidence of lower surface; only finite actual depth can support the end"
+        },
+        {
+          "status": "observed",
+          "coordinate_u_m": -0.08022394966600054,
+          "inside_top_coverage": 0.96875,
+          "outside_top_coverage": 0.0,
+          "actual_observed_lower_fraction": 0.875,
+          "outside_depth_valid_fraction": 0.875,
+          "note": "No projected return is not evidence of lower surface; only finite actual depth can support the end"
+        }
+      ],
+      "count_phase": {
+        "status": "selected",
+        "selected": {
+          "count": 5,
+          "span_residual_m": 3.8067357891191644e-06,
+          "origin_u_m": -0.2402258530338951,
+          "length_supported": true
+        },
+        "best_window_hypothesis": {
+          "count": 5,
+          "span_residual_m": 3.8067357891191644e-06,
+          "origin_u_m": -0.2402258530338951,
+          "length_supported": true
+        },
+        "alternatives": [
+          {
+            "count": 5,
+            "span_residual_m": 3.8067357891191644e-06,
+            "origin_u_m": -0.2402258530338951,
+            "length_supported": true
+          },
+          {
+            "count": 6,
+            "span_residual_m": 0.03199619326421088,
+            "origin_u_m": -0.2562258530338951,
+            "length_supported": false
+          },
+          {
+            "count": 4,
+            "span_residual_m": 0.03200380673578912,
+            "origin_u_m": -0.22422585303389508,
+            "length_supported": false
+          }
+        ],
+        "original_chain_extent": "unknown",
+        "count_semantics": "Current observed window only; no missing-end inference"
+      },
+      "boundaries": [
+        {
+          "id": "ridge_00_b00",
+          "index": 0,
+          "coordinate_u_m": -0.2402258530338951,
+          "provenance": "observed",
+          "source": "depth_current_end",
+          "observed_coordinate_u_m": -0.24022775640178964,
+          "model_line_xy": [
+            [
+              402.98401251327516,
+              504.24986127327406
+            ],
+            [
+              409.8556931511055,
+              462.6817470981322
+            ]
+          ],
+          "line_xy": [
+            [
+              402.9783728824027,
+              504.24986343559135
+            ],
+            [
+              409.85021750216004,
+              462.68174913653905
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 1.0,
+            "observed_offset_u_m": 0.00033333333333333305,
+            "gradient_threshold": 4.0,
+            "line_xy": [
+              [
+                405.02412491636807,
+                497.8562688909162
+              ],
+              [
+                409.8136671889884,
+                468.76183392646846
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_00_b01",
+          "index": 1,
+          "coordinate_u_m": -0.2082258530338951,
+          "provenance": "observed",
+          "source": "rgb_common_cross_edge",
+          "observed_coordinate_u_m": -0.2082258530338951,
+          "model_line_xy": [
+            [
+              497.7967911741869,
+              504.2135086613076
+            ],
+            [
+              501.9116959387759,
+              462.6474776289291
+            ]
+          ],
+          "line_xy": [
+            [
+              498.4296672014929,
+              497.82061597104905
+            ],
+            [
+              501.30978083166355,
+              468.7276236960728
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 1.0,
+            "observed_offset_u_m": 0.0,
+            "gradient_threshold": 4.0,
+            "line_xy": [
+              [
+                498.4296672014929,
+                497.82061597104905
+              ],
+              [
+                501.30978083166355,
+                468.7276236960728
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_00_b02",
+          "index": 2,
+          "coordinate_u_m": -0.1762258530338951,
+          "provenance": "observed",
+          "source": "rgb_common_cross_edge",
+          "observed_coordinate_u_m": -0.17655918636722842,
+          "model_line_xy": [
+            [
+              592.6047483624625,
+              504.1771578979649
+            ],
+            [
+              593.9631535441641,
+              462.6132098517504
+            ]
+          ],
+          "line_xy": [
+            [
+              591.8305300706678,
+              497.78496483731624
+            ],
+            [
+              592.8014044113459,
+              468.6934151445036
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 0.9375,
+            "observed_offset_u_m": -0.0003333333333333335,
+            "gradient_threshold": 4.0,
+            "line_xy": [
+              [
+                591.8305300706678,
+                497.78496483731624
+              ],
+              [
+                592.8014044113459,
+                468.6934151445036
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_00_b03",
+          "index": 3,
+          "coordinate_u_m": -0.1442258530338951,
+          "provenance": "inferred",
+          "source": "metric_2x4_phase",
+          "observed_coordinate_u_m": null,
+          "model_line_xy": [
+            [
+              687.4078844458692,
+              504.1408089831042
+            ],
+            [
+              686.0100663038833,
+              462.57894376647056
+            ]
+          ],
+          "line_xy": [
+            [
+              687.4078844458692,
+              504.1408089831042
+            ],
+            [
+              686.0100663038833,
+              462.57894376647056
+            ]
+          ],
+          "rgb_verification": {
+            "supported": false,
+            "support": 0.03125,
+            "observed_offset_u_m": 0.001333333333333333,
+            "gradient_threshold": 4.0,
+            "line_xy": [
+              [
+                691.1252631370837,
+                497.747064011791
+              ],
+              [
+                690.0665222998543,
+                468.65704789391845
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_00_b04",
+          "index": 4,
+          "coordinate_u_m": -0.1122258530338951,
+          "provenance": "inferred",
+          "source": "metric_2x4_phase",
+          "observed_coordinate_u_m": null,
+          "model_line_xy": [
+            [
+              782.2061997921362,
+              504.1044619165849
+            ],
+            [
+              778.0524345545134,
+              462.54467937296414
+            ]
+          ],
+          "line_xy": [
+            [
+              782.2061997921362,
+              504.1044619165849
+            ],
+            [
+              778.0524345545134,
+              462.54467937296414
+            ]
+          ],
+          "rgb_verification": {
+            "supported": false,
+            "support": 0.0,
+            "observed_offset_u_m": 0.0016666666666666666,
+            "gradient_threshold": 4.0,
+            "line_xy": [
+              [
+                786.4825531882808,
+                497.71066610929245
+              ],
+              [
+                783.47477940615,
+                468.62212271656165
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_00_b05",
+          "index": 5,
+          "coordinate_u_m": -0.0802258530338951,
+          "provenance": "observed",
+          "source": "depth_current_end",
+          "observed_coordinate_u_m": -0.08022394966600054,
+          "model_line_xy": [
+            [
+              876.9996947689559,
+              504.0681166982661
+            ],
+            [
+              870.0902586326008,
+              462.510416671106
+            ]
+          ],
+          "line_xy": [
+            [
+              877.0053329660635,
+              504.0681145364985
+            ],
+            [
+              870.0957329299376,
+              462.51041463320234
+            ]
+          ],
+          "rgb_verification": {
+            "supported": false,
+            "support": 0.21875,
+            "observed_offset_u_m": -0.0006666666666666668,
+            "gradient_threshold": 4.0,
+            "line_xy": [
+              [
+                873.9710338760353,
+                497.6772717333813
+              ],
+              [
+                869.1751457341622,
+                468.5900795055402
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ridge_01",
+      "fragments": [
+        {
+          "label": 6,
+          "area_m2": 0.0020109999999999998,
+          "u_min": -0.2402137458266239,
+          "u_max": -0.08021163734237004,
+          "v_center": -0.4979330864626409,
+          "width_m": 0.01406453238669031
+        }
+      ],
+      "transverse_center_m": -0.4979330864626409,
+      "observed_extent_u_m": [
+        -0.2402137458266239,
+        -0.08021163734237004
+      ],
+      "original_extent": "unknown",
+      "end_evidence": [
+        {
+          "status": "observed",
+          "coordinate_u_m": -0.2402137458266239,
+          "inside_top_coverage": 0.9375,
+          "outside_top_coverage": 0.0,
+          "actual_observed_lower_fraction": 0.9375,
+          "outside_depth_valid_fraction": 0.9375,
+          "note": "No projected return is not evidence of lower surface; only finite actual depth can support the end"
+        },
+        {
+          "status": "observed",
+          "coordinate_u_m": -0.08021163734237004,
+          "inside_top_coverage": 0.9375,
+          "outside_top_coverage": 0.0,
+          "actual_observed_lower_fraction": 0.78125,
+          "outside_depth_valid_fraction": 0.78125,
+          "note": "No projected return is not evidence of lower surface; only finite actual depth can support the end"
+        }
+      ],
+      "count_phase": {
+        "status": "selected",
+        "selected": {
+          "count": 5,
+          "span_residual_m": 2.1084842538321436e-06,
+          "origin_u_m": -0.24021269158449698,
+          "length_supported": true
+        },
+        "best_window_hypothesis": {
+          "count": 5,
+          "span_residual_m": 2.1084842538321436e-06,
+          "origin_u_m": -0.24021269158449698,
+          "length_supported": true
+        },
+        "alternatives": [
+          {
+            "count": 5,
+            "span_residual_m": 2.1084842538321436e-06,
+            "origin_u_m": -0.24021269158449698,
+            "length_supported": true
+          },
+          {
+            "count": 6,
+            "span_residual_m": 0.03199789151574617,
+            "origin_u_m": -0.256212691584497,
+            "length_supported": false
+          },
+          {
+            "count": 4,
+            "span_residual_m": 0.03200210848425383,
+            "origin_u_m": -0.22421269158449697,
+            "length_supported": false
+          }
+        ],
+        "original_chain_extent": "unknown",
+        "count_semantics": "Current observed window only; no missing-end inference"
+      },
+      "boundaries": [
+        {
+          "id": "ridge_01_b00",
+          "index": 0,
+          "coordinate_u_m": -0.24021269158449698,
+          "provenance": "observed",
+          "source": "depth_current_end",
+          "observed_coordinate_u_m": -0.2402137458266239,
+          "model_line_xy": [
+            [
+              416.1787619145779,
+              424.6550445924893
+            ],
+            [
+              422.31553212781597,
+              387.52641865054096
+            ]
+          ],
+          "line_xy": [
+            [
+              416.17581213700527,
+              424.65504566051584
+            ],
+            [
+              422.31266347607817,
+              387.5264196606322
+            ]
+          ],
+          "rgb_verification": {
+            "supported": false,
+            "support": 0.21875,
+            "observed_offset_u_m": 0.00033333333333333305,
+            "gradient_threshold": 4.0,
+            "line_xy": [
+              [
+                418.0500394243981,
+                418.9521140158979
+              ],
+              [
+                422.32739904426893,
+                392.9646654371114
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_01_b01",
+          "index": 1,
+          "coordinate_u_m": -0.20821269158449698,
+          "provenance": "observed",
+          "source": "rgb_common_cross_edge",
+          "observed_coordinate_u_m": -0.20787935825116366,
+          "model_line_xy": [
+            [
+              505.7128578673007,
+              424.62262696436255
+            ],
+            [
+              509.3872869386947,
+              387.4957595035601
+            ]
+          ],
+          "line_xy": [
+            [
+              507.20589900645757,
+              418.91996967646935
+            ],
+            [
+              509.7597924282149,
+              392.9337517895122
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 1.0,
+            "observed_offset_u_m": 0.00033333333333333305,
+            "gradient_threshold": 4.010164976119995,
+            "line_xy": [
+              [
+                507.20589900645757,
+                418.91996967646935
+              ],
+              [
+                509.7597924282149,
+                392.9337517895122
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_01_b02",
+          "index": 2,
+          "coordinate_u_m": -0.17621269158449698,
+          "provenance": "inferred",
+          "source": "metric_2x4_phase",
+          "observed_coordinate_u_m": null,
+          "model_line_xy": [
+            [
+              595.242654250119,
+              424.5902108929817
+            ],
+            [
+              596.454975409424,
+              387.46510178839304
+            ]
+          ],
+          "line_xy": [
+            [
+              595.242654250119,
+              424.5902108929817
+            ],
+            [
+              596.454975409424,
+              387.46510178839304
+            ]
+          ],
+          "rgb_verification": {
+            "supported": false,
+            "support": 0.40625,
+            "observed_offset_u_m": -0.0003333333333333335,
+            "gradient_threshold": 4.0,
+            "line_xy": [
+              [
+                594.5002138266024,
+                418.8884965001811
+              ],
+              [
+                595.3667047589732,
+                392.90348358092905
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_01_b03",
+          "index": 3,
+          "coordinate_u_m": -0.14421269158449698,
+          "provenance": "observed",
+          "source": "rgb_common_cross_edge",
+          "observed_coordinate_u_m": -0.1445460249178303,
+          "model_line_xy": [
+            [
+              684.7681513727335,
+              424.55779637823497
+            ],
+            [
+              683.5185978248509,
+              387.4344455049391
+            ]
+          ],
+          "line_xy": [
+            [
+              683.647635879813,
+              418.8563552028273
+            ],
+            [
+              682.7909836531825,
+              392.87257280238606
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 1.0,
+            "observed_offset_u_m": -0.0003333333333333335,
+            "gradient_threshold": 4.3570334911346436,
+            "line_xy": [
+              [
+                683.647635879813,
+                418.8563552028273
+              ],
+              [
+                682.7909836531825,
+                392.87257280238606
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_01_b04",
+          "index": 4,
+          "coordinate_u_m": -0.11221269158449698,
+          "provenance": "inferred",
+          "source": "metric_2x4_phase",
+          "observed_coordinate_u_m": null,
+          "model_line_xy": [
+            [
+              774.2893495448157,
+              424.52538342001
+            ],
+            [
+              770.5781544697951,
+              387.40379065309827
+            ]
+          ],
+          "line_xy": [
+            [
+              774.2893495448157,
+              424.52538342001
+            ],
+            [
+              770.5781544697951,
+              387.40379065309827
+            ]
+          ],
+          "rgb_verification": {
+            "supported": false,
+            "support": 0.0,
+            "observed_offset_u_m": -0.0006666666666666668,
+            "gradient_threshold": 4.0,
+            "line_xy": [
+              [
+                771.862242608948,
+                418.82455022360847
+              ],
+              [
+                769.3005572840885,
+                392.8419854380274
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_01_b05",
+          "index": 5,
+          "coordinate_u_m": -0.08021269158449698,
+          "provenance": "observed",
+          "source": "depth_current_end",
+          "observed_coordinate_u_m": -0.08021163734237004,
+          "model_line_xy": [
+            [
+              863.8062490760066,
+              424.492972018195
+            ],
+            [
+              857.6336456290504,
+              387.37313723277
+            ]
+          ],
+          "line_xy": [
+            [
+              863.8091981454029,
+              424.492970950425
+            ],
+            [
+              857.6365136110252,
+              387.37313622291464
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 1.0,
+            "observed_offset_u_m": -0.0006666666666666668,
+            "gradient_threshold": 4.309652805328369,
+            "line_xy": [
+              [
+                861.0011839324443,
+                418.79241198390514
+              ],
+              [
+                856.7166801192444,
+                392.8110775432388
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ridge_02",
+      "fragments": [
+        {
+          "label": 4,
+          "area_m2": 0.00208,
+          "u_min": -0.24019718787415528,
+          "u_max": -0.08119677755130984,
+          "v_center": -0.4659330893466993,
+          "width_m": 0.014064532386690476
+        }
+      ],
+      "transverse_center_m": -0.4659330893466993,
+      "observed_extent_u_m": [
+        -0.24019718787415528,
+        -0.08119677755130984
+      ],
+      "original_extent": "unknown",
+      "end_evidence": [
+        {
+          "status": "observed",
+          "coordinate_u_m": -0.24019718787415528,
+          "inside_top_coverage": 0.9375,
+          "outside_top_coverage": 0.0,
+          "actual_observed_lower_fraction": 0.71875,
+          "outside_depth_valid_fraction": 0.71875,
+          "note": "No projected return is not evidence of lower surface; only finite actual depth can support the end"
+        },
+        {
+          "status": "observed",
+          "coordinate_u_m": -0.08119677755130984,
+          "inside_top_coverage": 1.0,
+          "outside_top_coverage": 0.0,
+          "actual_observed_lower_fraction": 0.53125,
+          "outside_depth_valid_fraction": 0.53125,
+          "note": "No projected return is not evidence of lower surface; only finite actual depth can support the end"
+        }
+      ],
+      "count_phase": {
+        "status": "selected",
+        "selected": {
+          "count": 5,
+          "span_residual_m": 0.0009995896771545498,
+          "origin_u_m": -0.24069698271273254,
+          "length_supported": true
+        },
+        "best_window_hypothesis": {
+          "count": 5,
+          "span_residual_m": 0.0009995896771545498,
+          "origin_u_m": -0.24069698271273254,
+          "length_supported": true
+        },
+        "alternatives": [
+          {
+            "count": 5,
+            "span_residual_m": 0.0009995896771545498,
+            "origin_u_m": -0.24069698271273254,
+            "length_supported": true
+          },
+          {
+            "count": 4,
+            "span_residual_m": 0.03100041032284545,
+            "origin_u_m": -0.22469698271273256,
+            "length_supported": false
+          },
+          {
+            "count": 6,
+            "span_residual_m": 0.03299958967715455,
+            "origin_u_m": -0.25669698271273256,
+            "length_supported": false
+          }
+        ],
+        "original_chain_extent": "unknown",
+        "count_semantics": "Current observed window only; no missing-end inference"
+      },
+      "boundaries": [
+        {
+          "id": "ridge_02_b00",
+          "index": 0,
+          "coordinate_u_m": -0.24069698271273254,
+          "provenance": "observed",
+          "source": "depth_current_end",
+          "observed_coordinate_u_m": -0.24019718787415528,
+          "model_line_xy": [
+            [
+              426.84129202600406,
+              352.3857119266192
+            ],
+            [
+              432.3801888806158,
+              319.07658755369357
+            ]
+          ],
+          "line_xy": [
+            [
+              428.16486090498967,
+              352.38525835293876
+            ],
+            [
+              433.6692543352365,
+              319.0761573184556
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 1.0,
+            "observed_offset_u_m": 0.001,
+            "gradient_threshold": 4.0,
+            "line_xy": [
+              [
+                430.3285859876943,
+                347.27523008214234
+              ],
+              [
+                434.1571486322702,
+                323.96094959932054
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_02_b01",
+          "index": 1,
+          "coordinate_u_m": -0.20869698271273254,
+          "provenance": "observed",
+          "source": "rgb_common_cross_edge",
+          "observed_coordinate_u_m": -0.20803031604606587,
+          "model_line_xy": [
+            [
+              511.58257654191533,
+              352.35667194470625
+            ],
+            [
+              514.9124453317642,
+              319.0490417957471
+            ]
+          ],
+          "line_xy": [
+            [
+              513.8517175068602,
+              347.2467219940616
+            ],
+            [
+              516.1502076922856,
+              323.93347638670315
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 1.0,
+            "observed_offset_u_m": 0.0006666666666666665,
+            "gradient_threshold": 6.263228893280029,
+            "line_xy": [
+              [
+                513.8517175068602,
+                347.2467219940616
+              ],
+              [
+                516.1502076922856,
+                323.93347638670315
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_02_b02",
+          "index": 2,
+          "coordinate_u_m": -0.17669698271273254,
+          "provenance": "inferred",
+          "source": "metric_2x4_phase",
+          "observed_coordinate_u_m": null,
+          "model_line_xy": [
+            [
+              596.3200094683242,
+              352.32763328269425
+            ],
+            [
+              597.4410483742926,
+              319.0214972571532
+            ]
+          ],
+          "line_xy": [
+            [
+              596.3200094683242,
+              352.32763328269425
+            ],
+            [
+              597.4410483742926,
+              319.0214972571532
+            ]
+          ],
+          "rgb_verification": {
+            "supported": false,
+            "support": 0.125,
+            "observed_offset_u_m": -0.001,
+            "gradient_threshold": 4.0,
+            "line_xy": [
+              [
+                593.8545769316308,
+                347.21941544410697
+              ],
+              [
+                594.6875461305572,
+                323.9071610738945
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_02_b03",
+          "index": 3,
+          "coordinate_u_m": -0.14469698271273254,
+          "provenance": "inferred",
+          "source": "metric_2x4_phase",
+          "observed_coordinate_u_m": null,
+          "model_line_xy": [
+            [
+              681.0535910678136,
+              352.29859594049293
+            ],
+            [
+              679.9659982507808,
+              318.9939539378308
+            ]
+          ],
+          "line_xy": [
+            [
+              681.0535910678136,
+              352.29859594049293
+            ],
+            [
+              679.9659982507808,
+              318.9939539378308
+            ]
+          ],
+          "rgb_verification": {
+            "supported": false,
+            "support": 0.09375,
+            "observed_offset_u_m": 0.0016666666666666666,
+            "gradient_threshold": 4.0,
+            "line_xy": [
+              [
+                685.282212634834,
+                347.18820939322944
+              ],
+              [
+                684.4404532989728,
+                323.87708778805876
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_02_b04",
+          "index": 4,
+          "coordinate_u_m": -0.11269698271273254,
+          "provenance": "observed",
+          "source": "rgb_common_cross_edge",
+          "observed_coordinate_u_m": -0.11269698271273254,
+          "model_line_xy": [
+            [
+              765.7833216029425,
+              352.2695599180126
+            ],
+            [
+              762.4872952037871,
+              318.9664118376989
+            ]
+          ],
+          "line_xy": [
+            [
+              765.2777159386872,
+              347.16090535406363
+            ],
+            [
+              762.9707026400655,
+              323.8507748505764
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 1.0,
+            "observed_offset_u_m": 0.0,
+            "gradient_threshold": 4.352141618728638,
+            "line_xy": [
+              [
+                765.2777159386872,
+                347.16090535406363
+              ],
+              [
+                762.9707026400655,
+                323.8507748505764
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_02_b05",
+          "index": 5,
+          "coordinate_u_m": -0.08069698271273254,
+          "provenance": "observed",
+          "source": "depth_current_end",
+          "observed_coordinate_u_m": -0.08119677755130984,
+          "model_line_xy": [
+            [
+              850.5092013362458,
+              352.240525215163
+            ],
+            [
+              845.0049394758479,
+              318.9388709566765
+            ]
+          ],
+          "line_xy": [
+            [
+              849.1859322690036,
+              352.240978686101
+            ],
+            [
+              843.716158407122,
+              318.9393010969985
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 1.0,
+            "observed_offset_u_m": -0.0003333333333333335,
+            "gradient_threshold": 4.0,
+            "line_xy": [
+              [
+                848.7858429609578,
+                347.1324023873128
+              ],
+              [
+                844.9493018593855,
+                323.8233064829823
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ridge_03",
+      "fragments": [
+        {
+          "label": 3,
+          "area_m2": 0.0015069999999999999,
+          "u_min": -0.24018657380206002,
+          "u_max": -0.08118319153902791,
+          "v_center": -0.4339330922307577,
+          "width_m": 0.014064532386690476
+        }
+      ],
+      "transverse_center_m": -0.4339330922307577,
+      "observed_extent_u_m": [
+        -0.24018657380206002,
+        -0.08118319153902791
+      ],
+      "original_extent": "unknown",
+      "end_evidence": [
+        {
+          "status": "unknown",
+          "coordinate_u_m": -0.24018657380206002,
+          "inside_top_coverage": 0.5,
+          "outside_top_coverage": 0.0,
+          "actual_observed_lower_fraction": 1.0,
+          "outside_depth_valid_fraction": 1.0,
+          "note": "No projected return is not evidence of lower surface; only finite actual depth can support the end"
+        },
+        {
+          "status": "unknown",
+          "coordinate_u_m": -0.08118319153902791,
+          "inside_top_coverage": 0.59375,
+          "outside_top_coverage": 0.0,
+          "actual_observed_lower_fraction": 0.53125,
+          "outside_depth_valid_fraction": 0.53125,
+          "note": "No projected return is not evidence of lower surface; only finite actual depth can support the end"
+        }
+      ],
+      "count_phase": {
+        "status": "uncertain",
+        "selected": null,
+        "best_window_hypothesis": {
+          "count": 5,
+          "span_residual_m": 0.0009966177369678808,
+          "origin_u_m": -0.24068488267054394,
+          "length_supported": true
+        },
+        "alternatives": [
+          {
+            "count": 5,
+            "span_residual_m": 0.0009966177369678808,
+            "origin_u_m": -0.24068488267054394,
+            "length_supported": true
+          },
+          {
+            "count": 4,
+            "span_residual_m": 0.03100338226303212,
+            "origin_u_m": -0.22468488267054396,
+            "length_supported": false
+          },
+          {
+            "count": 6,
+            "span_residual_m": 0.03299661773696788,
+            "origin_u_m": -0.25668488267054396,
+            "length_supported": false
+          }
+        ],
+        "original_chain_extent": "unknown",
+        "count_semantics": "Current observed window only; no missing-end inference"
+      },
+      "boundaries": [
+        {
+          "id": "ridge_03_b00",
+          "index": 0,
+          "coordinate_u_m": -0.24068488267054394,
+          "provenance": "observed",
+          "source": "rgb_common_cross_edge",
+          "observed_coordinate_u_m": -0.24001821600387727,
+          "model_line_xy": [
+            [
+              437.66807098409686,
+              287.4598828414564
+            ],
+            [
+              442.66427334908866,
+              257.409815254016
+            ]
+          ],
+          "line_xy": [
+            [
+              440.1030355362043,
+              282.854865675505
+            ],
+            [
+              443.5710347817768,
+              261.821524967736
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 0.875,
+            "observed_offset_u_m": 0.0006666666666666665,
+            "gradient_threshold": 4.0,
+            "line_xy": [
+              [
+                440.1030355362043,
+                282.854865675505
+              ],
+              [
+                443.5710347817768,
+                261.821524967736
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_03_b01",
+          "index": 1,
+          "coordinate_u_m": -0.20868488267054394,
+          "provenance": "observed",
+          "source": "rgb_common_cross_edge",
+          "observed_coordinate_u_m": -0.20801821600387727,
+          "model_line_xy": [
+            [
+              518.1035419560187,
+              287.43371888036506
+            ],
+            [
+              521.1068604628334,
+              257.3849316646699
+            ]
+          ],
+          "line_xy": [
+            [
+              520.2330713009405,
+              282.8289000086166
+            ],
+            [
+              522.3061662709066,
+              261.7964554160463
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 1.0,
+            "observed_offset_u_m": 0.0006666666666666665,
+            "gradient_threshold": 7.386312007904053,
+            "line_xy": [
+              [
+                520.2330713009405,
+                282.8289000086166
+              ],
+              [
+                522.3061662709066,
+                261.7964554160463
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_03_b02",
+          "index": 2,
+          "coordinate_u_m": -0.17668488267054394,
+          "provenance": "observed",
+          "source": "rgb_common_cross_edge",
+          "observed_coordinate_u_m": -0.17635154933721062,
+          "model_line_xy": [
+            [
+              598.535542788796,
+              287.40755604803684
+            ],
+            [
+              599.5461472546679,
+              257.3600491222535
+            ]
+          ],
+          "line_xy": [
+            [
+              599.5250289778897,
+              282.8032059160043
+            ],
+            [
+              600.2178669272831,
+              261.7716480477229
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 1.0,
+            "observed_offset_u_m": 0.00033333333333333305,
+            "gradient_threshold": 8.078252792358398,
+            "line_xy": [
+              [
+                599.5250289778897,
+                282.8032059160043
+              ],
+              [
+                600.2178669272831,
+                261.7716480477229
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_03_b03",
+          "index": 3,
+          "coordinate_u_m": -0.14468488267054394,
+          "provenance": "observed",
+          "source": "rgb_common_cross_edge",
+          "observed_coordinate_u_m": -0.14435154933721062,
+          "model_line_xy": [
+            [
+              678.964073706986,
+              287.38139434439853
+            ],
+            [
+              677.9821339328698,
+              257.33516762670024
+            ]
+          ],
+          "line_xy": [
+            [
+              679.6482131592843,
+              282.7772424693312
+            ],
+            [
+              678.9463832893067,
+              261.7465806023136
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 1.0,
+            "observed_offset_u_m": 0.00033333333333333305,
+            "gradient_threshold": 5.575311899185181,
+            "line_xy": [
+              [
+                679.6482131592843,
+                282.7772424693312
+              ],
+              [
+                678.9463832893067,
+                261.7465806023136
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_03_b04",
+          "index": 4,
+          "coordinate_u_m": -0.11268488267054394,
+          "provenance": "observed",
+          "source": "rgb_common_cross_edge",
+          "observed_coordinate_u_m": -0.11268488267054394,
+          "model_line_xy": [
+            [
+              759.3891349351273,
+              287.3552337693772
+            ],
+            [
+              756.4148207056993,
+              257.3102871779445
+            ]
+          ],
+          "line_xy": [
+            [
+              758.9333910583622,
+              282.75155057366595
+            ],
+            [
+              756.8515381386486,
+              261.7217753181988
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 1.0,
+            "observed_offset_u_m": 0.0,
+            "gradient_threshold": 4.277382135391235,
+            "line_xy": [
+              [
+                758.9333910583622,
+                282.75155057366595
+              ],
+              [
+                756.8515381386486,
+                261.7217753181988
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_03_b05",
+          "index": 5,
+          "coordinate_u_m": -0.08068488267054394,
+          "provenance": "observed",
+          "source": "rgb_common_cross_edge",
+          "observed_coordinate_u_m": -0.08068488267054394,
+          "model_line_xy": [
+            [
+              839.810726697739,
+              287.32907432289977
+            ],
+            [
+              834.8442077813993,
+              257.28540777592
+            ]
+          ],
+          "line_xy": [
+            [
+              839.0497245351527,
+              282.72558934692324
+            ],
+            [
+              835.5734402072104,
+              261.69670997880445
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 0.96875,
+            "observed_offset_u_m": 0.0,
+            "gradient_threshold": 4.0,
+            "line_xy": [
+              [
+                839.0497245351527,
+                282.72558934692324
+              ],
+              [
+                835.5734402072104,
+                261.69670997880445
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ridge_04",
+      "fragments": [
+        {
+          "label": 2,
+          "area_m2": 0.001451,
+          "u_min": -0.24016959128670762,
+          "u_max": -0.08117300202981646,
+          "v_center": -0.4019330951148161,
+          "width_m": 0.014064532386690476
+        }
+      ],
+      "transverse_center_m": -0.4019330951148161,
+      "observed_extent_u_m": [
+        -0.24016959128670762,
+        -0.08117300202981646
+      ],
+      "original_extent": "unknown",
+      "end_evidence": [
+        {
+          "status": "unknown",
+          "coordinate_u_m": -0.24016959128670762,
+          "inside_top_coverage": 0.5,
+          "outside_top_coverage": 0.0,
+          "actual_observed_lower_fraction": 0.75,
+          "outside_depth_valid_fraction": 0.75,
+          "note": "No projected return is not evidence of lower surface; only finite actual depth can support the end"
+        },
+        {
+          "status": "unknown",
+          "coordinate_u_m": -0.08117300202981646,
+          "inside_top_coverage": 0.375,
+          "outside_top_coverage": 0.0,
+          "actual_observed_lower_fraction": 0.4375,
+          "outside_depth_valid_fraction": 0.4375,
+          "note": "No projected return is not evidence of lower surface; only finite actual depth can support the end"
+        }
+      ],
+      "count_phase": {
+        "status": "uncertain",
+        "selected": null,
+        "best_window_hypothesis": {
+          "count": 5,
+          "span_residual_m": 0.0010034107431088624,
+          "origin_u_m": -0.24067129665826203,
+          "length_supported": true
+        },
+        "alternatives": [
+          {
+            "count": 5,
+            "span_residual_m": 0.0010034107431088624,
+            "origin_u_m": -0.24067129665826203,
+            "length_supported": true
+          },
+          {
+            "count": 4,
+            "span_residual_m": 0.03099658925689114,
+            "origin_u_m": -0.22467129665826205,
+            "length_supported": false
+          },
+          {
+            "count": 6,
+            "span_residual_m": 0.03300341074310886,
+            "origin_u_m": -0.25667129665826205,
+            "length_supported": false
+          }
+        ],
+        "original_chain_extent": "unknown",
+        "count_semantics": "Current observed window only; no missing-end inference"
+      },
+      "boundaries": [
+        {
+          "id": "ridge_04_b00",
+          "index": 0,
+          "coordinate_u_m": -0.24067129665826203,
+          "provenance": "observed",
+          "source": "rgb_common_cross_edge",
+          "observed_coordinate_u_m": -0.24000462999159536,
+          "model_line_xy": [
+            [
+              447.45139362963107,
+              228.81274851123945
+            ],
+            [
+              451.9807758007108,
+              201.56579518242654
+            ]
+          ],
+          "line_xy": [
+            [
+              449.7336914090551,
+              224.64153035499282
+            ],
+            [
+              452.87767733228765,
+              205.57006686995285
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 0.90625,
+            "observed_offset_u_m": 0.0006666666666666665,
+            "gradient_threshold": 5.425156831741333,
+            "line_xy": [
+              [
+                449.7336914090551,
+                224.64153035499282
+              ],
+              [
+                452.87767733228765,
+                205.57006686995285
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_04_b01",
+          "index": 1,
+          "coordinate_u_m": -0.20867129665826203,
+          "provenance": "inferred",
+          "source": "metric_2x4_phase",
+          "observed_coordinate_u_m": null,
+          "model_line_xy": [
+            [
+              523.9974604443274,
+              228.78905355763266
+            ],
+            [
+              526.7198634546105,
+              201.5432056869557
+            ]
+          ],
+          "line_xy": [
+            [
+              523.9974604443274,
+              228.78905355763266
+            ],
+            [
+              526.7198634546105,
+              201.5432056869557
+            ]
+          ],
+          "rgb_verification": {
+            "supported": false,
+            "support": 0.15625,
+            "observed_offset_u_m": -0.001,
+            "gradient_threshold": 4.0,
+            "line_xy": [
+              [
+                522.0308084839828,
+                224.61923153204444
+              ],
+              [
+                523.9758751806063,
+                205.5485014580366
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_04_b02",
+          "index": 2,
+          "coordinate_u_m": -0.17667129665826203,
+          "provenance": "inferred",
+          "source": "metric_2x4_phase",
+          "observed_coordinate_u_m": null,
+          "model_line_xy": [
+            [
+              600.5403845872569,
+              228.76535957684496
+            ],
+            [
+              601.4559550548612,
+              201.52061709702636
+            ]
+          ],
+          "line_xy": [
+            [
+              600.5403845872569,
+              228.76535957684496
+            ],
+            [
+              601.4559550548612,
+              201.52061709702636
+            ]
+          ],
+          "rgb_verification": {
+            "supported": false,
+            "support": 0.09375,
+            "observed_offset_u_m": -0.001,
+            "gradient_threshold": 4.0,
+            "line_xy": [
+              [
+                598.2972558747041,
+                224.59570843629632
+              ],
+              [
+                598.9776286074756,
+                205.52575202477334
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_04_b03",
+          "index": 3,
+          "coordinate_u_m": -0.14467129665826203,
+          "provenance": "observed",
+          "source": "rgb_common_cross_edge",
+          "observed_coordinate_u_m": -0.14467129665826203,
+          "model_line_xy": [
+            [
+              677.0801662519533,
+              228.7416665688161
+            ],
+            [
+              676.1890507816128,
+              201.49802941258378
+            ]
+          ],
+          "line_xy": [
+            [
+              676.9437621674884,
+              224.57145125163552
+            ],
+            [
+              676.3200267184933,
+              205.50229263024107
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 1.0,
+            "observed_offset_u_m": 0.0,
+            "gradient_threshold": 4.619429707527161,
+            "line_xy": [
+              [
+                676.9437621674884,
+                224.57145125163552
+              ],
+              [
+                676.3200267184933,
+                205.50229263024107
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_04_b04",
+          "index": 4,
+          "coordinate_u_m": -0.11267129665826203,
+          "provenance": "inferred",
+          "source": "metric_2x4_phase",
+          "observed_coordinate_u_m": null,
+          "model_line_xy": [
+            [
+              753.6168056319351,
+              228.7179745334865
+            ],
+            [
+              750.9191508150008,
+              201.47544263357392
+            ]
+          ],
+          "line_xy": [
+            [
+              753.6168056319351,
+              228.7179745334865
+            ],
+            [
+              750.9191508150008,
+              201.47544263357392
+            ]
+          ],
+          "rgb_verification": {
+            "supported": false,
+            "support": 0.0,
+            "observed_offset_u_m": -0.0013333333333333335,
+            "gradient_threshold": 4.0,
+            "line_xy": [
+              [
+                750.0264303108214,
+                224.54891013874663
+              ],
+              [
+                748.1908941616471,
+                205.4804928531989
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_04_b05",
+          "index": 5,
+          "coordinate_u_m": -0.08067129665826203,
+          "provenance": "inferred",
+          "source": "metric_2x4_phase",
+          "observed_coordinate_u_m": null,
+          "model_line_xy": [
+            [
+              830.1503029207047,
+              228.69428347079594
+            ],
+            [
+              825.6462553351461,
+              201.452856759942
+            ]
+          ],
+          "line_xy": [
+            [
+              830.1503029207047,
+              228.69428347079594
+            ],
+            [
+              825.6462553351461,
+              201.452856759942
+            ]
+          ],
+          "rgb_verification": {
+            "supported": false,
+            "support": 0.0,
+            "observed_offset_u_m": 0.00033333333333333305,
+            "gradient_threshold": 4.0,
+            "line_xy": [
+              [
+                830.255190910027,
+                224.52416493450676
+              ],
+              [
+                827.0894168351196,
+                205.45656145700983
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ridge_05",
+      "fragments": [
+        {
+          "label": 1,
+          "area_m2": 0.001547,
+          "u_min": -0.24015940177749615,
+          "u_max": -0.08115941601753453,
+          "v_center": -0.37093246106442196,
+          "width_m": 0.014065806075341913
+        }
+      ],
+      "transverse_center_m": -0.37093246106442196,
+      "observed_extent_u_m": [
+        -0.24015940177749615,
+        -0.08115941601753453
+      ],
+      "original_extent": "unknown",
+      "end_evidence": [
+        {
+          "status": "unknown",
+          "coordinate_u_m": -0.24015940177749615,
+          "inside_top_coverage": 0.53125,
+          "outside_top_coverage": 0.0,
+          "actual_observed_lower_fraction": 0.25,
+          "outside_depth_valid_fraction": 0.25,
+          "note": "No projected return is not evidence of lower surface; only finite actual depth can support the end"
+        },
+        {
+          "status": "unknown",
+          "coordinate_u_m": -0.08115941601753453,
+          "inside_top_coverage": 0.5,
+          "outside_top_coverage": 0.0,
+          "actual_observed_lower_fraction": 0.25,
+          "outside_depth_valid_fraction": 0.25,
+          "note": "No projected return is not evidence of lower surface; only finite actual depth can support the end"
+        }
+      ],
+      "count_phase": {
+        "status": "uncertain",
+        "selected": null,
+        "best_window_hypothesis": {
+          "count": 5,
+          "span_residual_m": 0.0010000142400383993,
+          "origin_u_m": -0.24065940889751536,
+          "length_supported": true
+        },
+        "alternatives": [
+          {
+            "count": 5,
+            "span_residual_m": 0.0010000142400383993,
+            "origin_u_m": -0.24065940889751536,
+            "length_supported": true
+          },
+          {
+            "count": 4,
+            "span_residual_m": 0.0309999857599616,
+            "origin_u_m": -0.22465940889751534,
+            "length_supported": false
+          },
+          {
+            "count": 6,
+            "span_residual_m": 0.0330000142400384,
+            "origin_u_m": -0.2566594088975154,
+            "length_supported": false
+          }
+        ],
+        "original_chain_extent": "unknown",
+        "count_semantics": "Current observed window only; no missing-end inference"
+      },
+      "boundaries": [
+        {
+          "id": "ridge_05_b00",
+          "index": 0,
+          "coordinate_u_m": -0.24065940889751536,
+          "provenance": "observed",
+          "source": "rgb_common_cross_edge",
+          "observed_coordinate_u_m": -0.23965940889751536,
+          "model_line_xy": [
+            [
+              456.06439965799837,
+              177.163747636517
+            ],
+            [
+              460.20125811315756,
+              152.27437162498563
+            ]
+          ],
+          "line_xy": [
+            [
+              458.97424643906885,
+              173.35663490266862
+            ],
+            [
+              461.8337485458755,
+              155.93525077769917
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 1.0,
+            "observed_offset_u_m": 0.001,
+            "gradient_threshold": 6.334470510482788,
+            "line_xy": [
+              [
+                458.97424643906885,
+                173.35663490266862
+              ],
+              [
+                461.8337485458755,
+                155.93525077769917
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_05_b01",
+          "index": 1,
+          "coordinate_u_m": -0.20865940889751536,
+          "provenance": "observed",
+          "source": "rgb_common_cross_edge",
+          "observed_coordinate_u_m": -0.20799274223084868,
+          "model_line_xy": [
+            [
+              529.1851799600889,
+              177.14212576191034
+            ],
+            [
+              531.6714149145334,
+              152.2537148770028
+            ]
+          ],
+          "line_xy": [
+            [
+              531.0834708547877,
+              173.33538575344085
+            ],
+            [
+              532.7996506157968,
+              155.91467008984947
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 1.0,
+            "observed_offset_u_m": 0.0006666666666666665,
+            "gradient_threshold": 6.560710906982422,
+            "line_xy": [
+              [
+                531.0834708547877,
+                173.33538575344085
+              ],
+              [
+                532.7996506157968,
+                155.91467008984947
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_05_b02",
+          "index": 2,
+          "coordinate_u_m": -0.17665940889751536,
+          "provenance": "inferred",
+          "source": "metric_2x4_phase",
+          "observed_coordinate_u_m": null,
+          "model_line_xy": [
+            [
+              602.303092545117,
+              177.1205047352898
+            ],
+            [
+              603.1388320045547,
+              152.2330589208682
+            ]
+          ],
+          "line_xy": [
+            [
+              602.303092545117,
+              177.1205047352898
+            ],
+            [
+              603.1388320045547,
+              152.2330589208682
+            ]
+          ],
+          "rgb_verification": {
+            "supported": false,
+            "support": 0.21875,
+            "observed_offset_u_m": 0.002,
+            "gradient_threshold": 4.0,
+            "line_xy": [
+              [
+                606.98490464562,
+                173.31301911579806
+              ],
+              [
+                607.4976819835036,
+                155.89300705419834
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_05_b03",
+          "index": 3,
+          "coordinate_u_m": -0.14465940889751536,
+          "provenance": "observed",
+          "source": "rgb_common_cross_edge",
+          "observed_coordinate_u_m": -0.14432607556418203,
+          "model_line_xy": [
+            [
+              675.4181375817824,
+              177.0988845566058
+            ],
+            [
+              674.6035095407531,
+              152.21240375653656
+            ]
+          ],
+          "line_xy": [
+            [
+              676.0525239976639,
+              173.29266626687595
+            ],
+            [
+              675.4702896064116,
+              155.87329444604404
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 1.0,
+            "observed_offset_u_m": 0.00033333333333333305,
+            "gradient_threshold": 8.188472509384155,
+            "line_xy": [
+              [
+                676.0525239976639,
+                173.29266626687595
+              ],
+              [
+                675.4702896064116,
+                155.87329444604404
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_05_b04",
+          "index": 4,
+          "coordinate_u_m": -0.11265940889751536,
+          "provenance": "observed",
+          "source": "rgb_common_cross_edge",
+          "observed_coordinate_u_m": -0.11265940889751536,
+          "model_line_xy": [
+            [
+              748.5303152387717,
+              177.07726522580833
+            ],
+            [
+              746.065447680648,
+              152.1917493839621
+            ]
+          ],
+          "line_xy": [
+            [
+              748.1533527721539,
+              173.2714195916761
+            ],
+            [
+              746.4280601411458,
+              155.85271611640553
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 1.0,
+            "observed_offset_u_m": 0.0,
+            "gradient_threshold": 7.622124671936035,
+            "line_xy": [
+              [
+                748.1533527721539,
+                173.2714195916761
+              ],
+              [
+                746.4280601411458,
+                155.85271611640553
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        },
+        {
+          "id": "ridge_05_b05",
+          "index": 5,
+          "coordinate_u_m": -0.08065940889751536,
+          "provenance": "observed",
+          "source": "rgb_common_cross_edge",
+          "observed_coordinate_u_m": -0.0809927422308487,
+          "model_line_xy": [
+            [
+              821.6396256847584,
+              177.05564674284747
+            ],
+            [
+              817.5246465817471,
+              152.17109580309955
+            ]
+          ],
+          "line_xy": [
+            [
+              820.2513931091054,
+              173.25017373817323
+            ],
+            [
+              817.3831299506869,
+              155.8321385699994
+            ]
+          ],
+          "rgb_verification": {
+            "supported": true,
+            "support": 1.0,
+            "observed_offset_u_m": -0.0003333333333333335,
+            "gradient_threshold": 4.0,
+            "line_xy": [
+              [
+                820.2513931091054,
+                173.25017373817323
+              ],
+              [
+                817.3831299506869,
+                155.8321385699994
+              ]
+            ],
+            "note": "Observed common cross-edge support, not independently labeled physical seam truth"
+          }
+        }
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "ridge_00_s00",
+      "parent_ridge_id": "ridge_00",
+      "index": 0,
+      "coordinate_u_m": [
+        -0.2402258530338951,
+        -0.2082258530338951
+      ],
+      "polygon": [
+        [
+          402.98401251327516,
+          504.24986127327406
+        ],
+        [
+          497.7967911741869,
+          504.2135086613076
+        ],
+        [
+          501.9116959387759,
+          462.6474776289291
+        ],
+        [
+          409.8556931511055,
+          462.6817470981322
+        ]
+      ],
+      "box_xyxy": [
+        402.98401251327516,
+        462.6474776289291,
+        501.9116959387759,
+        504.24986127327406
+      ],
+      "decision": "present",
+      "reason_flags": [],
+      "center_world_xy_m": [
+        0.5295280216008891,
+        -0.2240010552784897
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_00_b00",
+        "ridge_00_b01"
+      ],
+      "support": {
+        "top_band_coverage": 0.857421875,
+        "confirmed_studs": 6,
+        "stud_scores": [
+          0.5878866016864777,
+          0.7204397581517696,
+          0.22625122329517933,
+          0.737722110003233,
+          0.27692875252735266,
+          0.6861191410571337,
+          0.4208999462425709,
+          0.5607974249869585
+        ],
+        "edge_score": 0.7251822579231302,
+        "edge_scores": [
+          0.3153323926246079,
+          0.9904930087328703,
+          1.0,
+          1.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_00_s01",
+      "parent_ridge_id": "ridge_00",
+      "index": 1,
+      "coordinate_u_m": [
+        -0.2082258530338951,
+        -0.1762258530338951
+      ],
+      "polygon": [
+        [
+          497.7967911741869,
+          504.2135086613076
+        ],
+        [
+          592.6047483624625,
+          504.1771578979649
+        ],
+        [
+          593.9631535441641,
+          462.6132098517504
+        ],
+        [
+          501.9116959387759,
+          462.6474776289291
+        ]
+      ],
+      "box_xyxy": [
+        497.7967911741869,
+        462.6132098517504,
+        593.9631535441641,
+        504.2135086613076
+      ],
+      "decision": "present",
+      "reason_flags": [],
+      "center_world_xy_m": [
+        0.5295144355886071,
+        -0.19200105816254814
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_00_b01",
+        "ridge_00_b02"
+      ],
+      "support": {
+        "top_band_coverage": 0.87890625,
+        "confirmed_studs": 5,
+        "stud_scores": [
+          0.47873042187670783,
+          0.5506987496946864,
+          0.22713724624754886,
+          0.6591312065720558,
+          0.2630440734793749,
+          0.681125745177269,
+          0.3324400095726511,
+          0.723090872168541
+        ],
+        "edge_score": 0.7541332013709734,
+        "edge_scores": [
+          0.5463851789175352,
+          0.3557912980395928,
+          1.0,
+          1.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_00_s02",
+      "parent_ridge_id": "ridge_00",
+      "index": 2,
+      "coordinate_u_m": [
+        -0.1762258530338951,
+        -0.1442258530338951
+      ],
+      "polygon": [
+        [
+          592.6047483624625,
+          504.1771578979649
+        ],
+        [
+          687.4078844458692,
+          504.1408089831042
+        ],
+        [
+          686.0100663038833,
+          462.57894376647056
+        ],
+        [
+          593.9631535441641,
+          462.6132098517504
+        ]
+      ],
+      "box_xyxy": [
+        592.6047483624625,
+        462.57894376647056,
+        687.4078844458692,
+        504.1771578979649
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "stud_support_not_distributed_across_both_ends_and_rows"
+      ],
+      "center_world_xy_m": [
+        0.5295008495763251,
+        -0.16000106104660652
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_00_b02",
+        "ridge_00_b03"
+      ],
+      "support": {
+        "top_band_coverage": 0.87890625,
+        "confirmed_studs": 4,
+        "stud_scores": [
+          0.2275503778642271,
+          0.5247354062982907,
+          0.2514884817676449,
+          0.6635055355727673,
+          0.2530231975533864,
+          0.6995962467044592,
+          0.2310027542023315,
+          0.35077887815768505
+        ],
+        "edge_score": 0.6121999065770259,
+        "edge_scores": [
+          0.40692566573812305,
+          0.0,
+          1.0,
+          0.494296402817767
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_00_s03",
+      "parent_ridge_id": "ridge_00",
+      "index": 3,
+      "coordinate_u_m": [
+        -0.1442258530338951,
+        -0.1122258530338951
+      ],
+      "polygon": [
+        [
+          687.4078844458692,
+          504.1408089831042
+        ],
+        [
+          782.2061997921362,
+          504.1044619165849
+        ],
+        [
+          778.0524345545134,
+          462.54467937296414
+        ],
+        [
+          686.0100663038833,
+          462.57894376647056
+        ]
+      ],
+      "box_xyxy": [
+        686.0100663038833,
+        462.54467937296414,
+        782.2061997921362,
+        504.1408089831042
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "insufficient_rgb_stud_support",
+        "stud_support_not_distributed_across_both_ends_and_rows"
+      ],
+      "center_world_xy_m": [
+        0.5294872635640432,
+        -0.12800106393066496
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_00_b03",
+        "ridge_00_b04"
+      ],
+      "support": {
+        "top_band_coverage": 0.875,
+        "confirmed_studs": 3,
+        "stud_scores": [
+          0.21724440860019945,
+          0.3995303329516541,
+          0.21569758498990202,
+          0.7182443365454674,
+          0.12597554988462042,
+          0.6063064225018024,
+          0.17808666575067036,
+          0.3075862751312038
+        ],
+        "edge_score": 0.5004879218614492,
+        "edge_scores": [
+          0.25121980465362287,
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_00_s04",
+      "parent_ridge_id": "ridge_00",
+      "index": 4,
+      "coordinate_u_m": [
+        -0.1122258530338951,
+        -0.0802258530338951
+      ],
+      "polygon": [
+        [
+          782.2061997921362,
+          504.1044619165849
+        ],
+        [
+          876.9996947689559,
+          504.0681166982661
+        ],
+        [
+          870.0902586326008,
+          462.510416671106
+        ],
+        [
+          778.0524345545134,
+          462.54467937296414
+        ]
+      ],
+      "box_xyxy": [
+        778.0524345545134,
+        462.510416671106,
+        876.9996947689559,
+        504.1044619165849
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "insufficient_rgb_stud_support",
+        "stud_support_not_distributed_across_both_ends_and_rows"
+      ],
+      "center_world_xy_m": [
+        0.5294736775517613,
+        -0.09600106681472337
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_00_b04",
+        "ridge_00_b05"
+      ],
+      "support": {
+        "top_band_coverage": 0.830078125,
+        "confirmed_studs": 3,
+        "stud_scores": [
+          0.17977971860249006,
+          0.37173803248106113,
+          0.23712736116539732,
+          0.40130989306254156,
+          0.22643325574979,
+          0.48767981695468765,
+          0.33272260925233976,
+          0.23995716367108938
+        ],
+        "edge_score": 0.3571353856622015,
+        "edge_scores": [
+          0.4922137430243951,
+          0.1218007228939438,
+          0.37017454040762265,
+          0.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_01_s00",
+      "parent_ridge_id": "ridge_01",
+      "index": 0,
+      "coordinate_u_m": [
+        -0.24021269158449698,
+        -0.20821269158449698
+      ],
+      "polygon": [
+        [
+          416.1787619145779,
+          424.6550445924893
+        ],
+        [
+          505.7128578673007,
+          424.62262696436255
+        ],
+        [
+          509.3872869386947,
+          387.4957595035601
+        ],
+        [
+          422.31553212781597,
+          387.52641865054096
+        ]
+      ],
+      "box_xyxy": [
+        416.1787619145779,
+        387.4957595035601,
+        509.3872869386947,
+        424.6550445924893
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "stud_support_not_distributed_across_both_ends_and_rows"
+      ],
+      "center_world_xy_m": [
+        0.49802823397243867,
+        -0.22400126746978571
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_01_b00",
+        "ridge_01_b01"
+      ],
+      "support": {
+        "top_band_coverage": 0.7734375,
+        "confirmed_studs": 4,
+        "stud_scores": [
+          0.2919241219134401,
+          0.2943905969063873,
+          0.3177879029080491,
+          0.43935063064567487,
+          0.3078697070448672,
+          0.4821906019310671,
+          0.40443936640687655,
+          0.5449691712856293
+        ],
+        "edge_score": 0.5740933379154285,
+        "edge_scores": [
+          0.5606678712903762,
+          1.0,
+          0.624565473498195,
+          0.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_01_s01",
+      "parent_ridge_id": "ridge_01",
+      "index": 1,
+      "coordinate_u_m": [
+        -0.20821269158449698,
+        -0.17621269158449698
+      ],
+      "polygon": [
+        [
+          505.7128578673007,
+          424.62262696436255
+        ],
+        [
+          595.242654250119,
+          424.5902108929817
+        ],
+        [
+          596.454975409424,
+          387.46510178839304
+        ],
+        [
+          509.3872869386947,
+          387.4957595035601
+        ]
+      ],
+      "box_xyxy": [
+        505.7128578673007,
+        387.46510178839304,
+        596.454975409424,
+        424.62262696436255
+      ],
+      "decision": "present",
+      "reason_flags": [],
+      "center_world_xy_m": [
+        0.49801464796015676,
+        -0.19200127035384412
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_01_b01",
+        "ridge_01_b02"
+      ],
+      "support": {
+        "top_band_coverage": 0.794921875,
+        "confirmed_studs": 6,
+        "stud_scores": [
+          0.51935113966465,
+          0.5911016371101141,
+          0.27924740834032424,
+          0.5891349166631699,
+          0.35163158020818464,
+          0.6891721934080124,
+          0.347959143061137,
+          0.3523623627224324
+        ],
+        "edge_score": 0.7989187209757441,
+        "edge_scores": [
+          0.7772997161469187,
+          0.27918132608990204,
+          0.9002017547699661,
+          1.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_01_s02",
+      "parent_ridge_id": "ridge_01",
+      "index": 2,
+      "coordinate_u_m": [
+        -0.17621269158449698,
+        -0.14421269158449698
+      ],
+      "polygon": [
+        [
+          595.242654250119,
+          424.5902108929817
+        ],
+        [
+          684.7681513727335,
+          424.55779637823497
+        ],
+        [
+          683.5185978248509,
+          387.4344455049391
+        ],
+        [
+          596.454975409424,
+          387.46510178839304
+        ]
+      ],
+      "box_xyxy": [
+        595.242654250119,
+        387.4344455049391,
+        684.7681513727335,
+        424.5902108929817
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "insufficient_rgb_stud_support",
+        "stud_support_not_distributed_across_both_ends_and_rows"
+      ],
+      "center_world_xy_m": [
+        0.4980010619478748,
+        -0.1600012732379025
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_01_b02",
+        "ridge_01_b03"
+      ],
+      "support": {
+        "top_band_coverage": 0.794921875,
+        "confirmed_studs": 3,
+        "stud_scores": [
+          0.3215265553978352,
+          0.33384895773018136,
+          0.281345753026147,
+          0.3416309006081758,
+          0.2882166962469788,
+          0.3860596588061998,
+          0.4407835027785103,
+          0.6409644614905119
+        ],
+        "edge_score": 0.4869290648053107,
+        "edge_scores": [
+          0.5790799454589594,
+          1.0,
+          0.28662347110361236,
+          0.40647698180281955
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_01_s03",
+      "parent_ridge_id": "ridge_01",
+      "index": 3,
+      "coordinate_u_m": [
+        -0.14421269158449698,
+        -0.11221269158449698
+      ],
+      "polygon": [
+        [
+          684.7681513727335,
+          424.55779637823497
+        ],
+        [
+          774.2893495448157,
+          424.52538342001
+        ],
+        [
+          770.5781544697951,
+          387.40379065309827
+        ],
+        [
+          683.5185978248509,
+          387.4344455049391
+        ]
+      ],
+      "box_xyxy": [
+        683.5185978248509,
+        387.40379065309827,
+        774.2893495448157,
+        424.55779637823497
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "insufficient_rgb_stud_support",
+        "stud_support_not_distributed_across_both_ends_and_rows"
+      ],
+      "center_world_xy_m": [
+        0.4979874759355929,
+        -0.12800127612196094
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_01_b03",
+        "ridge_01_b04"
+      ],
+      "support": {
+        "top_band_coverage": 0.8046875,
+        "confirmed_studs": 2,
+        "stud_scores": [
+          0.2684188470149118,
+          0.34235627633969246,
+          0.22763613983545788,
+          0.35522101178892873,
+          0.18234516502143616,
+          0.33108329860180274,
+          0.19548192182779298,
+          0.5865499842911959
+        ],
+        "edge_score": 0.48062576698762827,
+        "edge_scores": [
+          0.3386286918060926,
+          0.0,
+          0.6129357256629779,
+          1.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_01_s04",
+      "parent_ridge_id": "ridge_01",
+      "index": 4,
+      "coordinate_u_m": [
+        -0.11221269158449698,
+        -0.08021269158449698
+      ],
+      "polygon": [
+        [
+          774.2893495448157,
+          424.52538342001
+        ],
+        [
+          863.8062490760066,
+          424.492972018195
+        ],
+        [
+          857.6336456290504,
+          387.37313723277
+        ],
+        [
+          770.5781544697951,
+          387.40379065309827
+        ]
+      ],
+      "box_xyxy": [
+        770.5781544697951,
+        387.37313723277,
+        863.8062490760066,
+        424.52538342001
+      ],
+      "decision": "present",
+      "reason_flags": [],
+      "center_world_xy_m": [
+        0.49797388992331093,
+        -0.09600127900601933
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_01_b04",
+        "ridge_01_b05"
+      ],
+      "support": {
+        "top_band_coverage": 0.76171875,
+        "confirmed_studs": 4,
+        "stud_scores": [
+          0.15742183673497664,
+          0.5170590803027153,
+          0.19584997103391402,
+          0.3272826056418676,
+          0.24625310614152596,
+          0.5672651678323746,
+          0.4648405686020851,
+          0.6819769889116287
+        ],
+        "edge_score": 0.593919498312812,
+        "edge_scores": [
+          0.23479874578203005,
+          1.0,
+          1.0,
+          0.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_02_s00",
+      "parent_ridge_id": "ridge_02",
+      "index": 0,
+      "coordinate_u_m": [
+        -0.24069698271273254,
+        -0.20869698271273254
+      ],
+      "polygon": [
+        [
+          426.84129202600406,
+          352.3857119266192
+        ],
+        [
+          511.58257654191533,
+          352.35667194470625
+        ],
+        [
+          514.9124453317642,
+          319.0490417957471
+        ],
+        [
+          432.3801888806158,
+          319.07658755369357
+        ]
+      ],
+      "box_xyxy": [
+        426.84129202600406,
+        319.0490417957471,
+        514.9124453317642,
+        352.3857119266192
+      ],
+      "decision": "present",
+      "reason_flags": [],
+      "center_world_xy_m": [
+        0.4660284453525932,
+        -0.2244991445654311
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_02_b00",
+        "ridge_02_b01"
+      ],
+      "support": {
+        "top_band_coverage": 0.7734375,
+        "confirmed_studs": 6,
+        "stud_scores": [
+          0.5126377586275339,
+          0.6217923946678638,
+          0.3136783521344103,
+          0.5572065338492393,
+          0.3449834146442877,
+          0.6602009683847427,
+          0.3890556650774025,
+          0.5187555700540543
+        ],
+        "edge_score": 0.8040279547697854,
+        "edge_scores": [
+          0.5100698869244634,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_02_s01",
+      "parent_ridge_id": "ridge_02",
+      "index": 1,
+      "coordinate_u_m": [
+        -0.20869698271273254,
+        -0.17669698271273254
+      ],
+      "polygon": [
+        [
+          511.58257654191533,
+          352.35667194470625
+        ],
+        [
+          596.3200094683242,
+          352.32763328269425
+        ],
+        [
+          597.4410483742926,
+          319.0214972571532
+        ],
+        [
+          514.9124453317642,
+          319.0490417957471
+        ]
+      ],
+      "box_xyxy": [
+        511.58257654191533,
+        319.0214972571532,
+        597.4410483742926,
+        352.35667194470625
+      ],
+      "decision": "present",
+      "reason_flags": [],
+      "center_world_xy_m": [
+        0.4660148593403113,
+        -0.19249914744948954
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_02_b01",
+        "ridge_02_b02"
+      ],
+      "support": {
+        "top_band_coverage": 0.833984375,
+        "confirmed_studs": 5,
+        "stud_scores": [
+          0.5135496705770493,
+          0.6166006214916706,
+          0.32392304856357906,
+          0.5167263406577027,
+          0.30515317338589604,
+          0.39394860156060635,
+          0.29407215724855623,
+          0.45322106362002806
+        ],
+        "edge_score": 0.6143190545505179,
+        "edge_scores": [
+          0.4626948609661253,
+          0.0,
+          0.8231027754101695,
+          1.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_02_s02",
+      "parent_ridge_id": "ridge_02",
+      "index": 2,
+      "coordinate_u_m": [
+        -0.17669698271273254,
+        -0.14469698271273254
+      ],
+      "polygon": [
+        [
+          596.3200094683242,
+          352.32763328269425
+        ],
+        [
+          681.0535910678136,
+          352.29859594049293
+        ],
+        [
+          679.9659982507808,
+          318.9939539378308
+        ],
+        [
+          597.4410483742926,
+          319.0214972571532
+        ]
+      ],
+      "box_xyxy": [
+        596.3200094683242,
+        318.9939539378308,
+        681.0535910678136,
+        352.32763328269425
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "stud_support_not_distributed_across_both_ends_and_rows"
+      ],
+      "center_world_xy_m": [
+        0.4660012733280293,
+        -0.16049915033354792
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_02_b02",
+        "ridge_02_b03"
+      ],
+      "support": {
+        "top_band_coverage": 0.83203125,
+        "confirmed_studs": 4,
+        "stud_scores": [
+          0.2752009732682973,
+          0.4677532246461441,
+          0.30850312433605925,
+          0.49314722611070283,
+          0.2941028033294288,
+          0.4553000862340591,
+          0.28671516297765687,
+          0.3514923887165069
+        ],
+        "edge_score": 0.45212623541082975,
+        "edge_scores": [
+          0.5479960827136852,
+          0.0,
+          0.5823195058133891,
+          0.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_02_s03",
+      "parent_ridge_id": "ridge_02",
+      "index": 3,
+      "coordinate_u_m": [
+        -0.14469698271273254,
+        -0.11269698271273254
+      ],
+      "polygon": [
+        [
+          681.0535910678136,
+          352.29859594049293
+        ],
+        [
+          765.7833216029425,
+          352.2695599180126
+        ],
+        [
+          762.4872952037871,
+          318.9664118376989
+        ],
+        [
+          679.9659982507808,
+          318.9939539378308
+        ]
+      ],
+      "box_xyxy": [
+        679.9659982507808,
+        318.9664118376989,
+        765.7833216029425,
+        352.29859594049293
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "stud_support_not_distributed_across_both_ends_and_rows"
+      ],
+      "center_world_xy_m": [
+        0.4659876873157474,
+        -0.12849915321760635
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_02_b03",
+        "ridge_02_b04"
+      ],
+      "support": {
+        "top_band_coverage": 0.83203125,
+        "confirmed_studs": 4,
+        "stud_scores": [
+          0.28001186595878846,
+          0.28132002047464716,
+          0.21807936946493248,
+          0.3947088896734101,
+          0.19040088323161178,
+          0.4926311702948016,
+          0.5226172097027302,
+          0.5884659010916948
+        ],
+        "edge_score": 0.5061849967135885,
+        "edge_scores": [
+          0.015462491783971263,
+          1.0,
+          1.0,
+          0.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_02_s04",
+      "parent_ridge_id": "ridge_02",
+      "index": 4,
+      "coordinate_u_m": [
+        -0.11269698271273254,
+        -0.08069698271273254
+      ],
+      "polygon": [
+        [
+          765.7833216029425,
+          352.2695599180126
+        ],
+        [
+          850.5092013362458,
+          352.240525215163
+        ],
+        [
+          845.0049394758479,
+          318.9388709566765
+        ],
+        [
+          762.4872952037871,
+          318.9664118376989
+        ]
+      ],
+      "box_xyxy": [
+        762.4872952037871,
+        318.9388709566765,
+        850.5092013362458,
+        352.2695599180126
+      ],
+      "decision": "present",
+      "reason_flags": [],
+      "center_world_xy_m": [
+        0.46597410130346545,
+        -0.09649915610166473
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_02_b04",
+        "ridge_02_b05"
+      ],
+      "support": {
+        "top_band_coverage": 0.791015625,
+        "confirmed_studs": 6,
+        "stud_scores": [
+          0.4320596651788105,
+          0.4716588780283928,
+          0.3193546791629033,
+          0.5932440795004368,
+          0.2891737932347936,
+          0.5461346227675676,
+          0.49766661040484905,
+          0.7071915976703167
+        ],
+        "edge_score": 0.756637392156386,
+        "edge_scores": [
+          0.3915934803909651,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_03_s00",
+      "parent_ridge_id": "ridge_03",
+      "index": 0,
+      "coordinate_u_m": [
+        -0.24068488267054394,
+        -0.20868488267054394
+      ],
+      "polygon": [
+        [
+          437.66807098409686,
+          287.4598828414564
+        ],
+        [
+          518.1035419560187,
+          287.43371888036506
+        ],
+        [
+          521.1068604628334,
+          257.3849316646699
+        ],
+        [
+          442.66427334908866,
+          257.409815254016
+        ]
+      ],
+      "box_xyxy": [
+        437.66807098409686,
+        257.3849316646699,
+        521.1068604628334,
+        287.4598828414564
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "current_window_count_or_phase_uncertain",
+        "insufficient_top_band_material_coverage"
+      ],
+      "center_world_xy_m": [
+        0.43402844598348095,
+        -0.22450063053539052
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_03_b00",
+        "ridge_03_b01"
+      ],
+      "support": {
+        "top_band_coverage": 0.55859375,
+        "confirmed_studs": 6,
+        "stud_scores": [
+          0.45510498255289006,
+          0.4811469092965126,
+          0.3044558694359502,
+          0.43753475130981384,
+          0.35945537689715135,
+          0.4996292700409123,
+          0.3211312689383554,
+          0.49786344170570374
+        ],
+        "edge_score": 0.4711264404944343,
+        "edge_scores": [
+          0.2644470937263572,
+          1.0,
+          0.522943953799614,
+          0.561700214840458
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_03_s01",
+      "parent_ridge_id": "ridge_03",
+      "index": 1,
+      "coordinate_u_m": [
+        -0.20868488267054394,
+        -0.17668488267054394
+      ],
+      "polygon": [
+        [
+          518.1035419560187,
+          287.43371888036506
+        ],
+        [
+          598.535542788796,
+          287.40755604803684
+        ],
+        [
+          599.5461472546679,
+          257.3600491222535
+        ],
+        [
+          521.1068604628334,
+          257.3849316646699
+        ]
+      ],
+      "box_xyxy": [
+        518.1035419560187,
+        257.3600491222535,
+        599.5461472546679,
+        287.43371888036506
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "current_window_count_or_phase_uncertain",
+        "insufficient_top_band_material_coverage"
+      ],
+      "center_world_xy_m": [
+        0.43401485997119904,
+        -0.19250063341944895
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_03_b01",
+        "ridge_03_b02"
+      ],
+      "support": {
+        "top_band_coverage": 0.59765625,
+        "confirmed_studs": 6,
+        "stud_scores": [
+          0.5007783770561218,
+          0.4989663027226925,
+          0.30945673741642377,
+          0.6047868467867374,
+          0.290674510393084,
+          0.648735174909234,
+          0.5227833102674035,
+          0.4933558367192745
+        ],
+        "edge_score": 0.7692020464350122,
+        "edge_scores": [
+          0.42300511608753055,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_03_s02",
+      "parent_ridge_id": "ridge_03",
+      "index": 2,
+      "coordinate_u_m": [
+        -0.17668488267054394,
+        -0.14468488267054394
+      ],
+      "polygon": [
+        [
+          598.535542788796,
+          287.40755604803684
+        ],
+        [
+          678.964073706986,
+          287.38139434439853
+        ],
+        [
+          677.9821339328698,
+          257.33516762670024
+        ],
+        [
+          599.5461472546679,
+          257.3600491222535
+        ]
+      ],
+      "box_xyxy": [
+        598.535542788796,
+        257.33516762670024,
+        678.964073706986,
+        287.40755604803684
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "current_window_count_or_phase_uncertain",
+        "insufficient_top_band_material_coverage"
+      ],
+      "center_world_xy_m": [
+        0.4340012739589171,
+        -0.16050063630350733
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_03_b02",
+        "ridge_03_b03"
+      ],
+      "support": {
+        "top_band_coverage": 0.580078125,
+        "confirmed_studs": 8,
+        "stud_scores": [
+          0.5462582129985094,
+          0.5744160264730453,
+          0.37804338194773707,
+          0.3891544823831508,
+          0.35915253852911033,
+          0.3820592052873896,
+          0.43552615234168934,
+          0.5239458680152893
+        ],
+        "edge_score": 0.49065006397488997,
+        "edge_scores": [
+          0.2722601112181677,
+          1.0,
+          0.4543650487190572,
+          1.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_03_s03",
+      "parent_ridge_id": "ridge_03",
+      "index": 3,
+      "coordinate_u_m": [
+        -0.14468488267054394,
+        -0.11268488267054394
+      ],
+      "polygon": [
+        [
+          678.964073706986,
+          287.38139434439853
+        ],
+        [
+          759.3891349351273,
+          287.3552337693772
+        ],
+        [
+          756.4148207056993,
+          257.3102871779445
+        ],
+        [
+          677.9821339328698,
+          257.33516762670024
+        ]
+      ],
+      "box_xyxy": [
+        677.9821339328698,
+        257.3102871779445,
+        759.3891349351273,
+        287.38139434439853
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "current_window_count_or_phase_uncertain",
+        "insufficient_top_band_material_coverage"
+      ],
+      "center_world_xy_m": [
+        0.43398768794663517,
+        -0.12850063918756577
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_03_b03",
+        "ridge_03_b04"
+      ],
+      "support": {
+        "top_band_coverage": 0.591796875,
+        "confirmed_studs": 5,
+        "stud_scores": [
+          0.45764045999051095,
+          0.5559274256229401,
+          0.32867947628304167,
+          0.28781911346569333,
+          0.2764033313830827,
+          0.4185754968039269,
+          0.5860556624829769,
+          0.6301450356841087
+        ],
+        "edge_score": 0.5355239753285564,
+        "edge_scores": [
+          0.40270464367537695,
+          1.0,
+          0.43610529464601405,
+          1.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_03_s04",
+      "parent_ridge_id": "ridge_03",
+      "index": 4,
+      "coordinate_u_m": [
+        -0.11268488267054394,
+        -0.08068488267054394
+      ],
+      "polygon": [
+        [
+          759.3891349351273,
+          287.3552337693772
+        ],
+        [
+          839.810726697739,
+          287.32907432289977
+        ],
+        [
+          834.8442077813993,
+          257.28540777592
+        ],
+        [
+          756.4148207056993,
+          257.3102871779445
+        ]
+      ],
+      "box_xyxy": [
+        756.4148207056993,
+        257.28540777592,
+        839.810726697739,
+        287.3552337693772
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "current_window_count_or_phase_uncertain",
+        "insufficient_top_band_material_coverage"
+      ],
+      "center_world_xy_m": [
+        0.4339741019343532,
+        -0.09650064207162415
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_03_b04",
+        "ridge_03_b05"
+      ],
+      "support": {
+        "top_band_coverage": 0.615234375,
+        "confirmed_studs": 5,
+        "stud_scores": [
+          0.3408196504356359,
+          0.41001678475375375,
+          0.18696865596685763,
+          0.5006463136171535,
+          0.20992632820429902,
+          0.41444257745655105,
+          0.39591190848300467,
+          0.5205219168492362
+        ],
+        "edge_score": 0.49096433144783647,
+        "edge_scores": [
+          0.09898026783908942,
+          0.9149734497112935,
+          0.6496871983526783,
+          1.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_04_s00",
+      "parent_ridge_id": "ridge_04",
+      "index": 0,
+      "coordinate_u_m": [
+        -0.24067129665826203,
+        -0.20867129665826203
+      ],
+      "polygon": [
+        [
+          447.45139362963107,
+          228.81274851123945
+        ],
+        [
+          523.9974604443274,
+          228.78905355763266
+        ],
+        [
+          526.7198634546105,
+          201.5432056869557
+        ],
+        [
+          451.9807758007108,
+          201.56579518242654
+        ]
+      ],
+      "box_xyxy": [
+        447.45139362963107,
+        201.5432056869557,
+        526.7198634546105,
+        228.81274851123945
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "current_window_count_or_phase_uncertain",
+        "insufficient_top_band_material_coverage"
+      ],
+      "center_world_xy_m": [
+        0.402028445983481,
+        -0.22450063053539054
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_04_b00",
+        "ridge_04_b01"
+      ],
+      "support": {
+        "top_band_coverage": 0.5546875,
+        "confirmed_studs": 8,
+        "stud_scores": [
+          0.5107405576854944,
+          0.48930859565734863,
+          0.3691182580917027,
+          0.5292509487998687,
+          0.36373549596119253,
+          0.4242085693031992,
+          0.38706312930747855,
+          0.6344641372561455
+        ],
+        "edge_score": 0.4847729053328007,
+        "edge_scores": [
+          0.3739232750129256,
+          0.0,
+          0.5880089883190762,
+          1.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_04_s01",
+      "parent_ridge_id": "ridge_04",
+      "index": 1,
+      "coordinate_u_m": [
+        -0.20867129665826203,
+        -0.17667129665826203
+      ],
+      "polygon": [
+        [
+          523.9974604443274,
+          228.78905355763266
+        ],
+        [
+          600.5403845872569,
+          228.76535957684496
+        ],
+        [
+          601.4559550548612,
+          201.52061709702636
+        ],
+        [
+          526.7198634546105,
+          201.5432056869557
+        ]
+      ],
+      "box_xyxy": [
+        523.9974604443274,
+        201.52061709702636,
+        601.4559550548612,
+        228.78905355763266
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "current_window_count_or_phase_uncertain",
+        "insufficient_top_band_material_coverage"
+      ],
+      "center_world_xy_m": [
+        0.402014859971199,
+        -0.19250063341944898
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_04_b01",
+        "ridge_04_b02"
+      ],
+      "support": {
+        "top_band_coverage": 0.580078125,
+        "confirmed_studs": 7,
+        "stud_scores": [
+          0.3594605855102175,
+          0.6645810790359974,
+          0.3499049792785939,
+          0.5469685513526201,
+          0.38652325411821287,
+          0.49137653733867764,
+          0.3763872990661643,
+          0.4432382398080311
+        ],
+        "edge_score": 0.48397290119979763,
+        "edge_scores": [
+          0.49792905501501705,
+          0.0,
+          0.7120031979844771,
+          0.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_04_s02",
+      "parent_ridge_id": "ridge_04",
+      "index": 2,
+      "coordinate_u_m": [
+        -0.17667129665826203,
+        -0.14467129665826203
+      ],
+      "polygon": [
+        [
+          600.5403845872569,
+          228.76535957684496
+        ],
+        [
+          677.0801662519533,
+          228.7416665688161
+        ],
+        [
+          676.1890507816128,
+          201.49802941258378
+        ],
+        [
+          601.4559550548612,
+          201.52061709702636
+        ]
+      ],
+      "box_xyxy": [
+        600.5403845872569,
+        201.49802941258378,
+        677.0801662519533,
+        228.76535957684496
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "current_window_count_or_phase_uncertain",
+        "insufficient_top_band_material_coverage"
+      ],
+      "center_world_xy_m": [
+        0.4020012739589171,
+        -0.16050063630350736
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_04_b02",
+        "ridge_04_b03"
+      ],
+      "support": {
+        "top_band_coverage": 0.5703125,
+        "confirmed_studs": 7,
+        "stud_scores": [
+          0.3567588996245482,
+          0.43885634031706017,
+          0.36094483858859955,
+          0.608748272061348,
+          0.34372017216569,
+          0.610893726348877,
+          0.40207916489231776,
+          0.4711220931084686
+        ],
+        "edge_score": 0.6670194814758142,
+        "edge_scores": [
+          0.43278764770035777,
+          0.9390442239567109,
+          1.0,
+          0.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_04_s03",
+      "parent_ridge_id": "ridge_04",
+      "index": 3,
+      "coordinate_u_m": [
+        -0.14467129665826203,
+        -0.11267129665826203
+      ],
+      "polygon": [
+        [
+          677.0801662519533,
+          228.7416665688161
+        ],
+        [
+          753.6168056319351,
+          228.7179745334865
+        ],
+        [
+          750.9191508150008,
+          201.47544263357392
+        ],
+        [
+          676.1890507816128,
+          201.49802941258378
+        ]
+      ],
+      "box_xyxy": [
+        676.1890507816128,
+        201.47544263357392,
+        753.6168056319351,
+        228.7416665688161
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "current_window_count_or_phase_uncertain",
+        "insufficient_top_band_material_coverage"
+      ],
+      "center_world_xy_m": [
+        0.40198768794663514,
+        -0.1285006391875658
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_04_b03",
+        "ridge_04_b04"
+      ],
+      "support": {
+        "top_band_coverage": 0.57421875,
+        "confirmed_studs": 7,
+        "stud_scores": [
+          0.5571054499901732,
+          0.4614714096034994,
+          0.3683461555619431,
+          0.45104551805928084,
+          0.37525758575033535,
+          0.38943131632031,
+          0.29626703162029855,
+          0.4387100489236977
+        ],
+        "edge_score": 0.32706248530700743,
+        "edge_scores": [
+          0.4883199285582638,
+          0.0,
+          0.07933628470925476,
+          1.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_04_s04",
+      "parent_ridge_id": "ridge_04",
+      "index": 4,
+      "coordinate_u_m": [
+        -0.11267129665826203,
+        -0.08067129665826203
+      ],
+      "polygon": [
+        [
+          753.6168056319351,
+          228.7179745334865
+        ],
+        [
+          830.1503029207047,
+          228.69428347079594
+        ],
+        [
+          825.6462553351461,
+          201.452856759942
+        ],
+        [
+          750.9191508150008,
+          201.47544263357392
+        ]
+      ],
+      "box_xyxy": [
+        750.9191508150008,
+        201.452856759942,
+        830.1503029207047,
+        228.7179745334865
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "current_window_count_or_phase_uncertain",
+        "insufficient_top_band_material_coverage",
+        "insufficient_rgb_stud_support",
+        "stud_support_not_distributed_across_both_ends_and_rows"
+      ],
+      "center_world_xy_m": [
+        0.40197410193435323,
+        -0.09650064207162418
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_04_b04",
+        "ridge_04_b05"
+      ],
+      "support": {
+        "top_band_coverage": 0.560546875,
+        "confirmed_studs": 3,
+        "stud_scores": [
+          0.23188880595175923,
+          0.4488522428658542,
+          0.20659538289617116,
+          0.6102301646023989,
+          0.21571744591879854,
+          0.469234362244606,
+          0.2543176962841452,
+          0.250520954065862
+        ],
+        "edge_score": 0.42966223944100596,
+        "edge_scores": [
+          0.07415559860251486,
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_05_s00",
+      "parent_ridge_id": "ridge_05",
+      "index": 0,
+      "coordinate_u_m": [
+        -0.24065940889751536,
+        -0.20865940889751536
+      ],
+      "polygon": [
+        [
+          456.06439965799837,
+          177.163747636517
+        ],
+        [
+          529.1851799600889,
+          177.14212576191034
+        ],
+        [
+          531.6714149145334,
+          152.2537148770028
+        ],
+        [
+          460.20125811315756,
+          152.27437162498563
+        ]
+      ],
+      "box_xyxy": [
+        456.06439965799837,
+        152.2537148770028,
+        531.6714149145334,
+        177.163747636517
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "current_window_count_or_phase_uncertain",
+        "insufficient_top_band_material_coverage"
+      ],
+      "center_world_xy_m": [
+        0.3710278096799735,
+        -0.22450190449430762
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_05_b00",
+        "ridge_05_b01"
+      ],
+      "support": {
+        "top_band_coverage": 0.61328125,
+        "confirmed_studs": 8,
+        "stud_scores": [
+          0.5474688000977039,
+          0.6163387093693018,
+          0.36698643667533054,
+          0.6207989640533924,
+          0.37690075332079775,
+          0.5873345714062452,
+          0.3763773939611934,
+          0.48055054619908333
+        ],
+        "edge_score": 0.4723058668748442,
+        "edge_scores": [
+          0.0,
+          0.5006937162740718,
+          0.8055912381185925,
+          1.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_05_s01",
+      "parent_ridge_id": "ridge_05",
+      "index": 1,
+      "coordinate_u_m": [
+        -0.20865940889751536,
+        -0.17665940889751536
+      ],
+      "polygon": [
+        [
+          529.1851799600889,
+          177.14212576191034
+        ],
+        [
+          602.303092545117,
+          177.1205047352898
+        ],
+        [
+          603.1388320045547,
+          152.2330589208682
+        ],
+        [
+          531.6714149145334,
+          152.2537148770028
+        ]
+      ],
+      "box_xyxy": [
+        529.1851799600889,
+        152.2330589208682,
+        603.1388320045547,
+        177.14212576191034
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "current_window_count_or_phase_uncertain",
+        "insufficient_top_band_material_coverage"
+      ],
+      "center_world_xy_m": [
+        0.3710142236676916,
+        -0.19250190737836606
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_05_b01",
+        "ridge_05_b02"
+      ],
+      "support": {
+        "top_band_coverage": 0.6171875,
+        "confirmed_studs": 8,
+        "stud_scores": [
+          0.4507955543744218,
+          0.5071247294545174,
+          0.3967198361318262,
+          0.5896220151335001,
+          0.3836084774026156,
+          0.574877655133605,
+          0.36149186245828707,
+          0.53282555565238
+        ],
+        "edge_score": 0.3907541164156546,
+        "edge_scores": [
+          0.0,
+          0.0,
+          0.8058354373919193,
+          0.6841994145888687
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_05_s02",
+      "parent_ridge_id": "ridge_05",
+      "index": 2,
+      "coordinate_u_m": [
+        -0.17665940889751536,
+        -0.14465940889751536
+      ],
+      "polygon": [
+        [
+          602.303092545117,
+          177.1205047352898
+        ],
+        [
+          675.4181375817824,
+          177.0988845566058
+        ],
+        [
+          674.6035095407531,
+          152.21240375653656
+        ],
+        [
+          603.1388320045547,
+          152.2330589208682
+        ]
+      ],
+      "box_xyxy": [
+        602.303092545117,
+        152.21240375653656,
+        675.4181375817824,
+        177.1205047352898
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "current_window_count_or_phase_uncertain",
+        "insufficient_top_band_material_coverage"
+      ],
+      "center_world_xy_m": [
+        0.37100063765540964,
+        -0.16050191026242444
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_05_b02",
+        "ridge_05_b03"
+      ],
+      "support": {
+        "top_band_coverage": 0.6015625,
+        "confirmed_studs": 8,
+        "stud_scores": [
+          0.3598416899589338,
+          0.5356688797473907,
+          0.37021405469613666,
+          0.5804712828248739,
+          0.36236544504122997,
+          0.6020915061235428,
+          0.4651934970673615,
+          0.5604995880275965
+        ],
+        "edge_score": 0.424909276904495,
+        "edge_scores": [
+          0.0,
+          1.0,
+          0.8122731922612375,
+          0.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_05_s03",
+      "parent_ridge_id": "ridge_05",
+      "index": 3,
+      "coordinate_u_m": [
+        -0.14465940889751536,
+        -0.11265940889751536
+      ],
+      "polygon": [
+        [
+          675.4181375817824,
+          177.0988845566058
+        ],
+        [
+          748.5303152387717,
+          177.07726522580833
+        ],
+        [
+          746.065447680648,
+          152.1917493839621
+        ],
+        [
+          674.6035095407531,
+          152.21240375653656
+        ]
+      ],
+      "box_xyxy": [
+        674.6035095407531,
+        152.1917493839621,
+        748.5303152387717,
+        177.0988845566058
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "current_window_count_or_phase_uncertain",
+        "insufficient_top_band_material_coverage"
+      ],
+      "center_world_xy_m": [
+        0.37098705164312773,
+        -0.12850191314648288
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_05_b03",
+        "ridge_05_b04"
+      ],
+      "support": {
+        "top_band_coverage": 0.62890625,
+        "confirmed_studs": 8,
+        "stud_scores": [
+          0.4783950373530388,
+          0.5293271336704493,
+          0.4022058143019459,
+          0.610129103064537,
+          0.4297601962016951,
+          0.6544286757707596,
+          0.4776593018323183,
+          0.5787394475191832
+        ],
+        "edge_score": 0.28268695594413645,
+        "edge_scores": [
+          0.0,
+          1.0,
+          0.20671738986034108,
+          1.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    },
+    {
+      "id": "ridge_05_s04",
+      "parent_ridge_id": "ridge_05",
+      "index": 4,
+      "coordinate_u_m": [
+        -0.11265940889751536,
+        -0.08065940889751536
+      ],
+      "polygon": [
+        [
+          748.5303152387717,
+          177.07726522580833
+        ],
+        [
+          821.6396256847584,
+          177.05564674284747
+        ],
+        [
+          817.5246465817471,
+          152.17109580309955
+        ],
+        [
+          746.065447680648,
+          152.1917493839621
+        ]
+      ],
+      "box_xyxy": [
+        746.065447680648,
+        152.17109580309955,
+        821.6396256847584,
+        177.07726522580833
+      ],
+      "decision": "uncertain",
+      "reason_flags": [
+        "current_window_count_or_phase_uncertain",
+        "insufficient_top_band_material_coverage"
+      ],
+      "center_world_xy_m": [
+        0.37097346563084577,
+        -0.0965019160305413
+      ],
+      "yaw_world_rad": 1.571220889691462,
+      "surface_height_world_m": 0.09926704119298364,
+      "boundary_ids": [
+        "ridge_05_b04",
+        "ridge_05_b05"
+      ],
+      "support": {
+        "top_band_coverage": 0.564453125,
+        "confirmed_studs": 6,
+        "stud_scores": [
+          0.4998839236795902,
+          0.5806867331266403,
+          0.20938228312273915,
+          0.669082835316658,
+          0.19822190228516684,
+          0.5891548469662666,
+          0.48971477150917053,
+          0.5756785869598389
+        ],
+        "edge_score": 0.6,
+        "edge_scores": [
+          0.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "physical_exposure": "highest_measured_surface_hypothesis",
+      "gripper_accessibility": "unverified"
+    }
+  ],
+  "rejected_fragments": [],
+  "limitations": [
+    "Known2x4 footprint/type and nominal camera calibration assist hypotheses.",
+    "Measured dominant horizontal band is treated as body-top plane; not a calibrated per-brick root pose.",
+    "Equal metric divisions are inferred, not automatically observed brick seams.",
+    "Current full-stack views do not validate missing runs, removed ends or physical gripper accessibility."
+  ]
+}

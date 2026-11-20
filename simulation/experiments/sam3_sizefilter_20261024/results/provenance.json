@@ -1,0 +1,13 @@
+{
+  "pueue_job_id": 1674,
+  "source_commit": "70118a2100592495bb5409310d442ef61beb0495",
+  "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261024T084549.641504Z-sam3-size-filter",
+  "full_evaluation": "/home/faps/dev/github/robo.innovate26/runs/20261024T084549.641504Z-sam3-size-filter/output/evaluation/evaluation.json",
+  "full_evaluation_sha256": "f16d70680316c44dd3ad078aad6ffe6cc8f8beedb0a87871aa2b1e9d46c694c1",
+  "durable_evaluation_note": "Scored fields copied unchanged; large verbatim implementation diagnostics omitted and referenced by full path/hash.",
+  "durable_evaluation_sha256": "b6b3f5c961051c2bf4bfe970aeb80003bc8077f9b49393ef7c3c6d6bbeac3177",
+  "settings_sha256": "df6e352c6b2a58a02c91d77f0c797cdb8dd1e081d16aa67e1cb4a2328f0b9194",
+  "reference_sha256": "1a36cf4531bca88678a989fb01421df1304dcfe3a980318ac4b06a936e936e3f",
+  "protocol_sha256": "ec0db67b5a777a04397e0ef5ea3d902282524023fe2a23c451383b496b84b73d",
+  "raw_predictions": "Frozen original saved SAM3 LEGO brick masks, job1673; copied/mounted under source snapshot manifest; no new inference."
+}

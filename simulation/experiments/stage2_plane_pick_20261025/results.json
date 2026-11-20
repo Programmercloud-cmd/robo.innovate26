@@ -1,0 +1,102 @@
+{
+  "schema": "plane-position-pick-results-v1",
+  "job_id": 1818,
+  "source_commit": "86e56c1",
+  "snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T145002.336445Z-stage2-plane-pick-I",
+  "physics_extraction_passed": false,
+  "controller_status": "endpoint_without_load_confirmation",
+  "steps": 1853,
+  "failed_checks": [
+    "controller_record_complete",
+    "target_detached_singleton",
+    "detachment_after_grasp_trigger",
+    "commanded_straight_5mm_lift",
+    "target_rise_4mm",
+    "held_relative_transform",
+    "final_hold_250ms",
+    "positive_force_trigger"
+  ],
+  "frame_failure_counts": {},
+  "private_native_failures": {},
+  "retired_reference_failure_counts": {
+    "all_loaded_points_body_flat_lateral": 143,
+    "all_reciprocal_loaded_points_body_flat_lateral": 143
+  },
+  "metrics": {
+    "first_singleton_step": null,
+    "target_rise_m": -0.0003086775541305542,
+    "held_translation_max_m": null,
+    "held_angle_max_rad": null,
+    "non_target_translation_max_m": 0.0002819296787492931,
+    "non_target_angle_max_rad": 0.005393244791775942,
+    "force_peak_N": {
+      "left": 0.9902425588807091,
+      "right": 1.2389476206153631
+    },
+    "first_force_trigger_step": null,
+    "loaded_point_observations": 3232,
+    "max_loaded_flat_distance_m": 8.155008413831839e-06,
+    "min_loaded_outward_dot": 0.999999725885304
+  },
+  "force_confirmation": null,
+  "endpoint_settle_completed_commands": 30,
+  "endpoint_mapping": {
+    "frame": "fr3_hand",
+    "nominal_gap_m": 0.014,
+    "initial_actual_gap_m": 0.02100000879729436,
+    "gap_intercept_m": 0.0028133892920081463,
+    "gap_per_symmetric_q": 1.9999999999999996,
+    "endpoint_q_m": 0.005593305353995928,
+    "inner_planes_finger_y_m": {
+      "left": 0.0014066899893805107,
+      "right": -0.0014066899893805385
+    },
+    "fingers": {
+      "left": {
+        "joint": "fr3_finger_joint1",
+        "path": "/World/envs/env_0/Robot/fr3_hand/fr3_finger_joint1",
+        "opening_axis_hand": [
+          0.0,
+          0.9999999999999998,
+          0.0
+        ],
+        "initial_q_m": 0.009093309752643108,
+        "inner_plane_finger_y_m": 0.0014066899893805107,
+        "endpoint_q_m": 0.005593305353995928,
+        "limits_m": [
+          0.0,
+          0.03999999910593033
+        ]
+      },
+      "right": {
+        "joint": "fr3_finger_joint2",
+        "path": "/World/envs/env_0/Robot/fr3_hand/fr3_finger_joint2",
+        "opening_axis_hand": [
+          0.0,
+          -0.9999999999999998,
+          0.0
+        ],
+        "initial_q_m": 0.009093309752643108,
+        "inner_plane_finger_y_m": -0.0014066899893805385,
+        "endpoint_q_m": 0.005593305353995928,
+        "limits_m": [
+          0.0,
+          0.03999999910593033
+        ]
+      }
+    },
+    "physical_Desk_command_mapping": "UNMEASURED; this is nominal model plane separation only"
+  },
+  "audit_sha256": "62bb0efb12e9cacdfdda110ed90b0ff8efd39503a514c8878d79977e786a9541",
+  "actual_pueue_seconds": 175.164829583,
+  "supervised_capture_plus_audit_seconds": 174.90747198200552,
+  "cumulative_case_seconds": 1844.0700749640234,
+  "case_limit_seconds": 2200,
+  "remaining_case_seconds": 355.92992503597657,
+  "independent_review": "Evaluator/reviewer accept the negative result: all frame and contact guards pass, but unchanged1.5Nconfirmation is not met; no lift/detachment/held success.",
+  "online_held_identity": "UNKNOWN",
+  "transfer_authorized": false,
+  "H_authorized": false,
+  "automatic_retry": false,
+  "goal_status": "INCOMPLETE; native extraction and subsequent integrated stages unproven."
+}

@@ -1,0 +1,254 @@
+{
+  "schema": "stage2-tip-contact-benchmark-v1",
+  "status": "frozen_before_implementation",
+  "stage": "Contactgeometry/reporting baseline; closedidleimprovementround remainsclosed",
+  "maximum_improvement_rounds": 3,
+  "baseline_improvement_round": 0,
+  "execution_authorized_cases": [
+    "G_proxy"
+  ],
+  "cases": [
+    {
+      "id": "B0_stock",
+      "split": "development",
+      "collision": "unchanged stock",
+      "coupon_offset_pad_long_axis_m": 0.0,
+      "authorization": "initial baseline only"
+    },
+    {
+      "id": "D_updated_tip",
+      "split": "development",
+      "collision": "supplied STL proxy pending",
+      "coupon_offset_pad_long_axis_m": 0.0,
+      "authorization": "ONLY after B0 independent geometry/reporting review AND suppliedproxy fidelity review; no replacement code now"
+    },
+    {
+      "id": "R_updated_offset",
+      "split": "reserved",
+      "collision": "same frozen suppliedproxy",
+      "coupon_offset_pad_long_axis_m": 0.002,
+      "authorization": "withheld until D passes and proxy/interface frozen; no tuning from this case"
+    }
+  ],
+  "source": {
+    "bricks": 300,
+    "parts": 301,
+    "native_connections": 930,
+    "solver": "PGS",
+    "source_actor_position_iterations": 32,
+    "source_actor_velocity_iterations": 4,
+    "dt_s": 0.008333333333333333,
+    "OSQP_EPSILON": "1e-4"
+  },
+  "coupon": {
+    "dimensions_studs_plates": [
+      4,
+      2,
+      3
+    ],
+    "body_size_m": [
+      0.032,
+      0.016,
+      0.0096
+    ],
+    "kinematic": true,
+    "disable_gravity": true,
+    "native_connections": 0,
+    "placement": "ONE premeasurement fixture initialization at actual pad midheight; handX long32mm/handY short16mm; never perception input or a demonstrated perception pick",
+    "initial_side_clearance_m": 0.00025,
+    "clearance_tolerance_m": 5e-05
+  },
+  "motion": {
+    "arm_joint_targets": "Exactly existing nominal seven-joint commands; actual q drift descriptive. Actual hand motion abort2mm/2degrees.",
+    "finger_initialization": "Before physics play only, derive each DOF opening from actual composed pad inner surface. Verify actualFK/couponclearance before closing.",
+    "maximum_command_speed_m_s": 0.001,
+    "maximum_command_and_actual_travel_per_finger_m": 0.001,
+    "positive_force_N": 0.2,
+    "positive_consecutive_fresh_steps": 3,
+    "reopen_force_N": 0.01,
+    "reopen_consecutive_fresh_steps": 3,
+    "sampled_abort_normal_force_per_finger_N": 2.0,
+    "abort_force_semantics": "SUM ABS of ALL finite signed normal scalars perpad-coupon, regardlessownership. Preserve raw signedscalar\u00d7normal forvectors. Sampledabort, notguaranteedforcecap.",
+    "maximum_steps": 360,
+    "wall_limit_s": 180,
+    "tangential_motion": false,
+    "arm_trajectory": false,
+    "maximum_actual_speed_abort_m_s": 0.002,
+    "travel_float_allowance_m": 2e-06,
+    "reopen_actual_q_tolerance_m": 5e-05,
+    "maximum_actual_hand_position_abort_m": 0.002,
+    "maximum_actual_hand_angle_abort_rad": 0.03490658503988659
+  },
+  "unchanged_actuators": {
+    "hand_effort_limit_N": 15.0,
+    "hand_stiffness_N_m": 2000.0,
+    "hand_damping_N_s_m": 100.0,
+    "interpretation": "Actuator effort/target is NOT measured pad contact force"
+  },
+  "point_gate": {
+    "pad_distance_max": "abs(contact separation)+50\u00b5m",
+    "surface_slack_m": 5e-05,
+    "white_clearance_extra_m": 0.0001,
+    "white_distance_min": "abs(contact separation)+50\u00b5m+0.1mm",
+    "rule": "ALL force-carrying points with abs(signedforce)>1e-8N from BOTH finger and reciprocal coupon views must be uniquely pad-compatible; white/unmapped blocks positive and stops. No favorable subset selection.",
+    "surface_reference": "Authored collision triangles or mathematical convex hull if configured convexHull; not exact cooked-shape evidence."
+  },
+  "observation": {
+    "sensors": [
+      "left",
+      "right",
+      "coupon"
+    ],
+    "all_actor_and_static_filters": true,
+    "capacity_per_view_normal_and_friction": 1024,
+    "report_threshold_N": 0.0,
+    "finger_reporters": "Apply missing zero-threshold reporter schemas before physics play; no highlevel wrapper",
+    "disableContactProcessing": false,
+    "contact_processing_scope": "Process-local observation setting after SimulationContext init; potentially perturbing explicitly recorded",
+    "force_units": "dt=actualphysicsdt\u2192N; dt1\u2192Ns; points/worldCOM meters",
+    "friction": "Own anchor vectors/points/counts; diagnostic only, no tangential-motion or friction-calibration claim",
+    "reciprocal_force_absolute_tolerance_N": 0.005,
+    "reciprocal_force_relative_tolerance": 0.01,
+    "dt_scaling_absolute_tolerance_Ns": 1e-07,
+    "dt_scaling_relative_tolerance": 1e-05,
+    "zero_or_unreported": "Unsupported/unknown, never proof of no contact",
+    "unexpected_contact_force_floor_N": 1e-06,
+    "force_direction_cosine_min": 0.9,
+    "force_direction_check_min_N": 0.01,
+    "sign_resolution": "Latch only UNIQUE\u00b1rawnormal-to-matrix agreement; subnoiseambiguity unknown; positiveframes require global consistent resolved sign.",
+    "force_carrying_abs_floor_N": 1e-08,
+    "normal_scalar_contract": "Signed force-on-sensor scalars; raw scalar\u00d7normal gives world normal force. Negative scalar alone is not invalid. Force/motion thresholds unchanged."
+  },
+  "background_guards": {
+    "maximum_position_drift_m": 0.002,
+    "maximum_orientation_drift_rad": 0.03490658503988659,
+    "native_graph_unchanged": true,
+    "finite_source_robot_coupon": true,
+    "unexpected_nonfixture_contacts": "stop",
+    "mass_inertia_materials": "No edits; actual initial/terminal equality required"
+  },
+  "stop_policy": "First setupambiguity, incompleteoverflow/nonfinite/sign/pointmapping failure, sampledforceabort, travel/clock/jointlimit/armhold failure, nativechange or source drift stops. No retry/sweep without explicit reviewed improvement budget. Unsafe/incomplete-data abort halts furtherphysics without recovery/reopen/release claim.",
+  "claims": {
+    "grasped": false,
+    "held_object_pose_validated": false,
+    "extraction": false,
+    "physical_friction_calibrated": false,
+    "hardware": false
+  },
+  "input_sha256": {
+    "experiments/final_workcell_20261024/scene_config.json": "77cb33b140c8449e9527437c1fc8a452d5f95a9680413dc05b66db07e27342e7",
+    "experiments/final_workcell_20261024/geometry.json": "8a0266b2ccbf75f6d773fdd1e6309c70f9ab8828da96b563da133f383f83c897",
+    "experiments/final_workcell_20261024/render_core.py": "c113531b35b8527871e60f6763666e08c054c6653f240d107051123563f8cf6b",
+    "experiments/final_workcell_20261024/scene.py": "ebcd45e6fdcc6672b6a3dee1b5e35f828daf88afc710fdba124e814ebb911eb6",
+    "experiments/final_workcell_20261024/end_effector/fingertips.py": "c5ab9f8278e82670ab4c3b7206c1bc75ec1082e16bcb7581fab31d9e7eb9eef1",
+    ".deps/bricksim/assets/robots/fr3/robot.usda": "313c8720683a1311c67dbd6617db736bb36f1d6ecdaed02ec0fbbea9ca302306",
+    ".deps/bricksim/core.cpython-311-x86_64-linux-gnu.so": "4e62dc33ee02270993c20e3cfd658e6d6ef0ea9780e53ad15cedde12f41b2455"
+  },
+  "initial_geometry": {
+    "surface": "Composed enabled Cube/Mesh colliders including instance proxies. Cube analytical exact8corners/12triangles; Mesh original convexHull/convexsurface path unchanged. Unsupported types STOP.",
+    "white_coupon_separation": "Conservative collider AABB versuscouponAABBinhand frame; ambiguitypreclosureSTOP",
+    "parallel_finger_frame_rotation_tolerance_rad": 0.0001
+  },
+  "native_breakage": {
+    "enabled": true,
+    "contact_regularization": 0.1,
+    "clutch_axial_compliance": 1.0,
+    "clutch_radial_compliance": 1.0,
+    "clutch_tangential_compliance": 1.0,
+    "friction_coefficient": 0.2,
+    "preloaded_force": 3.5,
+    "slack_fraction_warn": 0.1,
+    "slack_fraction_b_floor": 1e-09,
+    "debug_dump": false,
+    "breakage_cooldown_time": 0.05
+  },
+  "native_assembly": {
+    "enabled": false,
+    "required_force": 1.0
+  },
+  "current_improvement_round": 3,
+  "round_ledger": [
+    {
+      "round": 0,
+      "pueue_job_id": 1751,
+      "snapshot": "runs/20261025T031349.819124Z-stage2-contact-B0-stock",
+      "measured_contact_steps": 0,
+      "outcome": "Pre-play STOP: stock collider mesh_0 is Cube, previously unsupported. No force baseline observed."
+    },
+    {
+      "round": 1,
+      "status": "measured_failed_capture_preserved",
+      "change": "Exact analytical UsdGeom.Cube representation only (8corners/12triangles/composedtransform); inventory all enabled collider types/attributes before validation. Mesh representation and physical/contact/motion/ownership gates unchanged.",
+      "maximum_attempts": 1,
+      "remaining_reviewed_improvement_rounds_after_this": 2,
+      "proxy_implemented": false,
+      "blind_retry_loop": false,
+      "pueue_job_id": 1752,
+      "independent_audit_job_id": 1753,
+      "measured_contact_steps": 36,
+      "outcome": "First contacts about2mN per finger; STOP on old nonnegative-scalar assumption. Source301/930intact. Frozen .2N positive gate not reached; negative coupon ownership was NOT tested by oldpositive-only selection. Original run/audit remain failed."
+    },
+    {
+      "round": 2,
+      "status": "independent_PASS_preserved",
+      "change": "Signednormal API interpretation only: preserve signed f\u00d7n, magnitudeSUMABS, classifyALLabs(f)>existing1e-8Nfloor includingnegative reciprocalcouponpoints, unexpectedpartnersabs. Removeonlynegative-scalar-invalid assumption. No force/motion/geometry/native parameter relaxation.",
+      "maximum_attempts": 1,
+      "remaining_reviewed_improvement_rounds_after_this": 1,
+      "proxy_implemented": false,
+      "reserved_execution_authorized": false,
+      "separate_known_warning": "Kinematic zero-velocity warning preserved; no unrelated physical/API change bundled.",
+      "pueue_job_id": 1754,
+      "independent_audit_job_id": 1755,
+      "measured_contact_steps": 100,
+      "outcome": "All 27 checks passed. Both-pad positive completed at step49; force release at step70 and initial opening at step100. Peak about .224N. Native301/930 and all limits retained. Earlier1752/1753 remain failed records."
+    },
+    {
+      "round": 3,
+      "status": "frozen_before_G",
+      "last_contact_round": true,
+      "change": "One supplied-tip cooked convex-decomposition proxy only. Replace only two mesh_3 colliders; preserve white Cubes, materials, robot mass/inertia/actuators, tested PGS32/4 and native source.",
+      "phases": [
+        "G: cooked export plus independent sampled fidelity, zero contact steps.",
+        "D: same centered contact after G PASS, re-query and match canonical cooked hashes.",
+        "R: fixed +2mm hand-X reserved case after D PASS only."
+      ],
+      "maximum_attempts_per_phase": 1,
+      "maximum_active_seconds_per_phase_capture_plus_audit": 180,
+      "maximum_active_seconds_all_phases": 540,
+      "maximum_measured_contact_steps_all_phases": 720,
+      "retry_or_fourth_round": false,
+      "coarsen_sampling_on_budget": false,
+      "coupon_center_policy": "Keep exact1754 B0 hand-frame center XYZ; only adapt initial Y opening to cooked geometry, plus declared reserved +2mmX."
+    }
+  ],
+  "conditional_proxy_stages": {
+    "D": "Requires independent G fidelity PASS and exact cooked hash match.",
+    "R": "Requires independent D contact PASS, with the same G hashes."
+  },
+  "proxy_fidelity": {
+    "surface_sample_spacing_m": 0.00025,
+    "maximum_stl_samples_per_tip": 200000,
+    "maximum_hull_samples_per_tip": 200000,
+    "maximum_bidirectional_external_boundary_sample_distance_m": 0.00025,
+    "maximum_outer_bound_error_m": 0.0001,
+    "membership_epsilon_m": 1e-07,
+    "external_probe_offset_m": 1e-06,
+    "contact_ray_extra_m": 1e-06,
+    "witness_reference_clearance_m": 0.00025,
+    "bore_center_cad_yz_mm": [
+      -15.5,
+      18.600005
+    ],
+    "bore_x_cad_mm": [
+      -10.5,
+      -8.0,
+      -5.0
+    ],
+    "bore_witness_radius_mm": 1.0,
+    "bore_witnesses_per_x": 9,
+    "interpretation": "A bounded sampled CAD screen only. Bore purpose and physical mounting remain unverified. Internal hull faces are excluded from surface fidelity.",
+    "inside_solid_rule": "Closed solid: a point is inside a hull when every normalized plane residual is <= +1e-7 m. Union membership means inside any hull.",
+    "contact_outward_rule": "Use documented signed scalar times normal. Pad outward is minus force direction for a finger sensor and plus force direction for a coupon sensor. Never fit or try both ray directions."
+  },
+  "proxy_config_sha256": "1c760e4971d0765b3e142e770584c65078d43a1c2504d897aa182031fd941e62"
+}

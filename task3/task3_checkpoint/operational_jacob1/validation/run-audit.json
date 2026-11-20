@@ -1,0 +1,241 @@
+{
+  "method": "Independent reconstruction of material IDs, layer grouping/recipes, resource intervals, trajectories and ledger; not engine self-validation",
+  "passed": true,
+  "checkCount": 30,
+  "summary": {
+    "records": 28872,
+    "bricks": 28800,
+    "layers": 252,
+    "pallets": 18,
+    "resourceZones": 113,
+    "movingTracks": 536233,
+    "routingTracks": 10080,
+    "crossTransfers": 3366,
+    "ledger": {
+      "source": 17200,
+      "shipped": 10080,
+      "removed": 1200,
+      "skip": 217,
+      "upstream": 103
+    }
+  },
+  "checks": [
+    {
+      "name": "all record IDs are unique",
+      "passed": true,
+      "detail": {
+        "records": 28872,
+        "unique": 28872
+      }
+    },
+    {
+      "name": "finite input material exists",
+      "passed": true,
+      "detail": {
+        "bricks": 28800
+      }
+    },
+    {
+      "name": "all eighteen production stations are exercised",
+      "passed": true
+    },
+    {
+      "name": "all six lanes are exercised",
+      "passed": true
+    },
+    {
+      "name": "layer IDs are unique",
+      "passed": true
+    },
+    {
+      "name": "layers contain forty unique good bricks and ordered process times",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "completed pallets are fourteen FIFO layers / 560 unique good bricks with valid recipes",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "completed pallet layers contact the indexed pallet deck and each other",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "storage and handoff runners contact the floor with all layers supported",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "both layer positions are actually reached on the physical buffer bed",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "loaded truck pallets never overwrite occupied positions",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "loaded forklift transports and insertions preserve the signed load-center frame",
+      "passed": true,
+      "detail": {
+        "chargedForkSegments": 258,
+        "errors": []
+      }
+    },
+    {
+      "name": "occupied resource calendars have no conflicting owners",
+      "passed": true,
+      "detail": {
+        "zoneCount": 113,
+        "intervals": 15463,
+        "errors": []
+      }
+    },
+    {
+      "name": "occupied-zone evidence is not empty",
+      "passed": true,
+      "detail": {
+        "zoneCount": 113,
+        "intervals": 15463
+      }
+    },
+    {
+      "name": "two-position buffer occupancy and FIFO reconstructed independently",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "material tracks are finite, continuous and non-overlapping",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "routing swept footprint uses deck support and upstream bridge",
+      "passed": true,
+      "detail": {
+        "routingTracks": 10080,
+        "crossTransfers": 3366,
+        "unsupported": 0,
+        "retainingWallIntersections": 0,
+        "errors": []
+      }
+    },
+    {
+      "name": "material ledger transactions are available",
+      "passed": true,
+      "detail": {
+        "transactions": 35920
+      }
+    },
+    {
+      "name": "all material ownership transitions conserve unique identities",
+      "passed": true,
+      "detail": {
+        "errors": [],
+        "finalLedger": {
+          "source": 17200,
+          "shipped": 10080,
+          "removed": 1200,
+          "skip": 217,
+          "upstream": 103
+        },
+        "total": 28800
+      }
+    },
+    {
+      "name": "representative layer-transfer events exist",
+      "passed": true
+    },
+    {
+      "name": "representative completed-pallet events exist",
+      "passed": true
+    },
+    {
+      "name": "skip exchange exercised",
+      "passed": true,
+      "detail": {
+        "events": [
+          {
+            "t": 45104.06157938844,
+            "type": "skip-exchange"
+          },
+          {
+            "t": 88594.23269492888,
+            "type": "skip-exchange"
+          },
+          {
+            "t": 131729.30070880958,
+            "type": "skip-exchange"
+          },
+          {
+            "t": 172842.54754848505,
+            "type": "skip-exchange"
+          }
+        ]
+      }
+    },
+    {
+      "name": "skip exchange drains collection, stops admissions, proves stow and retains removed material",
+      "passed": true,
+      "detail": {
+        "batches": 4,
+        "errors": []
+      }
+    },
+    {
+      "name": "original replay is not a run input",
+      "passed": true
+    },
+    {
+      "name": "north/south kiln-cart tracks retain fixed X and yaw",
+      "passed": true,
+      "detail": {
+        "carts": 1,
+        "errors": []
+      }
+    },
+    {
+      "name": "finite source cart has all original IDs on its support tray",
+      "passed": true,
+      "detail": {
+        "expected": 28800,
+        "actual": 28800,
+        "errors": []
+      }
+    },
+    {
+      "name": "source picks top-down forty-brick layers and rotates them rigidly ninety degrees",
+      "passed": true,
+      "detail": {
+        "sourcePicks": 290,
+        "pickedBrickIds": 11600,
+        "errors": []
+      }
+    },
+    {
+      "name": "partial cart is retained and source delivery causally precedes inspection",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "engine leaves the shared geometry object immutable",
+      "passed": true
+    },
+    {
+      "name": "run identifies the authoritative manifest hash",
+      "passed": true,
+      "detail": {
+        "expected": "74a93f84df620df69fc66ba5ce95f8243554bb41fa3d8095fb3ad920b45e4249",
+        "actual": "74a93f84df620df69fc66ba5ce95f8243554bb41fa3d8095fb3ad920b45e4249"
+      }
+    }
+  ],
+  "limitations": [
+    "Logical interlocks and authored support geometry only; not industrial drive/structural qualification.",
+    "Finite sample sweeps do not certify continuous rigid-body collision/contact or friction.",
+    "Hooklift vehicle selection, swept paths, payload, impact and dust handling remain hardware assumptions."
+  ]
+}

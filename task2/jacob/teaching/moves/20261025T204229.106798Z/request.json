@@ -1,0 +1,428 @@
+{
+  "point": "a_0_0_9",
+  "trajectory": "certified_joint_arc",
+  "execute": true,
+  "canonical_target_O_T_EE": [
+    0.9999690055847168,
+    -0.0052225166000425816,
+    -0.0058904592879116535,
+    0,
+    -0.005223609507083893,
+    -0.9999863505363464,
+    -0.00017021303938236088,
+    0,
+    -0.005889489781111479,
+    0.000200977228814736,
+    -0.9999826550483704,
+    0,
+    0.47216472029685974,
+    0.0019163418328389525,
+    0.09742671251296997,
+    1
+  ],
+  "temporary_overrides": {
+    "stage": "pre_grasp_vertical_retreat",
+    "direct_vertical": true,
+    "time_scale": 1
+  },
+  "motion_config": {
+    "schema_version": 1,
+    "trajectory": "singularity_checked_joint_spline_of_quintic_bezier",
+    "vertical_standoff_m": 0.1,
+    "max_translation_velocity_m_s": 0.4,
+    "max_translation_acceleration_m_s2": 0.75,
+    "max_translation_jerk_m_s3": 0.5,
+    "max_rotation_velocity_rad_s": 0.3,
+    "max_rotation_acceleration_rad_s2": 1.0,
+    "max_rotation_jerk_rad_s3": 5.0,
+    "filter_cutoff_hz": 1000,
+    "endpoint_position_tolerance_m": 0.001,
+    "endpoint_orientation_tolerance_rad": 0.017453292519943295,
+    "max_callback_gap_s": 0.02,
+    "workspace_bounds_m": {
+      "min": [
+        0.1978522479534149,
+        -0.6432363748550415,
+        -0.0800563082098961
+      ],
+      "max": [
+        0.8095304727554321,
+        0.10219795852899552,
+        0.5
+      ]
+    },
+    "clearance_basis": "Operator: the whole path is clear; all 15 marked poses plus 10 cm in all directions are allowed.",
+    "clearance_recorded_utc": "2026-10-25T18:55:20.105140+00:00",
+    "path_definition": "100 mm vertical departure/arrival guide points blended into one continuous curve with vertical endpoint tangents. Guide points are control points, not stop points; corners are rounded within the workspace bounds.",
+    "rate_limiting_enabled": false,
+    "signal_processing_note": "Analytically bounded joint trajectories use libfranka joint-position rate limiting to handle command discontinuities after lost cycles; no additional low-pass filter. Cartesian legacy execution remains retired. Robot protective limits and live guards remain active.",
+    "signal_processing_reference": "https://github.com/frankarobotics/libfranka/blob/main/CHANGELOG.md",
+    "updated_utc": "2026-10-25T19:40:18.133896+00:00",
+    "timing_policy": "cube_root_distance_with_derivative_limits",
+    "workspace_reference_distance_m": 1.1252945911088104,
+    "reference_move_duration_s": 10.0,
+    "minimum_move_duration_s": 1.0,
+    "max_joint_velocity_rad_s": 1.0,
+    "control_cpu": 6,
+    "stationary_start_stable_time_s": 0.5,
+    "stationary_start_timeout_s": 2.0,
+    "timing_note": "Nominal T=10*(straight_distance/workspace_diagonal)^(1/3); actual duration is the maximum of nominal time, minimum time and bounded arc/orientation derivative requirements.",
+    "performance_profile_hold": true,
+    "clamp_standoff_to_workspace_ceiling": true,
+    "joint_velocity_cap_source": "Operator explicitly requested a 1 rad/s speed cap.",
+    "workspace_ceiling_source": "Operator explicitly requested a 500 mm height ceiling.",
+    "workspace_ceiling_updated_utc": "2026-10-25T19:40:18.133896+00:00",
+    "require_singularity_preflight": true,
+    "verified_joint_plans_enabled": true,
+    "singularity_avoidance": {
+      "characteristic_length_m": 0.3,
+      "joint_limit_margin_rad": 0.06,
+      "min_full_sigma": 0.15,
+      "min_fixed_elbow_sigma": 0.12,
+      "max_condition": 35,
+      "min_abs_joint2_rad": 0,
+      "min_abs_joint5_rad": 0.0,
+      "min_elbow_extension_margin_rad": 0.2,
+      "ik_position_tolerance_m": 2e-05,
+      "ik_rotation_tolerance_rad": 0.0002,
+      "allow_yaw180_for_bricks": true,
+      "margin_basis": "Full and fixed-elbow Jacobian conditioning using the connected robot model. Joint-2 angle/sign alone is not a singularity test; the previous blanket 15-degree exclusion falsely rejected demonstrated poses. Engineering margins are not published Desk warning thresholds.",
+      "yaw_symmetry": "tool_z_pi_preserve_approach_axis"
+    },
+    "joint_planner": {
+      "path_knots": 101,
+      "max_knot_joint_step_rad": 0.18,
+      "jacobian_certificate_slack": 0.025,
+      "maximum_certificate_intervals": 40000,
+      "maximum_arc_deviation_m": 0.001,
+      "maximum_arc_angle_deviation_rad": 0.005,
+      "joint_velocity_headroom": 0.85,
+      "max_joint_acceleration_rad_s2": 2.0,
+      "max_joint_jerk_rad_s3": 20.0,
+      "min_live_full_sigma": 0.1,
+      "min_live_fixed_elbow_sigma": 0.08,
+      "max_live_condition": 50.0,
+      "min_live_abs_joint2_rad": 0,
+      "min_live_elbow_extension_margin_rad": 0.15,
+      "live_joint_limit_margin_rad": 0.02,
+      "constrain_shoulder_sign": false
+    },
+    "singularity_execution_note": "All normal moves and small jogs require whole-path model preflight and live measured/commanded Jacobian guards; legacy execution retired. These are engineering margins, not a guarantee about proprietary Desk advisory thresholds.",
+    "callback_gap_limit_source": "Operator explicitly requested a 20 ms callback limit during the layer-9 traversal.",
+    "joint_rate_limiting_enabled": true,
+    "gripper": {
+      "approach_opening_m": 0.02,
+      "close_target_m": 0.014,
+      "position_speed_m_s": 0.02,
+      "opening_tolerance_m": 0.001,
+      "width_source": "Operator: approach with 20 mm opening; set 14 mm to close.",
+      "physical_validation": "Widths configured, not actuated or physically tested in this update. Finger position alone does not verify a pick.",
+      "close_control_mode": "position",
+      "hold_basis": "Operator explicitly confirmed that position control to 14 mm is sufficient to hold the LEGO brick; verify pickup visually."
+    }
+  },
+  "taught_point": {
+    "n": 0,
+    "m": 0,
+    "k": 9,
+    "layer_index_from_bottom": 9,
+    "layer_from_top": 1,
+    "layer_from_bottom": 10,
+    "ridge": 1,
+    "brick_in_ridge": 1,
+    "layer_rotation_deg": 0.0,
+    "xyz_m": [
+      0.47464385628700256,
+      0.002197958528995514,
+      0.09742671251296997
+    ],
+    "O_T_EE": [
+      0.9999907813723703,
+      -0.004293852614645333,
+      0,
+      0,
+      -0.004293852614645333,
+      -0.9999907813723703,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      0.47464385628700256,
+      0.002197958528995514,
+      0.09742671251296997,
+      1
+    ],
+    "grasp_reference": {
+      "xyz_m": [
+        0.47464385628700256,
+        0.002197958528995514,
+        0.08542671251296997
+      ],
+      "O_T_EE": [
+        0.9999907813723703,
+        -0.004293852614645333,
+        0,
+        0,
+        -0.004293852614645333,
+        -0.9999907813723703,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0.47464385628700256,
+        0.002197958528995514,
+        0.08542671251296997,
+        1
+      ],
+      "offset_from_recorded_pose_base_m": [
+        0,
+        0,
+        -0.012
+      ],
+      "motion_validated": false
+    },
+    "brick_axes_world": {
+      "length": [
+        -0.9998584913094584,
+        -0.016822525267442115,
+        0
+      ],
+      "width": [
+        0.016822525267442115,
+        -0.9998584913094584,
+        0
+      ],
+      "up": [
+        0,
+        0,
+        1
+      ]
+    },
+    "tool_frames": {
+      "F_T_EE": [
+        0.7071067690849304,
+        -0.7071067690849304,
+        0,
+        0,
+        0.7071067690849304,
+        0.7071067690849304,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0.10339999943971634,
+        1
+      ],
+      "F_T_NE": [
+        0.7071067690849304,
+        -0.7071067690849304,
+        0,
+        0,
+        0.7071067690849304,
+        0.7071067690849304,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0.10339999943971634,
+        1
+      ],
+      "NE_T_EE": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "EE_T_K": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    "pose_source": "deterministic_input_stack_model",
+    "motion_to_pose_validated": false,
+    "grasp_physically_validated": false,
+    "joint_configuration": null,
+    "access_precondition": "Top layer",
+    "note": "Calculated configured-EE upper/grasp targets; joint angles, color and pick outcomes are not inferred."
+  },
+  "catalog_sha256": "1ca9a772986f848c936514b9a0ad6286be549891a728905c6ad3b70c876a3c6f",
+  "grasp_offset_executed": false,
+  "target_xyz_m": [
+    0.47216472029685974,
+    0.0019163418328389525,
+    0.09742671251296997
+  ],
+  "target_O_T_EE": [
+    0.9999690055847168,
+    -0.0052225166000425816,
+    -0.0058904592879116535,
+    0.0,
+    -0.005223609507083893,
+    -0.9999863505363464,
+    -0.00017021303938236088,
+    0.0,
+    -0.005889489781111479,
+    0.000200977228814736,
+    -0.9999826550483704,
+    0.0,
+    0.47216472029685974,
+    0.0019163418328389525,
+    0.09742671251296997,
+    1.0
+  ],
+  "yaw_variant_deg": 0,
+  "long_rotation": false,
+  "control_points_m": [
+    [
+      0.47216472029685974,
+      0.0019163418328389525,
+      0.08343832194805145
+    ],
+    [
+      0.47216472029685974,
+      0.0019163418328389525,
+      0.08343832194805145
+    ],
+    [
+      0.47216472029685974,
+      0.0019163418328389525,
+      0.08343832194805145
+    ],
+    [
+      0.47216472029685974,
+      0.0019163418328389525,
+      0.09742671251296997
+    ],
+    [
+      0.47216472029685974,
+      0.0019163418328389525,
+      0.09742671251296997
+    ],
+    [
+      0.47216472029685974,
+      0.0019163418328389525,
+      0.09742671251296997
+    ]
+  ],
+  "duration_s": 2.316508186891257,
+  "derivative_bounds": {
+    "nominal_distance_time_s": 2.316508186891257,
+    "derivative_required_time_s": 2.022897362793552,
+    "straight_distance_m": 0.013988390564918518,
+    "translation_derivative_bounds": [
+      0.04924730401801692,
+      0.26467395015248574,
+      3.57539189880167
+    ],
+    "angular_derivative_bounds": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "estimated_peak_velocity_m_s": 0.021259283388981486,
+    "estimated_peak_acceleration_m_s2": 0.049322322696598184,
+    "estimated_peak_jerk_m_s3": 0.2876220209997556,
+    "base_duration_s": 2.316508186891257,
+    "time_scale": 1
+  },
+  "actual_guide_offsets_m": {
+    "departure": 0,
+    "arrival": 0
+  },
+  "certificate": {
+    "certificate_intervals": 1000,
+    "jacobian_variation_bound": 0.013128012205374181,
+    "certified_min_full_sigma": 0.30011372497134675,
+    "certified_min_fixed_elbow_sigma": 0.26611445625172314,
+    "maximum_sampled_condition": 11.37808766000044,
+    "certified_max_condition": 11.988726007758613,
+    "maximum_arc_deviation_m": 1.8529757472584728e-08,
+    "maximum_arc_angle_deviation_rad": 2.7550102291014016e-08,
+    "required_joint_duration_s": 1.9111472354414476,
+    "derivative_bounds": {
+      "lower": [
+        -0.05285142375982145,
+        0.22316871547177727,
+        0.020142817502204553,
+        -2.4885436355548576,
+        -0.030922484242807226,
+        2.705388373579685,
+        0.8037668553934004
+      ],
+      "upper": [
+        -0.018119551646462857,
+        0.26146164655583487,
+        0.052291994188303235,
+        -2.484764337539673,
+        -0.01279310424267615,
+        2.740256626374114,
+        0.8167929602715154
+      ],
+      "d1": [
+        0.13140934172045773,
+        0.07248742204282362,
+        0.12055894431854011,
+        0.0073709398350323765,
+        0.07307619783786906,
+        0.06500312908952194,
+        0.05253438604136433
+      ],
+      "d2": [
+        0.8197509287966496,
+        0.22154019176236753,
+        0.7423192883358264,
+        0.023786711360016977,
+        0.5078109563451486,
+        0.20262255744208144,
+        0.36534541895045275
+      ],
+      "d3": [
+        15.944352319371852,
+        2.1164870866575445,
+        14.610565593428351,
+        0.3260981421683188,
+        8.94516112728552,
+        1.9430420761570946,
+        6.4297566719532275
+      ]
+    }
+  }
+}

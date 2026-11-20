@@ -1,0 +1,32 @@
+{
+  "verified": true,
+  "gpuCount": 4,
+  "smokeRenders": [
+    {
+      "adapter": 0,
+      "renderExitCode": 0,
+      "encoderExitCode": 0,
+      "frames": 2
+    },
+    {
+      "adapter": 1,
+      "renderExitCode": 0,
+      "encoderExitCode": 0,
+      "frames": 2
+    },
+    {
+      "adapter": 2,
+      "renderExitCode": 0,
+      "encoderExitCode": 0,
+      "frames": 2
+    },
+    {
+      "adapter": 3,
+      "renderExitCode": 0,
+      "encoderExitCode": 0,
+      "frames": 2
+    }
+  ],
+  "projectChecksumLog": "/home/shadeform/workspace/brickflow-native/Saved/Migration/project-checksums.log",
+  "historyCopyComplete": false
+}

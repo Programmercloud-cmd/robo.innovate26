@@ -1,0 +1,29 @@
+{
+  "schema": "depth-ridge-direction-fixed-evaluation-v1",
+  "status": "agreed_before_depth_outputs",
+  "source_render_job": 1681,
+  "truth_sha256": {
+    "manifest.json": "6c4fcb0b5f3398c812c774e535a765177fbd5cfe8d0b68fa1a4b3f710beb3e70",
+    "frozen_physics_state.npy": "da201b5d302e4181a3350298a449ab4c610e0de3665e07670ff914e194cee2a9"
+  },
+  "views": [
+    "top",
+    "near_top_x",
+    "near_top_y",
+    "oblique_front",
+    "oblique_side"
+  ],
+  "conditions": [
+    "real",
+    "invalid",
+    "flat_plane"
+  ],
+  "input": "Authorized existing distance_to_image_plane maps in meters(camera opticalZ), configured nominal calibration andXYROI. No frozenposes,actualcamera records or referenceyaw/height passed to perception.",
+  "reference": "Actual300rootposes from final300*13 frozenstate values; highestrootZ cohort within2micrometers contains30bricks. ReferenceworldXYdirection is doubled-angle mean of actuallongaxes; verify parallelspread<=.01deg. Actualbodytop andstudtop computed using9.6/11.3mm localheight andactualtopnormals.",
+  "angle_scoring": "Angular distance modulo180deg, range0..90. Everyfinite estimate measured; supported anduncertain strata separate, null=noestimate notzeroerror. No result-driven angle threshold or successclaim from one near-square global footprint.",
+  "height_scoring": "Perrealview report whetherdeclaredworldheightband contains actualmedianbody/studtop heights andsignedmedianestimatedsurfaceoffsets toboth inmm. A bandaroundstuds neednotcontainbodyplane. This is layer-banddiagnostic,notfullpose orinstancelocalization.",
+  "controls": "Fiveinvaliddepth andfiveflat-plane controls. Countanysupportedridge-direction declaration asfalse-support; do notassignreal-sceneangleerror,poseaccuracy orphysicalabsence performance tocontrols.",
+  "method_scope": "Frozenhighest-supported3mm-heightband from1mmbins withlocalcomponentPCA andHoughagreement; no globalnear-square-footprintPCA asridgeaxis; exactparametersfixedinroot-ownedconfigbeforeonequeuedbatch. RGBusedonlyforoutputoverlay,notestimation.",
+  "limits": "Fivecorrelated views ofone static300brickscene. Configuredsyntheticcalibration/ROIassistance,notmeasuredD435i. Highestvisiblelayerdirection only; no individualbrickposes,brickdetection,graspaccessibility,heldbricktransform,stacking,insertion orhardwareclaim.",
+  "execution": "Allactualdepthprocessing andbatchscoring throughdefaultPueue,frozensnapshot andreportedjobID. Existingruntime,no rerender,newmodel,training or shareddependencychanges. No thresholdtuning afteroutputs."
+}

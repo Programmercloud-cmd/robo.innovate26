@@ -1,0 +1,80 @@
+{
+  "schema": "pregrasp-color-saved-simulation-v1",
+  "status": "FROZEN_BEFORE_IMPLEMENTATION_SCORING",
+  "execution_authorized": true,
+  "maximum_active_seconds": 60,
+  "maximum_jobs_this_version": 1,
+  "maximum_improvement_rounds": 3,
+  "improvements_authorized_after_results": false,
+  "frame_ids": [
+    "f000",
+    "f001",
+    "f002",
+    "f004",
+    "f006"
+  ],
+  "source_snapshot": "/home/faps/dev/github/robo.innovate26/runs/20261025T003437.436801Z-stage1-development-workspace_v1",
+  "primary_observation": "Existing pregrasp close overhead; complementary existing oblique scored separately; no held-C920 claim",
+  "source_classifier_baseline": "No actual color classifier; all UNKNOWN. Historical Challenge1 mock fixtures are not actual predictions.",
+  "references": "Five human-visual RGB rectangles in reference_patches.json. Median of valid float Lab pixels after same L/chroma screen. No native shader/material RGB prototypes. Provisional color names, not physical shade standards or defect inference.",
+  "split": "Evaluation only: exclude all five reference physical brick IDs in every frame. Remaining objects use int(sha256(ID).hexdigest(),16)%2: 0development,1reserved; identical IDs across I/H/E remain one split. Reserved scored only after final source freeze, no tuning.",
+  "acceptance": {
+    "wrong_confident_labels": 0,
+    "unverified_confident_associations": 0,
+    "correct_non_reference_bricks_per_required_color": 1,
+    "mixed_control": "UNKNOWN after color evidence evaluation, not merely a non-PRESENT short circuit",
+    "invalid_top_control": "No confident color; retain frozen R3 source decisions",
+    "coverage": "Report all present, uncertain, missing, color UNKNOWN, per-class/group/view and unique-object counts. Absent class evidence is UNVALIDATED.",
+    "scope": "Simulation source-color only. No grasp/held identity, routing quality, optics or real shade validation."
+  },
+  "negative_control": {
+    "frame_id": "f000",
+    "candidate_id": "negative_mixed_tan_ochre",
+    "source_decision": "present",
+    "pixel_xyxy": [
+      437,
+      297,
+      475,
+      443
+    ],
+    "height": "Reuse first existing candidate measured body-top estimate; no reference pose supplied"
+  },
+  "truth_separation": "Online only public RGB-D/unchanged R3 candidate contracts/configured calibration and human RGB patches. GT colors, identities, matches, split and calibration exclusion private evaluator only.",
+  "limitations": [
+    "Correlated views and largely same objects across states, not independent-stack generalization.",
+    "Ideal rendered RGB-D and configured synthetic camera, no real optics/colorimetry equivalence.",
+    "A source color result does not establish held identity or gripper accessibility.",
+    "bright_red and ochre are observed color names, not validated quality decisions."
+  ],
+  "frozen_sources_sha256": {
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/sensors/calibration.json": "022f614bfddd48ce5a4352fa92ee48e11e12d19312d9bc599b7639c1b3155220",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/sensors/frames.json": "a83cc8d1977595a729e8c3c18e62c80b3841902fa267c35ec60fbf392e6fab65",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/private/frames.json": "bc67df0ae0ada11294718d52f9352d687496a4fdd03b5eab593633c3863c13ac",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/evaluation/evaluation.json": "2cc82178b84d1c773f9107414ec5fb69f4168133a63e004d410491a7f2b19d22",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/evaluation/references.json": "eb30bca56eb2437b9a62984f313c66a903c563565d2b94d303accfdaab9a4135",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/sensors/sensors/f000/rgb.png": "e129622b431c08997d0d8e583d3233f0212434286df504cf5de44bf607639a20",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/sensors/sensors/f000/depth.npy": "d8b6d8f2103724083434c7990c1e8508b288096215f1401831097d39cb694f60",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/inference/f000/candidates.json": "e4faf76cf9db99240e49e89d1988821fbc30db0cfa9a8ea683a3c47c1c183bfc",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/inference/f000/overlay.png": "5cd4ba4bdda2a07357606c6300f0c5f4db772c3c160d87aee14d01b9d3df44e1",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/sensors/sensors/f001/rgb.png": "c98f75349f38a2096fa6746da5353fafbae445e00156e506d4bdba50a142558f",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/sensors/sensors/f001/depth.npy": "9081bca7a864496d94f1257b0a592c71a64944ac15fa0755aa9dddb125465cbd",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/inference/f001/candidates.json": "ab34b61a5b0544070487f84f881c7d9f5e793c978946506ebefef99509f07036",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/inference/f001/overlay.png": "19f7122195381ec48d79040f9b1948b7c73aa70d229a8b285209ad283cc4b508",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/sensors/sensors/f002/rgb.png": "88ba12b6fa267783aa5cec8e48bc8bee8831c4bb48412a829180954766981569",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/sensors/sensors/f002/depth.npy": "7a2c17d889eadf7c011e46734759eb37f39eea3242345d7c3942e43afea3d9e0",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/inference/f002/candidates.json": "eac93961acd75d9d400c709eda5c45bef938e61dab6671b0b97263b704644525",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/inference/f002/overlay.png": "520613ccec0464dec7352f8bab131d909f964dd3c7194b634ccd0382e607b73a",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/sensors/sensors/f004/rgb.png": "7b15f524dc175be6e6f984c99af05dd765b43a2e7a50a399857a2c6e7b374c1b",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/sensors/sensors/f004/depth.npy": "4be9d777d86f0fb1fd51eedc530937cc5f707ff696cb873267ad40555632dba5",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/inference/f004/candidates.json": "1e7d9dfa60f64bc3e32ad7fa861f412b76c2e5d7d3b97a2346ae9c7d03924256",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/inference/f004/overlay.png": "5654e50b78d7014d9b12f8a70d28c746aeea805f29a5e1e8a4b8bdf2c1a3670e",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/sensors/sensors/f006/rgb.png": "e129622b431c08997d0d8e583d3233f0212434286df504cf5de44bf607639a20",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/sensors/sensors/f006/depth.npy": "1be0246b0ad5e9b38a66b4294afaf9534e848535f1e940423e1d2dd039d940a7",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/inference/f006/candidates.json": "a57e2a800c277fd9e9b8c923716d3f5b5eda4c5a70d7dadee6cb546069a67f79",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/inference/f006/overlay.png": "dd0c2d60136e6e6267aaab26fec4807b426d310e167f625d4cc15edae091b920",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/private/truth/I_mix/evaluation_truth/active_bricks.json": "88769d68f71a5e9aae6cd8eaf50930da8466af25c43e10c4ca862ac88dbb3b92",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/private/truth/H_mix/evaluation_truth/active_bricks.json": "90289bc3ed1c8ab3273cc89431cd6a54f459f00c3b22145699b905fbcbcc6fc4",
+    "runs/20261025T003437.436801Z-stage1-development-workspace_v1/private/truth/E_mix/evaluation_truth/active_bricks.json": "a3ccf94ca6aa5df95bba4e72049c640d479b544e6dbe6a210356dd1dc099d751"
+  },
+  "independent_review": "Planner, evaluator and reviewer agree frozen final-first benchmark; final source reviewed before one queued job. No postscore tuning authorized."
+}

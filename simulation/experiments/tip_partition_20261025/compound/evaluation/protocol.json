@@ -1,0 +1,106 @@
+{
+  "schema": "one-compound-offline-independent-audit-v1",
+  "construction_config": {
+    "schema": "one-source-derived-48cell-compound-v1",
+    "maximum_candidates": 1,
+    "maximum_runs": 2,
+    "coordinate_frame": "original CAD nominal millimeters; no mounting transform or flip",
+    "source_stl_sha256": "30c3e47142dce9ba82ec46edf42f1dc2825d620d23bad0a95ce1e2de902b752d",
+    "source_features_sha256": "832c8397779b1261582ab681947fa32d3db17989f4173469a10fa426d5935b17",
+    "source_feature_clusters": {
+      "rear_plane": 72,
+      "blind_bore_cap": 146,
+      "boss_front_annulus": 315,
+      "body_front": 316
+    },
+    "sectors": 16,
+    "regions": [
+      "boss_annular",
+      "front_body_bored",
+      "rear_body_solid"
+    ],
+    "required_parts": 48,
+    "maximum_vertices_per_cell": 255,
+    "CPU_only_vertex_cap": true,
+    "numerical_margin_mm": 1e-05,
+    "minimum_LP_clearance_mm": 1e-05,
+    "fixed_normal_phase_rad": 0.0,
+    "construction": "Source cap boundary loops determine bore centroid and actualouterboss polygon. Inner16gon:16fixednormal supports of source innerloop plusmargin. Cones through adjacent inner16gonvertices. Outer16gon uses samevertex-raydirections at minimumsourceouterline distance minusmargin. Body=ConvexHull(sourcevertices X>=bodyfront-margin). Each of48 cells is normalizedhalfspace intersection, LPinterior and QHull withoutQJ/fallback.",
+    "maximum_construction_plus_audit_seconds": 180,
+    "maximum_construction_seconds": 60,
+    "validation": {
+      "source_sample_seed": 20261025,
+      "candidate_sample_seed": 20261026,
+      "area_weighted_samples_each": 100000,
+      "include_all_vertices_and_triangle_centroids": true,
+      "maximum_points_each_including_mandatory": 125000,
+      "maximum_sampled_boundary_bound_mm": 0.1,
+      "maximum_outer_bound_error_mm": 0.1,
+      "maximum_relative_volume_error": 0.01,
+      "union_membership_epsilon_mm": 0.0001,
+      "candidate_external_bracket_mm": 0.001,
+      "source_inside_rule": "Inside only when some cell has ALLnormalizedplane residuals<=0, not epsilon-expanded solid. Fixedoutward100umendpoint mustbe outside ALLcells atclosed0.1um epsilon.",
+      "candidate_distance_rule": "For sampled candidate points with +/-1um normal exteriorbracket, exactdistance tooriginalSTL PLUS1um <=100um.",
+      "source_normal_rule": "Originalface outwardwinding normals; mandatorysourcevertexnormal=normalizedareaweightedincidentfacetnormals. Zero/nonfinite STOP; never selectalternatepassingdirection.",
+      "candidate_normal_rule": "Actualoutwardcandidatefacetnormals, with deterministicareaweightedincidentnormal for mandatoryvertices.",
+      "void_witnesses": 27,
+      "void_sphere_radius_mm": 0.05,
+      "no_overlap_proof": "Shared radialcones and axialslabs analyticallypartition cellinteriors; no generalCSG or adaptive geometrycheck.",
+      "scope": "Bounded sampled geometry evidence only, not globalHausdorff/physicalfit/collision/contact certification."
+    },
+    "scope": "Construct one model-specific candidate and independentaudit only; noKit,cooking,simulation,contact,facetcounttuning,newdependencies or new3-round pool. Oldcontact/activequeryfailures remainclosed.",
+    "proceed_gate_passed": false,
+    "exported_planes": "planes_mm are final ConvexHull(vertices).equations for analytic membership; construction_planes_mm preserve all normalized original LP/source halfspaces. Same cell geometry, no fitted replacement, deduplication or changed tolerance.",
+    "maximum_remaining_completion_runs": 1,
+    "prior_consumed_active_seconds": 0.49498790899815504,
+    "resource_guard_reassessment": {
+      "from_vertices": 128,
+      "to_vertices": 255,
+      "geometry_changed": false,
+      "maximum_additional_completion_attempts": 1,
+      "further_cap_revision_or_split_authorized": false,
+      "primary_reference": "https://raw.githubusercontent.com/NVIDIA-Omniverse/PhysX/107.3-physx-5.6.1/physx/include/cooking/PxConvexMeshDesc.h",
+      "support_scope": "Matching-family primary vertexLimit/polygonLimit fields and isValid() enforce255 each. Not an installed-binary exact contract. Offline vertexguard only; schema defaults and cooked polygon counts are separate. No cooking authorization.",
+      "observed_reason": "1765 logged133distinct extremevertices forfront_body_bored_11, no merging/jitter/simplification justified. 262triangularfacets and124exactplane rows are descriptive, not cookedpolygon counts.",
+      "stop": "Any remaining vertexcap, fidelity or budget failure stops this single candidate. No new3-round pool or adaptive cell count."
+    },
+    "execution_history": [
+      {
+        "job_id": 1764,
+        "status": "FAILED at original128 guard after27retainedcells; immutable",
+        "geometry_change": false
+      },
+      {
+        "job_id": 1765,
+        "status": "Logging-only same128STOP; all27priorrecords exact. No accepted candidate/cook",
+        "geometry_change": false
+      },
+      {
+        "status": "ONE reviewed255 offlineguard completion pending, all48geometry/fidelity/sampling unchanged",
+        "geometry_change": false
+      }
+    ]
+  },
+  "construction_protocol_sha256": "e01a55b221f7ec64e51fed51c2411cbdffce4ff12be5430c39c899f21f296abb",
+  "probe_config_sha256": "1c760e4971d0765b3e142e770584c65078d43a1c2504d897aa182031fd941e62",
+  "audit": {
+    "normal_floor_mm2": 1e-12,
+    "plane_comparison_tolerance": 1e-07,
+    "minimum_cell_volume_mm3": 1e-09,
+    "maximum_triangle_points_chunk": 128,
+    "maximum_triangles_chunk": 512,
+    "working_memory_cap_MiB": 128
+  },
+  "scope": "Exact48singlecandidate, no adaptivecells/normals/sampling/fallback or fresh3roundpool. Source normals/samples fixed before candidate read. Strictinside residual<=0; endpoint outside all epsilon-expanded cells. Exterior point exactdistance+1um<=100um. Samples are not a global Hausdorff certificate. Offlinepass is not cooking/contact authorization.",
+  "budget": {
+    "charged_prior_wall_seconds": 0.49498790899815504,
+    "source": "1764 and1765 actual supervisor process walls, preserved failures/diagnostic",
+    "maximum_cumulative_seconds": 180,
+    "supervisor_required_fields": [
+      "capture_wall_seconds",
+      "remaining_independent_audit_seconds",
+      "construction_completed"
+    ],
+    "rule": "Remaining audit time is180 minus charged prior wall minus actual construction subprocess wall, enforced both in audit and external supervisor. No new attempt pool."
+  }
+}

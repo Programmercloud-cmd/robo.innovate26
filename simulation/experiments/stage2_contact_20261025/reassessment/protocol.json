@@ -1,0 +1,37 @@
+{
+  "schema": "saved-left-representation-audit-v1",
+  "capture_job_id": 1756,
+  "input_sha256": "daa9bb1ed5b6cbaa2229b7691df54d0aa28cb993373329054696ec8f1d69c4db",
+  "available_tip": "left",
+  "required_hulls": 32,
+  "maximum_wall_seconds": 60,
+  "maximum_runs": 1,
+  "membership_epsilon_m": 1e-07,
+  "reference_free_clearance_m": 0.00025,
+  "winding_integer_allowance": 0.1,
+  "stl_sha256": "30c3e47142dce9ba82ec46edf42f1dc2825d620d23bad0a95ce1e2de902b752d",
+  "helper_sha256": {
+    "evaluate.py": "ac01469020f6e0999e8cbc273482d74528c2a3f8f906a7f391bee1ff79b891e4",
+    "union_geometry.py": "19ce797328b641e61b087fbf27a4aff6d1c3a435005062b49cf55062644b2640"
+  },
+  "fan_rule": "Each SDK indexed polygon is triangulated from its first index; never fit, reorder or repair vertices or planes.",
+  "measurements": [
+    "Oriented edge closure, degeneracy, normalized fan convexity and own-polygon nonplanarity",
+    "Signed fan volume versus SciPy ConvexHull(returned vertices) volume; raw normalized SDK halfspace residuals",
+    "27 frozen bore witnesses: original STL winding and surface distance; raw SDK halfspaces, vertex hulls, indexed winding only if closed, nondegenerate and convex within existing epsilon"
+  ],
+  "scope": "All representations are descriptive candidates, not actual collider replacements. No clouds, CAD union resampling, cooking, Kit, simulation, altered gates or right-tip inference.",
+  "bounds_failure_preserved": {
+    "maximum_absolute_difference_m": 0.00010288106108188519,
+    "frozen_limit_m": 0.0001
+  },
+  "outcome": "Always proceed_gate_passed=false; R3 remains failed. No D/R or recook authorized.",
+  "missing_tip": "right; untested",
+  "numerical_reporting_constants": {
+    "degenerate_fan_cross_product_norm_m2": 1e-20,
+    "minimum_nonzero_signed_volume_m3": 1e-24,
+    "division_floor": 1e-30,
+    "interpretation": "Numerical reporting/unknown classification only, not physical fidelity acceptance tolerances."
+  },
+  "candidate_membership_interpretation": "For raw SDK halfspaces and vertex hulls, max-plane residual in [-epsilon,+epsilon] is UNKNOWN; a union is inside if any candidate is strictly inside, outside only if every candidate is strictly outside. Indexed winding is UNKNOWN for invalid topology/convexity or surface distance <=epsilon. This descriptive boundary band does not modify the closed-solid R3 acceptance rule."
+}

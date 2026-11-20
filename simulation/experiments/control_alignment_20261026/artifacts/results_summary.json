@@ -1,0 +1,66 @@
+{
+  "schema": "jacob-control-alignment-end-state-v1",
+  "upstream_commit": "13f37dad1980bcbc4491b7f27d8962602e49fea0",
+  "case_status": "CLOSED_INCOMPLETE",
+  "further_submissions_authorized": false,
+  "jobs": [
+    {
+      "job_id": 1834,
+      "phase": "A",
+      "status": "FAILED_SETUP",
+      "full_scheduler_seconds": 4.537392625,
+      "snapshot": "runs/20261026T004924.746380Z-control-alignment-a",
+      "credit": "Network-free native helpers compiled; no planning or simulation"
+    },
+    {
+      "job_id": 1835,
+      "phase": "A",
+      "status": "PASS_IDEAL_OFFLINE_ONLY",
+      "full_scheduler_seconds": 10.255613557,
+      "snapshot": "runs/20261026T005722.162481Z-control-alignment-a",
+      "audit_sha256": "82d9ce27aa35e6d62112b9873bafb642474db3f49eb788744416bfc1d9967517",
+      "credit": "Shared planner/process contract, independent C++ model and SDK limiter parity; ideal replay, no physics"
+    },
+    {
+      "job_id": 1836,
+      "phase": "B",
+      "status": "WALL_TIME_CENSORED",
+      "full_scheduler_seconds": 175.262344722,
+      "snapshot": "runs/20261026T005933.268008Z-control-alignment-b",
+      "credit": "Physics initialized; no completed capture, endpoint or terminal-source credit"
+    },
+    {
+      "job_id": 1837,
+      "phase": "B",
+      "status": "FAILED_STARTUP_EQUIVALENCE",
+      "full_scheduler_seconds": 65.680754783,
+      "snapshot": "runs/20261026T010941.404058Z-control-alignment-b",
+      "credit": "Startup equivalence rejected before smoke commands; no persisted residual/proof or completed audit"
+    }
+  ],
+  "ledger": {
+    "cost_basis": "Full Pueue scheduler wall time; original failures and shutdown charged",
+    "aggregate_seconds": 255.736105687,
+    "aggregate_ceiling_seconds": 270.0,
+    "remaining_seconds": 14.263894313,
+    "remaining_is_not_retry_authorization": true
+  },
+  "accepted_evidence": {
+    "pinned_upstream_source_and_local_process_contract": true,
+    "ideal_offline_phase_A": true,
+    "SDK_0_20_pure_limiter_vectors": true,
+    "independent_CPP_model_parity": true,
+    "Isaac_physical_control_alignment": false,
+    "hardware_dynamics_or_network_parity": false,
+    "physical_pad_gap_calibrated": false,
+    "grasp_or_native_extraction_parity": false,
+    "transfer_authorized": false
+  },
+  "limitations": [
+    "Phase A is an ideal plant and cannot validate Isaac or hardware dynamics.",
+    "Phase B 1836 is time-censored; prefix data does not establish completion.",
+    "Phase B 1837 did not persist old/new startup pose arrays or residuals; the mismatch cause and magnitude remain UNKNOWN.",
+    "No physical thresholds, source criteria, controller flags or original outcomes were relaxed."
+  ],
+  "recommendation": "Close the four-job case. Retain offline/source-alignment evidence and all failures; report Isaac alignment and grasp parity as incomplete. No further Isaac run is authorized by the remaining ledger."
+}

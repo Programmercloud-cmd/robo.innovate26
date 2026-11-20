@@ -1,0 +1,68 @@
+{
+  "schema": "sim-pose-fixed-independent-evaluation-v1",
+  "status": "agreed_before_pose_outputs",
+  "source_render_job": 1681,
+  "source_render_snapshot": "runs/20261024T104724.316246Z-sim-views",
+  "truth_files_sha256": {
+    "scene_manifest": "6c4fcb0b5f3398c812c774e535a765177fbd5cfe8d0b68fa1a4b3f710beb3e70",
+    "camera_truth": "5d8a452f00a054a77cc3772a2cd86b597b2316ea67bbd8bc7b641bbd31cc4815",
+    "face_visibility_truth": "8bfe537c72a40fe9073b0add930dd3b98879371b10c502e80d488dd76a22ae81",
+    "frozen_state": "da201b5d302e4181a3350298a449ab4c610e0de3665e07670ff914e194cee2a9"
+  },
+  "input_rgb_sha256": {
+    "near_top_x.png": "6c848dfb0dbcfd59c3913eaaef94c9050d61e62b13667bb0a0deef40e77d433c",
+    "near_top_y.png": "a7397c605cc09619615a02b2115a19128fe0b1e4d6f1f4d4bb2ebc6447e9a8fa",
+    "oblique_front.png": "4a442ff59eea689155061e79211540f713e97b28588f3b6fa6870f0e2a1041ad",
+    "oblique_side.png": "2e82b2eeb22ccd93a97e2a39419192458da5d9debb7b5e25d0c244981b3859cb",
+    "top.png": "6367dabd18455e1b1ec785dd7402c316d7627b79e01d2f8a6abca8991a55318d"
+  },
+  "conditions": {
+    "nominal": "Unperturbed nominal design prior and same RGB images.",
+    "perturbed": "Nominal prior rotated +0.3deg about platecenter then translated worldXY +0.8mm,-0.6mm; camera/design parameters otherwise unchanged.",
+    "blank_nominal": "Each of five images replaced by its per-channel mean RGB solid image, nominal prior; counterfactual no-image-evidence sanity only."
+  },
+  "observations": {
+    "main": 10,
+    "blank_sanity": 5,
+    "unique_render_views": 5,
+    "correlation": "All views show one frozen300brickstack; no independent-stack generalization or train/test claim."
+  },
+  "assistance": "Method may use nominal known layout, brick dimensions, known top layer/height/slot identities and nominal design pose. Declare all actual inputs. Exact nominal-design pose can have zero GT error without detecting anything. Report prior baselines separately from imagefit; no auto-localization, layer estimation or 6D estimation claim for fixed prior components. Simulator truth/reference IDs/camera truth are evaluation-only, not perception inputs. Frozen implementation searches only known top and immediately lower layers9/8:60hypotheses/view, not all300hidden bricks. Continuous fittedZ is retained; nearestlayer classification does not snap pose.",
+  "pose_semantics": {
+    "origin": "Brick body bottom-center, identical to saved Brick.pose/root_state.",
+    "axes": "Object+X follows four-stud long direction,+Y two-stud short direction,+Z outward top normal.",
+    "units": "meters; explicit pose frame in predictions; quaternionWXYZ or equivalent proper rotation.",
+    "body_height_m": 0.0096,
+    "stud_cap_local_z_m": 0.0113,
+    "yaw_symmetry": "Undirected rectangular brick yaw modulo180degrees; also report tilt/normal alignment if method supplies full orientation.",
+    "prediction_frame": "World/robot-base coordinates (producer contract); no optical-frame conversion is needed for these world outputs."
+  },
+  "ground_truth": "Read actual bottom-center poses/quaternions from final300*13 values of frozen_physics_state.npy, in saved renderer layout order layer,i,j using per-yaw[5,6]/[6,5] counts. Verify300/30perlayer and agreement with saved geometry within2micrometers,0.0001rad. Camera poses/intrinsics and root identity remain scoring-only.",
+  "reference_sets": {
+    "top_targets_per_view": 30,
+    "top_targets_total": 150,
+    "definition": "Saved layer9,fullyinframe and>=6/8depth-tested visible stud samples, all30in each view. Defines benchmark top layer, not gripper accessibility.",
+    "lower_footprints_per_view": {
+      "top": 30,
+      "near_top_x": 30,
+      "near_top_y": 30,
+      "oblique_front": 62,
+      "oblique_side": 60
+    },
+    "lower_total": 212,
+    "lower_limit": "Any of8stud samples visible; full projected face polygons are not exact visible-instance masks. Image center-overlap is conservative flag only.",
+    "all_metric_identities": 300,
+    "class": "2x4 LEGO brick; no shade/quality classification."
+  },
+  "primary_image_matching": "For decision=supported AND selected_top=true declarations, historical one-to-one face-envelope IoU>=0.50 maximizing cardinality thenIoU; merged boxes cover>=half each of>=2topface boxes and containcenters,ineligibleTP. Unmatchedduplicate/lower-footprint-center/ambiguous/unresolved/outside precedence unchanged. ROI=envelopeofall300projectedfacepolygons, evaluationonly. Report rawcounts,misses,merges,duplicates,lower-overlapflags,conditionalprecision,recall,uncertainty andunmatched. No segmentationmask claim.",
+  "metric_identity_matching": {
+    "distance_gate_m": 0.008,
+    "rule": "Independent one-to-one maximum-cardinality nearest center assignment among all300sameclassGTbricks within8mm; cannot use hypothesis/slot IDs as matching truth. Report top matches,lower-layer matches,duplicates/unmatched/invalidposes andprecisionrecall for top150 targets. Primary metricselection uses supported+selected_top only; separately audit allsupported candidates and allimagefit poses for layerconfusion. Class is supplied2x4, not inferred.",
+    "interpretation": "8mm is an identity-association gate, not an insertion tolerance. Less than half repeated-layer19.2mm center spacing. Report whether nominalknownlayer makes lower confusion impossible by construction."
+  },
+  "pose_errors": "Report translationEuclidean/XY/absoluteZ inmm,yawmod180indeg,tiltwhereapplicable withN/median/p90/max. Crucially compute errors on ALL image-geometrically-matched estimates even if outside8mm metric gate; present anduncertain strata separately, so gross errors do not disappear through gating.",
+  "prior_comparison": "Report nominal andperturbed priors separately from their imagefit outputs; include update magnitudes, feature support,accepted/rejected/uncertaincoverage. Pair refinement with its prior hypothesis for diagnostics, but primary2D/3Dmatching ignores IDs. Show imagefit error change vsprior without claiming zeroerrorprior as detection. Prior baseline poseerrors stratified by knownpriorlayer9/8. IDs pair ownprior/fit only, never matchGT. Known-top prior hypotheses provide coverage/uncertainty denominators separately from selected-top primary. If imagefit is absent, prior_polygon may represent assisted geometry coverage only; poseavailability/uncertainty remain explicit and no-fit is not a successful imagepose.",
+  "blank_sanity": "Count confidentpresent declarations and support/refinement magnitudes on five mean-solid controls. No physical absence, poseaccuracy or recall claim on blankimages; uncertainpriorposes are not image localization evidence.",
+  "execution": "One frozen defaultPueue batch, source/config/input snapshots and reportedjobID. Existing runtime only; no render,training,newmodels,hardware or shared dependency changes. No threshold/prompt tuning or retry selection after results.",
+  "base_evaluation_sha256": "5df88102f12dd004414b6931a0209518484a64c09e4a6927536d7d8b84e69207"
+}
