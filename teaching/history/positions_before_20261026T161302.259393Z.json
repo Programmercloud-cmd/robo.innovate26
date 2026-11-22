@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "robot_ip": "172.16.0.2",
+  "reference_frame": "robot_base_O",
+  "pose_frame": "configured_end_effector_EE",
+  "position_units": "m",
+  "joint_units": "rad",
+  "matrix_storage": "column_major",
+  "task_id": "factory_columns_of_four",
+  "reference_image": "resources/factory_layout.jpg",
+  "reference_image_sha256": "d7511b971dee1e9c243026fc15c77c4c22589f3a401388963acc2864dc278123",
+  "default_grasp_offset_base_m": [
+    0,
+    0,
+    0
+  ],
+  "points": {
+    "point_01": {
+      "image_point": 1,
+      "label": "factory_source_1_grasp",
+      "recorded_utc": "2026-10-26T16:07:04.041342+00:00",
+      "xyz_m": [
+        0.5852260589599609,
+        -0.44530874490737915,
+        0.006640207953751087
+      ],
+      "O_T_EE": [
+        0.9998579621315002,
+        0.007248240057379007,
+        -0.015214157290756702,
+        0,
+        0.006921635940670967,
+        -0.9997467994689941,
+        -0.02141108363866806,
+        0,
+        -0.015365498140454292,
+        0.021302737295627594,
+        -0.99965500831604,
+        0,
+        0.5852260589599609,
+        -0.44530874490737915,
+        0.006640207953751087,
+        1
+      ],
+      "q_rad": [
+        -0.44510239362716675,
+        1.0755856037139893,
+        -0.28910431265830994,
+        -1.2612571716308594,
+        0.34430214762687683,
+        2.263589382171631,
+        -0.03884769231081009
+      ],
+      "elbow": [
+        -0.28910431265830994,
+        -1
+      ],
+      "tool_frames": {
+        "F_T_EE": [
+          0.7071067690849304,
+          -0.7071067690849304,
+          0,
+          0,
+          0.7071067690849304,
+          0.7071067690849304,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0.10339999943971634,
+          1
+        ],
+        "F_T_NE": [
+          0.7071067690849304,
+          -0.7071067690849304,
+          0,
+          0,
+          0.7071067690849304,
+          0.7071067690849304,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0.10339999943971634,
+          1
+        ],
+        "NE_T_EE": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "EE_T_K": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "tool_mass_kg": 0.7300000190734863,
+      "payload_mass_kg": 0,
+      "operator_declared_vertical": false,
+      "measured_tool_z_tilt_from_base_down_deg": 1.5050621358123615,
+      "note": "Operator-selected revised factory grasp pose #1 after manually raising the hand 3 mm. Save the measured pose directly: no software XYZ/Z offset. Current opening also sets default open/approach/release width.",
+      "stationary_check": {
+        "duration_ms": 500,
+        "max_joint_speed_rad_s": 0.0032493015751242638,
+        "max_joint_drift_rad": 9.5367431640625e-06,
+        "max_tcp_drift_m": 1.2335229682552984e-05
+      },
+      "raw_capture": "teaching/history/point_01_20261026T160704.041342Z.json",
+      "motion_to_pose_validated": false,
+      "pose_kind": "direct_grasp",
+      "grasp_reference": {
+        "source": "Directly taught grasp pose; no offset",
+        "taught_directly": true,
+        "offset_from_recorded_pose_base_m": [
+          0,
+          0,
+          0
+        ],
+        "xyz_m": [
+          0.5852260589599609,
+          -0.44530874490737915,
+          0.006640207953751087
+        ],
+        "O_T_EE": [
+          0.9998579621315002,
+          0.007248240057379007,
+          -0.015214157290756702,
+          0,
+          0.006921635940670967,
+          -0.9997467994689941,
+          -0.02141108363866806,
+          0,
+          -0.015365498140454292,
+          0.021302737295627594,
+          -0.99965500831604,
+          0,
+          0.5852260589599609,
+          -0.44530874490737915,
+          0.006640207953751087,
+          1
+        ],
+        "motion_validated": false
+      },
+      "gripper_state_at_recording": {
+        "width": 0.07299917936325073,
+        "max_width": 0.08144622296094894,
+        "is_grasped": 0,
+        "temperature": 57,
+        "time": 0.001
+      },
+      "task_id": "factory_columns_of_four",
+      "role": "source_stack_anchor"
+    }
+  },
+  "layout": {
+    "description": "Transfer columns of four LEGO bricks from 4x3 source stacks into the conveyor slots marked 7 through 12",
+    "bricks_per_pick": 4,
+    "source_stack_shape": {
+      "ridges": 4,
+      "bricks_per_ridge": 3
+    },
+    "source_anchor_pose_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "conveyor_pose_ids": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "additional_image_references": [
+      13
+    ],
+    "coordinates_status": "partially_taught",
+    "grid_generation_enabled": false,
+    "reference_roles": {
+      "1": "source_stack_anchor",
+      "2": "source_stack_anchor",
+      "3": "source_stack_anchor",
+      "4": "source_stack_anchor",
+      "5": "source_stack_anchor",
+      "6": "source_stack_anchor",
+      "7": "conveyor_slot",
+      "8": "conveyor_slot",
+      "9": "conveyor_slot",
+      "10": "conveyor_slot",
+      "11": "conveyor_slot",
+      "12": "conveyor_slot",
+      "13": "unassigned_image_reference"
+    }
+  },
+  "pose_recording_convention": "Directly taught grasping poses; no XYZ offset"
+}

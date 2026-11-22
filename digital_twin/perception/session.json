@@ -1,0 +1,7 @@
+{
+  "supervisor_pid": 583398,
+  "forward_pid": 583401,
+  "camera_pid": 590770,
+  "remote_root": "/home/ubuntu/workspace/fr3-digital-twin-20261026",
+  "http_root": "/home/ubuntu/workspace/fr3-digital-twin-20261026/live-20261027T083003Z"
+}

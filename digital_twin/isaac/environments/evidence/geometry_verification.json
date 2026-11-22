@@ -1,0 +1,201 @@
+{
+  "passed": true,
+  "environment": "board",
+  "fingers": "wide",
+  "hardware_clients": 0,
+  "physical_lift_validated": false,
+  "training_ready": false,
+  "plate": {
+    "studs": 1024,
+    "exposed_studs": 900,
+    "covered_studs": 124,
+    "bricks_added": 0
+  },
+  "native_finger_limits_m": [
+    [
+      0.019093310460448265,
+      0.03999999910593033
+    ],
+    [
+      0.019093310460448265,
+      0.03999999910593033
+    ]
+  ],
+  "fingertips": [
+    {
+      "finger": "fr3_leftfinger",
+      "inside_span_m": 0.0957999974489212,
+      "inside_reach_m": 0.019999999447169278,
+      "inside_height_m": 0.025550000369548798,
+      "side_wall_thickness_m": 0.0032000020146369934,
+      "top_thickness_m": 0.0032000020146369934,
+      "all_three_wall_profiles_equal": true,
+      "original_distal_taper_present": true,
+      "maximum_profile_difference_m": 1.614165921585975e-09,
+      "ceiling_top_unchanged": true,
+      "ceiling_underside_to_stud_top_error_m": null,
+      "fingertip_to_brick_bottom_clearance_m": null,
+      "passive_guide_clearance_total_m": 0.0003999974489212049,
+      "pocket_dimension_measured": false,
+      "underside_open": true,
+      "obsolete_stock_pad_collision_removed": true,
+      "closed_manifold_parts": 5,
+      "bounds_finger_m": {
+        "Mesh": [
+          [
+            -0.0074999938979744,
+            0.0014066900000000338,
+            0.03609036868907004
+          ],
+          [
+            0.007500001092441203,
+            0.012406690522472008,
+            0.06164037057020197
+          ]
+        ],
+        "BackWall": [
+          [
+            -0.053199999034404755,
+            0.0014066899893805938,
+            0.036090370267629616
+          ],
+          [
+            0.053199999034404755,
+            0.004606689792126472,
+            0.061640370637178414
+          ]
+        ],
+        "EndNegative": [
+          [
+            -0.051100000739097595,
+            -0.018593309447169245,
+            0.036090370267629616
+          ],
+          [
+            -0.0478999987244606,
+            0.0014066899893805938,
+            0.061640370637178414
+          ]
+        ],
+        "EndPositive": [
+          [
+            0.0478999987244606,
+            -0.018593309447169245,
+            0.036090370267629616
+          ],
+          [
+            0.051100000739097595,
+            0.0014066899893805938,
+            0.061640370637178414
+          ]
+        ],
+        "Top": [
+          [
+            -0.053199999034404755,
+            -0.018593309447169245,
+            0.03289036825299262
+          ],
+          [
+            0.053199999034404755,
+            0.004606689792126472,
+            0.036090370267629616
+          ]
+        ]
+      }
+    },
+    {
+      "finger": "fr3_rightfinger",
+      "inside_span_m": 0.09579999744892119,
+      "inside_reach_m": 0.019999999447169313,
+      "inside_height_m": 0.025550000369548798,
+      "side_wall_thickness_m": 0.0032000020146369934,
+      "top_thickness_m": 0.0032000020146369934,
+      "all_three_wall_profiles_equal": true,
+      "original_distal_taper_present": true,
+      "maximum_profile_difference_m": 1.6141658929630376e-09,
+      "ceiling_top_unchanged": true,
+      "ceiling_underside_to_stud_top_error_m": null,
+      "fingertip_to_brick_bottom_clearance_m": null,
+      "passive_guide_clearance_total_m": 0.00039999744892119105,
+      "pocket_dimension_measured": false,
+      "underside_open": true,
+      "obsolete_stock_pad_collision_removed": true,
+      "closed_manifold_parts": 5,
+      "bounds_finger_m": {
+        "Mesh": [
+          [
+            -0.0075000010924413,
+            -0.01240669052247196,
+            0.03609036868907007
+          ],
+          [
+            0.007499993897974294,
+            -0.001406689999999986,
+            0.061640370570202
+          ]
+        ],
+        "BackWall": [
+          [
+            -0.05319999903440475,
+            -0.0046066897921263885,
+            0.03609037026762963
+          ],
+          [
+            0.05319999903440475,
+            -0.0014066899893805105,
+            0.06164037063717843
+          ]
+        ],
+        "EndNegative": [
+          [
+            -0.05110000073909759,
+            -0.0014066899893805105,
+            0.03609037026762963
+          ],
+          [
+            -0.047899998724460595,
+            0.018593309447169328,
+            0.06164037063717843
+          ]
+        ],
+        "EndPositive": [
+          [
+            0.047899998724460595,
+            -0.0014066899893805105,
+            0.03609037026762963
+          ],
+          [
+            0.05110000073909759,
+            0.018593309447169328,
+            0.06164037063717843
+          ]
+        ],
+        "Top": [
+          [
+            -0.05319999903440475,
+            -0.0046066897921263885,
+            0.03289036825299264
+          ],
+          [
+            0.05319999903440475,
+            0.018593309447169328,
+            0.03609037026762963
+          ]
+        ]
+      }
+    }
+  ],
+  "separating_plane_proof": {
+    "current_native_width_m": 0.06999999865630879,
+    "current_return_tip_gap_m": 0.03281337159928249,
+    "zero_width_return_tip_gap_m": -0.0371866270570263,
+    "collision_free_simulated_native_width_range_m": [
+      0.03818662092089653,
+      0.07999999821186066
+    ],
+    "minimum_return_tip_gap_at_simulated_lower_limit_m": 0.00099999386387023,
+    "common_finger_closing_axis_verified": true,
+    "physical_hardware_limits_modified": false
+  },
+  "stage_sha256": "9065d1377e4b4dd79d91e82918811ca0b5eed0217ac9f1f76af43c5de47a3759"
+}

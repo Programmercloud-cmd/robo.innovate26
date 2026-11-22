@@ -4,21 +4,29 @@
 #include <iomanip>
 #include <iostream>
 #include <stdexcept>
+#include <string>
 #include <franka/robot.h>
+#include "../digital_twin/bridge/state_transport.hpp"
 
 // Read-only: no control, configuration, recovery, homing or gripper calls.
-int main() {
+int main(int argc,char** argv) {
+  const bool allow_stopped=argc==2 && std::string(argv[1])=="--allow-user-stopped";
+  if(argc!=1 && !allow_stopped)return 2;
   try {
+    twin::SdkLease lease(true);
     franka::Robot robot("172.16.0.2", franka::RealtimeConfig::kIgnore);
+    twin::StateTap telemetry;
     franka::RobotState first{}, last{};
     bool started=false;
     uint64_t begin_ms=0;
     double max_speed=0, max_drift=0, max_tcp_drift=0;
-    robot.read([&](const franka::RobotState& s) {
+    const auto inspect=[&](const franka::RobotState& s) {
+      telemetry.offer(s);
       if (!started) { first=s; begin_ms=s.time.toMSec(); started=true; }
       if (s.current_errors || (s.robot_mode!=franka::RobotMode::kIdle &&
-                              s.robot_mode!=franka::RobotMode::kGuiding))
-        throw std::runtime_error("Recording requires idle or stationary guiding mode, without faults.");
+                              s.robot_mode!=franka::RobotMode::kGuiding &&
+                              !(allow_stopped && s.robot_mode==franka::RobotMode::kUserStopped)))
+        throw std::runtime_error("Read-only capture requires a stationary, fault-free supported mode.");
       for(int i=0;i<7;++i) {
         if (!std::isfinite(s.q[i]) || !std::isfinite(s.dq[i]))
           throw std::runtime_error("Non-finite joint state.");
@@ -33,7 +41,8 @@ int main() {
       max_tcp_drift=std::max(max_tcp_drift,std::sqrt(d));
       last=s;
       return s.time.toMSec()-begin_ms<500;
-    });
+    };
+    while(inspect(robot.readOnce())){}
     if(max_speed>0.01 || max_drift>0.001 || max_tcp_drift>0.0005)
       throw std::runtime_error("Arm moved during recording; hold stationary and record again.");
     std::cout << std::setprecision(17) << "{\"state\":" << last

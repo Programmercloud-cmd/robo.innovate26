@@ -1,0 +1,353 @@
+{
+  "schema_version": 1,
+  "status": "estimated_registered_visible_layout_not_surveyed",
+  "T_base_board": [
+    [
+      0.01283564560836859,
+      0.9998843855044577,
+      0.008152412292627654,
+      -0.0792572452953701
+    ],
+    [
+      -0.9997590510736336,
+      0.012687990377276106,
+      0.017912417383856138,
+      -0.363285087496756
+    ],
+    [
+      0.017806908720035954,
+      -0.008380365419166607,
+      0.9998063229832449,
+      -0.012116978678916576
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "geometry_board_m": {
+    "table_polygon_xy": [
+      [
+        0.4506038210392906,
+        0.9309562120716336
+      ],
+      [
+        0.403697721019784,
+        0.07644000967116038
+      ],
+      [
+        -0.6758234255253537,
+        0.08072267149987511
+      ],
+      [
+        -0.6289173255058471,
+        0.9352388739003483
+      ]
+    ],
+    "tape_polygons_xy": [
+      {
+        "name": "inner_left_vertical",
+        "points": [
+          [
+            0.3542959120345953,
+            0.7515027343060179
+          ],
+          [
+            0.35270407606108267,
+            0.7225033156725178
+          ],
+          [
+            -0.6403785445151384,
+            0.7264430597391467
+          ],
+          [
+            -0.6387867085416257,
+            0.7554424783726469
+          ]
+        ]
+      },
+      {
+        "name": "right_vertical",
+        "points": [
+          [
+            0.34851244495385253,
+            0.4711369188752841
+          ],
+          [
+            0.34591244619711514,
+            0.4237712017739004
+          ],
+          [
+            -0.6567744550423187,
+            0.4277490478140944
+          ],
+          [
+            -0.6541744562855814,
+            0.4751147649154781
+          ]
+        ],
+        "occluded_continuation_basis": "Operator explicitly states right vertical and lower horizontal lines intersect normally; straight continuation retained through occlusion to lower visible boundary"
+      },
+      {
+        "name": "conveyor_left_vertical",
+        "points": [
+          [
+            0.19222756889302678,
+            0.826593739608011
+          ],
+          [
+            0.19084797771598244,
+            0.8014609101256441
+          ],
+          [
+            -0.6360805873866542,
+            0.8047414900495973
+          ],
+          [
+            -0.6347009962096097,
+            0.8298743195319641
+          ]
+        ]
+      },
+      {
+        "name": "lower_crossline",
+        "points": [
+          [
+            -0.4553449478742581,
+            0.7547147306775539
+          ],
+          [
+            -0.47333269437495123,
+            0.4270213001190014
+          ],
+          [
+            -0.4944621118340197,
+            0.4271051244608446
+          ],
+          [
+            -0.4764743653333266,
+            0.7547985550193971
+          ]
+        ]
+      },
+      {
+        "name": "upper_dashed_crossline_0",
+        "points": [
+          [
+            0.1792964121320783,
+            0.7135226783188557
+          ],
+          [
+            0.17802294335326818,
+            0.6903231434120556
+          ],
+          [
+            0.1626560942921274,
+            0.6903841065697596
+          ],
+          [
+            0.16392956307093753,
+            0.7135836414765598
+          ]
+        ]
+      },
+      {
+        "name": "upper_dashed_crossline_1",
+        "points": [
+          [
+            0.17525310803475214,
+            0.6748644072022352
+          ],
+          [
+            0.17408576165417622,
+            0.6535981668710016
+          ],
+          [
+            0.15967934065935674,
+            0.6536553198313493
+          ],
+          [
+            0.16084668703993266,
+            0.6749215601625826
+          ]
+        ]
+      },
+      {
+        "name": "upper_dashed_crossline_2",
+        "points": [
+          [
+            0.17425027173374114,
+            0.639094647356895
+          ],
+          [
+            0.1726053745611114,
+            0.6091285814356114
+          ],
+          [
+            0.15723852549997064,
+            0.6091895445933155
+          ],
+          [
+            0.15888342267260036,
+            0.6391556105145991
+          ]
+        ]
+      },
+      {
+        "name": "upper_dashed_crossline_3",
+        "points": [
+          [
+            0.171756395375238,
+            0.5936622248310779
+          ],
+          [
+            0.17053598779554496,
+            0.5714293372120611
+          ],
+          [
+            0.15708999486704678,
+            0.5714826799750523
+          ],
+          [
+            0.15831040244673983,
+            0.5937155675940691
+          ]
+        ]
+      },
+      {
+        "name": "upper_dashed_crossline_4",
+        "points": [
+          [
+            0.16963394741055443,
+            0.5549963333197443
+          ],
+          [
+            0.1682543562335101,
+            0.5298635038373775
+          ],
+          [
+            0.1548083633050119,
+            0.5299168466003685
+          ],
+          [
+            0.15618795448205625,
+            0.5550496760827355
+          ]
+        ]
+      },
+      {
+        "name": "upper_dashed_crossline_5",
+        "points": [
+          [
+            0.1694323555785135,
+            0.5163228214136977
+          ],
+          [
+            0.16810582560058623,
+            0.4921566392191141
+          ],
+          [
+            0.15273897653944546,
+            0.49221760237681833
+          ],
+          [
+            0.15406550651737272,
+            0.5163837845714019
+          ]
+        ]
+      },
+      {
+        "name": "upper_dashed_crossline_6",
+        "points": [
+          [
+            0.17061568140573052,
+            0.48537867761256126
+          ],
+          [
+            0.1698197634189742,
+            0.4708789682958111
+          ],
+          [
+            0.15157163015886954,
+            0.47095136204558474
+          ],
+          [
+            0.15236754814562586,
+            0.4854510713623349
+          ]
+        ]
+      }
+    ]
+  },
+  "board": {
+    "squares_xy": [
+      7,
+      5
+    ],
+    "square_length_m": 0.03,
+    "marker_length_m": 0.022,
+    "marker_length_status": "historical_nominal_unverified_do_not_use_for_photo_scale",
+    "object_points_source": "/home/nshenoy/roboinnovate_hackathon/alignment_export_munich_20261025/calibration/board_object_points.json"
+  },
+  "registration": {
+    "method": "robust near-overhead affine plane fit using seven ArUco marker centers and six inner corners; marker center geometry avoids unverified black-marker side length",
+    "H_image_board": [
+      [
+        -4.1031748791103455,
+        -1034.2782659778313,
+        1040.716683001659
+      ],
+      [
+        -1040.975702063943,
+        57.14123414128528,
+        415.8716420698015
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "image_size_px": [
+      961,
+      1281
+    ],
+    "fit_rms_px": 0.7033092094598279,
+    "fit_max_px": 1.3649218437623907,
+    "photo": "/tmp/codex-remote-attachments/01a173bf-87d9-77f2-87b9-3e202182046a/67DF05A4-F7A4-48F4-A17E-AFECA053A27C/1-Photo-1.jpg",
+    "historical_calibration_source": "/home/nshenoy/roboinnovate_hackathon/alignment_export_munich_20261025",
+    "board_unchanged_operator_confirmed": true,
+    "user_dimension_checks": {
+      "main_clear_width_m": 0.2517066525949418,
+      "main_clear_width_annotated_m": 0.25,
+      "conveyor_lane_gap_m": 0.05130943302896892,
+      "conveyor_lane_gap_annotated_m": 0.053,
+      "long_vertical_run_m": 0.8250142011650454,
+      "long_vertical_run_annotated_m": 0.825,
+      "upper_extension_image_m": 0.17960146172044653,
+      "upper_extension_annotated_m": 0.166,
+      "lower_extension_image_m": 0.16231362048532308,
+      "lower_extension_annotated_m": 0.166
+    },
+    "approximate_registration_uncertainty_m": 0.01,
+    "uncertainty_status": "engineering estimate from manual image picks, narrow board view and unsurveyed hand-eye; not statistical confidence"
+  },
+  "notes": [
+    "Coordinates are board-plane XY in meters; T_base_board maps to actual robot base. Board origin/axes and marker positions follow the exported OpenCV object points exactly, not an assumed image corner.",
+    "Table polygon is the VISIBLE white surface patch in a cropped photograph; upper/right image boundaries are not surveyed physical table edges. Do not invent table thickness or collision friction.",
+    "Lower horizontal and right vertical tape polygons overlap at a simple intersection; no hidden gap/notch. Horizontal crossline nominal thickness is annotated15mm; image-derived polygon thickness is approximate.",
+    "Photo has only a narrow board strip. Unconstrained projective extrapolation was rejected because it violated the25cm measured clear span. Affine approximation agrees with25cm span within0.7% and82.5cm run within0.01%; upper16.6cm annotation differs from image fit by13.6mm and is retained as uncertainty.",
+    "No LEGO blocks modeled. Robot base world transform is explicitly identity. RealSense SDK device serial 943222073921 matches saved calibration; 944523026963 is its ASIC/firmware-update ID. Saved hand-eye is conditionally eligible if mounting is unchanged, but has not been applied to an active Isaac optical sensor.",
+    "Board-to-base itself is an estimated12-view hand-eye result, not independently surveyed. Live robot/URDF alignment is separately validated and more accurate than photo layout.",
+    "Right vertical tape continues straight through the lower crossline to the visible lower white-surface boundary, following the operator-confirmed simple intersection under the robot occlusion."
+  ],
+  "camera_calibration_identity_correction": {
+    "corrected_utc": "2026-10-26T19:29:43.983980+00:00",
+    "record": "calibration_identity_correction_20261026.json",
+    "same_device_serial_verified": true,
+    "handeye_status": "eligible conditional on mounting continuity; optical validation not performed",
+    "coordinates_unchanged": true
+  }
+}

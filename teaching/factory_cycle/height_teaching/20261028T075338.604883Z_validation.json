@@ -1,0 +1,22 @@
+{
+  "conveyor": {
+    "preflight": "teaching/factory_cycle/runs/rows_20261028T075449.612885Z/preflight.json",
+    "placement_world_z_m": 0.0635884627699852,
+    "home_world_z_m": 0.11042837847024203,
+    "paths_checked": 13,
+    "sdk_connection": false,
+    "robot_motion": false
+  },
+  "tabletop": {
+    "preflight": "teaching/factory_cycle/runs/rows_20261028T075458.065791Z/preflight.json",
+    "placement_world_z_m": 0.00707379262894392,
+    "home_world_z_m": 0.055428378470242026,
+    "paths_checked": 13,
+    "sdk_connection": false,
+    "robot_motion": false
+  },
+  "regression_tests_passed": 7,
+  "controller_sha256": "6e23899f0fe0bcd4490b13e56d69485238393ec30b2571b4434237cbe10d7d44",
+  "physical_placement_retest_performed": false,
+  "inventory_advanced": false
+}

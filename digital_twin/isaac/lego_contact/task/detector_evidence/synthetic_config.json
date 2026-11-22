@@ -1,0 +1,38 @@
+{
+  "schema": "known_stud_roi_detector_v1",
+  "purpose": "synthetic_validation",
+  "detector_profile_id": "synthetic-ring-detector-only",
+  "camera_id": "wrist_sonix_c920",
+  "calibration_id": "synthetic-lens",
+  "settings_profile_id": "synthetic-fixed-settings",
+  "image_size": [
+    1280,
+    720
+  ],
+  "parameters": {
+    "center_search_radius_px": 10.0,
+    "minimum_radius_px": 4.0,
+    "maximum_radius_px": 14.0,
+    "maximum_axis_ratio": 2.2,
+    "canny_low": 40.0,
+    "canny_high": 100.0,
+    "maximum_radial_error": 0.12,
+    "minimum_angular_coverage": 0.75,
+    "minimum_ring_contrast": 40.0,
+    "duplicate_center_distance_px": 2.5,
+    "max_frame_age_s": 0.05
+  },
+  "confidence_calibration": {
+    "validated": false,
+    "provenance": "synthetic",
+    "evidence_ids": [],
+    "input_quality": [
+      0.0,
+      1.0
+    ],
+    "confidence": [
+      0.0,
+      1.0
+    ]
+  }
+}

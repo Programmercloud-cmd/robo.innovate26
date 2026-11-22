@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-10-27T01:16:12.166167+00:00",
+  "local_command": "/usr/bin/python3 -s -m unittest discover -s digital_twin/isaac/lego_contact/task -p test_stud_detector.py -v",
+  "local_tests_passed": 5,
+  "vm_tests_passed": 5,
+  "local_runtime": {
+    "opencv": "4.5.4",
+    "numpy": "1.21.5"
+  },
+  "vm_runtime": {
+    "python": "3.11.15",
+    "opencv": "4.10.0",
+    "numpy": "1.26.0"
+  },
+  "source_sha256": {
+    "stud_detector.py": "cb294f213e7b69a227b68d8557b0adb8cf710a1e4c69f31329d2d720c511b002",
+    "test_stud_detector.py": "6f3988e433564425b3fb7929b8c2d532200a655070b5e615b5ac585ac546f08e",
+    "calibratedROIconfig.template.json": "5b52a4ff4bea9b9f101417e9fdd3f4cd670c0bebb5a731783ebc043c0e94eb51"
+  },
+  "artifact_sha256": {
+    "synthetic_observed_features.json": "4d12f6355022b42b4bf7d1137b9fa4602a63bc578f6df77d62c55c13f6f050b3",
+    "synthetic_roi_pixels.png": "016e9d6982e6928f55e3ad2313ea2d68ae383d45e0cee591bf8be20a58a7fc9a",
+    "synthetic_config.json": "5702644fef4d538d143c5a8851d0b1e59dc855cc3576bd41457716935ff8b058",
+    "stud-detector-tests-vm.log": "f1a0e85077322c450314d40cc1aeb2abab5f9cbc8a66b2b6900fbefef4b41be8"
+  },
+  "physical_detector_validated": false,
+  "training_ready": false,
+  "hardware_clients": 0,
+  "measurements_missing": [
+    "actual Logitech intrinsic/mount/settings validation",
+    "labeled target stud/occlusion images and detector precision/recall",
+    "measured score-to-confidence calibration",
+    "camera exposure/state clock alignment and latency/error profiles"
+  ],
+  "confidence_binding": "Physical mappings require camera identity/K/distortion/settings/resolution, detector parameter hash, validated OpenCV runtime and raw-image/label artifact hashes. Structural integrity alone does not establish physical reliability."
+}

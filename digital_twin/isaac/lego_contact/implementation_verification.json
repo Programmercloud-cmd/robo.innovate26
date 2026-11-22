@@ -1,0 +1,47 @@
+{
+  "saved_utc": "2026-10-26T23:17:54.374605+00:00",
+  "scope": "offline axial force foundation, residual target interface and force replay; not RL plant validation",
+  "unit_tests": {
+    "command": "python3 -m unittest discover -s digital_twin/isaac/lego_contact -p 'test_*.py' -v",
+    "passed": 28,
+    "failed": 0
+  },
+  "python": "3.10.12",
+  "numpy": "2.2.6",
+  "synthetic_force_replay_pass": true,
+  "physical_force_replay_pass": false,
+  "held_out_force_rmse_N": [
+    6.335224604287636e-16
+  ],
+  "native_probe_preserved": true,
+  "hardware_clients": 0,
+  "training_ready": false,
+  "hardware_deployment_enabled": false,
+  "implementation_sha256": {
+    "test_fit_axial.py": "b20b0d4bf7f5ad3ec4b7063e95a29a7b2956733dc0dfc824352b395f66811139",
+    "contact_probe.py": "d4e22a2c94e63fb118c8e4571076d8eefedc342cd9302ea0272330267a05b4ec",
+    "test_residual_interface.py": "f3dfa0f9007d0f66225251cc16361505bce67ed783ae9b851d616508a1fc0911",
+    "evaluate_traces.py": "cc0da839da465d980bfec9c93e8e92761a6bbf6b457d61b5f7797194e2ec54fb",
+    "test_evaluate_traces.py": "fa27c8b445ec64582ad7ab66777ac4392aa28ff5fa6d4ec7813b5c86e06c1f04",
+    "analyze.py": "f2dbb6ea9d9c0e5f26376a42fdcc76a9eeaf01e674bc2c338741e4b8b0672eca",
+    "fit_axial.py": "e8a7670fe3e7947497d96a194323b02ea1c464da68d946caaf479f0e2aa25b76",
+    "effective_axial.py": "cd7e19deb6bc78f007c249d5d0f9c72e4074778d4475eaf49fb228bb79fce6c0",
+    "residual_interface.py": "ac74d137ed592ebd96530bf493a9263194ad3442e015037249b3ed53f66df332",
+    "test_effective_axial.py": "c677317125b549ba8987903a43857e7139b2ab6b11691effdc8f28d06f2dded2",
+    "run_effective_pair.py": "85243bbd41eaeceaaf6f2b66d1c50314dbe887ddad52cb1ad6fee6736c04cbf9"
+  },
+  "remaining": [
+    "physical grip/fixture/controller/wrench identification",
+    "real insertion and withdrawal data with held-out trials",
+    "lateral/yaw capture, jam and rate-independent hysteresis model if measurements require",
+    "closed-loop FR3 actuator/IK integration and independent retention validation"
+  ],
+  "vm_unit_tests": {
+    "passed": 28,
+    "failed": 0,
+    "log": "implementation_evidence/vm-unit-tests.log"
+  },
+  "vm_force_replay_pass": true,
+  "vm_results": "effective_results.json",
+  "public_withdrawal_guard_exit_code": 2
+}

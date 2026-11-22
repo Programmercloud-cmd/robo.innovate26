@@ -1,0 +1,118 @@
+{
+  "status": "template_only; fill from actual images and measured local world X/Y/yaw jogs",
+  "aligned_image": "actual_known_aligned_at_alignment_height.jpg",
+  "reference": {
+    "edges": {
+      "receiver_u": {
+        "segment": [
+          [
+            null,
+            null
+          ],
+          [
+            null,
+            null
+          ]
+        ],
+        "polarity": 1
+      },
+      "receiver_v": {
+        "segment": [
+          [
+            null,
+            null
+          ],
+          [
+            null,
+            null
+          ]
+        ],
+        "polarity": 1
+      },
+      "held_u": {
+        "segment": [
+          [
+            null,
+            null
+          ],
+          [
+            null,
+            null
+          ]
+        ],
+        "polarity": 1
+      },
+      "held_v": {
+        "segment": [
+          [
+            null,
+            null
+          ],
+          [
+            null,
+            null
+          ]
+        ],
+        "polarity": 1
+      }
+    }
+  },
+  "samples": [
+    {
+      "image": "neutral.jpg",
+      "delta_xy_yaw": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "image": "x_plus.jpg",
+      "delta_xy_yaw": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "image": "x_minus.jpg",
+      "delta_xy_yaw": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "image": "y_plus.jpg",
+      "delta_xy_yaw": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "image": "y_minus.jpg",
+      "delta_xy_yaw": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "image": "yaw_plus.jpg",
+      "delta_xy_yaw": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "image": "yaw_minus.jpg",
+      "delta_xy_yaw": [
+        null,
+        null,
+        null
+      ]
+    }
+  ]
+}

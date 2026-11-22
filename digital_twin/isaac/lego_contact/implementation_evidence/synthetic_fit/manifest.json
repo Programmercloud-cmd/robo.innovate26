@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "model_id": "synthetic-roundtrip-only",
+  "conditions_id": "arbitrary-coupon-only",
+  "provenance": "Generated from arbitrary synthetic_fixture.json; no physical measurements or LEGO identification",
+  "source_fixture_sha256": "c1408a35781ec85aba84d2847411f428706a3ec390fd357fbc14865b7f610d3e",
+  "depth_knots_m": [
+    0.0,
+    0.001,
+    0.002,
+    0.003,
+    0.004
+  ],
+  "max_condition_number": 100000000.0,
+  "tolerances": {
+    "force_rmse_N": 1e-09,
+    "peak_error_N": 1e-09,
+    "work_error_J": 1e-10
+  },
+  "trials": [
+    {
+      "id": "fit",
+      "path": "fit.ndjson",
+      "split": "fit",
+      "provenance": "synthetic",
+      "conditions_id": "arbitrary-coupon-only"
+    },
+    {
+      "id": "validation",
+      "path": "validation.ndjson",
+      "split": "validation",
+      "provenance": "synthetic",
+      "conditions_id": "arbitrary-coupon-only"
+    }
+  ]
+}

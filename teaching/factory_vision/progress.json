@@ -1,0 +1,143 @@
+{
+  "task_id": "factory_columns_of_four",
+  "active_operation": null,
+  "completed_columns": {
+    "5_0": {
+      "run": "teaching/factory_vision/runs/20261026T191607.910281Z",
+      "visible_bricks_after_release": 4,
+      "destination_mode": "fixed_conveyor",
+      "conveyor_target_O_T_EE": [
+        0.9999996983767413,
+        -0.0007766894015137046,
+        0.0,
+        0.0,
+        -0.0007766894015137046,
+        -0.9999996983767413,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.698630473613739,
+        0.09124504774808884,
+        0.0081842802464962,
+        1.0
+      ]
+    }
+  },
+  "deliveries_needing_correction": {
+    "5_1": {
+      "phase": "moving_conveyor_uncertain",
+      "pose": "5_1",
+      "run": "teaching/factory_vision/runs/20261026T201057.371864Z",
+      "origin_run": "/home/nshenoy/robo.innovate26/teaching/factory_vision/runs/20261026T200348.025135Z",
+      "utc": "2026-10-26T20:11:10.687076+00:00"
+    }
+  },
+  "delivery_history": [
+    {
+      "pose": "5_0",
+      "previous_delivery": {
+        "run": "/home/nshenoy/robo.innovate26/teaching/factory_vision/runs/20261026T180444.041210Z",
+        "visible_bricks_after_release": 4,
+        "translation_base_m": [
+          0.085,
+          0,
+          0
+        ],
+        "destination_mode": "fixed_conveyor",
+        "conveyor_target_O_T_EE": [
+          0.9999996983767413,
+          -0.0007766894015137046,
+          0.0,
+          0.0,
+          -0.0007766894015137046,
+          -0.9999996983767413,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.0,
+          0.0,
+          0.698630473613739,
+          0.09124504774808884,
+          0.0081842802464962,
+          1.0
+        ]
+      },
+      "replenishment_verified_run": "/home/nshenoy/robo.innovate26/teaching/factory_vision/runs/20261026T191448.878477Z",
+      "utc": "2026-10-26T19:15:19.991733+00:00"
+    },
+    {
+      "pose": "5_1",
+      "previous_delivery": {
+        "run": "/home/nshenoy/robo.innovate26/teaching/factory_vision/runs/20261026T182530.466218Z",
+        "visible_bricks_after_release": 4,
+        "destination_mode": "fixed_conveyor",
+        "conveyor_target_O_T_EE": [
+          0.9999996983767413,
+          -0.0007766894015137046,
+          0.0,
+          0.0,
+          -0.0007766894015137046,
+          -0.9999996983767413,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.0,
+          0.0,
+          0.698630473613739,
+          0.09124504774808884,
+          0.0081842802464962,
+          1.0
+        ]
+      },
+      "replenishment_verified_run": "/home/nshenoy/robo.innovate26/teaching/factory_vision/runs/20261026T200348.025135Z",
+      "utc": "2026-10-26T20:04:19.257420+00:00"
+    }
+  ],
+  "returned_source_history": [
+    {
+      "pose": "5_2",
+      "run": "/home/nshenoy/robo.innovate26/teaching/factory_vision/runs/20261026T195253.164626Z",
+      "visible_bricks": 4,
+      "studs_per_brick": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "conveyor_delivery": false,
+      "verification_method": "Fresh 32-stud observation plus assistant visual comparison of original and returned overlays: dark red, tan, red, red. HSV-bin appearance check failed and is retained in outcome.",
+      "original_overlay": "teaching/factory_vision/runs/20261026T194720.869336Z/alignment_2/overlay_2.jpg",
+      "returned_overlay": "teaching/factory_vision/runs/20261026T195253.164626Z/returned_source_verification/overlay_2.jpg"
+    }
+  ],
+  "operator_corrections": [
+    {
+      "pose": "5_2",
+      "statement": "User reports 5_2 was not lifted",
+      "status": "pickup proof disputed; not counted as a conveyor delivery",
+      "source_currently_present": true,
+      "source_presence_evidence": "runs/20261026T195253.164626Z/returned_source_verification/overlay_2.jpg",
+      "note": "Presence at source cannot establish prior pickup/return. Earlier retention and return claims remain historical, not accepted proof of a lift."
+    },
+    {
+      "pose": "5_2",
+      "statement": "User clarifies: i didnt observe it",
+      "status": "Prior comment was not a witnessed failed pick; source currently visible. Next pickup requires an additional full50mm lift check before transfer."
+    }
+  ],
+  "aborted_operations": [
+    {
+      "phase": "moving_conveyor_uncertain",
+      "pose": "5_1",
+      "run": "teaching/factory_vision/runs/20261026T201057.371864Z",
+      "origin_run": "/home/nshenoy/robo.innovate26/teaching/factory_vision/runs/20261026T200348.025135Z",
+      "utc": "2026-10-26T20:11:10.687076+00:00",
+      "resolution": "New user job5_0 after manual recovery; hand visually empty and both ends of conveyor lane observed clear. Prior5_1 release remains unverified, not counted."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "saved_utc": "2026-10-27T15:24:52.956583+00:00",
+  "state": "Reached inferred4_0, hand open, Idle/no errors; SDK released for Desk",
+  "requested_batch": [
+    "1_0",
+    "2_0",
+    "3_0",
+    "4_0",
+    "5_0"
+  ],
+  "completed_picks": 0,
+  "completed_placements": 0,
+  "run": "teaching/factory_cycle/runs/rows_20261027T144739.762724Z",
+  "recording_convention": "Direct grasp pose; zeroZoffset; each row anchor measured independently; no automatic recording of stopped pose",
+  "independently_measured_xy_anchors": [
+    "0_0",
+    "1_0"
+  ],
+  "independently_unmeasured_rows": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "verification": "teaching/history/two_anchor_grid_verification_20261027T151359.030786Z.json",
+  "prior_fault_snapshot": {
+    "mode": "Guiding",
+    "errors": [],
+    "xyz_m": [
+      0.6048079133033752,
+      -0.30916398763656616,
+      0.04247168451547623
+    ],
+    "width_m": 0.06999992579221725
+  },
+  "last_motion_run": "teaching/moves/20261027T152409.692257Z",
+  "last_motion_completed": true,
+  "last_motion_target": "4_0",
+  "last_motion_measured_xyz_m": [
+    0.6152357459068298,
+    0.019541198387742043,
+    0.005083971191197634
+  ],
+  "last_motion_endpoint_error_m": 0.000606759971755353
+}

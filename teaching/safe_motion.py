@@ -122,15 +122,18 @@ def build_joint_plan(point_id,target,state,control,catalog_bytes,config,direct=F
         if candidate['source_signature']==catalog_signature(catalog_bytes,policy,model.model_sha256):cached=candidate
     seeds=[q0]
     catalog=json.loads(catalog_bytes)
-    taught=catalog['points'].get(f'point_{int(point_id):02d}') if str(point_id).isdecimal() else None
-    if taught is None:
-        taught=min(catalog['points'].values(),key=lambda p:np.linalg.norm(np.array(p['O_T_EE'][12:15])-np.array(target[12:15])))
-    seeds.append(np.array(taught['q_rad']))
-    for a in (-1,1):
-        for b in (-1,1):
-            mirrored=np.array(taught['q_rad']);mirrored[0]+=a*math.pi;mirrored[1]*=-1;mirrored[2]+=b*math.pi
-            if np.all(mirrored>=model.lower) and np.all(mirrored<=model.upper):seeds.append(mirrored)
-    seeds.extend(np.array(p['q_rad']) for p in catalog['points'].values())
+    measured=[p for p in catalog['points'].values() if isinstance(p.get('q_rad'),list) and len(p['q_rad'])==7]
+    from pose_ids import pose_key
+    taught=catalog['points'].get(pose_key(point_id))
+    if not taught or not isinstance(taught.get('q_rad'),list):
+        taught=min(measured,key=lambda p:np.linalg.norm(np.array(p['O_T_EE'][12:15])-np.array(target[12:15]))) if measured else None
+    if taught:
+        seeds.append(np.array(taught['q_rad']))
+        for a in (-1,1):
+            for b in (-1,1):
+                mirrored=np.array(taught['q_rad']);mirrored[0]+=a*math.pi;mirrored[1]*=-1;mirrored[2]+=b*math.pi
+                if np.all(mirrored>=model.lower) and np.all(mirrored<=model.upper):seeds.append(mirrored)
+    seeds.extend(np.array(p['q_rad']) for p in measured)
     for elbow in (-1.8,-.8,.8,1.8):
         for wrist in (-2,2):
             seed=q0.copy();seed[0]=-.5 if elbow>0 else .5;seed[2]=elbow;seed[4]=wrist;seed[5]=3.9;seeds.append(seed)

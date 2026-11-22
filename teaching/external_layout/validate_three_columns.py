@@ -1,0 +1,15 @@
+"""Replay resident image packets; expected color table is validation-only."""
+import argparse,collections,hashlib,json
+from pathlib import Path
+import cv2
+import numpy as np
+from perception import Classifier,load_config,compile_layout,overlay
+p=argparse.ArgumentParser();p.add_argument('samples',type=Path);p.add_argument('--output',type=Path,required=True);a=p.parse_args();root=Path(__file__).resolve().parent;c=load_config(root/'config.json');layout=compile_layout(c);model=Classifier(c,cv2.imread(str(root/c['reference_image'])));records=[];previous=None
+expected={2:[6135191,6487946,6117418,6487946],3:[4211201,6487946,6135191,300121],4:[6117418,6487946,6135191,6487946]}
+for file in sorted(a.samples.glob('[0-9][0-9][0-9].json')):
+ packet=json.loads(file.read_text());raw=cv2.imread(str(file.with_suffix('.jpg')));stamp=packet['frame_unix_ns'];rows=model.update(raw,layout,stamp,packet['robot_guard'],packet['processed_unix_ns'],packet['source_exclusions']['slot_ids'],True);reg=model.last_registration;selected=[s for s in rows if s.get('conveyor_pose_row') in expected];correct=sum(s['status']=='occupied' and s['color_id']==expected[s['conveyor_pose_row']][s['n']] for s in selected)
+ matrix=np.array(reg['reference_to_image']) if reg.get('valid') else None
+ delta=float(np.max(np.linalg.norm(cv2.perspectiveTransform(np.float32([[[400,30],[800,30],[800,520],[400,520]]]),matrix)[0]-cv2.perspectiveTransform(np.float32([[[400,30],[800,30],[800,520],[400,520]]]),previous)[0],axis=1))) if matrix is not None and previous is not None else None
+ if matrix is not None:previous=matrix
+ records.append({'frame_sequence':packet['frame_sequence'],'frame_unix_ns':stamp,'image_sha256':hashlib.sha256(file.with_suffix('.jpg').read_bytes()).hexdigest(),'packet_sha256':hashlib.sha256(file.read_bytes()).hexdigest(),'registration_status':reg['status'],'registration_valid':reg['valid'],'mapping_successive_max_shift_px':delta,'correct_visible_conveyor_count':correct,'conveyor_observations':selected,'source_empty_count':sum(s['status']=='empty' and s['motion_pose_id'] in ('2_0','3_0','4_0') for s in rows),'reason_counts':dict(collections.Counter(s['reason'] for s in selected))})
+result={'scope':'Actual resident-frame replay, validation-only independent root-observed color order; no camera/SDK connection and no forced labels','frames':len(records),'registered_count':sum(r['registration_valid'] for r in records),'registration_modes':dict(collections.Counter(r['registration_status'] for r in records)),'all12_correct_after_warmup':sum(r['correct_visible_conveyor_count']==12 for r in records[5:]),'post_warmup_frames':len(records[5:]),'records':records,'config_sha256':hashlib.sha256((root/'config.json').read_bytes()).hexdigest()};a.output.write_text(json.dumps(result,indent=2)+'\n');cv2.imwrite(str(a.output.with_suffix('.jpg')),overlay(raw,model.debug_layout,rows,packet['robot_guard']));print(json.dumps({k:v for k,v in result.items() if k!='records'}));print('postwarmup reasons',dict(sum((collections.Counter(r['reason_counts']) for r in records[5:]),collections.Counter())))

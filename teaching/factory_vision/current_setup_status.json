@@ -1,0 +1,14 @@
+{
+  "status": "world_aligned_geometry_relocated_camera_recalibration_required",
+  "anchor_pose": "5_0",
+  "updated_utc": "2026-10-26T17:53:40.868341+00:00",
+  "previous_alignment_and_reachability_results_apply_to_old_setup": true,
+  "requested_transfer_base_m": [
+    0.085,
+    0,
+    0
+  ],
+  "new_setup_grasps_verified": 0,
+  "new_setup_placements_verified": 0,
+  "robot_motion_commands_sent": false
+}

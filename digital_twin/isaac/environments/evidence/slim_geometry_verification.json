@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "environment": "factory",
+  "fingers": "original",
+  "hardware_clients": 0,
+  "physical_lift_validated": false,
+  "training_ready": false,
+  "native_finger_limits_m": [
+    [
+      0.0,
+      0.03999999910593033
+    ],
+    [
+      0.0,
+      0.03999999910593033
+    ]
+  ],
+  "stage_sha256": "4b2c7fe22c402a100c0f5a45804ac59db78c8526c40179b78a94de8c615a0a0c"
+}

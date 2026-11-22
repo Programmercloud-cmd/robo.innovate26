@@ -1,0 +1,28 @@
+{
+  "launchers": [
+    "run_rows_tabletop.sh",
+    "run_rows_conveyor.sh",
+    "run_rows_conveyor_moving.sh"
+  ],
+  "preflights": {
+    "tabletop": {
+      "path": "teaching/factory_cycle/runs/rows_20261028T124446.385341Z/preflight.json",
+      "columns": 18,
+      "paths_checked": 234
+    },
+    "conveyor": {
+      "path": "teaching/factory_cycle/runs/rows_20261028T124446.407074Z/preflight.json",
+      "columns": 18,
+      "paths_checked": 234
+    },
+    "conveyor_moving": {
+      "path": "teaching/factory_cycle/runs/rows_20261028T124446.382469Z/preflight.json",
+      "columns": 18,
+      "paths_checked": 234
+    }
+  },
+  "factory_tests_passed": 17,
+  "robot_sdk_connections": 0,
+  "robot_motion": false,
+  "inventory_modified": false
+}

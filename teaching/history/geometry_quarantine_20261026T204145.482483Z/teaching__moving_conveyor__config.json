@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "belt_velocity_base_m_s": [
+    0.0,
+    0.12,
+    0.0
+  ],
+  "maximum_forward_stroke_m": 0.07,
+  "acceleration_time_s": 0.21,
+  "matched_release_time_s": 0.35,
+  "preplace_height_m": 0.002,
+  "home_height_m": 0.1,
+  "release_opening_m": 0.07,
+  "release_speed_m_s": 0.08,
+  "loaded_width_min_m": 0.0645,
+  "loaded_width_max_m": 0.0655,
+  "release_command_margin_s": 0.04,
+  "maximum_tracking_acceleration_m_s2": 1.1,
+  "maximum_tracking_jerk_m_s3": 18.0,
+  "max_joint_jerk_rad_s3": 40.0,
+  "measured_release_duration_bound_s": 0.308997397,
+  "release_timing_evidence": "../factory_vision/runs/20261026T195253.164626Z/release_timing.json and opening_80mm_s_trials.json; loaded opening at40mm/s226.46ms, three empty opening tests at80mm/s208.46\u2013209.07ms",
+  "release_timing_physically_validated": true,
+  "execution_enabled": true,
+  "current_surface": "stationary tape-marked tabletop; no moving belt installed",
+  "note": "Corrected ordinary-priority single hand worker passed elevated real-motion opening and350ms deadline with margin. Loaded placement remains runtime guarded.",
+  "commanded_stroke_margin_m": 0.002,
+  "conveyor_reference_layer": 5,
+  "physical_motion_evidence": "runs/empty_20261026T195910.325397Z/measured_motion.json",
+  "corrected_runtime_timing_evidence": "teaching/moving_conveyor/runs/timing_20261026T203820.216223Z/timing_verified.json"
+}

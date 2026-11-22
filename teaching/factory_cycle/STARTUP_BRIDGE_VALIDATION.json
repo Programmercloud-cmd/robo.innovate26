@@ -1,0 +1,28 @@
+{
+  "recording": "teaching/factory_cycle/runs/rows_20261028T094707.851245Z",
+  "maximum_fci_reference_shift_rad": 0.0004621744155883789,
+  "original_duration_s": 0.10073594629870176,
+  "adapted_duration_s": 0.17841258598534954,
+  "original_native_bridge_derivative_bounds": {
+    "1": 0.013594008992851722,
+    "2": 0.4156268128172961,
+    "3": 42.88001503256376
+  },
+  "adapted_native_bridge_derivative_bounds": {
+    "1": 0.007675497512268723,
+    "2": 0.13249434173766964,
+    "3": 7.718481651476132
+  },
+  "physical_joint_limits": {
+    "velocity_rad_s": 1,
+    "acceleration_rad_s2": 2,
+    "jerk_rad_s3": 40
+  },
+  "target_unchanged": true,
+  "both_task_and_regular_startup_replay_passed": true,
+  "regression_tests_passed": 11,
+  "physical_motion": false,
+  "sdk_connection": false,
+  "moving_controller_sha256": "ecba18b6aec1e9d46bd6f6df54e3ebfa8072a21163c5ae6d9e8db3975ab12cab",
+  "legacy_controller_sha256": "6e23899f0fe0bcd4490b13e56d69485238393ec30b2571b4434237cbe10d7d44"
+}

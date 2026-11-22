@@ -1,0 +1,25 @@
+{
+  "software_rehearsal": {
+    "completed": true,
+    "domain": "fixture",
+    "layers_completed": 2,
+    "physical_interlocks_verified": 0,
+    "qualified_physical_seatings": 0,
+    "duration_s": 22.62000000000004,
+    "stops": 0,
+    "meaning": "Synthetic software-loop exercise, not physical LEGO engagement"
+  },
+  "software_rehearsal_run": "/home/nshenoy/robo.innovate26/teaching/layer_stacking/runs/20261028T044901.554455Z",
+  "physical_cycles_run": 0,
+  "physical_force_limits_or_poses_invented": false,
+  "layer_regression_tests_passed": 7,
+  "shared_factory_regression_tests_passed": 5,
+  "conveyor_controller_sha256": "6e23899f0fe0bcd4490b13e56d69485238393ec30b2571b4434237cbe10d7d44",
+  "conveyor_controller_unchanged": true,
+  "layer_controller_sha256": "3261fd5e2ed855976d69be18c5aa367789ee4be3c26ae9da764f7a02f01918ac",
+  "layer_controller_built": true,
+  "native_missing_contact_profile_rejected_before_sdk": true,
+  "target_preview": "http://127.0.0.1:18768/",
+  "preview_is_geometry_only": true,
+  "hardware_enabled": false
+}

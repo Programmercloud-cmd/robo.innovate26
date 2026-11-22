@@ -1,0 +1,51 @@
+{
+  "setup": "conveyor_moving",
+  "launcher": "./run_rows_conveyor_moving.sh --execute-task 5_0",
+  "model_only": true,
+  "robot_sdk_connections": 0,
+  "robot_motion": false,
+  "physical_benchmark_performed": false,
+  "regression_tests_passed": 11,
+  "native_configuration_parser_validated_without_sdk": true,
+  "moving_preflight": "teaching/factory_cycle/runs/rows_20261028T093035.998860Z/preflight.json",
+  "columns_checked": [
+    "0_0",
+    "0_1",
+    "0_2",
+    "1_0",
+    "1_1",
+    "1_2",
+    "2_0",
+    "2_1",
+    "2_2",
+    "3_0",
+    "3_1",
+    "3_2",
+    "4_0",
+    "4_1",
+    "4_2",
+    "5_0",
+    "5_1",
+    "5_2"
+  ],
+  "paths_checked": 234,
+  "tracking_segment_duration_s": 3.6,
+  "commanded_world_y_speed_m_s": 0.02,
+  "measured_release_speed_bounds_m_s": [
+    0.016,
+    0.024
+  ],
+  "forward_stroke_m": 0.066,
+  "maximum_model_release_speed_error_m_s": 4.7655292906290114e-11,
+  "stationary_profile_preflights": [
+    "teaching/factory_cycle/runs/rows_20261028T093322.355351Z/preflight.json",
+    "teaching/factory_cycle/runs/rows_20261028T093323.528709Z/preflight.json"
+  ],
+  "stationary_controller_unchanged": true,
+  "stationary_controller_sha256": "6e23899f0fe0bcd4490b13e56d69485238393ec30b2571b4434237cbe10d7d44",
+  "moving_controller_sha256": "ecba18b6aec1e9d46bd6f6df54e3ebfa8072a21163c5ae6d9e8db3975ab12cab",
+  "task_placement_accuracy_policy": "Warn above 1 mm within existing native 1.5 mm endpoint/height guard; strict grasp and other physical checks retained",
+  "source_poses_and_configured_widths_unchanged": true,
+  "inventory_advanced": false,
+  "startup_bridge_validation": "teaching/factory_cycle/STARTUP_BRIDGE_VALIDATION.json"
+}

@@ -1,0 +1,180 @@
+{
+  "task_id": "factory_columns_of_four",
+  "development_row": 5,
+  "reference_pose": "5_0",
+  "camera": {
+    "device": "/dev/v4l/by-id/usb-Sonix_Technology_Co.__Ltd._HD_Pro_Webcam_C920_HD_Pro_Webcam_C920-video-index0",
+    "width": 1280,
+    "height": 720,
+    "focus": 500,
+    "discard_frames": 6,
+    "observation_frames": 3,
+    "controls": {
+      "auto_exposure": 1,
+      "exposure_time_absolute": 25,
+      "exposure_dynamic_framerate": 0,
+      "gain": 25
+    }
+  },
+  "observation_offset_m": 0.05,
+  "detector": {
+    "stack_roi_px": [
+      220,
+      10,
+      1030,
+      670
+    ],
+    "boundary_y_px": [
+      158,
+      444
+    ],
+    "boundary_search_px": 65,
+    "minimum_line_length_px": 40,
+    "maximum_line_angle_deg": 12,
+    "line_inlier_px": 6,
+    "minimum_boundary_coverage": 0.48,
+    "minimum_studs": 22,
+    "minimum_studs_per_brick": 4,
+    "maximum_frame_spread_px": 3,
+    "maximum_frame_spread_deg": 0.5
+  },
+  "servo": {
+    "calibration_translation_m": 0.002,
+    "calibration_yaw_deg": 1,
+    "maximum_step_m": 0.0015,
+    "maximum_step_yaw_deg": 0.4,
+    "maximum_total_correction_m": 0.006,
+    "maximum_total_yaw_deg": 3,
+    "maximum_iterations": 6,
+    "position_tolerance_m": 0.0007,
+    "yaw_tolerance_deg": 0.3,
+    "gain": 1.0,
+    "maximum_jacobian_condition": 30,
+    "maximum_calibration_residual_px": 4
+  },
+  "descent": {
+    "maximum_travel_m": 0.055,
+    "time_scale": 1
+  },
+  "close_width_m": 0.06,
+  "calibration_file": "calibration.json",
+  "lift_clearance_m": 0.05,
+  "destination_mode": "fixed_conveyor",
+  "conveyor_placement_mode": "stationary_vertical",
+  "conveyor_target_O_T_EE": [
+    0.9999996983767413,
+    -0.0007766894015137046,
+    0.0,
+    0.0,
+    -0.0007766894015137046,
+    -0.9999996983767413,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.6993267750740051,
+    0.10072460025548935,
+    0.0054283784702420235,
+    1.0
+  ],
+  "conveyor_target_source": {
+    "old_target": [
+      0.9999996983767413,
+      -0.0007766894015137046,
+      0.0,
+      0.0,
+      -0.0007766894015137046,
+      -0.9999996983767413,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -1.0,
+      0.0,
+      0.698630473613739,
+      0.09124504774808884,
+      0.0081842802464962,
+      1.0
+    ],
+    "delta_m": [
+      0.0006963014602661133,
+      0.009479552507400513,
+      -0.002755901776254177
+    ],
+    "basis": "User asks previous relative difference from fresh5_0; translation only, not fresh conveyor measurement",
+    "operator_confirmed": true
+  },
+  "conveyor_occupancy_policy": "cleared_between_deliveries",
+  "conveyor_reference_offset_from_5_0_base_m": [
+    0.085,
+    0,
+    0
+  ],
+  "conveyor_clear_roi_px": [
+    300,
+    190,
+    1030,
+    480
+  ],
+  "conveyor_clear_wait_s": 30,
+  "conveyor_clearance_roi_basis": "Observed first 5_0 delivery footprint; excludes the adjacent misplaced 5_1 column above the slot in the image",
+  "conveyor_pose_status": "operator_confirmed_global_translation",
+  "calibration_status": "requires_reference_check_after_reteaching",
+  "fixed_pose_execution": true,
+  "visual_supervision": "Fresh coarse misalignment check only; no fine corrections or visual tracking during descent. Existing lift verification gates inventory.",
+  "conveyor_surface_height_offset_m": 0.0016454141587018967,
+  "conveyor_surface_height_evidence": {
+    "operator_confirmed_brick_contact": true,
+    "surface": "Thin cloth added only in conveyor lane",
+    "observed_contact_reference_z_m": 0.006526140114292502,
+    "baseline_taught_z_m": 0.0054283784702420235,
+    "source_run": "teaching/factory_cycle/runs/cycles_20261027T110450.210548Z",
+    "interpretation": "Measured contact-reference correction; cloth thickness itself has not been measured",
+    "refinement": {
+      "observed_supported_tcp_z_m": 0.00707379262894392,
+      "prior_commanded_tcp_z_m": 0.006526140114292502,
+      "additional_upward_working_correction_m": 0.0005476525146514179,
+      "source_run": "teaching/factory_cycle/runs/cycles_20261027T113822.555354Z",
+      "basis": "Supported loaded pose before opening; relieve soft-surface preload; cloth thickness not independently measured"
+    }
+  },
+  "minimum_loaded_contact_width_m": 0.061,
+  "fixed_row_pick_verification": "Known four-brick span: close60mm, require measured contact above61mm and unchanged within1mm through45mm+ lift, then fresh camera supervision and four-brick placement verification",
+  "placement_detector": {
+    "stack_roi_px": [
+      220,
+      10,
+      1180,
+      670
+    ],
+    "boundary_y_px": [
+      158,
+      444
+    ],
+    "boundary_search_px": 65,
+    "minimum_line_length_px": 40,
+    "maximum_line_angle_deg": 12,
+    "line_inlier_px": 6,
+    "minimum_boundary_coverage": 0.48,
+    "minimum_studs": 22,
+    "minimum_studs_per_brick": 4,
+    "maximum_frame_spread_px": 3,
+    "maximum_frame_spread_deg": 0.5,
+    "perspective_boundary_coverage": true
+  },
+  "phase_schedule": {
+    "enabled": true,
+    "row_at_s": 5.0,
+    "placing_at_s": 12.5,
+    "home_at_s": 15.0,
+    "placing_definition": "Release verified complete by marker; conveyor stationary",
+    "opening_lead_s": 0.7,
+    "row_motion_scale": 1.55,
+    "carry_motion_scale": 2.0,
+    "placement_motion_scale": 2.0,
+    "return_motion_scale": 1.5,
+    "maximum_marker_lateness_s": 0.1
+  }
+}

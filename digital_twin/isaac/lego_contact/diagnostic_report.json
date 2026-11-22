@@ -1,0 +1,451 @@
+{
+  "training_readiness": false,
+  "readiness_reason": "Native assembly is a force/geometric gate followed by a pose snap and rigid weld; no elastic stud/tube interference is simulated or calibrated.",
+  "scope": "One nominal upstream 2x4 pair, ungripped, lower dynamic on generic static support. Upper gravity disabled only in separated too_high control. No robot, real-frame placement, real fixture, controller, training or hardware IO.",
+  "diagnostic_source_sha256": {
+    "contact_probe.py": "d4e22a2c94e63fb118c8e4571076d8eefedc342cd9302ea0272330267a05b4ec",
+    "physics_only.kit": "fd848326a979c2157f99557279643f6f11923085389532d8051fdeddc78a40d6",
+    "launch.sh": "489b4489245acc6d9e179b610a20fed99dfc0d00adef121e062c82c28d02d353",
+    "analyze.py": "f2dbb6ea9d9c0e5f26376a42fdcc76a9eeaf01e674bc2c338741e4b8b0672eca"
+  },
+  "native_revision": "cbd5de3238e6ac12f44ef699e1507a9f16bdafc3",
+  "source_reference_base": "https://github.com/intelligent-control-lab/BrickSim/blob/cbd5de3238e6ac12f44ef699e1507a9f16bdafc3/",
+  "source_references": {
+    "two_solid_box_colliders_and_visual_shell_tubes": "native/modules/bricksim/usd/author.cppm#L196-L258",
+    "force_and_geometric_assembly_gate": "native/modules/bricksim/physx/assembly.cppm#L110-L127",
+    "contact_impulse_divided_by_dt": "native/modules/bricksim/physx/physics_graph.cppm#L598-L644",
+    "connected_component_contact_filter": "native/modules/bricksim/physx/physics_graph.cppm#L382-L390",
+    "custom_six_dof_weld": "native/modules/bricksim/physx/weld_constraint.cppm#L108-L157",
+    "native_assembly_usd_writeback": "native/modules/bricksim/omni/usd_physics_bridge.cppm#L343-L370",
+    "usd_graph_component_alignment": "native/modules/bricksim/usd/usd_graph.cppm#L330-L362",
+    "usd_graph_pose_write": "native/modules/bricksim/usd/usd_graph.cppm#L590-L615"
+  },
+  "observed_cases": {
+    "no_force": {
+      "completed": true,
+      "case": "no_force",
+      "steps": 600,
+      "assembly_events": 0,
+      "disassembly_events": 0,
+      "assembly_debug_samples": 600,
+      "native_physx_mapping_sizes": [
+        2,
+        0
+      ],
+      "final_connected": false,
+      "final_relative_z_m": 0.011299991514533758,
+      "hardware_clients": 0,
+      "training": false,
+      "training_readiness": false,
+      "gripper_present": false,
+      "external_load_scope": "2N synthetic algorithm threshold probe, not measured insertion force or proposed controller",
+      "all_bricks_ungripped": true,
+      "upper_gravity_disabled": false,
+      "breakage_enabled": false,
+      "assembly_enabled": true,
+      "maximum_reported_compressive_force_N": 0.021198858023954905,
+      "lower_final_displacement_from_first_sample_m": [
+        -2.4037227763784585e-10,
+        1.1842803682160508e-09,
+        4.656612873077393e-10
+      ],
+      "runtime_mass_kg": {
+        "lower": [
+          [
+            0.00215999991632998
+          ]
+        ],
+        "upper": [
+          [
+            0.00215999991632998
+          ]
+        ]
+      },
+      "attachment_transitions": [],
+      "artifacts": {
+        "configuration.json": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-no_force/configuration.json",
+          "sha256": "a1b41a21b874e0a3bfc5ce05b43da70359cac4a7eb73dce0b859473b3e8da451"
+        },
+        "trace.ndjson": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-no_force/trace.ndjson",
+          "sha256": "f338d0bc630105ede4936957ec56d38782fc0a468b472440325780fd202e4f81"
+        },
+        "result.json": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-no_force/result.json",
+          "sha256": "8a14c31e90b55f7c4d966aab9b79317d26a0274ff16d4fd4734b9df4d2a4b982"
+        },
+        "runtime_mass_kg.json": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-no_force/runtime_mass_kg.json",
+          "sha256": "188a24b8e15e3db546cc03e779760d5dbbf4918ca379748807128ad52598449e"
+        },
+        "scene.usdc": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-no_force/scene.usdc",
+          "sha256": "bf87f81224987b587d61691be818474d465a37b7d79193fcc4b5c99fb9ab0e98"
+        }
+      }
+    },
+    "aligned_load": {
+      "completed": true,
+      "case": "aligned_load",
+      "steps": 600,
+      "assembly_events": 1,
+      "disassembly_events": 0,
+      "assembly_debug_samples": 101,
+      "native_physx_mapping_sizes": [
+        2,
+        1
+      ],
+      "final_connected": true,
+      "final_relative_z_m": 0.009599998593330383,
+      "hardware_clients": 0,
+      "training": false,
+      "training_readiness": false,
+      "gripper_present": false,
+      "external_load_scope": "2N synthetic algorithm threshold probe, not measured insertion force or proposed controller",
+      "all_bricks_ungripped": true,
+      "upper_gravity_disabled": false,
+      "breakage_enabled": false,
+      "assembly_enabled": true,
+      "maximum_reported_compressive_force_N": 2.020651611449931,
+      "lower_final_displacement_from_first_sample_m": [
+        7.427902848355927e-09,
+        -1.6398352759017243e-08,
+        9.313225746154785e-10
+      ],
+      "runtime_mass_kg": {
+        "lower": [
+          [
+            0.00215999991632998
+          ]
+        ],
+        "upper": [
+          [
+            0.00215999991632998
+          ]
+        ]
+      },
+      "attachment_transitions": [
+        {
+          "step": 100,
+          "t_s": 0.101,
+          "relative_z_before_m": 0.01129999104887247,
+          "relative_z_after_m": 0.009600044693797827,
+          "relative_z_jump_m": -0.001699946355074644,
+          "upper_vz_before_m_s": -3.734603524208069e-07,
+          "upper_vz_after_m_s": 0.0,
+          "assembly_debug": [
+            {
+              "accepted": true,
+              "relative_distance": 6.954640818313332e-09,
+              "tilt": 8.953455684517793e-07,
+              "projected_force": -2.020651611449931,
+              "yaw_error": 5.978536745814573e-08,
+              "position_error": 6.936457053287047e-09
+            }
+          ]
+        }
+      ],
+      "artifacts": {
+        "configuration.json": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-aligned_load/configuration.json",
+          "sha256": "be40a34e48a6380373809e8ff0986444d48f808a2f74e6270ff86c3053a3f555"
+        },
+        "trace.ndjson": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-aligned_load/trace.ndjson",
+          "sha256": "a9678822a84b13d9e4e9c4ed4ea5a4007be4c01d7b56a789bfed78c6c33482b5"
+        },
+        "result.json": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-aligned_load/result.json",
+          "sha256": "0d4789582512e9771d75d1d62ebcea06e46a599e13613e722303a471a3ccfd71"
+        },
+        "runtime_mass_kg.json": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-aligned_load/runtime_mass_kg.json",
+          "sha256": "188a24b8e15e3db546cc03e779760d5dbbf4918ca379748807128ad52598449e"
+        },
+        "scene.usdc": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-aligned_load/scene.usdc",
+          "sha256": "b0ae123af942b04ba619c9e5307111829909296ed89ce32d7688fedf0a66d9d1"
+        }
+      }
+    },
+    "misaligned_load": {
+      "completed": true,
+      "case": "misaligned_load",
+      "steps": 600,
+      "assembly_events": 0,
+      "disassembly_events": 0,
+      "assembly_debug_samples": 600,
+      "native_physx_mapping_sizes": [
+        2,
+        0
+      ],
+      "final_connected": false,
+      "final_relative_z_m": 0.011299994308501482,
+      "hardware_clients": 0,
+      "training": false,
+      "training_readiness": false,
+      "gripper_present": false,
+      "external_load_scope": "2N synthetic algorithm threshold probe, not measured insertion force or proposed controller",
+      "all_bricks_ungripped": true,
+      "upper_gravity_disabled": false,
+      "breakage_enabled": false,
+      "assembly_enabled": true,
+      "maximum_reported_compressive_force_N": 2.0213226293332673,
+      "lower_final_displacement_from_first_sample_m": [
+        -5.950844955693313e-10,
+        8.567814686888386e-10,
+        4.656612873077393e-10
+      ],
+      "runtime_mass_kg": {
+        "lower": [
+          [
+            0.00215999991632998
+          ]
+        ],
+        "upper": [
+          [
+            0.00215999991632998
+          ]
+        ]
+      },
+      "attachment_transitions": [],
+      "artifacts": {
+        "configuration.json": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-misaligned_load/configuration.json",
+          "sha256": "986d2bb84d7830b411affbb0f4a035f62b82e635752010db3a96680a96eaac88"
+        },
+        "trace.ndjson": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-misaligned_load/trace.ndjson",
+          "sha256": "0cbfeb49854028a9754eb40d9a25404937eb9d40407de2fdbb8869433a879ba4"
+        },
+        "result.json": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-misaligned_load/result.json",
+          "sha256": "eefb4908c5af46e8a5c315f17e111942f93b49e2f7068b663af6804f32f7ba63"
+        },
+        "runtime_mass_kg.json": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-misaligned_load/runtime_mass_kg.json",
+          "sha256": "188a24b8e15e3db546cc03e779760d5dbbf4918ca379748807128ad52598449e"
+        },
+        "scene.usdc": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-misaligned_load/scene.usdc",
+          "sha256": "1c8e9598acbee1ef50813f20ee0bc322bd71860351c6a16aa772e5a92b8421b9"
+        }
+      }
+    },
+    "too_high": {
+      "completed": true,
+      "case": "too_high",
+      "steps": 600,
+      "assembly_events": 0,
+      "disassembly_events": 0,
+      "assembly_debug_samples": 0,
+      "native_physx_mapping_sizes": [
+        2,
+        0
+      ],
+      "final_connected": false,
+      "final_relative_z_m": 0.02500000223517418,
+      "hardware_clients": 0,
+      "training": false,
+      "training_readiness": false,
+      "gripper_present": false,
+      "external_load_scope": "2N synthetic algorithm threshold probe, not measured insertion force or proposed controller",
+      "all_bricks_ungripped": true,
+      "upper_gravity_disabled": true,
+      "breakage_enabled": false,
+      "assembly_enabled": true,
+      "maximum_reported_compressive_force_N": 0.0,
+      "lower_final_displacement_from_first_sample_m": [
+        3.356854250406889e-13,
+        -4.018955764836579e-13,
+        0.0
+      ],
+      "runtime_mass_kg": {
+        "lower": [
+          [
+            0.00215999991632998
+          ]
+        ],
+        "upper": [
+          [
+            0.00215999991632998
+          ]
+        ]
+      },
+      "attachment_transitions": [],
+      "artifacts": {
+        "configuration.json": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-too_high/configuration.json",
+          "sha256": "adb24089e16ae0e589747c619f3867b42e8507574c80b54bfc63e1cc898cef80"
+        },
+        "trace.ndjson": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-too_high/trace.ndjson",
+          "sha256": "7f0fe1392b1376683a1588c395dc76796b16c2e989d88fcf06bb82d8272a576e"
+        },
+        "result.json": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-too_high/result.json",
+          "sha256": "ed857ea593bae2c8d2e5edada905e8f82d7592d3ff7d4583b33278b09966265a"
+        },
+        "runtime_mass_kg.json": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-too_high/runtime_mass_kg.json",
+          "sha256": "188a24b8e15e3db546cc03e779760d5dbbf4918ca379748807128ad52598449e"
+        },
+        "scene.usdc": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-too_high/scene.usdc",
+          "sha256": "73f427b27c7e27d5afff7017e16aa98ec55baf95a0fa92788eaa07757c8bff60"
+        }
+      }
+    },
+    "yaw_error": {
+      "completed": true,
+      "case": "yaw_error",
+      "steps": 600,
+      "assembly_events": 0,
+      "disassembly_events": 0,
+      "assembly_debug_samples": 600,
+      "native_physx_mapping_sizes": [
+        2,
+        0
+      ],
+      "final_connected": false,
+      "final_relative_z_m": 0.011299992445856333,
+      "hardware_clients": 0,
+      "training": false,
+      "training_readiness": false,
+      "gripper_present": false,
+      "external_load_scope": "2N synthetic algorithm threshold probe, not measured insertion force or proposed controller",
+      "all_bricks_ungripped": true,
+      "upper_gravity_disabled": false,
+      "breakage_enabled": false,
+      "assembly_enabled": true,
+      "maximum_reported_compressive_force_N": 2.0214213496505935,
+      "lower_final_displacement_from_first_sample_m": [
+        -9.561048897044344e-10,
+        1.9547871099589997e-09,
+        0.0
+      ],
+      "runtime_mass_kg": {
+        "lower": [
+          [
+            0.00215999991632998
+          ]
+        ],
+        "upper": [
+          [
+            0.00215999991632998
+          ]
+        ]
+      },
+      "attachment_transitions": [],
+      "artifacts": {
+        "configuration.json": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-yaw_error/configuration.json",
+          "sha256": "4b4e46f20348b7224b6ed356677099d5d3bc60f23fcefe7975a6174112744aeb"
+        },
+        "trace.ndjson": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-yaw_error/trace.ndjson",
+          "sha256": "150b76be51245e41cfd40ca3b0ab77e038d69d8853eb96b98266dc7d13ceb457"
+        },
+        "result.json": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-yaw_error/result.json",
+          "sha256": "3124bf77c33141799568fb87e3f3803a6e64207d12396503dec8432776cef33c"
+        },
+        "runtime_mass_kg.json": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-yaw_error/runtime_mass_kg.json",
+          "sha256": "188a24b8e15e3db546cc03e779760d5dbbf4918ca379748807128ad52598449e"
+        },
+        "scene.usdc": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-yaw_error/scene.usdc",
+          "sha256": "cf380a8176bc16426d3ea67760205cea6ade54b01dd3ca5216187c11b4470126"
+        }
+      }
+    },
+    "assembly_disabled": {
+      "completed": true,
+      "case": "assembly_disabled",
+      "steps": 600,
+      "assembly_events": 0,
+      "disassembly_events": 0,
+      "assembly_debug_samples": 600,
+      "native_physx_mapping_sizes": [
+        2,
+        0
+      ],
+      "final_connected": false,
+      "final_relative_z_m": 0.01129999104887247,
+      "hardware_clients": 0,
+      "training": false,
+      "training_readiness": false,
+      "gripper_present": false,
+      "external_load_scope": "2N synthetic algorithm threshold probe, not measured insertion force or proposed controller",
+      "all_bricks_ungripped": true,
+      "upper_gravity_disabled": false,
+      "breakage_enabled": false,
+      "assembly_enabled": false,
+      "maximum_reported_compressive_force_N": 2.0216711768223963,
+      "lower_final_displacement_from_first_sample_m": [
+        -5.96601296143362e-10,
+        8.321413835776781e-10,
+        9.313225746154785e-10
+      ],
+      "runtime_mass_kg": {
+        "lower": [
+          [
+            0.00215999991632998
+          ]
+        ],
+        "upper": [
+          [
+            0.00215999991632998
+          ]
+        ]
+      },
+      "attachment_transitions": [],
+      "artifacts": {
+        "configuration.json": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-assembly_disabled/configuration.json",
+          "sha256": "37bcb4793a38febc98887fb5840baae34aaacc5fe7d5d2c209f81b884b82a71a"
+        },
+        "trace.ndjson": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-assembly_disabled/trace.ndjson",
+          "sha256": "2ea29806f8adeb4fa90a614fa72c15c74925fb8605e633e7e776676b9bbf4252"
+        },
+        "result.json": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-assembly_disabled/result.json",
+          "sha256": "cf53d6e4a3a8ae42d96c916468d1fbcac77845a56aa55cbad2e0dcc59aa05f33"
+        },
+        "runtime_mass_kg.json": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-assembly_disabled/runtime_mass_kg.json",
+          "sha256": "188a24b8e15e3db546cc03e779760d5dbbf4918ca379748807128ad52598449e"
+        },
+        "scene.usdc": {
+          "path": "/home/ubuntu/workspace/lego-contact-20261026/clean-assembly_disabled/scene.usdc",
+          "sha256": "2a5c4b2317de3c283f1a6821ca7dca231fd458d4b5de460fab380b5903cfb292"
+        }
+      }
+    }
+  },
+  "important_defaults": {
+    "breakage_enabled": false,
+    "assembly_required_force_N": 1.0,
+    "assembly_position_tolerance_m": 0.002,
+    "assembly_max_penetration_m": 0.005,
+    "clutch_preload_N": 3.5,
+    "clutch_friction_coefficient": 0.2,
+    "provenance": "installed native defaults, unchanged and unmeasured; preload/friction do not establish tested pull-off while breakage is disabled"
+  },
+  "contact_representation": {
+    "actual_colliders_per_brick": 2,
+    "collider_type": "solid body cuboid plus full-footprint stud-height cuboid",
+    "stud_shell_tube_geometry": "visual only; no contact or deformation",
+    "material_limit": "Friction/restitution attributes are declared on colliders but no PhysicsMaterial bindings are present. Effective runtime material coefficients were not identified by these probes."
+  },
+  "force_input_provenance": "2N directly applied to free upper brick during100\u2013349ms as an algorithm threshold probe; not measured seating force, gripper contact or proposed robot command.",
+  "energy_and_teleport_limit": "Approx1.7mm pose snap observed at attachment. No continuous physical insertion path or force-displacement work validated; energy injection is not quantified or ruled out by this trace.",
+  "beneficial_fix": "Isolated authoring removes prototype float quaternion and creates double quaternion matching native graph writeback. Preliminary runs/logs remain archived; reported clean runs have no error/fatal entries.",
+  "minimum_practical_model_next": "Keep native model explicitly as a logic baseline only. Later add measured shell/stud/tube collision geometry and identified compliant engagement/retention law, matched material bindings and supported-lower-layer fixture; disable unmeasured automatic snap for any force-displacement comparison. Gate training on physical identification/acceptance contract.",
+  "real_parameter_identification_performed": false,
+  "hardware_clients": 0,
+  "training_launched": false
+}

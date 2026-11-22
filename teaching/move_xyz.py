@@ -6,18 +6,24 @@ import math
 from pathlib import Path
 import subprocess
 import sys
+from pose_ids import normalize_pose_id, pose_key
 
 HERE=Path(__file__).resolve().parent
 TASK_ID='factory_columns_of_four'
 
 
 def resolve_pose(catalog,identifier):
-    text=str(identifier)
     if catalog.get('task_id')!=TASK_ID:raise ValueError('Not the isolated factory pose catalog')
-    if not text.isdecimal() or int(text)<1:
-        raise ValueError('Use a positive factory pose number; previous a/b/c/d stack IDs are not available')
-    number=int(text);key=f'point_{number:02d}'
+    number=normalize_pose_id(identifier);key=pose_key(number)
     if key not in catalog['points']:raise ValueError(f'Factory pose #{number} has not been recorded')
+    if catalog['points'][key].get('coordinate_status')=='requires_reteach_after_reboot':
+        raise ValueError(f'Factory pose #{number} needs fresh teaching after the reported coordinate mismatch')
+    if catalog['points'][key].get('operator_rejected'):
+        raise ValueError(f'Factory pose #{number} was rejected by the operator; reteach it before use')
+    if catalog['points'][key].get('pose_source') in ('factory_tool_frame_inference','factory_world_frame_inference'):
+        from infer_source_poses import source_signature
+        if catalog['points'][key]['source_signature']!=source_signature(catalog):
+            raise ValueError('Inferred source poses are stale; rerun infer_source_poses.py --write after updating the configured anchor')
     return number,catalog['points'][key],False
 
 
@@ -32,11 +38,19 @@ def rotation_error(a,b):
     return math.acos(max(-1,min(1,(trace-1)/2)))
 
 
+def vertical_pose(pose):
+    result=pose.copy()
+    if math.hypot(pose[0],pose[1])<.1:raise ValueError('Tool-X heading is undefined near vertical')
+    yaw=math.atan2(pose[1],pose[0]);c,s=math.cos(yaw),math.sin(yaw)
+    result[:12]=[c,s,0,0,s,-c,0,0,0,0,-1,0]
+    return result
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('point',help='Newly recorded factory pose number')
+    parser.add_argument('point',help='Source n_j (n=0..5, j=0..2), or numeric conveyor/reference ID')
     parser.add_argument('--execute',action='store_true')
-    parser.add_argument('--grasp',action='store_true',help='Open to 66 mm, approach the upper pose, then descend to its grasp reference; does not close')
+    parser.add_argument('--grasp',action='store_true',help='Set the configured opening and approach the taught grasp reference; does not close')
     parser.add_argument('--vertical-tool',action='store_true')
     parser.add_argument('--z-offset-mm',type=float,default=0)
     parser.add_argument('--relative-z-mm',type=float,help='Explicit stationary-start Z jog, limited to +/-2 mm')
@@ -65,7 +79,10 @@ def main():
         from audit_kinematics import yaw_variant
         reference=point.get('grasp_reference',{}).get('O_T_EE')
         if reference is None:parser.error('This factory pose has no grasp reference')
-        upper=point['O_T_EE'];offset=[reference[12+i]-upper[12+i] for i in range(3)]
+        upper=point['O_T_EE'].copy()
+        if config.get('force_vertical_tool'):
+            upper=vertical_pose(upper);reference=vertical_pose(reference)
+        offset=[reference[12+i]-upper[12+i] for i in range(3)]
         if abs(offset[0])>1e-9 or abs(offset[1])>1e-9 or not -.020<=offset[2]<=0:
             parser.error('Grasp reference must be a vertical offset of at most 20 mm')
         code=command_width('approach',args.execute)
@@ -74,7 +91,7 @@ def main():
             try:capture=capture_pose()
             except RuntimeError as error:print('STOP:',error,file=sys.stderr);return 1
         code=run_arc(identifier,upper,capture,raw,point,args.execute,dict(stage='factory_upper_approach',time_scale=args.time_scale))
-        if code or not args.execute:return code
+        if code or not args.execute or all(value==0 for value in offset):return code
         try:capture=capture_pose()
         except RuntimeError as error:print('STOP before descent:',error,file=sys.stderr);return 1
         actual=capture['state']['O_T_EE'];variants=[reference.copy()]
@@ -88,10 +105,8 @@ def main():
     actual=capture['state']['O_T_EE']
     target=(actual if args.relative_z_mm is not None else point['O_T_EE']).copy()
     target[14]+=(args.relative_z_mm if args.relative_z_mm is not None else args.z_offset_mm)/1000
-    if args.vertical_tool:
-        if math.hypot(target[0],target[1])<.1:parser.error('Tool-X heading is undefined near vertical')
-        yaw=math.atan2(target[1],target[0]);c,s=math.cos(yaw),math.sin(yaw)
-        target[:12]=[c,s,0,0,s,-c,0,0,0,0,-1,0]
+    if args.vertical_tool or config.get('force_vertical_tool'):
+        target=vertical_pose(target)
     if args.relative_z_mm is not None and rotation_error(actual,target)>math.radians(2):
         parser.error('Jog reorientation is limited to 2 degrees')
     return run_arc(identifier,target,capture,raw,point,args.execute,

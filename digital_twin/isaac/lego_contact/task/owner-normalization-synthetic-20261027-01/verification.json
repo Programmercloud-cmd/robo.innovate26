@@ -1,0 +1,41 @@
+{
+  "provenance": "synthetic_only",
+  "physical_evidence_validated": false,
+  "training_ready": false,
+  "results": {
+    "normal": {
+      "status": "normalized_bias_gain_corrected_owner_recording",
+      "written": 20,
+      "reason": null,
+      "first_t_s": 0.0,
+      "wrench_filter_latency_s": 0.002
+    },
+    "delayed-first": {
+      "status": "normalized_bias_gain_corrected_owner_recording",
+      "written": 5,
+      "reason": null,
+      "first_t_s": 0.005,
+      "wrench_filter_latency_s": 0.002
+    },
+    "overflow": {
+      "status": "recoverable_stop",
+      "written": 0,
+      "reason": "recording is not finalized and intact"
+    },
+    "bad-sequence": {
+      "status": "recoverable_stop",
+      "written": 0,
+      "reason": "recording is not finalized and intact"
+    },
+    "nonfinite": {
+      "status": "recoverable_stop",
+      "written": 0,
+      "reason": "recording is not finalized and intact"
+    },
+    "disk-failure": {
+      "status": "recoverable_stop",
+      "written": 0,
+      "reason": "recording is not finalized and intact"
+    }
+  }
+}

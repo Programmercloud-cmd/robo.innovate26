@@ -1,0 +1,12 @@
+{
+  "schema": "fr3.factory_display_reference.v1",
+  "reference_image": "refined_layout_reference.png",
+  "clear_tape_span_m": 0.242,
+  "right_tape_width_m": 0.065,
+  "crossline_lower_edge_to_table_end_m": 0.162,
+  "nominal_gap_m": 0.015,
+  "gap_status": "Operator confirms 242 mm is measured and drawn gaps are approximate; residual span is distributed over three horizontal gaps for display only",
+  "crossline_gap_from_front_bricks_range_m": [0.012, 0.017],
+  "crossline_gap_status": "Manual current-camera estimate; floor/top parallax remains; midpoint used for visual placement, not robot coordinates",
+  "scope": "Presentation geometry only; taught source poses, board calibration and execution inventory unchanged"
+}

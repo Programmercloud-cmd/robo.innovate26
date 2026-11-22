@@ -1,0 +1,2737 @@
+{
+  "schema": "fr3.external_layout.display_poses.v1",
+  "conveyor_slots": [
+    {
+      "slot_id": "conveyor_r0_n0",
+      "conveyor_row": 0,
+      "brick_index": 0,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        -0.31397539974451066,
+        -0.012903558837887907
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r0_n1",
+      "conveyor_row": 0,
+      "brick_index": 1,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        -0.2981753997445107,
+        -0.013186629856903328
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r0_n2",
+      "conveyor_row": 0,
+      "brick_index": 2,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        -0.28237539974451065,
+        -0.013469700875918748
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r0_n3",
+      "conveyor_row": 0,
+      "brick_index": 3,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        -0.26657539974451067,
+        -0.013752771894934169
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r1_n0",
+      "conveyor_row": 1,
+      "brick_index": 0,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        -0.23577539974451067,
+        -0.014304581223141443
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r1_n1",
+      "conveyor_row": 1,
+      "brick_index": 1,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        -0.21997539974451066,
+        -0.014587652242156864
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r1_n2",
+      "conveyor_row": 1,
+      "brick_index": 2,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        -0.20417539974451068,
+        -0.01487072326117228
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r1_n3",
+      "conveyor_row": 1,
+      "brick_index": 3,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        -0.18837539974451067,
+        -0.015153794280187701
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r2_n0",
+      "conveyor_row": 2,
+      "brick_index": 0,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        -0.15757539974451068,
+        -0.015705603608394975
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r2_n1",
+      "conveyor_row": 2,
+      "brick_index": 1,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        -0.14177539974451067,
+        -0.015988674627410396
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r2_n2",
+      "conveyor_row": 2,
+      "brick_index": 2,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        -0.1259753997445107,
+        -0.016271745646425813
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r2_n3",
+      "conveyor_row": 2,
+      "brick_index": 3,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        -0.11017539974451068,
+        -0.016554816665441233
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r3_n0",
+      "conveyor_row": 3,
+      "brick_index": 0,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        -0.07937539974451066,
+        -0.01710662599364851
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r3_n1",
+      "conveyor_row": 3,
+      "brick_index": 1,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        -0.06357539974451067,
+        -0.017389697012663928
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r3_n2",
+      "conveyor_row": 3,
+      "brick_index": 2,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        -0.04777539974451066,
+        -0.017672768031679345
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r3_n3",
+      "conveyor_row": 3,
+      "brick_index": 3,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        -0.03197539974451066,
+        -0.01795583905069477
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r4_n0",
+      "conveyor_row": 4,
+      "brick_index": 0,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        -0.0011753997445106586,
+        -0.018507648378902043
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r4_n1",
+      "conveyor_row": 4,
+      "brick_index": 1,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        0.014624600255489343,
+        -0.01879071939791746
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r4_n2",
+      "conveyor_row": 4,
+      "brick_index": 2,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        0.030424600255489345,
+        -0.019073790416932877
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r4_n3",
+      "conveyor_row": 4,
+      "brick_index": 3,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        0.04622460025548934,
+        -0.0193568614359483
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r5_n0",
+      "conveyor_row": 5,
+      "brick_index": 0,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        0.07702460025548935,
+        -0.019908670764155575
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r5_n1",
+      "conveyor_row": 5,
+      "brick_index": 1,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        0.09282460025548935,
+        -0.020191741783170992
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r5_n2",
+      "conveyor_row": 5,
+      "brick_index": 2,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        0.10862460025548935,
+        -0.020474812802186413
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "conveyor_r5_n3",
+      "conveyor_row": 5,
+      "brick_index": 3,
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.6993267750740051,
+        0.12442460025548935,
+        -0.020757883821201834
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    }
+  ],
+  "registration": {
+    "status": "Display memory \u00b7 measured242mm clear span /65mm right tape; estimated table registration",
+    "operator_mapping_confirmed": true,
+    "row_mapping": "r=0..5 image top to bottom; bank0 is existing left bank",
+    "pick_mapping": "m=0..2 image left to right; bank1 has no motion IDs",
+    "brick_mapping": "n=0..3 image top to bottom inside a four-brick pick",
+    "height": "Single visible brick bodies on existing estimated table plane; no hidden layers inferred",
+    "uncertainty_m": 0.01,
+    "dimensions_m": {
+      "brick": [
+        0.0318,
+        0.0158,
+        0.0096
+      ],
+      "footprint": [
+        0.0954,
+        0.0632
+      ],
+      "total_schematic": [
+        0.2358,
+        0.4692
+      ],
+      "bank_gap": 0.017066666666666657,
+      "row_gap": 0.015,
+      "side_margin": 0.017066666666666657,
+      "end_margin": 0.0075
+    },
+    "source_sha256": {
+      "/home/nshenoy/robo.innovate26/teaching/positions.json": "e353c9da6514e3121c8c68d6ffce2f4755f459f54825151d94d4947fc3ad9483",
+      "/home/nshenoy/robo.innovate26/digital_twin/registration/scene_registration.json": "4030fa7ed52c4aad179b306fa8e41381e5cfa3c05f7a77300fc0f6c03d39aa41"
+    },
+    "factory_scene": {
+      "replace_registered_names": [
+        "inner_left_vertical",
+        "right_vertical",
+        "lower_crossline"
+      ],
+      "polygons": [
+        {
+          "name": "TableEndExtension",
+          "rgb": [
+            0.88,
+            0.87,
+            0.83
+          ],
+          "color": 14737108,
+          "points_base_m": [
+            [
+              0.34679028841654463,
+              0.25,
+              -0.026278513159385786
+            ],
+            [
+              0.6828333637159608,
+              0.25,
+              -0.02901860555022904
+            ],
+            [
+              0.6828333637159608,
+              0.3304550120150318,
+              -0.0304600284765577
+            ],
+            [
+              0.34679028841654463,
+              0.3304550120150318,
+              -0.027719936085714447
+            ]
+          ]
+        },
+        {
+          "name": "LeftTape",
+          "rgb": [
+            0.025,
+            0.025,
+            0.026
+          ],
+          "color": 1579032,
+          "points_base_m": [
+            [
+              0.6537902884165446,
+              -0.7079605728503591,
+              -0.011319074918783176
+            ],
+            [
+              0.6828333637159608,
+              -0.7079605728503591,
+              -0.011555891908878005
+            ],
+            [
+              0.6828333637159608,
+              0.3304550120150318,
+              -0.0301600284765577
+            ],
+            [
+              0.6537902884165446,
+              0.3304550120150318,
+              -0.029923211486462875
+            ]
+          ]
+        },
+        {
+          "name": "RightTape",
+          "rgb": [
+            0.025,
+            0.025,
+            0.026
+          ],
+          "color": 1579032,
+          "points_base_m": [
+            [
+              0.34679028841654463,
+              -0.7079605728503591,
+              -0.008815799518034753
+            ],
+            [
+              0.41179028841654464,
+              -0.7079605728503591,
+              -0.009345808967704615
+            ],
+            [
+              0.41179028841654464,
+              0.3304550120150318,
+              -0.02794994553538431
+            ],
+            [
+              0.34679028841654463,
+              0.3304550120150318,
+              -0.02741993608571445
+            ]
+          ]
+        },
+        {
+          "name": "CrossTape",
+          "rgb": [
+            0.025,
+            0.025,
+            0.026
+          ],
+          "color": 1579032,
+          "points_base_m": [
+            [
+              0.41179028841654464,
+              0.14732542828321457,
+              -0.024669016555711205
+            ],
+            [
+              0.6537902884165446,
+              0.14732542828321457,
+              -0.026642282506789763
+            ],
+            [
+              0.6537902884165446,
+              0.16845501201503177,
+              -0.02702083774719085
+            ],
+            [
+              0.41179028841654464,
+              0.16845501201503177,
+              -0.02504757179611229
+            ]
+          ]
+        }
+      ],
+      "reference": {
+        "schema": "fr3.factory_display_reference.v1",
+        "reference_image": "refined_layout_reference.png",
+        "clear_tape_span_m": 0.242,
+        "right_tape_width_m": 0.065,
+        "crossline_lower_edge_to_table_end_m": 0.162,
+        "nominal_gap_m": 0.015,
+        "gap_status": "Operator confirms 242 mm is measured and drawn gaps are approximate; residual span is distributed over three horizontal gaps for display only",
+        "crossline_gap_from_front_bricks_range_m": [
+          0.012,
+          0.017
+        ],
+        "crossline_gap_status": "Manual current-camera estimate; floor/top parallax remains; midpoint used for visual placement, not robot coordinates",
+        "scope": "Presentation geometry only; taught source poses, board calibration and execution inventory unchanged"
+      },
+      "clear_span_m": 0.242,
+      "right_tape_width_m": 0.065,
+      "crossline_gap_m": 0.014500000000000013,
+      "crossline_width_m": 0.021129583731817198,
+      "table_end_gap_m": 0.16200000000000003,
+      "registration_status": "Visual estimate anchored to taught grid; actual 12\u201317mm front gap retained instead of forcing7.5mm; no calibration change"
+    }
+  },
+  "slots": [
+    {
+      "slot_id": "external_r0_c0_m0_n0",
+      "footprint_id": "external_r0_c0",
+      "motion_pose_id": "0_0",
+      "display_base_xyz_m": [
+        0.6208236217498779,
+        -0.3294510256767273,
+        -0.013631599379260412
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c0_m0_n1",
+      "footprint_id": "external_r0_c0",
+      "motion_pose_id": "0_0",
+      "display_base_xyz_m": [
+        0.6208236217498779,
+        -0.3136510256767273,
+        -0.013914670398275833
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c0_m0_n2",
+      "footprint_id": "external_r0_c0",
+      "motion_pose_id": "0_0",
+      "display_base_xyz_m": [
+        0.6208236217498779,
+        -0.2978510256767273,
+        -0.01419774141729125
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c0_m0_n3",
+      "footprint_id": "external_r0_c0",
+      "motion_pose_id": "0_0",
+      "display_base_xyz_m": [
+        0.6208236217498779,
+        -0.2820510256767273,
+        -0.01448081243630667
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c0_m1_n0",
+      "footprint_id": "external_r0_c0",
+      "motion_pose_id": "0_1",
+      "display_base_xyz_m": [
+        0.5890236217498779,
+        -0.3294510256767273,
+        -0.013372302448498848
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c0_m1_n1",
+      "footprint_id": "external_r0_c0",
+      "motion_pose_id": "0_1",
+      "display_base_xyz_m": [
+        0.5890236217498779,
+        -0.3136510256767273,
+        -0.013655373467514269
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c0_m1_n2",
+      "footprint_id": "external_r0_c0",
+      "motion_pose_id": "0_1",
+      "display_base_xyz_m": [
+        0.5890236217498779,
+        -0.2978510256767273,
+        -0.01393844448652969
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c0_m1_n3",
+      "footprint_id": "external_r0_c0",
+      "motion_pose_id": "0_1",
+      "display_base_xyz_m": [
+        0.5890236217498779,
+        -0.2820510256767273,
+        -0.01422151550554511
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c0_m2_n0",
+      "footprint_id": "external_r0_c0",
+      "motion_pose_id": "0_2",
+      "display_base_xyz_m": [
+        0.5572236217498779,
+        -0.3294510256767273,
+        -0.013113005517737284
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c0_m2_n1",
+      "footprint_id": "external_r0_c0",
+      "motion_pose_id": "0_2",
+      "display_base_xyz_m": [
+        0.5572236217498779,
+        -0.3136510256767273,
+        -0.013396076536752705
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c0_m2_n2",
+      "footprint_id": "external_r0_c0",
+      "motion_pose_id": "0_2",
+      "display_base_xyz_m": [
+        0.5572236217498779,
+        -0.2978510256767273,
+        -0.013679147555768125
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c0_m2_n3",
+      "footprint_id": "external_r0_c0",
+      "motion_pose_id": "0_2",
+      "display_base_xyz_m": [
+        0.5572236217498779,
+        -0.2820510256767273,
+        -0.013962218574783546
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c1_m0_n0",
+      "footprint_id": "external_r0_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.5083569550832112,
+        -0.3294510256767273,
+        -0.012714547131472662
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c1_m0_n1",
+      "footprint_id": "external_r0_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.5083569550832112,
+        -0.3136510256767273,
+        -0.01299761815048808
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c1_m0_n2",
+      "footprint_id": "external_r0_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.5083569550832112,
+        -0.2978510256767273,
+        -0.0132806891695035
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c1_m0_n3",
+      "footprint_id": "external_r0_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.5083569550832112,
+        -0.2820510256767273,
+        -0.01356376018851892
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c1_m1_n0",
+      "footprint_id": "external_r0_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4765569550832112,
+        -0.3294510256767273,
+        -0.012455250200711098
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c1_m1_n1",
+      "footprint_id": "external_r0_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4765569550832112,
+        -0.3136510256767273,
+        -0.012738321219726519
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c1_m1_n2",
+      "footprint_id": "external_r0_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4765569550832112,
+        -0.2978510256767273,
+        -0.013021392238741936
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c1_m1_n3",
+      "footprint_id": "external_r0_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4765569550832112,
+        -0.2820510256767273,
+        -0.013304463257757356
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c1_m2_n0",
+      "footprint_id": "external_r0_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4447569550832113,
+        -0.3294510256767273,
+        -0.012195953269949537
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c1_m2_n1",
+      "footprint_id": "external_r0_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4447569550832113,
+        -0.3136510256767273,
+        -0.012479024288964954
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c1_m2_n2",
+      "footprint_id": "external_r0_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4447569550832113,
+        -0.2978510256767273,
+        -0.012762095307980375
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r0_c1_m2_n3",
+      "footprint_id": "external_r0_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4447569550832113,
+        -0.2820510256767273,
+        -0.013045166326995795
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c0_m0_n0",
+      "footprint_id": "external_r1_c0",
+      "motion_pose_id": "1_0",
+      "display_base_xyz_m": [
+        0.6188729405403137,
+        -0.2481035005569458,
+        -0.015073106631702096
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c0_m0_n1",
+      "footprint_id": "external_r1_c0",
+      "motion_pose_id": "1_0",
+      "display_base_xyz_m": [
+        0.6188729405403137,
+        -0.2323035005569458,
+        -0.015356177650717513
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c0_m0_n2",
+      "footprint_id": "external_r1_c0",
+      "motion_pose_id": "1_0",
+      "display_base_xyz_m": [
+        0.6188729405403137,
+        -0.2165035005569458,
+        -0.015639248669732934
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c0_m0_n3",
+      "footprint_id": "external_r1_c0",
+      "motion_pose_id": "1_0",
+      "display_base_xyz_m": [
+        0.6188729405403137,
+        -0.2007035005569458,
+        -0.015922319688748354
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c0_m1_n0",
+      "footprint_id": "external_r1_c0",
+      "motion_pose_id": "1_1",
+      "display_base_xyz_m": [
+        0.5870729405403137,
+        -0.2481035005569458,
+        -0.014813809700940532
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c0_m1_n1",
+      "footprint_id": "external_r1_c0",
+      "motion_pose_id": "1_1",
+      "display_base_xyz_m": [
+        0.5870729405403137,
+        -0.2323035005569458,
+        -0.015096880719955949
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c0_m1_n2",
+      "footprint_id": "external_r1_c0",
+      "motion_pose_id": "1_1",
+      "display_base_xyz_m": [
+        0.5870729405403137,
+        -0.2165035005569458,
+        -0.01537995173897137
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c0_m1_n3",
+      "footprint_id": "external_r1_c0",
+      "motion_pose_id": "1_1",
+      "display_base_xyz_m": [
+        0.5870729405403137,
+        -0.2007035005569458,
+        -0.01566302275798679
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c0_m2_n0",
+      "footprint_id": "external_r1_c0",
+      "motion_pose_id": "1_2",
+      "display_base_xyz_m": [
+        0.5552729405403137,
+        -0.2481035005569458,
+        -0.014554512770178968
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c0_m2_n1",
+      "footprint_id": "external_r1_c0",
+      "motion_pose_id": "1_2",
+      "display_base_xyz_m": [
+        0.5552729405403137,
+        -0.2323035005569458,
+        -0.014837583789194388
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c0_m2_n2",
+      "footprint_id": "external_r1_c0",
+      "motion_pose_id": "1_2",
+      "display_base_xyz_m": [
+        0.5552729405403137,
+        -0.2165035005569458,
+        -0.015120654808209805
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c0_m2_n3",
+      "footprint_id": "external_r1_c0",
+      "motion_pose_id": "1_2",
+      "display_base_xyz_m": [
+        0.5552729405403137,
+        -0.2007035005569458,
+        -0.015403725827225226
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c1_m0_n0",
+      "footprint_id": "external_r1_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.506406273873647,
+        -0.2481035005569458,
+        -0.014156054383914343
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c1_m0_n1",
+      "footprint_id": "external_r1_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.506406273873647,
+        -0.2323035005569458,
+        -0.014439125402929763
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c1_m0_n2",
+      "footprint_id": "external_r1_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.506406273873647,
+        -0.2165035005569458,
+        -0.014722196421945184
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c1_m0_n3",
+      "footprint_id": "external_r1_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.506406273873647,
+        -0.2007035005569458,
+        -0.015005267440960604
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c1_m1_n0",
+      "footprint_id": "external_r1_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.474606273873647,
+        -0.2481035005569458,
+        -0.013896757453152782
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c1_m1_n1",
+      "footprint_id": "external_r1_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.474606273873647,
+        -0.2323035005569458,
+        -0.014179828472168199
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c1_m1_n2",
+      "footprint_id": "external_r1_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.474606273873647,
+        -0.2165035005569458,
+        -0.01446289949118362
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c1_m1_n3",
+      "footprint_id": "external_r1_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.474606273873647,
+        -0.2007035005569458,
+        -0.01474597051019904
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c1_m2_n0",
+      "footprint_id": "external_r1_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.44280627387364707,
+        -0.2481035005569458,
+        -0.013637460522391218
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c1_m2_n1",
+      "footprint_id": "external_r1_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.44280627387364707,
+        -0.2323035005569458,
+        -0.013920531541406638
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c1_m2_n2",
+      "footprint_id": "external_r1_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.44280627387364707,
+        -0.2165035005569458,
+        -0.014203602560422059
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r1_c1_m2_n3",
+      "footprint_id": "external_r1_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.44280627387364707,
+        -0.2007035005569458,
+        -0.014486673579437476
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c0_m0_n0",
+      "footprint_id": "external_r2_c0",
+      "motion_pose_id": "2_0",
+      "display_base_xyz_m": [
+        0.6177656054496765,
+        -0.16678415353298187,
+        -0.0165209856856688
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c0_m0_n1",
+      "footprint_id": "external_r2_c0",
+      "motion_pose_id": "2_0",
+      "display_base_xyz_m": [
+        0.6177656054496765,
+        -0.15098415353298186,
+        -0.01680405670468422
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c0_m0_n2",
+      "footprint_id": "external_r2_c0",
+      "motion_pose_id": "2_0",
+      "display_base_xyz_m": [
+        0.6177656054496765,
+        -0.13518415353298188,
+        -0.017087127723699642
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c0_m0_n3",
+      "footprint_id": "external_r2_c0",
+      "motion_pose_id": "2_0",
+      "display_base_xyz_m": [
+        0.6177656054496765,
+        -0.11938415353298187,
+        -0.01737019874271506
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c0_m1_n0",
+      "footprint_id": "external_r2_c0",
+      "motion_pose_id": "2_1",
+      "display_base_xyz_m": [
+        0.5859656054496765,
+        -0.16678415353298187,
+        -0.016261688754907237
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c0_m1_n1",
+      "footprint_id": "external_r2_c0",
+      "motion_pose_id": "2_1",
+      "display_base_xyz_m": [
+        0.5859656054496765,
+        -0.15098415353298186,
+        -0.016544759773922658
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c0_m1_n2",
+      "footprint_id": "external_r2_c0",
+      "motion_pose_id": "2_1",
+      "display_base_xyz_m": [
+        0.5859656054496765,
+        -0.13518415353298188,
+        -0.016827830792938078
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c0_m1_n3",
+      "footprint_id": "external_r2_c0",
+      "motion_pose_id": "2_1",
+      "display_base_xyz_m": [
+        0.5859656054496765,
+        -0.11938415353298187,
+        -0.017110901811953495
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c0_m2_n0",
+      "footprint_id": "external_r2_c0",
+      "motion_pose_id": "2_2",
+      "display_base_xyz_m": [
+        0.5541656054496765,
+        -0.16678415353298187,
+        -0.016002391824145673
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c0_m2_n1",
+      "footprint_id": "external_r2_c0",
+      "motion_pose_id": "2_2",
+      "display_base_xyz_m": [
+        0.5541656054496765,
+        -0.15098415353298186,
+        -0.016285462843161094
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c0_m2_n2",
+      "footprint_id": "external_r2_c0",
+      "motion_pose_id": "2_2",
+      "display_base_xyz_m": [
+        0.5541656054496765,
+        -0.13518415353298188,
+        -0.016568533862176514
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c0_m2_n3",
+      "footprint_id": "external_r2_c0",
+      "motion_pose_id": "2_2",
+      "display_base_xyz_m": [
+        0.5541656054496765,
+        -0.11938415353298187,
+        -0.016851604881191935
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c1_m0_n0",
+      "footprint_id": "external_r2_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.5052989387830098,
+        -0.16678415353298187,
+        -0.015603933437881051
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c1_m0_n1",
+      "footprint_id": "external_r2_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.5052989387830098,
+        -0.15098415353298186,
+        -0.015887004456896472
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c1_m0_n2",
+      "footprint_id": "external_r2_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.5052989387830098,
+        -0.13518415353298188,
+        -0.016170075475911892
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c1_m0_n3",
+      "footprint_id": "external_r2_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.5052989387830098,
+        -0.11938415353298187,
+        -0.01645314649492731
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c1_m1_n0",
+      "footprint_id": "external_r2_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4734989387830098,
+        -0.16678415353298187,
+        -0.015344636507119487
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c1_m1_n1",
+      "footprint_id": "external_r2_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4734989387830098,
+        -0.15098415353298186,
+        -0.015627707526134908
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c1_m1_n2",
+      "footprint_id": "external_r2_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4734989387830098,
+        -0.13518415353298188,
+        -0.015910778545150328
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c1_m1_n3",
+      "footprint_id": "external_r2_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4734989387830098,
+        -0.11938415353298187,
+        -0.016193849564165745
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c1_m2_n0",
+      "footprint_id": "external_r2_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.44169893878300986,
+        -0.16678415353298187,
+        -0.015085339576357923
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c1_m2_n1",
+      "footprint_id": "external_r2_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.44169893878300986,
+        -0.15098415353298186,
+        -0.015368410595373347
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c1_m2_n2",
+      "footprint_id": "external_r2_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.44169893878300986,
+        -0.13518415353298188,
+        -0.015651481614388764
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r2_c1_m2_n3",
+      "footprint_id": "external_r2_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.44169893878300986,
+        -0.11938415353298187,
+        -0.015934552633404184
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c0_m0_n0",
+      "footprint_id": "external_r3_c0",
+      "motion_pose_id": "3_0",
+      "display_base_xyz_m": [
+        0.6167175769805908,
+        -0.0853476262609164,
+        -0.01797144771344188
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c0_m0_n1",
+      "footprint_id": "external_r3_c0",
+      "motion_pose_id": "3_0",
+      "display_base_xyz_m": [
+        0.6167175769805908,
+        -0.0695476262609164,
+        -0.0182545187324573
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c0_m0_n2",
+      "footprint_id": "external_r3_c0",
+      "motion_pose_id": "3_0",
+      "display_base_xyz_m": [
+        0.6167175769805908,
+        -0.05374762626091639,
+        -0.018537589751472718
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c0_m0_n3",
+      "footprint_id": "external_r3_c0",
+      "motion_pose_id": "3_0",
+      "display_base_xyz_m": [
+        0.6167175769805908,
+        -0.0379476262609164,
+        -0.01882066077048814
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c0_m1_n0",
+      "footprint_id": "external_r3_c0",
+      "motion_pose_id": "3_1",
+      "display_base_xyz_m": [
+        0.5849175769805908,
+        -0.0853476262609164,
+        -0.017712150782680312
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c0_m1_n1",
+      "footprint_id": "external_r3_c0",
+      "motion_pose_id": "3_1",
+      "display_base_xyz_m": [
+        0.5849175769805908,
+        -0.0695476262609164,
+        -0.017995221801695736
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c0_m1_n2",
+      "footprint_id": "external_r3_c0",
+      "motion_pose_id": "3_1",
+      "display_base_xyz_m": [
+        0.5849175769805908,
+        -0.05374762626091639,
+        -0.018278292820711153
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c0_m1_n3",
+      "footprint_id": "external_r3_c0",
+      "motion_pose_id": "3_1",
+      "display_base_xyz_m": [
+        0.5849175769805908,
+        -0.0379476262609164,
+        -0.018561363839726574
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c0_m2_n0",
+      "footprint_id": "external_r3_c0",
+      "motion_pose_id": "3_2",
+      "display_base_xyz_m": [
+        0.5531175769805908,
+        -0.0853476262609164,
+        -0.017452853851918755
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c0_m2_n1",
+      "footprint_id": "external_r3_c0",
+      "motion_pose_id": "3_2",
+      "display_base_xyz_m": [
+        0.5531175769805908,
+        -0.0695476262609164,
+        -0.017735924870934172
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c0_m2_n2",
+      "footprint_id": "external_r3_c0",
+      "motion_pose_id": "3_2",
+      "display_base_xyz_m": [
+        0.5531175769805908,
+        -0.05374762626091639,
+        -0.018018995889949593
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c0_m2_n3",
+      "footprint_id": "external_r3_c0",
+      "motion_pose_id": "3_2",
+      "display_base_xyz_m": [
+        0.5531175769805908,
+        -0.0379476262609164,
+        -0.018302066908965013
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c1_m0_n0",
+      "footprint_id": "external_r3_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.5042509103139241,
+        -0.0853476262609164,
+        -0.017054395465654126
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c1_m0_n1",
+      "footprint_id": "external_r3_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.5042509103139241,
+        -0.0695476262609164,
+        -0.01733746648466955
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c1_m0_n2",
+      "footprint_id": "external_r3_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.5042509103139241,
+        -0.05374762626091639,
+        -0.017620537503684967
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c1_m0_n3",
+      "footprint_id": "external_r3_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.5042509103139241,
+        -0.0379476262609164,
+        -0.017903608522700388
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c1_m1_n0",
+      "footprint_id": "external_r3_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4724509103139241,
+        -0.0853476262609164,
+        -0.016795098534892566
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c1_m1_n1",
+      "footprint_id": "external_r3_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4724509103139241,
+        -0.0695476262609164,
+        -0.017078169553907983
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c1_m1_n2",
+      "footprint_id": "external_r3_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4724509103139241,
+        -0.05374762626091639,
+        -0.017361240572923403
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c1_m1_n3",
+      "footprint_id": "external_r3_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4724509103139241,
+        -0.0379476262609164,
+        -0.017644311591938824
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c1_m2_n0",
+      "footprint_id": "external_r3_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.44065091031392417,
+        -0.0853476262609164,
+        -0.016535801604131
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c1_m2_n1",
+      "footprint_id": "external_r3_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.44065091031392417,
+        -0.0695476262609164,
+        -0.016818872623146422
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c1_m2_n2",
+      "footprint_id": "external_r3_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.44065091031392417,
+        -0.05374762626091639,
+        -0.017101943642161842
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r3_c1_m2_n3",
+      "footprint_id": "external_r3_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.44065091031392417,
+        -0.0379476262609164,
+        -0.017385014661177263
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c0_m0_n0",
+      "footprint_id": "external_r4_c0",
+      "motion_pose_id": "4_0",
+      "display_base_xyz_m": [
+        0.6149128079414368,
+        -0.005200433757901194,
+        -0.019392639708625863
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c0_m0_n1",
+      "footprint_id": "external_r4_c0",
+      "motion_pose_id": "4_0",
+      "display_base_xyz_m": [
+        0.6149128079414368,
+        0.010599566242098808,
+        -0.019675710727641283
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c0_m0_n2",
+      "footprint_id": "external_r4_c0",
+      "motion_pose_id": "4_0",
+      "display_base_xyz_m": [
+        0.6149128079414368,
+        0.02639956624209881,
+        -0.019958781746656704
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c0_m0_n3",
+      "footprint_id": "external_r4_c0",
+      "motion_pose_id": "4_0",
+      "display_base_xyz_m": [
+        0.6149128079414368,
+        0.04219956624209881,
+        -0.02024185276567212
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c0_m1_n0",
+      "footprint_id": "external_r4_c0",
+      "motion_pose_id": "4_1",
+      "display_base_xyz_m": [
+        0.5831128079414367,
+        -0.005200433757901194,
+        -0.0191333427778643
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c0_m1_n1",
+      "footprint_id": "external_r4_c0",
+      "motion_pose_id": "4_1",
+      "display_base_xyz_m": [
+        0.5831128079414367,
+        0.010599566242098808,
+        -0.01941641379687972
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c0_m1_n2",
+      "footprint_id": "external_r4_c0",
+      "motion_pose_id": "4_1",
+      "display_base_xyz_m": [
+        0.5831128079414367,
+        0.02639956624209881,
+        -0.01969948481589514
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c0_m1_n3",
+      "footprint_id": "external_r4_c0",
+      "motion_pose_id": "4_1",
+      "display_base_xyz_m": [
+        0.5831128079414367,
+        0.04219956624209881,
+        -0.01998255583491056
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c0_m2_n0",
+      "footprint_id": "external_r4_c0",
+      "motion_pose_id": "4_2",
+      "display_base_xyz_m": [
+        0.5513128079414368,
+        -0.005200433757901194,
+        -0.018874045847102738
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c0_m2_n1",
+      "footprint_id": "external_r4_c0",
+      "motion_pose_id": "4_2",
+      "display_base_xyz_m": [
+        0.5513128079414368,
+        0.010599566242098808,
+        -0.019157116866118158
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c0_m2_n2",
+      "footprint_id": "external_r4_c0",
+      "motion_pose_id": "4_2",
+      "display_base_xyz_m": [
+        0.5513128079414368,
+        0.02639956624209881,
+        -0.019440187885133575
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c0_m2_n3",
+      "footprint_id": "external_r4_c0",
+      "motion_pose_id": "4_2",
+      "display_base_xyz_m": [
+        0.5513128079414368,
+        0.04219956624209881,
+        -0.019723258904148996
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c1_m0_n0",
+      "footprint_id": "external_r4_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.50244614127477,
+        -0.005200433757901194,
+        -0.018475587460838112
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c1_m0_n1",
+      "footprint_id": "external_r4_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.50244614127477,
+        0.010599566242098808,
+        -0.01875865847985353
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c1_m0_n2",
+      "footprint_id": "external_r4_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.50244614127477,
+        0.02639956624209881,
+        -0.019041729498868953
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c1_m0_n3",
+      "footprint_id": "external_r4_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.50244614127477,
+        0.04219956624209881,
+        -0.01932480051788437
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c1_m1_n0",
+      "footprint_id": "external_r4_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.47064614127477006,
+        -0.005200433757901194,
+        -0.018216290530076548
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c1_m1_n1",
+      "footprint_id": "external_r4_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.47064614127477006,
+        0.010599566242098808,
+        -0.01849936154909197
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c1_m1_n2",
+      "footprint_id": "external_r4_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.47064614127477006,
+        0.02639956624209881,
+        -0.01878243256810739
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c1_m1_n3",
+      "footprint_id": "external_r4_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.47064614127477006,
+        0.04219956624209881,
+        -0.01906550358712281
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c1_m2_n0",
+      "footprint_id": "external_r4_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4388461412747701,
+        -0.005200433757901194,
+        -0.017956993599314987
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c1_m2_n1",
+      "footprint_id": "external_r4_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4388461412747701,
+        0.010599566242098808,
+        -0.018240064618330405
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c1_m2_n2",
+      "footprint_id": "external_r4_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4388461412747701,
+        0.02639956624209881,
+        -0.018523135637345825
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r4_c1_m2_n3",
+      "footprint_id": "external_r4_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4388461412747701,
+        0.04219956624209881,
+        -0.01880620665636125
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c0_m0_n0",
+      "footprint_id": "external_r5_c0",
+      "motion_pose_id": "5_0",
+      "display_base_xyz_m": [
+        0.6146215200424194,
+        0.07752542828321457,
+        -0.020872371768988034
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c0_m0_n1",
+      "footprint_id": "external_r5_c0",
+      "motion_pose_id": "5_0",
+      "display_base_xyz_m": [
+        0.6146215200424194,
+        0.09332542828321456,
+        -0.021155442788003454
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c0_m0_n2",
+      "footprint_id": "external_r5_c0",
+      "motion_pose_id": "5_0",
+      "display_base_xyz_m": [
+        0.6146215200424194,
+        0.10912542828321457,
+        -0.021438513807018875
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c0_m0_n3",
+      "footprint_id": "external_r5_c0",
+      "motion_pose_id": "5_0",
+      "display_base_xyz_m": [
+        0.6146215200424194,
+        0.12492542828321457,
+        -0.02172158482603429
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c0_m1_n0",
+      "footprint_id": "external_r5_c0",
+      "motion_pose_id": "5_1",
+      "display_base_xyz_m": [
+        0.5828215200424194,
+        0.07752542828321457,
+        -0.020613074838226473
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c0_m1_n1",
+      "footprint_id": "external_r5_c0",
+      "motion_pose_id": "5_1",
+      "display_base_xyz_m": [
+        0.5828215200424194,
+        0.09332542828321456,
+        -0.020896145857241893
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c0_m1_n2",
+      "footprint_id": "external_r5_c0",
+      "motion_pose_id": "5_1",
+      "display_base_xyz_m": [
+        0.5828215200424194,
+        0.10912542828321457,
+        -0.02117921687625731
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c0_m1_n3",
+      "footprint_id": "external_r5_c0",
+      "motion_pose_id": "5_1",
+      "display_base_xyz_m": [
+        0.5828215200424194,
+        0.12492542828321457,
+        -0.021462287895272734
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c0_m2_n0",
+      "footprint_id": "external_r5_c0",
+      "motion_pose_id": "5_2",
+      "display_base_xyz_m": [
+        0.5510215200424194,
+        0.07752542828321457,
+        -0.02035377790746491
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c0_m2_n1",
+      "footprint_id": "external_r5_c0",
+      "motion_pose_id": "5_2",
+      "display_base_xyz_m": [
+        0.5510215200424194,
+        0.09332542828321456,
+        -0.02063684892648033
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c0_m2_n2",
+      "footprint_id": "external_r5_c0",
+      "motion_pose_id": "5_2",
+      "display_base_xyz_m": [
+        0.5510215200424194,
+        0.10912542828321457,
+        -0.020919919945495746
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c0_m2_n3",
+      "footprint_id": "external_r5_c0",
+      "motion_pose_id": "5_2",
+      "display_base_xyz_m": [
+        0.5510215200424194,
+        0.12492542828321457,
+        -0.021202990964511167
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c1_m0_n0",
+      "footprint_id": "external_r5_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.5021548533757527,
+        0.07752542828321457,
+        -0.019955319521200283
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c1_m0_n1",
+      "footprint_id": "external_r5_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.5021548533757527,
+        0.09332542828321456,
+        -0.020238390540215704
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c1_m0_n2",
+      "footprint_id": "external_r5_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.5021548533757527,
+        0.10912542828321457,
+        -0.020521461559231124
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c1_m0_n3",
+      "footprint_id": "external_r5_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.5021548533757527,
+        0.12492542828321457,
+        -0.020804532578246545
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c1_m1_n0",
+      "footprint_id": "external_r5_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4703548533757527,
+        0.07752542828321457,
+        -0.01969602259043872
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c1_m1_n1",
+      "footprint_id": "external_r5_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4703548533757527,
+        0.09332542828321456,
+        -0.019979093609454143
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c1_m1_n2",
+      "footprint_id": "external_r5_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4703548533757527,
+        0.10912542828321457,
+        -0.02026216462846956
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c1_m1_n3",
+      "footprint_id": "external_r5_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4703548533757527,
+        0.12492542828321457,
+        -0.02054523564748498
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c1_m2_n0",
+      "footprint_id": "external_r5_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4385548533757528,
+        0.07752542828321457,
+        -0.01943672565967716
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c1_m2_n1",
+      "footprint_id": "external_r5_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4385548533757528,
+        0.09332542828321456,
+        -0.01971979667869258
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c1_m2_n2",
+      "footprint_id": "external_r5_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4385548533757528,
+        0.10912542828321457,
+        -0.020002867697707996
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    },
+    {
+      "slot_id": "external_r5_c1_m2_n3",
+      "footprint_id": "external_r5_c1",
+      "motion_pose_id": null,
+      "display_base_xyz_m": [
+        0.4385548533757528,
+        0.12492542828321457,
+        -0.02028593871672342
+      ],
+      "display_size_m": [
+        0.0318,
+        0.0158,
+        0.0096
+      ]
+    }
+  ]
+}

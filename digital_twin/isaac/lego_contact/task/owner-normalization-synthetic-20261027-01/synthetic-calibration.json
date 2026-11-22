@@ -1,0 +1,158 @@
+{
+  "schema": "local_wrench_calibration_v1",
+  "validated": true,
+  "provenance": "synthetic",
+  "reference_frame": "K_at_K",
+  "units": [
+    "N",
+    "N",
+    "N",
+    "Nm",
+    "Nm",
+    "Nm"
+  ],
+  "conditions": {
+    "sdk_version": "synthetic-sdk",
+    "tool_profile_id": "synthetic-tool",
+    "payload_profile_id": "synthetic-payload",
+    "impedance_profile_id": "synthetic-impedance",
+    "limiter_profile_id": "synthetic-limiter",
+    "filter_profile_id": "synthetic-filter",
+    "wrench_profile_id": "synthetic-raw-wrench",
+    "fixture_grasp_id": "synthetic-fixed-grasp",
+    "clock_id": "synthetic-virtual-clock",
+    "control_period_s": 0.001,
+    "sample_phase": "before_command_application"
+  },
+  "F_T_EE": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "EE_T_K": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "bias_raw_K": [
+    0.1,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "gain_K": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "noise_std_K": [
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01
+  ],
+  "latency_s": 0.002,
+  "reference_q": [
+    0,
+    0.01,
+    0.02,
+    0.03,
+    0.04,
+    0.05,
+    0.06
+  ],
+  "maximum_joint_delta_rad": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+  ],
+  "valid_from_monotonic_ns": 900000000,
+  "valid_until_monotonic_ns": 2000000000,
+  "maximum_hand_age_s": 0.01,
+  "maximum_sample_gap_s": 0.002,
+  "evidence": [
+    {
+      "path": "synthetic-profile-source.txt",
+      "sha256": "d0ab6df4c9ebdcc2cd675c8ead9443051a6a94dd217f850c2b5f402c4425ace4"
+    }
+  ]
+}

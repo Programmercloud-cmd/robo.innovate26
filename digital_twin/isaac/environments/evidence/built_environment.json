@@ -1,0 +1,323 @@
+{
+  "environment": "board",
+  "fingers": "wide",
+  "explicit_selection": true,
+  "hardware_clients": 0,
+  "plate": {
+    "grid": [
+      32,
+      32
+    ],
+    "physical_grid_studs": 1024,
+    "exposed_studs": 900,
+    "tape_covered_studs": 124,
+    "added_bricks": 0,
+    "T_O_plate_display_proxy": [
+      [
+        0.01283564560836859,
+        0.9998843855044577,
+        0.008152412292627654,
+        0.09919115394057729
+      ],
+      [
+        -0.9997590510736336,
+        0.012687990377276106,
+        0.017912417383856138,
+        -0.3420221574848012
+      ],
+      [
+        0.017806908720035954,
+        -0.008380365419166607,
+        0.9998063229832449,
+        -0.013952989672757276
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "registration_status": "photo paper-plane display proxy; physical seating Z unknown",
+    "physical_thickness_m": null,
+    "contact_enabled": false,
+    "training_ready": false,
+    "tape_extent": "Only the confirmed overlap on the plate is modeled; outside tape width is unspecified",
+    "source_sha256": {
+      "/home/ubuntu/workspace/fr3-digital-twin-20261026/isaac/environments/../lego_contact/task/config.json": "005961cc849429f9d7918ba8c6e9cabd8b09503c9b48ab3da6d9dc9a6fa038ee",
+      "/home/ubuntu/workspace/fr3-digital-twin-20261026/isaac/environments/../lego_contact/task/plate_registration_candidate.json": "85f146b3657738c77d0a3e38d82edad0886850f60343fabeefad8017d035f4be"
+    }
+  },
+  "fingertips": {
+    "inside_span_m": 0.0958,
+    "inside_reach_m": 0.02,
+    "inside_height_m": 0.025550001881131934,
+    "pocket_fit": {
+      "assembled_span_used_m": 0.0954,
+      "assembled_span_measured": false,
+      "measurement_evidence": null,
+      "total_guide_clearance_m": 0.0004,
+      "guide_clearance_each_side_m": 0.0002,
+      "retained_shell_inner_reference_span_m": 0.1,
+      "only_end_returns_move": true,
+      "status": "nominal preview; assembled layer measurement required",
+      "passive_sides_clamp": false,
+      "brick_geometry_scaled": false,
+      "underside": "open; no bottom plate or ledge added",
+      "receiving_layer_vertical_clearance_verified": false,
+      "receiving_exposed_stud_clearance_required_m": 0.0017,
+      "receiving_layer_note": "Existing ceiling and vertical profiles retained. Fingertip-to-brick-bottom and receiving-stud clearance still need a verified datum."
+    },
+    "wall_profile_height_m": 0.025550001881131934,
+    "inside_height_status": "Free cavity under the thickened fixed-top ceiling; wall profiles unchanged",
+    "wall_thickness_m": 0.0032,
+    "top_thickness_m": 0.0032,
+    "outer_span_m": 0.10640000000000001,
+    "ceiling_alignment": {
+      "top_surface_z_finger_m": 0.032890368689070006,
+      "underside_z_finger_m": 0.03609036868907001,
+      "thickness_m": 0.0032,
+      "previous_underside_z_finger_m": 0.03609036868907001,
+      "fingertip_to_brick_bottom_clearance_m": null,
+      "brick_bottom_z_finger_m": null,
+      "stud_top_z_finger_m": null,
+      "stud_contact_error_m": null,
+      "clearance_evidence": null,
+      "verification_scope": "Existing ceiling retained for side-spacing-only revision; stud contact not asserted"
+    },
+    "preview_native_open_width_m": 0.07,
+    "minimum_native_width_m": 0.038186620000000004,
+    "instances": [
+      {
+        "finger": "fr3_leftfinger",
+        "bounds_finger_m": [
+          [
+            -0.007499993897974205,
+            0.0014066900000000086,
+            0.03609036868907001
+          ],
+          [
+            0.007500001092441394,
+            0.012406690522471982,
+            0.06164037057020194
+          ]
+        ],
+        "original_cad_mount_preserved": true,
+        "clamping_plane_y_m": 0.0014066900000000086,
+        "return_end_y_m": -0.01859330999999999,
+        "ceiling_underside_z_m": 0.03609036868907001,
+        "ceiling_top_surface_z_m": 0.032890368689070006,
+        "ceiling_alignment": {
+          "top_surface_z_finger_m": 0.032890368689070006,
+          "underside_z_finger_m": 0.03609036868907001,
+          "thickness_m": 0.0032,
+          "previous_underside_z_finger_m": 0.03609036868907001,
+          "fingertip_to_brick_bottom_clearance_m": null,
+          "brick_bottom_z_finger_m": null,
+          "stud_top_z_finger_m": null,
+          "stud_contact_error_m": null,
+          "clearance_evidence": null,
+          "verification_scope": "Existing ceiling retained for side-spacing-only revision; stud contact not asserted"
+        },
+        "distal_z_m": 0.06164037057020194,
+        "cap_root": "/World/envs/env_0/Robot/fr3_leftfinger/WideCap",
+        "wall_profile_depth_z_m": [
+          [
+            0.0032,
+            0.05409037049769849
+          ],
+          [
+            0.0017413373445209705,
+            0.06135582775769091
+          ],
+          [
+            0.0017015005011307566,
+            0.061554251152735634
+          ],
+          [
+            0.0016885565506784541,
+            0.06161872359270282
+          ],
+          [
+            0.0016842105263157896,
+            0.06164037057020194
+          ],
+          [
+            -1.7357844248658566e-18,
+            0.06164037057020194
+          ],
+          [
+            -1.8298649271178416e-18,
+            0.05964037047520704
+          ],
+          [
+            -1.4958794437054742e-18,
+            0.03609036868907001
+          ],
+          [
+            0.0032,
+            0.03609036868907001
+          ]
+        ],
+        "wall_profile_source": "Original CAD body side silhouette; original height/taper, thickness normalized to operator 3.2 mm; mounting boss excluded from wall silhouette and retained separately",
+        "stock_pad_collision_removed": true,
+        "native_terminal_collision_before_finger_m": [
+          [
+            -0.008750000037252896,
+            -2.0000152289855258e-05,
+            0.035999998450279236
+          ],
+          [
+            0.00875000003725291,
+            0.01518000010401012,
+            0.054499998688697815
+          ]
+        ],
+        "native_terminal_metal_support_retained_finger_m": [
+          [
+            -0.008750000037252896,
+            0.01090669,
+            0.035999998450279236
+          ],
+          [
+            0.00875000003725291,
+            0.01518000010401012,
+            0.054499998688697815
+          ]
+        ],
+        "collision": "Four closed convex cap components plus unchanged CAD spine; stock supports retained"
+      },
+      {
+        "finger": "fr3_rightfinger",
+        "bounds_finger_m": [
+          [
+            -0.007500001092441366,
+            -0.012406690522471965,
+            0.03609036868907001
+          ],
+          [
+            0.007499993897974237,
+            -0.001406689999999992,
+            0.06164037057020194
+          ]
+        ],
+        "original_cad_mount_preserved": true,
+        "clamping_plane_y_m": -0.001406689999999992,
+        "return_end_y_m": 0.01859331000000001,
+        "ceiling_underside_z_m": 0.03609036868907001,
+        "ceiling_top_surface_z_m": 0.032890368689070006,
+        "ceiling_alignment": {
+          "top_surface_z_finger_m": 0.032890368689070006,
+          "underside_z_finger_m": 0.03609036868907001,
+          "thickness_m": 0.0032,
+          "previous_underside_z_finger_m": 0.03609036868907001,
+          "fingertip_to_brick_bottom_clearance_m": null,
+          "brick_bottom_z_finger_m": null,
+          "stud_top_z_finger_m": null,
+          "stud_contact_error_m": null,
+          "clearance_evidence": null,
+          "verification_scope": "Existing ceiling retained for side-spacing-only revision; stud contact not asserted"
+        },
+        "distal_z_m": 0.06164037057020194,
+        "cap_root": "/World/envs/env_0/Robot/fr3_rightfinger/WideCap",
+        "wall_profile_depth_z_m": [
+          [
+            0.0032,
+            0.05409037049769849
+          ],
+          [
+            0.0017413373445209705,
+            0.06135582775769091
+          ],
+          [
+            0.0017015005011307566,
+            0.061554251152735634
+          ],
+          [
+            0.0016885565506784541,
+            0.06161872359270282
+          ],
+          [
+            0.0016842105263157896,
+            0.06164037057020194
+          ],
+          [
+            -1.7357844248658566e-18,
+            0.06164037057020194
+          ],
+          [
+            -1.8298649271178416e-18,
+            0.05964037047520704
+          ],
+          [
+            -1.4958794437054742e-18,
+            0.03609036868907001
+          ],
+          [
+            0.0032,
+            0.03609036868907001
+          ]
+        ],
+        "wall_profile_source": "Original CAD body side silhouette; original height/taper, thickness normalized to operator 3.2 mm; mounting boss excluded from wall silhouette and retained separately",
+        "stock_pad_collision_removed": true,
+        "native_terminal_collision_before_finger_m": [
+          [
+            -0.008750000037252889,
+            -0.0151800001040101,
+            0.035999998450279236
+          ],
+          [
+            0.008750000037252917,
+            2.0000152289876075e-05,
+            0.054499998688697815
+          ]
+        ],
+        "native_terminal_metal_support_retained_finger_m": [
+          [
+            -0.008750000037252889,
+            -0.0151800001040101,
+            0.035999998450279236
+          ],
+          [
+            0.008750000037252917,
+            -0.01090669,
+            0.054499998688697815
+          ]
+        ],
+        "collision": "Four closed convex cap components plus unchanged CAD spine; stock supports retained"
+      }
+    ],
+    "physical_contact_or_lift_validated": false,
+    "mass_and_materials_identified": false,
+    "geometric_fit": {
+      "whole_layer_size_m": [
+        0.0954,
+        0.0632,
+        0.0096
+      ],
+      "span_clearance_total_m": 0.0003999999999999976,
+      "clamping_gap_at_zero_native_width_m": 0.0028133800000000007,
+      "return_tip_gap_at_zero_native_width_m": -0.037186620000000004,
+      "pad_gap_at_nominal_open_m": 0.07281338000000001,
+      "native_open_width_m": 0.07,
+      "pad_gap_at_nominal_close_target_m": 0.06281338,
+      "return_tip_gap_at_nominal_open_m": 0.03281338000000001,
+      "return_tip_gap_at_nominal_close_target_m": 0.02281338,
+      "native_width_at_rigid_layer_contact_m": 0.06038662,
+      "opposite_cap_collision_free_over_native_width_m": [
+        0.038186620000000004,
+        0.08
+      ],
+      "minimum_opposing_clearance_m": 0.001,
+      "nominal_stud_height_m": 0.0017,
+      "side_wall_body_engagement_when_roof_on_studs_m": 0.0096,
+      "wall_bottom_above_nominal_flat_layer_floor_when_roof_on_studs_m": -0.014250001881131935,
+      "meaning": "100 mm clear between end walls. 20 mm inward returns and top on each jaw. Simulation lower joint limits prevent cap collision; physical controller settings are unchanged. Geometric fit does not demonstrate frictional lifting."
+    }
+  },
+  "source_sha256": {
+    "profiles.json": "21d42b626697a583b604e972e165168deed59d470d6393f46cc9c2e2b98d5ab7",
+    "geometry.py": "62a7124802542b01d9fa2c89fab8e67035cf443cdf9969907537935c8f7015e1",
+    "original_fingertip.stl": "30c3e47142dce9ba82ec46edf42f1dc2825d620d23bad0a95ce1e2de902b752d"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "tabletop_placement_O_T_EE": [
+    0.9999996983767413,
+    -0.0007766894015137046,
+    0.0,
+    0.0,
+    -0.0007766894015137046,
+    -0.9999996983767413,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.6993267750740051,
+    0.10072460025548935,
+    0.0054283784702420235,
+    1.0
+  ],
+  "tabletop_home_z_offset_m": 0.0,
+  "authorized_workspace_ceiling_m": 0.5,
+  "clearance_basis": "Operator authorized a 500 mm ceiling; physical conveyor translates only placement/home by +25 mm X and +55 mm Z. Retain the source workspace; extend its placement-side X bound by the profile X offset.",
+  "setups": {
+    "tabletop": {
+      "description": "Tabletop conveyor",
+      "placement_home_offset_world_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "conveyor": {
+      "description": "Physical conveyor",
+      "placement_home_offset_world_m": [
+        0.025,
+        0.0,
+        0.055
+      ]
+    }
+  }
+}

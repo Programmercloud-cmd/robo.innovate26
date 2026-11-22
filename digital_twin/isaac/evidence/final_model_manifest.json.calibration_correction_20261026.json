@@ -1,0 +1,9 @@
+{
+  "corrected_utc": "2026-10-26T19:29:43.983980+00:00",
+  "historical_artifact": "final_model_manifest.json",
+  "historical_sha256": "9fabd150d02783a05503b2dcb02c5f6cbe089f741a7e3174a08588a7d246e6ca",
+  "artifact_preserved": true,
+  "correction_record": "digital_twin/registration/calibration_identity_correction_20261026.json",
+  "camera_identity": "Device serial943222073921 matches saved calibration; ASIC/firmware-update ID944523026963 belongs to same device. Prior different-camera inference withdrawn.",
+  "optical_application": "Saved optical hand-eye/intrinsics are conditionally eligible, not applied to an active Isaac camera. Mount continuity not independently revalidated."
+}

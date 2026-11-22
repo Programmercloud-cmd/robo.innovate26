@@ -1,0 +1,39 @@
+{
+  "schema": "known_stud_roi_detector_v1",
+  "purpose": "physical",
+  "detector_profile_id": null,
+  "camera_id": "wrist_sonix_c920",
+  "calibration_id": null,
+  "settings_profile_id": null,
+  "image_size": [1280, 720],
+  "parameters": {
+    "center_search_radius_px": null,
+    "minimum_radius_px": null,
+    "maximum_radius_px": null,
+    "maximum_axis_ratio": null,
+    "canny_low": null,
+    "canny_high": null,
+    "maximum_radial_error": null,
+    "minimum_angular_coverage": null,
+    "minimum_ring_contrast": null,
+    "duplicate_center_distance_px": null,
+    "max_frame_age_s": null
+  },
+  "confidence_calibration": {
+    "validated": false,
+    "provenance": "unmeasured",
+    "evidence_ids": [],
+    "camera_id": "wrist_sonix_c920",
+    "calibration_id": null,
+    "settings_profile_id": null,
+    "image_size": [1280, 720],
+    "camera_matrix": null,
+    "distortion": null,
+    "detector_parameters_sha256": null,
+    "opencv_versions_validated": [],
+    "evidence_files": [],
+    "input_quality": null,
+    "confidence": null
+  },
+  "note": "Known-target projected ROIs only. Record actual ring size, allowable local handoff error, target detector precision/recall, occlusion and calibrated confidence at fixed camera settings. Raw fit quality is not probability. No physical thresholds or confidence measurements have been supplied. Synthetic_validation purpose is software evidence only and cannot establish sim-to-real readiness."
+}

@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "layer": 0,
+      "placement_z_mm": 62.07379262894392,
+      "home_z_mm": 110.42837847024204,
+      "delta_mm": 55
+    },
+    {
+      "layer": 1,
+      "placement_z_mm": 62.07379262894392,
+      "home_z_mm": 110.42837847024204,
+      "delta_mm": 55
+    },
+    {
+      "layer": 2,
+      "placement_z_mm": 62.07379262894392,
+      "home_z_mm": 110.42837847024204,
+      "delta_mm": 55
+    },
+    {
+      "layer": 3,
+      "placement_z_mm": 62.07379262894392,
+      "home_z_mm": 110.42837847024204,
+      "delta_mm": 55
+    },
+    {
+      "layer": 4,
+      "placement_z_mm": 62.07379262894392,
+      "home_z_mm": 110.42837847024204,
+      "delta_mm": 55
+    },
+    {
+      "layer": 5,
+      "placement_z_mm": 62.07379262894392,
+      "home_z_mm": 110.42837847024204,
+      "delta_mm": 55
+    }
+  ],
+  "hardware_commands": 0,
+  "cache_identity_changes": "placement target and settings are included in planner cache identity"
+}

@@ -1,0 +1,14 @@
+{
+  "source_sequence": 1484326,
+  "source_unix_ns": 1793123034551017264,
+  "variant_sequence": 1484326,
+  "variant_unix_ns": 1793123034551017264,
+  "source_stale": true,
+  "variant_stale": true,
+  "measured_joints_identical": true,
+  "variant_joint_copy_error_rad": 0.0,
+  "variant_hardware_clients": 0,
+  "source_age_s": 6996.694583941004,
+  "variant_age_s": 6996.819832071007,
+  "real_motion_validation_performed": false
+}

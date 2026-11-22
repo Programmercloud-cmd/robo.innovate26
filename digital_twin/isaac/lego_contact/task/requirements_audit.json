@@ -1,0 +1,201 @@
+{
+  "schema": "lego_seating_task_evidence_audit_v1",
+  "training_ready": false,
+  "hardware_deployment_enabled": false,
+  "checks": [
+    {
+      "requirement": "specified_stack_geometry",
+      "passed": true,
+      "detail": {
+        "brick_count": 24,
+        "potential_match_count_histogram": {
+          "2": 6,
+          "4": 6,
+          "8": 12
+        },
+        "cantilever_validation_bricks": [
+          "b_0_0_1",
+          "b_0_1_1",
+          "b_0_2_1",
+          "b_3_0_1",
+          "b_3_1_1",
+          "b_3_2_1"
+        ]
+      },
+      "evidence": "stack_layout.py"
+    },
+    {
+      "requirement": "physical_plate_registration",
+      "passed": false,
+      "detail": "baseplate.T_O_plate unresolved; no invented world coordinates",
+      "evidence": null
+    },
+    {
+      "requirement": "plate_fixture_thickness_compliance",
+      "passed": false,
+      "detail": {
+        "missing_values": [
+          "thickness_m",
+          "mounting_fixation",
+          "support_compliance"
+        ],
+        "missing_validation": "No held-out physical fixture/support validator is integrated; visible geometry or edited fields cannot establish contact behavior"
+      },
+      "evidence": null
+    },
+    {
+      "requirement": "logitech_packet_schema_and_profile",
+      "passed": false,
+      "detail": "camera intrinsics/settings calibration is unvalidated",
+      "evidence": "camera_evidence_audit.json"
+    },
+    {
+      "requirement": "logitech_physical_optical_mount_validation",
+      "passed": false,
+      "detail": "Archived calibration was rejected; no independently verified current Logitech optical/mount/settings calibration artifact is available",
+      "evidence": "camera_evidence_audit.json"
+    },
+    {
+      "requirement": "measured_detector_visibility_latency",
+      "passed": false,
+      "detail": "No physical Logitech detector error/visibility/latency profile has been identified and held-out validated",
+      "evidence": null
+    },
+    {
+      "requirement": "grasp_transform_repeatability_slip",
+      "passed": false,
+      "detail": "No current single-brick visible transform or validated transform/slip bound; lower-stud detections alone are insufficient",
+      "evidence": null
+    },
+    {
+      "requirement": "world_vertical_actions",
+      "passed": true,
+      "detail": "task/control.py rejects tilted nominal/task yaw axes and measured tilt; no implicit plate-normal tool rotation",
+      "evidence": null
+    },
+    {
+      "requirement": "commissioned_control_sensing_limits",
+      "passed": false,
+      "detail": {
+        "missing_limits": [
+          "policy_rate_hz",
+          "maximum_action_xyz_m",
+          "maximum_action_yaw_rad",
+          "maximum_total_travel_xyz_m",
+          "maximum_total_yaw_rad",
+          "velocity_acceleration_jerk_limits",
+          "force_torque_limits",
+          "episode_timeout_s"
+        ],
+        "missing_validation": "Force/wrench bias/noise/delay and loaded controller response are uncommissioned; target guards are not actuator validation"
+      },
+      "evidence": "/home/nshenoy/robo.innovate26/digital_twin/isaac/lego_contact/real_contract.json"
+    },
+    {
+      "requirement": "physical_joint_impedance_response_replay",
+      "passed": false,
+      "detail": "No recorded matched physical/simulation owner-stream replay manifest",
+      "evidence": null
+    },
+    {
+      "requirement": "task_contact_capture_jam_hysteresis",
+      "passed": false,
+      "detail": "Only axial contact is implemented; no validated XY/yaw capture, rate-independent hysteresis, partial engagement or jam model",
+      "evidence": null
+    },
+    {
+      "requirement": "all_support_patterns_physically_validated",
+      "passed": false,
+      "detail": {
+        "required": [
+          "baseplate_8_studs",
+          "inner_bridge_4_studs_4_owners",
+          "outer_cantilever_2_studs_2_owners"
+        ],
+        "cantilever_bricks": [
+          "b_0_0_1",
+          "b_0_1_1",
+          "b_0_2_1",
+          "b_3_0_1",
+          "b_3_1_1",
+          "b_3_2_1"
+        ],
+        "reason": "Full-support pair evidence cannot validate 2-stud cantilevers or multi-brick bridges"
+      },
+      "evidence": null
+    },
+    {
+      "requirement": "independent_seating_retention_success",
+      "passed": false,
+      "detail": "Independent outcome protocol is implemented, but no physical retained-engagement records or calibrated reward/classifier validation exist; low Z/force drop/weld are insufficient",
+      "evidence": null
+    },
+    {
+      "requirement": "full_task_timestep_solver_sensitivity",
+      "passed": false,
+      "detail": "Existing two-timestep synthetic axial tests do not validate the full registered multi-support task",
+      "evidence": null
+    },
+    {
+      "requirement": "matched_executable_rl_plant",
+      "passed": false,
+      "detail": "No identified FR3 servo/contact/observation plant is integrated; do not substitute ideal Cartesian control or the kinematic viewer",
+      "evidence": null
+    },
+    {
+      "requirement": "bounded_training_checkpoint_evaluation",
+      "passed": false,
+      "detail": "No policy job launched/checkpoint produced: essential model and observation gates fail. VM compute is available, not the blocker",
+      "evidence": "vm_audit.json"
+    }
+  ],
+  "open_requirements": [
+    "physical_plate_registration",
+    "plate_fixture_thickness_compliance",
+    "logitech_packet_schema_and_profile",
+    "logitech_physical_optical_mount_validation",
+    "measured_detector_visibility_latency",
+    "grasp_transform_repeatability_slip",
+    "commissioned_control_sensing_limits",
+    "physical_joint_impedance_response_replay",
+    "task_contact_capture_jam_hysteresis",
+    "all_support_patterns_physically_validated",
+    "independent_seating_retention_success",
+    "full_task_timestep_solver_sensitivity",
+    "matched_executable_rl_plant",
+    "bounded_training_checkpoint_evaluation"
+  ],
+  "layout_summary": {
+    "brick_count": 24,
+    "potential_match_count_histogram": {
+      "2": 6,
+      "4": 6,
+      "8": 12
+    },
+    "cantilever_validation_bricks": [
+      "b_0_0_1",
+      "b_0_1_1",
+      "b_0_2_1",
+      "b_3_0_1",
+      "b_3_1_1",
+      "b_3_2_1"
+    ]
+  },
+  "artifact_sha256": {
+    "config.json": "005961cc849429f9d7918ba8c6e9cabd8b09503c9b48ab3da6d9dc9a6fa038ee",
+    "plate_registration_candidate.json": "85f146b3657738c77d0a3e38d82edad0886850f60343fabeefad8017d035f4be",
+    "camera_evidence_audit.json": "532b7a12008de46efe9e6589602b3dc0ec53b102a43b88bd850e95906a874437",
+    "vm_audit.json": "ba55e6b4964e33d73676b298c9d824ca1d74fdc3b4e13f582a78bd73a17f3df6",
+    "stack_layout.py": "e0c1a83d1f8237cdcf92b4879ee5805d629146082e58952ed8350a4ed05bb09f",
+    "control.py": "3660ff0a5429c3230fbf3ae88f16de5073db0f64e2758f722fecdb084f10191a",
+    "observations.py": "2e2b35bc8ed69d5294323d45ce3a37854d09feb83f96e696d943efb3fced9959",
+    "controller_replay.py": "64b442a2bc85adc11c6639725cefe1f5815c139f690f85de5bdcf34c5935f6b2",
+    "stud_detector.py": "cb294f213e7b69a227b68d8557b0adb8cf710a1e4c69f31329d2d720c511b002",
+    "contact_outcomes.py": "b04c3247d451d1ad59de8461c766ed0b449915ca20395bc43f5292d81152572f",
+    "owner_recorder.hpp": "5680df0297a272fb9e0b9b1c581f5126a6c5d5efea0e592b8a1177df8b1275f2",
+    "normalize_owner_recording.py": "299ea787dc63be2d514bfe38a86123b1ce75fec52270cfdf70e9ef977f7a6564"
+  },
+  "physical_data_missing": true,
+  "trained_checkpoint": null,
+  "warning": "Some checks deliberately remain unimplemented. This audit has no boolean-only promotion path; it must be extended with recomputed physical validators and a real matched plant before training."
+}

@@ -1,0 +1,13 @@
+{
+  "recorded": "2_0",
+  "xy_mm": [
+    617.7656054496765,
+    -143.08415353298187
+  ],
+  "grasp_z_mm": 5.4283784702420235,
+  "other_rows_unchanged": true,
+  "column_spacing_mm": 31.8,
+  "source_signature": "043d00317ad5c4d2a41907a6bc5257b047b87e08e8f6a05fbe03723aeb1ef0e9",
+  "robot_motion_sent": false,
+  "sdk_background_resumed": false
+}

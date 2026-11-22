@@ -1,0 +1,20 @@
+{
+  "applied_frames": 101,
+  "max_joint_error_rad": 1.1865311755343555e-07,
+  "receiver": {
+    "accepted": 0,
+    "rejected": 0,
+    "connections": 0
+  },
+  "distinct_samples_applied": 101,
+  "max_urdf_flange_error": {
+    "position_m": 4.515623493755329e-07,
+    "rotation_rad": 1.53301014299547e-06
+  },
+  "max_measured_tcp_error": {
+    "position_m": null,
+    "rotation_rad": null
+  },
+  "hardware_commands": 0,
+  "render_validated": false
+}

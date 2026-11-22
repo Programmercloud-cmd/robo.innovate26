@@ -1,0 +1,29 @@
+{
+  "layer": 5,
+  "stroke_m": 0.0672,
+  "duration_s": 0.77,
+  "release_start_s": 0.21,
+  "release_deadline_s": 0.5599999999999999,
+  "release_estimate_s": 0.34428698799999996,
+  "certificate": {
+    "continuous_min_full_sigma": 0.3362152876130635,
+    "continuous_min_fixed_sigma": 0.3356332657600264,
+    "jacobian_variation_bound": 0.001253622259912329,
+    "maximum_sampled_condition": 10.765265739287415,
+    "continuous_condition_bound": 10.827878182934752,
+    "max_joint_velocity_rad_s": 0.18428630255644804,
+    "max_joint_acceleration_rad_s2": 1.6488186974121497,
+    "max_joint_jerk_rad_s3": 36.170407398682556,
+    "maximum_model_position_error_m": 6.015447346383192e-10,
+    "maximum_model_orientation_error_rad": 8.606269073003589e-12,
+    "maximum_matched_speed_error_m_s": 4.674150233530128e-10,
+    "continuous_cartesian_acceleration_bound_m_s2": 1.0716654976158813,
+    "continuous_cartesian_jerk_bound_m_s3": 16.20645495257002,
+    "local_joint_jerk_limit_rad_s3": 40.0
+  },
+  "limitations": [
+    "No real motion executed",
+    "Gripper release duration is estimated and must be measured before enabling this trajectory",
+    "Tabletop placeholder: physical belt surface height and conveyor synchronization remain uncommissioned"
+  ]
+}

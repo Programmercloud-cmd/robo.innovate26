@@ -1,0 +1,198 @@
+{
+  "schema": "effective_axial_software_physics_validation_v1",
+  "real_ready": false,
+  "training_ready": false,
+  "parameter_fit_performed_in_pair_runner": false,
+  "scope": "Generic explicitly synthetic axial coupon. No LEGO-fit constants, robot, gripper, native clutch, attachment, pose-derived seating success or real hardware. Capture/jam/yaw/tilt physics and rate-independent hysteresis unsupported.",
+  "model_unit_tests": {
+    "count": 7,
+    "passed": true,
+    "artifact": "effective_evidence/unit-tests.log",
+    "coverage": [
+      "zero force before contact and finite/signed loading/withdrawal",
+      "null/negative-damping/negative-potential rejection",
+      "misalignment rejection",
+      "force continuity and deterministic no-hidden-state evaluation",
+      "closed loop non-energy-generation",
+      "equal-opposite force/moment and power identity",
+      "pure model dissipative dynamics dt refinement"
+    ]
+  },
+  "runs": {
+    "press-dt1ms": {
+      "completed": true,
+      "status": "completed_bounded_synthetic_diagnostic",
+      "guard_stop": null,
+      "synthetic_fixture_only": true,
+      "real_ready": false,
+      "training_ready": false,
+      "dt_s": 0.001,
+      "steps": 700,
+      "depth_range_m": [
+        -0.0009999993368983266,
+        0.003895356215536591
+      ],
+      "max_pair_power_identity_error_W": 5.551115123125783e-17,
+      "connector_work_J": -0.0054134559161471574,
+      "dissipation_J": 0.004820501512552072,
+      "potential_change_J": 0.00041202893232235657,
+      "discrete_connector_balance_residual_J": -0.0001809254712727293,
+      "pair_collision_exclusion_only": true,
+      "lower_body_dynamic": true,
+      "joints_created": 0,
+      "post_reset_pose_writes": 0,
+      "capture_jam_yaw_tilt": "unsupported states rejected; no capture or jam physics",
+      "rate_independent_hysteresis": false,
+      "hardware_clients": 0,
+      "source_sha256": {
+        "run_effective_pair.py": "11b235dc64400e59beca7b7938a8d8c36a99f17e76dae839a590709753ada2b2",
+        "effective_axial.py": "cd7e19deb6bc78f007c249d5d0f9c72e4074778d4475eaf49fb228bb79fce6c0",
+        "synthetic_fixture.json": "c1408a35781ec85aba84d2847411f428706a3ec390fd357fbc14865b7f610d3e"
+      },
+      "artifact_sha256": {
+        "scene.usdc": "0172723dce0bfe0910a9420a5c5f4df5f164892bc91cffc420e026be22b92deb",
+        "trace.ndjson": "2053f3ef4104e6f1de82bd26555bf51b03a4ca2d3eb6ea2bdd9bffcb6680a32b",
+        "result.json": "cc22c56f98b10e89cf4847f19469e00b07cc9bdfbffc0a4e3319715dbaec9379"
+      },
+      "error_log_entries": 0,
+      "final_trace_depth_m": 0.003122621111569192
+    },
+    "press-dt05ms": {
+      "completed": true,
+      "status": "completed_bounded_synthetic_diagnostic",
+      "guard_stop": null,
+      "synthetic_fixture_only": true,
+      "real_ready": false,
+      "training_ready": false,
+      "dt_s": 0.0005,
+      "steps": 1400,
+      "depth_range_m": [
+        -0.0009999993368983266,
+        0.003915364749729632
+      ],
+      "max_pair_power_identity_error_W": 5.551115123125783e-17,
+      "connector_work_J": -0.005278947569467655,
+      "dissipation_J": 0.004777696872222187,
+      "potential_change_J": 0.00041202655706512023,
+      "discrete_connector_balance_residual_J": -8.922414018034769e-05,
+      "pair_collision_exclusion_only": true,
+      "lower_body_dynamic": true,
+      "joints_created": 0,
+      "post_reset_pose_writes": 0,
+      "capture_jam_yaw_tilt": "unsupported states rejected; no capture or jam physics",
+      "rate_independent_hysteresis": false,
+      "hardware_clients": 0,
+      "source_sha256": {
+        "run_effective_pair.py": "11b235dc64400e59beca7b7938a8d8c36a99f17e76dae839a590709753ada2b2",
+        "effective_axial.py": "cd7e19deb6bc78f007c249d5d0f9c72e4074778d4475eaf49fb228bb79fce6c0",
+        "synthetic_fixture.json": "c1408a35781ec85aba84d2847411f428706a3ec390fd357fbc14865b7f610d3e"
+      },
+      "artifact_sha256": {
+        "scene.usdc": "9a1dbfc138a9c791607b3406cd49e82339eed6a2ea99e101ea8820cb92bb1b2f",
+        "trace.ndjson": "7a2271d4ed3696c0fdbbb032b03cb0c8ff6ee3c619fbbbf58c5b250d6656c50d",
+        "result.json": "9c6a110ac98f3826ad29f77e74ca3e21ca8d9b6bde41be9027a1d3d29842d300"
+      },
+      "error_log_entries": 0,
+      "final_trace_depth_m": 0.003122609004373533
+    },
+    "withdrawal-public-launcher": {
+      "completed": false,
+      "status": "domain_guard_stop",
+      "guard_stop": {
+        "reason": "unsupported axial admission: tilt_rad",
+        "step": 1556,
+        "time_s": 0.778,
+        "depth_m": -0.0013472052658941094,
+        "xy_error_m": 2.5551952989301862e-05,
+        "yaw_rad": 2.591915191593044e-07,
+        "tilt_rad": 0.0013810679518877884,
+        "lower_pose_xyzw": [
+          -2.8825918434449704e-06,
+          3.0046733172639506e-06,
+          0.042207490652799606,
+          -0.0005709307733923197,
+          -0.0003155791782774031,
+          -6.829347398706886e-08,
+          0.9999997615814209
+        ],
+        "upper_pose_xyzw": [
+          2.8825918434449704e-06,
+          -3.0046733172639506e-06,
+          0.055554717779159546,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "no_force_applied_after_rejection": true
+      },
+      "synthetic_fixture_only": true,
+      "real_ready": false,
+      "training_ready": false,
+      "dt_s": 0.0005,
+      "steps": 1556,
+      "depth_range_m": [
+        -0.0011406169018206482,
+        0.003915364749729632
+      ],
+      "max_pair_power_identity_error_W": 1.1796119636642288e-16,
+      "connector_work_J": -0.006376255932029765,
+      "dissipation_J": 0.006265723710312095,
+      "potential_change_J": 0.0,
+      "discrete_connector_balance_residual_J": -0.00011053222171767026,
+      "pair_collision_exclusion_only": true,
+      "lower_body_dynamic": true,
+      "joints_created": 0,
+      "post_reset_pose_writes": 0,
+      "capture_jam_yaw_tilt": "unsupported states rejected; no capture or jam physics",
+      "rate_independent_hysteresis": false,
+      "hardware_clients": 0,
+      "source_sha256": {
+        "run_effective_pair.py": "85243bbd41eaeceaaf6f2b66d1c50314dbe887ddad52cb1ad6fee6736c04cbf9",
+        "effective_axial.py": "cd7e19deb6bc78f007c249d5d0f9c72e4074778d4475eaf49fb228bb79fce6c0",
+        "synthetic_fixture.json": "c1408a35781ec85aba84d2847411f428706a3ec390fd357fbc14865b7f610d3e"
+      },
+      "artifact_sha256": {
+        "scene.usdc": "a1a6bff6a28d8a19e57f4822c1e49770f8df6db8543d2aab9e2487cd9051a42b",
+        "trace.ndjson": "d5070bc805cfb413108c6832f7f1d29c041b68869bd87df681a1b417239bf7d3",
+        "result.json": "36e6511c92cac96a10aecba4765f6fe4e9f619fba4eac4c03827df30dc409f70"
+      },
+      "error_log_entries": 0,
+      "final_trace_depth_m": -0.0011406169018206482
+    }
+  },
+  "press_dt_comparison": {
+    "coarse_dt_s": 0.001,
+    "fine_dt_s": 0.0005,
+    "matched_time_max_abs_depth_difference_m": 6.846990436315363e-05,
+    "matched_time_final_abs_depth_difference_m": 1.3038518225164109e-08,
+    "absolute_discrete_connector_balance_residual_J": [
+      0.0001809254712727293,
+      8.922414018034769e-05
+    ],
+    "interpretation": "A bounded two-timestep comparison only, not a converged contact solution or full-PhysX passivity proof."
+  },
+  "withdrawal_guard_public_exit_code": 2,
+  "withdrawal_interpretation": "Dynamic unanchored lower coupon moves during forced withdrawal; after separation relative tilt exceeds strict admission at0.778s. Saved partial trace and public launcher exit2. No demonstrated real brick withdrawal/retention or capture robustness.",
+  "force_work_accounting": "Exact potential integral, nonnegative damping and power identity apply to model. Recorded discrete connector work+potential+dissipation residual decreases with timestep; floor/whole-physics energy audit is not claimed.",
+  "post_reset_pose_writes": 0,
+  "pair_collision_scope": "Only Lower-Upper filtered; both bodies dynamic and Support collision retained. Pair collider overlap is intentional because effective forces substitute for unresolved engagement geometry.",
+  "teardown": "Public shell waits for fast-shutdown child and checks result to return2 on a saved guard stop. One earlier full-shutdown attempt segfaulted after output; its log retained as unaccepted teardown trial. Final public launcher returns2 without errorlogentries and leaves no child.",
+  "local_evidence_root": "digital_twin/isaac/lego_contact/effective_evidence",
+  "remote_root": "/home/ubuntu/workspace/lego-contact-20261026/effective",
+  "current_source_sha256": {
+    "effective_axial.py": "cd7e19deb6bc78f007c249d5d0f9c72e4074778d4475eaf49fb228bb79fce6c0",
+    "effective_fit_schema.json": "3216972aea257a84c3d937fc62d645b6850e20c7eadb74b64d32a978f1b13725",
+    "synthetic_fixture.json": "c1408a35781ec85aba84d2847411f428706a3ec390fd357fbc14865b7f610d3e",
+    "run_effective_pair.py": "85243bbd41eaeceaaf6f2b66d1c50314dbe887ddad52cb1ad6fee6736c04cbf9",
+    "test_effective_axial.py": "c677317125b549ba8987903a43857e7139b2ab6b11691effdc8f28d06f2dded2",
+    "launch_effective.sh": "a67b36d589703dbd03a2b663abf18436be97fe1dde173b1a7c231aa9092f5c5f",
+    "physics_only.kit": "fd848326a979c2157f99557279643f6f11923085389532d8051fdeddc78a40d6"
+  },
+  "readiness_limits": [
+    "All actual fit/template coefficients remain unidentified/null.",
+    "Synthetic model and input waveforms are arbitrary software/physics fixtures, not proposed LEGO/control settings.",
+    "TCP/wrench-only fitting identifies a lumped observed coordinate response; brick-relative pose is needed to distinguish brick/grip/fixture/servo effects.",
+    "Force replay fitting is separate from Isaac dynamics and physical identification."
+  ]
+}

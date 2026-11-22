@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "tabletop_placement_O_T_EE": [
+    0.9999996983767413,
+    -0.0007766894015137046,
+    0.0,
+    0.0,
+    -0.0007766894015137046,
+    -0.9999996983767413,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.6993267750740051,
+    0.10072460025548935,
+    0.0054283784702420235,
+    1.0
+  ],
+  "tabletop_home_z_offset_m": 0.0,
+  "authorized_workspace_ceiling_m": 0.5,
+  "clearance_basis": "Operator authorized a 500 mm ceiling; physical conveyor translates only placement/home by +25 mm X and +55 mm Z. Retain the source workspace; extend its placement-side X bound by the profile X offset.",
+  "setups": {
+    "tabletop": {
+      "description": "Tabletop conveyor",
+      "placement_home_offset_world_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "conveyor": {
+      "description": "Physical conveyor",
+      "placement_home_offset_world_m": [
+        0.025,
+        0.0,
+        0.055
+      ],
+      "placement_height_teaching": {
+        "world_z_m": 0.0635884627699852,
+        "previous_placement_world_z_m": 0.06207379262894392,
+        "operator_confirmed": true,
+        "operator_statement": "The height it stopped at was perfect",
+        "captured_utc": "2026-10-28T07:53:38.604883+00:00",
+        "capture": "teaching/factory_cycle/height_teaching/20261028T075338.604883Z_conveyor_capture.json",
+        "capture_sha256": "05c11741ba30730029a855c23d6427f7f3526e5e99debeceda3775f7dfb10448",
+        "stopped_run": "teaching/factory_cycle/runs/rows_20261028T073926.808089Z/5_0",
+        "stopped_measured_world_z_m": 0.06353878974914551,
+        "source_and_home_heights_unchanged": true
+      }
+    },
+    "conveyor_moving": {
+      "description": "Physical conveyor with speed-matched placement",
+      "geometry_profile": "conveyor",
+      "moving_parameters": {
+        "belt_velocity_base_m_s": [
+          0.0,
+          0.02,
+          0.0
+        ],
+        "forward_travel_m": 0.066,
+        "minimum_release_vy_m_s": 0.015,
+        "maximum_release_vy_m_s": 0.025,
+        "release_speed_bounds_source": "Operator requested 15\u201325 mm/s gripper release-speed range; --execute-task monitors without enforcing speed matching",
+        "current_surface": "Physical conveyor geometry; live conveyor speed/clearance supervised by operator",
+        "belt_velocity_source": "Operator selected 0.020 m/s moving physical conveyor"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "paused_utc": "2026-10-27T14:56:41.313560+00:00",
+  "reason": "User requests full SDK release for manual Desk teaching",
+  "relay_stopped": true,
+  "arm_reader_stopped": true,
+  "hand_reader_stopped": true,
+  "exclusive_locks_available": {
+    "owner.lock": true,
+    "hand.lock": true,
+    "foreground.lock": true,
+    "hand_foreground.lock": true
+  },
+  "automatic_resume": false,
+  "recording_policy": "Only a temporary stationary read_pose when operator explicitly asks to save a pose; no background SDK reconnection during guiding"
+}

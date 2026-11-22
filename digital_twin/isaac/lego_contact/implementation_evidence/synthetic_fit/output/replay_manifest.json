@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "model_id": "synthetic-roundtrip-only",
+  "conditions_id": "arbitrary-coupon-only",
+  "tolerances": {
+    "force_rmse_N": 1e-09,
+    "peak_error_N": 1e-09,
+    "work_error_J": 1e-10
+  },
+  "trials": [
+    {
+      "id": "fit",
+      "path": "trial-0.ndjson",
+      "split": "fit",
+      "provenance": "synthetic",
+      "conditions_id": "arbitrary-coupon-only"
+    },
+    {
+      "id": "validation",
+      "path": "trial-1.ndjson",
+      "split": "validation",
+      "provenance": "synthetic",
+      "conditions_id": "arbitrary-coupon-only"
+    }
+  ]
+}

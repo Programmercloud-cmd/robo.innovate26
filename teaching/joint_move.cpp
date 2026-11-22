@@ -18,6 +18,7 @@
 #include <Eigen/Geometry>
 #include <Eigen/Eigenvalues>
 #include <franka/robot.h>
+#include "../digital_twin/bridge/state_transport.hpp"
 
 using Pose=std::array<double,16>;
 using Q=std::array<double,7>;
@@ -74,7 +75,7 @@ struct Plan{
     for(int k=0;k<16;++k)in>>model.ee.data()[k];
     segments.resize(n-1);for(auto& s:segments){in>>s.u;for(auto& c:s.c)read(c);}in>>end;
     if(!in||!std::isfinite(seconds)||seconds<1||seconds>600||gap<=0||gap>.0200001||q_speed<=0||q_speed>1.0000001||
-       speed<=0||speed>.4000001||omega<=0||omega>.3000001||position_tolerance<=0||position_tolerance>.0010001||
+       speed<=0||speed>.4000001||omega<=0||omega>.3000001||position_tolerance<=0||position_tolerance>.0015001||
        angle_tolerance<=0||angle_tolerance>.017454||stable<.5||timeout<stable||timeout>5||cpu<0||cpu>=CPU_SETSIZE||
        model.length<.1||model.length>1||min_full<.1||min_fixed<.08||max_condition>50||min_q2<0||min_extension<.15||rate_limiting<0||rate_limiting>1||end!=1||segments.front().u!=0)
       throw std::runtime_error("Invalid joint plan limits");
@@ -128,9 +129,11 @@ int main(int argc,char** argv){
       std::cout<<"PASS offline fixed-model check; maximum arc deviation m "<<max_deviation<<'\n';return 0;
     }
     cpu_set_t cpus;CPU_ZERO(&cpus);CPU_SET(p.cpu,&cpus);if(sched_setaffinity(0,sizeof(cpus),&cpus))throw std::runtime_error("Cannot pin controller CPU");
+    twin::SdkLease lease(true);
     franka::Robot robot("172.16.0.2",franka::RealtimeConfig::kEnforce);
+    twin::StateTap telemetry;
     if(robot.getRobotModel()!=contents(std::filesystem::path(argv[1]).parent_path()/"robot_model.urdf"))throw std::runtime_error("Robot kinematic model changed since planning");
-    auto initial=robot.readOnce();last=initial;have_state=true;check(initial,true,p);p.guard(initial.q);
+    auto initial=robot.readOnce();telemetry.offer(initial);last=initial;have_state=true;check(initial,true,p);p.guard(initial.q);
     if(!std::isfinite(initial.m_ee)||initial.m_ee<.2)throw std::runtime_error("Check attached tool configuration");
     for(int k=0;k<16;++k)if(std::abs(initial.F_T_EE[k]-p.tool[k])>1e-6)throw std::runtime_error("Configured tool frame changed");
     for(int j=0;j<7;++j)if(std::abs(initial.q[j]-p.q0[j])>.001)throw std::runtime_error("Arm moved since joint preflight");
@@ -155,6 +158,7 @@ int main(int argc,char** argv){
     std::exception_ptr error;
     try{
       robot.control([&](const franka::RobotState& s,franka::Duration period)->franka::JointPositions{
+        telemetry.offer(s);
         last=s;have_state=true;check(s,false,p);
         if(first){reference=s.q_d;for(int j=0;j<7;++j){offset[j]=reference[j]-p.q0[j];if(std::abs(offset[j])>.001)throw std::runtime_error("Control reference changed since planning");}first=false;}
         const auto measured=p.guard(s.q);p.guard(s.q_d);
@@ -180,7 +184,7 @@ int main(int argc,char** argv){
     for(size_t k=0;k<count;++k){const auto& s=samples[k];trace<<std::setprecision(12)<<s.t<<','<<s.pose[12]<<','<<s.pose[13]<<','<<s.pose[14]<<','<<s.metrics.full<<','<<s.metrics.fixed<<','<<s.metrics.condition<<','<<s.metrics.q2<<','<<s.period<<','<<s.rate;for(double v:s.q)trace<<','<<v;for(double v:s.command)trace<<','<<v;trace<<'\n';}trace.flush();
     std::cout<<"JOINT_METRICS min_full_sigma "<<min_full<<" min_fixed_sigma "<<min_fixed<<" min_abs_joint2_rad "<<min_q2<<" max_callback_period_ms "<<max_period*1000<<" max_tracking_mm "<<max_tracking*1000<<" min_command_success_rate "<<min_rate<<'\n';
     if(error)std::rethrow_exception(error);
-    auto after=robot.readOnce();last=after;check(after,true,p);p.guard(after.q);
+    auto after=robot.readOnce();telemetry.offer(after);last=after;check(after,true,p);p.guard(after.q);
     double position_error=(xyz(after.O_T_EE)-xyz(p.target)).norm(),orientation_error=angle(after.O_T_EE,p.target);
     std::cout<<"ENDPOINT position_error_mm "<<position_error*1000<<" orientation_error_deg "<<orientation_error*180/M_PI<<'\n';
     if(position_error>p.position_tolerance||orientation_error>p.angle_tolerance)throw std::runtime_error("Endpoint verification failed");

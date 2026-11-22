@@ -1,0 +1,18 @@
+{
+  "task_release_speed_gate": "disabled_before_and_during_opening_and_at_final_verification",
+  "task_speed_measurements_retained": true,
+  "task_speed_mismatch_reports_warning_without_claiming_verification": true,
+  "normal_release_speed_range_m_s": [
+    0.015,
+    0.025
+  ],
+  "commanded_speed_m_s": 0.02,
+  "regression_tests_passed": 14,
+  "native_task_and_normal_configuration_checks_passed": true,
+  "model_preflight": "teaching/factory_cycle/runs/rows_20261028T101110.497889Z/preflight.json",
+  "native_moving_sha256": "8c83743de7ddc87e01c926f177c85293e370b27b4cd38a7305adec2aa44a04e5",
+  "stationary_controller_unchanged": true,
+  "robot_sdk_connections": 0,
+  "robot_motion": false,
+  "inventory_advanced": false
+}

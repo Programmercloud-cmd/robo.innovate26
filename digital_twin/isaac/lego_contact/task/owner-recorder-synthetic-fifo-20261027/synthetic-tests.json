@@ -1,0 +1,1 @@
+{"provenance":"synthetic","tests_passed":6,"hardware_connections":0,"training_ready":false,"test_cases":["full_state","declared_origin","overflow","sequence","nonfinite","disk_failure"]}

@@ -1,0 +1,13 @@
+{
+  "completed": true,
+  "placement_mode": "stationary_vertical",
+  "elevated_empty_hand": true,
+  "planner_identity": "f921d4fb11ecc389692e059a54f6be1d90a0db5038c6e3ae5460781f9a870424",
+  "controller_sha256": "6e23899f0fe0bcd4490b13e56d69485238393ec30b2571b4434237cbe10d7d44",
+  "opening_wall_latency_s": 0.46950916899368167,
+  "opening_sdk_latency_s": 0.4529063639929518,
+  "returned_home_open": true,
+  "final_mode": "Idle",
+  "final_errors": [],
+  "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/stationary_empty_20261027T153427.716943Z"
+}

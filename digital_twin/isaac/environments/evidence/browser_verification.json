@@ -1,0 +1,13 @@
+{
+  "title": "FR3 simulation selector",
+  "child": "http://127.0.0.1:18767/index.html",
+  "header": "FR3 \u00b7 board \u00b7 wide fingertips",
+  "status": "STALE \u00b7 holding last observed pose\nlive_hardware_read_only \u00b7 Idle\nHand: STALE / unavailable\nSim hand 70.0 mm \u00b7 Retained simulated opening; physical hand telemetry unavailable\nSequence 1484326 \u00b7 sample age 8574007 ms\nIsaac joint copy error 0.00e+0 rad\nURDF flange position error 0.46 \u00b5m",
+  "selector_round_trip_passed": true,
+  "returned": {
+    "title": "FR3 simulation selector",
+    "child": "http://127.0.0.1:18767/index.html",
+    "header": "FR3 \u00b7 board \u00b7 wide fingertips",
+    "status": "STALE \u00b7 holding last observed pose\nlive_hardware_read_only \u00b7 Idle\nHand: STALE / unavailable\nSim hand 70.0 mm \u00b7 Retained simulated opening; physical hand telemetry unavailable\nSequence 1484326 \u00b7 sample age 8578712 ms\nIsaac joint copy error 0.00e+0 rad\nURDF flange position error 0.46 \u00b5m"
+  }
+}

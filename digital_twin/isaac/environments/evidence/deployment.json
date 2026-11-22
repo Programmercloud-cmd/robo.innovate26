@@ -1,0 +1,13 @@
+{
+  "environment": "board",
+  "fingers": "wide",
+  "output": "/home/ubuntu/workspace/fr3-digital-twin-20261026/simulation_variants/board-wide-20261027T200529257197Z",
+  "isaac_pid": 1285102,
+  "isaac_pid_start": "7721278",
+  "log": "/home/ubuntu/workspace/fr3-digital-twin-20261026/simulation_variants/board-wide-20261027T200529257197Z.log",
+  "upstream": "/home/ubuntu/workspace/fr3-digital-twin-20261026/active_session.json",
+  "hardware_clients": 0,
+  "http_pid": 1285777,
+  "http_pid_start": "7723942",
+  "remote_port": 8767
+}

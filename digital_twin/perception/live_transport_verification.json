@@ -1,0 +1,10 @@
+{
+  "evidence_type": "actual_live_display_transport_pause_no_robot_motion",
+  "stale_marked": true,
+  "original_camera_timestamp_preserved": true,
+  "all_slots_uncertain": true,
+  "isaac_stale": true,
+  "robot_sequence_before": 1097314,
+  "robot_sequence_during_pause": 1097415,
+  "fresh_feed_recovered": true
+}

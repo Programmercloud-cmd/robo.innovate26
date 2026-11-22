@@ -1,0 +1,106 @@
+{
+  "started_utc": "2026-10-27T14:52:42.932522+00:00",
+  "status": "all18sourceposes saved;12within-row columns inferred and verified",
+  "anchors_to_record": [
+    "0_0",
+    "1_0",
+    "2_0",
+    "3_0",
+    "4_0",
+    "5_0"
+  ],
+  "recorded_anchors": [
+    "0_0",
+    "1_0",
+    "2_0",
+    "3_0",
+    "4_0",
+    "5_0"
+  ],
+  "direct_grasp_offset_m": 0,
+  "column_step_in_base_m": [
+    -0.0318,
+    0,
+    0
+  ],
+  "row_spacing_policy": "Measured0_0\u21921_0 XY vector; rows2..5 extrapolated",
+  "prior_positions_sha256": "0bbbaca42b77c1f1e08898b5532cd09272507f6ad30e1694020bc0dd93717974",
+  "prior_batch": "teaching/factory_cycle/runs/rows_20261027T144739.762724Z",
+  "robot_motion_sent": false,
+  "sdk_released_for_desk": {
+    "paused_utc": "2026-10-27T14:56:41.313560+00:00",
+    "reason": "User requests full SDK release for manual Desk teaching",
+    "relay_stopped": true,
+    "arm_reader_stopped": true,
+    "hand_reader_stopped": true,
+    "exclusive_locks_available": {
+      "owner.lock": true,
+      "hand.lock": true,
+      "foreground.lock": true,
+      "hand_foreground.lock": true
+    },
+    "automatic_resume": false,
+    "recording_policy": "Only a temporary stationary read_pose when operator explicitly asks to save a pose; no background SDK reconnection during guiding"
+  },
+  "anchors_pending": [],
+  "measurements": {
+    "0_0": {
+      "xyz_m": [
+        0.6208236217498779,
+        -0.3057510256767273,
+        0.0054283784702420235
+      ],
+      "scope": "XY only; prior Z retained",
+      "raw_capture": "teaching/history/point_0_0_xy_20261027T145924.703829Z.json",
+      "recorded_utc": "2026-10-27T14:59:24.703829+00:00"
+    },
+    "1_0": {
+      "xyz_m": [
+        0.6188729405403137,
+        -0.2244035005569458,
+        0.0054283784702420235
+      ],
+      "raw_capture": "teaching/history/point_0_0_xy_grid_20261027T150805.562055Z.json",
+      "scope": "XY only; prior grasp Z retained",
+      "operator_label_confirmed": true
+    },
+    "2_0": {
+      "xyz_m": [
+        0.6177656054496765,
+        -0.14308415353298187,
+        0.0054283784702420235
+      ],
+      "scope": "XY only; prior grasp Z retained",
+      "raw_capture": "teaching/history/point_2_0_xy_20261027T151923.195307Z.json",
+      "recorded_utc": "2026-10-27T15:19:23.195307+00:00"
+    },
+    "4_0": {
+      "xyz_m": [
+        0.6149128079414368,
+        0.01849956624209881,
+        0.0054283784702420235
+      ],
+      "scope": "Adjusted XY only; prior grasp Z retained",
+      "raw_capture": "teaching/history/point_4_0_xy_20261027T152810.416293Z.json",
+      "recorded_utc": "2026-10-27T15:28:10.416293+00:00"
+    }
+  },
+  "independently_unmeasured_rows": [
+    3
+  ],
+  "row_step_in_base_m": [
+    -0.001950681209564209,
+    0.0813475251197815,
+    0.0
+  ],
+  "updated_utc": "2026-10-27T15:13:59.030786+00:00",
+  "operator_confirmed_inferred_rows": [
+    3
+  ],
+  "columns_finalized": true,
+  "column_offsets_world_x_mm": [
+    -31.8,
+    -63.6
+  ],
+  "inference_verification": "teaching/history/final_column_inference_20261027T152923.571829Z.json"
+}

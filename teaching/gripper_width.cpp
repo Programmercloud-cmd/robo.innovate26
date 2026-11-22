@@ -8,11 +8,12 @@
 #include <string>
 #include <franka/gripper.h>
 #include <franka/robot.h>
+#include "../digital_twin/bridge/state_transport.hpp"
 
 // Explicit finger-position command only. No homing, recovery or arm motion.
 int main(int argc,char** argv) {
   if(argc==2 && std::string(argv[1])=="--state") {
-    try { franka::Gripper hand("172.16.0.2");std::cout<<std::setprecision(17)<<hand.readOnce()<<'\n';return 0; }
+    try { twin::HandLease lease;franka::Gripper hand("172.16.0.2");std::cout<<std::setprecision(17)<<hand.readOnce()<<'\n';return 0; }
     catch(const std::exception& e) {std::cerr<<e.what()<<'\n';return 1;}
   }
   if(argc!=3 || std::string(argv[2])!="--execute")return 2;
@@ -24,12 +25,13 @@ int main(int argc,char** argv) {
     if(!input || !std::isfinite(width) || !std::isfinite(speed) || !std::isfinite(tolerance) ||
        width<0 || width>.08 || speed<=0 || speed>.1 || tolerance<=0 || tolerance>.001 || (approach<0||approach>2) || (approach==2&&(!std::isfinite(contact_upper)||contact_upper<width||contact_upper>.08)))
       throw std::runtime_error("Invalid gripper position command");
-    franka::Robot arm("172.16.0.2",franka::RealtimeConfig::kIgnore);
-    auto state=arm.readOnce();
+    franka::RobotState state;
+    {twin::SdkLease lease(true);franka::Robot arm("172.16.0.2",franka::RealtimeConfig::kIgnore);state=arm.readOnce();}
     if(state.robot_mode!=franka::RobotMode::kIdle || state.current_errors)
       throw std::runtime_error("Gripper command requires an idle, fault-free arm");
     for(double velocity:state.dq)if(!std::isfinite(velocity)||std::abs(velocity)>.01)
       throw std::runtime_error("Arm is not stationary");
+    twin::HandLease hand_lease;
     franka::Gripper gripper("172.16.0.2");const auto before=gripper.readOnce();
     std::cout<<"START_GRIPPER "<<before<<'\n';
     if(!std::isfinite(before.max_width)||before.max_width<width)
@@ -39,7 +41,9 @@ int main(int argc,char** argv) {
     bool moved=false;
     if(std::abs(before.width-width)>tolerance) {
       moved=true;
+      const auto move_started=std::chrono::steady_clock::now();
       if(!gripper.move(width,speed))throw std::runtime_error("Finger position command did not complete");
+      std::cout<<"MOVE_DURATION_S "<<std::chrono::duration<double>(std::chrono::steady_clock::now()-move_started).count()<<'\n';
     }
     auto after=gripper.readOnce();
     using Clock=std::chrono::steady_clock;

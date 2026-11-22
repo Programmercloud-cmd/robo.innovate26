@@ -1,0 +1,38 @@
+{
+  "task_id": "factory_columns_of_four",
+  "development_sources": [
+    "0_0",
+    "0_1",
+    "0_2"
+  ],
+  "actual_alignment_trials_passed": 2,
+  "verified_picks": 0,
+  "verified_transfers": 0,
+  "verified_placements": 0,
+  "calibration": {
+    "physical_samples": 7,
+    "frames_reprocessed": 21,
+    "residual_weighted_pixels": 0.5045404080409253,
+    "normalized_condition": 1.4153902905246991
+  },
+  "alignment_success_logs": [
+    "runs/20261026T170951.110361Z",
+    "runs/20261026T171317.486820Z/events.jsonl"
+  ],
+  "best_recorded_alignment_residual": {
+    "translation_m": 7.68658309e-05,
+    "yaw_deg": 0.053292
+  },
+  "verified_world_x_transfer_preview_mm": 15,
+  "failed_world_x_transfer_preview_mm": 20,
+  "requested_world_x_transfer_mm": 85,
+  "transfer_config_changed": false,
+  "robot_motion_during_reach_checks": false,
+  "status": "source_alignment_demonstrated_destination_change_required_before_transfer",
+  "limitations": [
+    "No four-brick grasp, extraction or placement verified",
+    "Monocular calibration is local to row 0 at +50 mm observation height",
+    "Final descent has no visual correction",
+    "Destination +85 mm in world X is outside the solved vertical-tool reach at current source layout"
+  ]
+}

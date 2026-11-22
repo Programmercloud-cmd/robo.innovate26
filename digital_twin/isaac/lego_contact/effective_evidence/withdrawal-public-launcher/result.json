@@ -1,0 +1,58 @@
+{
+  "completed": false,
+  "status": "domain_guard_stop",
+  "guard_stop": {
+    "reason": "unsupported axial admission: tilt_rad",
+    "step": 1556,
+    "time_s": 0.778,
+    "depth_m": -0.0013472052658941094,
+    "xy_error_m": 2.5551952989301862e-05,
+    "yaw_rad": 2.591915191593044e-07,
+    "tilt_rad": 0.0013810679518877884,
+    "lower_pose_xyzw": [
+      -2.8825918434449704e-06,
+      3.0046733172639506e-06,
+      0.042207490652799606,
+      -0.0005709307733923197,
+      -0.0003155791782774031,
+      -6.829347398706886e-08,
+      0.9999997615814209
+    ],
+    "upper_pose_xyzw": [
+      2.8825918434449704e-06,
+      -3.0046733172639506e-06,
+      0.055554717779159546,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "no_force_applied_after_rejection": true
+  },
+  "synthetic_fixture_only": true,
+  "real_ready": false,
+  "training_ready": false,
+  "dt_s": 0.0005,
+  "steps": 1556,
+  "depth_range_m": [
+    -0.0011406169018206482,
+    0.003915364749729632
+  ],
+  "max_pair_power_identity_error_W": 1.1796119636642288e-16,
+  "connector_work_J": -0.006376255932029765,
+  "dissipation_J": 0.006265723710312095,
+  "potential_change_J": 0.0,
+  "discrete_connector_balance_residual_J": -0.00011053222171767026,
+  "pair_collision_exclusion_only": true,
+  "lower_body_dynamic": true,
+  "joints_created": 0,
+  "post_reset_pose_writes": 0,
+  "capture_jam_yaw_tilt": "unsupported states rejected; no capture or jam physics",
+  "rate_independent_hysteresis": false,
+  "hardware_clients": 0,
+  "source_sha256": {
+    "run_effective_pair.py": "85243bbd41eaeceaaf6f2b66d1c50314dbe887ddad52cb1ad6fee6736c04cbf9",
+    "effective_axial.py": "cd7e19deb6bc78f007c249d5d0f9c72e4074778d4475eaf49fb228bb79fce6c0",
+    "synthetic_fixture.json": "c1408a35781ec85aba84d2847411f428706a3ec390fd357fbc14865b7f610d3e"
+  }
+}

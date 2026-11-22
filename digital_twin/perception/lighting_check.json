@@ -1,0 +1,279 @@
+{
+  "samples": [
+    {
+      "frame_unix_ns": 1793111019836732875,
+      "occupied": 110,
+      "reasons": {
+        "fixed_robot_lamp_or_cable_occlusion": 13,
+        "color_reference_ambiguous": 13,
+        "color_confidence_below_threshold": 4,
+        "bounded_temporal_confirmation_pending": 2,
+        "no_positive_empty_reference": 2
+      },
+      "guard_age_at_processing_s": 0.290334272
+    },
+    {
+      "frame_unix_ns": 1793111020036716297,
+      "occupied": 111,
+      "reasons": {
+        "fixed_robot_lamp_or_cable_occlusion": 13,
+        "color_reference_ambiguous": 13,
+        "bounded_temporal_confirmation_pending": 1,
+        "color_confidence_below_threshold": 4,
+        "no_positive_empty_reference": 2
+      },
+      "guard_age_at_processing_s": 0.28593489
+    },
+    {
+      "frame_unix_ns": 1793111020236724175,
+      "occupied": 111,
+      "reasons": {
+        "fixed_robot_lamp_or_cable_occlusion": 13,
+        "color_reference_ambiguous": 11,
+        "color_confidence_below_threshold": 6,
+        "bounded_temporal_confirmation_pending": 1,
+        "no_positive_empty_reference": 2
+      },
+      "guard_age_at_processing_s": 0.2529811
+    },
+    {
+      "frame_unix_ns": 1793111020436732416,
+      "occupied": 112,
+      "reasons": {
+        "fixed_robot_lamp_or_cable_occlusion": 13,
+        "color_reference_ambiguous": 13,
+        "color_confidence_below_threshold": 4,
+        "no_positive_empty_reference": 2
+      },
+      "guard_age_at_processing_s": 0.228070685
+    },
+    {
+      "frame_unix_ns": 1793111020668726175,
+      "occupied": 112,
+      "reasons": {
+        "fixed_robot_lamp_or_cable_occlusion": 13,
+        "color_reference_ambiguous": 13,
+        "color_confidence_below_threshold": 3,
+        "no_positive_empty_reference": 2,
+        "bounded_temporal_confirmation_pending": 1
+      },
+      "guard_age_at_processing_s": 0.266657097
+    },
+    {
+      "frame_unix_ns": 1793111020868721046,
+      "occupied": 111,
+      "reasons": {
+        "fixed_robot_lamp_or_cable_occlusion": 13,
+        "color_reference_ambiguous": 14,
+        "bounded_temporal_confirmation_pending": 1,
+        "color_confidence_below_threshold": 3,
+        "no_positive_empty_reference": 2
+      },
+      "guard_age_at_processing_s": 0.241749687
+    },
+    {
+      "frame_unix_ns": 1793111021068725065,
+      "occupied": 111,
+      "reasons": {
+        "fixed_robot_lamp_or_cable_occlusion": 13,
+        "color_reference_ambiguous": 13,
+        "color_confidence_below_threshold": 2,
+        "bounded_temporal_confirmation_pending": 3,
+        "no_positive_empty_reference": 2
+      },
+      "guard_age_at_processing_s": 0.209513489
+    },
+    {
+      "frame_unix_ns": 1793111021268736857,
+      "occupied": 111,
+      "reasons": {
+        "fixed_robot_lamp_or_cable_occlusion": 13,
+        "color_reference_ambiguous": 13,
+        "color_confidence_below_threshold": 2,
+        "no_positive_empty_reference": 3,
+        "bounded_temporal_confirmation_pending": 2
+      },
+      "guard_age_at_processing_s": 0.215677314
+    },
+    {
+      "frame_unix_ns": 1793111021504678036,
+      "occupied": 109,
+      "reasons": {
+        "fixed_robot_lamp_or_cable_occlusion": 13,
+        "color_reference_ambiguous": 16,
+        "color_confidence_below_threshold": 3,
+        "bounded_temporal_confirmation_pending": 1,
+        "no_positive_empty_reference": 2
+      },
+      "guard_age_at_processing_s": 0.259365522
+    },
+    {
+      "frame_unix_ns": 1793111021704683975,
+      "occupied": 111,
+      "reasons": {
+        "fixed_robot_lamp_or_cable_occlusion": 13,
+        "color_reference_ambiguous": 13,
+        "bounded_temporal_confirmation_pending": 2,
+        "color_confidence_below_threshold": 3,
+        "no_positive_empty_reference": 2
+      },
+      "guard_age_at_processing_s": 0.22066335
+    },
+    {
+      "frame_unix_ns": 1793111021936732097,
+      "occupied": 112,
+      "reasons": {
+        "fixed_robot_lamp_or_cable_occlusion": 13,
+        "color_reference_ambiguous": 15,
+        "color_confidence_below_threshold": 2,
+        "no_positive_empty_reference": 2
+      },
+      "guard_age_at_processing_s": 0.222711917
+    },
+    {
+      "frame_unix_ns": 1793111022136736206,
+      "occupied": 112,
+      "reasons": {
+        "fixed_robot_lamp_or_cable_occlusion": 13,
+        "color_reference_ambiguous": 11,
+        "bounded_temporal_confirmation_pending": 2,
+        "color_confidence_below_threshold": 4,
+        "no_positive_empty_reference": 2
+      },
+      "guard_age_at_processing_s": 0.229202015
+    },
+    {
+      "frame_unix_ns": 1793111022336696097,
+      "occupied": 111,
+      "reasons": {
+        "fixed_robot_lamp_or_cable_occlusion": 13,
+        "color_reference_ambiguous": 13,
+        "bounded_temporal_confirmation_pending": 2,
+        "color_confidence_below_threshold": 2,
+        "no_positive_empty_reference": 3
+      },
+      "guard_age_at_processing_s": 0.189059834
+    },
+    {
+      "frame_unix_ns": 1793111022536694187,
+      "occupied": 111,
+      "reasons": {
+        "fixed_robot_lamp_or_cable_occlusion": 13,
+        "color_reference_ambiguous": 17,
+        "bounded_temporal_confirmation_pending": 1,
+        "no_positive_empty_reference": 2
+      },
+      "guard_age_at_processing_s": 0.191089615
+    },
+    {
+      "frame_unix_ns": 1793111022768732457,
+      "occupied": 110,
+      "reasons": {
+        "fixed_robot_lamp_or_cable_occlusion": 13,
+        "color_reference_ambiguous": 16,
+        "bounded_temporal_confirmation_pending": 1,
+        "color_confidence_below_threshold": 2,
+        "no_positive_empty_reference": 2
+      },
+      "guard_age_at_processing_s": 0.201550168
+    },
+    {
+      "frame_unix_ns": 1793111023004691017,
+      "occupied": 113,
+      "reasons": {
+        "fixed_robot_lamp_or_cable_occlusion": 13,
+        "color_reference_ambiguous": 11,
+        "bounded_temporal_confirmation_pending": 1,
+        "color_confidence_below_threshold": 3,
+        "no_positive_empty_reference": 3
+      },
+      "guard_age_at_processing_s": 0.223470415
+    },
+    {
+      "frame_unix_ns": 1793111023204695997,
+      "occupied": 110,
+      "reasons": {
+        "fixed_robot_lamp_or_cable_occlusion": 13,
+        "color_reference_ambiguous": 15,
+        "bounded_temporal_confirmation_pending": 2,
+        "no_positive_empty_reference": 2,
+        "color_confidence_below_threshold": 2
+      },
+      "guard_age_at_processing_s": 0.222664007
+    },
+    {
+      "frame_unix_ns": 1793111023404700036,
+      "occupied": 111,
+      "reasons": {
+        "fixed_robot_lamp_or_cable_occlusion": 13,
+        "color_reference_ambiguous": 11,
+        "color_confidence_below_threshold": 3,
+        "bounded_temporal_confirmation_pending": 3,
+        "no_positive_empty_reference": 3
+      },
+      "guard_age_at_processing_s": 0.181394022
+    },
+    {
+      "frame_unix_ns": 1793111023604695008,
+      "occupied": 110,
+      "reasons": {
+        "fixed_robot_lamp_or_cable_occlusion": 13,
+        "color_reference_ambiguous": 17,
+        "color_confidence_below_threshold": 2,
+        "no_positive_empty_reference": 2
+      },
+      "guard_age_at_processing_s": 0.191292817
+    },
+    {
+      "frame_unix_ns": 1793111023836702106,
+      "occupied": 111,
+      "reasons": {
+        "fixed_robot_lamp_or_cable_occlusion": 13,
+        "color_reference_ambiguous": 15,
+        "color_confidence_below_threshold": 3,
+        "no_positive_empty_reference": 2
+      },
+      "guard_age_at_processing_s": 0.17342532
+    }
+  ],
+  "occupied_range": [
+    109,
+    113
+  ],
+  "guard_age_range_s": [
+    0.17342532,
+    0.290334272
+  ],
+  "guard_uncertain_frames": 0,
+  "specular_pixel_fraction_before": 0.004278472771241222,
+  "specular_pixel_fraction_now": 0.005696879505185323,
+  "registration_current": {
+    "status": "registered",
+    "valid": true,
+    "matches": [
+      {
+        "score": 0.9774245619773865,
+        "shift_px": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "score": 0.9910466074943542,
+        "shift_px": [
+          -1,
+          0
+        ]
+      },
+      {
+        "score": 0.8575736880302429,
+        "shift_px": [
+          -1,
+          -1
+        ]
+      }
+    ],
+    "scope": "fixed image landmark check only; no automatic warp or robot-world calibration"
+  },
+  "reference_image": "captures/current_all12.jpg"
+}

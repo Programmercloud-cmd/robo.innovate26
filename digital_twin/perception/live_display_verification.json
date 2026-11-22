@@ -1,0 +1,64 @@
+{
+  "created_utc": "2026-10-27T13:07:49.040298+00:00",
+  "evidence_type": "actual_live_external_camera_and_Isaac_visual_prim_visibility",
+  "frame_unix_ns": 1793106468578202926,
+  "isaac_visible_bricks": 36,
+  "observed_status_counts": {
+    "uncertain": 76,
+    "occupied": 36,
+    "empty": 32
+  },
+  "observed_color_counts": {
+    "6135191": 14,
+    "4211201": 6,
+    "6117418": 6,
+    "6487946": 8,
+    "300121": 2
+  },
+  "robot_seq": 1151475,
+  "robot_stale": false,
+  "source_to_display_age_s": 0.462121324,
+  "source_layout_hash": "3a3403fb2aef7307f766418006119b8f369d20917ee625446686ae786c99bdb1",
+  "physical_color_labels_confirmed": false,
+  "physical_removed_brick_transition": "pending operator action",
+  "registered_source_target": "external_r5_c0_m0_n1",
+  "scene_registration": {
+    "status": "Display-only XY from taught grid; Z uses estimated table plane",
+    "operator_mapping_confirmed": true,
+    "row_mapping": "r=0..5 image top to bottom; bank0 is existing left bank",
+    "pick_mapping": "m=0..2 image left to right; bank1 has no motion IDs",
+    "brick_mapping": "n=0..3 image top to bottom inside a four-brick pick",
+    "height": "Single visible brick bodies on existing estimated table plane; no hidden layers inferred",
+    "uncertainty_m": 0.01,
+    "dimensions_m": {
+      "brick": [
+        0.0318,
+        0.0158,
+        0.0096
+      ],
+      "footprint": [
+        0.0954,
+        0.0632
+      ],
+      "total_schematic": [
+        0.2358,
+        0.4692
+      ],
+      "bank_gap": 0.015,
+      "row_gap": 0.015,
+      "side_margin": 0.015,
+      "end_margin": 0.0075
+    },
+    "source_sha256": {
+      "/home/nshenoy/robo.innovate26/teaching/positions.json": "0bbbaca42b77c1f1e08898b5532cd09272507f6ad30e1694020bc0dd93717974",
+      "/home/nshenoy/robo.innovate26/digital_twin/registration/scene_registration.json": "4030fa7ed52c4aad179b306fa8e41381e5cfa3c05f7a77300fc0f6c03d39aa41"
+    }
+  },
+  "session": {
+    "supervisor_pid": 572947,
+    "forward_pid": 572949,
+    "camera_pid": 572950,
+    "remote_root": "/home/ubuntu/workspace/fr3-digital-twin-20261026",
+    "http_root": "/home/ubuntu/workspace/fr3-digital-twin-20261026/live-20261027T083003Z"
+  }
+}

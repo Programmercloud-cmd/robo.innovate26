@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "camera": {
+    "device": "/dev/v4l/by-id/usb-Sonix_Technology_Co.__Ltd._HD_Pro_Webcam_C920_HD_Pro_Webcam_C920-video-index0",
+    "width": 1280,
+    "height": 720,
+    "focus": 500,
+    "discard_frames": 6,
+    "observation_frames": 3,
+    "controls": {
+      "auto_exposure": 1,
+      "exposure_time_absolute": 25,
+      "exposure_dynamic_framerate": 0,
+      "gain": 25
+    }
+  },
+  "image_size": [
+    1280,
+    720
+  ],
+  "brick_regions_px": [
+    [
+      60,
+      540,
+      240,
+      680
+    ],
+    [
+      360,
+      540,
+      550,
+      680
+    ],
+    [
+      670,
+      540,
+      870,
+      680
+    ],
+    [
+      1000,
+      550,
+      1140,
+      680
+    ]
+  ],
+  "minimum_colored_fraction": 0.4,
+  "separation_region_px": [
+    250,
+    80,
+    1000,
+    400
+  ],
+  "minimum_separation_rows": 60,
+  "positive_image": "teaching/factory_cycle/runs/demo_resume/taught_grasp_view.jpg",
+  "negative_image": "teaching/factory_cycle/runs/cycles_20261027T101254.307759Z/5_0_alignment_0.jpg",
+  "validation_kind": "Measured grasp-height positive appearance and measured unpicked raised negative; loaded outcome still untested",
+  "positive_evidence": {
+    "all_four_present": true,
+    "bricks": [
+      {
+        "brick": 0,
+        "colored_fraction": 1.0,
+        "present": true
+      },
+      {
+        "brick": 1,
+        "colored_fraction": 1.0,
+        "present": true
+      },
+      {
+        "brick": 2,
+        "colored_fraction": 1.0,
+        "present": true
+      },
+      {
+        "brick": 3,
+        "colored_fraction": 0.7496703296703296,
+        "present": true
+      }
+    ],
+    "white_separation_rows": 0,
+    "separation_visible": false
+  },
+  "negative_evidence": {
+    "all_four_present": false,
+    "bricks": [
+      {
+        "brick": 0,
+        "colored_fraction": 0.0,
+        "present": false
+      },
+      {
+        "brick": 1,
+        "colored_fraction": 0.0,
+        "present": false
+      },
+      {
+        "brick": 2,
+        "colored_fraction": 0.0,
+        "present": false
+      },
+      {
+        "brick": 3,
+        "colored_fraction": 0.003901098901098901,
+        "present": false
+      }
+    ],
+    "white_separation_rows": 0,
+    "separation_visible": false
+  }
+}

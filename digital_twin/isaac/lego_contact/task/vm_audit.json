@@ -1,0 +1,214 @@
+{
+  "schema": 1,
+  "audited_utc": "2026-10-27T00:55:04.233326+00:00",
+  "vm": "robot-innovate26-place-rl3",
+  "vm_workspace": "/home/ubuntu/workspace",
+  "remote_contact_root": "/home/ubuntu/workspace/lego-contact-20261026",
+  "runtime_python": "/home/ubuntu/workspace/robo26-runtime-isaac51/venv/bin/python",
+  "runtime_packages": {
+    "isaacsim": "5.1.0.0",
+    "isaaclab": "0.54.3",
+    "torch": "2.7.0+cu128",
+    "gymnasium": "1.2.1",
+    "stable_baselines3": "2.8.0",
+    "numpy": "1.26.0"
+  },
+  "gpu": {
+    "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "memory_MiB": 97887,
+    "driver": "595.91.07"
+  },
+  "process_inspection": {
+    "method": "ps -eo pid,ppid,etimes,args inspected for isaac/python/train/relay/torch/ppo",
+    "active_isaac_jobs": 0,
+    "active_training_jobs": 0,
+    "active_relay_jobs": 0,
+    "background_python": [
+      "Jupyter PID638",
+      "networkd-dispatcher PID640"
+    ],
+    "limitation": "Point-in-time inspection, not a lock-file inference or future liveness claim."
+  },
+  "workspace_search": {
+    "roots": [
+      "/home/ubuntu/workspace/fr3-digital-twin-20261026",
+      "/home/ubuntu/workspace/lego-contact-20261026",
+      "/home/ubuntu/workspace/robo26-scene-smoke",
+      "/home/ubuntu/workspace/robo26-runtime-isaac51"
+    ],
+    "found_contact_evidence": "Prior native threshold/snap and synthetic effective axial diagnostics only. No task-specific measured physical insertion, withdrawal, retention, capture or fixture dataset found within inspected roots.",
+    "limitation": "Not proof that no physical data exist at other paths; ask for additional measurement paths."
+  },
+  "local_motion_evidence": {
+    "csv_trials": 120,
+    "schemas": [
+      {
+        "count": 120,
+        "columns": [
+          "time_s",
+          "x_m",
+          "y_m",
+          "z_m",
+          "full_sigma",
+          "fixed_sigma",
+          "condition",
+          "abs_joint2",
+          "period_s",
+          "command_success_rate",
+          "q1",
+          "q2",
+          "q3",
+          "q4",
+          "q5",
+          "q6",
+          "q7",
+          "command_q1",
+          "command_q2",
+          "command_q3",
+          "command_q4",
+          "command_q5",
+          "command_q6",
+          "command_q7"
+        ]
+      }
+    ],
+    "available": "qactual, commandq, TCP positions, model singularity measures and command_success_rate at nominal20ms logging",
+    "missing": [
+      "post-limiter sent q",
+      "robot desired q/dq and command chronology",
+      "external wrench and bias/noise profile",
+      "grip/fixture/payload/impedance conditions",
+      "local loaded contact trials and retained engagement outcome"
+    ],
+    "decision": "Not a valid dataset for task-specific joint-impedance/contact identification."
+  },
+  "viewer_telemetry_fields": [
+    "schema",
+    "seq",
+    "unix_ns",
+    "source",
+    "q",
+    "dq",
+    "q_d",
+    "O_T_EE",
+    "F_T_EE",
+    "O_T_EE_d",
+    "tau_J",
+    "tau_J_d",
+    "robot_mode",
+    "current_errors",
+    "robot_time_s"
+  ],
+  "recording_interface": "controller_replay.template.json plus controller_replay.py; source packets from one foreground SDK owner, no SDK access implemented here",
+  "training_software_available": true,
+  "training_feasible_now": false,
+  "training_launched": false,
+  "missing_training_evidence": [
+    "physical new plate registration and fixture support",
+    "independent Logitech calibration/mount continuity and detector error/latency evidence",
+    "held-brick transform/slip observability",
+    "matched real/controller dynamic response and calibrated wrench",
+    "capture, friction/hysteresis, partial engagement, jams and independently verified retention across relevant support patterns",
+    "predeclared acceptable-load/repeatability tolerances and held-out multi-rate trials"
+  ],
+  "model_implemented_here": false,
+  "factory_files_modified": false,
+  "hardware_connections": 0,
+  "physical_stationary_snapshots": [
+    {
+      "path": "teaching/factory_vision/optimization/20261026T204221.636315Z/initial_state.json",
+      "sha256": "233d44b4fc2675683b342da93b1635139e015d7a92cde4ec756f2cb6a7f1eca6",
+      "configured_mass_total_kg": 0.7300000190734863,
+      "configured_mass_ee_kg": 0.7300000190734863,
+      "configured_load_kg": 0,
+      "EE_T_K": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "estimated_wrench_K": [
+        1.150622844696045,
+        -0.5968636870384216,
+        -2.2912840843200684,
+        0.01248908694833517,
+        -0.08174905180931091,
+        -0.07597244530916214
+      ],
+      "robot_mode": "User stopped",
+      "scope": "Historical stationary state, not independent bias/noise/gravity calibration or contact identification."
+    },
+    {
+      "path": "teaching/factory_vision/optimization/20261026T204221.636315Z/wrap_state.json",
+      "sha256": "a043c435055e84bce5a8bcab35922e625f3a62b9eedc6349cbc95a1f73b5bd4c",
+      "configured_mass_total_kg": 0.7300000190734863,
+      "configured_mass_ee_kg": 0.7300000190734863,
+      "configured_load_kg": 0,
+      "EE_T_K": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "estimated_wrench_K": [
+        0.7963371872901917,
+        -1.1714720726013184,
+        -1.4920094013214111,
+        -0.41824084520339966,
+        0.10592296719551086,
+        0.03658082336187363
+      ],
+      "robot_mode": "Idle",
+      "scope": "Historical stationary state, not independent bias/noise/gravity calibration or contact identification."
+    }
+  ],
+  "payload_caveat": "Historical configured total0.73kg/m_load0 does not prove wrist cameras, modified pads and heldbrick are modeled correctly. Confirm actual payload/COM/inertia and pose-dependent unloaded/loaded wrench behavior; do not average differing-pose snapshots as noise/bias data.",
+  "controller_replay_verification": {
+    "local_tests_passed": 5,
+    "vm_tests_passed": 5,
+    "vm_test_log": "controller-replay-tests.log",
+    "uncommissioned_template_cli_exit_code": 2,
+    "source_sha256": {
+      "controller_replay.py": "518c99e9717d8d457cd5c09a6974039169bba72f6499eb67a4a8c7c5ed068ecb",
+      "test_controller_replay.py": "ddb551f14ed53feda06b45283a3c7ba4f3716dbba1512f4e56180bb0961c8966",
+      "controller_replay.template.json": "75902128e96666d06877848594e7883d942c6d06c8d760d8edc8ebea37dd0baa"
+    },
+    "recursive_package_discovery_verified": true
+  },
+  "runtime_import_and_cuda_check": {
+    "checked_utc": "2026-10-27T01:00:53.054663+00:00",
+    "exit_code": 0,
+    "torch": "2.7.0+cu128",
+    "gymnasium": "1.2.1",
+    "stable_baselines3": "2.8.0",
+    "cuda_available": true,
+    "device": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "tiny_16x16_gpu_matmul_expected16": true,
+    "training_started": false,
+    "meaning": "Runtime import and bounded GPU compute check, not policy/environment training or physics validation."
+  }
+}

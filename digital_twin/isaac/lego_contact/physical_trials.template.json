@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "model_id": "UNFITTED",
+  "conditions_id": "UNMEASURED-grasp-fixture-controller",
+  "depth_knots_m": null,
+  "max_condition_number": 100000000.0,
+  "tolerances": {"force_rmse_N": null, "peak_error_N": null, "work_error_J": null},
+  "trials": [],
+  "instructions": "Reserve complete physical trials before fitting. Identify contact datum and depth knots externally. max_condition_number is a numerical rejection threshold, not a physical parameter. Each trial: id, split (fit/validation), provenance (physical/synthetic), conditions_id, relative NDJSON path. Each row: t_s, depth_m (positive into engagement), depth_rate_m_s, force_z_N (bias/gravity corrected force on upper brick along local M +Z), phase (insertion/withdrawal/dwell). fit_axial.py writes predicted_force_z_N evaluated at the SAME observed kinematics for evaluate_traces.py. Force replay alone does not validate policy, capture/jamming, rate-independent hysteresis, dynamic transfer or retention. Do not populate missing measurements with synthetic values."
+}

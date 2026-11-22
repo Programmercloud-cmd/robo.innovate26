@@ -1,0 +1,24 @@
+{
+  "verified_unix_ns": 1793118356782377154,
+  "scope": "external camera perception/display only; no SDK calls or robot motion",
+  "external_tests_passed": 17,
+  "display_tests_passed": 11,
+  "protected_files_unchanged": {
+    "teaching/positions.json": true,
+    "teaching/motion_config.json": true,
+    "teaching/factory_cycle/inventory.json": true
+  },
+  "camera_health": {
+    "state": "waiting_for_camera_device",
+    "camera_pid": 578977,
+    "restarts": 0,
+    "returncode": 1,
+    "published_unix_ns": 1793118356736477331,
+    "device": "/dev/v4l/by-id/usb-046d_HD_Pro_Webcam_C920_03FB123F-video-index0",
+    "device_present": false
+  },
+  "live_validation_completed": false,
+  "live_validation_blocker": "External C920 serial03FB123F absent from Linux; supervisor waiting for device reconnect",
+  "cached_verification": "teaching/external_layout/captures/full_stack_registration_cached.json",
+  "overlay": "teaching/external_layout/captures/full_stack_registration_overlay.jpg"
+}

@@ -1,0 +1,38 @@
+{
+  "depth_knots_m": [
+    0.0,
+    0.001,
+    0.002,
+    0.003,
+    0.004
+  ],
+  "elastic_force_N": [
+    0.0,
+    0.7999999999999985,
+    -0.39999999999999963,
+    5.505171615296166e-16,
+    1.5999999999999999
+  ],
+  "damping_N_s_m": [
+    0.0,
+    8.000000000000002,
+    8.000000000000002,
+    7.999999999999996,
+    8.00000000000001
+  ],
+  "parameter_status": "identified_candidate",
+  "real_ready": false,
+  "training_ready": false,
+  "hardware_deployment_enabled": false,
+  "conditions_id": "arbitrary-coupon-only",
+  "model_id": "synthetic-roundtrip-only",
+  "fit_provenance": [
+    "synthetic"
+  ],
+  "identification": "effective axial response only; does not separate brick, grip, fixture or servo compliance",
+  "fit_rank": 8,
+  "fit_condition_number": 827.1905387616473,
+  "fit_trial_sha256": {
+    "fit": "e4449de73cfa9e6a9248d15b5863a3ebdab9405a5ad75611a72585b3500d3bc7"
+  }
+}

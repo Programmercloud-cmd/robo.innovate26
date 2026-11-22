@@ -1,0 +1,14 @@
+{
+  "status": "implemented_pending_verified_clearance",
+  "ceiling_top_surface": "unchanged from existing 3.2 mm ceiling",
+  "thickness_rule_mm": "17.45 + verified fingertip-to-brick-bottom clearance",
+  "clearance_m": null,
+  "physical_clearance_found_in_saved_records": false,
+  "display_table_height_is_physical_measurement": false,
+  "focused_ceiling_unit_checks_passed": 2,
+  "unit_test_clearances_are_synthetic": true,
+  "updated_usd_built": false,
+  "running_variant_replaced": false,
+  "hardware_commands": 0,
+  "scope": "Previous ceiling-thickening request; kept staged during the latest side-spacing-only revision"
+}

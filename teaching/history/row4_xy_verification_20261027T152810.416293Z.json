@@ -1,0 +1,16 @@
+{
+  "saved": "4_0",
+  "xyz_mm": [
+    614.9128079414368,
+    18.49956624209881,
+    5.4283784702420235
+  ],
+  "derived_columns": [
+    "4_1",
+    "4_2"
+  ],
+  "other_row_coordinates_unchanged": true,
+  "source_signature": "e7e1616b1aa95e703204c4f65b8adcb58ed85a59aec2a74a2813a3cadfd88929",
+  "sdk_background_resumed": false,
+  "robot_motion_sent": false
+}

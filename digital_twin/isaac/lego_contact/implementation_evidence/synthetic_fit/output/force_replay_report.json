@@ -1,0 +1,116 @@
+{
+  "model_id": "synthetic-roundtrip-only",
+  "conditions_id": "arbitrary-coupon-only",
+  "evaluation": "observed-kinematics force replay only",
+  "tolerances_commissioned": true,
+  "tolerances": {
+    "force_rmse_N": 1e-09,
+    "peak_error_N": 1e-09,
+    "work_error_J": 1e-10
+  },
+  "complete_held_out_branches": true,
+  "force_replay_pass": true,
+  "held_out_data_all_physical": false,
+  "physical_force_replay_pass": false,
+  "training_ready": false,
+  "hardware_deployment_enabled": false,
+  "not_validated": [
+    "closed-loop servo response",
+    "independent seating/retention",
+    "slip/jam/capture outcomes",
+    "sensor calibration",
+    "parameter identifiability"
+  ],
+  "trials": [
+    {
+      "id": "fit",
+      "split": "fit",
+      "provenance": "synthetic",
+      "trace_sha256": "6b539c7b269a697ae9627a8af8a44bdb14af6e0b9aa1706d525134f022e2345d",
+      "samples": 42,
+      "duration_s": 4.010000000000001,
+      "force_rmse_N": 6.462045145513726e-16,
+      "peak_error_N": 2.220446049250313e-16,
+      "work_error_J": 8.673617379884035e-19,
+      "peak_abs_force_N": {
+        "insertion": {
+          "observed": 1.616,
+          "predicted": 1.6159999999999999
+        },
+        "withdrawal": {
+          "observed": 1.584,
+          "predicted": 1.5839999999999999
+        }
+      },
+      "work_on_upper_J": {
+        "insertion": {
+          "observed": -0.0012560000000000002,
+          "predicted": -0.0012559999999999993
+        },
+        "withdrawal": {
+          "observed": 0.0011439999999999996,
+          "predicted": 0.0011439999999999994
+        },
+        "dwell": {
+          "observed": 0.0,
+          "predicted": 0.0
+        },
+        "transition": {
+          "observed": 0.0,
+          "predicted": 0.0
+        }
+      },
+      "both_branches_present": true,
+      "directional_motion": {
+        "insertion": true,
+        "withdrawal": true
+      },
+      "reference_sha256": "28f4216526e21b2eb8a2bea5b88b148ce1e19989cd941f72d80b28101b9f533d"
+    },
+    {
+      "id": "validation",
+      "split": "validation",
+      "provenance": "synthetic",
+      "trace_sha256": "9c64c3845f61c9e55619e5c155bece498355df15d033c0b95388a04ba2acf07c",
+      "samples": 36,
+      "duration_s": 2.676666666666668,
+      "force_rmse_N": 6.335224604287636e-16,
+      "peak_error_N": 2.220446049250313e-16,
+      "work_error_J": 4.336808689942018e-19,
+      "peak_abs_force_N": {
+        "insertion": {
+          "observed": 1.624,
+          "predicted": 1.6239999999999999
+        },
+        "withdrawal": {
+          "observed": 1.576,
+          "predicted": 1.5759999999999998
+        }
+      },
+      "work_on_upper_J": {
+        "insertion": {
+          "observed": -0.001290795847750865,
+          "predicted": -0.0012907958477508645
+        },
+        "withdrawal": {
+          "observed": 0.0011230449826989616,
+          "predicted": 0.0011230449826989614
+        },
+        "dwell": {
+          "observed": 0.0,
+          "predicted": 0.0
+        },
+        "transition": {
+          "observed": 0.0,
+          "predicted": 0.0
+        }
+      },
+      "both_branches_present": true,
+      "directional_motion": {
+        "insertion": true,
+        "withdrawal": true
+      },
+      "reference_sha256": "58b6bab4167ac213bfa8e599a051f9cbf5e438df9e4a7c145d7af0dd9147b624"
+    }
+  ]
+}

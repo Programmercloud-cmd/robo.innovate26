@@ -1,0 +1,9 @@
+{
+  "reason": "Operator says saved coordinates are way off after reboot",
+  "no_5_0_pick_executed": true,
+  "grasp_and_conveyor_reteaching_required": true,
+  "all_old_points_blocked": true,
+  "old_catalog_preserved": true,
+  "current_vs_saved_F_T_EE_max_abs_difference": 0.0,
+  "note": "Matching configured TCP does not establish physical workspace registration. No coordinate correction inferred."
+}

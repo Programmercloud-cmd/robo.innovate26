@@ -1,0 +1,15 @@
+{
+  "schema": "effective_axial_contact_v1",
+  "parameter_status": "synthetic_validation_fixture",
+  "real_ready": false,
+  "training_ready": false,
+  "provenance": "Arbitrary generic viscoelastic coupon for software/physics validation only. None of these numbers is a LEGO fit or proposed real control setting.",
+  "depth_knots_m": [0.0, 0.001, 0.002, 0.003, 0.004],
+  "elastic_force_N": [0.0, 0.8, -0.4, 0.0, 1.6],
+  "damping_N_s_m": [0.0, 8.0, 8.0, 8.0, 8.0],
+  "contact_center_gap_m": 0.012,
+  "admission": {"xy_m": 0.0001, "yaw_rad": 0.001, "tilt_rad": 0.001},
+  "synthetic_geometry": {"body_size_m": [0.032, 0.020, 0.010], "body_mass_kg": 0.020, "support_size_m": [0.2, 0.2, 0.02], "initial_extra_gap_m": 0.001},
+  "synthetic_external_force_schedule": [{"from_s": 0.15, "until_s": 0.65, "upper_fz_N": -1.2}, {"from_s": 0.70, "until_s": 0.95, "upper_fz_N": 0.9}],
+  "supported_scope": "Axial generic coupon only; no capture, jam, rate-independent hysteresis, gripper, robot, weld, success gate or training. All real coefficients remain null in effective_fit_schema.json."
+}

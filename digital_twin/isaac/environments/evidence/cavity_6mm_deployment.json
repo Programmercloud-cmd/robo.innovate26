@@ -1,0 +1,14 @@
+{
+  "environment": "board",
+  "fingers": "wide",
+  "output": "/home/ubuntu/workspace/fr3-digital-twin-20261026/simulation_variants/board-wide-20261028T040554038876Z",
+  "source_signature": "e6cab8300704c321fe10cb60e0956f73e243211cf8addd701d9cc4200de9280c",
+  "isaac_pid": 195179,
+  "isaac_pid_start": "1487308",
+  "log": "/home/ubuntu/workspace/fr3-digital-twin-20261026/simulation_variants/board-wide-20261028T040554038876Z.log",
+  "upstream": "/home/ubuntu/workspace/fr3-digital-twin-20261026/active_session.json",
+  "hardware_clients": 0,
+  "http_pid": 195634,
+  "http_pid_start": "1490129",
+  "remote_port": 8767
+}

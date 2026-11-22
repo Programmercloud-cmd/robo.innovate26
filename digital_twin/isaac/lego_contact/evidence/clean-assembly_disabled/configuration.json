@@ -1,0 +1,94 @@
+{
+  "case": "assembly_disabled",
+  "assembly": {
+    "enabled": false,
+    "distance_tolerance": 0.001,
+    "max_penetration": 0.005,
+    "z_angle_tolerance": 0.08726646259971647,
+    "required_force": 1.0,
+    "yaw_tolerance": 0.08726646259971647,
+    "position_tolerance": 0.002
+  },
+  "breakage": {
+    "enabled": false,
+    "contact_regularization": 0.1,
+    "clutch_axial_compliance": 1.0,
+    "clutch_radial_compliance": 1.0,
+    "clutch_tangential_compliance": 1.0,
+    "friction_coefficient": 0.2,
+    "preloaded_force": 3.5,
+    "breakage_cooldown_time": 0.05
+  },
+  "colliders": [
+    {
+      "path": "/World/Support",
+      "type": "Cube",
+      "attributes": {
+        "physics:collisionEnabled": "True",
+        "xformOp:scale": "(0.2, 0.2, 0.02)",
+        "xformOp:translate": "(0, 0, -0.01)",
+        "xformOpOrder": "[xformOp:translate, xformOp:scale]"
+      },
+      "material_relationships": {}
+    },
+    {
+      "path": "/World/Lower/BodyCollider",
+      "type": "Cube",
+      "attributes": {
+        "physics:collisionEnabled": "True",
+        "physics:dynamicFriction": "0.4000000059604645",
+        "physics:restitution": "0.10000000149011612",
+        "physics:staticFriction": "0.5",
+        "xformOp:scale": "(0.032, 0.016, 0.0096)",
+        "xformOp:translate": "(0, 0, 0.0048000000000000004)",
+        "xformOpOrder": "[xformOp:translate, xformOp:scale]"
+      },
+      "material_relationships": {}
+    },
+    {
+      "path": "/World/Lower/TopCollider",
+      "type": "Cube",
+      "attributes": {
+        "physics:collisionEnabled": "True",
+        "physics:dynamicFriction": "0.800000011920929",
+        "physics:restitution": "0.20000000298023224",
+        "physics:staticFriction": "1.0",
+        "xformOp:scale": "(0.032, 0.016, 0.0017)",
+        "xformOp:translate": "(0, 0, 0.010450000000000001)",
+        "xformOpOrder": "[xformOp:translate, xformOp:scale]"
+      },
+      "material_relationships": {}
+    },
+    {
+      "path": "/World/Upper/BodyCollider",
+      "type": "Cube",
+      "attributes": {
+        "physics:collisionEnabled": "True",
+        "physics:dynamicFriction": "0.4000000059604645",
+        "physics:restitution": "0.10000000149011612",
+        "physics:staticFriction": "0.5",
+        "xformOp:scale": "(0.032, 0.016, 0.0096)",
+        "xformOp:translate": "(0, 0, 0.0048000000000000004)",
+        "xformOpOrder": "[xformOp:translate, xformOp:scale]"
+      },
+      "material_relationships": {}
+    },
+    {
+      "path": "/World/Upper/TopCollider",
+      "type": "Cube",
+      "attributes": {
+        "physics:collisionEnabled": "True",
+        "physics:dynamicFriction": "0.800000011920929",
+        "physics:restitution": "0.20000000298023224",
+        "physics:staticFriction": "1.0",
+        "xformOp:scale": "(0.032, 0.016, 0.0017)",
+        "xformOp:translate": "(0, 0, 0.010450000000000001)",
+        "xformOpOrder": "[xformOp:translate, xformOp:scale]"
+      },
+      "material_relationships": {}
+    }
+  ],
+  "parameter_provenance": "installed upstream defaults; unmeasured, not fitted",
+  "lower_fixture": "dynamic brick on static support; no lower-body weld or kinematic flag",
+  "native_binary_sha256": "4e62dc33ee02270993c20e3cfd658e6d6ef0ea9780e53ad15cedde12f41b2455"
+}

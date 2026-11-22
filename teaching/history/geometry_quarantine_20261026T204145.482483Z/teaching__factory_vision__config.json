@@ -1,0 +1,94 @@
+{
+  "task_id": "factory_columns_of_four",
+  "development_row": 5,
+  "reference_pose": "5_0",
+  "camera": {
+    "device": "/dev/v4l/by-id/usb-Sonix_Technology_Co.__Ltd._HD_Pro_Webcam_C920_HD_Pro_Webcam_C920-video-index0",
+    "width": 1280,
+    "height": 720,
+    "focus": 500,
+    "discard_frames": 6,
+    "observation_frames": 3
+  },
+  "observation_offset_m": 0.05,
+  "detector": {
+    "stack_roi_px": [
+      220,
+      10,
+      1030,
+      670
+    ],
+    "boundary_y_px": [
+      158,
+      444
+    ],
+    "boundary_search_px": 65,
+    "minimum_line_length_px": 40,
+    "maximum_line_angle_deg": 12,
+    "line_inlier_px": 6,
+    "minimum_boundary_coverage": 0.48,
+    "minimum_studs": 22,
+    "minimum_studs_per_brick": 4,
+    "maximum_frame_spread_px": 3,
+    "maximum_frame_spread_deg": 0.5
+  },
+  "servo": {
+    "calibration_translation_m": 0.002,
+    "calibration_yaw_deg": 1,
+    "maximum_step_m": 0.0015,
+    "maximum_step_yaw_deg": 0.4,
+    "maximum_total_correction_m": 0.006,
+    "maximum_total_yaw_deg": 3,
+    "maximum_iterations": 6,
+    "position_tolerance_m": 0.0007,
+    "yaw_tolerance_deg": 0.3,
+    "gain": 1.0,
+    "maximum_jacobian_condition": 30,
+    "maximum_calibration_residual_px": 4
+  },
+  "descent": {
+    "maximum_travel_m": 0.055,
+    "time_scale": 1
+  },
+  "close_width_m": 0.06,
+  "calibration_file": "calibration.json",
+  "lift_clearance_m": 0.05,
+  "destination_mode": "fixed_conveyor",
+  "conveyor_placement_mode": "speed_matched",
+  "conveyor_target_O_T_EE": [
+    0.9999996983767413,
+    -0.0007766894015137046,
+    0.0,
+    0.0,
+    -0.0007766894015137046,
+    -0.9999996983767413,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.698630473613739,
+    0.09124504774808884,
+    0.0081842802464962,
+    1.0
+  ],
+  "conveyor_target_source": {
+    "executed_pose": "5_0 successful first placement",
+    "motion_request": "teaching/moves/20261026T180452.591997Z/request.json"
+  },
+  "conveyor_occupancy_policy": "cleared_between_deliveries",
+  "conveyor_reference_offset_from_5_0_base_m": [
+    0.085,
+    0,
+    0
+  ],
+  "conveyor_clear_roi_px": [
+    300,
+    190,
+    1030,
+    480
+  ],
+  "conveyor_clear_wait_s": 30,
+  "conveyor_clearance_roi_basis": "Observed first 5_0 delivery footprint; excludes the adjacent misplaced 5_1 column above the slot in the image"
+}

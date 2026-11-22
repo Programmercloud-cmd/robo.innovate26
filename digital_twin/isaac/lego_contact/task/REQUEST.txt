@@ -1,0 +1,79 @@
+Extend our existing isolated LEGO seating work into a validated residual-RL training system, then actually train and evaluate an initial policy. Keep the work narrow and preserve the existing factory system.
+
+Use independent agents where they provide clear benefit. Act as orchestrator: enforce scope, review integration and evidence, and prevent unrelated reconstruction or infrastructure work. Maintain our previous coding behavior: focused changes, concise documentation, meaningful checks, explicit recoverable stops and no invented measurements or successful outcomes.
+
+1. Register the new physical baseplate
+
+Add the approximately 250 × 250 mm thin white LEGO baseplate shown in the attached photograph to the Isaac scene.
+
+Its centerline is aligned with the ChArUco board along one table axis; an edge is aligned with the existing black tape stripe along the other. Use these as registration constraints, not as sufficient precision measurements. Resolve the exact axes, tape edge, plate thickness, stud-grid origin, orientation and mounting/support through existing calibration and minimal additional measurements where necessary.
+
+The ChArUco board has not moved. Verify relevant calibration and mounting continuity, including the Logitech wrist camera independently of the RealSense.
+
+Represent both the visible plate and the contact/support behavior needed for assembly. A visual stud mesh or flat collision box alone does not establish LEGO engagement physics. Record parameter provenance and uncertainty.
+
+2. Define the requested stack explicitly
+
+The stack contains four parallel ridges, each with three 2×4 bricks joined end-to-end along their long axes, with short edges adjacent. There are two empty stud positions between neighboring ridges.
+
+Use indices b_n_m_k:
+- n = ridge, 0…3
+- m = brick within ridge, 0…2
+- k = layer from the bottom, starting at 0
+
+Each layer contains 12 bricks. Successive layers rotate 90 degrees around the same stack center.
+
+Make the stack center, layer count and placement order configurable. Confirm where the stack belongs on the plate rather than assuming its center equals the plate center.
+
+Generate brick poses and supporting-stud correspondences explicitly from the actual stud grid. Distinguish brick body dimensions from stud-grid center spacing; do not blindly reuse the previous 31.8 mm layout pitch. Check support and engagement patterns across alternating layers, including edge and bridging placements.
+
+3. Complete the necessary simulation-to-real validation
+
+Build on the existing lego_contact foundation and preserve its evidence. It currently supports an axial force experiment, not a complete insertion-training environment.
+
+Identify the physical properties that materially affect this task:
+- held-brick transform, grasp repeatability, pad compliance and slip;
+- baseplate/lower-layer fixation and compliance;
+- real controller response, filtering, limits and latency;
+- estimated-wrench bias, noise, reference frame and latency;
+- insertion, withdrawal, retention, partial engagement and relevant XY/yaw errors.
+
+Use multiple insertion/withdrawal rates and reserve complete trials for validation before fitting.
+
+Implement the smallest contact model that predicts these behaviors within a defined operating envelope. Extend the axial model where measured capture, friction, hysteresis or jamming require it. Do not use pose snapping, automatic welding or arbitrary attachment thresholds as proof of seating.
+
+Match the deployed control interface. Do not train against ideal Cartesian actuation while deploying through a different joint-impedance controller. Preserve exclusive SDK ownership and measured-state forwarding to the digital twin.
+
+Declare task-specific acceptance tolerances from measurement repeatability and acceptable physical loads. Validate held-out behavior and timestep/solver sensitivity. Report remaining discrepancies explicitly. If essential hardware evidence is unavailable, complete independent work and identify the specific missing measurements; do not fabricate readiness.
+
+4. Implement the residual policy interface
+
+Deterministic kinematics performs the gross approach. The policy controls only bounded X/Y/Z translation and yaw relative to the nominal target. Keep the end effector vertical: no roll/pitch actions or silent relaxation of this constraint.
+
+Use the existing absolute residual convention and smooth guarded interpolation.
+
+Actor observations should include:
+- brick index or derived goal features, nominal orientation and local support pattern;
+- target-associated Logitech wrist-camera stud features in calibrated normalized image coordinates;
+- feature confidence, visibility, correspondence and timestamps;
+- measured target-relative TCP pose/velocity and relevant joint state;
+- calibrated estimated wrench, gripper state and previous actions;
+- a short history where needed for latency, occlusion and contact ambiguity.
+
+Verify whether held-brick pose/slip is observable; lower-stud detections alone do not establish the brick-to-gripper transform.
+
+Use the same observation meanings and processing on the robot and in simulation. If training from projected features, model visibility, detector errors, dropouts and latency using real camera evidence. Exact hidden brick poses, contact states and engagement labels may support training rewards or a privileged critic, but must not leak into actor observations.
+
+Keep workspace, joint, singularity, force, tracking, stale-observation, grasp and robot-fault protections outside the policy. Recovery must be bounded and deterministic.
+
+5. Train and evaluate
+
+Once the task-specific model and observation/control interfaces pass their validation gates, actually run a bounded initial training job on the Brev VM.
+
+Use a staged curriculum: aligned seating first, then measured handoff errors and the supporting patterns needed for the 12-brick alternating layout. Randomize measured uncertainty, not arbitrary ranges intended to hide an incorrect model.
+
+Reward independently defensible seated engagement and retention. Penalize excessive loads, slip, jamming, unnecessary motion and time. Low TCP height, force drop or simulator attachment flags alone must not define success.
+
+Evaluate the saved policy on held-out conditions and compare it with a simple deterministic visual/contact baseline. Report success, partial seating, jams, slips, recoverable stops, peak loads and duration. If vertical-only actions are insufficient, demonstrate that limitation rather than enabling tilt without authorization.
+
+Deliver runnable training/evaluation commands, the trained checkpoint, configuration and concise evidence. Clearly distinguish simulation performance, physically validated model behavior and any remaining requirements before real policy deployment. Do not stop at a plan or an environment scaffold when training is feasible.

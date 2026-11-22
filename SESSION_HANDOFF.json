@@ -1,0 +1,143 @@
+{
+  "saved_utc": "2026-10-27T12:28:31.346050+00:00",
+  "branch": "task2/jacob/factory",
+  "work_state": "15s synchronized stationary5_0 cycle demonstrated; speed alignment saved but inactive",
+  "robot": {
+    "mode": "Idle",
+    "errors": [],
+    "xyz_m": [
+      0.6991239786148071,
+      0.10065051168203354,
+      0.1066373810172081
+    ],
+    "width_m": 0.06999992579221725
+  },
+  "geometry": {
+    "fresh_measured_5_0_xyz_m": [
+      0.6146215200424194,
+      0.10122542828321457,
+      0.0054283784702420235
+    ],
+    "global_translation_m": [
+      0.0006963014602661133,
+      0.009479552507400513,
+      -0.002755901776254176
+    ],
+    "all_18_source_poses_updated": true,
+    "other_17_inferred_not_measured": true,
+    "conveyor_operator_confirmed": true,
+    "conveyor_xyz_m": [
+      0.6993267750740051,
+      0.10072460025548935,
+      0.0054283784702420235
+    ]
+  },
+  "optimization": {
+    "scope": "5_0 only, per user correction;5_1 and5_2 untouched",
+    "status": "5_0 complete,5s target not achieved",
+    "complete_cycles_demonstrated": 2,
+    "correct_picks": 2,
+    "correct_placements": 2,
+    "fastest_complete_cycle_s": 10.362209439015714,
+    "benchmark": "teaching/factory_cycle/BENCHMARK.json",
+    "active_timing_target_s": 15.0,
+    "active_placement_mode": "stationary_vertical",
+    "active_schedule_benchmark": "teaching/factory_cycle/SYNCHRONIZED_BENCHMARK.json"
+  },
+  "prototype_build": {
+    "prior_source_compiled": true,
+    "warnings": "Eigen warnings in prototype_build.log",
+    "final_source_adds_no_connect_commissioning_gate": true,
+    "final_guard_source_not_rebuilt_after_stop_request": true,
+    "prototype_binary_executable": false
+  },
+  "inventory": {
+    "legacy_progress_preserved": true,
+    "previous_5_1_delivery_unverified": true,
+    "no_interrupted_operation_assumed_complete": true,
+    "available_columns_need_fresh_vision": true
+  },
+  "next_steps": [
+    "Use teaching/README.md resident launch/recovery instructions",
+    "Do not assume5_0 has been returned after the last delivery",
+    "5_1 and5_2 remain outside the latest requested scope"
+  ],
+  "files": "Saved working tree locally; no commit or push",
+  "digital_twin": "Existing read-only relay left running; no arm-control loop left running",
+  "overnight_lego_seating": {
+    "saved_utc": "2026-10-26T23:17:54.374605+00:00",
+    "hardware": "operator reports disconnected until morning; no hardware access for this task",
+    "scope": "single 2x4 mating pair provisional; deterministic taught approach then local residual policy",
+    "status": "offline axial force foundation, guarded residual targets, fitter and evaluator implemented; physical identification and multi-axis contact still required",
+    "report": "digital_twin/isaac/lego_contact/diagnostic_report.json",
+    "contract": "digital_twin/isaac/lego_contact/real_contract.json",
+    "instructions": "digital_twin/isaac/lego_contact/README.md",
+    "vm_root": "/home/ubuntu/workspace/lego-contact-20261026",
+    "observed_native_contact": "solid cuboids plus threshold-triggered attachment; aligned synthetic2N load caused1.699946mm pose snap in1ms; native breakage disabled",
+    "tests": "six native cases,600steps each; all30 saved evidence artifact hashes checked locally",
+    "real_identification_performed": false,
+    "training_launched": false,
+    "next_steps": [
+      "Confirm one-brick scope and fixed lower fixture/mating overlap",
+      "Identify current grip/slip, local servo response and wrench bias/delay",
+      "Record repeated seating/withdrawal and held-out XY/yaw errors",
+      "Fit compliant contact/engagement and validate held-out force/depth/retention and failure behavior before pilot training"
+    ],
+    "preservation": "factory controller, poses, widths, inventory and existing kinematic twin preserved; their earlier handoff remains below/above as historical context",
+    "provisional_single_brick_scope": false,
+    "implementation_verification": "digital_twin/isaac/lego_contact/implementation_verification.json",
+    "effective_model_report": "digital_twin/isaac/lego_contact/effective_results.json",
+    "unit_tests_local_and_vm": 28,
+    "synthetic_fit_replay_pass": true,
+    "vm_force_pair": "press complete at1ms/0.5ms; withdrawal outside tilt admission stops0.778s, savestrace and publicCLIexit2",
+    "training_ready": false,
+    "real_actuator_implemented": false,
+    "remaining_model_scope": "lateral/yaw capture, jam, rate-independent hysteresis unsupported; no real insertion or retention demonstrated"
+  },
+  "active_lego_seating_goal": {
+    "full_request": "digital_twin/isaac/lego_contact/task/REQUEST.txt",
+    "goal_status": "blocked_pending_physical_evidence",
+    "saved_utc": "2026-10-27T01:30:42.464558+00:00",
+    "configuration": "digital_twin/isaac/lego_contact/task/config.json",
+    "verification": "digital_twin/isaac/lego_contact/task/task_verification.json",
+    "readiness": "digital_twin/isaac/lego_contact/task/requirements_audit.json",
+    "scene": "/home/ubuntu/workspace/lego-contact-20261026/task/scene-candidate-03/scene_candidate.usdc",
+    "new_photo": "resources/seating_baseplate_20261027.jpg",
+    "stack_center": "plate center operator confirmed",
+    "task_action_space": "bounded absolute XYZ+yaw; world-vertical tool; roll/pitch prohibited",
+    "training_started": false,
+    "checkpoint": null,
+    "next_action": "Resume with connected hardware and an operator: establish plate datum/fixation and current Logitech calibration; commission owner capture and local bounded controller; record independent multi-rate8/4/2stud grip/fixture/servo/wrench/seating/retention trials. Fit/validate matched plant, then train and evaluate the actual initial policy.",
+    "factory_state": "preserved; earlier factory inventory/coordinates handoff remains historical below/above",
+    "goal_turn_classification": "progress",
+    "identification_verification": "digital_twin/isaac/lego_contact/task/identification_verification.json",
+    "python_checks_local_and_vm": 73,
+    "native_synthetic_checks": 6,
+    "physical_evidence_still_missing": true,
+    "recorder_wired_to_real_owner": false,
+    "wrench_live_gain_delay_integration": "not yet commissioned; offline normalization is not the live actor path",
+    "blocked_audit": "digital_twin/isaac/lego_contact/task/blocked_audit.json",
+    "same_blocker_seen_consecutive_goal_turns": 3
+  },
+  "factory_demo_resume": {
+    "status": "5_0 delivered in15.001s; source must be physically returned before another run",
+    "placement_mode": "stationary_vertical",
+    "phase_targets_s": {
+      "row": 5.0,
+      "placing_release_complete": 12.5,
+      "home": 15.0
+    },
+    "benchmark": "teaching/factory_cycle/SYNCHRONIZED_BENCHMARK.json",
+    "saved_speed_profile": "teaching/moving_conveyor/profiles/speed_matched_20261027.json",
+    "read_only_twin_active": true,
+    "sdk_controller_running": false
+  },
+  "hand_flicker_fix": {
+    "report": "digital_twin/runs/hand_flicker_20261027/report.json",
+    "operator_confirmed_continuous_flicker_gone": true,
+    "steady_desk_not_connected_with_persistent_sdk": "accepted_by_operator",
+    "sdk_hand_fresh": true,
+    "pause_hand_only": "/tmp/fr3-sdk-1000/hand_poll.pause",
+    "no_motion_commands_during_investigation": true
+  }
+}

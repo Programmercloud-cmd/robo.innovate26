@@ -1,0 +1,89 @@
+{
+  "created_utc": "2026-10-27T13:07:47.365893+00:00",
+  "scope": "External fixed-layout PERCEPTION/DISPLAY ONLY; no SDK/robot commands or inventory authority",
+  "camera_serial": "03FB123F",
+  "frame_sequence": 2334,
+  "frame_unix_ns": 1793106467046132225,
+  "states": {
+    "uncertain": 71,
+    "occupied": 38,
+    "empty": 35
+  },
+  "occupied_color_counts": {
+    "6135191": 14,
+    "4211201": 6,
+    "6487946": 10,
+    "6117418": 6,
+    "300121": 2
+  },
+  "color_reference_labels_operator_confirmed": false,
+  "confidence": "Heuristic scene-reference color/coverage score, not calibrated probability",
+  "physical_removal_test": "pending operator action; actual red before-frame saved; target floor material reference was predefined before removal",
+  "target_id": "external_r5_c0_m0_n1",
+  "target_current": {
+    "slot_id": "external_r5_c0_m0_n1",
+    "footprint_id": "external_r5_c0",
+    "motion_pose_id": "5_0",
+    "status": "occupied",
+    "color_id": 300121,
+    "confidence": 0.7046142533192461,
+    "visible": true,
+    "reason": "positive_colored_top_material",
+    "color_distance": 1.0338501133826388,
+    "color_margin": 5.472993823167035,
+    "observed_unix_ns": 1793106467046132225
+  },
+  "top_plane_registration": {
+    "landmark_count": 36,
+    "rms_px": 2.0397105756136615,
+    "max_px": 4.105145824202694,
+    "scope": "Expected outline fromallflat-top landmarks; no unverified/piled-surface observations or floor reuse"
+  },
+  "top_plane_scope": "9 manually paired actual flat TOP surfaces; other3rightrearexpected-only occupied mapping, observed floor references classifyempty. Staticoccluded areas unknown.",
+  "tests": {
+    "count": 5,
+    "passed": true,
+    "command": "/usr/bin/python3 -s -m unittest discover -s teaching/external_layout -p 'test_*.py' -v",
+    "log": "test_results.log"
+  },
+  "source_sha256": {
+    "perception.py": "d9b11866d97050fc22a44163eb40e249b9af97ff03161e1a1cb826eac8c21bd4",
+    "run.py": "d87c26812cba0dcb25fe023f72b6af885a610d5b8e9e4e602d17da514bc92940",
+    "config.json": "677abec19c257a1d24c6d307a4fde38b280a9bff9b9a760acbfe2604d8337054",
+    "test_perception.py": "ab4f8af06187ddf60f2dc88f1ee48ba5fdaa01ddd3119a6c9518c1a37030caa5",
+    "README.md": "5f77f9d08a5292308ece88052745c9caad2008df0862f7c1ca3636c287ae69e4"
+  },
+  "artifact_sha256": {
+    "initial.jpg": "94e89cf1e0c64522a5b1873060ff0e5f001721d30e90d57dc72eaa58b10be16f",
+    "ready.jpg": "869191489eaa25f0d38564dfaf8d0a0b53cc3814ec372f6757fbbbb474eb18be",
+    "palette_reference_sheet.jpg": "1216f7449e037ded760006a59f00e45287860191abb3fead67262a17bf297a5c",
+    "removal_target_before.jpg": "3420c1643cfb15e6ed1c2a5e67abc53fac18394f3955305ab7ec35824468706f",
+    "validation_before_latest.json": "563513b5fe0514a5948b2dbc97ea2a400afd6d6ab8daabde8980aa944e8bb994",
+    "dimensioned_layout.png": "72a1cfdf8ded61fae505add328ba137c2f246313b3cce3f01c8e245e7404565d",
+    "validation_current_latest.json": "2f690b601f95b7999a090dbc61fb031903ef31d722973088a98c9767dded43c9",
+    "handoff_raw.jpg": "0305bb2774eb8c521cfd631af2b2b4e05912f72d63a871c61544c824dad316b3",
+    "handoff_overlay.jpg": "f75cf7279cda7750ae9ba090966088760e8449c711d47a061b03f4736155aaab",
+    "handoff_latest.json": "f7324dd446e73447d1568eff3b116cc6cf49bcd77d1f74c791d742ac6b4c00cc"
+  },
+  "untouched": [
+    "teaching/positions.json",
+    "authoritative inventory",
+    "existing calibration",
+    "motion optimization",
+    "digital_twin/bridge",
+    "twin renderer files",
+    "RL/contact task"
+  ],
+  "camera_owner_pid_at_handoff": 572950,
+  "service_supervisor_pid": 572947,
+  "root_forward_pid": 572949,
+  "remaining_validation": [
+    "Operator confirmation of the five provisional physical color-reference labels",
+    "Operator removal of identified redbrick external_r5_c0_m0_n1 followed by independent fresh empty observation. No removed transition is claimed."
+  ],
+  "limitations": [
+    "Confidence is a heuristic scene-reference score, not calibrated probability or independent accuracy.",
+    "Static occlusion/pose/motion/white-gap guards can conservatively mark observations unknown under illumination or edge variation.",
+    "Monocular matching cannot exclude every visually identical stationary foreign object; the feed never controls motion or authoritative inventory."
+  ]
+}

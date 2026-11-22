@@ -1,0 +1,188 @@
+{
+  "saved_utc": "2026-10-27T12:28:31.346050+00:00",
+  "active_mode": "stationary_vertical",
+  "run": "teaching/factory_cycle/runs/cycles_20261027T122556.436105Z",
+  "cycle": {
+    "pose": "5_0",
+    "completed": true,
+    "total_duration_s": 15.001359198999126,
+    "recovery_duration_s": null,
+    "recovered_existing_grasp": false,
+    "full_cycle_benchmark": true,
+    "target_s": 15.0,
+    "phase_timings": [
+      {
+        "phase": "control_begin",
+        "duration_s": 0.0016275839880108833,
+        "completed": true
+      },
+      {
+        "phase": "clearance_view",
+        "duration_s": 1.00368195399642,
+        "completed": true
+      },
+      {
+        "phase": "conveyor_clear_verification",
+        "duration_s": 0.07453719998011366,
+        "completed": true
+      },
+      {
+        "phase": "approach",
+        "duration_s": 2.018075124011375,
+        "completed": true
+      },
+      {
+        "phase": "coarse_visual_supervision",
+        "duration_s": 0.295677401998546,
+        "completed": true
+      },
+      {
+        "phase": "descent",
+        "duration_s": 1.059724610997364,
+        "completed": true
+      },
+      {
+        "phase": "row_synchronization",
+        "duration_s": 0.5450312049943022,
+        "completed": true
+      },
+      {
+        "phase": "close",
+        "duration_s": 0.6448619769944344,
+        "completed": true
+      },
+      {
+        "phase": "clearance_lift",
+        "duration_s": 1.2336625510070007,
+        "completed": true
+      },
+      {
+        "phase": "transfer",
+        "duration_s": 2.360143641999457,
+        "completed": true
+      },
+      {
+        "phase": "vertical_placement",
+        "duration_s": 1.1917037710081786,
+        "completed": true
+      },
+      {
+        "phase": "opening_synchronization",
+        "duration_s": 1.2347915470018052,
+        "completed": true
+      },
+      {
+        "phase": "release",
+        "duration_s": 0.48436646498157643,
+        "completed": true
+      },
+      {
+        "phase": "placing_synchronization",
+        "duration_s": 0.21332189202075824,
+        "completed": true
+      },
+      {
+        "phase": "retreat_to_inspection",
+        "duration_s": 0.9001942969916854,
+        "completed": true
+      },
+      {
+        "phase": "placement_verification",
+        "duration_s": 0.11720542499097064,
+        "completed": true
+      },
+      {
+        "phase": "return_home",
+        "duration_s": 0.8929782309860457,
+        "completed": true
+      },
+      {
+        "phase": "control_finish",
+        "duration_s": 0.020292066998081282,
+        "completed": true
+      },
+      {
+        "phase": "home_synchronization",
+        "duration_s": 0.5671214969770517,
+        "completed": true
+      }
+    ],
+    "placement_mode": "stationary_vertical",
+    "synchronized_markers": [
+      {
+        "marker": "row",
+        "target_s": 5.0,
+        "ready_s": 4.455002814996988,
+        "actual_s": 5.000022808992071,
+        "lateness_s": 2.2808992071077228e-05
+      },
+      {
+        "marker": "opening_start",
+        "target_s": 11.8,
+        "ready_s": 10.565308165998431,
+        "actual_s": 11.80008970500785,
+        "lateness_s": 8.970500784855062e-05
+      },
+      {
+        "marker": "placing",
+        "target_s": 12.5,
+        "ready_s": 12.28678137800307,
+        "actual_s": 12.50009014600073,
+        "lateness_s": 9.014600072987378e-05
+      },
+      {
+        "marker": "home",
+        "target_s": 15.0,
+        "ready_s": 14.432975795993116,
+        "actual_s": 15.00008922800771,
+        "lateness_s": 8.922800770960748e-05
+      }
+    ],
+    "release_complete_actual_s": 12.286104664002778,
+    "operator_confirmed_pick": false,
+    "correct_picks": 1,
+    "correct_placements": 1,
+    "stops": 0,
+    "measured_release_vy_m_s": null,
+    "full_opening_release_metrics": null,
+    "bounded_recoveries": [],
+    "tracking_inventory_and_other_in_cycle_overhead_s": 0.14236075707594864,
+    "commanded_release_vy_m_s": 0,
+    "forward_stroke_m": 0,
+    "measured_forward_travel_m": null,
+    "release_opening_latency_s": 0.3870208040170837,
+    "inventory_advanced": true,
+    "verification": "Fixed four-brick row: loaded width retained through full lift; fresh camera supervision; fresh four-brick destination detection; open hand and final home",
+    "measured_stationary_placement_xy_delta_m": [
+      1.7404556274414062e-05,
+      -1.341104507446289e-06
+    ],
+    "stationary_xy_measurement_source": "Measured foreground TCP samples spanning vertical descent through verified opening"
+  },
+  "initialization_s": 1.9177109189913608,
+  "phase_targets_s": {
+    "row": 5.0,
+    "placing_release_complete": 12.5,
+    "home": 15.0
+  },
+  "release_already_verified_at_s": 12.286104664002778,
+  "phase_markers_include_safe_stationary_holds": true,
+  "speed_alignment_enabled": false,
+  "saved_speed_matched_profile": "teaching/moving_conveyor/profiles/speed_matched_20261027.json",
+  "previous_speed_benchmark_retained": "teaching/factory_cycle/BENCHMARK.json",
+  "verified_four_brick_picks": 1,
+  "verified_four_brick_placements": 1,
+  "stops": 0,
+  "final_robot": {
+    "mode": "Idle",
+    "errors": [],
+    "xyz_m": [
+      0.6991239786148071,
+      0.10065051168203354,
+      0.1066373810172081
+    ],
+    "width_m": 0.06999992579221725
+  },
+  "limitations": "One physical synchronized stationary-placement cycle demonstrated; no claim of repeated statistical reliability.",
+  "clock_source": "Local monotonic cycle clock; no external PLC trigger"
+}

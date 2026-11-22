@@ -1,2 +1,65 @@
+# ---------------------------------------------------------------
+# Python / tooling byproducts
+# ---------------------------------------------------------------
 __pycache__/
 *.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+.venv/
+venv/
+build/
+install/
+
+# ---------------------------------------------------------------
+# Compiled C++ binaries (rebuilt from the .cpp sources via build.sh)
+# ---------------------------------------------------------------
+teaching/gripper_width
+teaching/joint_move
+teaching/read_pose
+teaching/moving_conveyor/execute
+teaching/factory_cycle/controller
+teaching/factory_cycle/controller_conveyor_moving
+teaching/factory_cycle/recover
+teaching/wave_demo/controller
+teaching/layer_stacking/controller
+digital_twin/bridge/read_hand
+digital_twin/bridge/read_state
+digital_twin/isaac/lego_contact/task/assets/owner_recorder_synthetic
+task2/codex_stuff/franka_lego_sorter/tools/read_robot_snapshot
+
+# ---------------------------------------------------------------
+# Logs, locks, partial writes
+# ---------------------------------------------------------------
+*.log
+log/
+logs/
+*.lock
+*.partial
+
+# ---------------------------------------------------------------
+# Runtime recordings / telemetry (≈2.8 GB, regenerated on every run)
+# ---------------------------------------------------------------
+# Live digital-twin telemetry (telemetry.ndjson alone is ~2.5 GB)
+digital_twin/runs/
+# Per-run controller/trajectory dumps
+teaching/*/runs/
+# Per-command motion records written by the teaching tools
+teaching/moves/
+teaching/gripper_moves/
+# Planner path cache (recreated automatically by factory_cycle/planner.py)
+teaching/factory_cycle/cache/
+
+# ---------------------------------------------------------------
+# Camera captures and validation evidence (images + samples)
+# ---------------------------------------------------------------
+teaching/external_layout/captures/
+teaching/external_layout/output/
+digital_twin/perception/conveyor_observation/
+digital_twin/perception/camera_reconnect_validation/
+
+# ---------------------------------------------------------------
+# Misc local files
+# ---------------------------------------------------------------
+Screenshot from *.png
+.gitignore_old

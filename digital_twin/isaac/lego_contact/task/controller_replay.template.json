@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "controller_interface": "joint_positions_joint_impedance",
+  "reference": {
+    "path": null,
+    "provenance": "physical",
+    "actuation_method": "franka_joint_impedance",
+    "conditions": {
+      "sdk_version": null,
+      "tool_profile_id": null,
+      "payload_profile_id": null,
+      "impedance_profile_id": null,
+      "limiter_profile_id": null,
+      "filter_profile_id": null,
+      "wrench_profile_id": null,
+      "fixture_grasp_id": null,
+      "control_period_s": null,
+      "sample_phase": "before_command_application"
+    }
+  },
+  "simulation": {
+    "path": null,
+    "provenance": "simulation",
+    "actuation_method": "dynamic_joint_impedance_surrogate",
+    "conditions": {
+      "sdk_version": null,
+      "tool_profile_id": null,
+      "payload_profile_id": null,
+      "impedance_profile_id": null,
+      "limiter_profile_id": null,
+      "filter_profile_id": null,
+      "wrench_profile_id": null,
+      "fixture_grasp_id": null,
+      "control_period_s": null,
+      "sample_phase": "before_command_application"
+    }
+  },
+  "tolerances": {
+    "maximum_sample_gap_s": null,
+    "time_alignment_s": null,
+    "command_match_rad": null,
+    "joint_rmse_rad": null,
+    "joint_max_error_rad": null,
+    "joint_velocity_rmse_rad_s": null,
+    "force_rmse_N": null,
+    "torque_rmse_Nm": null,
+    "minimum_command_excursion_rad": null
+  },
+  "recording_requirements": {
+    "arrays": {
+      "requested_q": 7,
+      "sent_q": 7,
+      "desired_q": 7,
+      "measured_q": 7,
+      "measured_dq": 7,
+      "wrench_K": 6,
+      "F_T_EE": 16,
+      "EE_T_K": 16
+    },
+    "scalars": [
+      "t_s",
+      "wrench_state_t_s",
+      "wrench_filter_latency_s",
+      "wrench_nominal_force_t_s",
+      "sequence",
+      "dropped_samples_since_last"
+    ],
+    "flags": [
+      "wrench_valid",
+      "singularity_valid",
+      "grasp_valid",
+      "robot_fault"
+    ],
+    "time": "Episode-relative monotonic t_s from a declared common command origin; do not align by fitting a lag. Capture before command application in both domains. Wrench stays on reported state time; retain calibrated filter latency and nominal force time=t_s-latency in both domains. Nominal force time is delay metadata, not a resampled signal.",
+    "ownership": "Record from the foreground SDK owner only; do not reconnect an independent reader during control. Existing viewer packets are not sufficient.",
+    "provenance": "This is an uncommissioned schema; no measured values or dynamic actuator implementation are supplied."
+  }
+}

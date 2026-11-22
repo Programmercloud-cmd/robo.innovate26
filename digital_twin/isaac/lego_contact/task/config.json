@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "task": "centered_4_by_3_alternating_lego_seating",
+  "repository_root": ".",
+  "baseplate": {
+    "grid_shape": [32, 32],
+    "grid_shape_status": "photo_supported_not_physically_verified",
+    "stud_pitch_m": 0.008,
+    "stud_pitch_status": "nominal_cad_prior",
+    "pitch_provenance": "LDraw 20 LDU stud pitch and approximately 0.4 mm/LDU; not metrology of this plate",
+    "thickness_m": null,
+    "stud_radius_m": null,
+    "stud_height_m": null,
+    "mounting_fixation": null,
+    "support_compliance": null,
+    "registration_status": "photo_candidate_only",
+    "T_O_plate": null,
+    "datum": "stud(0,0) center at first brick bottom seating datum; +Z outward; physical seating height unmeasured"
+  },
+  "visual_geometry_priors": {
+    "stud_diameter_m": 0.0048,
+    "stud_height_m": 0.0017,
+    "source": "BrickSim core/specs.cppm at cbd5de3238e6ac12f44ef699e1507a9f16bdafc3",
+    "status": "nominal CAD visual priors only; not contact dimensions or measured engagement physics"
+  },
+  "stack": {
+    "center_mode": "plate_center",
+    "center_confirmation": "Operator explicitly answered Center on 2026-10-27",
+    "layer_count": 2,
+    "layer_count_status": "configurable_initial_geometry_example_not_an_operator_quantity_request",
+    "orientation_quarter_turns": 0,
+    "orientation_status": "configurable_nominal_first_layer_orientation_not_physically_taught",
+    "layer_pitch_m": 0.0096,
+    "layer_pitch_provenance": "operator supplied brick body height excluding studs; not a seated-contact measurement",
+    "brick_body_size_m": [0.0318, 0.0158, 0.0096],
+    "placement_order": "layer_major"
+  },
+  "registration": {
+    "photo": "assets/baseplate.jpg",
+    "old_scene_registration": "assets/prior_scene_registration.json",
+    "copied_sources": "Photo bytecopy from supplied attachment; prior_scene_registration.json bytecopy from digital_twin/registration/scene_registration.json",
+    "board": {"dictionary": "DICT_4X4_50", "squares_xy": [7, 5], "square_length_m": 0.03, "marker_length_m": 0.022},
+    "board_provenance": "archived board_definition.yaml: four squares measured 120 mm; scale uncertainty unspecified; marker side nominal",
+    "plate_roi_pixels": [650, 1740, 2210, 3290],
+    "image_size": [2880, 3840],
+    "tape_scan_pixels": {"y_range":[3100,3500],"left_x_range":[150,600],"right_x_range":[2320,2780]},
+    "first_stud_corner_hints_pixels": [[2074,1765],[703,1810],[703,3248],[2155,3205]],
+    "image_hint_provenance": "manual ROI/corner hints on full-resolution supplied external photograph; source camera/intrinsics unknown; not robot coordinates",
+    "centerline_constraint": "plate X center equals board X center; axes parallel as a photo-derived candidate",
+    "tape_constraint": "plate far +Y edge faces board-side edge of black stripe below plate in photo",
+    "physical_alignment_verified": false,
+    "board_mount_continuity_operator_reported": true,
+    "camera_mount_continuity_verified": false,
+    "robot_base_continuity_verified": false
+  },
+  "control": {
+    "existing_contract": "../real_contract.json",
+    "action_components": ["x", "y", "z", "yaw"],
+    "roll_pitch_actions": false,
+    "world_tool_axis": [0, 0, -1],
+    "measured_vertical_tolerance_rad": null,
+    "identified_servo_model": null
+  },
+  "observation": {
+    "camera": {
+      "camera_id": "wrist_sonix_c920",
+      "calibration_id": null,
+      "image_size": [1280,720],
+      "K": null,
+      "distortion_model": "brown_conrady",
+      "distortion": null,
+      "intrinsics_validated": false,
+      "mounting_continuity_verified": false,
+      "settings_profile_id": null
+    },
+    "limits": {
+      "max_frame_age_s": null,
+      "max_held_evidence_age_s": null,
+      "max_state_camera_skew_s": null,
+      "minimum_confidence": null,
+      "association_gate_normalized": null,
+      "ambiguity_margin_normalized": null,
+      "minimum_visible_features": null,
+      "maximum_occluded_frames": null,
+      "history_length": 4
+    },
+    "held_brick": {"pose_slip_observable": false,"evidence_id":null,"grasp_profile_id":null},
+    "measured_detector_error_profile": null
+  },
+  "contact": {
+    "existing_axial_schema": "../effective_fit_schema.json",
+    "validated_model": null,
+    "required_support_patterns": ["baseplate_8_studs", "inner_bridge_4_studs_4_owners", "outer_cantilever_2_studs_2_owners"],
+    "held_out_physical_report": null,
+    "independent_retention_report": null,
+    "timestep_solver_report": null
+  },
+  "training": {
+    "algorithm": "PPO",
+    "max_timesteps": 100000,
+    "seed": 7,
+    "curriculum": ["aligned_baseplate", "measured_handoff_errors", "inner_bridges", "outer_cantilever"],
+    "uncertainty_ranges": null,
+    "validated_environment": null,
+    "baseline_evaluation": null,
+    "checkpoint": null,
+    "training_ready": false,
+    "hardware_deployment_enabled": false
+  }
+}

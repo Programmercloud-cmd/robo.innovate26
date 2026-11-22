@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "environments": {
+    "factory": {
+      "label": "Factory workcell",
+      "add_plate": false
+    },
+    "board": {
+      "label": "Factory workcell + empty RL plate",
+      "add_plate": true
+    }
+  },
+  "fingers": {
+    "original": {
+      "label": "Original column fingertips"
+    },
+    "wide": {
+      "label": "Closely fitting layer pocket fingertips",
+      "source_stl_sha256": "30c3e47142dce9ba82ec46edf42f1dc2825d620d23bad0a95ce1e2de902b752d",
+      "mounting": "Retain the original narrow CAD mounting spine and boss; add 3.2 mm cap walls outside the inside cavity",
+      "whole_layer_size_m": [
+        0.0954,
+        0.0632,
+        0.0096
+      ],
+      "whole_layer_provenance": "Factory: three 31.8 mm columns, four touching 15.8 mm brick widths; operator dimensions",
+      "whole_layer_center_pose_template": "{n}_1",
+      "whole_layer_center_note": "The middle column is the layer center. Original n_m column poses and motion jobs are unchanged.",
+      "nominal_close_width_m": 0.06,
+      "inside_reach_m": 0.02,
+      "inside_reach_status": "Operator confirmed 20 mm inside reach per individual fingertip along the closing direction, 2026-10-27",
+      "reach_reference": "inner_clamping_face_to_end_return_tip",
+      "wall_thickness_m": 0.0032,
+      "inside_height_status": "Derive from original CAD side profile; operator explicitly requires all three walls to retain the previous gripper side profile",
+      "native_open_width_m": 0.07,
+      "minimum_opposing_clearance_m": 0.001,
+      "minimum_opposing_clearance_status": "Explicit simulation travel guard; not a measured feature of the physical part",
+      "shape": "Existing tapered cap profile and ceiling; passive guide spacing derived from assembled-layer span with positive clearance; underside open",
+      "wall_profile": "original_cad_body_side_silhouette",
+      "source_body_backplane_cad_x_mm": -9.5,
+      "source_body_backplane_provenance": "Existing fingertip_visual.body_mount_cad_x_mm, original scene_config.json; nominal CAD mounting plane",
+      "source_pad_backplane_abs_finger_y_m": 0.01090669,
+      "source_pad_backplane_provenance": "Existing CAD registration stock_pad_backplane_abs_finger_y_m; terminal native collision box cropped only inside this metal-support plane",
+      "ceiling": {
+        "mode": "preserve_current",
+        "fixed_top_reference_thickness_m": 0.0032,
+        "nominal_thickness_m": 0.01745,
+        "fingertip_to_brick_bottom_clearance_m": null,
+        "clearance_verified": false,
+        "clearance_evidence": null,
+        "clearance_sign": "Positive when fingertip bottom is above brick bottom at the established grasp",
+        "rule": "new thickness = 17.45 mm + verified fingertip-to-brick-bottom clearance; original upper surface stays fixed",
+        "retained_thickness_m": 0.0032,
+        "pending_adjustment_status": "Fixed-top 17.45 mm + verified-clearance calculation retained but not activated; latest request changes only side spacing"
+      },
+      "pocket_fit": {
+        "measured_assembled_span_m": null,
+        "measurement_evidence": null,
+        "total_guide_clearance_m": 0.0004,
+        "guide_clearance_status": "Provisional simulation design allowance: 0.2 mm per passive side; not a measured manufacturing tolerance",
+        "span_rule": "measured assembled-layer span + total guide clearance; nominal whole_layer_size_m[0] used only for an explicitly marked preview",
+        "axis": "Between opposite end walls within one fingertip, across the three brick columns",
+        "reference_previous_span_m": 0.1,
+        "approved_clear_span_m": 0.0958,
+        "span_approval_evidence": "Operator confirmed: 95.8 mm is good; interpreted as approval of the proposed clear pocket span, not an assembled-layer measurement"
+      }
+    }
+  },
+  "plate": {
+    "rl_config": "../lego_contact/task/config.json",
+    "rl_registration": "../lego_contact/task/plate_registration_candidate.json",
+    "tape_covered_rows_each_edge": 1,
+    "tape_surface_drawing_offset_m": 0.0001,
+    "tape_extent": "Only the confirmed overlap on the plate is modeled; outside tape width is unspecified",
+    "position_continuity": "Operator reports plate taped at the same table location; retain RL photo-derived display transform",
+    "photographed_bricks_added": false
+  },
+  "selection": "Environment and fingertips are independent explicit arguments. No hardware detection selects a scene.",
+  "hardware_clients": 0
+}

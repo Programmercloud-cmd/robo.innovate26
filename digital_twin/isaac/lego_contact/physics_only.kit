@@ -1,0 +1,26 @@
+[package]
+title = "FR3 read-only digital twin physics"
+version = "1.0.0"
+
+[dependencies]
+"omni.usd" = {}
+"omni.kit.usd.layers" = {}
+"omni.physx" = {}
+"omni.physx.tensors" = {}
+"isaacsim.robot.schema" = {}
+
+[settings]
+app.name = "FR3-Telemetry-Twin"
+app.version = "1.0.0"
+app.settings.persistent = false
+app.window.enabled = false
+app.renderer.enabled = false
+renderer.enabled = false
+app.livestream.enabled = false
+app.file.ignoreUnsavedOnExit = true
+
+[settings.app.exts.folders]
+'++' = [
+  "/home/ubuntu/workspace/robo26-runtime-isaac51/venv/lib/python3.11/site-packages/isaacsim/exts",
+  "/home/ubuntu/workspace/robo26-runtime-isaac51/venv/lib/python3.11/site-packages/isaacsim/extscache",
+]

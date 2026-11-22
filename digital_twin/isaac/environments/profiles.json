@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "environments": {
+    "factory": {
+      "label": "Factory workcell",
+      "add_plate": false
+    },
+    "board": {
+      "label": "Factory workcell + empty RL plate",
+      "add_plate": true
+    }
+  },
+  "fingers": {
+    "original": {
+      "label": "Original column fingertips"
+    },
+    "wide": {
+      "label": "Wide layer fingertips (supplied STL)",
+      "geometry_source": "supplied_stl",
+      "cad_asset": "assets/wide_lego_gripper.stl",
+      "cad_sha256": "7d076beec9820dacc2788e91cfb1dad65f19a0076d0776a8b9f37bf17eedcd1c",
+      "cad_to_original_scale": 0.1,
+      "cad_to_original_translation_mm": [
+        85.5,
+        64.60284729003907,
+        -248.4000427246094
+      ],
+      "cad_registration_basis": "Operator reports 10x overscale. Uniform 0.1 conversion matches the original 25.55 mm side profile, existing X=-9.5 mm mounting backplane and screw axis, approved 95.8 mm pocket and 20 mm reach. Translate to the original CAD frame before applying its existing two mirrored rigid mount registrations.",
+      "cad_units_status": "STL has no unit metadata; scale identified from matching CAD dimensions and operator confirmation",
+      "cad_dimensions_authoritative": true,
+      "whole_layer_size_m": [
+        0.0954,
+        0.0632,
+        0.0096
+      ],
+      "whole_layer_provenance": "Factory: three 31.8 mm columns, four touching 15.8 mm brick widths; operator dimensions",
+      "whole_layer_center_pose_template": "{n}_1",
+      "whole_layer_center_note": "The middle column is the layer center. Original n_m column poses and motion jobs are unchanged.",
+      "nominal_close_width_m": 0.06,
+      "native_open_width_m": 0.07,
+      "minimum_opposing_clearance_m": 0.001,
+      "minimum_opposing_clearance_status": "Explicit simulation travel guard; not a measured feature of the physical part",
+      "source_pad_backplane_abs_finger_y_m": 0.01090669,
+      "source_pad_backplane_provenance": "Existing CAD registration stock_pad_backplane_abs_finger_y_m; terminal native collision box cropped only inside this metal-support plane",
+      "mounting": "Use supplied complete CAD in the original CAD frame; inherit original rigid mounting transforms on both fingers",
+      "ceiling": {
+        "mode": "target_cavity_height",
+        "target_cavity_height_m": 0.006,
+        "note": "Operator confirmed 6 mm free cavity between roof underside and fingertip bottoms. Thicken downward; external roof top, source CAD, side profiles and mounts remain fixed."
+      }
+    }
+  },
+  "plate": {
+    "rl_config": "../lego_contact/task/config.json",
+    "rl_registration": "../lego_contact/task/plate_registration_candidate.json",
+    "tape_covered_rows_each_edge": 1,
+    "tape_surface_drawing_offset_m": 0.0001,
+    "tape_extent": "Only the confirmed overlap on the plate is modeled; outside tape width is unspecified",
+    "position_continuity": "Operator reports plate taped at the same table location; retain RL photo-derived display transform",
+    "photographed_bricks_added": false
+  },
+  "selection": "Environment and fingertips are independent explicit arguments. No hardware detection selects a scene.",
+  "hardware_clients": 0
+}

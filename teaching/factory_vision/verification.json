@@ -1,0 +1,14 @@
+{
+  "calibration_frames_reprocessed": 21,
+  "blank_rejected": true,
+  "masked_brick_rejected": true,
+  "row_0_0_studs_per_brick": [
+    7,
+    7,
+    7,
+    8
+  ],
+  "calibration_rms_weighted_px": 0.5045404080409253,
+  "calibration_normalized_condition": 1.4153902905246991,
+  "physical_grasp_verified": false
+}

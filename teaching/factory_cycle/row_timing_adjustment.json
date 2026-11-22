@@ -1,0 +1,9 @@
+{
+  "reason": "5_2 reached row after 5.108s; missed100ms lateness guard before grasp",
+  "previous_scale": 1.7,
+  "new_scale": 1.55,
+  "unchanged_deadlines": true,
+  "unchanged_motion_limits": true,
+  "basis": "Only removes part of extra slowing; certified unscaled path remains lower bound",
+  "run": "runs/cycles_20261027T153441.373619Z"
+}

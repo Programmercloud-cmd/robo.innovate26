@@ -1,0 +1,1 @@
+Explicitly synthetic calibration fixture. No robot/wrench calibration was performed.

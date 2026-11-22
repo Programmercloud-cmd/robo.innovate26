@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "contact_enabled": false,
+  "physical_registration_verified": false,
+  "training_ready": false,
+  "plate_visual_studs": 1024,
+  "brick_count": 24,
+  "brick_visual_studs": 192,
+  "candidate_collision_prims": [],
+  "candidate_rigid_body_prims": [],
+  "candidate_joint_prims": [],
+  "maximum_brick_world_position_error_m": 0.0,
+  "maximum_brick_world_rotation_element_error": 2.220446049250313e-16,
+  "potential_support_metadata_matches_layout": true,
+  "scene_path": "task/scene-candidate-03/scene_candidate.usdc",
+  "scene_sha256": "cd983eb84cadf99a4b7aea9da26ebb10e37be2bd643644a32dfcab7c13901d83",
+  "display_transform_status": "photo paper-plane display proxy; physical seating Z unknown",
+  "T_O_P_display": [
+    [
+      0.01283564560836859,
+      0.9998843855044577,
+      0.008152412292627654,
+      0.09919115394057729
+    ],
+    [
+      -0.9997590510736336,
+      0.012687990377276106,
+      0.017912417383856138,
+      -0.3420221574848012
+    ],
+    [
+      0.017806908720035954,
+      -0.008380365419166607,
+      0.9998063229832449,
+      -0.013952989672757276
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "visual_geometry_priors": {
+    "stud_diameter_m": 0.0048,
+    "stud_height_m": 0.0017,
+    "source": "BrickSim core/specs.cppm at cbd5de3238e6ac12f44ef699e1507a9f16bdafc3",
+    "status": "nominal CAD visual priors only; not contact dimensions or measured engagement physics"
+  },
+  "physical_plate_thickness_m": null,
+  "physical_support": null,
+  "contact_disabled_reason": "plate thickness, seating height, fixation/compliance and engagement model remain unvalidated; a visual plane/stud mesh is not support/contact physics",
+  "support_summary": {
+    "brick_count": 24,
+    "potential_match_count_histogram": {
+      "2": 6,
+      "4": 6,
+      "8": 12
+    },
+    "cantilever_validation_bricks": [
+      "b_0_0_1",
+      "b_0_1_1",
+      "b_0_2_1",
+      "b_3_0_1",
+      "b_3_1_1",
+      "b_3_2_1"
+    ]
+  },
+  "source_sha256": {
+    "/home/ubuntu/workspace/lego-contact-20261026/task/config.json": "005961cc849429f9d7918ba8c6e9cabd8b09503c9b48ab3da6d9dc9a6fa038ee",
+    "/home/ubuntu/workspace/lego-contact-20261026/task/plate_registration_candidate.json": "85f146b3657738c77d0a3e38d82edad0886850f60343fabeefad8017d035f4be",
+    "/home/ubuntu/workspace/lego-contact-20261026/task/scene.py": "d6794fff5f43771bd02d9650a7eb7a8c05c33f8d6afce5408203930aebc6b7ce",
+    "/home/ubuntu/workspace/lego-contact-20261026/task/stack_layout.py": "e0c1a83d1f8237cdcf92b4879ee5805d629146082e58952ed8350a4ed05bb09f"
+  },
+  "original_base_stage": "/home/ubuntu/workspace/fr3-digital-twin-20261026/model-snapshot-01/digital_twin.usdc",
+  "original_base_sha256_before": "3d5aee7c0e3179b617d858667524a9adf2690cf13392e58f2bb1a637e852d449",
+  "original_base_sha256_after": "3d5aee7c0e3179b617d858667524a9adf2690cf13392e58f2bb1a637e852d449",
+  "hardware_clients": 0,
+  "tool_commands": 0,
+  "simulation_steps": 0
+}

@@ -1,0 +1,27 @@
+{
+  "status": "normalized_bias_gain_corrected_owner_recording",
+  "training_ready": false,
+  "hardware_deployment_enabled": false,
+  "written": 20,
+  "provenance": "synthetic",
+  "physical_data": false,
+  "conditions": {
+    "sdk_version": "synthetic-sdk",
+    "tool_profile_id": "synthetic-tool",
+    "payload_profile_id": "synthetic-payload",
+    "impedance_profile_id": "synthetic-impedance",
+    "limiter_profile_id": "synthetic-limiter",
+    "filter_profile_id": "synthetic-filter",
+    "wrench_profile_id": "synthetic-raw-wrench",
+    "fixture_grasp_id": "synthetic-fixed-grasp",
+    "clock_id": "synthetic-virtual-clock",
+    "control_period_s": 0.001,
+    "sample_phase": "before_command_application"
+  },
+  "source_sha256": {
+    "digital_twin/isaac/lego_contact/task/owner-recorder-synthetic-20261027-02/normal/trace.ndjson": "85e1f0e28958d2ded8901f6a0b87e672e05c67732e18be6c917fb69118930bbb",
+    "digital_twin/isaac/lego_contact/task/owner-recorder-synthetic-20261027-02/normal/health.json": "31469e0169bdc76a628a589c6bb508d693c4029c7bc02c9ff25924f83e311112",
+    "digital_twin/isaac/lego_contact/task/owner-normalization-synthetic-20261027-01/synthetic-calibration.json": "8086416c27dc760d49648442ac4924477a4f7c3accb5c1584e2861bb33caee47"
+  },
+  "note": "Integrity and supplied local calibration only; not independent calibration, controller, contact or policy validation. Rows stay on SDK state time; wrench nominal force time represents declared filter delay, not a resampled signal. Do not apply this correction twice to the live actor raw-wrench path."
+}

@@ -1,0 +1,79 @@
+{
+  "saved_utc": "2026-10-27T01:30:42.464558+00:00",
+  "goal_completion": "not_achieved",
+  "previous_goal_turn": "progress",
+  "current_goal_turn": "no_progress_external_evidence_blocker_revalidated",
+  "same_blocker_seen_consecutive_goal_turns": 3,
+  "blocking_condition": "Essential physical registration, current Logitech camera calibration, grip/fixture/controller/wrench and multiple-rate contact/retention evidence unavailable; hardware last reported disconnected until morning. Existing evidence is synthetic or insufficient historical data.",
+  "requirements": [
+    {
+      "section": "1. Physical baseplate registration/support",
+      "status": "incomplete",
+      "proved": "photo-derived visual candidate authored and parsed in Isaac; nominal32x32grid photo-supported",
+      "missing": "physical stud/seating datum, thickness/fixation/compliance/current board-to-base and wrist mounting continuity",
+      "evidence": [
+        "plate_registration_candidate.json",
+        "scene-candidate-03/scene_audit.json",
+        "config.json"
+      ]
+    },
+    {
+      "section": "2. Requested alternating stack",
+      "status": "nominal_geometry_implemented_physical_verification_missing",
+      "proved": "operator confirmed center; allb_n_m_k poses/12bricksperlayer and8/4/2studpotentialcorrespondences generated; layer/order configurable",
+      "missing": "actual stud grid physical registration, seated layer pitch and mechanical validation of bridges/cantilevers",
+      "evidence": [
+        "stack_layout.json",
+        "stack_layout.py",
+        "test_stack_layout.py"
+      ]
+    },
+    {
+      "section": "3. Task-specific sim-to-real validation",
+      "status": "not_achieved",
+      "proved": "axial software energy/force tests, strict replay tools and synthetic recording failure cases",
+      "missing": "measured multiple-rate fit+heldout grip/fixture/servo/wrench/capture/hysteresis/jam/retention tests and matched full task plant/timestep/solver validation",
+      "evidence": [
+        "identification_verification.json",
+        "owner_recorder_verification.json",
+        "../effective_fit_schema.json",
+        "../physical_trials.template.json"
+      ]
+    },
+    {
+      "section": "4. Residual policy interface",
+      "status": "offline_interfaces_implemented_real_sim_integration_uncommissioned",
+      "proved": "absoluteXYZyaw/vertical guards, observed ROI pixels, normalizedcamera/history packets, ownership-preserving recorder component",
+      "missing": "acceptedcurrentLogitechK/handeye/settings/errorlatencyprofile; currentgrip/slipobservability/bounds; foregroundrecorder+IK/actuator/livecalibrationintegration and physical runtime checks",
+      "evidence": [
+        "control.py",
+        "observations.py",
+        "stud_detector.py",
+        "camera_evidence_audit.json",
+        "owner_recorder.hpp"
+      ]
+    },
+    {
+      "section": "5. Actual training and evaluation",
+      "status": "not_started_gates_fail",
+      "proved": "VM Torch/Gym/SB3/CUDA runtime available",
+      "missing": "validated trainingplant and evidence-derived curriculum/randomization/reward; boundedjob/savedcheckpoint/heldoutdeterministicbaselinecomparison",
+      "evidence": [
+        "vm_audit.json",
+        "requirements_audit.json",
+        "config.json"
+      ]
+    }
+  ],
+  "authoritative_current_values": {
+    "physical_T_O_plate": null,
+    "logitech_calibration_id": null,
+    "validated_contact_model": null,
+    "held_out_physical_report": null,
+    "trained_checkpoint": null
+  },
+  "safe_next_action": "Resume with connected hardware and an operator: establish plate datum/fixation and current Logitech calibration; commission owner capture and local bounded controller; record independent multi-rate8/4/2stud grip/fixture/servo/wrench/seating/retention trials. Fit/validate matched plant, then train and evaluate the actual initial policy.",
+  "training_ready": false,
+  "hardware_deployment_enabled": false,
+  "request_sha256": "88e76f0cded7104dc7be07564acc1b2002df44d352da2200adefc7089a43c3f5"
+}

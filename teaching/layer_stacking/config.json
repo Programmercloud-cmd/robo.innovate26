@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "task": "whole_layer_stacking",
+  "geometry": {
+    "plate_registration": "digital_twin/isaac/lego_contact/task/plate_registration_candidate.json",
+    "plate_config": "digital_twin/isaac/lego_contact/task/config.json",
+    "source_catalog": "teaching/positions.json",
+    "external_layout": "teaching/external_layout/config.json",
+    "target_center_stud": [
+      23.5,
+      23.5
+    ],
+    "target_anchor_status": "provisional_simulation_lower_left; plate +X photo-left, +Y photo-down; teach before hardware",
+    "alternate_quarter_turns": true,
+    "layer_pitch_m": 0.0096,
+    "stud_pitch_m": 0.008,
+    "brick_body_size_m": [
+      0.0318,
+      0.0158,
+      0.0096
+    ],
+    "footprint_columns_rows": [
+      3,
+      4
+    ],
+    "tape_border_studs": 1
+  },
+  "job": {
+    "sources": [
+      "external_r5_c0",
+      "external_r4_c0"
+    ],
+    "source_availability": "development fixture only; physical inventory must be confirmed fresh",
+    "receiving_stack_initial_layers": 0
+  },
+  "motion": {
+    "approach_height_m": 0.05,
+    "transport_clearance_m": 0.1,
+    "open_width_m": 0.07,
+    "close_width_m": 0.06
+  },
+  "vision": {
+    "reference_file": null,
+    "alignment_step_translation_m": 0.0005,
+    "alignment_step_yaw_rad": 0.004,
+    "maximum_translation_correction_m": 0.004,
+    "maximum_yaw_correction_rad": 0.035,
+    "maximum_iterations": 12,
+    "reobservation_attempts": 3,
+    "stable_frames": 2,
+    "position_tolerance_m": 0.00015,
+    "yaw_tolerance_rad": 0.0015,
+    "maximum_frame_age_s": 0.15,
+    "maximum_state_age_s": 0.15,
+    "search_radius_px": 12,
+    "minimum_edge_coverage": 0.65,
+    "maximum_edge_residual_px": 1.5,
+    "maximum_grasp_edge_shift_px": 3.0,
+    "maximum_calibration_condition": 30.0,
+    "source_clearance_timeout_s": 1.5
+  },
+  "contact": {
+    "tick_s": 0.1,
+    "timeout_s": 12.0,
+    "maximum_descent_m": 0.004,
+    "maximum_search_radius_m": 0.0004,
+    "search_turns": 1.0,
+    "maximum_search_steps": 30,
+    "stable_samples": 3,
+    "unload_lift_m": 0.0004,
+    "alignment_height_m": 0.004
+  },
+  "hardware": {
+    "enabled": false,
+    "commissioning_id": null,
+    "whole_layer_grasp_qualified": false,
+    "board_fixture_fixed": false,
+    "workspace_verified": false,
+    "source_poses": {},
+    "first_seated_O_T_EE": null,
+    "workspace_bounds_m": null,
+    "expected_F_T_EE": null,
+    "minimum_insertion_m": null,
+    "seated_depth_tolerance_m": null,
+    "contact_reference_z_m": null,
+    "contact_force_N": null,
+    "seating_force_N": null,
+    "maximum_force_N": null,
+    "maximum_lateral_force_N": null,
+    "maximum_torque_Nm": null,
+    "admittance_m_s_N": null,
+    "maximum_vertical_speed_m_s": null,
+    "wrench_sign_for_downward_contact": null,
+    "bias_maximum_std_N": null,
+    "minimum_release_retention_verified": false,
+    "bias_maximum_mean_deviation_N": null,
+    "bias_maximum_mean_deviation_Nm": null,
+    "free_space_wrench_bias_by_parity": null,
+    "minimum_loaded_width_m": null,
+    "maximum_loaded_width_m": null,
+    "maximum_width_change_m": null
+  },
+  "development_fixture": {
+    "status": "synthetic software fixture; not LEGO contact identification; hardware values never inherited",
+    "dt_s": 0.1,
+    "contact_force_N": 0.5,
+    "seating_force_N": 2.0,
+    "maximum_force_N": 5.0,
+    "maximum_lateral_force_N": 2.0,
+    "maximum_torque_Nm": 0.2,
+    "admittance_m_s_N": 0.002,
+    "maximum_vertical_speed_m_s": 0.001,
+    "contact_reference_z_m": 0.0017,
+    "minimum_insertion_m": 0.00145,
+    "seated_depth_tolerance_m": 0.0001,
+    "position_error_xy_yaw": [
+      0.0012,
+      -0.0008,
+      0.012
+    ],
+    "stiffness_N_m": 8000.0,
+    "qualified_force_model": false
+  }
+}

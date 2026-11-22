@@ -1,0 +1,8 @@
+{
+  "delta_m": 0.055,
+  "old_base_z_m": 0.0054283784702420235,
+  "new_base_z_m": 0.060428378470242024,
+  "old_home_offset_m": 0.0,
+  "new_home_offset_m": 0.055,
+  "source_grasp_heights_changed": false
+}

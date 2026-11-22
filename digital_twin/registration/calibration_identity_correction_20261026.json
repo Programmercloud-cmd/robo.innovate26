@@ -1,0 +1,250 @@
+{
+  "corrected_utc": "2026-10-26T19:29:43.983980+00:00",
+  "status": "same_physical_camera_identity_confirmed_handeye_conditionally_eligible",
+  "device_identity": {
+    "sdk_name": "RealSense D435",
+    "device_serial": "943222073921",
+    "asic_serial_number": "944523026963",
+    "firmware_update_id": "944523026963",
+    "firmware_version": "5.15.1",
+    "same_as_saved_calibration": true,
+    "evidence": "digital_twin/registration/realsense_identity_20261026T192751Z.txt"
+  },
+  "correction": "The previous replacement-camera/serial-mismatch inference confused ASIC/firmware-update ID with device serial and is withdrawn. Historical evidence is retained with this dated correction.",
+  "saved_calibration_source": "/home/nshenoy/roboinnovate_hackathon/alignment_export_munich_20261025",
+  "intrinsics": {
+    "current_color_profile": [
+      1280,
+      720
+    ],
+    "current_color_K": [
+      [
+        915.496459960938,
+        0.0,
+        628.651916503906
+      ],
+      [
+        0.0,
+        913.151428222656,
+        370.484527587891
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "max_abs_difference_from_saved_rgb_K": 4.547473508864641e-13,
+    "current_color_distortion": "Inverse Brown Conrady",
+    "current_color_distortion_coefficients": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "verification": "Fresh read-only SDK calibration metadata; no image reprojection or intrinsic accuracy validation",
+    "profile_scope": "1280x720 color and depth aligned to that color profile. Native raw depth has its own different intrinsics; saved native-depth K was not retained."
+  },
+  "configured_tool_frame": {
+    "source": "bounded libfranka Robot::readOnce probe, no commands",
+    "source_unix_ns": 1793042897930644853,
+    "robot_mode": "Idle",
+    "F_T_EE_column_major": [
+      0.7071067690849304,
+      -0.7071067690849304,
+      0,
+      0,
+      0.7071067690849304,
+      0.7071067690849304,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0.10339999943971634,
+      1
+    ],
+    "max_abs_difference_from_saved_T_flange_tcp": 0.0,
+    "matches_saved_exactly": true
+  },
+  "handeye": {
+    "T_tcp_color": [
+      [
+        0.04075011627083899,
+        -0.999164356793603,
+        -0.003164828107862574,
+        0.05006879347004835
+      ],
+      [
+        0.9991656221522869,
+        0.04075843347587037,
+        -0.002609522872160514,
+        -0.02830298127058818
+      ],
+      [
+        0.002736335677923604,
+        -0.003055849085487652,
+        0.9999915870905345,
+        -0.050705558315491873
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "T_flange_color": [
+      [
+        0.7353314579169462,
+        -0.6776953159090615,
+        -0.004083082665046527,
+        0.015390753140869644
+      ],
+      [
+        0.6777020918047297,
+        0.735336444325233,
+        0.0003926600910732294,
+        -0.05541721242430346
+      ],
+      [
+        0.002736335677923604,
+        -0.003055849085487652,
+        0.9999915870905345,
+        0.052694441124224466
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "eligible": true,
+    "eligibility_conditions": [
+      "Camera-to-flange mounting unchanged since saved hand-eye observations",
+      "Use correct frame convention and the verified configured TCP, or convert via saved flange transform",
+      "Use matching SDK stream profile and its intrinsics"
+    ],
+    "historical_mount_confirmation": "Export operator_confirmations.json says unchanged during and after latest saved capture set",
+    "current_mount_continuity": "Not independently established by serial check or current photographs; requires operator continuity confirmation or fresh board validation",
+    "historical_training_residual_translation_rms_m": 0.0013302187817240874,
+    "historical_training_residual_rotation_rms_deg": 0.19229169547700112,
+    "current_optical_validation_performed": false
+  },
+  "board_and_base": {
+    "board_continuity": "User explicitly confirms board has never moved",
+    "robot_base_continuity": "Consistent with fixed setup/session; not independently surveyed by this check",
+    "T_base_board_already_applied_to_twin": true,
+    "registration_coordinates_changed_by_identity_correction": false,
+    "estimated_photo_registration_uncertainty_m": 0.01
+  },
+  "actually_applied": {
+    "robot_joint_telemetry_and_exported_URDF": true,
+    "historical_T_base_board_for_photo_geometry": true,
+    "RealSense_intrinsics_in_activated_Isaac_optical_sensor": false,
+    "saved_handeye_in_activated_Isaac_optical_sensor": false,
+    "live_RGBD_pixel_to_robot_registration": false,
+    "wrist_housing_geometry": "Existing approximate CAD/visual mounting, not optical validation"
+  },
+  "conditional_current_pose_board_visibility": {
+    "basis": "Prediction using saved hand-eye and current read-only pose; not an image measurement or mounting validation",
+    "image_size": [
+      1280,
+      720
+    ],
+    "predicted_outer_board_corners_px": [
+      [
+        3006.368128040985,
+        4826.562485723743
+      ],
+      [
+        4203.07758495141,
+        4968.110530325033
+      ],
+      [
+        4217.687600405699,
+        4149.72304463217
+      ],
+      [
+        3023.02312243047,
+        4028.2896537014153
+      ]
+    ],
+    "predicted_optical_depth_m": [
+      0.17311644177569252,
+      0.16891311470218,
+      0.16926085263021717,
+      0.17346417970372968
+    ],
+    "any_corner_in_frame": false,
+    "fresh_board_reprojection_check": "Not performed: board predicted far outside current wrist view; no arm move, camera stream or new calibration requested"
+  },
+  "hardware_motion_or_configuration_commands": 0,
+  "live_Isaac_restart_required": false,
+  "historical_artifacts_superseded_in_identity_interpretation": [
+    "isaac/evidence/final_model_manifest.json camera-serial note",
+    "remote live-03/manifest.json camera-serial note",
+    "initial handoff claim that calibration belonged to different camera"
+  ],
+  "source_sha256": {
+    "digital_twin/registration/realsense_identity_20261026T192751Z.txt": "08ee41f18bcaec83cf1bff24464d4556303927a91a9beb51b0b580331dc7a462",
+    "digital_twin/registration/read_only_tool_frame_20261026.ndjson": "b0919557e04f3b06edd92a632bbcdf157f4663d09740acb325a7fe3a0dbcf77f",
+    "/home/nshenoy/roboinnovate_hackathon/alignment_export_munich_20261025/cameras/realsense.json": "3cfd618d1b6a4701413acf8b6bf95885de5b6f0bd53576b68df65cff92dbcfb1",
+    "/home/nshenoy/roboinnovate_hackathon/alignment_export_munich_20261025/calibration/frames_and_transforms.json": "296ebbb3f855b0fd2ea6973ca22b9b68015cf054be12e7de2c7022489c187289",
+    "/home/nshenoy/roboinnovate_hackathon/alignment_export_munich_20261025/calibration/operator_confirmations.json": "7972137421098e7689dd85e18b00c30eacadc4655e69149bdd2162beb921fe43"
+  },
+  "scene_mount_configuration_comparison": {
+    "current_scene_mount": {
+      "rotation_about_hand_z_deg": 180,
+      "status": "Opposite side requested by user; approximate visual correction of inherited camera and bracket together, not optical calibration",
+      "components": [
+        {
+          "body": "/World/envs/env_0/Robot/D435",
+          "joint": "/World/envs/env_0/Robot/fr3_hand/fr3_hand_D435_joint",
+          "old_position_hand_m": [
+            -0.03750000149011612,
+            0.0,
+            0.05260000005364418
+          ],
+          "new_position_hand_m": [
+            0.03750000149011612,
+            -4.592425679289168e-18,
+            0.05260000005364418
+          ],
+          "new_rotation_hand_wxyz": [
+            4.329780301713277e-17,
+            0.7071067690849304,
+            -4.329780301713277e-17,
+            0.7071067690849304
+          ]
+        },
+        {
+          "body": "/World/envs/env_0/Robot/D435_mount",
+          "joint": "/World/envs/env_0/Robot/fr3_hand/fr3_hand_D435_mount_joint",
+          "old_position_hand_m": [
+            0.0,
+            0.0,
+            0.009999999776482582
+          ],
+          "new_position_hand_m": [
+            0.0,
+            0.0,
+            0.009999999776482582
+          ],
+          "new_rotation_hand_wxyz": [
+            6.123234262925839e-17,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ]
+    },
+    "comparison_limit": "These are approximate housing/bracket body transforms, not calibrated optical-center frames. They cannot independently verify physical camera mounting continuity or replace saved T_tcp_color/T_flange_color. No scene mount geometry was changed by this correction."
+  }
+}

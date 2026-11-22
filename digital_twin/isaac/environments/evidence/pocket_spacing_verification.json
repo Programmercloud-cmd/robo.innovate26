@@ -1,0 +1,78 @@
+{
+  "passed": true,
+  "nominal_preview": true,
+  "measured_assembled_span_available": false,
+  "old_clear_span_mm": 100.0,
+  "new_clear_span_mm": 95.8,
+  "nominal_layer_span_mm": 95.4,
+  "clearance_each_side_mm": 0.2,
+  "only_side_spacing_changed": true,
+  "wall_profile_and_ceiling_unchanged": true,
+  "brick_geometry_scaled": false,
+  "hardware_commands": 0,
+  "physical_grasp_or_receiving_stud_clearance_verified": false,
+  "checks": [
+    {
+      "finger": "fr3_leftfinger",
+      "part": "UpdatedTipSTLVisual/Mesh",
+      "maximum_y_z_change_m": 5.5294310796760726e-17,
+      "maximum_x_change_error_m": 1.0928757898653885e-16
+    },
+    {
+      "finger": "fr3_leftfinger",
+      "part": "WideCap/BackWall",
+      "maximum_y_z_change_m": 5.5077470362263625e-17,
+      "maximum_x_change_error_m": 6.938893903907228e-18
+    },
+    {
+      "finger": "fr3_leftfinger",
+      "part": "WideCap/EndNegative",
+      "maximum_y_z_change_m": 6.245004513516506e-17,
+      "maximum_x_change_error_m": 2.0205974649543934e-09
+    },
+    {
+      "finger": "fr3_leftfinger",
+      "part": "WideCap/EndPositive",
+      "maximum_y_z_change_m": 6.245004513516506e-17,
+      "maximum_x_change_error_m": 2.0205974649543934e-09
+    },
+    {
+      "finger": "fr3_leftfinger",
+      "part": "WideCap/Top",
+      "maximum_y_z_change_m": 6.245004513516506e-17,
+      "maximum_x_change_error_m": 6.938893903907228e-18
+    },
+    {
+      "finger": "fr3_rightfinger",
+      "part": "UpdatedTipSTLVisual/Mesh",
+      "maximum_y_z_change_m": 2.949029909160572e-17,
+      "maximum_x_change_error_m": 1.214306433183765e-16
+    },
+    {
+      "finger": "fr3_rightfinger",
+      "part": "WideCap/BackWall",
+      "maximum_y_z_change_m": 5.637851296924623e-17,
+      "maximum_x_change_error_m": 1.1796119636642288e-16
+    },
+    {
+      "finger": "fr3_rightfinger",
+      "part": "WideCap/EndNegative",
+      "maximum_y_z_change_m": 5.572799166575493e-17,
+      "maximum_x_change_error_m": 2.020597575976696e-09
+    },
+    {
+      "finger": "fr3_rightfinger",
+      "part": "WideCap/EndPositive",
+      "maximum_y_z_change_m": 5.572799166575493e-17,
+      "maximum_x_change_error_m": 2.020597353932091e-09
+    },
+    {
+      "finger": "fr3_rightfinger",
+      "part": "WideCap/Top",
+      "maximum_y_z_change_m": 5.637851296924623e-17,
+      "maximum_x_change_error_m": 1.1796119636642288e-16
+    }
+  ],
+  "baseline": "/home/ubuntu/workspace/fr3-digital-twin-20261026/simulation_variants/board-wide-20261027T193856602695Z/digital_twin.usdc",
+  "output": "/home/ubuntu/workspace/fr3-digital-twin-20261026/simulation_variants/board-wide-20261027T200529257197Z"
+}

@@ -1,0 +1,124 @@
+{
+  "schema": "seating_camera_audit_v1",
+  "created_utc": "2026-10-27T00:56:54.946773+00:00",
+  "hardware_access_performed": false,
+  "training_ready": false,
+  "logitech_wrist": {
+    "camera_id": "wrist_sonix_c920",
+    "device": "/dev/v4l/by-id/usb-Sonix_Technology_Co.__Ltd._HD_Pro_Webcam_C920_HD_Pro_Webcam_C920-video-index0",
+    "not_external_overview_c920": true,
+    "accepted_intrinsics": null,
+    "accepted_extrinsics": null,
+    "calibration_status": "Rejected",
+    "mounting_continuity_verified": false,
+    "rejected_fit": {
+      "accepted": false,
+      "checks": {
+        "intrinsic_rms": true,
+        "stereo_rms": false,
+        "held_out_reprojection": false,
+        "board_normal_span": true,
+        "plausible_focal": true,
+        "plausible_baseline": true,
+        "two_axis_tilts": true,
+        "focal_uncertainty": true,
+        "independent_robot_handeye": false
+      },
+      "intrinsic_rms_px": 0.5772671080496125,
+      "stereo_rms_px": 1.263249967410168,
+      "held_out_maximum_view_rms_px": 4.181933879852295,
+      "intrinsic_relative_focal_std": 0.021871413519111954,
+      "rejection": "Robot/visual relative rotations disagree; scene moved or registration/frame pairing is inconsistent",
+      "role_confusion_prohibited": true
+    },
+    "archive_image_size": [
+      1280,
+      720
+    ],
+    "archive_focus_absolute": 140,
+    "factory_focus_absolute": 500,
+    "physical_focus_response_verified": false,
+    "stationary_drift_observation": {
+      "elapsed_sec": 718.9597144126892,
+      "translation_m": 4.096535188867306e-05,
+      "rotation_deg": 0.005223395490162577,
+      "rs_corners": {
+        "common": 24,
+        "mean_px": 0.08405282799133906,
+        "max_px": 0.15819580817668896
+      },
+      "webcam_corners": {
+        "common": 24,
+        "mean_px": 8.416055240302692,
+        "max_px": 9.252246696068244
+      }
+    },
+    "drift_cause": "Unresolved; camera identity, settings/focus, mounting and frame pairing must be investigated independently. The data do not identify a cause.",
+    "factory_image_jacobian": "Local row-centroid/yaw response at old5_0 reference, not intrinsic or hand-eye calibration. Current factory config marks fresh reference check required."
+  },
+  "realsense": {
+    "same_physical_camera_identity_confirmed": true,
+    "camera_serial": "943222073921",
+    "asic_firmware_update_identifier": "944523026963",
+    "saved_intrinsics_metadata_match": 4.547473508864641e-13,
+    "current_mount_continuity_verified": false,
+    "current_optical_validation_performed": false,
+    "scope": "RealSense identity/intrinsics eligibility is independent of Logitech lens/mount calibration; one cannot validate the other."
+  },
+  "new_baseplate_photo": {
+    "path": "resources/seating_baseplate_20261027.jpg",
+    "image_size": [
+      2880,
+      3840
+    ],
+    "viewed": true,
+    "evidence": "Board, plate and tape are visible in an external photograph. User confirms ChArUco board has not moved.",
+    "not_established": [
+      "Logitech intrinsic parameters",
+      "Logitech optical hand-eye or mounting continuity",
+      "wrist capture timing/latency",
+      "held-brick-to-gripper transform/slip observability",
+      "stud insertion/contact behavior"
+    ],
+    "registration_scope": "A planar board/image mapping constrains visible layout; it is not wrist-camera optical validation or measured plate contact registration."
+  },
+  "policy_sensor_gates": {
+    "logitech_intrinsics_and_fixed_settings_validated": false,
+    "logitech_handeye_mount_continuity_verified": false,
+    "target_association_detector_validated": false,
+    "held_brick_pose_slip_observability_verified": false,
+    "joint_detector_error_visibility_dropout_profile_measured": false,
+    "capture_clock_latency_and_state_synchronization_measured": false
+  },
+  "missing_evidence": [
+    "Fresh Logitech lens calibration at fixed actual focus/zoom/resolution with independent views; use existing calibration tools, do not promote rejected archive result.",
+    "Stationary/restart board-corner repeatability and independent robot-camera reprojection/hand-eye check with unchanged mounting; diagnose prior8.4px drift.",
+    "Target-specific single-brick/plate stud detection and correspondence labels, including meaningful XY/yaw handoff errors and occlusion.",
+    "Independent held-brick pose/slip measurements under relevant axial/lateral contact loads; lower-stud observations are insufficient.",
+    "Exposure/receipt/state timing calibration and complete-frame detector residual/dropout/confidence/visibility data for projected-feature training."
+  ],
+  "implementation": {
+    "module": "observations.py",
+    "focused_tests": 10,
+    "normalized_coordinate_convention": "Undistorted optical X/Z,Y/Z, not pixels divided by image width/height.",
+    "distortion_models": "Explicit five-coefficient Brown-Conrady or explicitzero-distortion. RealSense inverse-Brown identity is not silently reinterpreted.",
+    "projected_feature_model": "Geometric projection separate from actor packets. Complete-frame detector residual/dropout/confidence samples share one latency, bind to camera/lens/settings/resolution and named physical evidence; capture-time scene state and independent occlusion mask are required. No profile invented.",
+    "held_brick_policy": "Direct pose/slip evidence OR explicitly validated fixed-grasp transform bounds and slip protection, bound to the configured grasp profile and validation evidence IDs. No such physical evidence is currently available. Actual detected slip always stops.",
+    "source_sha256": {
+      "observations.py": "2e2b35bc8ed69d5294323d45ce3a37854d09feb83f96e696d943efb3fced9959",
+      "test_observations.py": "0035e9ff03f7ab07cb7e01dbd290763dbb9b70fce0b99a2ac7d0b08d0a5323a7"
+    }
+  },
+  "primary_reference": "https://docs.opencv.org/3.4.14/da/d54/group__imgproc__transform.html",
+  "source_sha256": {
+    "/home/nshenoy/roboinnovate_hackathon/alignment_export_munich_20261025/cameras/wrist_sonix_c920.json": "b2958e1175f8fc9662d5e06f5acc3aab6a956fad892604e94799db39c901e850",
+    "/home/nshenoy/roboinnovate_hackathon/alignment_export_munich_20261025/calibration/validation_results.json": "391dcec697974776da9c74355a8219d5a74aab98d6ac0faf6186f7a54a58ca70",
+    "/home/nshenoy/roboinnovate_hackathon/alignment_export_munich_20261025/calibration/rejected_wrist_webcam_result.yaml": "8ce64bc90c2052b2e333c7411404eb91a0a0d8b7ceda45b4f3ac115e288a12a8",
+    "/home/nshenoy/roboinnovate_hackathon/alignment_export_munich_20261025/calibration/diagnostics/post_sweep_stationary_check.json": "f7a3a557ae55676d250c7053d445aa39a1c134dc0af33d3a88323b8f2febf2c4",
+    "/home/nshenoy/roboinnovate_hackathon/alignment_export_munich_20261025/calibration/diagnostics/focus_repeatability_report.json": "6b14f039c18ed8edc3fad2bff4ef7edb89b275ae5ffbd4992990b28e387d9fb1",
+    "digital_twin/isaac/camera_calibration_status.json": "66148d8cc7a9831579a95af003be210b73b248739a4e5a9c0b8d65fb4d607656",
+    "teaching/factory_vision/calibration.json": "3990097b1f4d0d3c67477137db5d28ae522ab937de2ce476cdeb69ce664b9fc0",
+    "teaching/factory_vision/config.json": "a0079a658299657bef4cabe29387d190ab5bcecc67d08b7bccecc851c10f803e",
+    "resources/seating_baseplate_20261027.jpg": "a2f4131d9421f0e3ea2712eb7c4cabe3d21b827b1464da743d15ec012f06c59e"
+  }
+}

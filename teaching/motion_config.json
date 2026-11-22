@@ -12,15 +12,26 @@
   "endpoint_position_tolerance_m": 0.001,
   "endpoint_orientation_tolerance_rad": 0.017453292519943295,
   "max_callback_gap_s": 0.02,
-  "workspace_bounds_m": null,
-  "clearance_basis": "Factory layout not calibrated: record new poses and configure its workspace before arm motion",
-  "clearance_recorded_utc": null,
+  "workspace_bounds_m": {
+    "min": [
+      0.45102152004241947,
+      -0.3897745717167854,
+      -0.09457162152975798
+    ],
+    "max": [
+      0.7146215200424194,
+      0.20122542828321457,
+      0.5
+    ]
+  },
+  "clearance_basis": "Existing taught factory XY/lower bounds retained. Ceiling restored to operator-authorized 500 mm; selected physical-conveyor profile extends placement-side X bound by its approved +25 mm translation.",
+  "clearance_recorded_utc": "2026-10-26T17:57:03.723553+00:00",
   "path_definition": "100 mm vertical departure/arrival guide points blended into one continuous curve with vertical endpoint tangents. Guide points are control points, not stop points; corners are rounded within the workspace bounds.",
   "rate_limiting_enabled": false,
   "signal_processing_note": "Analytically bounded joint trajectories use libfranka joint-position rate limiting to handle command discontinuities after lost cycles; no additional low-pass filter. Cartesian legacy execution remains retired. Robot protective limits and live guards remain active.",
   "signal_processing_reference": "https://github.com/frankarobotics/libfranka/blob/main/CHANGELOG.md",
   "timing_policy": "cube_root_distance_with_derivative_limits",
-  "workspace_reference_distance_m": null,
+  "workspace_reference_distance_m": 0.6773226409917211,
   "reference_move_duration_s": 10.0,
   "minimum_move_duration_s": 1.0,
   "max_joint_velocity_rad_s": 1.0,
@@ -31,9 +42,9 @@
   "performance_profile_hold": true,
   "clamp_standoff_to_workspace_ceiling": true,
   "joint_velocity_cap_source": "Operator explicitly requested a 1 rad/s speed cap.",
-  "workspace_ceiling_source": "500 mm ceiling retained as a configurable robot limit; it is not evidence of clearance for the new layout",
+  "workspace_ceiling_source": "Operator explicitly authorized a 500 mm world-Z ceiling; restored for both fixed factory setups. All planned paths still require joint/workspace/singularity checks.",
   "require_singularity_preflight": true,
-  "verified_joint_plans_enabled": false,
+  "verified_joint_plans_enabled": true,
   "singularity_avoidance": {
     "characteristic_length_m": 0.3,
     "joint_limit_margin_rad": 0.06,
@@ -71,17 +82,29 @@
   "callback_gap_limit_source": "Operator explicitly requested a 20 ms callback limit during the layer-9 traversal.",
   "joint_rate_limiting_enabled": true,
   "gripper": {
-    "approach_opening_m": 0.066,
+    "approach_opening_m": 0.07,
     "close_target_m": 0.06,
     "position_speed_m_s": 0.02,
     "opening_tolerance_m": 0.001,
-    "width_source": "Factory operator: 66 mm default/open/release, 60 mm position-controlled closing for columns of four bricks",
-    "physical_validation": "Factory four-brick gripping has not been tested; the previous single-brick trials are archived on task2/jacob/initial_task",
+    "width_source": "Operator confirmed current measured opening as new default approach/open/release width; closing remains 60 mm",
+    "physical_validation": "5_0: four brick regions retained during a measured 4.534 mm lift; transfer/placement still pending",
     "close_control_mode": "position",
     "hold_basis": "Operator-selected 60 mm position-control target; verify four bricks are held during factory commissioning",
-    "close_contact_upper_m": 0.065,
-    "close_verification_basis": "The 60 mm command may stop on object contact. Require measured opening at least 1 mm below the 66 mm open target; this does not verify a four-brick pickup."
+    "close_contact_upper_m": 0.0655,
+    "close_verification_basis": "60 mm position target unchanged; stable measured 65.174 mm contact accepted up to 65.5 mm after four-region retention verification during a measured 4.534 mm lift",
+    "default_opening_measurement": {
+      "measured_width_m": 0.06999992579221725,
+      "command_width_m": 0.07,
+      "target_rounding_mm": 0.01,
+      "recorded_utc": "2026-10-26T16:08:44.059030+00:00",
+      "capture": "teaching/history/default_opening_capture_20261026T160844.059030Z.json"
+    }
   },
   "task_id": "factory_columns_of_four",
-  "reference_image": "resources/factory_layout.jpg"
+  "reference_image": "resources/factory_layout.jpg",
+  "workspace_catalog_sha256": "6e18eb4371acb4fbd69c3ec953195855340a1e2de9f626e5adcc0559443f8350",
+  "force_vertical_tool": true,
+  "orientation_policy": "Tool Z points down in the world frame, zero X/Y tilt; retain taught yaw",
+  "geometry_updated_utc": "2026-10-26T17:53:40.867668+00:00",
+  "geometry_status": "operator_confirmed_global_translation"
 }

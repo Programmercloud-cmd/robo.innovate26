@@ -1,0 +1,133 @@
+{
+  "schema": "external_layout.registration_v2.verification.v1",
+  "reference_frame_sequence": 10838,
+  "reference_frame_unix_ns": 1793108749258318077,
+  "observed_current_footprints": 12,
+  "cached_baseline_before": {
+    "frames": 45,
+    "duration_s": 9.664,
+    "all144_uncertain_reason": "foreign_foreground_or_roi_motion",
+    "limit": "Requested60couldnotbeobtainedbeforecaptureENODEV; no60claim"
+  },
+  "current_reference_classification": {
+    "occupied": 120,
+    "uncertain": 24,
+    "fixed_occlusion": 13,
+    "ambiguous": 9,
+    "glare_no_positive_material": 2
+  },
+  "focused_tests": {
+    "passed": 9,
+    "command": "/usr/bin/python3 -s -m unittest discover -s teaching/external_layout -p test_perception.py -v"
+  },
+  "independent_color_accuracy_validated": false,
+  "physical_removal_validated": false,
+  "post_reload_live_benchmark": {
+    "frames": 60,
+    "camera_duration_s": 12.800150121,
+    "occupied_min_mean_max": [
+      110,
+      111.98333333333333,
+      114
+    ],
+    "always_occupied_same_color_slots": 104,
+    "total_raw_state_transitions": 85,
+    "slots_with_transitions": 12,
+    "direct_occupied_color_transitions": 0,
+    "multi_color_slots": {
+      "external_r0_c1_m2_n1": {
+        "6135191": 21,
+        "6487946": 25
+      }
+    },
+    "category_observations": {
+      "6487946": 3519,
+      "6117418": 780,
+      "4211201": 517,
+      "6135191": 940,
+      "300121": 963
+    },
+    "footprint_min_max": {
+      "external_r3_c0": [
+        6,
+        7
+      ],
+      "external_r2_c1": [
+        12,
+        12
+      ],
+      "external_r5_c1": [
+        6,
+        7
+      ],
+      "external_r1_c0": [
+        8,
+        11
+      ],
+      "external_r2_c0": [
+        11,
+        11
+      ],
+      "external_r5_c0": [
+        10,
+        11
+      ],
+      "external_r1_c1": [
+        9,
+        11
+      ],
+      "external_r4_c0": [
+        12,
+        12
+      ],
+      "external_r0_c0": [
+        5,
+        5
+      ],
+      "external_r0_c1": [
+        8,
+        11
+      ],
+      "external_r4_c1": [
+        11,
+        12
+      ],
+      "external_r3_c1": [
+        6,
+        6
+      ]
+    },
+    "source_to_process_age_s_min_max": [
+      0.035179257,
+      0.043081208
+    ],
+    "independent_ground_truth_accuracy": false
+  },
+  "motion_inventory_world_calibration_changed": false,
+  "tape_visual_only_estimates": {
+    "bottom_body_to_cross_tape_upper_edge_mm": [
+      12,
+      17
+    ],
+    "bank1_to_right_tape_inner_edge_mm": [
+      12,
+      18
+    ],
+    "uncertainty": "Approximate image/brickbody scale; floor vs top-plane parallax and manual edge selection; not robot-world calibration"
+  },
+  "post_reload_live_dataset": "captures/live_v2_60",
+  "operator_pair_followup": {
+    "target": "external_r0_c1_m2_n1",
+    "same_physical_color_as": "external_r0_c1_m2_n0",
+    "model_anchor_color_id": 6487946,
+    "prototype_scope": "target ROI only; fresh pixel classification still required",
+    "thresholds_changed": false,
+    "cached_pixel_results": {
+      "orange_brown": 45,
+      "uncertain": 15,
+      "tan": 0
+    },
+    "evidence": "captures/operator_pair_replay.json",
+    "config_sha256": "4dc89ed7e7c51cf5ade66dc6097d8595eab26d2d075773668771765b83a3a7e4"
+  }
+}

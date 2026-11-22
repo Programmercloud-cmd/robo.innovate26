@@ -1,0 +1,18 @@
+{
+  "schema": "effective_axial_contact_v1",
+  "parameter_status": "unidentified",
+  "real_ready": false,
+  "training_ready": false,
+  "depth_knots_m": null,
+  "elastic_force_N": null,
+  "damping_N_s_m": null,
+  "contact_center_gap_m": null,
+  "admission": {"xy_m": null, "yaw_rad": null, "tilt_rad": null},
+  "force_law": "F_upper_outward = elastic_force(depth) + damping(depth)*depth_rate; piecewise-linear curves",
+  "coordinate": "depth = contact_center_gap_m - lower_axis dot (upper_reference_point - lower_reference_point); positive inward",
+  "reference_points": "Must match measured coordinate. Synthetic pair uses COMs. TCP/wrench-only data identify a lumped grip/fixture/servo response, not independent brick contact.",
+  "curve_requirements": "First depth, elastic force and damping zero; strictly increasing depths; nonnegative damping; exact integrated elastic potential nonnegative relative to separated zero; outside depth range rejected.",
+  "supported": ["axial entry barrier and post-contact potential well if supplied by identified curve", "partial-depth response", "rate-dependent loading and withdrawal", "analytic stored-energy and dissipation accounting"],
+  "unsupported": ["lateral/yaw/tilt capture", "jam physics or jam diagnosis", "rate-independent hysteresis", "seating success or attachment certification", "unmeasured hard-stop extrapolation", "separate grip, fixture and brick parameter identification from TCP-only data"],
+  "identification_evidence": null
+}

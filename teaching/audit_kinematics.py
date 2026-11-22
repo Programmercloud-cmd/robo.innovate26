@@ -32,18 +32,20 @@ def main():
     policy=json.loads((HERE/'motion_config.json').read_text())['singularity_avoidance']
     points=list(catalog['points'].items())
     model=Kinematics(points[0][1]['tool_frames']['F_T_EE'],policy)
-    seeds=[np.array(point['q_rad']) for _,point in points];entries={}
+    seeds=[np.array(point['q_rad']) for _,point in points if isinstance(point.get('q_rad'),list)];entries={}
     for name,point in points:
         candidates=[]
         for yaw in ([0,180] if policy['allow_yaw180_for_bricks'] else [0]):
             pose=yaw_variant(point['O_T_EE'],yaw)
-            for seed in [np.array(point['q_rad'])]+seeds:
+            initial=[np.array(point['q_rad'])] if isinstance(point.get('q_rad'),list) else []
+            for seed in initial+seeds:
                 result=model.solve(pose,seed)
                 if result:
                     result.update(effective_O_T_EE=pose,yaw_variant_deg=yaw,
                                   shoulder_sign=1 if result['q'][1]>0 else -1)
                     candidates.append(result);break
-        identifier=str(int(name.removeprefix('point_')))
+        label=name.removeprefix('point_')
+        identifier=str(int(label)) if label.isdecimal() else label
         entries[identifier]=dict(candidates=candidates,status='model_feasible' if candidates else 'blocked',
             canonical_O_T_EE=point['O_T_EE'],physical_validation=False)
     result=dict(created_utc=datetime.now(timezone.utc).isoformat(),

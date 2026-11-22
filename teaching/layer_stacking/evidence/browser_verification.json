@@ -1,0 +1,4 @@
+{
+  "header": "Layer targets \u00b7 geometry preview",
+  "status": "STALE \u00b7 holding last observed pose\nlayer_target_preview_not_live_hardware \u00b7 Idle\nHand: STALE / unavailable\nSim hand 70.0 mm \u00b7 Retained simulated opening; physical hand telemetry unavailable\nSequence 1486101 \u00b7 sample age 27152663 ms\nIsaac joint copy error 0.00e+0 rad\nURDF flange position error 0.25 \u00b5m"
+}

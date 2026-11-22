@@ -1,0 +1,7586 @@
+{
+  "schema": "lego_requested_stack_layout_v1",
+  "frame": "P: plate stud(0,0), seated brick-bottom datum, +Z outward",
+  "pose_semantics": "brick bottom center, NOT end-effector/TCP; held-brick transform still required",
+  "grid_shape": [
+    32,
+    32
+  ],
+  "stud_pitch_m": 0.008,
+  "layer_pitch_m": 0.0096,
+  "stack_center_stud": [
+    15.5,
+    15.5
+  ],
+  "stack_center_mode": "plate_center",
+  "stack_center_P_m": [
+    0.124,
+    0.124,
+    0.0
+  ],
+  "initial_orientation_quarter_turns": 0,
+  "nominal_layer_footprint_studs": [
+    12,
+    14
+  ],
+  "bricks_per_layer": 12,
+  "layer_count": 2,
+  "placement_order": [
+    "b_0_0_0",
+    "b_0_1_0",
+    "b_0_2_0",
+    "b_1_0_0",
+    "b_1_1_0",
+    "b_1_2_0",
+    "b_2_0_0",
+    "b_2_1_0",
+    "b_2_2_0",
+    "b_3_0_0",
+    "b_3_1_0",
+    "b_3_2_0",
+    "b_0_0_1",
+    "b_0_1_1",
+    "b_0_2_1",
+    "b_1_0_1",
+    "b_1_1_1",
+    "b_1_2_1",
+    "b_2_0_1",
+    "b_2_1_1",
+    "b_2_2_1",
+    "b_3_0_1",
+    "b_3_1_1",
+    "b_3_2_1"
+  ],
+  "bricks": [
+    {
+      "id": "b_0_0_0",
+      "index": [
+        0,
+        0,
+        0
+      ],
+      "yaw_quarter_turns": 0,
+      "yaw_rad": 0.0,
+      "center_stud": [
+        11.5,
+        9.5
+      ],
+      "bottom_center_P_m": [
+        0.092,
+        0.076,
+        0.0
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            10,
+            9
+          ],
+          "bottom_socket_P_m": [
+            0.08,
+            0.07200000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.08,
+            0.07200000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            11,
+            9
+          ],
+          "bottom_socket_P_m": [
+            0.088,
+            0.07200000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.088,
+            0.07200000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            12,
+            9
+          ],
+          "bottom_socket_P_m": [
+            0.096,
+            0.07200000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.096,
+            0.07200000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            13,
+            9
+          ],
+          "bottom_socket_P_m": [
+            0.10400000000000001,
+            0.07200000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.10400000000000001,
+            0.07200000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            10,
+            10
+          ],
+          "bottom_socket_P_m": [
+            0.08,
+            0.08,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.08,
+            0.08,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            11,
+            10
+          ],
+          "bottom_socket_P_m": [
+            0.088,
+            0.08,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.088,
+            0.08,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            12,
+            10
+          ],
+          "bottom_socket_P_m": [
+            0.096,
+            0.08,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.096,
+            0.08,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            13,
+            10
+          ],
+          "bottom_socket_P_m": [
+            0.10400000000000001,
+            0.08,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.10400000000000001,
+            0.08,
+            0.0096
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 8,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              10,
+              9
+            ],
+            "grid": [
+              10,
+              9
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              11,
+              9
+            ],
+            "grid": [
+              11,
+              9
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              12,
+              9
+            ],
+            "grid": [
+              12,
+              9
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              13,
+              9
+            ],
+            "grid": [
+              13,
+              9
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              0,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              10,
+              10
+            ],
+            "grid": [
+              10,
+              10
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              11,
+              10
+            ],
+            "grid": [
+              11,
+              10
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              12,
+              10
+            ],
+            "grid": [
+              12,
+              10
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              13,
+              10
+            ],
+            "grid": [
+              13,
+              10
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [],
+        "contributors": [
+          "baseplate"
+        ],
+        "support_hull_stud": [
+          [
+            10,
+            9
+          ],
+          [
+            13,
+            9
+          ],
+          [
+            13,
+            10
+          ],
+          [
+            10,
+            10
+          ]
+        ],
+        "support_affine_rank": 2,
+        "center_in_support_hull": true,
+        "requires_cantilever_clutch_validation": false,
+        "bridges_multiple_lower_bricks": false,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_0_1_0",
+      "index": [
+        0,
+        1,
+        0
+      ],
+      "yaw_quarter_turns": 0,
+      "yaw_rad": 0.0,
+      "center_stud": [
+        15.5,
+        9.5
+      ],
+      "bottom_center_P_m": [
+        0.124,
+        0.076,
+        0.0
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            14,
+            9
+          ],
+          "bottom_socket_P_m": [
+            0.112,
+            0.07200000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.112,
+            0.07200000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            15,
+            9
+          ],
+          "bottom_socket_P_m": [
+            0.12,
+            0.07200000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.12,
+            0.07200000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            16,
+            9
+          ],
+          "bottom_socket_P_m": [
+            0.128,
+            0.07200000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.128,
+            0.07200000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            17,
+            9
+          ],
+          "bottom_socket_P_m": [
+            0.136,
+            0.07200000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.136,
+            0.07200000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            14,
+            10
+          ],
+          "bottom_socket_P_m": [
+            0.112,
+            0.08,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.112,
+            0.08,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            15,
+            10
+          ],
+          "bottom_socket_P_m": [
+            0.12,
+            0.08,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.12,
+            0.08,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            16,
+            10
+          ],
+          "bottom_socket_P_m": [
+            0.128,
+            0.08,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.128,
+            0.08,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            17,
+            10
+          ],
+          "bottom_socket_P_m": [
+            0.136,
+            0.08,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.136,
+            0.08,
+            0.0096
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 8,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              14,
+              9
+            ],
+            "grid": [
+              14,
+              9
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              15,
+              9
+            ],
+            "grid": [
+              15,
+              9
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              16,
+              9
+            ],
+            "grid": [
+              16,
+              9
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              17,
+              9
+            ],
+            "grid": [
+              17,
+              9
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              0,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              14,
+              10
+            ],
+            "grid": [
+              14,
+              10
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              15,
+              10
+            ],
+            "grid": [
+              15,
+              10
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              16,
+              10
+            ],
+            "grid": [
+              16,
+              10
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              17,
+              10
+            ],
+            "grid": [
+              17,
+              10
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [],
+        "contributors": [
+          "baseplate"
+        ],
+        "support_hull_stud": [
+          [
+            14,
+            9
+          ],
+          [
+            17,
+            9
+          ],
+          [
+            17,
+            10
+          ],
+          [
+            14,
+            10
+          ]
+        ],
+        "support_affine_rank": 2,
+        "center_in_support_hull": true,
+        "requires_cantilever_clutch_validation": false,
+        "bridges_multiple_lower_bricks": false,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_0_2_0",
+      "index": [
+        0,
+        2,
+        0
+      ],
+      "yaw_quarter_turns": 0,
+      "yaw_rad": 0.0,
+      "center_stud": [
+        19.5,
+        9.5
+      ],
+      "bottom_center_P_m": [
+        0.156,
+        0.076,
+        0.0
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            18,
+            9
+          ],
+          "bottom_socket_P_m": [
+            0.14400000000000002,
+            0.07200000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.14400000000000002,
+            0.07200000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            19,
+            9
+          ],
+          "bottom_socket_P_m": [
+            0.152,
+            0.07200000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.152,
+            0.07200000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            20,
+            9
+          ],
+          "bottom_socket_P_m": [
+            0.16,
+            0.07200000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.16,
+            0.07200000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            21,
+            9
+          ],
+          "bottom_socket_P_m": [
+            0.168,
+            0.07200000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.168,
+            0.07200000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            18,
+            10
+          ],
+          "bottom_socket_P_m": [
+            0.14400000000000002,
+            0.08,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.14400000000000002,
+            0.08,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            19,
+            10
+          ],
+          "bottom_socket_P_m": [
+            0.152,
+            0.08,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.152,
+            0.08,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            20,
+            10
+          ],
+          "bottom_socket_P_m": [
+            0.16,
+            0.08,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.16,
+            0.08,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            21,
+            10
+          ],
+          "bottom_socket_P_m": [
+            0.168,
+            0.08,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.168,
+            0.08,
+            0.0096
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 8,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              18,
+              9
+            ],
+            "grid": [
+              18,
+              9
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              19,
+              9
+            ],
+            "grid": [
+              19,
+              9
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              20,
+              9
+            ],
+            "grid": [
+              20,
+              9
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              21,
+              9
+            ],
+            "grid": [
+              21,
+              9
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              0,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              18,
+              10
+            ],
+            "grid": [
+              18,
+              10
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              19,
+              10
+            ],
+            "grid": [
+              19,
+              10
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              20,
+              10
+            ],
+            "grid": [
+              20,
+              10
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              21,
+              10
+            ],
+            "grid": [
+              21,
+              10
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [],
+        "contributors": [
+          "baseplate"
+        ],
+        "support_hull_stud": [
+          [
+            18,
+            9
+          ],
+          [
+            21,
+            9
+          ],
+          [
+            21,
+            10
+          ],
+          [
+            18,
+            10
+          ]
+        ],
+        "support_affine_rank": 2,
+        "center_in_support_hull": true,
+        "requires_cantilever_clutch_validation": false,
+        "bridges_multiple_lower_bricks": false,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_1_0_0",
+      "index": [
+        1,
+        0,
+        0
+      ],
+      "yaw_quarter_turns": 0,
+      "yaw_rad": 0.0,
+      "center_stud": [
+        11.5,
+        13.5
+      ],
+      "bottom_center_P_m": [
+        0.092,
+        0.108,
+        0.0
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            10,
+            13
+          ],
+          "bottom_socket_P_m": [
+            0.08,
+            0.10400000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.08,
+            0.10400000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            11,
+            13
+          ],
+          "bottom_socket_P_m": [
+            0.088,
+            0.10400000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.088,
+            0.10400000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            12,
+            13
+          ],
+          "bottom_socket_P_m": [
+            0.096,
+            0.10400000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.096,
+            0.10400000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            13,
+            13
+          ],
+          "bottom_socket_P_m": [
+            0.10400000000000001,
+            0.10400000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.10400000000000001,
+            0.10400000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            10,
+            14
+          ],
+          "bottom_socket_P_m": [
+            0.08,
+            0.112,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.08,
+            0.112,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            11,
+            14
+          ],
+          "bottom_socket_P_m": [
+            0.088,
+            0.112,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.088,
+            0.112,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            12,
+            14
+          ],
+          "bottom_socket_P_m": [
+            0.096,
+            0.112,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.096,
+            0.112,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            13,
+            14
+          ],
+          "bottom_socket_P_m": [
+            0.10400000000000001,
+            0.112,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.10400000000000001,
+            0.112,
+            0.0096
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 8,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              10,
+              13
+            ],
+            "grid": [
+              10,
+              13
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              11,
+              13
+            ],
+            "grid": [
+              11,
+              13
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              12,
+              13
+            ],
+            "grid": [
+              12,
+              13
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              13,
+              13
+            ],
+            "grid": [
+              13,
+              13
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              0,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              10,
+              14
+            ],
+            "grid": [
+              10,
+              14
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              11,
+              14
+            ],
+            "grid": [
+              11,
+              14
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              12,
+              14
+            ],
+            "grid": [
+              12,
+              14
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              13,
+              14
+            ],
+            "grid": [
+              13,
+              14
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [],
+        "contributors": [
+          "baseplate"
+        ],
+        "support_hull_stud": [
+          [
+            10,
+            13
+          ],
+          [
+            13,
+            13
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            10,
+            14
+          ]
+        ],
+        "support_affine_rank": 2,
+        "center_in_support_hull": true,
+        "requires_cantilever_clutch_validation": false,
+        "bridges_multiple_lower_bricks": false,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_1_1_0",
+      "index": [
+        1,
+        1,
+        0
+      ],
+      "yaw_quarter_turns": 0,
+      "yaw_rad": 0.0,
+      "center_stud": [
+        15.5,
+        13.5
+      ],
+      "bottom_center_P_m": [
+        0.124,
+        0.108,
+        0.0
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            14,
+            13
+          ],
+          "bottom_socket_P_m": [
+            0.112,
+            0.10400000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.112,
+            0.10400000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            15,
+            13
+          ],
+          "bottom_socket_P_m": [
+            0.12,
+            0.10400000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.12,
+            0.10400000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            16,
+            13
+          ],
+          "bottom_socket_P_m": [
+            0.128,
+            0.10400000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.128,
+            0.10400000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            17,
+            13
+          ],
+          "bottom_socket_P_m": [
+            0.136,
+            0.10400000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.136,
+            0.10400000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            14,
+            14
+          ],
+          "bottom_socket_P_m": [
+            0.112,
+            0.112,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.112,
+            0.112,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            15,
+            14
+          ],
+          "bottom_socket_P_m": [
+            0.12,
+            0.112,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.12,
+            0.112,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            16,
+            14
+          ],
+          "bottom_socket_P_m": [
+            0.128,
+            0.112,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.128,
+            0.112,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            17,
+            14
+          ],
+          "bottom_socket_P_m": [
+            0.136,
+            0.112,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.136,
+            0.112,
+            0.0096
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 8,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              14,
+              13
+            ],
+            "grid": [
+              14,
+              13
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              15,
+              13
+            ],
+            "grid": [
+              15,
+              13
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              16,
+              13
+            ],
+            "grid": [
+              16,
+              13
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              17,
+              13
+            ],
+            "grid": [
+              17,
+              13
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              0,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              14,
+              14
+            ],
+            "grid": [
+              14,
+              14
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              15,
+              14
+            ],
+            "grid": [
+              15,
+              14
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              16,
+              14
+            ],
+            "grid": [
+              16,
+              14
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              17,
+              14
+            ],
+            "grid": [
+              17,
+              14
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [],
+        "contributors": [
+          "baseplate"
+        ],
+        "support_hull_stud": [
+          [
+            14,
+            13
+          ],
+          [
+            17,
+            13
+          ],
+          [
+            17,
+            14
+          ],
+          [
+            14,
+            14
+          ]
+        ],
+        "support_affine_rank": 2,
+        "center_in_support_hull": true,
+        "requires_cantilever_clutch_validation": false,
+        "bridges_multiple_lower_bricks": false,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_1_2_0",
+      "index": [
+        1,
+        2,
+        0
+      ],
+      "yaw_quarter_turns": 0,
+      "yaw_rad": 0.0,
+      "center_stud": [
+        19.5,
+        13.5
+      ],
+      "bottom_center_P_m": [
+        0.156,
+        0.108,
+        0.0
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            18,
+            13
+          ],
+          "bottom_socket_P_m": [
+            0.14400000000000002,
+            0.10400000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.14400000000000002,
+            0.10400000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            19,
+            13
+          ],
+          "bottom_socket_P_m": [
+            0.152,
+            0.10400000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.152,
+            0.10400000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            20,
+            13
+          ],
+          "bottom_socket_P_m": [
+            0.16,
+            0.10400000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.16,
+            0.10400000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            21,
+            13
+          ],
+          "bottom_socket_P_m": [
+            0.168,
+            0.10400000000000001,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.168,
+            0.10400000000000001,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            18,
+            14
+          ],
+          "bottom_socket_P_m": [
+            0.14400000000000002,
+            0.112,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.14400000000000002,
+            0.112,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            19,
+            14
+          ],
+          "bottom_socket_P_m": [
+            0.152,
+            0.112,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.152,
+            0.112,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            20,
+            14
+          ],
+          "bottom_socket_P_m": [
+            0.16,
+            0.112,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.16,
+            0.112,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            21,
+            14
+          ],
+          "bottom_socket_P_m": [
+            0.168,
+            0.112,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.168,
+            0.112,
+            0.0096
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 8,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              18,
+              13
+            ],
+            "grid": [
+              18,
+              13
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              19,
+              13
+            ],
+            "grid": [
+              19,
+              13
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              20,
+              13
+            ],
+            "grid": [
+              20,
+              13
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              21,
+              13
+            ],
+            "grid": [
+              21,
+              13
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              0,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              18,
+              14
+            ],
+            "grid": [
+              18,
+              14
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              19,
+              14
+            ],
+            "grid": [
+              19,
+              14
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              20,
+              14
+            ],
+            "grid": [
+              20,
+              14
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              21,
+              14
+            ],
+            "grid": [
+              21,
+              14
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [],
+        "contributors": [
+          "baseplate"
+        ],
+        "support_hull_stud": [
+          [
+            18,
+            13
+          ],
+          [
+            21,
+            13
+          ],
+          [
+            21,
+            14
+          ],
+          [
+            18,
+            14
+          ]
+        ],
+        "support_affine_rank": 2,
+        "center_in_support_hull": true,
+        "requires_cantilever_clutch_validation": false,
+        "bridges_multiple_lower_bricks": false,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_2_0_0",
+      "index": [
+        2,
+        0,
+        0
+      ],
+      "yaw_quarter_turns": 0,
+      "yaw_rad": 0.0,
+      "center_stud": [
+        11.5,
+        17.5
+      ],
+      "bottom_center_P_m": [
+        0.092,
+        0.14,
+        0.0
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            10,
+            17
+          ],
+          "bottom_socket_P_m": [
+            0.08,
+            0.136,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.08,
+            0.136,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            11,
+            17
+          ],
+          "bottom_socket_P_m": [
+            0.088,
+            0.136,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.088,
+            0.136,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            12,
+            17
+          ],
+          "bottom_socket_P_m": [
+            0.096,
+            0.136,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.096,
+            0.136,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            13,
+            17
+          ],
+          "bottom_socket_P_m": [
+            0.10400000000000001,
+            0.136,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.10400000000000001,
+            0.136,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            10,
+            18
+          ],
+          "bottom_socket_P_m": [
+            0.08,
+            0.14400000000000002,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.08,
+            0.14400000000000002,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            11,
+            18
+          ],
+          "bottom_socket_P_m": [
+            0.088,
+            0.14400000000000002,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.088,
+            0.14400000000000002,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            12,
+            18
+          ],
+          "bottom_socket_P_m": [
+            0.096,
+            0.14400000000000002,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.096,
+            0.14400000000000002,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            13,
+            18
+          ],
+          "bottom_socket_P_m": [
+            0.10400000000000001,
+            0.14400000000000002,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.10400000000000001,
+            0.14400000000000002,
+            0.0096
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 8,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              10,
+              17
+            ],
+            "grid": [
+              10,
+              17
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              11,
+              17
+            ],
+            "grid": [
+              11,
+              17
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              12,
+              17
+            ],
+            "grid": [
+              12,
+              17
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              13,
+              17
+            ],
+            "grid": [
+              13,
+              17
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              0,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              10,
+              18
+            ],
+            "grid": [
+              10,
+              18
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              11,
+              18
+            ],
+            "grid": [
+              11,
+              18
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              12,
+              18
+            ],
+            "grid": [
+              12,
+              18
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              13,
+              18
+            ],
+            "grid": [
+              13,
+              18
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [],
+        "contributors": [
+          "baseplate"
+        ],
+        "support_hull_stud": [
+          [
+            10,
+            17
+          ],
+          [
+            13,
+            17
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            10,
+            18
+          ]
+        ],
+        "support_affine_rank": 2,
+        "center_in_support_hull": true,
+        "requires_cantilever_clutch_validation": false,
+        "bridges_multiple_lower_bricks": false,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_2_1_0",
+      "index": [
+        2,
+        1,
+        0
+      ],
+      "yaw_quarter_turns": 0,
+      "yaw_rad": 0.0,
+      "center_stud": [
+        15.5,
+        17.5
+      ],
+      "bottom_center_P_m": [
+        0.124,
+        0.14,
+        0.0
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            14,
+            17
+          ],
+          "bottom_socket_P_m": [
+            0.112,
+            0.136,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.112,
+            0.136,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            15,
+            17
+          ],
+          "bottom_socket_P_m": [
+            0.12,
+            0.136,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.12,
+            0.136,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            16,
+            17
+          ],
+          "bottom_socket_P_m": [
+            0.128,
+            0.136,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.128,
+            0.136,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            17,
+            17
+          ],
+          "bottom_socket_P_m": [
+            0.136,
+            0.136,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.136,
+            0.136,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            14,
+            18
+          ],
+          "bottom_socket_P_m": [
+            0.112,
+            0.14400000000000002,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.112,
+            0.14400000000000002,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            15,
+            18
+          ],
+          "bottom_socket_P_m": [
+            0.12,
+            0.14400000000000002,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.12,
+            0.14400000000000002,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            16,
+            18
+          ],
+          "bottom_socket_P_m": [
+            0.128,
+            0.14400000000000002,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.128,
+            0.14400000000000002,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            17,
+            18
+          ],
+          "bottom_socket_P_m": [
+            0.136,
+            0.14400000000000002,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.136,
+            0.14400000000000002,
+            0.0096
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 8,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              14,
+              17
+            ],
+            "grid": [
+              14,
+              17
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              15,
+              17
+            ],
+            "grid": [
+              15,
+              17
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              16,
+              17
+            ],
+            "grid": [
+              16,
+              17
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              17,
+              17
+            ],
+            "grid": [
+              17,
+              17
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              0,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              14,
+              18
+            ],
+            "grid": [
+              14,
+              18
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              15,
+              18
+            ],
+            "grid": [
+              15,
+              18
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              16,
+              18
+            ],
+            "grid": [
+              16,
+              18
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              17,
+              18
+            ],
+            "grid": [
+              17,
+              18
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [],
+        "contributors": [
+          "baseplate"
+        ],
+        "support_hull_stud": [
+          [
+            14,
+            17
+          ],
+          [
+            17,
+            17
+          ],
+          [
+            17,
+            18
+          ],
+          [
+            14,
+            18
+          ]
+        ],
+        "support_affine_rank": 2,
+        "center_in_support_hull": true,
+        "requires_cantilever_clutch_validation": false,
+        "bridges_multiple_lower_bricks": false,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_2_2_0",
+      "index": [
+        2,
+        2,
+        0
+      ],
+      "yaw_quarter_turns": 0,
+      "yaw_rad": 0.0,
+      "center_stud": [
+        19.5,
+        17.5
+      ],
+      "bottom_center_P_m": [
+        0.156,
+        0.14,
+        0.0
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            18,
+            17
+          ],
+          "bottom_socket_P_m": [
+            0.14400000000000002,
+            0.136,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.14400000000000002,
+            0.136,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            19,
+            17
+          ],
+          "bottom_socket_P_m": [
+            0.152,
+            0.136,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.152,
+            0.136,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            20,
+            17
+          ],
+          "bottom_socket_P_m": [
+            0.16,
+            0.136,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.16,
+            0.136,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            21,
+            17
+          ],
+          "bottom_socket_P_m": [
+            0.168,
+            0.136,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.168,
+            0.136,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            18,
+            18
+          ],
+          "bottom_socket_P_m": [
+            0.14400000000000002,
+            0.14400000000000002,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.14400000000000002,
+            0.14400000000000002,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            19,
+            18
+          ],
+          "bottom_socket_P_m": [
+            0.152,
+            0.14400000000000002,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.152,
+            0.14400000000000002,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            20,
+            18
+          ],
+          "bottom_socket_P_m": [
+            0.16,
+            0.14400000000000002,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.16,
+            0.14400000000000002,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            21,
+            18
+          ],
+          "bottom_socket_P_m": [
+            0.168,
+            0.14400000000000002,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.168,
+            0.14400000000000002,
+            0.0096
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 8,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              18,
+              17
+            ],
+            "grid": [
+              18,
+              17
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              19,
+              17
+            ],
+            "grid": [
+              19,
+              17
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              20,
+              17
+            ],
+            "grid": [
+              20,
+              17
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              21,
+              17
+            ],
+            "grid": [
+              21,
+              17
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              0,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              18,
+              18
+            ],
+            "grid": [
+              18,
+              18
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              19,
+              18
+            ],
+            "grid": [
+              19,
+              18
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              20,
+              18
+            ],
+            "grid": [
+              20,
+              18
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              21,
+              18
+            ],
+            "grid": [
+              21,
+              18
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [],
+        "contributors": [
+          "baseplate"
+        ],
+        "support_hull_stud": [
+          [
+            18,
+            17
+          ],
+          [
+            21,
+            17
+          ],
+          [
+            21,
+            18
+          ],
+          [
+            18,
+            18
+          ]
+        ],
+        "support_affine_rank": 2,
+        "center_in_support_hull": true,
+        "requires_cantilever_clutch_validation": false,
+        "bridges_multiple_lower_bricks": false,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_3_0_0",
+      "index": [
+        3,
+        0,
+        0
+      ],
+      "yaw_quarter_turns": 0,
+      "yaw_rad": 0.0,
+      "center_stud": [
+        11.5,
+        21.5
+      ],
+      "bottom_center_P_m": [
+        0.092,
+        0.17200000000000001,
+        0.0
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            10,
+            21
+          ],
+          "bottom_socket_P_m": [
+            0.08,
+            0.168,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.08,
+            0.168,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            11,
+            21
+          ],
+          "bottom_socket_P_m": [
+            0.088,
+            0.168,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.088,
+            0.168,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            12,
+            21
+          ],
+          "bottom_socket_P_m": [
+            0.096,
+            0.168,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.096,
+            0.168,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            13,
+            21
+          ],
+          "bottom_socket_P_m": [
+            0.10400000000000001,
+            0.168,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.10400000000000001,
+            0.168,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            10,
+            22
+          ],
+          "bottom_socket_P_m": [
+            0.08,
+            0.176,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.08,
+            0.176,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            11,
+            22
+          ],
+          "bottom_socket_P_m": [
+            0.088,
+            0.176,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.088,
+            0.176,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            12,
+            22
+          ],
+          "bottom_socket_P_m": [
+            0.096,
+            0.176,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.096,
+            0.176,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            13,
+            22
+          ],
+          "bottom_socket_P_m": [
+            0.10400000000000001,
+            0.176,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.10400000000000001,
+            0.176,
+            0.0096
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 8,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              10,
+              21
+            ],
+            "grid": [
+              10,
+              21
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              11,
+              21
+            ],
+            "grid": [
+              11,
+              21
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              12,
+              21
+            ],
+            "grid": [
+              12,
+              21
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              13,
+              21
+            ],
+            "grid": [
+              13,
+              21
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              0,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              10,
+              22
+            ],
+            "grid": [
+              10,
+              22
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              11,
+              22
+            ],
+            "grid": [
+              11,
+              22
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              12,
+              22
+            ],
+            "grid": [
+              12,
+              22
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              13,
+              22
+            ],
+            "grid": [
+              13,
+              22
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [],
+        "contributors": [
+          "baseplate"
+        ],
+        "support_hull_stud": [
+          [
+            10,
+            21
+          ],
+          [
+            13,
+            21
+          ],
+          [
+            13,
+            22
+          ],
+          [
+            10,
+            22
+          ]
+        ],
+        "support_affine_rank": 2,
+        "center_in_support_hull": true,
+        "requires_cantilever_clutch_validation": false,
+        "bridges_multiple_lower_bricks": false,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_3_1_0",
+      "index": [
+        3,
+        1,
+        0
+      ],
+      "yaw_quarter_turns": 0,
+      "yaw_rad": 0.0,
+      "center_stud": [
+        15.5,
+        21.5
+      ],
+      "bottom_center_P_m": [
+        0.124,
+        0.17200000000000001,
+        0.0
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            14,
+            21
+          ],
+          "bottom_socket_P_m": [
+            0.112,
+            0.168,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.112,
+            0.168,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            15,
+            21
+          ],
+          "bottom_socket_P_m": [
+            0.12,
+            0.168,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.12,
+            0.168,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            16,
+            21
+          ],
+          "bottom_socket_P_m": [
+            0.128,
+            0.168,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.128,
+            0.168,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            17,
+            21
+          ],
+          "bottom_socket_P_m": [
+            0.136,
+            0.168,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.136,
+            0.168,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            14,
+            22
+          ],
+          "bottom_socket_P_m": [
+            0.112,
+            0.176,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.112,
+            0.176,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            15,
+            22
+          ],
+          "bottom_socket_P_m": [
+            0.12,
+            0.176,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.12,
+            0.176,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            16,
+            22
+          ],
+          "bottom_socket_P_m": [
+            0.128,
+            0.176,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.128,
+            0.176,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            17,
+            22
+          ],
+          "bottom_socket_P_m": [
+            0.136,
+            0.176,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.136,
+            0.176,
+            0.0096
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 8,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              14,
+              21
+            ],
+            "grid": [
+              14,
+              21
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              15,
+              21
+            ],
+            "grid": [
+              15,
+              21
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              16,
+              21
+            ],
+            "grid": [
+              16,
+              21
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              17,
+              21
+            ],
+            "grid": [
+              17,
+              21
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              0,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              14,
+              22
+            ],
+            "grid": [
+              14,
+              22
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              15,
+              22
+            ],
+            "grid": [
+              15,
+              22
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              16,
+              22
+            ],
+            "grid": [
+              16,
+              22
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              17,
+              22
+            ],
+            "grid": [
+              17,
+              22
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [],
+        "contributors": [
+          "baseplate"
+        ],
+        "support_hull_stud": [
+          [
+            14,
+            21
+          ],
+          [
+            17,
+            21
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            14,
+            22
+          ]
+        ],
+        "support_affine_rank": 2,
+        "center_in_support_hull": true,
+        "requires_cantilever_clutch_validation": false,
+        "bridges_multiple_lower_bricks": false,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_3_2_0",
+      "index": [
+        3,
+        2,
+        0
+      ],
+      "yaw_quarter_turns": 0,
+      "yaw_rad": 0.0,
+      "center_stud": [
+        19.5,
+        21.5
+      ],
+      "bottom_center_P_m": [
+        0.156,
+        0.17200000000000001,
+        0.0
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            18,
+            21
+          ],
+          "bottom_socket_P_m": [
+            0.14400000000000002,
+            0.168,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.14400000000000002,
+            0.168,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            19,
+            21
+          ],
+          "bottom_socket_P_m": [
+            0.152,
+            0.168,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.152,
+            0.168,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            20,
+            21
+          ],
+          "bottom_socket_P_m": [
+            0.16,
+            0.168,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.16,
+            0.168,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            21,
+            21
+          ],
+          "bottom_socket_P_m": [
+            0.168,
+            0.168,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.168,
+            0.168,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            18,
+            22
+          ],
+          "bottom_socket_P_m": [
+            0.14400000000000002,
+            0.176,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.14400000000000002,
+            0.176,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            19,
+            22
+          ],
+          "bottom_socket_P_m": [
+            0.152,
+            0.176,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.152,
+            0.176,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            20,
+            22
+          ],
+          "bottom_socket_P_m": [
+            0.16,
+            0.176,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.16,
+            0.176,
+            0.0096
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            21,
+            22
+          ],
+          "bottom_socket_P_m": [
+            0.168,
+            0.176,
+            0.0
+          ],
+          "top_stud_root_P_m": [
+            0.168,
+            0.176,
+            0.0096
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 8,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              18,
+              21
+            ],
+            "grid": [
+              18,
+              21
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              19,
+              21
+            ],
+            "grid": [
+              19,
+              21
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              20,
+              21
+            ],
+            "grid": [
+              20,
+              21
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              0
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              21,
+              21
+            ],
+            "grid": [
+              21,
+              21
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              0,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              18,
+              22
+            ],
+            "grid": [
+              18,
+              22
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              1,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              19,
+              22
+            ],
+            "grid": [
+              19,
+              22
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              2,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              20,
+              22
+            ],
+            "grid": [
+              20,
+              22
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              1
+            ],
+            "lower_owner": "baseplate",
+            "lower_stud_slot": [
+              21,
+              22
+            ],
+            "grid": [
+              21,
+              22
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [],
+        "contributors": [
+          "baseplate"
+        ],
+        "support_hull_stud": [
+          [
+            18,
+            21
+          ],
+          [
+            21,
+            21
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            18,
+            22
+          ]
+        ],
+        "support_affine_rank": 2,
+        "center_in_support_hull": true,
+        "requires_cantilever_clutch_validation": false,
+        "bridges_multiple_lower_bricks": false,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_0_0_1",
+      "index": [
+        0,
+        0,
+        1
+      ],
+      "yaw_quarter_turns": 1,
+      "yaw_rad": 1.5707963267948966,
+      "center_stud": [
+        21.5,
+        11.5
+      ],
+      "bottom_center_P_m": [
+        0.17200000000000001,
+        0.092,
+        0.0096
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            22,
+            10
+          ],
+          "bottom_socket_P_m": [
+            0.176,
+            0.08,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.176,
+            0.08,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            22,
+            11
+          ],
+          "bottom_socket_P_m": [
+            0.176,
+            0.088,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.176,
+            0.088,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            22,
+            12
+          ],
+          "bottom_socket_P_m": [
+            0.176,
+            0.096,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.176,
+            0.096,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            22,
+            13
+          ],
+          "bottom_socket_P_m": [
+            0.176,
+            0.10400000000000001,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.176,
+            0.10400000000000001,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            21,
+            10
+          ],
+          "bottom_socket_P_m": [
+            0.168,
+            0.08,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.168,
+            0.08,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            21,
+            11
+          ],
+          "bottom_socket_P_m": [
+            0.168,
+            0.088,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.168,
+            0.088,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            21,
+            12
+          ],
+          "bottom_socket_P_m": [
+            0.168,
+            0.096,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.168,
+            0.096,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            21,
+            13
+          ],
+          "bottom_socket_P_m": [
+            0.168,
+            0.10400000000000001,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.168,
+            0.10400000000000001,
+            0.0192
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 2,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              1
+            ],
+            "lower_owner": "b_0_2_0",
+            "lower_stud_slot": [
+              3,
+              1
+            ],
+            "grid": [
+              21,
+              10
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              1
+            ],
+            "lower_owner": "b_1_2_0",
+            "lower_stud_slot": [
+              3,
+              0
+            ],
+            "grid": [
+              21,
+              13
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "contributors": [
+          "b_0_2_0",
+          "b_1_2_0"
+        ],
+        "support_hull_stud": [
+          [
+            21,
+            10
+          ],
+          [
+            21,
+            13
+          ]
+        ],
+        "support_affine_rank": 1,
+        "center_in_support_hull": false,
+        "requires_cantilever_clutch_validation": true,
+        "bridges_multiple_lower_bricks": true,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_0_1_1",
+      "index": [
+        0,
+        1,
+        1
+      ],
+      "yaw_quarter_turns": 1,
+      "yaw_rad": 1.5707963267948966,
+      "center_stud": [
+        21.5,
+        15.5
+      ],
+      "bottom_center_P_m": [
+        0.17200000000000001,
+        0.124,
+        0.0096
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            22,
+            14
+          ],
+          "bottom_socket_P_m": [
+            0.176,
+            0.112,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.176,
+            0.112,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            22,
+            15
+          ],
+          "bottom_socket_P_m": [
+            0.176,
+            0.12,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.176,
+            0.12,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            22,
+            16
+          ],
+          "bottom_socket_P_m": [
+            0.176,
+            0.128,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.176,
+            0.128,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            22,
+            17
+          ],
+          "bottom_socket_P_m": [
+            0.176,
+            0.136,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.176,
+            0.136,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            21,
+            14
+          ],
+          "bottom_socket_P_m": [
+            0.168,
+            0.112,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.168,
+            0.112,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            21,
+            15
+          ],
+          "bottom_socket_P_m": [
+            0.168,
+            0.12,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.168,
+            0.12,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            21,
+            16
+          ],
+          "bottom_socket_P_m": [
+            0.168,
+            0.128,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.168,
+            0.128,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            21,
+            17
+          ],
+          "bottom_socket_P_m": [
+            0.168,
+            0.136,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.168,
+            0.136,
+            0.0192
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 2,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              1
+            ],
+            "lower_owner": "b_1_2_0",
+            "lower_stud_slot": [
+              3,
+              1
+            ],
+            "grid": [
+              21,
+              14
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              1
+            ],
+            "lower_owner": "b_2_2_0",
+            "lower_stud_slot": [
+              3,
+              0
+            ],
+            "grid": [
+              21,
+              17
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "contributors": [
+          "b_1_2_0",
+          "b_2_2_0"
+        ],
+        "support_hull_stud": [
+          [
+            21,
+            14
+          ],
+          [
+            21,
+            17
+          ]
+        ],
+        "support_affine_rank": 1,
+        "center_in_support_hull": false,
+        "requires_cantilever_clutch_validation": true,
+        "bridges_multiple_lower_bricks": true,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_0_2_1",
+      "index": [
+        0,
+        2,
+        1
+      ],
+      "yaw_quarter_turns": 1,
+      "yaw_rad": 1.5707963267948966,
+      "center_stud": [
+        21.5,
+        19.5
+      ],
+      "bottom_center_P_m": [
+        0.17200000000000001,
+        0.156,
+        0.0096
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            22,
+            18
+          ],
+          "bottom_socket_P_m": [
+            0.176,
+            0.14400000000000002,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.176,
+            0.14400000000000002,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            22,
+            19
+          ],
+          "bottom_socket_P_m": [
+            0.176,
+            0.152,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.176,
+            0.152,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            22,
+            20
+          ],
+          "bottom_socket_P_m": [
+            0.176,
+            0.16,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.176,
+            0.16,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            22,
+            21
+          ],
+          "bottom_socket_P_m": [
+            0.176,
+            0.168,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.176,
+            0.168,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            21,
+            18
+          ],
+          "bottom_socket_P_m": [
+            0.168,
+            0.14400000000000002,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.168,
+            0.14400000000000002,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            21,
+            19
+          ],
+          "bottom_socket_P_m": [
+            0.168,
+            0.152,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.168,
+            0.152,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            21,
+            20
+          ],
+          "bottom_socket_P_m": [
+            0.168,
+            0.16,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.168,
+            0.16,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            21,
+            21
+          ],
+          "bottom_socket_P_m": [
+            0.168,
+            0.168,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.168,
+            0.168,
+            0.0192
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 2,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              1
+            ],
+            "lower_owner": "b_2_2_0",
+            "lower_stud_slot": [
+              3,
+              1
+            ],
+            "grid": [
+              21,
+              18
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              1
+            ],
+            "lower_owner": "b_3_2_0",
+            "lower_stud_slot": [
+              3,
+              0
+            ],
+            "grid": [
+              21,
+              21
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "contributors": [
+          "b_2_2_0",
+          "b_3_2_0"
+        ],
+        "support_hull_stud": [
+          [
+            21,
+            18
+          ],
+          [
+            21,
+            21
+          ]
+        ],
+        "support_affine_rank": 1,
+        "center_in_support_hull": false,
+        "requires_cantilever_clutch_validation": true,
+        "bridges_multiple_lower_bricks": true,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_1_0_1",
+      "index": [
+        1,
+        0,
+        1
+      ],
+      "yaw_quarter_turns": 1,
+      "yaw_rad": 1.5707963267948966,
+      "center_stud": [
+        17.5,
+        11.5
+      ],
+      "bottom_center_P_m": [
+        0.14,
+        0.092,
+        0.0096
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            18,
+            10
+          ],
+          "bottom_socket_P_m": [
+            0.14400000000000002,
+            0.08,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.14400000000000002,
+            0.08,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            18,
+            11
+          ],
+          "bottom_socket_P_m": [
+            0.14400000000000002,
+            0.088,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.14400000000000002,
+            0.088,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            18,
+            12
+          ],
+          "bottom_socket_P_m": [
+            0.14400000000000002,
+            0.096,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.14400000000000002,
+            0.096,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            18,
+            13
+          ],
+          "bottom_socket_P_m": [
+            0.14400000000000002,
+            0.10400000000000001,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.14400000000000002,
+            0.10400000000000001,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            17,
+            10
+          ],
+          "bottom_socket_P_m": [
+            0.136,
+            0.08,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.136,
+            0.08,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            17,
+            11
+          ],
+          "bottom_socket_P_m": [
+            0.136,
+            0.088,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.136,
+            0.088,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            17,
+            12
+          ],
+          "bottom_socket_P_m": [
+            0.136,
+            0.096,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.136,
+            0.096,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            17,
+            13
+          ],
+          "bottom_socket_P_m": [
+            0.136,
+            0.10400000000000001,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.136,
+            0.10400000000000001,
+            0.0192
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 4,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              0
+            ],
+            "lower_owner": "b_0_2_0",
+            "lower_stud_slot": [
+              0,
+              1
+            ],
+            "grid": [
+              18,
+              10
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              0
+            ],
+            "lower_owner": "b_1_2_0",
+            "lower_stud_slot": [
+              0,
+              0
+            ],
+            "grid": [
+              18,
+              13
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              0,
+              1
+            ],
+            "lower_owner": "b_0_1_0",
+            "lower_stud_slot": [
+              3,
+              1
+            ],
+            "grid": [
+              17,
+              10
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              1
+            ],
+            "lower_owner": "b_1_1_0",
+            "lower_stud_slot": [
+              3,
+              0
+            ],
+            "grid": [
+              17,
+              13
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "contributors": [
+          "b_0_1_0",
+          "b_0_2_0",
+          "b_1_1_0",
+          "b_1_2_0"
+        ],
+        "support_hull_stud": [
+          [
+            17,
+            10
+          ],
+          [
+            18,
+            10
+          ],
+          [
+            18,
+            13
+          ],
+          [
+            17,
+            13
+          ]
+        ],
+        "support_affine_rank": 2,
+        "center_in_support_hull": true,
+        "requires_cantilever_clutch_validation": false,
+        "bridges_multiple_lower_bricks": true,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_1_1_1",
+      "index": [
+        1,
+        1,
+        1
+      ],
+      "yaw_quarter_turns": 1,
+      "yaw_rad": 1.5707963267948966,
+      "center_stud": [
+        17.5,
+        15.5
+      ],
+      "bottom_center_P_m": [
+        0.14,
+        0.124,
+        0.0096
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            18,
+            14
+          ],
+          "bottom_socket_P_m": [
+            0.14400000000000002,
+            0.112,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.14400000000000002,
+            0.112,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            18,
+            15
+          ],
+          "bottom_socket_P_m": [
+            0.14400000000000002,
+            0.12,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.14400000000000002,
+            0.12,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            18,
+            16
+          ],
+          "bottom_socket_P_m": [
+            0.14400000000000002,
+            0.128,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.14400000000000002,
+            0.128,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            18,
+            17
+          ],
+          "bottom_socket_P_m": [
+            0.14400000000000002,
+            0.136,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.14400000000000002,
+            0.136,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            17,
+            14
+          ],
+          "bottom_socket_P_m": [
+            0.136,
+            0.112,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.136,
+            0.112,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            17,
+            15
+          ],
+          "bottom_socket_P_m": [
+            0.136,
+            0.12,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.136,
+            0.12,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            17,
+            16
+          ],
+          "bottom_socket_P_m": [
+            0.136,
+            0.128,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.136,
+            0.128,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            17,
+            17
+          ],
+          "bottom_socket_P_m": [
+            0.136,
+            0.136,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.136,
+            0.136,
+            0.0192
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 4,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              0
+            ],
+            "lower_owner": "b_1_2_0",
+            "lower_stud_slot": [
+              0,
+              1
+            ],
+            "grid": [
+              18,
+              14
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              0
+            ],
+            "lower_owner": "b_2_2_0",
+            "lower_stud_slot": [
+              0,
+              0
+            ],
+            "grid": [
+              18,
+              17
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              0,
+              1
+            ],
+            "lower_owner": "b_1_1_0",
+            "lower_stud_slot": [
+              3,
+              1
+            ],
+            "grid": [
+              17,
+              14
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              1
+            ],
+            "lower_owner": "b_2_1_0",
+            "lower_stud_slot": [
+              3,
+              0
+            ],
+            "grid": [
+              17,
+              17
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "contributors": [
+          "b_1_1_0",
+          "b_1_2_0",
+          "b_2_1_0",
+          "b_2_2_0"
+        ],
+        "support_hull_stud": [
+          [
+            17,
+            14
+          ],
+          [
+            18,
+            14
+          ],
+          [
+            18,
+            17
+          ],
+          [
+            17,
+            17
+          ]
+        ],
+        "support_affine_rank": 2,
+        "center_in_support_hull": true,
+        "requires_cantilever_clutch_validation": false,
+        "bridges_multiple_lower_bricks": true,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_1_2_1",
+      "index": [
+        1,
+        2,
+        1
+      ],
+      "yaw_quarter_turns": 1,
+      "yaw_rad": 1.5707963267948966,
+      "center_stud": [
+        17.5,
+        19.5
+      ],
+      "bottom_center_P_m": [
+        0.14,
+        0.156,
+        0.0096
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            18,
+            18
+          ],
+          "bottom_socket_P_m": [
+            0.14400000000000002,
+            0.14400000000000002,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.14400000000000002,
+            0.14400000000000002,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            18,
+            19
+          ],
+          "bottom_socket_P_m": [
+            0.14400000000000002,
+            0.152,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.14400000000000002,
+            0.152,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            18,
+            20
+          ],
+          "bottom_socket_P_m": [
+            0.14400000000000002,
+            0.16,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.14400000000000002,
+            0.16,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            18,
+            21
+          ],
+          "bottom_socket_P_m": [
+            0.14400000000000002,
+            0.168,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.14400000000000002,
+            0.168,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            17,
+            18
+          ],
+          "bottom_socket_P_m": [
+            0.136,
+            0.14400000000000002,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.136,
+            0.14400000000000002,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            17,
+            19
+          ],
+          "bottom_socket_P_m": [
+            0.136,
+            0.152,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.136,
+            0.152,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            17,
+            20
+          ],
+          "bottom_socket_P_m": [
+            0.136,
+            0.16,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.136,
+            0.16,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            17,
+            21
+          ],
+          "bottom_socket_P_m": [
+            0.136,
+            0.168,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.136,
+            0.168,
+            0.0192
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 4,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              0
+            ],
+            "lower_owner": "b_2_2_0",
+            "lower_stud_slot": [
+              0,
+              1
+            ],
+            "grid": [
+              18,
+              18
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              0
+            ],
+            "lower_owner": "b_3_2_0",
+            "lower_stud_slot": [
+              0,
+              0
+            ],
+            "grid": [
+              18,
+              21
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              0,
+              1
+            ],
+            "lower_owner": "b_2_1_0",
+            "lower_stud_slot": [
+              3,
+              1
+            ],
+            "grid": [
+              17,
+              18
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              1
+            ],
+            "lower_owner": "b_3_1_0",
+            "lower_stud_slot": [
+              3,
+              0
+            ],
+            "grid": [
+              17,
+              21
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "contributors": [
+          "b_2_1_0",
+          "b_2_2_0",
+          "b_3_1_0",
+          "b_3_2_0"
+        ],
+        "support_hull_stud": [
+          [
+            17,
+            18
+          ],
+          [
+            18,
+            18
+          ],
+          [
+            18,
+            21
+          ],
+          [
+            17,
+            21
+          ]
+        ],
+        "support_affine_rank": 2,
+        "center_in_support_hull": true,
+        "requires_cantilever_clutch_validation": false,
+        "bridges_multiple_lower_bricks": true,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_2_0_1",
+      "index": [
+        2,
+        0,
+        1
+      ],
+      "yaw_quarter_turns": 1,
+      "yaw_rad": 1.5707963267948966,
+      "center_stud": [
+        13.5,
+        11.5
+      ],
+      "bottom_center_P_m": [
+        0.108,
+        0.092,
+        0.0096
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            14,
+            10
+          ],
+          "bottom_socket_P_m": [
+            0.112,
+            0.08,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.112,
+            0.08,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            14,
+            11
+          ],
+          "bottom_socket_P_m": [
+            0.112,
+            0.088,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.112,
+            0.088,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            14,
+            12
+          ],
+          "bottom_socket_P_m": [
+            0.112,
+            0.096,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.112,
+            0.096,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            14,
+            13
+          ],
+          "bottom_socket_P_m": [
+            0.112,
+            0.10400000000000001,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.112,
+            0.10400000000000001,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            13,
+            10
+          ],
+          "bottom_socket_P_m": [
+            0.10400000000000001,
+            0.08,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.10400000000000001,
+            0.08,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            13,
+            11
+          ],
+          "bottom_socket_P_m": [
+            0.10400000000000001,
+            0.088,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.10400000000000001,
+            0.088,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            13,
+            12
+          ],
+          "bottom_socket_P_m": [
+            0.10400000000000001,
+            0.096,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.10400000000000001,
+            0.096,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            13,
+            13
+          ],
+          "bottom_socket_P_m": [
+            0.10400000000000001,
+            0.10400000000000001,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.10400000000000001,
+            0.10400000000000001,
+            0.0192
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 4,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              0
+            ],
+            "lower_owner": "b_0_1_0",
+            "lower_stud_slot": [
+              0,
+              1
+            ],
+            "grid": [
+              14,
+              10
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              0
+            ],
+            "lower_owner": "b_1_1_0",
+            "lower_stud_slot": [
+              0,
+              0
+            ],
+            "grid": [
+              14,
+              13
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              0,
+              1
+            ],
+            "lower_owner": "b_0_0_0",
+            "lower_stud_slot": [
+              3,
+              1
+            ],
+            "grid": [
+              13,
+              10
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              1
+            ],
+            "lower_owner": "b_1_0_0",
+            "lower_stud_slot": [
+              3,
+              0
+            ],
+            "grid": [
+              13,
+              13
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "contributors": [
+          "b_0_0_0",
+          "b_0_1_0",
+          "b_1_0_0",
+          "b_1_1_0"
+        ],
+        "support_hull_stud": [
+          [
+            13,
+            10
+          ],
+          [
+            14,
+            10
+          ],
+          [
+            14,
+            13
+          ],
+          [
+            13,
+            13
+          ]
+        ],
+        "support_affine_rank": 2,
+        "center_in_support_hull": true,
+        "requires_cantilever_clutch_validation": false,
+        "bridges_multiple_lower_bricks": true,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_2_1_1",
+      "index": [
+        2,
+        1,
+        1
+      ],
+      "yaw_quarter_turns": 1,
+      "yaw_rad": 1.5707963267948966,
+      "center_stud": [
+        13.5,
+        15.5
+      ],
+      "bottom_center_P_m": [
+        0.108,
+        0.124,
+        0.0096
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            14,
+            14
+          ],
+          "bottom_socket_P_m": [
+            0.112,
+            0.112,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.112,
+            0.112,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            14,
+            15
+          ],
+          "bottom_socket_P_m": [
+            0.112,
+            0.12,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.112,
+            0.12,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            14,
+            16
+          ],
+          "bottom_socket_P_m": [
+            0.112,
+            0.128,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.112,
+            0.128,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            14,
+            17
+          ],
+          "bottom_socket_P_m": [
+            0.112,
+            0.136,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.112,
+            0.136,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            13,
+            14
+          ],
+          "bottom_socket_P_m": [
+            0.10400000000000001,
+            0.112,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.10400000000000001,
+            0.112,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            13,
+            15
+          ],
+          "bottom_socket_P_m": [
+            0.10400000000000001,
+            0.12,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.10400000000000001,
+            0.12,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            13,
+            16
+          ],
+          "bottom_socket_P_m": [
+            0.10400000000000001,
+            0.128,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.10400000000000001,
+            0.128,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            13,
+            17
+          ],
+          "bottom_socket_P_m": [
+            0.10400000000000001,
+            0.136,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.10400000000000001,
+            0.136,
+            0.0192
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 4,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              0
+            ],
+            "lower_owner": "b_1_1_0",
+            "lower_stud_slot": [
+              0,
+              1
+            ],
+            "grid": [
+              14,
+              14
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              0
+            ],
+            "lower_owner": "b_2_1_0",
+            "lower_stud_slot": [
+              0,
+              0
+            ],
+            "grid": [
+              14,
+              17
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              0,
+              1
+            ],
+            "lower_owner": "b_1_0_0",
+            "lower_stud_slot": [
+              3,
+              1
+            ],
+            "grid": [
+              13,
+              14
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              1
+            ],
+            "lower_owner": "b_2_0_0",
+            "lower_stud_slot": [
+              3,
+              0
+            ],
+            "grid": [
+              13,
+              17
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "contributors": [
+          "b_1_0_0",
+          "b_1_1_0",
+          "b_2_0_0",
+          "b_2_1_0"
+        ],
+        "support_hull_stud": [
+          [
+            13,
+            14
+          ],
+          [
+            14,
+            14
+          ],
+          [
+            14,
+            17
+          ],
+          [
+            13,
+            17
+          ]
+        ],
+        "support_affine_rank": 2,
+        "center_in_support_hull": true,
+        "requires_cantilever_clutch_validation": false,
+        "bridges_multiple_lower_bricks": true,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_2_2_1",
+      "index": [
+        2,
+        2,
+        1
+      ],
+      "yaw_quarter_turns": 1,
+      "yaw_rad": 1.5707963267948966,
+      "center_stud": [
+        13.5,
+        19.5
+      ],
+      "bottom_center_P_m": [
+        0.108,
+        0.156,
+        0.0096
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            14,
+            18
+          ],
+          "bottom_socket_P_m": [
+            0.112,
+            0.14400000000000002,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.112,
+            0.14400000000000002,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            14,
+            19
+          ],
+          "bottom_socket_P_m": [
+            0.112,
+            0.152,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.112,
+            0.152,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            14,
+            20
+          ],
+          "bottom_socket_P_m": [
+            0.112,
+            0.16,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.112,
+            0.16,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            14,
+            21
+          ],
+          "bottom_socket_P_m": [
+            0.112,
+            0.168,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.112,
+            0.168,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            13,
+            18
+          ],
+          "bottom_socket_P_m": [
+            0.10400000000000001,
+            0.14400000000000002,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.10400000000000001,
+            0.14400000000000002,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            13,
+            19
+          ],
+          "bottom_socket_P_m": [
+            0.10400000000000001,
+            0.152,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.10400000000000001,
+            0.152,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            13,
+            20
+          ],
+          "bottom_socket_P_m": [
+            0.10400000000000001,
+            0.16,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.10400000000000001,
+            0.16,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            13,
+            21
+          ],
+          "bottom_socket_P_m": [
+            0.10400000000000001,
+            0.168,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.10400000000000001,
+            0.168,
+            0.0192
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 4,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              0
+            ],
+            "lower_owner": "b_2_1_0",
+            "lower_stud_slot": [
+              0,
+              1
+            ],
+            "grid": [
+              14,
+              18
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              0
+            ],
+            "lower_owner": "b_3_1_0",
+            "lower_stud_slot": [
+              0,
+              0
+            ],
+            "grid": [
+              14,
+              21
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              0,
+              1
+            ],
+            "lower_owner": "b_2_0_0",
+            "lower_stud_slot": [
+              3,
+              1
+            ],
+            "grid": [
+              13,
+              18
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              1
+            ],
+            "lower_owner": "b_3_0_0",
+            "lower_stud_slot": [
+              3,
+              0
+            ],
+            "grid": [
+              13,
+              21
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "contributors": [
+          "b_2_0_0",
+          "b_2_1_0",
+          "b_3_0_0",
+          "b_3_1_0"
+        ],
+        "support_hull_stud": [
+          [
+            13,
+            18
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            14,
+            21
+          ],
+          [
+            13,
+            21
+          ]
+        ],
+        "support_affine_rank": 2,
+        "center_in_support_hull": true,
+        "requires_cantilever_clutch_validation": false,
+        "bridges_multiple_lower_bricks": true,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_3_0_1",
+      "index": [
+        3,
+        0,
+        1
+      ],
+      "yaw_quarter_turns": 1,
+      "yaw_rad": 1.5707963267948966,
+      "center_stud": [
+        9.5,
+        11.5
+      ],
+      "bottom_center_P_m": [
+        0.076,
+        0.092,
+        0.0096
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            10,
+            10
+          ],
+          "bottom_socket_P_m": [
+            0.08,
+            0.08,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.08,
+            0.08,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            10,
+            11
+          ],
+          "bottom_socket_P_m": [
+            0.08,
+            0.088,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.08,
+            0.088,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            10,
+            12
+          ],
+          "bottom_socket_P_m": [
+            0.08,
+            0.096,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.08,
+            0.096,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            10,
+            13
+          ],
+          "bottom_socket_P_m": [
+            0.08,
+            0.10400000000000001,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.08,
+            0.10400000000000001,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            9,
+            10
+          ],
+          "bottom_socket_P_m": [
+            0.07200000000000001,
+            0.08,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.07200000000000001,
+            0.08,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            9,
+            11
+          ],
+          "bottom_socket_P_m": [
+            0.07200000000000001,
+            0.088,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.07200000000000001,
+            0.088,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            9,
+            12
+          ],
+          "bottom_socket_P_m": [
+            0.07200000000000001,
+            0.096,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.07200000000000001,
+            0.096,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            9,
+            13
+          ],
+          "bottom_socket_P_m": [
+            0.07200000000000001,
+            0.10400000000000001,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.07200000000000001,
+            0.10400000000000001,
+            0.0192
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 2,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              0
+            ],
+            "lower_owner": "b_0_0_0",
+            "lower_stud_slot": [
+              0,
+              1
+            ],
+            "grid": [
+              10,
+              10
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              0
+            ],
+            "lower_owner": "b_1_0_0",
+            "lower_stud_slot": [
+              0,
+              0
+            ],
+            "grid": [
+              10,
+              13
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "contributors": [
+          "b_0_0_0",
+          "b_1_0_0"
+        ],
+        "support_hull_stud": [
+          [
+            10,
+            10
+          ],
+          [
+            10,
+            13
+          ]
+        ],
+        "support_affine_rank": 1,
+        "center_in_support_hull": false,
+        "requires_cantilever_clutch_validation": true,
+        "bridges_multiple_lower_bricks": true,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_3_1_1",
+      "index": [
+        3,
+        1,
+        1
+      ],
+      "yaw_quarter_turns": 1,
+      "yaw_rad": 1.5707963267948966,
+      "center_stud": [
+        9.5,
+        15.5
+      ],
+      "bottom_center_P_m": [
+        0.076,
+        0.124,
+        0.0096
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            10,
+            14
+          ],
+          "bottom_socket_P_m": [
+            0.08,
+            0.112,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.08,
+            0.112,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            10,
+            15
+          ],
+          "bottom_socket_P_m": [
+            0.08,
+            0.12,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.08,
+            0.12,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            10,
+            16
+          ],
+          "bottom_socket_P_m": [
+            0.08,
+            0.128,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.08,
+            0.128,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            10,
+            17
+          ],
+          "bottom_socket_P_m": [
+            0.08,
+            0.136,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.08,
+            0.136,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            9,
+            14
+          ],
+          "bottom_socket_P_m": [
+            0.07200000000000001,
+            0.112,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.07200000000000001,
+            0.112,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            9,
+            15
+          ],
+          "bottom_socket_P_m": [
+            0.07200000000000001,
+            0.12,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.07200000000000001,
+            0.12,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            9,
+            16
+          ],
+          "bottom_socket_P_m": [
+            0.07200000000000001,
+            0.128,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.07200000000000001,
+            0.128,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            9,
+            17
+          ],
+          "bottom_socket_P_m": [
+            0.07200000000000001,
+            0.136,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.07200000000000001,
+            0.136,
+            0.0192
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 2,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              0
+            ],
+            "lower_owner": "b_1_0_0",
+            "lower_stud_slot": [
+              0,
+              1
+            ],
+            "grid": [
+              10,
+              14
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              0
+            ],
+            "lower_owner": "b_2_0_0",
+            "lower_stud_slot": [
+              0,
+              0
+            ],
+            "grid": [
+              10,
+              17
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "contributors": [
+          "b_1_0_0",
+          "b_2_0_0"
+        ],
+        "support_hull_stud": [
+          [
+            10,
+            14
+          ],
+          [
+            10,
+            17
+          ]
+        ],
+        "support_affine_rank": 1,
+        "center_in_support_hull": false,
+        "requires_cantilever_clutch_validation": true,
+        "bridges_multiple_lower_bricks": true,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    },
+    {
+      "id": "b_3_2_1",
+      "index": [
+        3,
+        2,
+        1
+      ],
+      "yaw_quarter_turns": 1,
+      "yaw_rad": 1.5707963267948966,
+      "center_stud": [
+        9.5,
+        19.5
+      ],
+      "bottom_center_P_m": [
+        0.076,
+        0.156,
+        0.0096
+      ],
+      "studs": [
+        {
+          "slot": [
+            0,
+            0
+          ],
+          "grid": [
+            10,
+            18
+          ],
+          "bottom_socket_P_m": [
+            0.08,
+            0.14400000000000002,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.08,
+            0.14400000000000002,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            0
+          ],
+          "grid": [
+            10,
+            19
+          ],
+          "bottom_socket_P_m": [
+            0.08,
+            0.152,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.08,
+            0.152,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            0
+          ],
+          "grid": [
+            10,
+            20
+          ],
+          "bottom_socket_P_m": [
+            0.08,
+            0.16,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.08,
+            0.16,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            0
+          ],
+          "grid": [
+            10,
+            21
+          ],
+          "bottom_socket_P_m": [
+            0.08,
+            0.168,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.08,
+            0.168,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            0,
+            1
+          ],
+          "grid": [
+            9,
+            18
+          ],
+          "bottom_socket_P_m": [
+            0.07200000000000001,
+            0.14400000000000002,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.07200000000000001,
+            0.14400000000000002,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            1,
+            1
+          ],
+          "grid": [
+            9,
+            19
+          ],
+          "bottom_socket_P_m": [
+            0.07200000000000001,
+            0.152,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.07200000000000001,
+            0.152,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            2,
+            1
+          ],
+          "grid": [
+            9,
+            20
+          ],
+          "bottom_socket_P_m": [
+            0.07200000000000001,
+            0.16,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.07200000000000001,
+            0.16,
+            0.0192
+          ]
+        },
+        {
+          "slot": [
+            3,
+            1
+          ],
+          "grid": [
+            9,
+            21
+          ],
+          "bottom_socket_P_m": [
+            0.07200000000000001,
+            0.168,
+            0.0096
+          ],
+          "top_stud_root_P_m": [
+            0.07200000000000001,
+            0.168,
+            0.0192
+          ]
+        }
+      ],
+      "support": {
+        "requested_socket_count": 8,
+        "potential_match_count": 2,
+        "matches": [
+          {
+            "upper_socket": [
+              0,
+              0
+            ],
+            "lower_owner": "b_2_0_0",
+            "lower_stud_slot": [
+              0,
+              1
+            ],
+            "grid": [
+              10,
+              18
+            ],
+            "engagement_verified": false
+          },
+          {
+            "upper_socket": [
+              3,
+              0
+            ],
+            "lower_owner": "b_3_0_0",
+            "lower_stud_slot": [
+              0,
+              0
+            ],
+            "grid": [
+              10,
+              21
+            ],
+            "engagement_verified": false
+          }
+        ],
+        "unmatched_socket_slots": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "contributors": [
+          "b_2_0_0",
+          "b_3_0_0"
+        ],
+        "support_hull_stud": [
+          [
+            10,
+            18
+          ],
+          [
+            10,
+            21
+          ]
+        ],
+        "support_affine_rank": 1,
+        "center_in_support_hull": false,
+        "requires_cantilever_clutch_validation": true,
+        "bridges_multiple_lower_bricks": true,
+        "mechanical_stability_validated": false,
+        "meaning": "nominal stud coincidences only; no seated/clutch/contact-success assertion"
+      }
+    }
+  ],
+  "summary": {
+    "brick_count": 24,
+    "potential_match_count_histogram": {
+      "2": 6,
+      "4": 6,
+      "8": 12
+    },
+    "cantilever_validation_bricks": [
+      "b_0_0_1",
+      "b_0_1_1",
+      "b_0_2_1",
+      "b_3_0_1",
+      "b_3_1_1",
+      "b_3_2_1"
+    ]
+  },
+  "provenance": {
+    "nominal_grid_source": {
+      "url": "https://ldraw.org/article/218.html",
+      "description": "LDraw specification: one stud/brick width=20 LDU; approximate 0.4 mm/LDU gives nominal 8 mm pitch. This is a CAD prior, not a measurement of this plate.",
+      "nominal_stud_pitch_m": 0.008,
+      "physical_pitch_measured": false
+    },
+    "grid_shape_status": "photo_supported_not_physically_verified",
+    "stud_pitch_status": "nominal_cad_prior",
+    "layer_pitch_source": "configuration; not independently verified",
+    "body_dimensions_are_not_grid_pitch": true
+  },
+  "training_ready": false,
+  "physical_engagement_validated": false
+}

@@ -1,0 +1,349 @@
+{
+  "task_id": "factory_columns_of_four",
+  "available": {
+    "0_0": {
+      "status": "User requested ordered delivery from freshly populated fixed source",
+      "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/rows_20261027T161306.333931Z"
+    },
+    "2_0": {
+      "status": "User requested ordered delivery from freshly populated fixed source",
+      "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/rows_20261027T161306.333931Z"
+    },
+    "4_0": {
+      "status": "User requested ordered delivery from freshly populated fixed source",
+      "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/rows_20261027T161306.333931Z"
+    }
+  },
+  "completed": {},
+  "active": {
+    "pose": "0_0",
+    "phase": "released_placement_unverified",
+    "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/rows_20261027T161306.333931Z/0_0",
+    "origin_run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/rows_20261027T161306.333931Z/0_0",
+    "utc": "2026-10-27T16:13:29.178001+00:00",
+    "last_stop": "{'type': 'cycle_stopped', 'id': 16, 'unix_ns': 1793117612743045373, 'detail': 'Endpoint did not settle; inspect requested/sent/desired/measured diagnostics; libfranka: Move command preempted!', 'received_monotonic': 224444.833426629}"
+  },
+  "prior_history": "../factory_vision/progress.json; preserved, not assumed complete",
+  "prior_session_inventory": {
+    "task_id": "factory_columns_of_four",
+    "available": {},
+    "completed": {
+      "5_2": {
+        "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/cycles_20261027T153548.018424Z",
+        "report": "5_2_cycle.json",
+        "correct_picks": 1,
+        "correct_placements": 1
+      }
+    },
+    "active": null,
+    "prior_history": "../factory_vision/progress.json; preserved, not assumed complete",
+    "prior_session_inventory": {
+      "task_id": "factory_columns_of_four",
+      "available": {
+        "5_2": {
+          "status": "expected_at_fixed_taught_pose; pick not yet verified"
+        }
+      },
+      "completed": {},
+      "active": null,
+      "prior_history": "../factory_vision/progress.json; preserved, not assumed complete",
+      "prior_session_inventory": {
+        "task_id": "factory_columns_of_four",
+        "available": {
+          "1_0": {
+            "status": "User requested ordered delivery from freshly populated fixed source",
+            "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/rows_20261027T144739.762724Z"
+          },
+          "2_0": {
+            "status": "User requested ordered delivery from freshly populated fixed source",
+            "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/rows_20261027T144739.762724Z"
+          },
+          "3_0": {
+            "status": "User requested ordered delivery from freshly populated fixed source",
+            "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/rows_20261027T144739.762724Z"
+          },
+          "4_0": {
+            "status": "User requested ordered delivery from freshly populated fixed source",
+            "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/rows_20261027T144739.762724Z"
+          },
+          "5_0": {
+            "status": "User requested ordered delivery from freshly populated fixed source",
+            "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/rows_20261027T144739.762724Z"
+          }
+        },
+        "completed": {},
+        "active": null,
+        "prior_history": "../factory_vision/progress.json; preserved, not assumed complete",
+        "prior_session_inventory": {
+          "task_id": "factory_columns_of_four",
+          "available": {},
+          "completed": {
+            "5_0": {
+              "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/cycles_20261027T122556.436105Z",
+              "report": "5_0_cycle.json",
+              "correct_picks": 1,
+              "correct_placements": 1
+            }
+          },
+          "active": null,
+          "prior_history": "../factory_vision/progress.json; preserved, not assumed complete",
+          "prior_session_inventory": {
+            "task_id": "factory_columns_of_four",
+            "available": {
+              "5_0": {
+                "status": "User confirmed source returned and conveyor clear for synchronized stationary-placement test",
+                "utc": "2026-10-27T12:25:55.809360+00:00"
+              }
+            },
+            "completed": {
+              "5_0": {
+                "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/cycles_20261027T114527.457958Z",
+                "report": "5_0_cycle.json",
+                "correct_picks": 1,
+                "correct_placements": 1
+              }
+            },
+            "active": null,
+            "prior_history": "../factory_vision/progress.json; preserved, not assumed complete",
+            "prior_session_inventory": {
+              "task_id": "factory_columns_of_four",
+              "available": {
+                "5_0": {
+                  "status": "User confirmed returned after successful cycle; ready for repeat benchmark",
+                  "utc": "2026-10-27T11:45:26.824000+00:00"
+                }
+              },
+              "completed": {
+                "5_0": {
+                  "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/cycles_20261027T114157.128423Z",
+                  "report": "5_0_cycle.json",
+                  "correct_picks": 1,
+                  "correct_placements": 1
+                }
+              },
+              "active": null,
+              "prior_history": "../factory_vision/progress.json; preserved, not assumed complete",
+              "prior_session_inventory": {
+                "task_id": "factory_columns_of_four",
+                "available": {
+                  "5_0": {
+                    "status": "operator-confirmed returned; fresh cycle checks required"
+                  }
+                },
+                "completed": {},
+                "active": null,
+                "prior_history": "../factory_vision/progress.json; preserved, not assumed complete",
+                "prior_session_inventory": {
+                  "task_id": "factory_columns_of_four",
+                  "available": {
+                    "5_0": {
+                      "status": "operator-confirmed returned; fresh cycle checks still required"
+                    }
+                  },
+                  "completed": {},
+                  "active": null,
+                  "prior_history": "../factory_vision/progress.json; preserved, not assumed complete",
+                  "prior_session_inventory": {
+                    "task_id": "factory_columns_of_four",
+                    "available": {},
+                    "completed": {
+                      "5_0": {
+                        "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/cycles_20261027T112014.429323Z",
+                        "report": "delivery_confirmed_report.json",
+                        "correct_picks": 1,
+                        "correct_placements": 1,
+                        "manual_removal_after_delivery_confirmed": true,
+                        "entire_opening_speed_verified": true,
+                        "automatic_uninterrupted_cycle": false
+                      }
+                    },
+                    "active": null,
+                    "prior_history": "../factory_vision/progress.json; preserved, not assumed complete",
+                    "prior_session_inventory": {
+                      "task_id": "factory_columns_of_four",
+                      "available": {
+                        "5_0": {
+                          "status": "Returned to source with measured grasp-height descent and70mm release before fresh full-cycle run"
+                        }
+                      },
+                      "completed": {},
+                      "active": null,
+                      "prior_history": "../factory_vision/progress.json; preserved, not assumed complete",
+                      "prior_session_inventory": {
+                        "task_id": "factory_columns_of_four",
+                        "available": {},
+                        "completed": {
+                          "5_0": {
+                            "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/cycles_20261027T110810.800400Z",
+                            "report": "recovered_delivery.json",
+                            "correct_picks": 1,
+                            "correct_placements": 1,
+                            "recovered": true,
+                            "automatic_uninterrupted_cycle": false,
+                            "entire_opening_speed_verified": false
+                          }
+                        },
+                        "active": null,
+                        "prior_history": "../factory_vision/progress.json; preserved, not assumed complete",
+                        "prior_session_inventory": {
+                          "task_id": "factory_columns_of_four",
+                          "available": {
+                            "5_0": {
+                              "status": "expected_at_fixed_taught_pose; pick not yet verified"
+                            }
+                          },
+                          "completed": {},
+                          "active": null,
+                          "prior_history": "../factory_vision/progress.json; preserved, not assumed complete",
+                          "prior_session_inventory": {
+                            "task_id": "factory_columns_of_four",
+                            "available": {},
+                            "completed": {
+                              "5_0": {
+                                "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/cycles_20261027T104404.190369Z",
+                                "report": "recovered_delivery.json",
+                                "correct_picks": 1,
+                                "correct_placements": 1,
+                                "recovered": true,
+                                "automatic_uninterrupted_cycle": false
+                              }
+                            },
+                            "active": null,
+                            "prior_history": "../factory_vision/progress.json; preserved, not assumed complete",
+                            "prior_session_inventory": {
+                              "task_id": "factory_columns_of_four",
+                              "available": {
+                                "5_0": {
+                                  "studs_per_brick": [
+                                    8,
+                                    8,
+                                    8,
+                                    8
+                                  ],
+                                  "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/cycles_20261027T101550.513621Z",
+                                  "verified_monotonic": 202991.385466846
+                                }
+                              },
+                              "completed": {},
+                              "active": null,
+                              "prior_history": "../factory_vision/progress.json; preserved, not assumed complete",
+                              "prior_session_inventory": {
+                                "task_id": "factory_columns_of_four",
+                                "available": {
+                                  "5_0": {
+                                    "studs_per_brick": [
+                                      7,
+                                      6,
+                                      8,
+                                      8
+                                    ],
+                                    "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/cycles_20261027T101254.307759Z",
+                                    "verified_monotonic": 202812.157658571
+                                  }
+                                },
+                                "completed": {},
+                                "active": null,
+                                "prior_history": "../factory_vision/progress.json; preserved, not assumed complete",
+                                "prior_session_inventory": {
+                                  "task_id": "factory_columns_of_four",
+                                  "available": {
+                                    "5_0": {
+                                      "studs_per_brick": [
+                                        8,
+                                        7,
+                                        8,
+                                        8
+                                      ],
+                                      "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/cycles_20261027T100703.240585Z",
+                                      "verified_monotonic": 202463.2677815
+                                    }
+                                  },
+                                  "completed": {},
+                                  "active": null,
+                                  "prior_history": "../factory_vision/progress.json; preserved, not assumed complete",
+                                  "prior_session_inventory": {
+                                    "task_id": "factory_columns_of_four",
+                                    "available": {
+                                      "5_0": {
+                                        "studs_per_brick": [
+                                          7,
+                                          8,
+                                          8,
+                                          8
+                                        ],
+                                        "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/cycles_20261027T094326.316309Z",
+                                        "verified_monotonic": 201046.293861766
+                                      }
+                                    },
+                                    "completed": {},
+                                    "active": null,
+                                    "prior_history": "../factory_vision/progress.json; preserved, not assumed complete"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "restored_source_after_unverified_pick": {
+                        "pose": "5_0",
+                        "phase": "settling_probe_pick_unverified",
+                        "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/cycles_20261027T111601.243873Z",
+                        "origin_run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/cycles_20261027T111601.243873Z",
+                        "utc": "2026-10-27T11:16:10.090837+00:00",
+                        "last_stop": "Existing four-brick lift verification did not pass",
+                        "last_measured_xyz_m": [
+                          0.6145179271697998,
+                          0.10112781822681427,
+                          0.015265045687556267
+                        ],
+                        "last_measured_hand_width_m": 0.06269707530736923
+                      }
+                    },
+                    "external_handling": {
+                      "5_0": "User removed delivered column; current source occupancy not inferred"
+                    }
+                  },
+                  "operator_resolved_prior_stop": {
+                    "prior_active": {
+                      "pose": "5_0",
+                      "phase": "recovered_home_after_release_stop",
+                      "run": "teaching/factory_cycle/runs/recover_home_20261027T113631.732765Z",
+                      "origin_run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/cycles_20261027T113242.634122Z",
+                      "utc": "2026-10-27T11:36:35.968611+00:00",
+                      "last_measured_xyz_m": [
+                        0.6991713643074036,
+                        0.10074790567159653,
+                        0.10620302706956863
+                      ],
+                      "last_measured_hand_width_m": 0.06999992579221725
+                    },
+                    "fact": "User explicitly confirmed5_0 returned to taught source after guarded release",
+                    "utc": "2026-10-27T11:38:21.931970+00:00"
+                  }
+                },
+                "operator_resolved_prior_stop": {
+                  "prior_active": {
+                    "pose": "5_0",
+                    "phase": "recovered_home_after_release_stop",
+                    "run": "teaching/factory_cycle/runs/recover_home_20261027T114032.921871Z",
+                    "origin_run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/cycles_20261027T113822.555354Z",
+                    "utc": "2026-10-27T11:40:37.219330+00:00",
+                    "last_measured_xyz_m": [
+                      0.699167788028717,
+                      0.10074695199728012,
+                      0.10619862377643585
+                    ],
+                    "last_measured_hand_width_m": 0.06999992579221725
+                  },
+                  "fact": "User again confirmed5_0 returned to taught source after last guarded release",
+                  "utc": "2026-10-27T11:41:56.501498+00:00"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

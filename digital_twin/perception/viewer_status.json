@@ -1,0 +1,5 @@
+{
+  "status": "Live C920 03FB123F \u00b7 426 ms\n128 occupied (19 retained/unverified) \u00b7 0 empty \u00b7 16 unknown\nColumns: 0 held \u00b7 0 on conveyor (controller-reported)\nDisplay memory \u00b7 measured242mm clear span /65mm right tape; estimated table registration",
+  "robot": "Receiving measured robot state\nlive_hardware_read_only \u00b7 Idle\nHand: 70.0 mm \u00b7 persistent_read_only_hand\nSequence 1367246 \u00b7 sample age 3 ms\nIsaac joint copy error 0.00e+0 rad\nURDF flange position error 0.30 \u00b5m",
+  "now": 1793110900786
+}

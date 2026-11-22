@@ -88,12 +88,34 @@ def write_joint_input(directory,plan,start,target,tool,control,config,seconds):
 def run_arc(point_id,target,capture,catalog_bytes,point,execute,overrides):
     from safe_motion import build_joint_plan
     config=json.loads((HERE/'motion_config.json').read_text())
+    if 'endpoint_position_tolerance_m' in overrides:
+        tolerance=overrides['endpoint_position_tolerance_m']
+        if not overrides.get('stage','').startswith(('factory_vision','calibration_','visual_alignment','aligned_grasp')) or not .001<=tolerance<=.0015:
+            raise RuntimeError('Invalid local visual-motion endpoint tolerance')
+        config['endpoint_position_tolerance_m']=tolerance
     if not config.get('workspace_bounds_m') or not config.get('workspace_reference_distance_m'):
         raise RuntimeError('Factory workspace is unconfigured; record new poses and configure its bounds first')
     state=capture['state'];start=state['O_T_EE'];height=config['vertical_standoff_m']
-    direct=overrides.get('relative_z_mm') is not None or overrides.get('direct_saved_grasp',False) or overrides.get('direct_vertical',False)
+    if overrides.get('vertical_reentry_from_above'):
+        # Return a manually raised arm through its present vertical column.
+        # The operator's 500 mm ceiling applies only to this straight reentry;
+        # ordinary factory paths keep their configured working bounds.
+        ceiling=config['workspace_bounds_m']['max'][2]
+        if (not overrides.get('direct_vertical') or not ceiling<start[14]<=.5
+                or abs(target[14]-ceiling)>1e-9
+                or math.dist(start[12:14],target[12:14])>1e-9
+                or max(abs(start[i]-target[i]) for i in range(12))>1e-9):
+            raise RuntimeError('Reentry must descend at unchanged XY/orientation to the working ceiling, from below500mm')
+        config['workspace_bounds_m']['max'][2]=min(.5,start[14]+.002)
+    alignment=overrides.get('direct_alignment',False)
+    direct=overrides.get('relative_z_mm') is not None or overrides.get('direct_saved_grasp',False) or overrides.get('direct_vertical',False) or alignment
     grasp_requested=overrides.get('target_kind')=='grasp_reference'
     start_xyz=np.array(start[12:15]);target_xyz=np.array(target[12:15])
+    if alignment:
+        trace=sum(start[c*4+r]*target[c*4+r] for c in range(3) for r in range(3))
+        angle=math.acos(max(-1,min(1,(trace-1)/2)))
+        if np.linalg.norm(target_xyz-start_xyz)>.003 or abs(target_xyz[2]-start_xyz[2])>.0015 or angle>math.radians(1.2):
+            raise RuntimeError('Visual alignment steps must stay within 3 mm total, 1.5 mm in Z and 1.2 degrees')
     lower=np.array(config['workspace_bounds_m']['min']);upper=np.array(config['workspace_bounds_m']['max'])
     departure=0 if direct else min(height,float(upper[2]-start_xyz[2]))
     arrival=0 if direct else min(height,float(upper[2]-target_xyz[2]))

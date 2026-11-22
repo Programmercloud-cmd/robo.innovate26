@@ -1,0 +1,84 @@
+{
+  "validation_only": true,
+  "robot_or_camera_connections": 0,
+  "physical_cycles_run": 0,
+  "profiles": {
+    "tabletop": {
+      "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/rows_20261028T000756.135972Z",
+      "columns_validated": 18,
+      "paths_and_transitions_validated": 234,
+      "samples_per_offline_native_guard_check": 1001,
+      "cache_identity": "a9148f7f4f13072b59998b524daf7683eecb0099a063ac9688ac6a32efbda5f3",
+      "workspace": {
+        "min": [
+          0.45102152004241947,
+          -0.3897745717167854,
+          -0.09457162152975798
+        ],
+        "max": [
+          0.7146215200424194,
+          0.20122542828321457,
+          0.5
+        ]
+      },
+      "source_5_0_xyz_m": [
+        0.6146215200424194,
+        0.10122542828321457,
+        0.0054283784702420235
+      ],
+      "placement_5_0_xyz_m": [
+        0.6993267750740051,
+        0.10122542828321457,
+        0.00707379262894392
+      ],
+      "home_5_0_xyz_m": [
+        0.6993267750740051,
+        0.10122542828321457,
+        0.055428378470242026
+      ]
+    },
+    "conveyor": {
+      "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/rows_20261028T000757.353705Z",
+      "columns_validated": 18,
+      "paths_and_transitions_validated": 234,
+      "samples_per_offline_native_guard_check": 1001,
+      "cache_identity": "c4389a405bafb700a79ba958f5946c67d07892ea285273aa81e97deca84bcb2b",
+      "workspace": {
+        "min": [
+          0.45102152004241947,
+          -0.3897745717167854,
+          -0.09457162152975798
+        ],
+        "max": [
+          0.7396215200424194,
+          0.20122542828321457,
+          0.5
+        ]
+      },
+      "source_5_0_xyz_m": [
+        0.6146215200424194,
+        0.10122542828321457,
+        0.0054283784702420235
+      ],
+      "placement_5_0_xyz_m": [
+        0.7243267750740051,
+        0.10122542828321457,
+        0.06207379262894392
+      ],
+      "home_5_0_xyz_m": [
+        0.7243267750740051,
+        0.10122542828321457,
+        0.11042837847024203
+      ]
+    }
+  },
+  "focused_regression_tests_passed": 5,
+  "shared_input_sha256": {
+    "teaching/positions.json": "e353c9da6514e3121c8c68d6ffce2f4755f459f54825151d94d4947fc3ad9483",
+    "teaching/motion_config.json": "f2956bbab0d396669764c0070d900d4a2f2876f1a870d9d5487cd824e8a7b875",
+    "teaching/factory_vision/config.json": "84bb8c2ef298106f3fc7eac6f2b66be10022d48c22fbe0b9a6d1df355eabb63e",
+    "teaching/factory_cycle/settings.json": "9a1bf434942e5fbf93d01e57af124f93deeba0ce2a82e0b2e1d1c2268bac10c4",
+    "teaching/factory_cycle/inventory.json": "4537926300f97be360d47a8341274d3d99aeaa637377feae72fe562bd1e769a3"
+  },
+  "repeated_launch_selection_did_not_change_shared_inputs_or_inventory": true
+}

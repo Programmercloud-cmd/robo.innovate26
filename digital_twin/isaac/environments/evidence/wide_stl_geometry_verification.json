@@ -1,0 +1,79 @@
+{
+  "passed": true,
+  "environment": "board",
+  "fingers": "wide",
+  "hardware_clients": 0,
+  "physical_lift_validated": false,
+  "training_ready": false,
+  "plate": {
+    "studs": 1024,
+    "exposed_studs": 900,
+    "covered_studs": 124,
+    "bricks_added": 0
+  },
+  "native_finger_limits_m": [
+    [
+      0.019093310460448265,
+      0.03999999910593033
+    ],
+    [
+      0.019093310460448265,
+      0.03999999910593033
+    ]
+  ],
+  "fingertips": [
+    {
+      "finger": "fr3_leftfinger",
+      "supplied_stl_vertices_preserved": true,
+      "mounting_transform_unchanged": true,
+      "triangles": 474,
+      "inside_span_m": 0.09579999923706053,
+      "ceiling_thickness_m": 0.006549999237060547,
+      "obsolete_pad_collision_removed": true,
+      "collision": "convexDecomposition"
+    },
+    {
+      "finger": "fr3_rightfinger",
+      "supplied_stl_vertices_preserved": true,
+      "mounting_transform_unchanged": true,
+      "triangles": 474,
+      "inside_span_m": 0.09579999923706053,
+      "ceiling_thickness_m": 0.006549999237060547,
+      "obsolete_pad_collision_removed": true,
+      "collision": "convexDecomposition"
+    }
+  ],
+  "cad_dimensions": {
+    "inside_span_m": 0.0957999979677175,
+    "inside_reach_m": 0.02,
+    "inside_height_m": 0.019000000000000027,
+    "top_thickness_m": 0.006549999999999954,
+    "wall_thickness_m": 0.004999999490262347,
+    "outer_span_m": 0.11479440307617189,
+    "roof_underside_cad_z_mm": 21.050006103515642,
+    "roof_top_cad_z_mm": 27.600006103515597,
+    "bounds_original_cad_mm": [
+      [
+        -11.0,
+        -72.89720153808595,
+        2.0500061035156136
+      ],
+      [
+        20.0,
+        41.89720153808594,
+        27.600006103515597
+      ]
+    ],
+    "nominal_wall_thickness_status": "5 mm distal return wall; proximal taper is thicker, as supplied"
+  },
+  "source_stl_sha256": "7d076beec9820dacc2788e91cfb1dad65f19a0076d0776a8b9f37bf17eedcd1c",
+  "separating_plane_proof": {
+    "collision_free_simulated_native_width_range_m": [
+      0.03818662092089653,
+      0.07999999821186066
+    ],
+    "minimum_opposing_gap_m": 0.0010000058805786916,
+    "physical_hardware_limits_modified": false
+  },
+  "stage_sha256": "f2f4f7452c45b2199a39bb6a1d6887dee883bfa85163979c015f7fcdffd5a46d"
+}

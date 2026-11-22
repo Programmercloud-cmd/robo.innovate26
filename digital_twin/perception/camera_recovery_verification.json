@@ -1,0 +1,13 @@
+{
+  "evidence_type": "actual isolated camera-child restart; no arm motion or VM reload",
+  "old_camera_pid": 574991,
+  "new_camera_pid": 575033,
+  "forward_pid_unchanged": true,
+  "known_display_before": 127,
+  "minimum_known_display_during_restart": 127,
+  "stale_flag_observed": true,
+  "fresh_feed_recovered": true,
+  "robot_stale_during_test": false,
+  "robot_sequence_before": 1317161,
+  "robot_sequence_after": 1317361
+}

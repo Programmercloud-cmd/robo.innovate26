@@ -1,0 +1,13 @@
+{
+  "usd_opens": true,
+  "used_layers": [
+    "/home/ubuntu/workspace/fr3-digital-twin-20261026/model-snapshot-01/digital_twin.usdc",
+    ""
+  ],
+  "prims": 373,
+  "right_tape_point_error_m": 1.0315336029798061e-08,
+  "no_lego_geometry": true,
+  "board_and_table_present": true,
+  "modified_finger_visual_present": true,
+  "rendering": "WebGL monitor verified separately; Isaac RTX unavailable"
+}

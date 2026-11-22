@@ -1,0 +1,331 @@
+{
+  "provenance": "synthetic software fixture only",
+  "physical_detector_validated": false,
+  "training_ready": false,
+  "camera": {
+    "camera_id": "wrist_sonix_c920",
+    "calibration_id": "synthetic-lens",
+    "image_size": [
+      1280,
+      720
+    ],
+    "K": [
+      [
+        800.0,
+        0.0,
+        640.0
+      ],
+      [
+        0.0,
+        810.0,
+        360.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "distortion": [
+      0.03,
+      -0.01,
+      0.001,
+      -0.002,
+      0.003
+    ],
+    "distortion_model": "brown_conrady",
+    "settings_profile_id": "synthetic-fixed-settings",
+    "intrinsics_validated": true,
+    "mounting_continuity_verified": true
+  },
+  "nominal_normalized": {
+    "stud-0": [
+      -0.025,
+      -0.025
+    ],
+    "stud-1": [
+      0.025,
+      -0.025
+    ],
+    "stud-2": [
+      0.07500000000000001,
+      -0.025
+    ],
+    "stud-3": [
+      0.125,
+      -0.025
+    ],
+    "stud-4": [
+      -0.025,
+      0.025
+    ],
+    "stud-5": [
+      0.025,
+      0.025
+    ],
+    "stud-6": [
+      0.07500000000000001,
+      0.025
+    ],
+    "stud-7": [
+      0.125,
+      0.025
+    ]
+  },
+  "drawn_centers_px": {
+    "stud-0": [
+      623,
+      338
+    ],
+    "stud-1": [
+      663,
+      338
+    ],
+    "stud-2": [
+      703,
+      338
+    ],
+    "stud-3": [
+      743,
+      338
+    ],
+    "stud-4": [
+      623,
+      378
+    ],
+    "stud-5": [
+      663,
+      378
+    ],
+    "stud-6": [
+      703,
+      378
+    ],
+    "stud-7": [
+      743,
+      378
+    ]
+  },
+  "observed_frame": {
+    "target_id": "b_0_0_0",
+    "camera_id": "wrist_sonix_c920",
+    "calibration_id": "synthetic-lens",
+    "settings_profile_id": "synthetic-fixed-settings",
+    "image_size": [
+      1280,
+      720
+    ],
+    "sequence": 1,
+    "captured_s": 1.0,
+    "received_s": 1.0,
+    "clock_profile_id": "synthetic-clock",
+    "timestamp_calibrated": true,
+    "candidates": [
+      {
+        "pixel_xy": [
+          623.0357322692871,
+          338.01437759399414
+        ],
+        "confidence": 0.8800946503389144,
+        "visible": true
+      },
+      {
+        "pixel_xy": [
+          663.0357322692871,
+          338.01437759399414
+        ],
+        "confidence": 0.8800946503389144,
+        "visible": true
+      },
+      {
+        "pixel_xy": [
+          703.0357322692871,
+          338.01437759399414
+        ],
+        "confidence": 0.8800946503389144,
+        "visible": true
+      },
+      {
+        "pixel_xy": [
+          743.0357322692871,
+          338.01437759399414
+        ],
+        "confidence": 0.8800946503389144,
+        "visible": true
+      },
+      {
+        "pixel_xy": [
+          623.0357322692871,
+          378.01437759399414
+        ],
+        "confidence": 0.8800946503389144,
+        "visible": true
+      },
+      {
+        "pixel_xy": [
+          663.0357322692871,
+          378.01437759399414
+        ],
+        "confidence": 0.8800946503389144,
+        "visible": true
+      },
+      {
+        "pixel_xy": [
+          703.0357322692871,
+          378.01437759399414
+        ],
+        "confidence": 0.8800946503389144,
+        "visible": true
+      },
+      {
+        "pixel_xy": [
+          743.0357322692871,
+          378.01437759399414
+        ],
+        "confidence": 0.8800946503389144,
+        "visible": true
+      }
+    ]
+  },
+  "diagnostics": {
+    "detector_profile_id": "synthetic-ring-detector-only",
+    "purpose": "synthetic_validation",
+    "opencv_version": "4.5.4",
+    "detector_parameters_sha256": "0508795fe466ee438c42fc15a13dcd1b91b3c3fdddc0c54312ba3582a94358cb",
+    "confidence_evidence_ids": [],
+    "slots": {
+      "stud-0": {
+        "observed": true,
+        "raw_quality": 0.8800946503389144,
+        "confidence": 0.8800946503389144,
+        "pixel_xy": [
+          623.0357322692871,
+          338.01437759399414
+        ],
+        "radii_px": [
+          7.54631233215332,
+          10.469542503356934
+        ],
+        "angular_coverage": 1.0,
+        "radial_error": 0.026966332543203454,
+        "ring_contrast": 190.0
+      },
+      "stud-1": {
+        "observed": true,
+        "raw_quality": 0.8800946503389144,
+        "confidence": 0.8800946503389144,
+        "pixel_xy": [
+          663.0357322692871,
+          338.01437759399414
+        ],
+        "radii_px": [
+          7.54631233215332,
+          10.469542503356934
+        ],
+        "angular_coverage": 1.0,
+        "radial_error": 0.026966332543203454,
+        "ring_contrast": 190.0
+      },
+      "stud-2": {
+        "observed": true,
+        "raw_quality": 0.8800946503389144,
+        "confidence": 0.8800946503389144,
+        "pixel_xy": [
+          703.0357322692871,
+          338.01437759399414
+        ],
+        "radii_px": [
+          7.54631233215332,
+          10.469542503356934
+        ],
+        "angular_coverage": 1.0,
+        "radial_error": 0.026966332543203454,
+        "ring_contrast": 190.0
+      },
+      "stud-3": {
+        "observed": true,
+        "raw_quality": 0.8800946503389144,
+        "confidence": 0.8800946503389144,
+        "pixel_xy": [
+          743.0357322692871,
+          338.01437759399414
+        ],
+        "radii_px": [
+          7.54631233215332,
+          10.469542503356934
+        ],
+        "angular_coverage": 1.0,
+        "radial_error": 0.026966332543203454,
+        "ring_contrast": 190.0
+      },
+      "stud-4": {
+        "observed": true,
+        "raw_quality": 0.8800946503389144,
+        "confidence": 0.8800946503389144,
+        "pixel_xy": [
+          623.0357322692871,
+          378.01437759399414
+        ],
+        "radii_px": [
+          7.54631233215332,
+          10.469542503356934
+        ],
+        "angular_coverage": 1.0,
+        "radial_error": 0.026966332543203454,
+        "ring_contrast": 190.0
+      },
+      "stud-5": {
+        "observed": true,
+        "raw_quality": 0.8800946503389144,
+        "confidence": 0.8800946503389144,
+        "pixel_xy": [
+          663.0357322692871,
+          378.01437759399414
+        ],
+        "radii_px": [
+          7.54631233215332,
+          10.469542503356934
+        ],
+        "angular_coverage": 1.0,
+        "radial_error": 0.026966332543203454,
+        "ring_contrast": 190.0
+      },
+      "stud-6": {
+        "observed": true,
+        "raw_quality": 0.8800946503389144,
+        "confidence": 0.8800946503389144,
+        "pixel_xy": [
+          703.0357322692871,
+          378.01437759399414
+        ],
+        "radii_px": [
+          7.54631233215332,
+          10.469542503356934
+        ],
+        "angular_coverage": 1.0,
+        "radial_error": 0.026966332543203454,
+        "ring_contrast": 190.0
+      },
+      "stud-7": {
+        "observed": true,
+        "raw_quality": 0.8800946503389144,
+        "confidence": 0.8800946503389144,
+        "pixel_xy": [
+          743.0357322692871,
+          378.01437759399414
+        ],
+        "radii_px": [
+          7.54631233215332,
+          10.469542503356934
+        ],
+        "angular_coverage": 1.0,
+        "radial_error": 0.026966332543203454,
+        "ring_contrast": 190.0
+      }
+    },
+    "inventory_advance": false,
+    "training_ready": false
+  },
+  "generator": "task/test_stud_detector.py::synthetic_image + visible SYNTHETIC watermark",
+  "generator_sha256": "6f3988e433564425b3fb7929b8c2d532200a655070b5e615b5ac585ac546f08e"
+}

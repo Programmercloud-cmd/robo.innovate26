@@ -1,0 +1,7 @@
+{
+  "status": "recoverable_stop",
+  "training_ready": false,
+  "hardware_deployment_enabled": false,
+  "written": 0,
+  "reason": "recording is not finalized and intact"
+}

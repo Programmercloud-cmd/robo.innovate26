@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-27T09:20:30.003218+00:00",
+  "source_signature": "e36d6ea9db241f0e6ad1840e8de618059f39e42e65cb0b518394d7bdef34cb03",
+  "reference_pose": "5_0",
+  "observation_offset_m": 0.05,
+  "measured_reference_pose": [
+    0.9999999403953552,
+    -6.767574086552486e-05,
+    -0.00027407141169533134,
+    0,
+    -6.765383295714855e-05,
+    -1,
+    7.993875624379143e-05,
+    0,
+    -0.0002740768250077963,
+    -7.992020982783288e-05,
+    -0.9999999403953552,
+    0,
+    0.6145272850990295,
+    0.10114758461713791,
+    0.055277712643146515,
+    1
+  ],
+  "commanded_reference_pose": [
+    1.0,
+    0.0,
+    0,
+    0,
+    0.0,
+    -1.0,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    0.6146215200424194,
+    0.10122542828321457,
+    0.055428378470242026,
+    1
+  ],
+  "target_feature": [
+    591.0299767994533,
+    266.1000597853516,
+    -0.002147816801211528
+  ],
+  "image_jacobian": [
+    [
+      76.44409954000864,
+      9935.17261361115,
+      -21.63381065400104
+    ],
+    [
+      -9495.37628067574,
+      305.31019724817907,
+      -9.459017982535466
+    ],
+    [
+      -0.4036380478079685,
+      -0.09568438653477507,
+      0.9317767877904397
+    ]
+  ],
+  "normalized_condition": 1.2319817785231983,
+  "calibration_rms_weighted_px": 0.22735881324434498,
+  "samples": [
+    {
+      "actual_delta_local_m_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "feature": [
+        591.985595703125,
+        267.57720947265625,
+        -0.0022422073721132087
+      ]
+    },
+    {
+      "actual_delta_local_m_rad": [
+        -0.001494103976654597,
+        8.660345215890747e-06,
+        1.4404799808964697e-05
+      ],
+      "feature": [
+        591.7988891601562,
+        281.3876953125,
+        -0.0008451504708303022
+      ]
+    },
+    {
+      "actual_delta_local_m_rad": [
+        0.001504050069548955,
+        -3.94525770693645e-05,
+        4.256420350579049e-05
+      ],
+      "feature": [
+        591.5484008789062,
+        252.90292358398438,
+        -0.0020296099541827965
+      ]
+    },
+    {
+      "actual_delta_local_m_rad": [
+        3.1753080491723888e-06,
+        -0.0014564458896151556,
+        -3.1270008374217895e-05
+      ],
+      "feature": [
+        577.2091064453125,
+        266.4183654785156,
+        -0.002302358459215983
+      ]
+    },
+    {
+      "actual_delta_local_m_rad": [
+        -1.4200206968527677e-05,
+        0.0014498894236895565,
+        6.405968959777297e-05
+      ],
+      "feature": [
+        606.0807495117188,
+        267.474853515625,
+        -0.0024679778334276603
+      ]
+    },
+    {
+      "actual_delta_local_m_rad": [
+        8.877578948044795e-06,
+        3.560000046360658e-05,
+        -0.01222539993080618
+      ],
+      "feature": [
+        592.412353515625,
+        266.7265930175781,
+        -0.014040829773046753
+      ]
+    },
+    {
+      "actual_delta_local_m_rad": [
+        -5.073168611233615e-06,
+        -2.751321869131509e-05,
+        0.01224134377006969
+      ],
+      "feature": [
+        591.255126953125,
+        266.6082763671875,
+        0.00876618726618745
+      ]
+    }
+  ],
+  "physical_grasp_verified": false,
+  "reference_basis": "Operator confirmed5_0; fresh locally measured six-jog camera response",
+  "opening_latency": [
+    0.3770054400083609,
+    0.47142096699099056,
+    0.3818503610091284
+  ],
+  "run": "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/commission_20261027T092023.309973Z",
+  "roi_reprocessing": {
+    "source_images": [
+      "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/commission_20261027T092023.309973Z/origin_0.jpg",
+      "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/commission_20261027T092023.309973Z/axis0_-1_0.jpg",
+      "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/commission_20261027T092023.309973Z/axis0_1_0.jpg",
+      "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/commission_20261027T092023.309973Z/axis1_-1_0.jpg",
+      "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/commission_20261027T092023.309973Z/axis1_1_0.jpg",
+      "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/commission_20261027T092023.309973Z/axis2_-1_0.jpg",
+      "/home/nshenoy/robo.innovate26/teaching/factory_cycle/runs/commission_20261027T092023.309973Z/axis2_1_0.jpg"
+    ],
+    "maximum_equivalent_feature_change_m": 1.3384158020015278e-05,
+    "software_only": true,
+    "no_new_physical_measurements": true
+  },
+  "tracking_feature_roi_optimization": "Only feature search was cropped to each known brick polygon; same camera/physical detector calibration and geometric/stud/age checks. Current real image retained every brick.",
+  "photometric_profile_validation": {
+    "evidence": "runs/demo_resume/fast_exposure_trials.json",
+    "median_equivalent_delta_local_m_rad": [
+      5.796412410803879e-05,
+      -8.528318374774083e-06,
+      -0.0006986172362728295
+    ],
+    "unchanged_intrinsic_geometry_and_mount": true,
+    "hand_eye_calibration_claimed": false,
+    "retained_measured_image_jacobian": true
+  },
+  "placement_coverage_change_validation": {
+    "source_frames_replayed": 7,
+    "maximum_source_feature_change": 0.0,
+    "physical_image_jacobian_retained": true
+  }
+}

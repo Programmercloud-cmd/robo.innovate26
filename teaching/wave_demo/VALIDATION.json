@@ -1,0 +1,27 @@
+{
+  "model_only": true,
+  "robot_sdk_connections": 0,
+  "robot_motion_performed": false,
+  "physical_wave_demonstrated": false,
+  "focused_tests_passed": 4,
+  "default_preview": "teaching/wave_demo/runs/20261028T124446.163394Z",
+  "planned_motion_duration_s": 35.00008542811445,
+  "wave_motion_duration_s": 19.199,
+  "peak_world_z_m": 1.0938518249965885,
+  "minimum_certified_full_sigma": 0.16190867619519572,
+  "commanded_tilt_deg": 34,
+  "measured_tilt_cap_deg": 35,
+  "factory_files_modified_by_wave_task": false,
+  "factory_inventory_modified": false,
+  "controller_sha256": "9611438d896022540350782a6f632cc4212d5bf61e7096e88bf80f8df7dc5fa9",
+  "entry_policy": "Home-5 vertical column: world X/Y +/-50 mm, Z from home-50 mm to demo ceiling; checked Cartesian descent to home",
+  "recorded_elevated_start_fixture": "recorded_column_start.json",
+  "recorded_elevated_start_python_and_native_check_passed": true,
+  "recorded_start_world_z_m": 0.3540397584438324,
+  "finger_length_axis_world": [
+    1,
+    0,
+    0
+  ],
+  "wave_angle_reference": "upright forearm neutral"
+}

@@ -1,0 +1,22 @@
+{
+  "schema":"local_wrench_calibration_v1",
+  "validated":false,
+  "provenance":"physical",
+  "reference_frame":"K_at_K",
+  "units":["N","N","N","Nm","Nm","Nm"],
+  "conditions":null,
+  "F_T_EE":null,
+  "EE_T_K":null,
+  "bias_raw_K":null,
+  "gain_K":null,
+  "noise_std_K":null,
+  "latency_s":null,
+  "reference_q":null,
+  "maximum_joint_delta_rad":null,
+  "valid_from_monotonic_ns":null,
+  "valid_until_monotonic_ns":null,
+  "maximum_hand_age_s":null,
+  "maximum_sample_gap_s":null,
+  "evidence":[],
+  "requirements":"Match exact clock, SDK/tool/payload/impedance/filter/limiter/wrench/fixture profiles. Calibrate at K in K coordinates from force-free loaded/unloaded and known-load traces, validate bias/gain/noise/latency and pose envelope on held-out observations. No identity gain or zero bias default is assumed. This template is deliberately uncommissioned."
+}

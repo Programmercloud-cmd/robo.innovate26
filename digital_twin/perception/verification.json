@@ -1,0 +1,12 @@
+{
+  "valid_contract": true,
+  "age_expires": true,
+  "occluded_occupancy_rejected": true,
+  "transport_expiry_marks_stale": true,
+  "evidence_type": "synthetic_contract_checks_not_camera_validation",
+  "unchanged_motion_file_sha256": {
+    "teaching/positions.json": "0bbbaca42b77c1f1e08898b5532cd09272507f6ad30e1694020bc0dd93717974",
+    "teaching/factory_vision/config.json": "a4d129b05be8f3a5b4547ac8b7a899730a86b2061ed24d3e66aa3b6331cbd5cd",
+    "teaching/factory_cycle/inventory.json": "b6fb943a0b3704eb71818dae5aae376ef9ae5fbdad9f0d53dd22db057a151207"
+  }
+}
